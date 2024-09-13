@@ -61,6 +61,9 @@ contact: 'gomezblaura@javeriana.edu.co'
 episodes:
 - introduction.Rmd
 - zika.Rmd
+- Taller-R-RStudio.Rmd
+- Visualización.Rmd
+- Reporte.Rmd
 
 # Information for Learners
 learners:
