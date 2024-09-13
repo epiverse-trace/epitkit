@@ -52,6 +52,9 @@
     <loc>https://epiverse-trace.github.io/epitkit/instructor/reference.html</loc>
   </url>
   <url>
+    <loc>https://epiverse-trace.github.io/epitkit/instructor/zika.html</loc>
+  </url>
+  <url>
     <loc>https://epiverse-trace.github.io/epitkit/instructor-notes.html</loc>
   </url>
   <url>
@@ -65,5 +68,8 @@
   </url>
   <url>
     <loc>https://epiverse-trace.github.io/epitkit/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://epiverse-trace.github.io/epitkit/zika.html</loc>
   </url>
 </urlset>
