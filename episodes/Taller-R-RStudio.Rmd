@@ -19,7 +19,7 @@ authors:
 - José M. Velasco-España
 - Andree Valle-Campos
 teaching: 80
-exercises: 4
+exercises: 8
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
@@ -28,20 +28,6 @@ exercises: 4
 
 - ¿Cómo se utilizan R y RStudio en el análisis de datos y la salud pública?
 
-R es un lenguaje de programación y un entorno de software utilizado en
-la práctica estadística y el análisis de datos. R y RStudio son
-herramientas esenciales para el estudio, análisis y toma de decisiones
-en salud pública, ya que permiten realizar análisis estadísticos
-detallados, modelar la propagación de enfermedades, visualizar datos de
-manera efectiva y automatizar tareas. Estas herramientas facilitan la
-manipulación y preparación de datos, fomentan la colaboración en
-proyectos de ciencia de datos, y la toma de decisiones basadas en
-evidencias. Además, son útiles en la formación y educación en análisis
-de datos para profesionales de la salud, áreas STEM y toma de
-decisiones. En este taller aprenderemos a reconocer los distintos
-elementos de la interfaz de RStudio, estructuras en R y manejo de datos
-con Tidyverse. Esto sentará las bases fundamentales para adquirir las
-habilidades necesarias en la programación en R y el análisis de datos.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -59,12 +45,19 @@ Al final de este taller usted podrá:
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+::::::::::::::::::::: prereq
+
+Esta unidad no tiene prerequisitos
+:::::::::::::::::::::
+
 ```{r setup, include=FALSE}
 library(knitr)
 opts_chunk$set(collapse = TRUE)
 ```
 
 ## Tabla de contenido
+
+::::::::::::::::::: checklist
 
 -   Módulo 2 : Ciencia de datos en salud pública
     -   Unidad 1: Introducción a R y RStudio
@@ -75,8 +68,10 @@ opts_chunk$set(collapse = TRUE)
         -   Tema 5: Tipos de datos y operadores en R
         -   Tema 6: Estructuras de datos en R
         -   Tema 7: Funciones
-        -   Tema 8: Manipulación de datos con Tidyverse
-
+        -   Tema 8: Manipulación de datos con Tidyverse  
+        
+:::::::::::::::::::
+ 
 ## Tema 1: Introducción
 
 R es un lenguaje de programación especializado para análisis de datos,
@@ -99,6 +94,7 @@ decisiones basadas en evidencia. Además, son útiles en la formación y
 educación en análisis de datos para profesionales de la salud, áreas
 STEM y toma de decisiones.
 
+
 ## Tema 2: Instalación de R y RStudio
 
 Para instalar R y RStudio debemos ir a nuestro navegador de confianza.
@@ -106,7 +102,7 @@ Allí vamos a buscar r-project, que es la página oficial de R
 (<https://www.r-project.org/>). Recordemos que este es un software de
 uso libre, no hay que hacer ningún pago por su descarga o uso.
 
-![](images/pagina_r.png)
+![](fig/pagina_r.png)
 
 Busca la opción de descarga "download R" y sigue las instrucciones.
 
@@ -116,7 +112,7 @@ RSudio. Si tenemos Windows podemos dar click en el recuadro azul. Si es
 otro sistema operativo abajo encontraremos una lista con las diferentes
 opciones. Para instalar, sigue las instrucciones.
 
-![](images/instalar_r.png)
+![](fig/instalar_r.png)
 
 Recuerda ejecutar el archivo que se descargó siguiendo los pasos. Es
 recomendable que en el momento de la instalación elijamos la opción de
@@ -128,7 +124,7 @@ elegido en la instalación donde quedó Rstudio y dar doble clic o clic
 derecho y abrir. Lo primero que vemos al momento de abrir Rstudio es la
 siguiente pantalla:
 
-![](images/pantalla_r.png)
+![](fig/pantalla_r.png)
 
 Escribe 2+2 donde aparece el curso y da enter, si te aparece el
 resultado 4 ¡Está todo listo para empezar!
@@ -137,7 +133,7 @@ resultado 4 ¡Está todo listo para empezar!
 
 RStudio está compuesto por 4 secciones principales:
 
-![](images/partes_pantalla.png)
+![](fig/partes_pantalla.png)
 
 1.  **Editor (sección superior izquierda)**: en esta sección escribimos
     y editamos el código a través de la creación de Scripts . Esta
@@ -175,6 +171,8 @@ permite organizar el espacio de trabajo, el historial y los documentos
 fuente. Para crear un Proyecto en R, es importante seguir los siguientes
 pasos:
 
+::::::::::::::::::::::::::::::::::::: challenge 
+
 1.  Abrir RStudio y, en la esquina superior derecha, seleccionar la
     pestaña **File (Archivo)** -\> **New Project... (Proyecto Nuevo)**.
 
@@ -182,7 +180,7 @@ pasos:
     **Create Project**, ahora se debe seleccionar **New Directory
     (Directorio Nuevo)**.
 
-![](images/proyecto_r.png)
+![](fig/proyecto_r.png)
 
 3.  En la ventana **Project Type**, se debe seleccionar **New Project**
     -\> **Create New Project**. En la casilla **Directory Name (Nombre
@@ -197,10 +195,12 @@ pasos:
     nuestro trabajo y resultados: datos, scripts y figuras. Al final, el
     proyecto debería parecerse a esta imagen:
 
-![](images/proyecto_r_revision.png)
+![](fig/proyecto_r_revision.png)
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Tema 5: Tipos de datos y operadores en R
 
+::::::::::::::::::: checklist
 **Tipos de datos**
 
 R tiene la capacidad de almacenar y procesar distintos tipos de datos.
@@ -217,6 +217,9 @@ Entre estos se encuentran:
     resultado no es numérico, por ejemplo `0/0`. Inf indica que hay
     operaciones cuyo resultado es infinito como por ejemplo `1/0`. Si se
     hace operaciones entre tipos variables se pueden obtener `Inf`.
+:::::::::::::::::::
+
+::::::::::::::::::: checklist
 
 **Operadores matemáticos y lógicos**
 
@@ -225,9 +228,11 @@ diferentes tareas con los datos que tenemos disponibles; por ejemplo,
 con el operador `+` podemos efectuar una suma o incrementar un índice.
 Algunos de los operadores más utilizados en R son los siguientes:\
 1. Operadores aritméticos (Ej: `+`, `-`, `*`, que corresponden a suma,
-resta y multiplicación respectivamente) 2. Operadores de comparación
-(Ej: `<, >, ==, >=, <=, !=`\
+resta y multiplicación respectivamente)   
+2. Operadores de comparación  `(Ej: <, >, ==, >=, <=, !=)`
 3. Operadores booleanos `(& (and), | (or), ! (not))`
+
+:::::::::::::::::::
 
 **Operadores de asignación**
 
@@ -271,6 +276,8 @@ vector. Cada componente debe ir separado por comas, si son caracteres
 debe ir entre comillas (si son números no), si es dato booleano (falso o
 verdadero) tampoco va en comillas.
 
+::::::::::::::::::::::::::::::::::::: challenge 
+
 Así, los vectores se pueden crear ejecutando el comando `c()`, como se
 puede visualizar a continuación:
 
@@ -287,9 +294,15 @@ vacunado <- c(TRUE, FALSE, FALSE, TRUE) # Estado de vacunación
 
 dosis <- c(2L, 0L, 1L, 2L) # Número de dosis recibidas`
 ```
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+:::::::::::::::::::::::::::::::::::: callout
 
 Nota: *El uso del símbolo `#` permite comentar el código, es decir poner
 notas que expliquen una o más líneas del código.*
+
+:::::::::::::::::::::::::::::::::::::::::::
 
 **Data.frame (Tabla de datos)**
 
@@ -327,6 +340,8 @@ Ahora observemos cómo quedó la tabla de datos
 datos_vacunas
 ```
 
+::::::::::::::::::: checklist
+
 Algunas funciones que permiten conocer características como nombres o
 tamaños de las filas o columnas del `data.frame` son:
 
@@ -339,6 +354,8 @@ tamaños de las filas o columnas del `data.frame` son:
 -   `ncol()`: número de columnas
 
 -   `length()`: longitud de la tabla de datos
+
+:::::::::::::::::::
 
 Ahora, para acceder a la descripción de la estructura general de una
 tabla de datos (y en general cualquier objeto de R) usamos el comando
@@ -363,14 +380,18 @@ Para acceder a los diferentes componentes de la tabla de datos usamos la
 sintaxis `[,]`, donde la primera dimensión corresponde a filas y la
 segunda dimensión a columnas.
 
+::::::::::::::::::::::::: discussion
 Por ejemplo, si queremos saber cuántas dosis de vacunas se aplicó Maximo
-¿qué debemos hacer? Veamos a qué fila y columna corresponde este dato:
+¿qué debemos hacer? 
+:::::::::::::::::::::::::
+
+Veamos a qué fila y columna corresponde este dato:
 
 ```{r eval=FALSE}
 datos_vacunas
 ```
 
-![](images/maximo.png)
+![](fig/maximo.png)
 
 Vemos que Maximo está en la fila 2 y las dosis en la columna 5. Por lo
 tanto, la intersección de estas dos variables nos dará el número de
@@ -386,20 +407,26 @@ R nos permite no solo crear tablas de datos sino también abrir archivos
 que las contengan. De hecho, la mayoría de las veces no se crean
 directamente los `data.frame` en R sino que se importa un `data.frame`
 de alguna fuente de datos, por ejemplo, la base de datos del sistema de
-vigilancia de algún evento de interés. Para esto, en R hay tres fuentes
-de conjuntos de datos que podemos utilizar:
-
+vigilancia de algún evento de interés.  
+ 
+::::::::::::::::::: checklist
+Para esto, en R hay tres fuentes de conjuntos de datos que podemos utilizar:
+ 
 -   Tabla de datos importada (desde los formatos `.xlsx`, `.csv`,
     `.stata`, o `.RDS`, entre otros)
 -   Tabla de datos que forma parte de un paquete en R (Ej. `MASS`,
     `islands`, etc)
 -   Tabla de datos creada durante la sesión en R (Ej. las estructuras de
-    los primeros ejercicios)
+    los primeros ejercicios) 
+:::::::::::::::::::
 
 **Importar una tabla de datos**
 
 Para importar una tabla de datos de diferentes fuentes necesitamos
-emplear diferentes tipos de funciones, aquí algunos ejemplos del tipo de
+emplear diferentes tipos de funciones. 
+
+:::::::::::::::::::::::::::::::::::: callout
+Aquí algunos ejemplos del tipo de
 datos, y la librería que es necesario cargar y la función a utilizar.
 
 |                   |                                  |             |
@@ -410,6 +437,7 @@ datos, y la librería que es necesario cargar y la función a utilizar.
 | RDS               | `readRDS`                        | `base`      |
 | dta               | `read_dta`                       | `haven`     |
 | sas               | `read_sas`                       | `haven`     |
+:::::::::::::::::::::::::::::::::::::::::::
 
 ## Tema 7: Funciones
 
@@ -423,6 +451,8 @@ entrada (*input*) que entran a la caja (la función) y de ahí sale un
 resultado o datos de salida (*output*). La función puede ser suma,
 resta, regresión logística o un modelo matemático. Entran datos y salen
 otros que son producto de las operaciones en la función.
+
+::::::::::::::::::: checklist
 
 Los componentes básicos de una función son:
 
@@ -439,6 +469,9 @@ Los componentes básicos de una función son:
     modificar los argumentos. Si esta salida corresponde a una serie de
     datos, podemos extraerla usando el comando `return`.
 
+:::::::::::::::::::
+
+
 **Ejemplo**: con una base de datos queremos generar una variable que es
 producto de una operación, por ejemplo, IMC (índice masa corporal).
 
@@ -452,15 +485,15 @@ Para este ejemplo el input, o datos de entrada son el peso y la variable
 talla, y el output sería el índice de masa corporal. Si tenemos que el
 peso es 50kg y la talla 1.5m, el IMC será igual a 22.2.
 
-![](images/ilustracion_imc.png)
+![](fig/ilustracion_imc.png)
 
 (Ilustración adaptada por Maria Paula Forero)
 
 En R podemos producir la función IMC mediante el siguiente código:
 
 ```{r}
-IMC <- function(peso, talla) { # Aquí van los argumentos o input
-    resultado <- peso/ talla^2  # Esta es el cuerpo u operación       
+IMC <- function(peso_kg, talla_m) { # Aquí van los argumentos o input
+    resultado <- peso_kg/ talla_m^2  # Esta es el cuerpo u operación       
     return(resultado)           # Este es el output o resultado
  }
 ```
@@ -469,13 +502,16 @@ Ahora, utilicemos la función para calcular el IMC de una persona de
 talla 1.75 cm y peso 80 kg, mediante el siguiente código
 
 ```{r}
-IMC(peso = 80, talla = 1.75)
+IMC(peso_kg = 80, talla_m = 1.75)
 ```
 
 Como se puede ver, para usar la función una vez establecida solo se
 requiere el nombre y los argumentos.
 
+::::::::::::::::::::::::::::::::::::: challenge 
+
 **Reto**: Usando la misma función calcula tu IMC.
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 En general, una función consiste en una secuencia de instrucciones con
 el fin de llevar a cabo una tarea. De esta forma, por medio del uso de
@@ -487,6 +523,9 @@ manera rutinaria.
 En R, las "librerías" se refieren a conjuntos de funciones organizadas
 de manera lógica que pueden ser utilizadas para llevar a cabo diversas
 tareas, como análisis, limpieza y visualización de datos, ente otros.
+
+::::::::::::::::::: checklist
+
 Las librerías más usadas en R son:
 
 -   **`ggplot2`**: sirve para la creación de gráficos y visualizaciones
@@ -499,6 +538,7 @@ Las librerías más usadas en R son:
     `CSV`, `TSV` y otros.
 -   **`plyr`**: funciona para dividir, aplicar y combinar datos de
     manera eficiente.
+:::::::::::::::::::
 
 A su vez, hay meta-librerías, es decir, aquellas que combinan varias
 librerías. Un ejemplo de estas es la librería `tidyverse`.
@@ -531,17 +571,22 @@ re-iniciamos R o abrimos RStudio.
 library(tidyverse)
 ```
 
+
 **Abrir y explorar una tabla de datos importados de Excel**
+
+
+:::::::::::::::::::::::::::::::::::: callout
 
 Este es el conjunto de datos para esta práctica:
 [datos_covid.xlsx](https://raw.githubusercontent.com/TRACE-LAC/TRACE-LAC-data/main/datos_covid.xlsx)
 
 Dentro del directorio en el que estamos trabajando actualmente, debemos
-crear una carpeta llamada *data*. Ahora debemos guardar la tabla de
-datos descargado en la carpeta data que acabamos de crear. Para importar
-tablas de datos desde `RDS`, se puede usar la función `read_excel`, que
-está en el paquete `readxl` vinculado a `tidyverse`. Sin embargo,
-todavía es necesario cargar la biblioteca `readxl`, ya que no es un
+crear una carpeta llamada *data*.  
+Ahora debemos guardar la tabla de datos descargado en la carpeta data que acabamos de crear. 
+:::::::::::::::::::::::::::::::::::::::::::
+
+
+Para importar tablas de datos desde `RDS`, se puede usar la función `read_excel`, que está en el paquete `readxl` vinculado a `tidyverse`. Sin embargo, todavía es necesario cargar la biblioteca `readxl`, ya que no es un
 paquete `tidyverse` principal. Para esto, escribimos en la consola:
 
 ```{r}
@@ -564,7 +609,7 @@ mejora el desempeño.
 la función pipe que permite en este caso aplicar diferentes funciones a
 un conjunto de datos y sus resultados.
 
-![](images/pipe.png)
+![](fig/pipe.png)
 
 (Ilustración adaptada por Maria Paula Forero)
 
@@ -600,6 +645,8 @@ datos_por_esquema <- filter(datos, edad > 18) %>%
   group_by(esquema) %>% summarise(personas = n())
 ```
 
+::::::::::::::::::: checklist
+
 **Funciones básicas de `tidyverse`**
 
 -   **`glimpse()`**: utilizado para explorar rápidamente una tabla de
@@ -622,6 +669,8 @@ datos_por_esquema <- filter(datos, edad > 18) %>%
 -   **`mutate()`**: genera una nueva variable
 
 -   **`rename()`**: cambia el nombre de la variable
+
+:::::::::::::::::::
 
 Veamos en más detalle las funciones más comunes del paquete `dyplr`
 dentro de `tidyverse`.
@@ -695,6 +744,8 @@ tabla, pero los datos se limitan a aquellos que en edad sean menores de
 adicionalmente los registros de 28 años también ya no se emplea
 únicamente el signo "\<" sino que se lo acompaña del símbolo "=":
 
+:::::::::::::::::::::::::::::::::::: callout
+
 **Tip**: utilizar la función `glimpse()` nos ayuda a observar el nombre
 de las variables o columnas y sus valores
 
@@ -703,6 +754,9 @@ dat %>% glimpse() #Observe como están expresadas las variables
 
 dat %>% filter(sexo == "F", edad <= 28) #Ahora sabe como filtrar el sexo
 ```
+
+:::::::::::::::::::::::::::::::::::::::::::
+
 
 -   **`arrange` (organizar)**
 
@@ -787,10 +841,6 @@ Revise si al final de esta lección adquirió estas competencias:
 -   Geraldine Gomez: Ediciones menores
 -   Jaime A. Pavlich-Mariscal: Edición
 
-Contribuciones son bienvenidas vía [pull
-requests](https://github.com/reconhub/learn/pulls).
-
 ## Asuntos legales
 
-**Licencia**: [CC-BY](https://creativecommons.org/licenses/by/3.0/)
 **Copyright**: Zulma M. Cucunuba, 2019
