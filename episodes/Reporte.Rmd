@@ -271,7 +271,10 @@ Revise si al final de esta lección adquirió estas competencias:
 
 ## Contribuciones
 
--   Zulma M. Cucunuba: Edición
+-   Zulma M. Cucunuba: Versión inicial
+-   Laura Gómez-Bermeo: Edición
+-   Geraldine Gomez: Ediciones menores
+-   Andree Valle: Ediciones menores
 
 Contribuciones son bienvenidas vía [pull
 requests](https://github.com/reconhub/learn/pulls).

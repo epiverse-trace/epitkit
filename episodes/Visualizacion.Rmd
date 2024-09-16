@@ -19,7 +19,9 @@ exercises: 4
 
 - ¿Cómo visualizar datos epidemiologicos con ggplot2?
 
+### Introducción
 
+En el ámbito de la ciencia de datos y la toma de decisiones, la habilidad para transformar datos en información comprensible y que genere impacto es esencial. Esta unidad brindará una introducción a las herramientas necesarias para convertir conjuntos de datos en gráficos. En esta unidad haremos uso de ggplot2, una poderosa librería de gráficos de R basada en la gramática de gráficos, para crear visualizaciones impactantes.
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
@@ -28,7 +30,9 @@ exercises: 4
 
 Al final de este taller usted podrá:
 
--   XXXXX
+-   Reconocer las funciones que componen el paquete ggplot2.
+-   Realizar gráficos básicos con la estructura de ggplot2
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -37,8 +41,20 @@ library(knitr)
 opts_chunk$set(collapse = TRUE)
 ```
 
+### Tabla de contenido
+ 
+ Tema 1: Introducción a los principios de la visualización de datos en ggplot2.
+ Tema 2: Gramática de gráficos
+    •	Datos (Data)
+    •	Estética (Aesthetics)
+    •	Geometría (Geometry)
+    •	Escala (Scale)
+    •	Facetas (Facets)
+    •	Temas (Themes)
+
+
 **Desarrollo del contenido** (desarrolle cada uno de los temas teniendo
-en cuentas la tabla de contenido)
+en cuenta la tabla de contenido)
 
 **Tema 1: Principios de la gramática de gráficos con `ggplot2`**
 
@@ -75,17 +91,17 @@ de barras.
 
 **4. Escala (Scale):** define cómo se mapean los valores de los datos a
 los valores visuales, como el rango de colores o el rango de los ejes.
-`ggplot2`ajusta automáticamente las escalas, pero también puedes
+`ggplot2`ajusta automáticamente las escalas, pero también podemos
 personalizarlas con funciones como `scale_log10()`,
 `scale_x_continuous()` o `scale_color_manual()`.
 
 **5. Facetas (Facets):** permiten dividir los datos en subconjuntos y
 mostrarlos en paneles múltiples (facetas) según ciertas variables.
-Puedes usar facet_wrap() o `facet_grid()` en `ggplot2`para implementar
+Podemos usar facet_wrap() o `facet_grid()` en `ggplot2`para implementar
 esta funcionalidad.
 
 **6. Temas (Themes):** controlan la apariencia visual general del
-gráfico, como títulos, etiquetas de ejes, fondos, etc. Puedes
+gráfico, como títulos, etiquetas de ejes, fondos, etc. Podemos
 personalizar el tema con la función `theme()` en `ggplot2`.
 
 Por ejemplo, una estructura clásica de un gráfico de puntos será:
@@ -491,10 +507,13 @@ Revise si al final de esta lección adquirió estas competencias:
 
 ## Contribuciones
 
--   Zulma M. Cucunuba: Edición
+-   Zulma M. Cucunuba: Versión inicial
+-   Geraldine Gomez: Edición
+-   Andree Valle: Ediciones menores
+-   Laura Gómez-Bermeo: Ediciones menores
 
 Contribuciones son bienvenidas vía [pull
-requests](https://github.com/reconhub/learn/pulls).
+requests](XXXXXX).
 
 ## Asuntos legales
 
