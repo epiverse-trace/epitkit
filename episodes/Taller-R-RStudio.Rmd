@@ -1,6 +1,5 @@
 ---
 title: "Introducción a R y Rstudio"
-authors: ["Zulma M. Cucunuba","José M. Velasco-España","Andree Valle-Campos"]
 date: '2024-05-31'
 output:
   html_document: 
@@ -14,7 +13,6 @@ topics:
 - Rstudio
 - Spanish
 categories: practicals
-licenses: CC-BY
 always_allow_html: yes
 authors:
 - Zulma Cucunuba
