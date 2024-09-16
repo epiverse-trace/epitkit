@@ -552,3 +552,4 @@ Heesterbeek, J. A. P. (2002). A brief history of R0 and a recipe for its calcula
 
 Lee, E. K., Liu, Y., & Pietz, F. H. (2016). A Compartmental Model for Zika Virus with Dynamic Human and Vector Populations. AMIA ... Annual Symposium Proceedings. AMIA Symposium, 2016, 743–752. 
 
+Pettersson, J. H. O., Eldholm, V., Seligman, S. J., Lundkvist, Å., Falconar, A. K., Gaunt, M. W., Musso, D., Nougairède, A., Charrel, R., Gould, E. A., & de Lamballerie, X. (2016). How did zika virus emerge in the Pacific Islands and Latin America? MBio, 7(5). https://doi.org/10.1128/mBio.01239-16 
