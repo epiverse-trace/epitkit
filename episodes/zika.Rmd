@@ -1,5 +1,5 @@
 ---
-title: 'Construyendo un modelo deterministico simple.'
+title: 'Construyendo un modelo deterministico simple'
 date: '2024-08-09'
 output:
   html_document: null
@@ -238,7 +238,7 @@ compartimentos; susceptibles, infectados y recuperados (de ahí la
 palabra **SIR**) y para los mosquitos los compartimientos son:
 susceptibles, expuestos e infecciosos (**SEI**).
 
-::: checklist
+::::::::::::::::::: checklist
 -   $S_h$ : Humanos susceptibles
 
 -   $I_h$ : Humanos infecciosos
@@ -251,7 +251,7 @@ susceptibles, expuestos e infecciosos (**SEI**).
 -   $E_v$ : Vectores expuestos
 
 -   $I_v$ : Vectores infecciosos
-:::
+:::::::::::::::::::
 
 ## Ecuaciones del modelo
 
@@ -512,10 +512,10 @@ tendrá entonces un individuo, **Ih** = 1 y el compartimento de humanos
 susceptibles tendrá  un individuo menos, **Sh** = **Nh** - 1.
 
 ::::::::::::::::::::::::::::::::::::: challenge 
-:::::::::::::::::::::::::::::::::::: callout
+
 **Pista:** Cambie en R las condiciones iniciales (inicio) de forma que
 Ih = 1 y Sh = Nh - 1.
-:::::::::::::::::::::::::::::::::::::::::::
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor 
