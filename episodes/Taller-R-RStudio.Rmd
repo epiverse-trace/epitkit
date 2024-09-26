@@ -22,17 +22,18 @@ teaching: 80
 exercises: 8
 ---
 
+
+
+
 :::::::::::::::::::::::::::::::::::::: questions 
 
 ### Pregunta introductoria 
 
 - ¿Cómo se utilizan R y RStudio en el análisis de datos y la salud pública?
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
-
 # Objetivos 
 
 Al final de este taller usted podrá:
@@ -437,7 +438,9 @@ datos, y la librería que es necesario cargar y la función a utilizar.
 | RDS               | `readRDS`                        | `base`      |
 | dta               | `read_dta`                       | `haven`     |
 | sas               | `read_sas`                       | `haven`     |
+
 :::::::::::::::::::::::::::::::::::::::::::
+
 
 ## Tema 7: Funciones
 
@@ -816,6 +819,7 @@ dat %>% slice(10:15)
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
+
 ## Puntos clave 
 
 Revise si al final de esta lección adquirió estas competencias:
@@ -825,8 +829,8 @@ Revise si al final de esta lección adquirió estas competencias:
 -   Comprender las estructuras básicas de datos en R tales como vectores y tablas de datos.
 -   Comprender el proceso de creación de funciones.
 -   Reconocer el proceso de importación, exportación y transformación de bases de datos con Tidyverse.
-
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 ## Contribuciones
 
