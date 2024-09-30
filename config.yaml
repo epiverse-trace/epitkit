@@ -59,10 +59,12 @@ contact: 'gomezblaura@javeriana.edu.co'
 
 # Order of episodes in your lesson
 episodes:
-- zika.Rmd
 - Taller-R-RStudio.Rmd
 - Visualizacion.Rmd
 - Reporte.Rmd
+- limpieza.Rmd
+- zika.Rmd
+
 
 # Information for Learners
 learners:

@@ -747,18 +747,11 @@ tabla, pero los datos se limitan a aquellos que en edad sean menores de
 adicionalmente los registros de 28 años también ya no se emplea
 únicamente el signo "\<" sino que se lo acompaña del símbolo "=":
 
-:::::::::::::::::::::::::::::::::::: callout
-
-**Tip**: utilizar la función `glimpse()` nos ayuda a observar el nombre
-de las variables o columnas y sus valores
+Veamos un ejemplo con doble fitro:
 
 ```{r}
-dat %>% glimpse() #Observe como están expresadas las variables
-
 dat %>% filter(sexo == "F", edad <= 28) #Ahora sabe como filtrar el sexo
 ```
-
-:::::::::::::::::::::::::::::::::::::::::::
 
 
 -   **`arrange` (organizar)**
@@ -793,7 +786,7 @@ dat %>% arrange(desc(edad))
     con `toupper`
 
     ```{r}
-    dat %>% mutate(pais= toupper(nombre_del_pais))
+    dat %>% mutate(SEXO= toupper(sexo)) %>% select(SEXO)
     ```
 
 -   **`rename` (renombrar)**
@@ -803,19 +796,49 @@ ya existente, conviene usar la función `rename`. Por ejemplo, para
 cambiar el nombre `nombre_del_pais` por el nombre `pais` usamos:
 
 ```{r}
-dat %>% rename(pais = nombre_del_pais)
+dat %>% rename(edad_años = edad)
 ```
 
 -   **`slice`**
 
 Ya se vio previamente cómo seleccionar columnas por medio de la función
-select. En caso de requerir seleccionar filas específicas de un
-data.frame, la función slice resulta de gran utilidad. Por ejemplo, para
+`select`. En caso de requerir seleccionar filas específicas de un
+`data.frame`, la función slice resulta de gran utilidad. Por ejemplo, para
 seleccionar de la fila 10 a la 15:
 
 ```{r}
 dat %>% slice(10:15)
 ```
+
+::::::::::::::::::::::::::::::::::::: challenge 
+
+## Actividad de afianzamiento: 
+
+Para esta actividad, debemos cargar un tipo diferente de datos. En el siguiente link podrás descargarlos  [datos_reto](https://github.com/TRACE-LAC/TRACE-LAC-data/raw/refs/heads/main/otros/datos_limpios_covid.RDS). Los datos pueden ser cargados  desde el computador o desde una ubicación en internet. Para cargar los datos  `datos_limpios_covid.RDS` directamente desde internet  se deben usar los comandos:
+
+
+```{r eval = FALSE}
+url <- "https://github.com/TRACE-LAC/TRACE-LAC-data/raw/refs/heads/main/otros/datos_limpios_covid.RDS"
+
+covid19 <- readr::read_rds(url)
+```
+
+
+Después de cargar los datos debe realizar lo siguiente:
+
+1.	Explorar los datos
+2.	Agrupar los datos por `nombre_del_pais` y cuenta los casos por cada uno.
+3.	Filtra los datos para Perú (Tip: observa cómo está escrito el nombre del país en la variable “`nombre_del_pais`”).
+4.	Agrupa los datos por `sexo` y cuenta los casos por cada uno.
+5.	Agrupa los datos por `nombre_del_pais` y calcula la media de edad de cada uno.
+6.	Cambia el nombre de “`estado`” por “`gravedad`”.
+7.	Ordena los datos por `sexo` y selecciona las 5 primeras filas de cada uno.
+8.	Realiza una tabla que muestre cuántas personas de cada `sintoma` aparecen en la base ubicados en Colombia.
+9.	Selecciona las 5 primeras filas de solo el número de identificación del caso (`id_de_caso`).
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 

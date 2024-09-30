@@ -277,12 +277,14 @@ en la siguiente imagen:
 ![](fig/tejer.png)
 
 Después de este paso debe aparecer el informe final en la presentación
-que hayamos seleccionado (html, pdf o word).
+que hayamos seleccionado (html, pdf o word).  
+
 ::::::::::::::::::::::::::::::::::::: challenge 
 
 Observe cómo aparece la tabla y el texto del total de casos de sexo
-femenino.
+femenino.  
 ::::::::::::::::::::::::::::::::::::::::::::::::
+  
 
 ¡Felicitaciones, ha producido su primer reporte R Markdown en html!
 
