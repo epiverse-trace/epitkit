@@ -92,11 +92,11 @@
   Lesson Title
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 28%" class="percentage">
-    28%
+<aside class="col-md-12 lesson-progress"><div style="width: 0%" class="percentage">
+    0%
   </div>
   <div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 28%" aria-valuenow="28" aria-label="Progreso de la lección" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar incubator" role="progressbar" style="width: 0%" aria-valuenow="0" aria-label="Progreso de la lección" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -150,31 +150,13 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
-<div class="accordion accordion-flush" id="accordionFlush2">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. introduction</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush3">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading3">
-        <a href="zika.html">2. Día 2 – Taller modelos compartimentales: Construyendo un modelo matemático simple para Zika.</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
-        3. Introducción a R y Rstudio
+        1. Introducción a R y Rstudio
         </span>
       </button>
     </div><!--/div.accordion-header-->
@@ -198,10 +180,28 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="Visualizacion.html">2. Introduccion a la visualizacion de datos en R con ggplot2.</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="Reporte.html">3. Reporte e informes tecnicos en R Markdown</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="Visualizacion.html">4. Visualización</a>
+        <a href="limpieza.html">4. Unidad de Limpieza de datos epidemiológicos</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -210,7 +210,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="Reporte.html">5. Reporte</a>
+        <a href="zika.html">5. Construyendo un modelo deterministico simple</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -258,23 +258,23 @@
         <!-- START: inst/pkgdown/templates/content-instructor.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Capítulo previo y siguiente"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link" href="zika.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previo</a>
+        <a class="chapter-link" href="index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previo</a>
         <a class="chapter-link float-end" href="Visualizacion.html">Siguiente<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link" href="zika.html" rel="prev">
+        <a class="chapter-link" href="index.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
-          Previo: Día 2 – Taller
+          Inicio
         </a>
         <a class="chapter-link float-end" href="Visualizacion.html" rel="next">
-          Siguiente: Visualización...
+          Siguiente: Introduccion a la...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introducción a R y Rstudio</h1>
-        <p>Última actualización: 2024-09-24 |
+        <p>Última actualización: 2024-10-01 |
 
         <a href="https://github.com/epiverse-trace/epitkit/edit/main/episodes/Taller-R-RStudio.Rmd" class="external-link">Mejora esta página <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -295,22 +295,7 @@
 <h3 class="card-title">Preguntas</h3>
 <ul><li>¿Cómo se utilizan R y RStudio en el análisis de datos y la salud
 pública?</li>
-</ul><p>R es un lenguaje de programación y un entorno de software utilizado
-en la práctica estadística y el análisis de datos. R y RStudio son
-herramientas esenciales para el estudio, análisis y toma de decisiones
-en salud pública, ya que permiten realizar análisis estadísticos
-detallados, modelar la propagación de enfermedades, visualizar datos de
-manera efectiva y automatizar tareas. Estas herramientas facilitan la
-manipulación y preparación de datos, fomentan la colaboración en
-proyectos de ciencia de datos, y la toma de decisiones basadas en
-evidencias. Además, son útiles en la formación y educación en análisis
-de datos para profesionales de la salud, áreas STEM y toma de
-decisiones. En este taller aprenderemos a reconocer los distintos
-elementos de la interfaz de RStudio, estructuras en R y manejo de datos
-con Tidyverse. Esto sentará las bases fundamentales para adquirir las
-habilidades necesarias en la programación en R y el análisis de
-datos.</p>
-</div>
+</ul></div>
 </div>
 </div>
 <div class="col-md-8">
@@ -330,8 +315,26 @@ bases de datos con Tidyverse.</li>
 </div>
 </div>
 </div>
+<div id="prereq1" class="callout prereq">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Pre requisito</h3>
+<div class="callout-content">
+<p>Esta unidad no tiene prerequisitos</p>
+</div>
+</div>
+</div>
 <section><h2 class="section-heading" id="tabla-de-contenido">Tabla de contenido<a class="anchor" aria-label="anchor" href="#tabla-de-contenido"></a></h2>
-<hr class="half-width"><ul><li>Módulo 2 : Ciencia de datos en salud pública
+<hr class="half-width"><div id="checklist1" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Lista de verificación</h3>
+<div class="callout-content">
+<ul><li>Módulo 2 : Ciencia de datos en salud pública
 <ul><li>Unidad 1: Introducción a R y RStudio
 <ul><li>Tema 1: Introducción</li>
 <li>Tema 2: Instalación de R y RStudio</li>
@@ -343,7 +346,10 @@ bases de datos con Tidyverse.</li>
 <li>Tema 8: Manipulación de datos con Tidyverse</li>
 </ul></li>
 </ul></li>
-</ul></section><section><h2 class="section-heading" id="tema-1-introducción">Tema 1: Introducción<a class="anchor" aria-label="anchor" href="#tema-1-introducci%C3%B3n"></a></h2>
+</ul></div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="tema-1-introducción">Tema 1: Introducción<a class="anchor" aria-label="anchor" href="#tema-1-introducci%C3%B3n"></a></h2>
 <hr class="half-width"><p>R es un lenguaje de programación especializado para análisis de
 datos, es de uso gratuito y software libre. Por otra parte, RStudio es
 un editor de R también disponible de manera gratuita. La diferencia
@@ -368,14 +374,14 @@ confianza. Allí vamos a buscar r-project, que es la página oficial de R
 (<a href="https://www.r-project.org/" class="external-link uri">https://www.r-project.org/</a>). Recordemos que este es un
 software de uso libre, no hay que hacer ningún pago por su descarga o
 uso.</p>
-<figure><img src="images/pagina_r.png" class="figure mx-auto d-block"></figure><p>Busca la opción de descarga “download R” y sigue las
+<figure><img src="fig/pagina_r.png" class="figure mx-auto d-block"></figure><p>Busca la opción de descarga “download R” y sigue las
 instrucciones.</p>
 <p>Para instalar Rstudio debemos ir a <a href="https://posit.co/download/rstudio-desktop/" class="external-link uri">https://posit.co/download/rstudio-desktop/</a> y buscar
 donde diga Install RSudio. Si tenemos Windows podemos dar click en el
 recuadro azul. Si es otro sistema operativo abajo encontraremos una
 lista con las diferentes opciones. Para instalar, sigue las
 instrucciones.</p>
-<figure><img src="images/instalar_r.png" class="figure mx-auto d-block"></figure><p>Recuerda ejecutar el archivo que se descargó siguiendo los pasos. Es
+<figure><img src="fig/instalar_r.png" class="figure mx-auto d-block"></figure><p>Recuerda ejecutar el archivo que se descargó siguiendo los pasos. Es
 recomendable que en el momento de la instalación elijamos la opción de
 dejar un acceso directo en el escritorio.</p>
 <p>Para comprobar que la instalación fue satisfactoria y en general para
@@ -383,11 +389,11 @@ hacer uso de R y RStudio debemos buscar en la ubicación que hayamos
 elegido en la instalación donde quedó Rstudio y dar doble clic o clic
 derecho y abrir. Lo primero que vemos al momento de abrir Rstudio es la
 siguiente pantalla:</p>
-<figure><img src="images/pantalla_r.png" class="figure mx-auto d-block"></figure><p>Escribe 2+2 donde aparece el curso y da enter, si te aparece el
+<figure><img src="fig/pantalla_r.png" class="figure mx-auto d-block"></figure><p>Escribe 2+2 donde aparece el curso y da enter, si te aparece el
 resultado 4 ¡Está todo listo para empezar!</p>
 </section><section><h2 class="section-heading" id="tema-3-ambiente-de-rstudio">Tema 3: Ambiente de RStudio<a class="anchor" aria-label="anchor" href="#tema-3-ambiente-de-rstudio"></a></h2>
 <hr class="half-width"><p>RStudio está compuesto por 4 secciones principales:</p>
-<figure><img src="images/partes_pantalla.png" class="figure mx-auto d-block"></figure><ol style="list-style-type: decimal"><li><p><strong>Editor (sección superior izquierda)</strong>: en esta
+<figure><img src="fig/partes_pantalla.png" class="figure mx-auto d-block"></figure><ol style="list-style-type: decimal"><li><p><strong>Editor (sección superior izquierda)</strong>: en esta
 sección escribimos y editamos el código a través de la creación de
 Scripts . Esta sección es fundamental para la reproducibilidad del
 código. Este editor permite guardar el código para que sea usado en
@@ -420,13 +426,20 @@ los Proyectos en R (R Project)(indicado por un archivo
 <code>.Rproj</code>) lo que permite organizar el espacio de trabajo, el
 historial y los documentos fuente. Para crear un Proyecto en R, es
 importante seguir los siguientes pasos:</p>
+<div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Desafío</h3>
+<div class="callout-content">
 <ol style="list-style-type: decimal"><li><p>Abrir RStudio y, en la esquina superior derecha, seleccionar la
 pestaña <strong>File (Archivo)</strong> -&gt; <strong>New Project…
 (Proyecto Nuevo)</strong>.</p></li>
 <li><p>Se desplegará una ventana con encabezado <strong>New Project
 Wizard</strong>: <strong>Create Project</strong>, ahora se debe
 seleccionar <strong>New Directory (Directorio Nuevo)</strong>.</p></li>
-</ol><figure><img src="images/proyecto_r.png" class="figure mx-auto d-block"></figure><ol start="3" style="list-style-type: decimal"><li><p>En la ventana <strong>Project Type</strong>, se debe seleccionar
+</ol><figure><img src="fig/proyecto_r.png" class="figure mx-auto d-block"></figure><ol start="3" style="list-style-type: decimal"><li><p>En la ventana <strong>Project Type</strong>, se debe seleccionar
 <strong>New Project</strong> -&gt; <strong>Create New Project</strong>.
 En la casilla <strong>Directory Name (Nombre del Directorio)</strong>
 coloque el nombre deseado para su proyecto (e.g.
@@ -438,8 +451,18 @@ proyecto</p></li>
 “<code>IntroR</code>”), así como las subcarpetas que necesitamos para
 organizar nuestro trabajo y resultados: datos, scripts y figuras. Al
 final, el proyecto debería parecerse a esta imagen:</p></li>
-</ol><figure><img src="images/proyecto_r_revision.png" class="figure mx-auto d-block"></figure></section><section><h2 class="section-heading" id="tema-5-tipos-de-datos-y-operadores-en-r">Tema 5: Tipos de datos y operadores en R<a class="anchor" aria-label="anchor" href="#tema-5-tipos-de-datos-y-operadores-en-r"></a></h2>
-<hr class="half-width"><p><strong>Tipos de datos</strong></p>
+</ol><figure><img src="fig/proyecto_r_revision.png" class="figure mx-auto d-block"></figure></div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="tema-5-tipos-de-datos-y-operadores-en-r">Tema 5: Tipos de datos y operadores en R<a class="anchor" aria-label="anchor" href="#tema-5-tipos-de-datos-y-operadores-en-r"></a></h2>
+<hr class="half-width"><div id="checklist2" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Lista de verificación</h3>
+<div class="callout-content">
+<p><strong>Tipos de datos</strong></p>
 <p>R tiene la capacidad de almacenar y procesar distintos tipos de
 datos. Entre estos se encuentran:</p>
 <ul><li>Numéricos decimales<code>(double. Ej: 3.3)</code>
@@ -461,7 +484,17 @@ pero es un error y el resultado no es numérico, por ejemplo
 <code>0/0</code>. Inf indica que hay operaciones cuyo resultado es
 infinito como por ejemplo <code>1/0</code>. Si se hace operaciones entre
 tipos variables se pueden obtener <code>Inf</code>.</li>
-</ul><p><strong>Operadores matemáticos y lógicos</strong></p>
+</ul></div>
+</div>
+</div>
+<div id="checklist3" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Lista de verificación</h3>
+<div class="callout-content">
+<p><strong>Operadores matemáticos y lógicos</strong></p>
 <p>Los operadores son herramientas matemáticas que nos permiten realizar
 diferentes tareas con los datos que tenemos disponibles; por ejemplo,
 con el operador <code>+</code> podemos efectuar una suma o incrementar
@@ -469,9 +502,13 @@ un índice. Algunos de los operadores más utilizados en R son los
 siguientes:<br>
 1. Operadores aritméticos (Ej: <code>+</code>, <code>-</code>,
 <code>*</code>, que corresponden a suma, resta y multiplicación
-respectivamente) 2. Operadores de comparación (Ej:
-<code>&lt;, &gt;, ==, &gt;=, &lt;=, !=</code><br>
-3. Operadores booleanos <code>(&amp; (and), | (or), ! (not))</code></p>
+respectivamente)<br>
+2. Operadores de comparación
+<code>(Ej: &lt;, &gt;, ==, &gt;=, &lt;=, !=)</code> 3. Operadores
+booleanos <code>(&amp; (and), | (or), ! (not))</code></p>
+</div>
+</div>
+</div>
 <p><strong>Operadores de asignación</strong></p>
 <p>&lt;- Este es un operador común en R para asignar un determinado
 valor a una variable y el alcance está dentro de la función y también
@@ -507,6 +544,13 @@ el vector). Luego se escribe letra c que es la asignación que permite
 inicializar el vector. Cada componente debe ir separado por comas, si
 son caracteres debe ir entre comillas (si son números no), si es dato
 booleano (falso o verdadero) tampoco va en comillas.</p>
+<div id="discussion2" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Desafío</h3>
+<div class="callout-content">
 <p>Así, los vectores se pueden crear ejecutando el comando
 <code>c()</code>, como se puede visualizar a continuación:</p>
 <p>Ejemplos</p>
@@ -524,9 +568,22 @@ booleano (falso o verdadero) tampoco va en comillas.</p>
 <span></span>
 <span><span class="va">dosis</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">2L</span>, <span class="fl">0L</span>, <span class="fl">1L</span>, <span class="fl">2L</span><span class="op">)</span> <span class="co"># Número de dosis recibidas`</span></span></code></pre>
 </div>
+</div>
+</div>
+</div>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Aviso</h3>
+<div class="callout-content">
 <p>Nota: <em>El uso del símbolo <code>#</code> permite comentar el
 código, es decir poner notas que expliquen una o más líneas del
 código.</em></p>
+</div>
+</div>
+</div>
 <p><strong>Data.frame (Tabla de datos)</strong></p>
 <p>Imaginemos un <code>data.frame</code> como una tabla con filas y
 columnas, similar a una hoja de cálculo en Excel. Cada columna
@@ -566,6 +623,13 @@ definimos en la sección anterior:</p>
 <span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="dv">3</span>   Axel      Cuzco   <span class="dv">37</span>    <span class="cn">FALSE</span>     <span class="dv">1</span></span>
 <span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="dv">4</span>  Diana     Bogota   <span class="dv">42</span>     <span class="cn">TRUE</span>     <span class="dv">2</span></span></code></pre>
 </div>
+<div id="checklist4" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Lista de verificación</h3>
+<div class="callout-content">
 <p>Algunas funciones que permiten conocer características como nombres o
 tamaños de las filas o columnas del <code>data.frame</code> son:</p>
 <ul><li><p><code>colnames()</code>: nombres de las columnas</p></li>
@@ -573,7 +637,10 @@ tamaños de las filas o columnas del <code>data.frame</code> son:</p>
 <li><p><code>nrow()</code>: número de filas</p></li>
 <li><p><code>ncol()</code>: número de columnas</p></li>
 <li><p><code>length()</code>: longitud de la tabla de datos</p></li>
-</ul><p>Ahora, para acceder a la descripción de la estructura general de una
+</ul></div>
+</div>
+</div>
+<p>Ahora, para acceder a la descripción de la estructura general de una
 tabla de datos (y en general cualquier objeto de R) usamos el comando
 <code>str</code>, en este caso escribimos:</p>
 <div class="codewrapper sourceCode" id="cb5">
@@ -602,16 +669,26 @@ caracteres con longitud de 1 a 4.</p>
 <p>Para acceder a los diferentes componentes de la tabla de datos usamos
 la sintaxis <code>[,]</code>, donde la primera dimensión corresponde a
 filas y la segunda dimensión a columnas.</p>
+<div id="discussion3" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Discusión</h3>
+<div class="callout-content">
 <p>Por ejemplo, si queremos saber cuántas dosis de vacunas se aplicó
-Maximo ¿qué debemos hacer? Veamos a qué fila y columna corresponde este
-dato:</p>
+Maximo ¿qué debemos hacer?</p>
+</div>
+</div>
+</div>
+<p>Veamos a qué fila y columna corresponde este dato:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">datos_vacunas</span></span></code></pre>
 </div>
-<figure><img src="images/maximo.png" class="figure mx-auto d-block"></figure><p>Vemos que Maximo está en la fila 2 y las dosis en la columna 5. Por
+<figure><img src="fig/maximo.png" class="figure mx-auto d-block"></figure><p>Vemos que Maximo está en la fila 2 y las dosis en la columna 5. Por
 lo tanto, la intersección de estas dos variables nos dará el número de
 dosis que tiene Maximo.</p>
 <div class="codewrapper sourceCode" id="cb8">
@@ -625,8 +702,15 @@ dosis que tiene Maximo.</p>
 archivos que las contengan. De hecho, la mayoría de las veces no se
 crean directamente los <code>data.frame</code> en R sino que se importa
 un <code>data.frame</code> de alguna fuente de datos, por ejemplo, la
-base de datos del sistema de vigilancia de algún evento de interés. Para
-esto, en R hay tres fuentes de conjuntos de datos que podemos
+base de datos del sistema de vigilancia de algún evento de interés.</p>
+<div id="checklist5" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Lista de verificación</h3>
+<div class="callout-content">
+<p>Para esto, en R hay tres fuentes de conjuntos de datos que podemos
 utilizar:</p>
 <ul><li>Tabla de datos importada (desde los formatos <code>.xlsx</code>,
 <code>.csv</code>, <code>.stata</code>, o <code>.RDS</code>, entre
@@ -635,11 +719,21 @@ otros)</li>
 <code>MASS</code>, <code>islands</code>, etc)</li>
 <li>Tabla de datos creada durante la sesión en R (Ej. las estructuras de
 los primeros ejercicios)</li>
-</ul><p><strong>Importar una tabla de datos</strong></p>
+</ul></div>
+</div>
+</div>
+<p><strong>Importar una tabla de datos</strong></p>
 <p>Para importar una tabla de datos de diferentes fuentes necesitamos
-emplear diferentes tipos de funciones, aquí algunos ejemplos del tipo de
-datos, y la librería que es necesario cargar y la función a
-utilizar.</p>
+emplear diferentes tipos de funciones.</p>
+<div id="callout2" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Aviso</h3>
+<div class="callout-content">
+<p>Aquí algunos ejemplos del tipo de datos, y la librería que es
+necesario cargar y la función a utilizar.</p>
 <table class="table"><tbody><tr class="odd"><td><strong>Tipo de datos</strong></td>
 <td><strong>Función</strong></td>
 <td><strong>Paquete</strong></td>
@@ -658,7 +752,10 @@ utilizar.</p>
 </tr><tr class="even"><td>sas</td>
 <td><code>read_sas</code></td>
 <td><code>haven</code></td>
-</tr></tbody></table></section><section><h2 class="section-heading" id="tema-7-funciones">Tema 7: Funciones<a class="anchor" aria-label="anchor" href="#tema-7-funciones"></a></h2>
+</tr></tbody></table></div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="tema-7-funciones">Tema 7: Funciones<a class="anchor" aria-label="anchor" href="#tema-7-funciones"></a></h2>
 <hr class="half-width"><p>Imaginemos una función como una especie de “caja mágica” que recibe
 ciertos datos o información como entrada y produce un resultado o
 respuesta específica como salida. Es como seguir una receta que toma
@@ -669,6 +766,13 @@ sale un resultado o datos de salida (<em>output</em>). La función puede
 ser suma, resta, regresión logística o un modelo matemático. Entran
 datos y salen otros que son producto de las operaciones en la
 función.</p>
+<div id="checklist6" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Lista de verificación</h3>
+<div class="callout-content">
 <p>Los componentes básicos de una función son:</p>
 <ul><li><p><strong><code>name</code> (nombre)</strong>: es el nombre que se
 da a la función (Por ejemplo: myfun).</p></li>
@@ -680,7 +784,10 @@ operaciones o modificaciones a los argumentos.</p></li>
 los resultados después de modificar los argumentos. Si esta salida
 corresponde a una serie de datos, podemos extraerla usando el comando
 <code>return</code>.</p></li>
-</ul><p><strong>Ejemplo</strong>: con una base de datos queremos generar una
+</ul></div>
+</div>
+</div>
+<p><strong>Ejemplo</strong>: con una base de datos queremos generar una
 variable que es producto de una operación, por ejemplo, IMC (índice masa
 corporal).</p>
 <p>La función del IMC es conocida (<span class="math display">\[peso/(talla^2 )\]</span>) , y sus argumentos son
@@ -690,15 +797,15 @@ metros.</p>
 <p>Para este ejemplo el input, o datos de entrada son el peso y la
 variable talla, y el output sería el índice de masa corporal. Si tenemos
 que el peso es 50kg y la talla 1.5m, el IMC será igual a 22.2.</p>
-<figure><img src="images/ilustracion_imc.png" class="figure mx-auto d-block"></figure><p>(Ilustración adaptada por Maria Paula Forero)</p>
+<figure><img src="fig/ilustracion_imc.png" class="figure mx-auto d-block"></figure><p>(Ilustración adaptada por Maria Paula Forero)</p>
 <p>En R podemos producir la función IMC mediante el siguiente
 código:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">IMC</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">peso</span>, <span class="va">talla</span><span class="op">)</span> <span class="op">{</span> <span class="co"># Aquí van los argumentos o input</span></span>
-<span>    <span class="va">resultado</span> <span class="op">&lt;-</span> <span class="va">peso</span><span class="op">/</span> <span class="va">talla</span><span class="op">^</span><span class="fl">2</span>  <span class="co"># Esta es el cuerpo u operación       </span></span>
+<code class="sourceCode R"><span><span class="va">IMC</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">peso_kg</span>, <span class="va">talla_m</span><span class="op">)</span> <span class="op">{</span> <span class="co"># Aquí van los argumentos o input</span></span>
+<span>    <span class="va">resultado</span> <span class="op">&lt;-</span> <span class="va">peso_kg</span><span class="op">/</span> <span class="va">talla_m</span><span class="op">^</span><span class="fl">2</span>  <span class="co"># Esta es el cuerpo u operación       </span></span>
 <span>    <span class="kw">return</span><span class="op">(</span><span class="va">resultado</span><span class="op">)</span>           <span class="co"># Este es el output o resultado</span></span>
 <span> <span class="op">}</span></span></code></pre>
 </div>
@@ -707,12 +814,22 @@ talla 1.75 cm y peso 80 kg, mediante el siguiente código</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">IMC</span>(<span class="at">peso =</span> <span class="dv">80</span>, <span class="at">talla =</span> <span class="fl">1.75</span>)</span>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">IMC</span>(<span class="at">peso_kg =</span> <span class="dv">80</span>, <span class="at">talla_m =</span> <span class="fl">1.75</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">26.12245</span></span></code></pre>
 </div>
 <p>Como se puede ver, para usar la función una vez establecida solo se
 requiere el nombre y los argumentos.</p>
+<div id="discussion4" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Desafío</h3>
+<div class="callout-content">
 <p><strong>Reto</strong>: Usando la misma función calcula tu IMC.</p>
+</div>
+</div>
+</div>
 <p>En general, una función consiste en una secuencia de instrucciones
 con el fin de llevar a cabo una tarea. De esta forma, por medio del uso
 de funciones es posible sistematizar procesos complejos que se realizan
@@ -721,7 +838,15 @@ de manera rutinaria.</p>
 <p>En R, las “librerías” se refieren a conjuntos de funciones
 organizadas de manera lógica que pueden ser utilizadas para llevar a
 cabo diversas tareas, como análisis, limpieza y visualización de datos,
-ente otros. Las librerías más usadas en R son:</p>
+ente otros.</p>
+<div id="checklist7" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Lista de verificación</h3>
+<div class="callout-content">
+<p>Las librerías más usadas en R son:</p>
 <ul><li>
 <strong><code>ggplot2</code></strong>: sirve para la creación de
 gráficos y visualizaciones de datos de alta calidad.</li>
@@ -737,7 +862,10 @@ datos en formatos como <code>CSV</code>, <code>TSV</code> y otros.</li>
 <li>
 <strong><code>plyr</code></strong>: funciona para dividir, aplicar y
 combinar datos de manera eficiente.</li>
-</ul><p>A su vez, hay meta-librerías, es decir, aquellas que combinan varias
+</ul></div>
+</div>
+</div>
+<p>A su vez, hay meta-librerías, es decir, aquellas que combinan varias
 librerías. Un ejemplo de estas es la librería
 <code>tidyverse</code>.</p>
 </section><section><h2 class="section-heading" id="tema-8-manipulación-de-datos-con-tidyverse">Tema 8: Manipulación de datos con <code>tidyverse</code>
@@ -783,12 +911,23 @@ vez que re-iniciamos R o abrimos RStudio.</p>
 </div>
 <p><strong>Abrir y explorar una tabla de datos importados de
 Excel</strong></p>
+<div id="callout3" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Aviso</h3>
+<div class="callout-content">
 <p>Este es el conjunto de datos para esta práctica: <a href="https://raw.githubusercontent.com/TRACE-LAC/TRACE-LAC-data/main/datos_covid.xlsx" class="external-link">datos_covid.xlsx</a></p>
 <p>Dentro del directorio en el que estamos trabajando actualmente,
-debemos crear una carpeta llamada <em>data</em>. Ahora debemos guardar
-la tabla de datos descargado en la carpeta data que acabamos de crear.
-Para importar tablas de datos desde <code>RDS</code>, se puede usar la
-función <code>read_excel</code>, que está en el paquete
+debemos crear una carpeta llamada <em>data</em>.<br>
+Ahora debemos guardar la tabla de datos descargado en la carpeta data
+que acabamos de crear.</p>
+</div>
+</div>
+</div>
+<p>Para importar tablas de datos desde <code>RDS</code>, se puede usar
+la función <code>read_excel</code>, que está en el paquete
 <code>readxl</code> vinculado a <code>tidyverse</code>. Sin embargo,
 todavía es necesario cargar la biblioteca <code>readxl</code>, ya que no
 es un paquete <code>tidyverse</code> principal. Para esto, escribimos en
@@ -811,7 +950,7 @@ operador reduce la cantidad de código y mejora el desempeño.</p>
 <p><strong>Ejemplo 1:</strong> En el siguiente diagrama podemos ver el
 funcionamiento de la función pipe que permite en este caso aplicar
 diferentes funciones a un conjunto de datos y sus resultados.</p>
-<figure><img src="images/pipe.png" class="figure mx-auto d-block"></figure><p>(Ilustración adaptada por Maria Paula Forero)</p>
+<figure><img src="fig/pipe.png" class="figure mx-auto d-block"></figure><p>(Ilustración adaptada por Maria Paula Forero)</p>
 <p>Vamos a comparar el código cuando usamos vs cuando no usamos el pipe.
 Para esto, debemos cargar la librería dplyr y vamos a hacer una tabla de
 datos de ejemplo</p>
@@ -847,6 +986,13 @@ sería el siguiente :</p>
 <span>  <span class="fu">mutate</span><span class="op">(</span> esquema <span class="op">=</span> <span class="fu">ifelse</span><span class="op">(</span><span class="va">dosis</span> <span class="op">&gt;</span> <span class="fl">2</span>, <span class="st">"Completo"</span>, <span class="st">"Incompleto"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">esquema</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">summarise</span><span class="op">(</span>personas <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
+<div id="checklist8" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Lista de verificación</h3>
+<div class="callout-content">
 <p><strong>Funciones básicas de <code>tidyverse</code></strong></p>
 <ul><li><p><strong><code>glimpse()</code></strong>: utilizado para explorar
 rápidamente una tabla de datos.</p></li>
@@ -865,7 +1011,10 @@ por orden alfabético si es un carácter.</p></li>
 variable</p></li>
 <li><p><strong><code>rename()</code></strong>: cambia el nombre de la
 variable</p></li>
-</ul><p>Veamos en más detalle las funciones más comunes del paquete
+</ul></div>
+</div>
+</div>
+<p>Veamos en más detalle las funciones más comunes del paquete
 <code>dyplr</code> dentro de <code>tidyverse</code>.</p>
 <ul><li>
 <p><strong><code>glimpse</code></strong>
@@ -1001,43 +1150,20 @@ de 28 años. Ahora, filtremos por los registros que tengan una edad menor
 a 28 años y con sexo femenino. En este caso, al pedir que se incluyan
 adicionalmente los registros de 28 años también ya no se emplea
 únicamente el signo “&lt;” sino que se lo acompaña del símbolo “=”:</p>
-<p><strong>Tip</strong>: utilizar la función <code>glimpse()</code> nos
-ayuda a observar el nombre de las variables o columnas y sus valores</p>
+<p>Veamos un ejemplo con doble fitro:</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>() <span class="co">#Observe como están expresadas las variables</span></span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>Rows<span class="sc">:</span> <span class="dv">50</span>,<span class="dv">000</span></span>
-<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a>Columns<span class="sc">:</span> <span class="dv">19</span></span>
-<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a><span class="sc">$</span> fecha_reporte_web                     <span class="sc">&lt;</span>dttm<span class="sc">&gt;</span> <span class="dv">2021-07-14</span>, <span class="dv">2021-04-24</span>, <span class="dv">2021-05</span>…</span>
-<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a><span class="sc">$</span> id_de_caso                            <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="dv">4565159</span>, <span class="dv">2747373</span>, <span class="dv">2963299</span>, <span class="dv">15526</span>…</span>
-<span id="cb22-6"><a href="#cb22-6" tabindex="-1"></a><span class="sc">$</span> fecha_de_notificacion                 <span class="sc">&lt;</span>dttm<span class="sc">&gt;</span> <span class="dv">2021-07-07</span>, <span class="dv">2021-04-21</span>, <span class="dv">2021-05</span>…</span>
-<span id="cb22-7"><a href="#cb22-7" tabindex="-1"></a><span class="sc">$</span> edad                                  <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="dv">23</span>, <span class="dv">15</span>, <span class="dv">11</span>, <span class="dv">39</span>, <span class="dv">25</span>, <span class="dv">8</span>, <span class="dv">53</span>, <span class="dv">29</span>, <span class="dv">4</span>…</span>
-<span id="cb22-8"><a href="#cb22-8" tabindex="-1"></a><span class="sc">$</span> sexo                                  <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"masculino"</span>, <span class="st">"femenino"</span>, <span class="st">"mascul…</span></span>
-<span id="cb22-9"><a href="#cb22-9" tabindex="-1"></a><span class="st">$ tipo_de_contagio                      &lt;chr&gt; "</span>Comunitaria<span class="st">", "</span>Relacionado<span class="st">", "</span>R…</span>
-<span id="cb22-10"><a href="#cb22-10" tabindex="-1"></a><span class="sc">$</span> ubicacion_del_caso                    <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"Casa"</span>, <span class="st">"Casa"</span>, <span class="st">"Casa"</span>, <span class="st">"Casa"</span>, …</span>
-<span id="cb22-11"><a href="#cb22-11" tabindex="-1"></a><span class="sc">$</span> estado                                <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"Leve"</span>, <span class="st">"Leve"</span>, <span class="st">"Leve"</span>, <span class="st">"Leve"</span>, …</span>
-<span id="cb22-12"><a href="#cb22-12" tabindex="-1"></a><span class="sc">$</span> recuperado                            <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"Recuperado"</span>, <span class="st">"Recuperado"</span>, <span class="st">"Rec…</span></span>
-<span id="cb22-13"><a href="#cb22-13" tabindex="-1"></a><span class="st">$ fecha_de_inicio_de_sintomas           &lt;dttm&gt; 2021-06-22, 2021-04-16, 2021-04…</span></span>
-<span id="cb22-14"><a href="#cb22-14" tabindex="-1"></a><span class="st">$ fecha_de_muerte                       &lt;dttm&gt; NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
-<span id="cb22-15"><a href="#cb22-15" tabindex="-1"></a><span class="st">$ fecha_de_diagnostico                  &lt;dttm&gt; 2021-07-07, 2021-04-23, 2021-05…</span></span>
-<span id="cb22-16"><a href="#cb22-16" tabindex="-1"></a><span class="st">$ fecha_de_recuperacion                 &lt;dttm&gt; 2021-07-15, 2021-05-05, 2021-05…</span></span>
-<span id="cb22-17"><a href="#cb22-17" tabindex="-1"></a><span class="st">$ fecha_de_nacimiento                   &lt;dttm&gt; 1975-06-23, 1975-07-01, 1975-07…</span></span>
-<span id="cb22-18"><a href="#cb22-18" tabindex="-1"></a><span class="st">$ nombre_del_pais                       &lt;chr&gt; "</span>Argentina<span class="st">", "</span>Paraguay<span class="st">", "</span>Ecuado…</span>
-<span id="cb22-19"><a href="#cb22-19" tabindex="-1"></a><span class="sc">$</span> sintomas                              <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"Leve"</span>, <span class="st">"Leve"</span>, <span class="st">"Leve"</span>, <span class="st">"Leve"</span>, …</span>
-<span id="cb22-20"><a href="#cb22-20" tabindex="-1"></a><span class="sc">$</span> numero_de_hospitalizaciones_recientes <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>,…</span>
-<span id="cb22-21"><a href="#cb22-21" tabindex="-1"></a><span class="sc">$</span> tension_sistolica                     <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="dv">105</span>, <span class="dv">122</span>, <span class="dv">121</span>, <span class="dv">101</span>, <span class="dv">101</span>, <span class="dv">134</span>, <span class="dv">10</span>…</span>
-<span id="cb22-22"><a href="#cb22-22" tabindex="-1"></a><span class="sc">$</span> tension_diastolica                    <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="dv">83</span>, <span class="dv">72</span>, <span class="dv">85</span>, <span class="dv">69</span>, <span class="dv">101</span>, <span class="dv">80</span>, <span class="dv">85</span>, <span class="dv">67</span>,…</span>
-<span id="cb22-23"><a href="#cb22-23" tabindex="-1"></a></span>
-<span id="cb22-24"><a href="#cb22-24" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">filter</span>(sexo <span class="sc">==</span> <span class="st">"F"</span>, edad <span class="sc">&lt;=</span> <span class="dv">28</span>) <span class="co">#Ahora sabe como filtrar el sexo</span></span>
-<span id="cb22-25"><a href="#cb22-25" tabindex="-1"></a><span class="co"># A tibble: 0 × 19</span></span>
-<span id="cb22-26"><a href="#cb22-26" tabindex="-1"></a><span class="co"># ℹ 19 variables: fecha_reporte_web &lt;dttm&gt;, id_de_caso &lt;dbl&gt;,</span></span>
-<span id="cb22-27"><a href="#cb22-27" tabindex="-1"></a><span class="co">#   fecha_de_notificacion &lt;dttm&gt;, edad &lt;dbl&gt;, sexo &lt;chr&gt;,</span></span>
-<span id="cb22-28"><a href="#cb22-28" tabindex="-1"></a><span class="co">#   tipo_de_contagio &lt;chr&gt;, ubicacion_del_caso &lt;chr&gt;, estado &lt;chr&gt;,</span></span>
-<span id="cb22-29"><a href="#cb22-29" tabindex="-1"></a><span class="co">#   recuperado &lt;chr&gt;, fecha_de_inicio_de_sintomas &lt;dttm&gt;,</span></span>
-<span id="cb22-30"><a href="#cb22-30" tabindex="-1"></a><span class="co">#   fecha_de_muerte &lt;dttm&gt;, fecha_de_diagnostico &lt;dttm&gt;,</span></span>
-<span id="cb22-31"><a href="#cb22-31" tabindex="-1"></a><span class="co">#   fecha_de_recuperacion &lt;dttm&gt;, fecha_de_nacimiento &lt;dttm&gt;,</span></span>
-<span id="cb22-32"><a href="#cb22-32" tabindex="-1"></a><span class="co">#   nombre_del_pais &lt;chr&gt;, sintomas &lt;chr&gt;, …</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dat</span> <span class="op">%&gt;%</span> <span class="fu">filter</span><span class="op">(</span><span class="va">sexo</span> <span class="op">==</span> <span class="st">"F"</span>, <span class="va">edad</span> <span class="op">&lt;=</span> <span class="fl">28</span><span class="op">)</span> <span class="co">#Ahora sabe como filtrar el sexo</span></span>
+<span><span class="co"># A tibble: 0 × 19</span></span>
+<span><span class="co"># ℹ 19 variables: fecha_reporte_web &lt;dttm&gt;, id_de_caso &lt;dbl&gt;,</span></span>
+<span><span class="co">#   fecha_de_notificacion &lt;dttm&gt;, edad &lt;dbl&gt;, sexo &lt;chr&gt;,</span></span>
+<span><span class="co">#   tipo_de_contagio &lt;chr&gt;, ubicacion_del_caso &lt;chr&gt;, estado &lt;chr&gt;,</span></span>
+<span><span class="co">#   recuperado &lt;chr&gt;, fecha_de_inicio_de_sintomas &lt;dttm&gt;,</span></span>
+<span><span class="co">#   fecha_de_muerte &lt;dttm&gt;, fecha_de_diagnostico &lt;dttm&gt;,</span></span>
+<span><span class="co">#   fecha_de_recuperacion &lt;dttm&gt;, fecha_de_nacimiento &lt;dttm&gt;,</span></span>
+<span><span class="co">#   nombre_del_pais &lt;chr&gt;, sintomas &lt;chr&gt;, …</span></span></code></pre>
 </div>
 <ul><li><strong><code>arrange</code> (organizar)</strong></li>
 </ul><p>Para los casos donde se necesita organizar los datos por una o más
@@ -1132,27 +1258,21 @@ mayúsculas con <code>toupper</code></p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">pais=</span> <span class="fu">toupper</span>(nombre_del_pais))</span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="co"># A tibble: 50,000 × 20</span></span>
-<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a>   fecha_reporte_web   id_de_caso fecha_de_notificacion  edad sexo     </span>
-<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a>   <span class="sc">&lt;</span>dttm<span class="sc">&gt;</span>                   <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dttm<span class="sc">&gt;</span>                <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>    </span>
-<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a> <span class="dv">1</span> <span class="dv">2021-07-14</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4565159</span> <span class="dv">2021-07-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">23</span> masculino</span>
-<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a> <span class="dv">2</span> <span class="dv">2021-04-24</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2747373</span> <span class="dv">2021-04-21</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">15</span> femenino </span>
-<span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a> <span class="dv">3</span> <span class="dv">2021-05-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2963299</span> <span class="dv">2021-05-04</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">11</span> masculino</span>
-<span id="cb25-8"><a href="#cb25-8" tabindex="-1"></a> <span class="dv">4</span> <span class="dv">2020-12-24</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1552683</span> <span class="dv">2020-12-21</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">39</span> femenino </span>
-<span id="cb25-9"><a href="#cb25-9" tabindex="-1"></a> <span class="dv">5</span> <span class="dv">2020-10-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1018415</span> <span class="dv">2020-10-23</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">25</span> masculino</span>
-<span id="cb25-10"><a href="#cb25-10" tabindex="-1"></a> <span class="dv">6</span> <span class="dv">2020-08-09</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">380193</span> <span class="dv">2020-07-25</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">8</span> femenino </span>
-<span id="cb25-11"><a href="#cb25-11" tabindex="-1"></a> <span class="dv">7</span> <span class="dv">2021-06-04</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">3503818</span> <span class="dv">2021-06-02</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">53</span> masculino</span>
-<span id="cb25-12"><a href="#cb25-12" tabindex="-1"></a> <span class="dv">8</span> <span class="dv">2021-05-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">3270945</span> <span class="dv">2021-05-14</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">29</span> masculino</span>
-<span id="cb25-13"><a href="#cb25-13" tabindex="-1"></a> <span class="dv">9</span> <span class="dv">2021-02-16</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2201217</span> <span class="dv">2021-02-13</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">41</span> femenino </span>
-<span id="cb25-14"><a href="#cb25-14" tabindex="-1"></a><span class="dv">10</span> <span class="dv">2020-10-30</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1056515</span> <span class="dv">2020-10-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">61</span> masculino</span>
-<span id="cb25-15"><a href="#cb25-15" tabindex="-1"></a><span class="co"># ℹ 49,990 more rows</span></span>
-<span id="cb25-16"><a href="#cb25-16" tabindex="-1"></a><span class="co"># ℹ 15 more variables: tipo_de_contagio &lt;chr&gt;, ubicacion_del_caso &lt;chr&gt;,</span></span>
-<span id="cb25-17"><a href="#cb25-17" tabindex="-1"></a><span class="co">#   estado &lt;chr&gt;, recuperado &lt;chr&gt;, fecha_de_inicio_de_sintomas &lt;dttm&gt;,</span></span>
-<span id="cb25-18"><a href="#cb25-18" tabindex="-1"></a><span class="co">#   fecha_de_muerte &lt;dttm&gt;, fecha_de_diagnostico &lt;dttm&gt;,</span></span>
-<span id="cb25-19"><a href="#cb25-19" tabindex="-1"></a><span class="co">#   fecha_de_recuperacion &lt;dttm&gt;, fecha_de_nacimiento &lt;dttm&gt;,</span></span>
-<span id="cb25-20"><a href="#cb25-20" tabindex="-1"></a><span class="co">#   nombre_del_pais &lt;chr&gt;, sintomas &lt;chr&gt;,</span></span>
-<span id="cb25-21"><a href="#cb25-21" tabindex="-1"></a><span class="co">#   numero_de_hospitalizaciones_recientes &lt;dbl&gt;, tension_sistolica &lt;dbl&gt;, …</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">SEXO=</span> <span class="fu">toupper</span>(sexo)) <span class="sc">%&gt;%</span> <span class="fu">select</span>(SEXO)</span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="co"># A tibble: 50,000 × 1</span></span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a>   SEXO     </span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>    </span>
+<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a> <span class="dv">1</span> MASCULINO</span>
+<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a> <span class="dv">2</span> FEMENINO </span>
+<span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a> <span class="dv">3</span> MASCULINO</span>
+<span id="cb25-8"><a href="#cb25-8" tabindex="-1"></a> <span class="dv">4</span> FEMENINO </span>
+<span id="cb25-9"><a href="#cb25-9" tabindex="-1"></a> <span class="dv">5</span> MASCULINO</span>
+<span id="cb25-10"><a href="#cb25-10" tabindex="-1"></a> <span class="dv">6</span> FEMENINO </span>
+<span id="cb25-11"><a href="#cb25-11" tabindex="-1"></a> <span class="dv">7</span> MASCULINO</span>
+<span id="cb25-12"><a href="#cb25-12" tabindex="-1"></a> <span class="dv">8</span> MASCULINO</span>
+<span id="cb25-13"><a href="#cb25-13" tabindex="-1"></a> <span class="dv">9</span> FEMENINO </span>
+<span id="cb25-14"><a href="#cb25-14" tabindex="-1"></a><span class="dv">10</span> MASCULINO</span>
+<span id="cb25-15"><a href="#cb25-15" tabindex="-1"></a><span class="co"># ℹ 49,990 more rows</span></span></code></pre>
 </div>
 </li>
 <li><p><strong><code>rename</code> (renombrar)</strong></p></li>
@@ -1163,33 +1283,33 @@ nombre <code>pais</code> usamos:</p>
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">pais =</span> nombre_del_pais)</span>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">rename</span>(edad_años <span class="ot">=</span> edad)</span>
 <span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="co"># A tibble: 50,000 × 19</span></span>
-<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>   fecha_reporte_web   id_de_caso fecha_de_notificacion  edad sexo     </span>
-<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a>   <span class="sc">&lt;</span>dttm<span class="sc">&gt;</span>                   <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dttm<span class="sc">&gt;</span>                <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>    </span>
-<span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a> <span class="dv">1</span> <span class="dv">2021-07-14</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4565159</span> <span class="dv">2021-07-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">23</span> masculino</span>
-<span id="cb26-6"><a href="#cb26-6" tabindex="-1"></a> <span class="dv">2</span> <span class="dv">2021-04-24</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2747373</span> <span class="dv">2021-04-21</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">15</span> femenino </span>
-<span id="cb26-7"><a href="#cb26-7" tabindex="-1"></a> <span class="dv">3</span> <span class="dv">2021-05-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2963299</span> <span class="dv">2021-05-04</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">11</span> masculino</span>
-<span id="cb26-8"><a href="#cb26-8" tabindex="-1"></a> <span class="dv">4</span> <span class="dv">2020-12-24</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1552683</span> <span class="dv">2020-12-21</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">39</span> femenino </span>
-<span id="cb26-9"><a href="#cb26-9" tabindex="-1"></a> <span class="dv">5</span> <span class="dv">2020-10-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1018415</span> <span class="dv">2020-10-23</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">25</span> masculino</span>
-<span id="cb26-10"><a href="#cb26-10" tabindex="-1"></a> <span class="dv">6</span> <span class="dv">2020-08-09</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">380193</span> <span class="dv">2020-07-25</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">8</span> femenino </span>
-<span id="cb26-11"><a href="#cb26-11" tabindex="-1"></a> <span class="dv">7</span> <span class="dv">2021-06-04</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">3503818</span> <span class="dv">2021-06-02</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">53</span> masculino</span>
-<span id="cb26-12"><a href="#cb26-12" tabindex="-1"></a> <span class="dv">8</span> <span class="dv">2021-05-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">3270945</span> <span class="dv">2021-05-14</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">29</span> masculino</span>
-<span id="cb26-13"><a href="#cb26-13" tabindex="-1"></a> <span class="dv">9</span> <span class="dv">2021-02-16</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2201217</span> <span class="dv">2021-02-13</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">41</span> femenino </span>
-<span id="cb26-14"><a href="#cb26-14" tabindex="-1"></a><span class="dv">10</span> <span class="dv">2020-10-30</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1056515</span> <span class="dv">2020-10-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">61</span> masculino</span>
+<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>   fecha_reporte_web   id_de_caso fecha_de_notificacion edad_años sexo     </span>
+<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a>   <span class="sc">&lt;</span>dttm<span class="sc">&gt;</span>                   <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dttm<span class="sc">&gt;</span>                    <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>    </span>
+<span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a> <span class="dv">1</span> <span class="dv">2021-07-14</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4565159</span> <span class="dv">2021-07-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">23</span> masculino</span>
+<span id="cb26-6"><a href="#cb26-6" tabindex="-1"></a> <span class="dv">2</span> <span class="dv">2021-04-24</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2747373</span> <span class="dv">2021-04-21</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">15</span> femenino </span>
+<span id="cb26-7"><a href="#cb26-7" tabindex="-1"></a> <span class="dv">3</span> <span class="dv">2021-05-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2963299</span> <span class="dv">2021-05-04</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">11</span> masculino</span>
+<span id="cb26-8"><a href="#cb26-8" tabindex="-1"></a> <span class="dv">4</span> <span class="dv">2020-12-24</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1552683</span> <span class="dv">2020-12-21</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">39</span> femenino </span>
+<span id="cb26-9"><a href="#cb26-9" tabindex="-1"></a> <span class="dv">5</span> <span class="dv">2020-10-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1018415</span> <span class="dv">2020-10-23</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">25</span> masculino</span>
+<span id="cb26-10"><a href="#cb26-10" tabindex="-1"></a> <span class="dv">6</span> <span class="dv">2020-08-09</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">380193</span> <span class="dv">2020-07-25</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>           <span class="dv">8</span> femenino </span>
+<span id="cb26-11"><a href="#cb26-11" tabindex="-1"></a> <span class="dv">7</span> <span class="dv">2021-06-04</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">3503818</span> <span class="dv">2021-06-02</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">53</span> masculino</span>
+<span id="cb26-12"><a href="#cb26-12" tabindex="-1"></a> <span class="dv">8</span> <span class="dv">2021-05-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">3270945</span> <span class="dv">2021-05-14</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">29</span> masculino</span>
+<span id="cb26-13"><a href="#cb26-13" tabindex="-1"></a> <span class="dv">9</span> <span class="dv">2021-02-16</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2201217</span> <span class="dv">2021-02-13</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">41</span> femenino </span>
+<span id="cb26-14"><a href="#cb26-14" tabindex="-1"></a><span class="dv">10</span> <span class="dv">2020-10-30</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1056515</span> <span class="dv">2020-10-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">61</span> masculino</span>
 <span id="cb26-15"><a href="#cb26-15" tabindex="-1"></a><span class="co"># ℹ 49,990 more rows</span></span>
 <span id="cb26-16"><a href="#cb26-16" tabindex="-1"></a><span class="co"># ℹ 14 more variables: tipo_de_contagio &lt;chr&gt;, ubicacion_del_caso &lt;chr&gt;,</span></span>
 <span id="cb26-17"><a href="#cb26-17" tabindex="-1"></a><span class="co">#   estado &lt;chr&gt;, recuperado &lt;chr&gt;, fecha_de_inicio_de_sintomas &lt;dttm&gt;,</span></span>
 <span id="cb26-18"><a href="#cb26-18" tabindex="-1"></a><span class="co">#   fecha_de_muerte &lt;dttm&gt;, fecha_de_diagnostico &lt;dttm&gt;,</span></span>
-<span id="cb26-19"><a href="#cb26-19" tabindex="-1"></a><span class="co">#   fecha_de_recuperacion &lt;dttm&gt;, fecha_de_nacimiento &lt;dttm&gt;, pais &lt;chr&gt;,</span></span>
-<span id="cb26-20"><a href="#cb26-20" tabindex="-1"></a><span class="co">#   sintomas &lt;chr&gt;, numero_de_hospitalizaciones_recientes &lt;dbl&gt;,</span></span>
-<span id="cb26-21"><a href="#cb26-21" tabindex="-1"></a><span class="co">#   tension_sistolica &lt;dbl&gt;, tension_diastolica &lt;dbl&gt;</span></span></code></pre>
+<span id="cb26-19"><a href="#cb26-19" tabindex="-1"></a><span class="co">#   fecha_de_recuperacion &lt;dttm&gt;, fecha_de_nacimiento &lt;dttm&gt;,</span></span>
+<span id="cb26-20"><a href="#cb26-20" tabindex="-1"></a><span class="co">#   nombre_del_pais &lt;chr&gt;, sintomas &lt;chr&gt;,</span></span>
+<span id="cb26-21"><a href="#cb26-21" tabindex="-1"></a><span class="co">#   numero_de_hospitalizaciones_recientes &lt;dbl&gt;, tension_sistolica &lt;dbl&gt;, …</span></span></code></pre>
 </div>
 <ul><li><strong><code>slice</code></strong></li>
 </ul><p>Ya se vio previamente cómo seleccionar columnas por medio de la
-función select. En caso de requerir seleccionar filas específicas de un
-data.frame, la función slice resulta de gran utilidad. Por ejemplo, para
-seleccionar de la fila 10 a la 15:</p>
+función <code>select</code>. En caso de requerir seleccionar filas
+específicas de un <code>data.frame</code>, la función slice resulta de
+gran utilidad. Por ejemplo, para seleccionar de la fila 10 a la 15:</p>
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1210,6 +1330,47 @@ seleccionar de la fila 10 a la 15:</p>
 <span id="cb27-15"><a href="#cb27-15" tabindex="-1"></a><span class="co">#   nombre_del_pais &lt;chr&gt;, sintomas &lt;chr&gt;,</span></span>
 <span id="cb27-16"><a href="#cb27-16" tabindex="-1"></a><span class="co">#   numero_de_hospitalizaciones_recientes &lt;dbl&gt;, tension_sistolica &lt;dbl&gt;,</span></span>
 <span id="cb27-17"><a href="#cb27-17" tabindex="-1"></a><span class="co">#   tension_diastolica &lt;dbl&gt;</span></span></code></pre>
+</div>
+<div id="actividad-de-afianzamiento" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="actividad-de-afianzamiento" class="callout-inner">
+<h3 class="callout-title">Actividad de afianzamiento:</h3>
+<div class="callout-content">
+<p>Para esta actividad, debemos cargar un tipo diferente de datos. En el
+siguiente link podrás descargarlos <a href="https://github.com/TRACE-LAC/TRACE-LAC-data/raw/refs/heads/main/otros/datos_limpios_covid.RDS" class="external-link">datos_reto</a>.
+Los datos pueden ser cargados desde el computador o desde una ubicación
+en internet. Para cargar los datos <code>datos_limpios_covid.RDS</code>
+directamente desde internet se deben usar los comandos:</p>
+<div class="codewrapper sourceCode" id="cb28">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://github.com/TRACE-LAC/TRACE-LAC-data/raw/refs/heads/main/otros/datos_limpios_covid.RDS"</span></span>
+<span></span>
+<span><span class="va">covid19</span> <span class="op">&lt;-</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu">read_rds</span><span class="op">(</span><span class="va">url</span><span class="op">)</span></span></code></pre>
+</div>
+<p>Después de cargar los datos debe realizar lo siguiente:</p>
+<ol style="list-style-type: decimal"><li>Explorar los datos</li>
+<li>Agrupar los datos por <code>nombre_del_pais</code> y cuenta los
+casos por cada uno.</li>
+<li>Filtra los datos para Perú (Tip: observa cómo está escrito el nombre
+del país en la variable “<code>nombre_del_pais</code>”).</li>
+<li>Agrupa los datos por <code>sexo</code> y cuenta los casos por cada
+uno.</li>
+<li>Agrupa los datos por <code>nombre_del_pais</code> y calcula la media
+de edad de cada uno.</li>
+<li>Cambia el nombre de “<code>estado</code>” por
+“<code>gravedad</code>”.</li>
+<li>Ordena los datos por <code>sexo</code> y selecciona las 5 primeras
+filas de cada uno.</li>
+<li>Realiza una tabla que muestre cuántas personas de cada
+<code>sintoma</code> aparecen en la base ubicados en Colombia.</li>
+<li>Selecciona las 5 primeras filas de solo el número de identificación
+del caso (<code>id_de_caso</code>).</li>
+</ol></div>
+</div>
 </div>
 <div id="puntos-clave" class="callout keypoints">
 <div class="callout-square">
@@ -1238,28 +1399,28 @@ edición</li>
 <li>Andree Valle-Campos: Ediciones menores</li>
 <li>Miguel E. Gámez López: Ediciones menores</li>
 <li>Nicolás T. Domínguez: Ediciones menores</li>
+<li>Laura Gómez-Bermeo: Ediciones menores</li>
+<li>Geraldine Gomez: Ediciones menores</li>
 <li>Jaime A. Pavlich-Mariscal: Edición</li>
-</ul><p>Contribuciones son bienvenidas vía <a href="https://github.com/reconhub/learn/pulls" class="external-link">pull requests</a>.</p>
-</section><section><h2 class="section-heading" id="asuntos-legales">Asuntos legales<a class="anchor" aria-label="anchor" href="#asuntos-legales"></a></h2>
-<hr class="half-width"><p><strong>Licencia</strong>: <a href="https://creativecommons.org/licenses/by/3.0/" class="external-link">CC-BY</a>
-<strong>Copyright</strong>: Zulma M. Cucunuba, 2019</p>
+</ul></section><section><h2 class="section-heading" id="asuntos-legales">Asuntos legales<a class="anchor" aria-label="anchor" href="#asuntos-legales"></a></h2>
+<hr class="half-width"><p><strong>Copyright</strong>: Zulma M. Cucunuba, 2019</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Capítulo previo y siguiente"><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link" href="zika.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previo</a>
+        <a class="chapter-link" href="index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previo</a>
         <a class="chapter-link float-end" href="Visualizacion.html">Siguiente<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link" href="zika.html" rel="prev">
+        <a class="chapter-link" href="index.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
-          Previo: Día 2 – Taller
+          Inicio
         </a>
         <a class="chapter-link float-end" href="Visualizacion.html" rel="next">
-          Siguiente: Visualización...
+          Siguiente: Introduccion a la...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -1305,7 +1466,7 @@ any links that you are not going to use.
   "url": "https://epiverse-trace.github.io/epitkit/Taller-R-RStudio.html",
   "identifier": "https://epiverse-trace.github.io/epitkit/Taller-R-RStudio.html",
   "dateCreated": "2024-09-09",
-  "dateModified": "2024-09-24",
+  "dateModified": "2024-10-01",
   "datePublished": "2024-10-01"
 }
 
