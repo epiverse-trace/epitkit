@@ -1,5 +1,5 @@
 ---
-title: "Reporte"
+title: "Reporte e informes tecnicos en R Markdown "
 authors: [""]
 date: '2024-07-31'
 output:
@@ -9,7 +9,7 @@ output:
   word_document: default
 image: null
 licenses: CC-BY
-teaching: 80
+teaching: 40
 exercises: 4
 ---
 
@@ -27,10 +27,24 @@ exercises: 4
 
 Al final de este taller usted podrá:
 
--   XXXXX
+-   Reconocer la importancia de generar informes en R Markdown  
+-   Aprender a utilizar R markdown de forma básica  
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
+::::::::::::::::::::: prereq
+
+Esta unidad tiene como prerequisitos:
+
+- Introducción a R y RStudio
+:::::::::::::::::::::
+
+
+
+## Introducción
+
+En esta unidad aprenderemos sobre el uso del formato R Markdown, el cual permite integrar código en la generación de informes sin la necesidad de importar gráficas o crear tablas manualmente. De esta manera, el formato R Markdown facilita la generación automática, actualización y redacción de informes técnicos al combinar la sintaxis del formato Markdown con código en R incrustado en el documento.  
 
 ## **Tema 1: ¿Qué es R Markdown?**
 
@@ -58,7 +72,7 @@ documento, título, fecha, autores, etc.
 3.      **Chunk:** Bloque de código R en donde se ejecutan y se muestran
 sus resultados.
 
-![](images/partes_reporte.png)
+![](fig/partes_reporte.png)
 
 ## **Tema 3: Paso a Paso en R Markdown**
 
@@ -76,20 +90,23 @@ Siguiendo la ruta **File**\>**New File**\>**R Markdown** podemos crear
 un archivo de R Markdown definiendo: título, autor(es) y con formato de
 salida preferido (html, pdf o word).
 
-Sigue los pasos, que también pueden verse en la imagen, y crea tu
+Siga los pasos, que también pueden verse en la imagen, y cree su
 archivo R Markdown con tu nombre y el título de Reporte.
 
-![](images/crea_reporte.png)
+![](fig/crea_reporte.png)
 
 ### **Paso 3. Editar el archivo de R Markdown y el código**
 
+:::::::::::::::::::::::::::::::::::: callout
+
 Es importante recordar que R Markdown tiene tres secciones, todas
 editables: Yaml, Texto y Chunk de código.
+:::::::::::::::::::::::::::::::::::::::::::
 
-Al haber creado tu archivo de R Markdown podrás observar e identificar
+Al haber creado su archivo de R Markdown podrá observar e identificar
 las diferentes secciones que se muestran en la imagen.
 
-![](images/partes_reporte.png)
+![](fig/partes_reporte.png)
 
 A continuación, veremos cómo editar cada una de estas partes:
 
@@ -100,9 +117,7 @@ A continuación, veremos cómo editar cada una de estas partes:
 
 -   Para poner subtítulos se utiliza dos símbolos numeral ##.
 
--   Para cada subtítulo en la estructura se agrega otro símbolo numeral
-
-    1.  
+-   Para cada subtítulo en la estructura se agrega otro símbolo numeral #.  
 
 -   Para escribir palabra en negritas use dos asteriscos a cada lado
     \*\*palabra\*\*
@@ -126,7 +141,7 @@ siguientes símbolos que corresponde al *chunk:*
 
 ```` ``` ````
 
-Luego que hayas creado el chunk debemos cargar las librerías para esta
+Luego que haya creado el chunk debemos cargar las librerías para esta
 práctica. En el chunk cargamos las librerías a utilizar en R. En este
 caso, necesitaremos dos
 
@@ -144,12 +159,12 @@ library(knitr)
 Ahora debemos correr el Chunk dando click en el ícono de "`Run`" y
 seleccionando el Chunk que queremos correr.
 
-![](images/run_siguiente.png)
+![](fig/run_siguiente.png)
 
 Otra opción es dar click al ícono de play verde que se encuentra en la
 parte superior derecha de cada Chunk.
 
-![](images/run_actual.png)
+![](fig/run_actual.png)
 
 **Especificar configuración del *chunk***
 
@@ -161,7 +176,7 @@ La siguiente tabla incluye otras opciones que se pueden utilizar para
 configurar un *chunk.* En la tabla se muestra que tipo de salidas quedan
 suprimidas al especificar cada opción como `FALSE`:
 
-![](images/tabla_bloque.png)
+![](fig/tabla_bloque.png)
 
 Por ejemplo, en nuestra práctica especificaremos que se ejecute el
 código, como se muestra aquí.
@@ -172,17 +187,17 @@ código, como se muestra aquí.
 
 **Hacer tablas en R Markdown**
 
-Para hacer tablas en R Markdown podemos utilizar la función `kable` de
-la librería `knitr`, como se muestra a continuación.
-
-Para esta práctica es importante haber realizado la Unidad de
-Introducción a la visualización de datos en R con `ggplot2` y tener
-disponibles los materiales disponibles en el computador.
+:::::::::::::::::::::::::::::::::::: callout
 
 La tabla de datos para esta práctica será la misma de la Unidad de
-Introducción a la visualización de datos en R con `ggplot2`. Puedes
+Introducción a la visualización de datos en R con `ggplot2`. Puede
 encontrarla en:
 <https://github.com/TRACE-LAC/TRACE-LAC-data/blob/main/otros/muestra_covid.RDS?raw=true>
+
+:::::::::::::::::::::::::::::::::::::::::::
+
+Para hacer tablas en R Markdown podemos utilizar la función `kable` de
+la librería `knitr`, como se muestra a continuación:
 
 
 ``` r
@@ -190,40 +205,13 @@ library(knitr)
 
 dat <- readRDS("data/muestra_covid.RDS")
 
-covid_deptos <- dat %>% 
+covid_paises <- dat %>% 
   group_by(nombre_del_pais) %>% 
   summarise (casos = n()) %>% 
   filter (casos > 300)
 
-kable(covid_deptos)
+kable(covid_paises)
 ```
-
-
-
-|nombre_del_pais      | casos|
-|:--------------------|-----:|
-|Argentina            |  5059|
-|Bolivia              |  5056|
-|Brasil               |  4886|
-|Chile                |  5017|
-|Colombia             |  5189|
-|Costa Rica           |  4981|
-|Cuba                 |  4988|
-|Ecuador              |  5082|
-|El Salvador          |  4872|
-|Guatemala            |  5078|
-|Haití                |  4894|
-|Honduras             |  5014|
-|México               |  5025|
-|Nicaragua            |  4995|
-|Panamá               |  5036|
-|Paraguay             |  4951|
-|Perú                 |  4923|
-|República Dominicana |  5021|
-|Uruguay              |  4986|
-|Venezuela            |  4947|
-
-
 
 Como resultado, obtenemos la siguiente tabla:
 
@@ -265,7 +253,7 @@ manera automática. Para esto, simplemente se debe parametrizar un valor
 y luego incluirlo en el texto usando su nombre correspondiente.
 
 Por ejemplo, para calcular el total de casos de COVID-19 de sexo
-femenino en nuestro conjunto de datos de datos `dat`dentro de un *chunk*
+femenino en nuestro conjunto de datos de datos `dat` dentro de un *chunk*
 de R haríamos lo siguiente:
 
 
@@ -279,34 +267,43 @@ total_casos_fem \`, y por ejemplo escribir directamente como texto:
 
 El total de casos de sexo femenino es \` r total_casos_fem\`
 
+Cuyo valor debe coincidir con el valor que obtenemos al imprimir el objeto `total_casos_fem`
 
-```
+``` r
+total_casos_fem
 [1] 52453
 ```
+:::::::::::::::::::::::::::::::::::: callout
 
-Al ejecutar esta línea podremos ver el resultado.
+Al tejer el informe tendremos una línea similar a esta:
 
-
+El total de casos de sexo femenino es 52453
 
 Para ver cómo queda combinado el resultado del código con este texto
 debemos seguir el siguiente paso.
 
+:::::::::::::::::::::::::::::::::::::::::::
+
 **Paso 4. "Tejer" (generar) el informe**
 
-Para "tejer" el informe, es decir generar el informe en un formato
+Para "tejer" el informe, es decir, generar el informe en un formato
 específico (HTML, PDF o Word), debemos dar click en el símbolo *"Knit"*
 en la parte superior del editor del archivo de Rmarkdown. Tal como se ve
 en la siguiente imagen:
 
-![](images/tejer.png)
+![](fig/tejer.png)
 
 Después de este paso debe aparecer el informe final en la presentación
-que hayamos seleccionado (html, pdf o word).
+que hayamos seleccionado (html, pdf o word).  
 
-Observa cómo aparece la tabla y el texto del total de casos de sexo
-femenino.
+::::::::::::::::::::::::::::::::::::: challenge 
 
-¡Felicitaciones, debes tener tu primer reporte R Markdown en html!
+Observe cómo aparece la tabla y el texto del total de casos de sexo
+femenino.  
+::::::::::::::::::::::::::::::::::::::::::::::::
+  
+
+¡Felicitaciones, ha producido su primer reporte R Markdown en html!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
@@ -314,18 +311,19 @@ femenino.
 
 Revise si al final de esta lección adquirió estas competencias:
 
--   XXXXXX
+-   Reconocer la importancia de generar informes en R Markdown  
+-   Aprender a utilizar R markdown de forma básica  
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Contribuciones
 
--   Zulma M. Cucunuba: Edición
-
-Contribuciones son bienvenidas vía [pull
-requests](https://github.com/reconhub/learn/pulls).
+-   Zulma M. Cucunuba: Versión inicial
+-   Laura Gómez-Bermeo: Edición
+-   Geraldine Gomez: Ediciones menores
+-   Andree Valle: Ediciones menores
+-   José M. Velasco España: Ediciones menores
 
 ## Asuntos legales
 
-**Licencia**: [CC-BY](https://creativecommons.org/licenses/by/3.0/)
 **Copyright**: Zulma M. Cucunuba, 2019

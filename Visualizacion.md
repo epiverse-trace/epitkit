@@ -1,11 +1,11 @@
 ---
-title: "Visualización"
+title: "Introduccion a la visualizacion de datos en R con ggplot2."
 authors: [""]
 date: '2024-07-31'
 output:
+  pdf_document: default
   html_document: 
     self_contained: true
-  pdf_document: default
   word_document: default
 image: null
 licenses: CC-BY
@@ -19,7 +19,6 @@ exercises: 4
 
 - ¿Cómo visualizar datos epidemiologicos con ggplot2?
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
@@ -28,14 +27,42 @@ exercises: 4
 
 Al final de este taller usted podrá:
 
--   XXXXX
+-   Reconocer las funciones que componen el paquete ggplot2.
+-   Realizar gráficos básicos con la estructura de ggplot2
+
+-   Reconocer las funciones que componen el paquete ggplot2.
+-   Realizar gráficos básicos con la estructura de ggplot2
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::: prereq
+Esta unidad tiene como prerequisitos:
+
+- Introducción a R y RStudio
+:::::::::::::::::::::
 
 
+::::::::::::::::::: checklist
+
+### Tabla de contenido
+ 
+ Tema 1: Principios de la gramática de gráficos con `ggplot2`   
+ Tema 2: Gramática de gráficos      
+   -   Datos (Data)    
+   -   Estética (Aesthetics)  
+   -   Geometría (Geometry)  
+   -   Escala (Scale)  
+   -   Facetas (Facets)  
+   -   Temas (Themes)   
+
+:::::::::::::::::::
 
 **Desarrollo del contenido** (desarrolle cada uno de los temas teniendo
-en cuentas la tabla de contenido)
+en cuenta la tabla de contenido)
+
+### Introducción
+
+En el ámbito de la ciencia de datos y la toma de decisiones, la habilidad para transformar datos en información comprensible y que genere impacto es esencial. Esta unidad brindará una introducción a las herramientas necesarias para convertir conjuntos de datos en gráficos. En esta unidad haremos uso de ggplot2, una poderosa librería de gráficos de R basada en la gramática de gráficos, para crear visualizaciones impactantes.
 
 **Tema 1: Principios de la gramática de gráficos con `ggplot2`**
 
@@ -53,6 +80,8 @@ sobre cómo construir y entender visualizaciones de datos de una manera
 coherente y estructurada. En términos simples, la gramática de gráficos
 descompone un gráfico en sus componentes fundamentales y define cómo se
 combinan estos componentes para representar datos.
+
+::::::::::::::::::: checklist
 
 Estos componentes básicos son:
 
@@ -72,17 +101,20 @@ de barras.
 
 **4. Escala (Scale):** define cómo se mapean los valores de los datos a
 los valores visuales, como el rango de colores o el rango de los ejes.
-`ggplot2`ajusta automáticamente las escalas, pero también puedes
+`ggplot2`ajusta automáticamente las escalas, pero también podemos
+`ggplot2`ajusta automáticamente las escalas, pero también podemos
 personalizarlas con funciones como `scale_log10()`,
 `scale_x_continuous()` o `scale_color_manual()`.
 
 **5. Facetas (Facets):** permiten dividir los datos en subconjuntos y
 mostrarlos en paneles múltiples (facetas) según ciertas variables.
-Puedes usar facet_wrap() o `facet_grid()` en `ggplot2`para implementar
+Podemos usar facet_wrap() o `facet_grid()` en `ggplot2`para implementar
+Podemos usar facet_wrap() o `facet_grid()` en `ggplot2`para implementar
 esta funcionalidad.
 
 **6. Temas (Themes):** controlan la apariencia visual general del
-gráfico, como títulos, etiquetas de ejes, fondos, etc. Puedes
+gráfico, como títulos, etiquetas de ejes, fondos, etc. Podemos
+gráfico, como títulos, etiquetas de ejes, fondos, etc. Podemos
 personalizar el tema con la función `theme()` en `ggplot2`.
 
 Por ejemplo, una estructura clásica de un gráfico de puntos será:
@@ -94,12 +126,15 @@ ggplot(data, \# Los datos
 
    Geom_point()) + \# la geometría
 ```
+:::::::::::::::::::
 
 **Tema 2: Ejemplos del uso de la gramática de gráficos con ggplot**
 
 Aquí vamos a ir explicando cómo puedes hacer uso de esta herramienta en
 tu computador. A medida que avanzas trata de ir replicando los
 ejercicios.
+
+:::::::::::::::::::::::::::::::::::: callout
 
 **NOTA.** Para hacer más versátil su uso, se recomienda conocer el
 funcionamiento del paquete dplyr y el uso de tuberías (pipes %\>%),
@@ -108,6 +143,7 @@ R y RStudio". Por su parte, `ggplot2` está contenido dentro de la
 librería Tidyverse. Además, Tidiverse incluye otras librerías como dplyr
 que, a su vez, incluye las pipes (%\>%). Para más detalles sobre
 Tidyverse consulta la unidad de "Introducción a R y RStudio".
+:::::::::::::::::::::::::::::::::::::::::::
 
 Para los ejercicios prácticos de esta unidad es necesario cargar las
 siguientes librerías:
@@ -140,8 +176,11 @@ datos. Para este ejercicio práctico usaremos una base de datos limpia,
 que nos permita hacer las visualizaciones sin la necesidad de
 pre-procesar los datos.
 
+:::::::::::::::::::::::::::::::::::: callout
+
 La tabla de datos para este ejercicio puedes encontrarla en:
 <https://github.com/TRACE-LAC/TRACE-LAC-data/blob/main/otros/muestra_covid.RDS?raw=true>
+:::::::::::::::::::::::::::::::::::::::::::
 
 Cuando ya tengas los datos descargados en tu computador y en la carpeta
 de data de tu proyecto puedes ejecutar el siguiente comando:
@@ -193,13 +232,13 @@ color (color), la forma(shape), el tamaño(size), etc. Al mapear estos
 atributos podemos crear visualizaciones que nos permiten comprender y
 comunicar patrones y relaciones en los datos de manera efectiva.
 
-En`ggplot2` la función principal para especificar la estética es `aes()`.
+En `ggplot2` la función principal para especificar la estética es `aes()`.
 A continuación algunos ejemplos para ilustrar cómo usar la estética en
 `ggplot2`.
 
 **Ejemplo 1: Gráfico de dispersión (scatter plot)**
 
-Supongamos que tenemos una tabla que cuenta con las variables xe y*.*
+Supongamos que tenemos una tabla que cuenta con las variables x e y*.*
 Queremos crear un gráfico de dispersión donde la variable x se mapea en
 el eje X y la variable y en el eje Y. Además, queremos que los puntos se
 coloreen según la variable grupo. Mediante la función `aes()` de `ggplot2`
@@ -236,11 +275,11 @@ ggplot(data = covid19_resumen,
   geom_point()
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
-
 La visualización que generamos es la siguiente:
 
-![](images/tipogeom.png)
+<img src="fig/Visualizacion-rendered-unnamed-chunk-7-1.png" style="display: block; margin: auto;" />
+
+
 
 **Geometría (Geometry):**
 
@@ -250,9 +289,14 @@ tiene su función correspondiente en `ggplot2`; por ejemplo
 `geom_point()` para un gráfico de dispersión o `geom_bar()` para un
 gráfico de barras.
 
+::::::::::::::::::: checklist
+
 En la siguiente tabla se muestran algunos ejemplos de los distintos
 tipos de geometrías más usados en `ggplot2` con su correspondiente
 comando:
+
+![](fig/tipogeom.png) 
+:::::::::::::::::::
 
 **Ejemplo 2: Gráfico de líneas**
 
@@ -277,9 +321,9 @@ ggplot(data = covid19_fecha,
   geom_line()
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-8-1.png" style="display: block; margin: auto;" />
-
 Y obtenemos el siguiente gráfico:
+
+<img src="fig/Visualizacion-rendered-unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
 
 **Ejemplo 3: Gráfico de barras**
 
@@ -293,7 +337,7 @@ ggplot(data = covid19) +
   geom_bar(aes(x = sexo))
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-9-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
 
 En este ejemplo podemos observar que `ggplot2` automáticamente calcula
 el eje Y.
@@ -301,66 +345,67 @@ el eje Y.
 **Ejemplo 4. Gráfico de barras más complejo**
 
 Primero vamos a preparar los datos en una tabla de datos que permita
-contar el número de casos por paises:
+contar el número de casos por ubicación del caso:
 
 
 ``` r
-covid19_pais <- covid19 %>% 
-  group_by(nombre_del_pais) %>%
+covid19_ubicacion <- covid19 %>%  
+group_by(ubicacion_del_caso) %>%
   summarise(casos = n())
 ```
 
 Ahora, por medio de la geometría de `ggplot`, hacemos la visualización
 usando el argumento `stat = "identity"` que calcula la suma de la variable
-`y = casos` agrupando por la variable `x = nombre_del_pais`:
+`y = casos` agrupando por la variable `x = ubicacion_del_caso`:
 
 
 ``` r
-ggplot(data = covid19_pais, aes(x = nombre_del_pais, y = casos)) + 
+ggplot(data = covid19_ubicacion, aes(x = ubicacion_del_caso, y = casos)) + 
   geom_bar(stat = "identity")
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
+Se obtendrá la siguiente gráfica:
 
-Debes obtener la siguiente gráfica:
+<img src="fig/Visualizacion-rendered-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
 
-Podemos notar que no es posible ver bien los nombres de los
-paises. Para solucionar este problema, una alternativa es dar la
-vuelta a los ejes, usando al final el comando coord_flip de la siguiente
+En este caso tenemos las barras en orientación vertical. Si desearamos poner las barras en orientación horizontal podemos lograrlo, usando al final el comando `coord_flip` de la siguiente
 manera:
 
 
 ``` r
-ggplot(data = covid19_pais, aes(x = nombre_del_pais, y = casos)) +
+ggplot(data = covid19_ubicacion, aes(x = ubicacion_del_caso, y = casos)) +
   geom_bar(stat = "identity") +
   coord_flip()
 ```
-
-<img src="fig/Visualizacion-rendered-unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
 
 Obteniendo como resultado:
 
-Si queremos ordenar los paises por el número de casos, podemos
-utilizar el comando reorderen el eje donde está el país. La
-función reorder tiene dos argumentos: el primero es la variable a
+<img src="fig/Visualizacion-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
+
+Si queremos ordenar la ubicación del caso por el número de casos, podemos
+utilizar el comando `reorder` en el eje donde está la ubicación del caso. La
+función `reorder` tiene dos argumentos: el primero es la variable a
 ordenar y el segundo es la variable que otorga el orden. En este caso
-sería `reorder(nombre_del_pais, -casos)` si queremos ordenar de
-menor a mayor. El código sería el siguiente:
+sería `reorder(ubicacion_del_caso, +casos)` si queremos ordenar de
+mayor a menor cantidad de casos. El código sería el siguiente:
 
 
 ``` r
-ggplot(covid19_pais, 
-       aes(x = reorder(nombre_del_pais, -casos), y = casos)) +
+ggplot(covid19_ubicacion, 
+       aes(x = reorder(ubicacion_del_caso, +casos), y = casos)) +
   geom_bar(stat = "identity") +
   coord_flip()
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" />
-
 Y la gráfica queda así:
 
-Pregunta ¿cómo producirías esta misma gráfica, pero en orden
-descendente?
+<img src="fig/Visualizacion-rendered-unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
+
+::::::::::::::::::::::::::::::::::::: challenge 
+
+Pregunta ¿cómo produciría esta misma gráfica, pero en orden
+ascendente?
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 **Escala:**
 
@@ -371,6 +416,8 @@ gráficos sean interpretables y precisos.
 
 A continuación, veremos algunos de los diferentes tipos de escalas disponibles en `ggplot2` y sus funciones:
 
+::::::::::::::::::: checklist
+
 1.  Para **datos de tipo continuo o numéricos** tenemos **escalas continuas como:**
 
 - `scale_x_continuous()` y `scale_y_continuous()` : para el eje x y el eje y, respectivamente. 
@@ -378,7 +425,11 @@ A continuación, veremos algunos de los diferentes tipos de escalas disponibles 
 - `scale_color_continuous()`: asigna colores a los valores continuos. 
  
 - `scale_size_continuous()`: asigna tamaño a los valores. 
- 
+
+:::::::::::::::::::
+
+::::::::::::::::::: checklist
+
 2.  Para **datos categóricos o de carácter** tenemos escalas discretas como: 
  
 - `scale_x_discrete()` y `scale_y_discrete()`: para el eje x y el eje y, respectivamente.
@@ -386,17 +437,29 @@ A continuación, veremos algunos de los diferentes tipos de escalas disponibles 
 - `scale_color_discrete()`: asigna colores a los valores discretos. 
  
 - `scale_shape_discrete()`: asigna diferentes formas a los diferentes valores discretos. 
- 
+
+:::::::::::::::::::
+
+::::::::::::::::::: checklist 
+
 3.  Para **datos de fecha** tenemos escalas de fechas como:
    
 - `scale_x_date()` y `scale_y_date()`: para el eje x y el eje y, respectivamente cuando se tengan datos de fecha. 
- 
+
+:::::::::::::::::::
+
+::::::::::::::::::: checklist 
+
 4.  Para hacer uso de escalas personalizadas se hace uso de escalas manuales en las que podemos especificar nuestros propios valores. 
  
 - `scale_color_manual()`: se especifica manualmente los colores para los valores. 
  
 - `scale_shape_manual()`: se especifica manualmente las formas para los valores. 
- 
+
+:::::::::::::::::::
+
+::::::::::::::::::: checklist 
+
 5.  Otras escalas: 
  
 - `scale_fill_*`: se usa similar a las escalas de color pero para colores que queramos con relleno. 
@@ -411,24 +474,30 @@ A continuación, veremos algunos de los diferentes tipos de escalas disponibles 
  
 A continuación, veremos algunos ejemplos de cómo usar la escala en `ggplot2`con el `data.frame` previamente cargada `covid19`.
 
+:::::::::::::::::::
+
 **Ejemplo 5. Gráfico con escala logarítmica**
 
 Usaremos exactamente el mismo ejemplo anterior, pero en este caso al final agregamos la escala `logarítmica scale_y_log10()` así:
 
 
 ``` r
-ggplot(covid19_pais, 
-       aes(x = reorder(nombre_del_pais, -casos), y = casos)) +
+ggplot(covid19_ubicacion, 
+       aes(x = reorder(ubicacion_del_caso, -casos), y = casos)) +
   geom_bar(stat = "identity") +
   coord_flip() +
   scale_y_log10(name = "Casos Confirmados (escala log)")
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
-
 De esta manera, el nuevo gráfico se vería así:
 
-¿Qué diferencias ves con la última gráfica del Ejemplo 4.?
+<img src="fig/Visualizacion-rendered-unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
+
+::::::::::::::::::::::::: discussion
+
+¿Qué diferencias ve con la última gráfica del Ejemplo 4.?
+
+:::::::::::::::::::::::::
 
 **Facetas**
 
@@ -443,7 +512,7 @@ la creación de los paneles.
 **Ejemplo 5. Gráfico con facet wrap**
 
 Primero vamos a preparar los datos en una tabla de datos que permita
-contar el número de casos por `sexo`:
+contar el número de casos por `edad` y `sexo`:
 
 
 ``` r
@@ -454,7 +523,7 @@ covid19_sexo <- covid19 %>%
 `.groups` argument.
 ```
 
-Usando los datos de `covid-19`, vamos a representar la variable casos en
+Usando los datos de `covid-19`, vamos a representar la variable `casos` por `edad` en
 dos paneles por `sexo` usando `facet_wrap` así:
 
 
@@ -464,12 +533,30 @@ ggplot(data = covid19_sexo, aes(x = edad, y = casos)) +
   facet_wrap(~sexo)
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
 
-De acuerdo con lo aprendido anteriormente, piensa cómo podrías hacer que
+::::::::::::::::::::::::::::::::::::: challenge 
+
+De acuerdo con lo aprendido anteriormente, piense cómo podría hacer que
 cada faceta quede de un color diferente, es decir, asignando color a la
-variable `sexo` ¿cómo cambiaría el código? El gráfico que debes producir
-es el siguiente:
+variable `sexo` ¿cómo cambiaría el código? 
+
+El gráfico que debe producir es el siguiente:
+
+<img src="fig/Visualizacion-rendered-unnamed-chunk-23-1.png" style="display: block; margin: auto;" />
+
+:::::::::::::::::::::::: solution
+
+
+``` r
+ggplot(data = covid19_sexo, aes(x = edad, y = casos)) +
+  geom_point(aes(colour = sexo)) +
+  facet_wrap(~sexo)
+```
+
+::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 Agregando una escala de color degradé tenemos:
 
@@ -481,7 +568,7 @@ ggplot(covid19_sexo, aes(edad, casos)) +
   facet_wrap(~sexo)
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-25-1.png" style="display: block; margin: auto;" />
 
 **Tema**
 
@@ -498,7 +585,12 @@ utilizar los temas en *`ggplot2`* con la base de datos covid19.
 
 Usando la misma gráfica del ejemplo anterior, comparemos dos temas:
 `theme_classic()` y `theme_dark()`. 
-¿Qué diferencias encuentras?
+
+::::::::::::::::::::::::: discussion
+
+¿Qué diferencias encuentra?
+
+:::::::::::::::::::::::::
 
 **Ejemplo 6. Usando theme classic**
 
@@ -512,7 +604,7 @@ ggplot(data = covid19_sexo, aes(x = edad, y = casos)) +
   theme_classic()
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-26-1.png" style="display: block; margin: auto;" />
 
 **Ejemplo 7. Usando theme classic**
 
@@ -526,11 +618,15 @@ ggplot(data = covid19_sexo, aes(x = edad, y = casos)) +
   theme_dark()
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-19-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-27-1.png" style="display: block; margin: auto;" />
+
+:::::::::::::::::::::::::::::::::::: callout
 
 Para revisar la lista de `theme()` que tiene disponible `ggplot2`, puede
 consultarse en
 [https://ggplot2.tidyverse.org/reference/ggtheme.html](https://%60ggplot2%60.tidyverse.org/reference/ggtheme.html){.uri}
+
+:::::::::::::::::::::::::::::::::::::::::::
 
 Finalmente, veamos un ejemplo de cómo modificar los themes manualmente.
 
@@ -552,7 +648,7 @@ ggplot(data = covid19_sexo,
   )
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-28-1.png" style="display: block; margin: auto;" />
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
@@ -560,18 +656,21 @@ ggplot(data = covid19_sexo,
 
 Revise si al final de esta lección adquirió estas competencias:
 
--   XXXXXX
+-   Reconocer las funciones que componen el paquete ggplot2. 
+-   Realizar gráficos básicos con la estructura de ggplot2.
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Contribuciones
 
--   Zulma M. Cucunuba: Edición
+-   Zulma M. Cucunuba: Versión inicial
+-   Geraldine Gomez: Edición
+-   Andree Valle: Ediciones menores
+-   Laura Gómez-Bermeo: Ediciones menores
+-   José M. Velasco-España: Ediciones menores
 
-Contribuciones son bienvenidas vía [pull
-requests](https://github.com/reconhub/learn/pulls).
 
 ## Asuntos legales
 
-**Licencia**: [CC-BY](https://creativecommons.org/licenses/by/3.0/)
 **Copyright**: Zulma M. Cucunuba, 2019

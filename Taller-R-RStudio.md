@@ -19,8 +19,11 @@ authors:
 - José M. Velasco-España
 - Andree Valle-Campos
 teaching: 80
-exercises: 4
+exercises: 8
 ---
+
+
+
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
@@ -28,25 +31,9 @@ exercises: 4
 
 - ¿Cómo se utilizan R y RStudio en el análisis de datos y la salud pública?
 
-R es un lenguaje de programación y un entorno de software utilizado en
-la práctica estadística y el análisis de datos. R y RStudio son
-herramientas esenciales para el estudio, análisis y toma de decisiones
-en salud pública, ya que permiten realizar análisis estadísticos
-detallados, modelar la propagación de enfermedades, visualizar datos de
-manera efectiva y automatizar tareas. Estas herramientas facilitan la
-manipulación y preparación de datos, fomentan la colaboración en
-proyectos de ciencia de datos, y la toma de decisiones basadas en
-evidencias. Además, son útiles en la formación y educación en análisis
-de datos para profesionales de la salud, áreas STEM y toma de
-decisiones. En este taller aprenderemos a reconocer los distintos
-elementos de la interfaz de RStudio, estructuras en R y manejo de datos
-con Tidyverse. Esto sentará las bases fundamentales para adquirir las
-habilidades necesarias en la programación en R y el análisis de datos.
-
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
-
 # Objetivos 
 
 Al final de este taller usted podrá:
@@ -59,9 +46,16 @@ Al final de este taller usted podrá:
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+::::::::::::::::::::: prereq
+
+Esta unidad no tiene prerequisitos
+:::::::::::::::::::::
+
 
 
 ## Tabla de contenido
+
+::::::::::::::::::: checklist
 
 -   Módulo 2 : Ciencia de datos en salud pública
     -   Unidad 1: Introducción a R y RStudio
@@ -72,8 +66,10 @@ Al final de este taller usted podrá:
         -   Tema 5: Tipos de datos y operadores en R
         -   Tema 6: Estructuras de datos en R
         -   Tema 7: Funciones
-        -   Tema 8: Manipulación de datos con Tidyverse
-
+        -   Tema 8: Manipulación de datos con Tidyverse  
+        
+:::::::::::::::::::
+ 
 ## Tema 1: Introducción
 
 R es un lenguaje de programación especializado para análisis de datos,
@@ -96,6 +92,7 @@ decisiones basadas en evidencia. Además, son útiles en la formación y
 educación en análisis de datos para profesionales de la salud, áreas
 STEM y toma de decisiones.
 
+
 ## Tema 2: Instalación de R y RStudio
 
 Para instalar R y RStudio debemos ir a nuestro navegador de confianza.
@@ -103,7 +100,7 @@ Allí vamos a buscar r-project, que es la página oficial de R
 (<https://www.r-project.org/>). Recordemos que este es un software de
 uso libre, no hay que hacer ningún pago por su descarga o uso.
 
-![](images/pagina_r.png)
+![](fig/pagina_r.png)
 
 Busca la opción de descarga "download R" y sigue las instrucciones.
 
@@ -113,7 +110,7 @@ RSudio. Si tenemos Windows podemos dar click en el recuadro azul. Si es
 otro sistema operativo abajo encontraremos una lista con las diferentes
 opciones. Para instalar, sigue las instrucciones.
 
-![](images/instalar_r.png)
+![](fig/instalar_r.png)
 
 Recuerda ejecutar el archivo que se descargó siguiendo los pasos. Es
 recomendable que en el momento de la instalación elijamos la opción de
@@ -125,7 +122,7 @@ elegido en la instalación donde quedó Rstudio y dar doble clic o clic
 derecho y abrir. Lo primero que vemos al momento de abrir Rstudio es la
 siguiente pantalla:
 
-![](images/pantalla_r.png)
+![](fig/pantalla_r.png)
 
 Escribe 2+2 donde aparece el curso y da enter, si te aparece el
 resultado 4 ¡Está todo listo para empezar!
@@ -134,7 +131,7 @@ resultado 4 ¡Está todo listo para empezar!
 
 RStudio está compuesto por 4 secciones principales:
 
-![](images/partes_pantalla.png)
+![](fig/partes_pantalla.png)
 
 1.  **Editor (sección superior izquierda)**: en esta sección escribimos
     y editamos el código a través de la creación de Scripts . Esta
@@ -172,6 +169,8 @@ permite organizar el espacio de trabajo, el historial y los documentos
 fuente. Para crear un Proyecto en R, es importante seguir los siguientes
 pasos:
 
+::::::::::::::::::::::::::::::::::::: challenge 
+
 1.  Abrir RStudio y, en la esquina superior derecha, seleccionar la
     pestaña **File (Archivo)** -\> **New Project... (Proyecto Nuevo)**.
 
@@ -179,7 +178,7 @@ pasos:
     **Create Project**, ahora se debe seleccionar **New Directory
     (Directorio Nuevo)**.
 
-![](images/proyecto_r.png)
+![](fig/proyecto_r.png)
 
 3.  En la ventana **Project Type**, se debe seleccionar **New Project**
     -\> **Create New Project**. En la casilla **Directory Name (Nombre
@@ -194,10 +193,12 @@ pasos:
     nuestro trabajo y resultados: datos, scripts y figuras. Al final, el
     proyecto debería parecerse a esta imagen:
 
-![](images/proyecto_r_revision.png)
+![](fig/proyecto_r_revision.png)
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Tema 5: Tipos de datos y operadores en R
 
+::::::::::::::::::: checklist
 **Tipos de datos**
 
 R tiene la capacidad de almacenar y procesar distintos tipos de datos.
@@ -214,6 +215,9 @@ Entre estos se encuentran:
     resultado no es numérico, por ejemplo `0/0`. Inf indica que hay
     operaciones cuyo resultado es infinito como por ejemplo `1/0`. Si se
     hace operaciones entre tipos variables se pueden obtener `Inf`.
+:::::::::::::::::::
+
+::::::::::::::::::: checklist
 
 **Operadores matemáticos y lógicos**
 
@@ -222,9 +226,11 @@ diferentes tareas con los datos que tenemos disponibles; por ejemplo,
 con el operador `+` podemos efectuar una suma o incrementar un índice.
 Algunos de los operadores más utilizados en R son los siguientes:\
 1. Operadores aritméticos (Ej: `+`, `-`, `*`, que corresponden a suma,
-resta y multiplicación respectivamente) 2. Operadores de comparación
-(Ej: `<, >, ==, >=, <=, !=`\
+resta y multiplicación respectivamente)   
+2. Operadores de comparación  `(Ej: <, >, ==, >=, <=, !=)`
 3. Operadores booleanos `(& (and), | (or), ! (not))`
+
+:::::::::::::::::::
 
 **Operadores de asignación**
 
@@ -269,6 +275,8 @@ vector. Cada componente debe ir separado por comas, si son caracteres
 debe ir entre comillas (si son números no), si es dato booleano (falso o
 verdadero) tampoco va en comillas.
 
+::::::::::::::::::::::::::::::::::::: challenge 
+
 Así, los vectores se pueden crear ejecutando el comando `c()`, como se
 puede visualizar a continuación:
 
@@ -286,9 +294,15 @@ vacunado <- c(TRUE, FALSE, FALSE, TRUE) # Estado de vacunación
 
 dosis <- c(2L, 0L, 1L, 2L) # Número de dosis recibidas`
 ```
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+:::::::::::::::::::::::::::::::::::: callout
 
 Nota: *El uso del símbolo `#` permite comentar el código, es decir poner
 notas que expliquen una o más líneas del código.*
+
+:::::::::::::::::::::::::::::::::::::::::::
 
 **Data.frame (Tabla de datos)**
 
@@ -333,6 +347,8 @@ datos_vacunas
 4  Diana     Bogota   42     TRUE     2
 ```
 
+::::::::::::::::::: checklist
+
 Algunas funciones que permiten conocer características como nombres o
 tamaños de las filas o columnas del `data.frame` son:
 
@@ -345,6 +361,8 @@ tamaños de las filas o columnas del `data.frame` son:
 -   `ncol()`: número de columnas
 
 -   `length()`: longitud de la tabla de datos
+
+:::::::::::::::::::
 
 Ahora, para acceder a la descripción de la estructura general de una
 tabla de datos (y en general cualquier objeto de R) usamos el comando
@@ -378,15 +396,19 @@ Para acceder a los diferentes componentes de la tabla de datos usamos la
 sintaxis `[,]`, donde la primera dimensión corresponde a filas y la
 segunda dimensión a columnas.
 
+::::::::::::::::::::::::: discussion
 Por ejemplo, si queremos saber cuántas dosis de vacunas se aplicó Maximo
-¿qué debemos hacer? Veamos a qué fila y columna corresponde este dato:
+¿qué debemos hacer? 
+:::::::::::::::::::::::::
+
+Veamos a qué fila y columna corresponde este dato:
 
 
 ``` r
 datos_vacunas
 ```
 
-![](images/maximo.png)
+![](fig/maximo.png)
 
 Vemos que Maximo está en la fila 2 y las dosis en la columna 5. Por lo
 tanto, la intersección de estas dos variables nos dará el número de
@@ -404,20 +426,26 @@ R nos permite no solo crear tablas de datos sino también abrir archivos
 que las contengan. De hecho, la mayoría de las veces no se crean
 directamente los `data.frame` en R sino que se importa un `data.frame`
 de alguna fuente de datos, por ejemplo, la base de datos del sistema de
-vigilancia de algún evento de interés. Para esto, en R hay tres fuentes
-de conjuntos de datos que podemos utilizar:
-
+vigilancia de algún evento de interés.  
+ 
+::::::::::::::::::: checklist
+Para esto, en R hay tres fuentes de conjuntos de datos que podemos utilizar:
+ 
 -   Tabla de datos importada (desde los formatos `.xlsx`, `.csv`,
     `.stata`, o `.RDS`, entre otros)
 -   Tabla de datos que forma parte de un paquete en R (Ej. `MASS`,
     `islands`, etc)
 -   Tabla de datos creada durante la sesión en R (Ej. las estructuras de
-    los primeros ejercicios)
+    los primeros ejercicios) 
+:::::::::::::::::::
 
 **Importar una tabla de datos**
 
 Para importar una tabla de datos de diferentes fuentes necesitamos
-emplear diferentes tipos de funciones, aquí algunos ejemplos del tipo de
+emplear diferentes tipos de funciones. 
+
+:::::::::::::::::::::::::::::::::::: callout
+Aquí algunos ejemplos del tipo de
 datos, y la librería que es necesario cargar y la función a utilizar.
 
 |                   |                                  |             |
@@ -428,6 +456,9 @@ datos, y la librería que es necesario cargar y la función a utilizar.
 | RDS               | `readRDS`                        | `base`      |
 | dta               | `read_dta`                       | `haven`     |
 | sas               | `read_sas`                       | `haven`     |
+
+:::::::::::::::::::::::::::::::::::::::::::
+
 
 ## Tema 7: Funciones
 
@@ -441,6 +472,8 @@ entrada (*input*) que entran a la caja (la función) y de ahí sale un
 resultado o datos de salida (*output*). La función puede ser suma,
 resta, regresión logística o un modelo matemático. Entran datos y salen
 otros que son producto de las operaciones en la función.
+
+::::::::::::::::::: checklist
 
 Los componentes básicos de una función son:
 
@@ -457,6 +490,9 @@ Los componentes básicos de una función son:
     modificar los argumentos. Si esta salida corresponde a una serie de
     datos, podemos extraerla usando el comando `return`.
 
+:::::::::::::::::::
+
+
 **Ejemplo**: con una base de datos queremos generar una variable que es
 producto de una operación, por ejemplo, IMC (índice masa corporal).
 
@@ -470,7 +506,7 @@ Para este ejemplo el input, o datos de entrada son el peso y la variable
 talla, y el output sería el índice de masa corporal. Si tenemos que el
 peso es 50kg y la talla 1.5m, el IMC será igual a 22.2.
 
-![](images/ilustracion_imc.png)
+![](fig/ilustracion_imc.png)
 
 (Ilustración adaptada por Maria Paula Forero)
 
@@ -478,8 +514,8 @@ En R podemos producir la función IMC mediante el siguiente código:
 
 
 ``` r
-IMC <- function(peso, talla) { # Aquí van los argumentos o input
-    resultado <- peso/ talla^2  # Esta es el cuerpo u operación       
+IMC <- function(peso_kg, talla_m) { # Aquí van los argumentos o input
+    resultado <- peso_kg/ talla_m^2  # Esta es el cuerpo u operación       
     return(resultado)           # Este es el output o resultado
  }
 ```
@@ -489,14 +525,17 @@ talla 1.75 cm y peso 80 kg, mediante el siguiente código
 
 
 ``` r
-IMC(peso = 80, talla = 1.75)
+IMC(peso_kg = 80, talla_m = 1.75)
 [1] 26.12245
 ```
 
 Como se puede ver, para usar la función una vez establecida solo se
 requiere el nombre y los argumentos.
 
+::::::::::::::::::::::::::::::::::::: challenge 
+
 **Reto**: Usando la misma función calcula tu IMC.
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 En general, una función consiste en una secuencia de instrucciones con
 el fin de llevar a cabo una tarea. De esta forma, por medio del uso de
@@ -508,6 +547,9 @@ manera rutinaria.
 En R, las "librerías" se refieren a conjuntos de funciones organizadas
 de manera lógica que pueden ser utilizadas para llevar a cabo diversas
 tareas, como análisis, limpieza y visualización de datos, ente otros.
+
+::::::::::::::::::: checklist
+
 Las librerías más usadas en R son:
 
 -   **`ggplot2`**: sirve para la creación de gráficos y visualizaciones
@@ -520,6 +562,7 @@ Las librerías más usadas en R son:
     `CSV`, `TSV` y otros.
 -   **`plyr`**: funciona para dividir, aplicar y combinar datos de
     manera eficiente.
+:::::::::::::::::::
 
 A su vez, hay meta-librerías, es decir, aquellas que combinan varias
 librerías. Un ejemplo de estas es la librería `tidyverse`.
@@ -564,17 +607,22 @@ library(tidyverse)
 ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 ```
 
+
 **Abrir y explorar una tabla de datos importados de Excel**
+
+
+:::::::::::::::::::::::::::::::::::: callout
 
 Este es el conjunto de datos para esta práctica:
 [datos_covid.xlsx](https://raw.githubusercontent.com/TRACE-LAC/TRACE-LAC-data/main/datos_covid.xlsx)
 
 Dentro del directorio en el que estamos trabajando actualmente, debemos
-crear una carpeta llamada *data*. Ahora debemos guardar la tabla de
-datos descargado en la carpeta data que acabamos de crear. Para importar
-tablas de datos desde `RDS`, se puede usar la función `read_excel`, que
-está en el paquete `readxl` vinculado a `tidyverse`. Sin embargo,
-todavía es necesario cargar la biblioteca `readxl`, ya que no es un
+crear una carpeta llamada *data*.  
+Ahora debemos guardar la tabla de datos descargado en la carpeta data que acabamos de crear. 
+:::::::::::::::::::::::::::::::::::::::::::
+
+
+Para importar tablas de datos desde `RDS`, se puede usar la función `read_excel`, que está en el paquete `readxl` vinculado a `tidyverse`. Sin embargo, todavía es necesario cargar la biblioteca `readxl`, ya que no es un
 paquete `tidyverse` principal. Para esto, escribimos en la consola:
 
 
@@ -598,7 +646,7 @@ mejora el desempeño.
 la función pipe que permite en este caso aplicar diferentes funciones a
 un conjunto de datos y sus resultados.
 
-![](images/pipe.png)
+![](fig/pipe.png)
 
 (Ilustración adaptada por Maria Paula Forero)
 
@@ -637,6 +685,8 @@ datos_por_esquema <- filter(datos, edad > 18) %>%
   group_by(esquema) %>% summarise(personas = n())
 ```
 
+::::::::::::::::::: checklist
+
 **Funciones básicas de `tidyverse`**
 
 -   **`glimpse()`**: utilizado para explorar rápidamente una tabla de
@@ -659,6 +709,8 @@ datos_por_esquema <- filter(datos, edad > 18) %>%
 -   **`mutate()`**: genera una nueva variable
 
 -   **`rename()`**: cambia el nombre de la variable
+
+:::::::::::::::::::
 
 Veamos en más detalle las funciones más comunes del paquete `dyplr`
 dentro de `tidyverse`.
@@ -801,34 +853,10 @@ tabla, pero los datos se limitan a aquellos que en edad sean menores de
 adicionalmente los registros de 28 años también ya no se emplea
 únicamente el signo "\<" sino que se lo acompaña del símbolo "=":
 
-**Tip**: utilizar la función `glimpse()` nos ayuda a observar el nombre
-de las variables o columnas y sus valores
+Veamos un ejemplo con doble fitro:
 
 
 ``` r
-dat %>% glimpse() #Observe como están expresadas las variables
-Rows: 50,000
-Columns: 19
-$ fecha_reporte_web                     <dttm> 2021-07-14, 2021-04-24, 2021-05…
-$ id_de_caso                            <dbl> 4565159, 2747373, 2963299, 15526…
-$ fecha_de_notificacion                 <dttm> 2021-07-07, 2021-04-21, 2021-05…
-$ edad                                  <dbl> 23, 15, 11, 39, 25, 8, 53, 29, 4…
-$ sexo                                  <chr> "masculino", "femenino", "mascul…
-$ tipo_de_contagio                      <chr> "Comunitaria", "Relacionado", "R…
-$ ubicacion_del_caso                    <chr> "Casa", "Casa", "Casa", "Casa", …
-$ estado                                <chr> "Leve", "Leve", "Leve", "Leve", …
-$ recuperado                            <chr> "Recuperado", "Recuperado", "Rec…
-$ fecha_de_inicio_de_sintomas           <dttm> 2021-06-22, 2021-04-16, 2021-04…
-$ fecha_de_muerte                       <dttm> NA, NA, NA, NA, NA, NA, NA, NA,…
-$ fecha_de_diagnostico                  <dttm> 2021-07-07, 2021-04-23, 2021-05…
-$ fecha_de_recuperacion                 <dttm> 2021-07-15, 2021-05-05, 2021-05…
-$ fecha_de_nacimiento                   <dttm> 1975-06-23, 1975-07-01, 1975-07…
-$ nombre_del_pais                       <chr> "Argentina", "Paraguay", "Ecuado…
-$ sintomas                              <chr> "Leve", "Leve", "Leve", "Leve", …
-$ numero_de_hospitalizaciones_recientes <dbl> 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,…
-$ tension_sistolica                     <dbl> 105, 122, 121, 101, 101, 134, 10…
-$ tension_diastolica                    <dbl> 83, 72, 85, 69, 101, 80, 85, 67,…
-
 dat %>% filter(sexo == "F", edad <= 28) #Ahora sabe como filtrar el sexo
 # A tibble: 0 × 19
 # ℹ 19 variables: fecha_reporte_web <dttm>, id_de_caso <dbl>,
@@ -839,6 +867,7 @@ dat %>% filter(sexo == "F", edad <= 28) #Ahora sabe como filtrar el sexo
 #   fecha_de_recuperacion <dttm>, fecha_de_nacimiento <dttm>,
 #   nombre_del_pais <chr>, sintomas <chr>, …
 ```
+
 
 -   **`arrange` (organizar)**
 
@@ -935,27 +964,21 @@ dat %>% arrange(desc(edad))
 
     
     ``` r
-    dat %>% mutate(pais= toupper(nombre_del_pais))
-    # A tibble: 50,000 × 20
-       fecha_reporte_web   id_de_caso fecha_de_notificacion  edad sexo     
-       <dttm>                   <dbl> <dttm>                <dbl> <chr>    
-     1 2021-07-14 00:00:00    4565159 2021-07-07 00:00:00      23 masculino
-     2 2021-04-24 00:00:00    2747373 2021-04-21 00:00:00      15 femenino 
-     3 2021-05-07 00:00:00    2963299 2021-05-04 00:00:00      11 masculino
-     4 2020-12-24 00:00:00    1552683 2020-12-21 00:00:00      39 femenino 
-     5 2020-10-26 00:00:00    1018415 2020-10-23 00:00:00      25 masculino
-     6 2020-08-09 00:00:00     380193 2020-07-25 00:00:00       8 femenino 
-     7 2021-06-04 00:00:00    3503818 2021-06-02 00:00:00      53 masculino
-     8 2021-05-26 00:00:00    3270945 2021-05-14 00:00:00      29 masculino
-     9 2021-02-16 00:00:00    2201217 2021-02-13 00:00:00      41 femenino 
-    10 2020-10-30 00:00:00    1056515 2020-10-26 00:00:00      61 masculino
+    dat %>% mutate(SEXO= toupper(sexo)) %>% select(SEXO)
+    # A tibble: 50,000 × 1
+       SEXO     
+       <chr>    
+     1 MASCULINO
+     2 FEMENINO 
+     3 MASCULINO
+     4 FEMENINO 
+     5 MASCULINO
+     6 FEMENINO 
+     7 MASCULINO
+     8 MASCULINO
+     9 FEMENINO 
+    10 MASCULINO
     # ℹ 49,990 more rows
-    # ℹ 15 more variables: tipo_de_contagio <chr>, ubicacion_del_caso <chr>,
-    #   estado <chr>, recuperado <chr>, fecha_de_inicio_de_sintomas <dttm>,
-    #   fecha_de_muerte <dttm>, fecha_de_diagnostico <dttm>,
-    #   fecha_de_recuperacion <dttm>, fecha_de_nacimiento <dttm>,
-    #   nombre_del_pais <chr>, sintomas <chr>,
-    #   numero_de_hospitalizaciones_recientes <dbl>, tension_sistolica <dbl>, …
     ```
 
 -   **`rename` (renombrar)**
@@ -966,34 +989,34 @@ cambiar el nombre `nombre_del_pais` por el nombre `pais` usamos:
 
 
 ``` r
-dat %>% rename(pais = nombre_del_pais)
+dat %>% rename(edad_años = edad)
 # A tibble: 50,000 × 19
-   fecha_reporte_web   id_de_caso fecha_de_notificacion  edad sexo     
-   <dttm>                   <dbl> <dttm>                <dbl> <chr>    
- 1 2021-07-14 00:00:00    4565159 2021-07-07 00:00:00      23 masculino
- 2 2021-04-24 00:00:00    2747373 2021-04-21 00:00:00      15 femenino 
- 3 2021-05-07 00:00:00    2963299 2021-05-04 00:00:00      11 masculino
- 4 2020-12-24 00:00:00    1552683 2020-12-21 00:00:00      39 femenino 
- 5 2020-10-26 00:00:00    1018415 2020-10-23 00:00:00      25 masculino
- 6 2020-08-09 00:00:00     380193 2020-07-25 00:00:00       8 femenino 
- 7 2021-06-04 00:00:00    3503818 2021-06-02 00:00:00      53 masculino
- 8 2021-05-26 00:00:00    3270945 2021-05-14 00:00:00      29 masculino
- 9 2021-02-16 00:00:00    2201217 2021-02-13 00:00:00      41 femenino 
-10 2020-10-30 00:00:00    1056515 2020-10-26 00:00:00      61 masculino
+   fecha_reporte_web   id_de_caso fecha_de_notificacion edad_años sexo     
+   <dttm>                   <dbl> <dttm>                    <dbl> <chr>    
+ 1 2021-07-14 00:00:00    4565159 2021-07-07 00:00:00          23 masculino
+ 2 2021-04-24 00:00:00    2747373 2021-04-21 00:00:00          15 femenino 
+ 3 2021-05-07 00:00:00    2963299 2021-05-04 00:00:00          11 masculino
+ 4 2020-12-24 00:00:00    1552683 2020-12-21 00:00:00          39 femenino 
+ 5 2020-10-26 00:00:00    1018415 2020-10-23 00:00:00          25 masculino
+ 6 2020-08-09 00:00:00     380193 2020-07-25 00:00:00           8 femenino 
+ 7 2021-06-04 00:00:00    3503818 2021-06-02 00:00:00          53 masculino
+ 8 2021-05-26 00:00:00    3270945 2021-05-14 00:00:00          29 masculino
+ 9 2021-02-16 00:00:00    2201217 2021-02-13 00:00:00          41 femenino 
+10 2020-10-30 00:00:00    1056515 2020-10-26 00:00:00          61 masculino
 # ℹ 49,990 more rows
 # ℹ 14 more variables: tipo_de_contagio <chr>, ubicacion_del_caso <chr>,
 #   estado <chr>, recuperado <chr>, fecha_de_inicio_de_sintomas <dttm>,
 #   fecha_de_muerte <dttm>, fecha_de_diagnostico <dttm>,
-#   fecha_de_recuperacion <dttm>, fecha_de_nacimiento <dttm>, pais <chr>,
-#   sintomas <chr>, numero_de_hospitalizaciones_recientes <dbl>,
-#   tension_sistolica <dbl>, tension_diastolica <dbl>
+#   fecha_de_recuperacion <dttm>, fecha_de_nacimiento <dttm>,
+#   nombre_del_pais <chr>, sintomas <chr>,
+#   numero_de_hospitalizaciones_recientes <dbl>, tension_sistolica <dbl>, …
 ```
 
 -   **`slice`**
 
 Ya se vio previamente cómo seleccionar columnas por medio de la función
-select. En caso de requerir seleccionar filas específicas de un
-data.frame, la función slice resulta de gran utilidad. Por ejemplo, para
+`select`. En caso de requerir seleccionar filas específicas de un
+`data.frame`, la función slice resulta de gran utilidad. Por ejemplo, para
 seleccionar de la fila 10 a la 15:
 
 
@@ -1017,7 +1040,39 @@ dat %>% slice(10:15)
 #   tension_diastolica <dbl>
 ```
 
+::::::::::::::::::::::::::::::::::::: challenge 
+
+## Actividad de afianzamiento: 
+
+Para esta actividad, debemos cargar un tipo diferente de datos. En el siguiente link podrás descargarlos  [datos_reto](https://github.com/TRACE-LAC/TRACE-LAC-data/raw/refs/heads/main/otros/datos_limpios_covid.RDS). Los datos pueden ser cargados  desde el computador o desde una ubicación en internet. Para cargar los datos  `datos_limpios_covid.RDS` directamente desde internet  se deben usar los comandos:
+
+
+
+``` r
+url <- "https://github.com/TRACE-LAC/TRACE-LAC-data/raw/refs/heads/main/otros/datos_limpios_covid.RDS"
+
+covid19 <- readr::read_rds(url)
+```
+
+
+Después de cargar los datos debe realizar lo siguiente:
+
+1.	Explorar los datos
+2.	Agrupar los datos por `nombre_del_pais` y cuenta los casos por cada uno.
+3.	Filtra los datos para Perú (Tip: observa cómo está escrito el nombre del país en la variable “`nombre_del_pais`”).
+4.	Agrupa los datos por `sexo` y cuenta los casos por cada uno.
+5.	Agrupa los datos por `nombre_del_pais` y calcula la media de edad de cada uno.
+6.	Cambia el nombre de “`estado`” por “`gravedad`”.
+7.	Ordena los datos por `sexo` y selecciona las 5 primeras filas de cada uno.
+8.	Realiza una tabla que muestre cuántas personas de cada `sintoma` aparecen en la base ubicados en Colombia.
+9.	Selecciona las 5 primeras filas de solo el número de identificación del caso (`id_de_caso`).
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
 ::::::::::::::::::::::::::::::::::::: keypoints 
+
 
 ## Puntos clave 
 
@@ -1028,8 +1083,8 @@ Revise si al final de esta lección adquirió estas competencias:
 -   Comprender las estructuras básicas de datos en R tales como vectores y tablas de datos.
 -   Comprender el proceso de creación de funciones.
 -   Reconocer el proceso de importación, exportación y transformación de bases de datos con Tidyverse.
-
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 ## Contribuciones
 
@@ -1040,12 +1095,10 @@ Revise si al final de esta lección adquirió estas competencias:
 -   Andree Valle-Campos: Ediciones menores
 -   Miguel E. Gámez López: Ediciones menores
 -   Nicolás T. Domínguez: Ediciones menores
+-   Laura Gómez-Bermeo: Ediciones menores
+-   Geraldine Gomez: Ediciones menores
 -   Jaime A. Pavlich-Mariscal: Edición
-
-Contribuciones son bienvenidas vía [pull
-requests](https://github.com/reconhub/learn/pulls).
 
 ## Asuntos legales
 
-**Licencia**: [CC-BY](https://creativecommons.org/licenses/by/3.0/)
 **Copyright**: Zulma M. Cucunuba, 2019
