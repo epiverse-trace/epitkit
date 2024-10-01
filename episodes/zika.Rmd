@@ -442,7 +442,7 @@ inicio <- c(Sh = Nh ,      # Número inicial de Sh en el tiempo 0
            Rh = 0,        # Número inicial de Rh en el tiempo 0
            Sv = Nv,     # Número inicial de Sv en el tiempo 0
            Ev = 0,        # Número inicial de Ev en el tiempo 0
-           Iv = )        # Número inicial de Iv en el tiempo 0
+           Iv = 0)        # Número inicial de Iv en el tiempo 0
 
 ```
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
@@ -519,6 +519,7 @@ Ih = 1 y Sh = Nh - 1.
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor 
+
 ## Solución
 
 ```{r, include = full_version}
@@ -531,7 +532,19 @@ inicio <- c(Sh = Nh ,      # Número inicial de Sh en el tiempo 0
             Ev = 0,        # Número inicial de Ev en el tiempo 0            
             Iv = 1)        # Número inicial de Iv en el tiempo 0 
 ```
+
+```{r, include = full_version}
+# Resuelva las ecuaciones
+salida <- ode(y      = inicio,     # Condiciones iniciales
+             times  = tiempo,      # Tiempo
+             fun    = modelo_zika, # Modelo
+             parms  = params    # Parámetros
+) %>%
+  as.data.frame() # Convertir a data frame
+```
+
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+
 ## **¡Ahora ejecutaremos el modelo!**
 
 **Hasta este punto, usted ha completado toda la información faltante en
@@ -551,6 +564,7 @@ en el código otros caracteres que no corresponden como por ejemplo
 "\_\_\_\_\_" los guiones de los espacios para completar.
 :::::::::::::::::::::::::::::::::::::::::::
 
+
 ## **Visualizando los resultados**
 
 **En nuestro curso usaremos ggplot para la visualización de datos. Es
@@ -569,7 +583,7 @@ meses o años puede hacerlo a partir de los resultados del modelo
 Para tener una visualización más significativa de los resultados,
 convierta las unidades de tiempo de *días* a *años* y a *semanas*.
 
-```{r eval = FALSE}
+```{r eval = TRUE}
 # Cree las opciones de tiempo para años y semanas 
 salida$años <- salida$time/365
 salida$semanas <- salida$time/7
