@@ -784,20 +784,11 @@ total 60 personas reportaron haber comido el sándwich del almuerzo. De
 estas 60, 35 se enfermaron y de las 40 que no comieron sándwich 15
 reportaron síntomas de enfermedad. Resumiendo:
 
-+---------------------------+------------------+---------------+-----------+
-|                           | -   \*Enfermos\  | -   \*Sanos\  | **Total** |
-|                           |     (Casos )\*\* |     (Contr    |           |
-|                           |                  |               |           |
-|                           |                  |     oles)\*\* |           |
-+---------------------------+------------------+---------------+-----------+
-| **Ex puestos\             | 35               | 25            | 60        |
-| (Consumió S andwich)**    |                  |               |           |
-+---------------------------+------------------+---------------+-----------+
-| **No expuestos\           | 15               | 25            | 40        |
-| (No Consumió S andwich)** |                  |               |           |
-+---------------------------+------------------+---------------+-----------+
-| **Total**                 | 50               | 50            | 100       |
-+---------------------------+------------------+---------------+-----------+
+|  | Enfermos (Casos) | Sanos (Controles) | Total |
+|---|---|---|---|
+| **Expuestos (Consumió Sandwish)** | 35 | 25 | 60 |
+| **No expuestos (No consumió Sandwish)** | 15 | 25 | 40 |
+| Total | 50 | 50 | 100 |
 
 Calculando se tiene que; 
 
