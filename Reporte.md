@@ -202,6 +202,7 @@ la librería `knitr`, como se muestra a continuación:
 
 ``` r
 library(knitr)
+library(tidyverse)
 
 dat <- readRDS("data/muestra_covid.RDS")
 
