@@ -34,7 +34,7 @@ exercises: 8
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
-# Objetivos 
+### Objetivos 
 
 Al final de este taller usted podrá:
 
@@ -56,9 +56,10 @@ library(knitr)
 opts_chunk$set(collapse = TRUE)
 ```
 
-## Tabla de contenido
 
 ::::::::::::::::::: checklist
+
+### Tabla de contenido
 
 -   Módulo 2 : Ciencia de datos en salud pública
     -   Unidad 1: Introducción a R y RStudio
@@ -127,8 +128,10 @@ siguiente pantalla:
 
 ![](fig/pantalla_r.png)
 
-Escribe 2+2 donde aparece el curso y da enter, si te aparece el
+Escribe 2+2 donde aparece el cursor y da enter, si te aparece el
 resultado 4 ¡Está todo listo para empezar!
+
+![](fig/2mas2.png)
 
 ## Tema 3: Ambiente de RStudio
 
@@ -174,8 +177,10 @@ pasos:
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-1.  Abrir RStudio y, en la esquina superior derecha, seleccionar la
+1.  Abrir RStudio y, en la esquina superior izquierda, seleccionar la
     pestaña **File (Archivo)** -\> **New Project... (Proyecto Nuevo)**.
+
+![](fig/file_new_project.png)
 
 2.  Se desplegará una ventana con encabezado **New Project Wizard**:
     **Create Project**, ahora se debe seleccionar **New Directory
@@ -183,15 +188,15 @@ pasos:
 
 ![](fig/proyecto_r.png)
 
-3.  En la ventana **Project Type**, se debe seleccionar **New Project**
-    -\> **Create New Project**. En la casilla **Directory Name (Nombre
-    del Directorio)** coloque el nombre deseado para su proyecto (e.g.
-    "`IntroR`").\
+3.  En la ventana con encabezado **New Project Wizard**:**Project Type**, se debe seleccionar **New Project**
+    ![](fig/tipo_projecto.png)
+4.  En la ventana con encabezado **New Project Wizard**:**Create New Project**. En la casilla **Directory Name (Nombre del Directorio)** coloque el nombre deseado para su proyecto (e.g. "`IntroR`").  
+![](fig/projectoR_introR.png)
+5.  Hacemos clic en el botón **Browse....** Para buscar la ubicación
+    dentro del computador donde deseamos guardar el proyecto
+    ![](fig/browse.png)
 
-4.  Hacemos clic en el botón **Browse....** Para buscar la ubicación
-    dentro de nuestro computador donde deseamos guardar el proyecto
-
-5.  Creamos una nueva carpeta con el mismo nombre del proyecto (e.g.
+6.  Creamos una nueva carpeta con el mismo nombre del proyecto (e.g.
     "`IntroR`"), así como las subcarpetas que necesitamos para organizar
     nuestro trabajo y resultados: datos, scripts y figuras. Al final, el
     proyecto debería parecerse a esta imagen:
@@ -202,7 +207,7 @@ pasos:
 ## Tema 5: Tipos de datos y operadores en R
 
 ::::::::::::::::::: checklist
-**Tipos de datos**
+### Tipos de datos
 
 R tiene la capacidad de almacenar y procesar distintos tipos de datos.
 Entre estos se encuentran:
@@ -222,7 +227,7 @@ Entre estos se encuentran:
 
 ::::::::::::::::::: checklist
 
-**Operadores matemáticos y lógicos**
+### Operadores matemáticos y lógicos
 
 Los operadores son herramientas matemáticas que nos permiten realizar
 diferentes tareas con los datos que tenemos disponibles; por ejemplo,
@@ -235,7 +240,7 @@ resta y multiplicación respectivamente)
 
 :::::::::::::::::::
 
-**Operadores de asignación**
+### Operadores de asignación \<- y =
 
 \<- Este es un operador común en R para asignar un determinado valor a
 una variable y el alcance está dentro de la función y también fuera de
@@ -247,202 +252,14 @@ ella.
 nombre <- "Laura"
 ```
 
+Se abra creado un objeto en el ambiente global (ubiquelo en la sección lateral derecha superior):
+![](fig/nombrelaura.png)
+
 = Este operador se utiliza para establecer un parámetro en un valor
 dentro de una función. El alcance está solo dentro de la función. La
 variable todavía contiene su valor original fuera de la función.
 
-## Tema 6: Estructuras en R
-
-**Vector**
-
-En R, un vector es una estructura de datos indexada que permite
-almacenar varios elementos del mismo tipo en una única estructura. Por
-ejemplo, podríamos tener un vector que contenga las edades de varias
-personas, o un vector que contenga los nombres de diferentes ciudades.
-
-Los vectores en R son útiles porque permiten realizar operaciones y
-cálculos con facilidad. Los elementos del vector se pueden sumar,
-restar, multiplicar o dividir, y sus elementos son accesibles por medio
-posición o índice.
-
-En resumen, un vector en R es una colección ordenada de elementos del
-mismo tipo de datos (ver Tema 5) que permite almacenar y manipular datos
-de manera eficiente.
-
-Para crear un vector en el código o script se escribe el nombre con el
-que se va a reconocer (por ejemplo, edad o ciudad) y luego se debe
-escribir el símbolo `<-` (que da la orden a R para crear el vector).
-Luego se escribe letra c que es la asignación que permite inicializar el
-vector. Cada componente debe ir separado por comas, si son caracteres
-debe ir entre comillas (si son números no), si es dato booleano (falso o
-verdadero) tampoco va en comillas.
-
-::::::::::::::::::::::::::::::::::::: challenge 
-
-Así, los vectores se pueden crear ejecutando el comando `c()`, como se
-puede visualizar a continuación:
-
-Ejemplos
-
-```{r}
-nombre <- c("Emilia", "Maximo", "Axel", "Diana") # Nombre de las personas
-
-ciudad <- c("La Plata","Concepción", "Cuzco", "Bogota") # Ciudad de residencia
-
-edad <- c(18, 20, 37, 42)  # Edad de las personas
-
-vacunado <- c(TRUE, FALSE, FALSE, TRUE) # Estado de vacunación
-
-dosis <- c(2L, 0L, 1L, 2L) # Número de dosis recibidas`
-```
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-:::::::::::::::::::::::::::::::::::: callout
-
-Nota: *El uso del símbolo `#` permite comentar el código, es decir poner
-notas que expliquen una o más líneas del código.*
-
-:::::::::::::::::::::::::::::::::::::::::::
-
-**Data.frame (Tabla de datos)**
-
-Imaginemos un `data.frame` como una tabla con filas y columnas, similar
-a una hoja de cálculo en Excel. Cada columna representa un tipo de
-información específica (un vector) o variable (Por ejemplo, la edad, el
-departamento o el nombre). En este ejemplo, cada fila corresponde al
-registro de esas variables para un individuo. Es importante tener en
-cuenta que los `data.frame` (Tabla de datos) están compuestos por
-vectores cuyas dimensiones deben ser iguales, es decir que todas las
-columnas deben tener el mismo número de filas. Siguiendo la analogía de
-Excel, podemos pensar que cada vector es una columna de una hoja de
-Excel.
-
-Una ventaja de trabajar con `Data.frame` en R en vez de una hoja de
-excel es que a medida que el tamaño de la tabla va aumentando, en R se
-puede trabajar más rápido y eficientemente.
-
-Para crear una tabla de datos se debe ejecutar el comando
-`data.frame()`. Por ejemplo, utilizando los vectores que definimos en la
-sección anterior:
-
-```{r}
-datos_vacunas <- data.frame(
-  nombre = nombre, 
-  ciudad = ciudad,
-  edad = edad,
-  vacunado = vacunado,
-  dosis = dosis)
-```
-
-Ahora observemos cómo quedó la tabla de datos
-
-```{r}
-datos_vacunas
-```
-
-::::::::::::::::::: checklist
-
-Algunas funciones que permiten conocer características como nombres o
-tamaños de las filas o columnas del `data.frame` son:
-
--   `colnames()`: nombres de las columnas
-
--   `rownames()`: nombres de las filas
-
--   `nrow()`: número de filas
-
--   `ncol()`: número de columnas
-
--   `length()`: longitud de la tabla de datos
-
-:::::::::::::::::::
-
-Ahora, para acceder a la descripción de la estructura general de una
-tabla de datos (y en general cualquier objeto de R) usamos el comando
-`str`, en este caso escribimos:
-
-```{r}
-str(datos_vacunas)
-```
-
-Esto nos indica que la estructura (`datos_vacunas`) corresponde a un
-`data.frame` con 4 observaciones y 5 variables.
-
-Si usamos el comando `str(datos_vacunas$nombre)` podemos ver la
-estructura de esa variable, que en este caro es un vector de caracteres
-con longitud de 1 a 4.
-
-```{r}
-str(datos_vacunas$nombre)
-```
-
-Para acceder a los diferentes componentes de la tabla de datos usamos la
-sintaxis `[,]`, donde la primera dimensión corresponde a filas y la
-segunda dimensión a columnas.
-
-::::::::::::::::::::::::: discussion
-Por ejemplo, si queremos saber cuántas dosis de vacunas se aplicó Maximo
-¿qué debemos hacer? 
-:::::::::::::::::::::::::
-
-Veamos a qué fila y columna corresponde este dato:
-
-```{r eval=FALSE}
-datos_vacunas
-```
-
-![](fig/maximo.png)
-
-Vemos que Maximo está en la fila 2 y las dosis en la columna 5. Por lo
-tanto, la intersección de estas dos variables nos dará el número de
-dosis que tiene Maximo.
-
-```{r}
-datos_vacunas[2, 5] 
-```
-
-**Crear y abrir tablas de datos**
-
-R nos permite no solo crear tablas de datos sino también abrir archivos
-que las contengan. De hecho, la mayoría de las veces no se crean
-directamente los `data.frame` en R sino que se importa un `data.frame`
-de alguna fuente de datos, por ejemplo, la base de datos del sistema de
-vigilancia de algún evento de interés.  
- 
-::::::::::::::::::: checklist
-Para esto, en R hay tres fuentes de conjuntos de datos que podemos utilizar:
- 
--   Tabla de datos importada (desde los formatos `.xlsx`, `.csv`,
-    `.stata`, o `.RDS`, entre otros)
--   Tabla de datos que forma parte de un paquete en R (Ej. `MASS`,
-    `islands`, etc)
--   Tabla de datos creada durante la sesión en R (Ej. las estructuras de
-    los primeros ejercicios) 
-:::::::::::::::::::
-
-**Importar una tabla de datos**
-
-Para importar una tabla de datos de diferentes fuentes necesitamos
-emplear diferentes tipos de funciones. 
-
-:::::::::::::::::::::::::::::::::::: callout
-Aquí algunos ejemplos del tipo de
-datos, y la librería que es necesario cargar y la función a utilizar.
-
-|                   |                                  |             |
-|-------------------|----------------------------------|-------------|
-| **Tipo de datos** | **Función**                      | **Paquete** |
-| csv               | `read_csv`                       | `readr`     |
-| xls               | `read_excel, read_xls,read_xlsx` | `readxl`    |
-| RDS               | `readRDS`                        | `base`      |
-| dta               | `read_dta`                       | `haven`     |
-| sas               | `read_sas`                       | `haven`     |
-
-:::::::::::::::::::::::::::::::::::::::::::
-
-
-## Tema 7: Funciones
+## Tema 6: Funciones
 
 Imaginemos una función como una especie de "caja mágica" que recibe
 ciertos datos o información como entrada y produce un resultado o
@@ -456,6 +273,8 @@ resta, regresión logística o un modelo matemático. Entran datos y salen
 otros que son producto de las operaciones en la función.
 
 ::::::::::::::::::: checklist
+
+### Componentes básicos de una función
 
 Los componentes básicos de una función son:
 
@@ -521,15 +340,14 @@ el fin de llevar a cabo una tarea. De esta forma, por medio del uso de
 funciones es posible sistematizar procesos complejos que se realizan de
 manera rutinaria.
 
-**Librerías**
+### Paquetes o librerías
 
-En R, las "librerías" se refieren a conjuntos de funciones organizadas
-de manera lógica que pueden ser utilizadas para llevar a cabo diversas
+En R, los paquetes, también llamados "librerías" se refieren a conjuntos de funciones organizadas de manera lógica que pueden ser utilizadas para llevar a cabo diversas
 tareas, como análisis, limpieza y visualización de datos, ente otros.
 
 ::::::::::::::::::: checklist
 
-Las librerías más usadas en R son:
+#### Las librerías más usadas en R son:
 
 -   **`ggplot2`**: sirve para la creación de gráficos y visualizaciones
     de datos de alta calidad.
@@ -545,6 +363,201 @@ Las librerías más usadas en R son:
 
 A su vez, hay meta-librerías, es decir, aquellas que combinan varias
 librerías. Un ejemplo de estas es la librería `tidyverse`.
+
+
+## Tema 7: Estructuras en R
+
+### Vector
+
+En R, un vector es una estructura de datos indexada que permite
+almacenar varios elementos del mismo tipo en una única estructura. Por
+ejemplo, podríamos tener un vector que contenga las edades de varias
+personas, o un vector que contenga los nombres de diferentes ciudades.
+
+Los vectores en R son útiles porque permiten realizar operaciones y
+cálculos con facilidad. Los elementos del vector se pueden sumar,
+restar, multiplicar o dividir, y sus elementos son accesibles por medio
+posición o índice.
+
+En resumen, un vector en R es una colección ordenada de elementos del
+mismo tipo de datos (ver Tema 5) que permite almacenar y manipular datos
+de manera eficiente.
+
+Para crear un vector en el código o script se escribe el nombre con el
+que se va a reconocer (por ejemplo, edad o ciudad) y luego se debe
+escribir el símbolo `<-` (que da la orden a R para crear el vector).
+Luego se escribe letra c que es la asignación que permite inicializar el
+vector. Cada componente debe ir separado por comas, si son caracteres
+debe ir entre comillas (si son números no), si es dato booleano (falso o
+verdadero) tampoco va en comillas.
+
+::::::::::::::::::::::::::::::::::::: challenge 
+
+Así, los vectores se pueden crear ejecutando el comando `c()`, como se
+puede visualizar a continuación:
+
+Ejemplos
+
+```{r}
+nombre <- c("Emilia", "Maximo", "Axel", "Diana") # Nombre de las personas
+
+ciudad <- c("La Plata","Concepción", "Cuzco", "Bogota") # Ciudad de residencia
+
+edad <- c(18, 20, 37, 42)  # Edad de las personas
+
+vacunado <- c(TRUE, FALSE, FALSE, TRUE) # Estado de vacunación
+
+dosis <- c(2L, 0L, 1L, 2L) # Número de dosis recibidas`
+```
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+:::::::::::::::::::::::::::::::::::: callout
+
+Nota: *El uso del símbolo `#` permite comentar el código, es decir poner
+notas que expliquen una o más líneas del código.*
+
+:::::::::::::::::::::::::::::::::::::::::::
+
+### Data.frame (Tabla de datos)
+
+Imaginemos un `data.frame` como una tabla con filas y columnas, similar
+a una hoja de cálculo en Excel. Cada columna representa un tipo de
+información específica (un vector) o variable (Por ejemplo, la edad, el
+departamento o el nombre). En este ejemplo, cada fila corresponde al
+registro de esas variables para un individuo. Es importante tener en
+cuenta que los `data.frame` (Tabla de datos) están compuestos por
+vectores cuyas dimensiones deben ser iguales, es decir que todas las
+columnas deben tener el mismo número de filas. Siguiendo la analogía de
+Excel, podemos pensar que cada vector es una columna de una hoja de
+Excel.
+
+Una ventaja de trabajar con `Data.frame` en R en vez de una hoja de
+excel es que a medida que el tamaño de la tabla va aumentando, en R se
+puede trabajar más rápido y eficientemente.
+
+Para crear una tabla de datos se debe ejecutar el comando
+`data.frame()`. Por ejemplo, utilizando los vectores que definimos en la
+sección anterior:
+
+```{r}
+datos_vacunas <- data.frame(
+  nombre = nombre, 
+  ciudad = ciudad,
+  edad = edad,
+  vacunado = vacunado,
+  dosis = dosis)
+```
+
+Ahora observemos cómo quedó la tabla de datos
+
+```{r}
+datos_vacunas
+```
+
+::::::::::::::::::: checklist
+
+### Parte de un data.frame
+
+Algunas funciones que permiten conocer características como nombres o
+tamaños de las filas o columnas del `data.frame` son:
+
+-   `colnames()`: nombres de las columnas
+
+-   `rownames()`: nombres de las filas
+
+-   `nrow()`: número de filas
+
+-   `ncol()`: número de columnas
+
+-   `length()`: longitud de la tabla de datos
+
+:::::::::::::::::::
+
+Ahora, para acceder a la descripción de la estructura general de una
+tabla de datos (y en general cualquier objeto de R) usamos el comando
+`str`, en este caso escribimos:
+
+```{r}
+str(datos_vacunas)
+```
+
+Esto nos indica que la estructura (`datos_vacunas`) corresponde a un
+`data.frame` con 4 observaciones y 5 variables.
+
+Si usamos el comando `str(datos_vacunas$nombre)` podemos ver la
+estructura de esa variable, que en este caro es un vector de caracteres
+con longitud de 1 a 4.
+
+```{r}
+str(datos_vacunas$nombre)
+```
+
+Para acceder a los diferentes componentes de la tabla de datos usamos la
+sintaxis `[,]`, donde la primera dimensión corresponde a filas y la
+segunda dimensión a columnas.
+
+::::::::::::::::::::::::: discussion
+Por ejemplo, si queremos saber cuántas dosis de vacunas se aplicó Maximo
+¿qué debemos hacer? 
+:::::::::::::::::::::::::
+
+Veamos a qué fila y columna corresponde este dato:
+
+```{r eval=FALSE}
+datos_vacunas
+```
+
+![](fig/maximo.png)
+
+Vemos que Maximo está en la fila 2 y las dosis en la columna 5. Por lo
+tanto, la intersección de estas dos variables nos dará el número de
+dosis que tiene Maximo.
+
+```{r}
+datos_vacunas[2, 5] 
+```
+
+### Crear y abrir tablas de datos
+
+R nos permite no solo crear tablas de datos sino también abrir archivos
+que las contengan. De hecho, la mayoría de las veces no se crean
+directamente los `data.frame` en R sino que se importa un `data.frame`
+de alguna fuente de datos, por ejemplo, la base de datos del sistema de
+vigilancia de algún evento de interés.  
+ 
+::::::::::::::::::: checklist
+### FUentes de conjunto de datos
+
+Para esto, en R hay tres fuentes de conjuntos de datos que podemos utilizar:
+ 
+-   Tabla de datos importada (desde los formatos `.xlsx`, `.csv`,
+    `.stata`, o `.RDS`, entre otros)
+-   Tabla de datos que forma parte de un paquete en R (Ej. `MASS`,
+    `islands`, etc)
+-   Tabla de datos creada durante la sesión en R (Ej. las estructuras de
+    los primeros ejercicios) 
+:::::::::::::::::::
+
+### Importar una tabla de datos
+
+Para importar una tabla de datos de diferentes fuentes necesitamos
+emplear diferentes tipos de funciones. 
+
+:::::::::::::::::::::::::::::::::::: callout
+Aquí algunos ejemplos del tipo de datos, y la librería que es necesario cargar y la función a utilizar.
+
+|                   |                                  |             |
+|-------------------|----------------------------------|-------------|
+| **Tipo de datos** | **Función**                      | **Paquete** |
+| csv               | `read_csv`                       | `readr`     |
+| xls               | `read_excel, read_xls,read_xlsx` | `readxl`    |
+| RDS               | `readRDS`                        | `base`      |
+| dta               | `read_dta`                       | `haven`     |
+| sas               | `read_sas`                       | `haven`     |
+
+:::::::::::::::::::::::::::::::::::::::::::
+
 
 ## Tema 8: Manipulación de datos con `tidyverse`
 
@@ -566,8 +579,8 @@ utilizarlo para instalar tidyverse:
 install.packages('tidyverse')
 ```
 
-Mientras que para llamar o importar una librería ya instalada usamos el
-comando `library`. Este en cambio debemos ejecutarlo cada vez que
+Para llamar o importar una librería ya instalada usamos el
+comando `library`. Este en comando debemos ejecutarlo cada vez que
 re-iniciamos R o abrimos RStudio.
 
 ```{r}
@@ -575,7 +588,7 @@ library(tidyverse)
 ```
 
 
-**Abrir y explorar una tabla de datos importados de Excel**
+### Abrir y explorar una tabla de datos importados de Excel
 
 
 :::::::::::::::::::::::::::::::::::: callout
@@ -589,19 +602,19 @@ Ahora debemos guardar la tabla de datos descargado en la carpeta data que acabam
 :::::::::::::::::::::::::::::::::::::::::::
 
 
-Para importar tablas de datos desde `RDS`, se puede usar la función `read_excel`, que está en el paquete `readxl` vinculado a `tidyverse`. Sin embargo, todavía es necesario cargar la biblioteca `readxl`, ya que no es un
-paquete `tidyverse` principal. Para esto, escribimos en la consola:
+Para importar tablas de datos desde `RDS`, se puede usar la función `read_excel`, que está en el paquete `readxl` vinculado a `tidyverse`. Sin embargo, todavía es necesario cargar la biblioteca `readxl`, ya que no es un paquete `tidyverse` principal. Para esto, escribimos en la consola:
 
 ```{r}
 library(readxl) 
  
 dat <- read_excel("data/datos_covid.xlsx")
 ```
+Ahora se ha creado un objeto tipo `data.frame`.
+![](fig/read_excel.png)
 
-A continuación, veremos algunas de las funciones más utilizadas de
-`tidyverse`.
+A continuación, veremos algunas de las funciones más utilizadas de `tidyverse`.
 
-**Operador tubería (*pipe*)**
+### Operador tubería (*pipe*)
 
 El operador tubería (*pipe*) `%>%` es un operador clave en `tidyverse`,
 el cual permite al usuario enfatizar una secuencia de acciones en un
@@ -637,20 +650,22 @@ datos_con_esquema <- mutate(datos_filtrados,
 
 datos_agrupados <- group_by(datos_con_esquema, esquema)
 
-datos_por_esquema <- summarize(datos_agrupados, personas = n())
+datos_por_esquema <- summarise(datos_agrupados, personas = n())
 ```
 
 Ahora, con la ayuda de una tubería o *pipe*, tenemos:
 
 ```{r}
-datos_por_esquema <- filter(datos, edad > 18) %>% 
+datos_por_esquema <- 
+  filter(datos, edad > 18) %>% 
   mutate( esquema = ifelse(dosis > 2, "Completo", "Incompleto")) %>%
-  group_by(esquema) %>% summarise(personas = n())
+  group_by(esquema) %>% 
+  summarise(personas = n())
 ```
 
 ::::::::::::::::::: checklist
 
-**Funciones básicas de `tidyverse`**
+### Funciones básicas de `tidyverse`
 
 -   **`glimpse()`**: utilizado para explorar rápidamente una tabla de
     datos.
@@ -855,7 +870,7 @@ Revise si al final de esta lección adquirió estas competencias:
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-## Contribuciones
+### Contribuciones
 
 -   Zulma M. Cucunuba: Versión inicial
 -   Zhian N. Kamvar: Ediciones menores
@@ -868,6 +883,6 @@ Revise si al final de esta lección adquirió estas competencias:
 -   Geraldine Gomez: Ediciones menores
 -   Jaime A. Pavlich-Mariscal: Edición
 
-## Asuntos legales
+### Asuntos legales
 
 **Copyright**: Zulma M. Cucunuba, 2019

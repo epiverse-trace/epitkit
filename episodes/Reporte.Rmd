@@ -15,7 +15,7 @@ exercises: 4
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-### Pregunta introductoria 
+## Pregunta introductoria 
 
 - ¿Cómo se utilizan R markdown para presentar un reporte?
 
@@ -23,7 +23,7 @@ exercises: 4
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-# Objetivos 
+## Objetivos 
 
 Al final de este taller usted podrá:
 
@@ -45,11 +45,11 @@ library(knitr)
 opts_chunk$set(collapse = TRUE)
 ```
 
-## Introducción
+# Introducción
 
 En esta unidad aprenderemos sobre el uso del formato R Markdown, el cual permite integrar código en la generación de informes sin la necesidad de importar gráficas o crear tablas manualmente. De esta manera, el formato R Markdown facilita la generación automática, actualización y redacción de informes técnicos al combinar la sintaxis del formato Markdown con código en R incrustado en el documento.  
 
-## **Tema 1: ¿Qué es R Markdown?**
+# **Tema 1: ¿Qué es R Markdown?**
 
 R Markdown es una extensión del formato Markdown que permite combinar
 texto con código R incrustado en el documento. De esta manera, los
@@ -62,7 +62,7 @@ resultados de manera clara y reproducible. Además, es una herramienta
 muy valiosa para generar informes automatizados y documentos técnicos
 interactivos
 
-## **Tema 2: Estructura de R Markdown**
+# **Tema 2: Estructura de R Markdown**
 
 Un documento de R Markdown consta de tres tipos principales de
 elementos:
@@ -77,17 +77,17 @@ sus resultados.
 
 ![](fig/partes_reporte.png)
 
-## **Tema 3: Paso a Paso en R Markdown**
+# **Tema 3: Paso a Paso en R Markdown**
 
 A continuación, seguiremos un paso a paso para crear un R Markdown.
 
-### **Paso 1.** Abrir R Studio desde R Project
+## **Paso 1.** Abrir R Studio desde R Project
 
 De acuerdo a lo aprendido en la unidad de Introducción a R y Rstudio, es
 recomendable tener un R project donde quedará alojado el informe de R
 Markdown. Abre un R Project y sigue con el Paso 2.
 
-### **Paso 2. Crear un nuevo archivo R Markdown**
+## **Paso 2. Crear un nuevo archivo R Markdown**
 
 Siguiendo la ruta **File**\>**New File**\>**R Markdown** podemos crear
 un archivo de R Markdown definiendo: título, autor(es) y con formato de
@@ -98,7 +98,7 @@ archivo R Markdown con tu nombre y el título de Reporte.
 
 ![](fig/crea_reporte.png)
 
-### **Paso 3. Editar el archivo de R Markdown y el código**
+## **Paso 3. Editar el archivo de R Markdown y el código**
 
 :::::::::::::::::::::::::::::::::::: callout
 
@@ -113,7 +113,7 @@ las diferentes secciones que se muestran en la imagen.
 
 A continuación, veremos cómo editar cada una de estas partes:
 
-**¿Cómo editar el texto?**
+### **¿Cómo editar el texto?**
 
 -   Para incluir el título de una sección se escribe el símbolo numeral
     \# y a continuación el nombre de la sección en una línea única.
@@ -131,7 +131,7 @@ A continuación, veremos cómo editar cada una de estas partes:
 -   Para situar el texto en un bloque aparte, se antecede este texto con
     el símbolo \> en una línea única.
 
-**¿Cómo editar el *chunk* de código?**
+### **¿Cómo editar el *chunk* de código?**
 
 Para incluir código en R, es necesario introducir un *chunk* en el
 documento marcando en la barra de herramientas el icono +C de color
@@ -168,7 +168,7 @@ parte superior derecha de cada Chunk.
 
 ![](fig/run_actual.png)
 
-**Especificar configuración del *chunk***
+### **Especificar configuración del *chunk***
 
 Dentro de un "chunk", podemos elegir si queremos que el código se
 muestre en el reporte impreso o no; utilizando los comandos
@@ -187,7 +187,7 @@ código, como se muestra aquí.
 
 ```` ``` ````
 
-**Hacer tablas en R Markdown**
+### **Hacer tablas en R Markdown**
 
 :::::::::::::::::::::::::::::::::::: callout
 
@@ -229,7 +229,7 @@ covid_paises <- dat %>%
 kable(covid_paises)
 ```
 
-**Poner parámetros automatizados en el texto**
+### **Poner parámetros automatizados en el texto**
 
 En un reporte también es posible combinar código y texto, utilizando los
 resultados obtenidos en el código como parte del texto del reporte. Es
@@ -268,7 +268,7 @@ debemos seguir el siguiente paso.
 
 :::::::::::::::::::::::::::::::::::::::::::
 
-**Paso 4. "Tejer" (generar) el informe**
+## **Paso 4. "Tejer" (generar) el informe**
 
 Para "tejer" el informe, es decir, generar el informe en un formato
 específico (HTML, PDF o Word), debemos dar click en el símbolo *"Knit"*
