@@ -719,17 +719,11 @@ De ahí se puede tener que: 
     la no exposición ser estudiante de la sede secundaria, se tiene
     que: 
 
-+--------------------------------+----------------+------------+------------+
-|                                | **Enf e rmos** | **S anos** | **T otal** |
-+--------------------------------+----------------+------------+------------+
-| **Estu d iantes pri m aria**   | 30             | 120        | 150        |
-+--------------------------------+----------------+------------+------------+
-| **Estu d iantes secun d aria** | 5              | 135        | 140        |
-+--------------------------------+----------------+------------+------------+
-| -   \*To t                     | 35             | 265        | 290        |
-|                                |                |            |            |
-| al\*\*                         |                |            |            |
-+--------------------------------+----------------+------------+------------+
+|  | Enfermos | Sanos | Total |
+|---|---|---|---|
+| **Estudiantes primaria** | 30 | 120 | 150 |
+| **Estudiantes secondaria** | 5 | 135 | 140 |
+| Total | 35 | 265 | 290 |
 
 Para calcular RR, primero se debe calcular la tasa de ataque para cada
 grupo. 
