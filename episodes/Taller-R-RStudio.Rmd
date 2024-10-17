@@ -127,7 +127,7 @@ siguiente pantalla:
 
 ![](fig/pantalla_r.png)
 
-Escribe 2+2 donde aparece el curso y da enter, si te aparece el
+Escribe 2+2 donde aparece el cursor y da enter, si te aparece el
 resultado 4 ¡Está todo listo para empezar!
 
 ## Tema 3: Ambiente de RStudio
@@ -174,8 +174,10 @@ pasos:
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-1.  Abrir RStudio y, en la esquina superior derecha, seleccionar la
+1.  Abrir RStudio y, en la esquina superior izquierda, seleccionar la
     pestaña **File (Archivo)** -\> **New Project... (Proyecto Nuevo)**.
+
+![](fig/file_new_project.png)
 
 2.  Se desplegará una ventana con encabezado **New Project Wizard**:
     **Create Project**, ahora se debe seleccionar **New Directory
@@ -183,13 +185,12 @@ pasos:
 
 ![](fig/proyecto_r.png)
 
-3.  En la ventana **Project Type**, se debe seleccionar **New Project**
-    -\> **Create New Project**. En la casilla **Directory Name (Nombre
-    del Directorio)** coloque el nombre deseado para su proyecto (e.g.
-    "`IntroR`").\
-
+3.  En la ventana con encabezado **New Project Wizard**:**Project Type**, se debe seleccionar **New Project**
+    ![](fig/tipo_projecto.png)
+4.  En la ventana con encabezado **New Project Wizard**:**Create New Project**. En la casilla **Directory Name (Nombre del Directorio)** coloque el nombre deseado para su proyecto (e.g. "`IntroR`").  
+![](fig/projectoR_introR.png)
 4.  Hacemos clic en el botón **Browse....** Para buscar la ubicación
-    dentro de nuestro computador donde deseamos guardar el proyecto
+    dentro del computador donde deseamos guardar el proyecto
 
 5.  Creamos una nueva carpeta con el mismo nombre del proyecto (e.g.
     "`IntroR`"), así como las subcarpetas que necesitamos para organizar
