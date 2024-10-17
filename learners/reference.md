@@ -177,7 +177,7 @@ $D$ = duración del periodo infeccioso
     respiratorio de la Influenza estacional, Ébola, Difteria, Viruela y
     Sarampión.
 
-    ![](fig/R0s%20plot.jpeg)
+    ![](fig/R0s_plot.jpeg)
 
 [Número de reproducción efectivo,]{#rt}$R_t$
 
