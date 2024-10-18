@@ -51,17 +51,17 @@ opts_chunk$set(collapse = TRUE)
 ::: callout
 **Tabla de contenido**
 
-+---------------------------------------------------------------------+
-| -   Tema 1: Introducción a la limpieza de datos (Ver en plataforma  |
-|     del curso)                                                      |
-|                                                                     |
-| -   Tema 2: Exploración y caracterización de los datos              |
-|                                                                     |
-| -   Tema 3: Limpieza y corrección de los datos: errores frecuentes  |
-|     y sus soluciones                                                |
-|                                                                     |
-| -   Tema 4: Organización de los datos                               |
-+---------------------------------------------------------------------+
++----------------------------------------------------------------------+
+| -   Tema 1: Introducción a la limpieza de datos (Ver en plataforma   |
+|     del curso)                                                       |
+|                                                                      |
+| -   Tema 2: Exploración y caracterización de los datos               |
+|                                                                      |
+| -   Tema 3: Limpieza y corrección de los datos: errores frecuentes y |
+|     sus soluciones                                                   |
+|                                                                      |
+| -   Tema 4: Organización de los datos                                |
++----------------------------------------------------------------------+
 :::
 
 ## Introducción

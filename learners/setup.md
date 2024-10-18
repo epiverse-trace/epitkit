@@ -126,17 +126,19 @@ Recuerde almacenarlos en la carpeta **data** en la ubicación de su proyecto.
 
 Episodio Introducción a R y Rstudio:  
 
-- Datos para [la práctica](https://raw.githubusercontent.com/TRACE-LAC/TRACE-LAC-data/main/datos_covid.xlsx)
+- Datos para [la práctica](https://raw.githubusercontent.com/TRACE-LAC/TRACE-LAC-data/main/datos_covid.xlsx)   
+
 - Datos para [Actividad de afianzamiento](https://github.com/TRACE-LAC/TRACE-LAC-data/raw/refs/heads/main/otros/datos_limpios_covid.RDS) 
 
-Episodio Reporte e informes tecnicos en R Markdown:  
+Episodio Reporte e informes técnicos en R Markdown:  
  
 - Datos para [la práctica](https://github.com/TRACE-LAC/TRACE-LAC-data/blob/main/otros/muestra_covid.RDS?raw=true)    
  
-Episodio Introducción a la visualizacion de datos en R con ggplot2:
+Episodio Introducción a la visualización de datos en R con ggplot2:
 
-- Datos para [la práctica](https://github.com/TRACE-LAC/TRACE-LAC-data/blob/main/otros/muestra_covid.RDS?raw=true) (Son los mismos datos de la práctica de R Markdown)
+- Datos para [la práctica](https://github.com/TRACE-LAC/TRACE-LAC-data/blob/main/otros/muestra_covid.RDS?raw=true)   
+(Son los mismos datos de la práctica de R Markdown)
 
 Episodio Limpieza de datos epidemiológicos usando R:
 
-- Datos para [la práctica](https://github.com/TRACE-LAC/TRACE-LAC-data/raw/main/data_limpieza.zip) Descomprimados y ponga el contenido en su carpeta **data**
+- Datos para [la práctica](https://github.com/TRACE-LAC/TRACE-LAC-data/raw/main/data_limpieza.zip) Descomprima los archivos y ponga el contenido en su carpeta **data**
