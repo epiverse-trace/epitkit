@@ -48,29 +48,27 @@ library(knitr)
 opts_chunk$set(collapse = TRUE)
 ```
 
-::: callout
+::: checklist
 ## **Tabla de contenido**
 
-+----------------------------------------------------------------------+
-| -   Tema 1: Introducción a la limpieza de datos (Ver en plataforma   |
-|     del curso)                                                       |
-|                                                                      |
-| -   Tema 2: Exploración y caracterización de los datos               |
-|                                                                      |
-| -   Tema 3: Limpieza y corrección de los datos: errores frecuentes y |
-|     sus soluciones                                                   |
-|                                                                      |
-| -   Tema 4: Organización de los datos                                |
-+----------------------------------------------------------------------+
+-   Módulo: Ciencia de datos en salud pública 
+    - Unidad: Limpieza de datos epidemiológicos
+        -   Tema 1: Introducción a la limpieza de datos (Ver en plataforma
+        del curso)
+        -   Tema 2: Exploración y caracterización de los datos
+        -   Tema 3: Modificación, limpieza y corrección de los datos:
+        Errores frecuentes y sus soluciones
+        -   Tema 4: Organización de los datos
+    
 :::
 
 # Introducción
 
 En esta unidad abordaremos el proceso de limpieza de datos
-epidemiológicos,       utilizando los conocimientos previos de la unidad
-de la introducción a R y RStudio, abordaremos la limpieza de datos como
-un proceso fundamental para obtener insumos idóneos para el análisis de
-los datos, la visualización y la creación de reportes epidemiológicos.
+epidemiológicos, utilizando los conocimientos previos de la unidad de la
+introducción a R y RStudio, abordaremos la limpieza de datos como un
+proceso fundamental para obtener insumos idóneos para el análisis de los
+datos, la visualización y la creación de reportes epidemiológicos.
 
 En esta unidad, aprenderá a reconocer las actividades necesarias para
 llevar a cabo el proceso de limpieza de datos, aprenderá cómo solucionar
