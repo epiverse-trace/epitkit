@@ -18,18 +18,18 @@ editor_options:
 ---
 
 ::: questions
-### Pregunta introductoria
 
--   ¿Cómo visualizar datos epidemiologicos con ggplot2?
+- ¿Cómo visualizar datos epidemiologicos con ggplot2?
+
 :::
 
 ::: objectives
-# Objetivos
 
 Al final de este taller usted podrá:
 
--   Reconocer las funciones que componen el paquete ggplot2.
--   Realizar gráficos básicos con la estructura de ggplot2
+- Reconocer las funciones que componen el paquete ggplot2.
+- Realizar gráficos básicos con la estructura de ggplot2
+
 :::
 
 ::: prereq
@@ -62,7 +62,7 @@ opts_chunk$set(collapse = TRUE)
 **Desarrollo del contenido** (desarrolle cada uno de los temas teniendo
 en cuenta la tabla de contenido)
 
-# Introducción
+## Introducción
 
 En el ámbito de la ciencia de datos y la toma de decisiones, la
 habilidad para transformar datos en información comprensible y que
@@ -72,7 +72,7 @@ En esta unidad haremos uso de ggplot2, una poderosa librería de gráficos
 de R basada en la gramática de gráficos, para crear visualizaciones
 impactantes.
 
-# Tema 1: Principios de la gramática de gráficos con `ggplot2`
+## Tema 1: Principios de la gramática de gráficos con `ggplot2`
 
 `ggplot2` es un paquete de R basado en la gramática de gráficos que
 permite visualizar datos de una manera consistente y estructurada.
@@ -90,7 +90,7 @@ descompone un gráfico en sus componentes fundamentales y define cómo se
 combinan estos componentes para representar datos.
 
 ::: checklist
-## Estos componentes básicos son:
+### Estos componentes básicos son:
 
 **1. Datos (Data):** representan los datos que queremos visualizar.
 Puede ser una tabla de datos (data.frame) en R u otra fuente de datos.
@@ -135,7 +135,7 @@ ggplot(data, \# Los datos
 ```
 :::
 
-# Tema 2: Ejemplos del uso de la gramática de gráficos con ggplot
+## Tema 2: Ejemplos del uso de la gramática de gráficos con ggplot
 
 Aquí vamos a ir explicando cómo puedes hacer uso de esta herramienta en
 tu computador. A medida que avanzas trata de ir replicando los
@@ -195,7 +195,7 @@ verifica la estructura de la tabla de datos
 glimpse(covid19)
 ```
 
-## Estética (Aesthetics)
+### Estética (Aesthetics)
 
 En el contexto de la gramática de gráficos, la estética (aesthetics) se
 refiere a cómo mapeamos los atributos de nuestros datos a propiedades
@@ -253,7 +253,7 @@ ggplot(data = covid19_resumen,
   geom_point()
 ```
 
-## Geometría (Geometry):
+### Geometría (Geometry)
 
 La geometría representa la forma en que los datos se visualizan en el
 gráfico; como puntos, líneas, barras, áreas, etc. Cada tipo de gráfico
@@ -386,7 +386,7 @@ ggplot(covid19_ubicacion,
 Pregunta ¿cómo produciría esta misma gráfica, pero en orden ascendente?
 :::
 
-## **Escala:**
+### Escala
 
 En la gramática de gráficos en `ggplot2`, la escala se refiere a la
 forma en que los valores de los datos se traducen en propiedades
@@ -397,7 +397,7 @@ A continuación, veremos algunos de los diferentes tipos de escalas
 disponibles en `ggplot2` y sus funciones:
 
 ::: checklist
-### 1. Para **datos de tipo continuo o numéricos** tenemos **escalas continuas como:**
+#### 1. Para **datos de tipo continuo o numéricos** tenemos **escalas continuas como:**
 
 -   `scale_x_continuous()` y `scale_y_continuous()` : para el eje x y el
     eje y, respectivamente.
@@ -408,7 +408,7 @@ disponibles en `ggplot2` y sus funciones:
 :::
 
 ::: checklist
-### 2. Para **datos categóricos o de carácter** tenemos escalas discretas como:
+#### 2. Para **datos categóricos o de carácter** tenemos escalas discretas como:
 
 -   `scale_x_discrete()` y `scale_y_discrete()`: para el eje x y el eje
     y, respectivamente.
@@ -420,14 +420,14 @@ disponibles en `ggplot2` y sus funciones:
 :::
 
 ::: checklist
-### 3. Para **datos de fecha** tenemos escalas de fechas como:
+#### 3. Para **datos de fecha** tenemos escalas de fechas como:
 
 -   `scale_x_date()` y `scale_y_date()`: para el eje x y el eje y,
     respectivamente cuando se tengan datos de fecha.
 :::
 
 ::: checklist
-### 4. Para hacer uso de escalas personalizadas se hace uso de escalas manuales en las que podemos especificar nuestros propios valores.
+#### 4. Para hacer uso de escalas personalizadas se hace uso de escalas manuales en las que podemos especificar nuestros propios valores.
 
 -   `scale_color_manual()`: se especifica manualmente los colores para
     los valores.
@@ -437,7 +437,7 @@ disponibles en `ggplot2` y sus funciones:
 :::
 
 ::: checklist
-### 5. Otras escalas:
+#### 5. Otras escalas:
 
 -   `scale_fill_*`: se usa similar a las escalas de color pero para
     colores que queramos con relleno.
@@ -483,7 +483,7 @@ ggplot(covid19_ubicacion,
 ¿Qué diferencias ve con la última gráfica del Ejemplo 4.?
 :::
 
-## Facetas
+### Facetas
 
 Las Facetas (`Facets`) en la gramática de gráficos son una forma de
 dividir los datos en subconjuntos y representarlos en múltiples paneles
@@ -544,7 +544,7 @@ ggplot(covid19_sexo, aes(edad, casos)) +
   facet_wrap(~sexo)
 ```
 
-## Tema
+### Tema
 
 En la gramática de gráficos, el tema se refiere a la personalización de
 la apariencia visual general del gráfico; como los títulos, etiquetas de
@@ -613,15 +613,15 @@ ggplot(data = covid19_sexo,
 ```
 
 ::: keypoints
-## Puntos clave
 
 Revise si al final de esta lección adquirió estas competencias:
 
 -   Reconocer las funciones que componen el paquete ggplot2.
 -   Realizar gráficos básicos con la estructura de ggplot2.
+
 :::
 
-## Contribuciones
+### Contribuciones
 
 -   Zulma M. Cucunuba: Versión inicial
 -   Geraldine Gomez: Edición
@@ -629,6 +629,6 @@ Revise si al final de esta lección adquirió estas competencias:
 -   Laura Gómez-Bermeo: Ediciones menores
 -   José M. Velasco-España: Ediciones menores
 
-## Asuntos legales
+### Asuntos legales
 
 **Copyright**: Zulma M. Cucunuba, 2023
