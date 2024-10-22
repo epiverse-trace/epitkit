@@ -19,15 +19,15 @@ exercises: 8
 ---
 
 ::: questions
-### Pregunta introductoria
 
--   ¿Tiene algunas dificultades con el código en R?
+- ¿Tiene algunas dificultades con el código en R?
+
 :::
 
 ::: objectives
-# Objetivo
 
-En este documento usted podrá encontrar algunas de las preguntas y errores frecuentes de la ejecución del código en R.
+- En este documento usted podrá encontrar algunas de las preguntas y errores frecuentes de la ejecución del código en R.
+
 :::
 
 ```{r setup, include=FALSE}
@@ -365,12 +365,12 @@ datos %>%  group_by(pais) %>%
 <https://www.youtube.com/watch?v=6STcQVX8Hk0>
 
 ::: keypoints
-## Puntos clave
 
 Si después de buscar en esta guía sus preguntas no encontro respuesta por favor diligencie el siguiente formulario [Dudas por resolver](https://forms.office.com/pages/responsepage.aspx?id=Dpn32j-KnECbdipUdQmAAMjWJqHZ8P1DkQQdb07M30RUOEY5N1U1UDFYMExGMzFHRkRKT1BTRTFRWS4u&route=shorturl&sid=6a94f23c-049c-4f54-9732-fc25789059b3){.uri}
+
 :::
 
-## Contribuciones
+### Contribuciones
 
 -   José M. Velasco-España: Versión inicial
 
