@@ -17,23 +17,22 @@ editor_options:
 ---
 
 ::: questions
-### Pregunta introductoria
 
--   ¿Cómo limpiar datos epidemiológicos con R?
+- ¿Cómo limpiar datos epidemiológicos con R?
+
 :::
 
 ::: objectives
-# Objetivos
 
 Al final de este taller usted podrá:
 
--   Reconocer las herramientas que facilitan la limpieza de datos
+- Reconocer las herramientas que facilitan la limpieza de datos
     epidemiológicos.
 
--   Identificar las buenas prácticas de la limpieza de datos
+- Identificar las buenas prácticas de la limpieza de datos
     epidemiológicos.
 
--   Explorar el proceso de limpieza, organización y caracterización de
+- Explorar el proceso de limpieza, organización y caracterización de
     datos epidemiológicos.
 :::
 
@@ -45,29 +44,28 @@ Esta unidad tiene como prerequisitos:
 
 
 
-::: callout
-**Tabla de contenido**
+::: checklist
 
-+---------------------------------------------------------------------+
-| -   Tema 1: Introducción a la limpieza de datos (Ver en plataforma  |
-|     del curso)                                                      |
-|                                                                     |
-| -   Tema 2: Exploración y caracterización de los datos              |
-|                                                                     |
-| -   Tema 3: Limpieza y corrección de los datos: errores frecuentes  |
-|     y sus soluciones                                                |
-|                                                                     |
-| -   Tema 4: Organización de los datos                               |
-+---------------------------------------------------------------------+
+### **Tabla de contenido**
+
+-   Módulo: Ciencia de datos en salud pública 
+    - Unidad: Limpieza de datos epidemiológicos
+        -   Tema 1: Introducción a la limpieza de datos (Ver en plataforma
+        del curso)
+        -   Tema 2: Exploración y caracterización de los datos
+        -   Tema 3: Modificación, limpieza y corrección de los datos:
+        Errores frecuentes y sus soluciones
+        -   Tema 4: Organización de los datos
+    
 :::
 
 ## Introducción
 
 En esta unidad abordaremos el proceso de limpieza de datos
-epidemiológicos,       utilizando los conocimientos previos de la unidad
-de la introducción a R y RStudio, abordaremos la limpieza de datos como
-un proceso fundamental para obtener insumos idóneos para el análisis de
-los datos, la visualización y la creación de reportes epidemiológicos.
+epidemiológicos, utilizando los conocimientos previos de la unidad de la
+introducción a R y RStudio, abordaremos la limpieza de datos como un
+proceso fundamental para obtener insumos idóneos para el análisis de los
+datos, la visualización y la creación de reportes epidemiológicos.
 
 En esta unidad, aprenderá a reconocer las actividades necesarias para
 llevar a cabo el proceso de limpieza de datos, aprenderá cómo solucionar
@@ -76,17 +74,17 @@ análisis y comprenderá cómo describir y organizar los datos, clasificar
 variables, aplicar formatos a las variables, manejar datos duplicados y
 abordar la ausencia de datos.
 
-# **Tema 2: Exploración y caracterización de los datos**
+## **Tema 2: Exploración y caracterización de los datos**
 
-## **2.2. Exploración de la estructura de los datos en R**
+### **2.2. Exploración de la estructura de los datos en R**
 
 Una vez hecha la exploración y la caracterización de los datos mediante
 la documentación se procederá a explorar el dataset.
 
-### **2.2.1. Carga de la información**
+#### **2.2.1. Carga de la información**
 
 ::: checklist
-⚠️ **Instrucciones:**
+### ⚠️ **Instrucciones:**
 
 Antes de empezar a trabajar verifique que ya cuenta con los siguientes
 pasos:
@@ -167,7 +165,7 @@ covid <- rio::import("datos/covid_LA.csv")
 Ahora que la base está cargada podemos hacer la revisión del formato de
 los datos.
 
-### **2.2.2. Exploración del dataset**
+#### **2.2.2. Exploración del dataset**
 
 En este ejercicio para explorar las variables contenidas en el objeto
 covid se puede realizar una aproximación general o específica a cada
@@ -220,7 +218,7 @@ $ talla                         <chr> "1.73", "1.67", "1m69", "1.66", "1.63", �
 $ peso                          <dbl> 69.6, 73.9, 66.4, 72.5, 64.6, 66.7, 68.9…
 ```
 
-### **2.2.3. Aplicación de buenas prácticas para nombrar variables**
+#### **2.2.3. Aplicación de buenas prácticas para nombrar variables**
 
 ::: callout
 **Tip de buena práctica:** De acuerdo con las buenas prácticas de
@@ -309,7 +307,7 @@ $ talla                       <chr> "1.73", "1.67", "1m69", "1.66", "1.63", "1�
 $ peso                        <dbl> 69.6, 73.9, 66.4, 72.5, 64.6, 66.7, 68.9, …
 ```
 
-### **2.2.4. Resumen de variables**
+#### **2.2.4. Resumen de variables**
 
 Para empezar la exploración de las variables, emplearemos la función
 summary.
@@ -420,7 +418,7 @@ se obtiene el siguiente resultado:
  Max.   :109.00  
 ```
 
-### **2.2.5. Exploración de variables cuantitativas**
+#### **2.2.5. Exploración de variables cuantitativas**
 
 Otra forma de explorar variables cuantitativas es en forma de gráfica.
 Empleando gráficos como histogramas, diagrama de cajas y bigotes, líneas
@@ -466,7 +464,7 @@ Para explorar más temas de visualización por favor diríjase a la
 **Unidad. Introducción a la visualización de datos en R con ggplot2**.
 :::
 
-### **2.2.6. Exploración de variables cualitativas**
+#### **2.2.6. Exploración de variables cualitativas**
 
 Ahondemos un poco más en la exploración de variables cualitativas.
 Cuando usamos `summary`, al inicio de esta sección, pudimos ver que
@@ -595,9 +593,9 @@ se obtiene el siguiente resultado:
 
 <img src="fig/limpieza-rendered-unnamed-chunk-28-1.png" style="display: block; margin: auto;" />
 
-# **Tema 3: Modificación, limpieza y corrección de los datos: Errores frecuentes y sus soluciones**
+## **Tema 3: Modificación, limpieza y corrección de los datos: Errores frecuentes y sus soluciones**
 
-## **3.1. Revisión de la coherencia del contenido de las variables.**
+### **3.1. Revisión de la coherencia del contenido de las variables.**
 
 Para emplear estas funciones de conversión podemos emplearlas
 directamente a cada variable (ej. `as.factor(covid$sexo)`) o hacer uso
@@ -790,7 +788,7 @@ covid <- covid %>%
     lang = "es")
 ```
 
-## **3.2. Identificación de valores erróneos o faltantes.**
+### **3.2. Identificación de valores erróneos o faltantes.**
 
 Además de los valores NA en nuestro procesamiento de datos podemos
 encontrar otros valores Inf (valores infinitos) o NaN (valores numéricos
@@ -799,9 +797,9 @@ indeterminados).
 La identificación de datos faltantes requiere en primera instancia
 identificar la causa de la ausencia de estos datos.
 
-### **3.2.1. Valores NA**
+#### **3.2.1. Valores NA**
 
-#### **NAs relacionados con separadores incorrectos**
+##### **NAs relacionados con separadores incorrectos**
 
 Veamos un ejemplo común de aparición de `NA`: cuando tenemos diferentes
 separadores para números (ej. en talla).
@@ -930,7 +928,7 @@ covid %>%
 Como podemos ver, una vez hecha la transformación ya no aparecen
 comillas "", indicando que ya se hizo la conversión a numéricos.
 
-#### **NAs relacionados con errores en la escritura de fechas**
+##### **NAs relacionados con errores en la escritura de fechas**
 
 En algunas ocasiones puede ocurrir que la escritura de fechas sigue el
 criterio de quién recolecta los datos. Por ejemplo, en un formulario que
@@ -1023,7 +1021,7 @@ covid <- covid %>%
     target_columns = "fecha_reporte_web")
 ```
 
-#### **NAs relacionados con errores en la escritura de números**
+##### **NAs relacionados con errores en la escritura de números**
 
 En algunos casos pueden ocurrir errores en la recolección que no se
 corrigen en la digitación como, por ejemplo, escribir el nombre de un
@@ -1091,7 +1089,7 @@ Como puede observar los números en letras fueron convertidos a sus
 respectivos equivalentes numéricos. Mientras que todo elemento no
 reconocido como número fue convertido en `NA`.
 
-#### **NAs relacionados con dos datos en la misma columna**
+##### **NAs relacionados con dos datos en la misma columna**
 
 En algunos casos un dataset puede contener dos variables en una misma
 columna.
@@ -1162,7 +1160,7 @@ trabajadas y el analista de datos debe usar su criterio en cada
 circunstancia y hacer pruebas que le permitan revisar si los resultados
 son los esperados.
 
-### **3.2.2. Valores infinitos (`Inf`)**
+#### **3.2.2. Valores infinitos (`Inf`)**
 
 Los valores infinitos pueden generarse cuando una operación resulta en
 un número demasiado grande (Inf+) o demasiado pequeño (Inf -) para R. En
@@ -1216,7 +1214,7 @@ covid %>%
 [1]  9490 10220 22265  8760 18615  9125
 ```
 
-### **3.2.3. Valores indeterminados (`NaN`)**
+#### **3.2.3. Valores indeterminados (`NaN`)**
 
 Estos valores se generan cuando se realizan operaciones matemáticamente
 indefinidas. Por ejemplo, si intentamos dividir cero entre cero o restar
@@ -1249,7 +1247,7 @@ estos pueden aparecer cuando en el proceso de conversión de variables
 cometemos un error o al crear una variable tras una operación errónea y
 el error se propaga en operaciones subsecuentes.
 
-### **3.2.4. Datos duplicados**
+#### **3.2.4. Datos duplicados**
 
 Otro error que puede ocurrir frecuentemente son los datos duplicados.
 Estos pueden ser tanto una observación de una variable duplicada o todo
@@ -1357,7 +1355,7 @@ querer remover esas filas, de lo contrario puede ejecutar la función sin
 sobrescribir el objeto para observar los resultados y cuando se este
 seguro almacenarlo.
 
-### **3.2.5. Errores tipográficos**
+#### **3.2.5. Errores tipográficos**
 
 A veces, podemos encontrar que las categorías de una variable se han
 escrito de múltiples maneras. Veamos un ejemplo:
@@ -1399,7 +1397,7 @@ covid %>%
        74852         1727           12            1          407            0 
 ```
 
-### **3.2.6. Reemplazar valores perdidos**
+#### **3.2.6. Reemplazar valores perdidos**
 
 En algunas ocasiones los dataset contienen valores que no corresponden a
 las categorías de las variables, faltan o desde la documentación sabemos
@@ -1456,7 +1454,7 @@ covid %>%
        74852         1727           12            1          407 
 ```
 
-### **3.2.7. Columnas con valores constantes**
+#### **3.2.7. Columnas con valores constantes**
 
 En algunas ocasiones, es posible encontrar columnas que contienen un
 único valor. Esto puede ocurrir, por ejemplo, cuando se divide un
@@ -1490,7 +1488,7 @@ covid %>%
 [1] 25
 ```
 
-### **3.2.8. Verificación de valores atípicos**
+#### **3.2.8. Verificación de valores atípicos**
 
 Para evaluar si los datos se encuentran dentro de un rango esperado o si
 existen valores atípicos, se puede emplear la creación de gráficas o la
@@ -1585,7 +1583,7 @@ corregir este tipo de errores se puede eliminar las filas que contienen
 estos datos o reasignar a estos valores con datos tipo NA para no perder
 la demás información.
 
-### **3.2.9. Corrección de errores en fechas**
+#### **3.2.9. Corrección de errores en fechas**
 
 Una vez explorados los datos e identificados posibles errores, podemos
 explorar las medidas correctivas a utilizar. En este caso teniendo en
@@ -1654,7 +1652,7 @@ covid %>%
 **Resultado esperado:** Al usar el anterior código con el mismo dataset
 se obtiene el siguiente resultado:
 
-### **3.2.10. Filtrado de registros con NA**
+#### **3.2.10. Filtrado de registros con NA**
 
 En ciertos análisis, puede ser necesario excluir los valores NA. Para
 lograr esto, podemos utilizar la función de filtrado proporcionada por
@@ -1697,7 +1695,7 @@ covid %>%
 
 Como puede observar ahora los NA son 0.
 
-### **3.2.11. Reemplazo de siglas, abreviaturas o valores códigos**
+#### **3.2.11. Reemplazo de siglas, abreviaturas o valores códigos**
 
 En el proceso de la recopilación o entrada de datos, es común el uso de
 siglas, abreviaturas o códigos para registrar información. Por ejemplo,
@@ -1766,12 +1764,12 @@ masculino  femenino      <NA>
     35627     40962         0 
 ```
 
-# **Tema 4: Organización de los datos**
+## **Tema 4: Organización de los datos**
 
 Finalmente podemos realizar algunas actividades de organización de
 datos. Como, por ejemplo:
 
-## 4.1. Eliminación de variables repetidas o que no tengan utilidad en responder la pregunta de investigación
+### 4.1. Eliminación de variables repetidas o que no tengan utilidad en responder la pregunta de investigación
 
 Durante la exploración de datos es posible encontrar variables cuyo
 contenido no es necesario para el análisis o que ya no se requieren.
@@ -1788,7 +1786,7 @@ covid <- covid %>%
   dplyr::select (!edad_repetida)
 ```
 
-## 4.2. Organización de las variables
+### 4.2. Organización de las variables
 
 Parte de la organización de las variables incluye asignar nombres
 apropiados a las variables, según la necesidad del proyecto. Esto se
@@ -1806,7 +1804,7 @@ covid <- covid %>%
 
 ¿A qué otras columnas les cambiaría el nombre?
 
-## 4.3. Almacenamiento del dataset limpio
+### 4.3. Almacenamiento del dataset limpio
 
 Una vez se haya terminado la modificación, limpieza y corrección de los
 datos podemos guardar el dataset limpio. Esto se debe a que, todos los
@@ -1841,7 +1839,6 @@ embargo, se recomienda RDS por su bajo peso y capacidad de
 almacenamiento.
 
 ::: keypoints
-## Puntos clave
 
 Revise si al final de esta lección adquirió estas competencias:
 
@@ -1853,9 +1850,10 @@ Revise si al final de esta lección adquirió estas competencias:
 
 -   Explorar el proceso de limpieza, organización y caracterización de
     datos epidemiológicos.
+
 :::
 
-## Contribuciones
+### Contribuciones
 
 -   Zulma M. Cucunuba: Versión inicial
 -   Laura Gómez-Bermeo: Edición
@@ -1863,6 +1861,6 @@ Revise si al final de esta lección adquirió estas competencias:
 -   Andree Valle: Ediciones menores
 -   José M. Velasco España: Ediciones menores
 
-## Asuntos legales
+### Asuntos legales
 
 **Copyright**: Zulma M. Cucunuba, 2019

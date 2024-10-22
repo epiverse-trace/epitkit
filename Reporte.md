@@ -11,40 +11,53 @@ image: null
 licenses: CC-BY
 teaching: 40
 exercises: 4
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
-
-### Pregunta introductoria 
+::: questions
 
 - ¿Cómo se utilizan R markdown para presentar un reporte?
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::
 
-::::::::::::::::::::::::::::::::::::: objectives
-
-# Objetivos 
+::: objectives
 
 Al final de este taller usted podrá:
 
--   Reconocer la importancia de generar informes en R Markdown  
--   Aprender a utilizar R markdown de forma básica  
+- Reconocer la importancia de generar informes en R Markdown\
+- Aprender a utilizar R markdown de forma básica
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::
 
-
-::::::::::::::::::::: prereq
-
+::: prereq
 Esta unidad tiene como prerequisitos:
 
-- Introducción a R y RStudio
-:::::::::::::::::::::
+-   Introducción a R y RStudio
+:::
 
 
+
+::: checklist
+### Tabla de contenido
+
+-   Módulo: Ciencia de datos en salud pública
+    -   Unidad: Reporte e informes técnicos en R Markdown
+        -   Tema 1: ¿Qué es R Markdown?
+        -   Tema 2: Estructura de R Markdown
+        -   Tema 3: Paso a Paso en R Markdown
+        
+:::
 
 ## Introducción
 
-En esta unidad aprenderemos sobre el uso del formato R Markdown, el cual permite integrar código en la generación de informes sin la necesidad de importar gráficas o crear tablas manualmente. De esta manera, el formato R Markdown facilita la generación automática, actualización y redacción de informes técnicos al combinar la sintaxis del formato Markdown con código en R incrustado en el documento.  
+En esta unidad aprenderemos sobre el uso del formato R Markdown, el cual
+permite integrar código en la generación de informes sin la necesidad de
+importar gráficas o crear tablas manualmente. De esta manera, el formato
+R Markdown facilita la generación automática, actualización y redacción
+de informes técnicos al combinar la sintaxis del formato Markdown con
+código en R incrustado en el documento.
 
 ## **Tema 1: ¿Qué es R Markdown?**
 
@@ -90,18 +103,17 @@ Siguiendo la ruta **File**\>**New File**\>**R Markdown** podemos crear
 un archivo de R Markdown definiendo: título, autor(es) y con formato de
 salida preferido (html, pdf o word).
 
-Siga los pasos, que también pueden verse en la imagen, y cree su
-archivo R Markdown con tu nombre y el título de Reporte.
+Siga los pasos, que también pueden verse en la imagen, y cree su archivo
+R Markdown con tu nombre y el título de Reporte.
 
 ![](fig/crea_reporte.png)
 
 ### **Paso 3. Editar el archivo de R Markdown y el código**
 
-:::::::::::::::::::::::::::::::::::: callout
-
+::: callout
 Es importante recordar que R Markdown tiene tres secciones, todas
 editables: Yaml, Texto y Chunk de código.
-:::::::::::::::::::::::::::::::::::::::::::
+:::
 
 Al haber creado su archivo de R Markdown podrá observar e identificar
 las diferentes secciones que se muestran en la imagen.
@@ -110,14 +122,16 @@ las diferentes secciones que se muestran en la imagen.
 
 A continuación, veremos cómo editar cada una de estas partes:
 
-**¿Cómo editar el texto?**
+#### **¿Cómo editar el texto?**
 
 -   Para incluir el título de una sección se escribe el símbolo numeral
     \# y a continuación el nombre de la sección en una línea única.
 
 -   Para poner subtítulos se utiliza dos símbolos numeral ##.
 
--   Para cada subtítulo en la estructura se agrega otro símbolo numeral #.  
+-   Para cada subtítulo en la estructura se agrega otro símbolo numeral
+
+    1.  
 
 -   Para escribir palabra en negritas use dos asteriscos a cada lado
     \*\*palabra\*\*
@@ -128,7 +142,7 @@ A continuación, veremos cómo editar cada una de estas partes:
 -   Para situar el texto en un bloque aparte, se antecede este texto con
     el símbolo \> en una línea única.
 
-**¿Cómo editar el *chunk* de código?**
+#### **¿Cómo editar el *chunk* de código?**
 
 Para incluir código en R, es necesario introducir un *chunk* en el
 documento marcando en la barra de herramientas el icono +C de color
@@ -166,7 +180,7 @@ parte superior derecha de cada Chunk.
 
 ![](fig/run_actual.png)
 
-**Especificar configuración del *chunk***
+#### **Especificar configuración del *chunk***
 
 Dentro de un "chunk", podemos elegir si queremos que el código se
 muestre en el reporte impreso o no; utilizando los comandos
@@ -185,16 +199,14 @@ código, como se muestra aquí.
 
 ```` ``` ````
 
-**Hacer tablas en R Markdown**
+#### **Hacer tablas en R Markdown**
 
-:::::::::::::::::::::::::::::::::::: callout
-
+::: callout
 La tabla de datos para esta práctica será la misma de la Unidad de
 Introducción a la visualización de datos en R con `ggplot2`. Puede
 encontrarla en:
 <https://github.com/TRACE-LAC/TRACE-LAC-data/blob/main/otros/muestra_covid.RDS?raw=true>
-
-:::::::::::::::::::::::::::::::::::::::::::
+:::
 
 Para hacer tablas en R Markdown podemos utilizar la función `kable` de
 la librería `knitr`, como se muestra a continuación:
@@ -243,7 +255,7 @@ Como resultado, obtenemos la siguiente tabla:
 
 
 
-**Poner parámetros automatizados en el texto**
+#### **Poner parámetros automatizados en el texto**
 
 En un reporte también es posible combinar código y texto, utilizando los
 resultados obtenidos en el código como parte del texto del reporte. Es
@@ -254,8 +266,8 @@ manera automática. Para esto, simplemente se debe parametrizar un valor
 y luego incluirlo en el texto usando su nombre correspondiente.
 
 Por ejemplo, para calcular el total de casos de COVID-19 de sexo
-femenino en nuestro conjunto de datos de datos `dat` dentro de un *chunk*
-de R haríamos lo siguiente:
+femenino en nuestro conjunto de datos de datos `dat` dentro de un
+*chunk* de R haríamos lo siguiente:
 
 
 ``` r
@@ -268,24 +280,25 @@ total_casos_fem \`, y por ejemplo escribir directamente como texto:
 
 El total de casos de sexo femenino es \` r total_casos_fem\`
 
-Cuyo valor debe coincidir con el valor que obtenemos al imprimir el objeto `total_casos_fem`
+Cuyo valor debe coincidir con el valor que obtenemos al imprimir el
+objeto `total_casos_fem`
+
 
 ``` r
 total_casos_fem
 [1] 52453
 ```
-:::::::::::::::::::::::::::::::::::: callout
 
+::: callout
 Al tejer el informe tendremos una línea similar a esta:
 
 El total de casos de sexo femenino es 52453
 
 Para ver cómo queda combinado el resultado del código con este texto
 debemos seguir el siguiente paso.
+:::
 
-:::::::::::::::::::::::::::::::::::::::::::
-
-**Paso 4. "Tejer" (generar) el informe**
+### **Paso 4. "Tejer" (generar) el informe**
 
 Para "tejer" el informe, es decir, generar el informe en un formato
 específico (HTML, PDF o Word), debemos dar click en el símbolo *"Knit"*
@@ -295,29 +308,25 @@ en la siguiente imagen:
 ![](fig/tejer.png)
 
 Después de este paso debe aparecer el informe final en la presentación
-que hayamos seleccionado (html, pdf o word).  
+que hayamos seleccionado (html, pdf o word).
 
-::::::::::::::::::::::::::::::::::::: challenge 
-
+::: challenge
 Observe cómo aparece la tabla y el texto del total de casos de sexo
-femenino.  
-::::::::::::::::::::::::::::::::::::::::::::::::
-  
+femenino.
+:::
 
 ¡Felicitaciones, ha producido su primer reporte R Markdown en html!
 
-::::::::::::::::::::::::::::::::::::: keypoints 
-
-## Puntos clave 
+::: keypoints
 
 Revise si al final de esta lección adquirió estas competencias:
 
--   Reconocer la importancia de generar informes en R Markdown  
--   Aprender a utilizar R markdown de forma básica  
+-   Reconocer la importancia de generar informes en R Markdown\
+-   Aprender a utilizar R markdown de forma básica
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::
 
-## Contribuciones
+### Contribuciones
 
 -   Zulma M. Cucunuba: Versión inicial
 -   Laura Gómez-Bermeo: Edición
@@ -325,6 +334,6 @@ Revise si al final de esta lección adquirió estas competencias:
 -   Andree Valle: Ediciones menores
 -   José M. Velasco España: Ediciones menores
 
-## Asuntos legales
+### Asuntos legales
 
 **Copyright**: Zulma M. Cucunuba, 2019
