@@ -92,11 +92,11 @@
   Curso en ciencia de datos en salud pública y modelamiento de enfermedades infecciosas
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 23%" class="percentage">
-    23%
+<aside class="col-md-12 lesson-progress"><div style="width: 25%" class="percentage">
+    25%
   </div>
   <div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 23%" aria-valuenow="23" aria-label="Progreso de la lección" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar incubator" role="progressbar" style="width: 25%" aria-valuenow="25" aria-label="Progreso de la lección" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -172,9 +172,10 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#est%C3%A9tica-aesthetics"><strong>Estética (Aesthetics)</strong></a></li>
-<li><a href="#contribuciones">Contribuciones</a></li>
-<li><a href="#asuntos-legales">Asuntos legales</a></li>
+        <ul><li><a href="#introducci%C3%B3n">Introducción</a></li>
+<li><a href="#tema-1-principios-de-la-gram%C3%A1tica-de-gr%C3%A1ficos-con-ggplot2">Tema 1: Principios de la gramática de gráficos con
+<code>ggplot2</code></a></li>
+<li><a href="#tema-2-ejemplos-del-uso-de-la-gram%C3%A1tica-de-gr%C3%A1ficos-con-ggplot">Tema 2: Ejemplos del uso de la gramática de gráficos con ggplot</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -202,7 +203,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="zika.html">5. Construyendo un modelo deterministico simple</a>
+        <a href="Banco_errores.html">5. Banco de preguntas y errores frecuentes</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -266,7 +267,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduccion a la visualizacion de datos en R con ggplot2.</h1>
-        <p>Última actualización: 2024-10-08 |
+        <p>Última actualización: 2024-10-22 |
 
         <a href="https://github.com/epiverse-trace/epitkit/edit/main/episodes/Visualizacion.Rmd" class="external-link">Mejora esta página <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -296,10 +297,8 @@
 <div class="inner bordered">
 <h3 class="card-title">Objetivos</h3>
 <p>Al final de este taller usted podrá:</p>
-<ul><li><p>Reconocer las funciones que componen el paquete ggplot2.</p></li>
-<li><p>Realizar gráficos básicos con la estructura de ggplot2</p></li>
-<li><p>Reconocer las funciones que componen el paquete ggplot2.</p></li>
-<li><p>Realizar gráficos básicos con la estructura de ggplot2</p></li>
+<ul><li>Reconocer las funciones que componen el paquete ggplot2.</li>
+<li>Realizar gráficos básicos con la estructura de ggplot2</li>
 </ul></div>
 </div>
 </div>
@@ -324,32 +323,38 @@
 <div id="tabla-de-contenido" class="callout-inner">
 <h3 class="callout-title">Tabla de contenido</h3>
 <div class="callout-content">
-<p>Tema 1: Principios de la gramática de gráficos con
-<code>ggplot2</code><br>
-Tema 2: Gramática de gráficos<br>
-- Datos (Data)<br>
-- Estética (Aesthetics)<br>
-- Geometría (Geometry)<br>
-- Escala (Scale)<br>
-- Facetas (Facets)<br>
-- Temas (Themes)</p>
-</div>
+<ul><li>Módulo: Ciencia de datos en salud pública
+<ul><li>Unidad: Introducción a la visualización de datos en R con ggplot2
+<ul><li>Tema 1: Principios de la gramática de gráficos con
+<code>ggplot2</code>
+</li>
+<li>Tema 2: Gramática de gráficos
+<ul><li>Datos (Data)</li>
+<li>Estética (Aesthetics)</li>
+<li>Geometría (Geometry)</li>
+<li>Escala (Scale)</li>
+<li>Facetas (Facets)</li>
+<li>Temas (Themes)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></div>
 </div>
 </div>
 <p><strong>Desarrollo del contenido</strong> (desarrolle cada uno de los
 temas teniendo en cuenta la tabla de contenido)</p>
-<div class="section level3">
-<h3 id="introducción">Introducción<a class="anchor" aria-label="anchor" href="#introducci%C3%B3n"></a></h3>
-<p>En el ámbito de la ciencia de datos y la toma de decisiones, la
+<section><h2 class="section-heading" id="introducción">Introducción<a class="anchor" aria-label="anchor" href="#introducci%C3%B3n"></a></h2>
+<hr class="half-width"><p>En el ámbito de la ciencia de datos y la toma de decisiones, la
 habilidad para transformar datos en información comprensible y que
 genere impacto es esencial. Esta unidad brindará una introducción a las
 herramientas necesarias para convertir conjuntos de datos en gráficos.
 En esta unidad haremos uso de ggplot2, una poderosa librería de gráficos
 de R basada en la gramática de gráficos, para crear visualizaciones
 impactantes.</p>
-<p><strong>Tema 1: Principios de la gramática de gráficos con
-<code>ggplot2</code></strong></p>
-<p><code>ggplot2</code> es un paquete de R basado en la gramática de
+</section><section><h2 class="section-heading" id="tema-1-principios-de-la-gramática-de-gráficos-con-ggplot2">Tema 1: Principios de la gramática de gráficos con
+<code>ggplot2</code>
+<a class="anchor" aria-label="anchor" href="#tema-1-principios-de-la-gram%C3%A1tica-de-gr%C3%A1ficos-con-ggplot2"></a></h2>
+<hr class="half-width"><p><code>ggplot2</code> es un paquete de R basado en la gramática de
 gráficos que permite visualizar datos de una manera consistente y
 estructurada.</p>
 <p><code>ggplot2</code>recibe su nombre precisamente de la abreviación
@@ -362,14 +367,13 @@ sobre cómo construir y entender visualizaciones de datos de una manera
 coherente y estructurada. En términos simples, la gramática de gráficos
 descompone un gráfico en sus componentes fundamentales y define cómo se
 combinan estos componentes para representar datos.</p>
-<div id="checklist2" class="callout checklist">
+<div id="estos-componentes-básicos-son" class="callout checklist">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check-square"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Lista de verificación</h3>
+<div id="estos-componentes-básicos-son" class="callout-inner">
+<h3 class="callout-title">Estos componentes básicos son:</h3>
 <div class="callout-content">
-<p>Estos componentes básicos son:</p>
 <p><strong>1. Datos (Data):</strong> representan los datos que queremos
 visualizar. Puede ser una tabla de datos (data.frame) en R u otra fuente
 de datos.</p>
@@ -404,32 +408,31 @@ personalizar el tema con la función <code>theme()</code> en
 <p>Por ejemplo, una estructura clásica de un gráfico de puntos será:</p>
 <pre><code>ggplot(data, \# Los datos
 
-   Aes(x, y) \# La estética
-
-   Geom_point()) + \# la geometría</code></pre>
+   aes(x, y) \# La estética
+)+
+   geom_point() \# la geometría</code></pre>
 </div>
 </div>
 </div>
-<p><strong>Tema 2: Ejemplos del uso de la gramática de gráficos con
-ggplot</strong></p>
-<p>Aquí vamos a ir explicando cómo puedes hacer uso de esta herramienta
+</section><section><h2 class="section-heading" id="tema-2-ejemplos-del-uso-de-la-gramática-de-gráficos-con-ggplot">Tema 2: Ejemplos del uso de la gramática de gráficos con ggplot<a class="anchor" aria-label="anchor" href="#tema-2-ejemplos-del-uso-de-la-gram%C3%A1tica-de-gr%C3%A1ficos-con-ggplot"></a></h2>
+<hr class="half-width"><p>Aquí vamos a ir explicando cómo puedes hacer uso de esta herramienta
 en tu computador. A medida que avanzas trata de ir replicando los
 ejercicios.</p>
-<div id="callout1" class="callout">
+<div id="nota." class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Aviso</h3>
+<div id="nota." class="callout-inner">
+<h3 class="callout-title"><strong>NOTA.</strong></h3>
 <div class="callout-content">
-<p><strong>NOTA.</strong> Para hacer más versátil su uso, se recomienda
-conocer el funcionamiento del paquete dplyr y el uso de tuberías (pipes
-%&gt;%), puedes repasar estos temas en la Unidad 1 de este módulo
-“Introducción a R y RStudio”. Por su parte, <code>ggplot2</code> está
-contenido dentro de la librería Tidyverse. Además, Tidiverse incluye
-otras librerías como dplyr que, a su vez, incluye las pipes (%&gt;%).
-Para más detalles sobre Tidyverse consulta la unidad de “Introducción a
-R y RStudio”.</p>
+<p>Para hacer más versátil su uso, se recomienda conocer el
+funcionamiento del paquete dplyr y el uso de tuberías (pipes
+<code>%&gt;%</code>), puedes repasar estos temas en la Unidad 1 de este
+módulo “Introducción a R y RStudio”. Por su parte, <code>ggplot2</code>
+está contenido dentro de la librería Tidyverse. Además, Tidiverse
+incluye otras librerías como dplyr que, a su vez, incluye las pipes
+(<code>%&gt;%</code>). Para más detalles sobre Tidyverse consulta la
+unidad de “Introducción a R y RStudio”.</p>
 </div>
 </div>
 </div>
@@ -514,9 +517,9 @@ datos</p>
 <span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a><span class="st">$ tension_sistolica                     &lt;dbl&gt; 107, 126, 107, 134, 126, 156, 14…</span></span>
 <span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a><span class="st">$ tension_diastolica                    &lt;dbl&gt; 87, 64, 73, 76, 83, 96, 76, 87, …</span></span></code></pre>
 </div>
-</div>
-<section><h2 class="section-heading" id="estética-aesthetics"><strong>Estética (Aesthetics)</strong><a class="anchor" aria-label="anchor" href="#est%C3%A9tica-aesthetics"></a></h2>
-<hr class="half-width"><p>En el contexto de la gramática de gráficos, la estética (aesthetics)
+<div class="section level3">
+<h3 id="estética-aesthetics">Estética (Aesthetics)<a class="anchor" aria-label="anchor" href="#est%C3%A9tica-aesthetics"></a></h3>
+<p>En el contexto de la gramática de gráficos, la estética (aesthetics)
 se refiere a cómo mapeamos los atributos de nuestros datos a propiedades
 visuales en el gráfico. Estas propiedades visuales pueden ser elementos
 tales como la posición en el eje X (x), la posición en el eje Y (y), el
@@ -526,7 +529,8 @@ comunicar patrones y relaciones en los datos de manera efectiva.</p>
 <p>En <code>ggplot2</code> la función principal para especificar la
 estética es <code>aes()</code>. A continuación algunos ejemplos para
 ilustrar cómo usar la estética en <code>ggplot2</code>.</p>
-<p><strong>Ejemplo 1: Gráfico de dispersión (scatter plot)</strong></p>
+<div class="section level4">
+<h4 id="ejemplo-1-gráfico-de-dispersión-scatter-plot">Ejemplo 1: Gráfico de dispersión (scatter plot)<a class="anchor" aria-label="anchor" href="#ejemplo-1-gr%C3%A1fico-de-dispersi%C3%B3n-scatter-plot"></a></h4>
 <p>Supongamos que tenemos una tabla que cuenta con las variables x e
 y<em>.</em> Queremos crear un gráfico de dispersión donde la variable x
 se mapea en el eje X y la variable y en el eje Y. Además, queremos que
@@ -565,7 +569,10 @@ código:</p>
 <span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <p>La visualización que generamos es la siguiente:</p>
-<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-7-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p><strong>Geometría (Geometry):</strong></p>
+<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-7-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
+</div>
+<div class="section level3">
+<h3 id="geometría-geometry">Geometría (Geometry)<a class="anchor" aria-label="anchor" href="#geometr%C3%ADa-geometry"></a></h3>
 <p>La geometría representa la forma en que los datos se visualizan en el
 gráfico; como puntos, líneas, barras, áreas, etc. Cada tipo de gráfico
 tiene su función correspondiente en <code>ggplot2</code>; por ejemplo
@@ -584,7 +591,8 @@ correspondiente comando:</p>
 <figure><img src="../fig/tipogeom.png" class="figure mx-auto d-block"></figure></div>
 </div>
 </div>
-<p><strong>Ejemplo 2: Gráfico de líneas</strong></p>
+<div class="section level4">
+<h4 id="ejemplo-2-gráfico-de-líneas">Ejemplo 2: Gráfico de líneas<a class="anchor" aria-label="anchor" href="#ejemplo-2-gr%C3%A1fico-de-l%C3%ADneas"></a></h4>
 <p>Supongamos que queremos visualizar la evolución del número de casos
 de covid-19 a lo largo del tiempo. Para esto, primero debemos preparar
 el conjunto de datos que formarán el gráfico:</p>
@@ -607,7 +615,9 @@ geometría de <code>ggplot2</code>:</p>
 <span>  <span class="fu">geom_line</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <p>Y obtenemos el siguiente gráfico:</p>
-<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-10-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p><strong>Ejemplo 3: Gráfico de barras</strong></p>
+<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-10-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
+<div class="section level4">
+<h4 id="ejemplo-3-gráfico-de-barras">Ejemplo 3: Gráfico de barras<a class="anchor" aria-label="anchor" href="#ejemplo-3-gr%C3%A1fico-de-barras"></a></h4>
 <p>Ahora, hagamos una visualización en forma de gráfico de barras del
 total de casos positivos por sexo, para esto utilizamos el comando
 <code>geom_bar()</code> así:</p>
@@ -620,7 +630,9 @@ total de casos positivos por sexo, para esto utilizamos el comando
 </div>
 <figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-11-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>En este ejemplo podemos observar que <code>ggplot2</code>
 automáticamente calcula el eje Y.</p>
-<p><strong>Ejemplo 4. Gráfico de barras más complejo</strong></p>
+</div>
+<div class="section level4">
+<h4 id="ejemplo-4--gráfico-de-barras-más-complejo">Ejemplo 4. Gráfico de barras más complejo<a class="anchor" aria-label="anchor" href="#ejemplo-4--gr%C3%A1fico-de-barras-m%C3%A1s-complejo"></a></h4>
 <p>Primero vamos a preparar los datos en una tabla de datos que permita
 contar el número de casos por ubicación del caso:</p>
 <div class="codewrapper sourceCode" id="cb11">
@@ -685,24 +697,26 @@ ascendente?</p>
 </div>
 </div>
 </div>
-<p><strong>Escala:</strong></p>
+</div>
+</div>
+<div class="section level3">
+<h3 id="escala">Escala<a class="anchor" aria-label="anchor" href="#escala"></a></h3>
 <p>En la gramática de gráficos en <code>ggplot2</code>, la escala se
 refiere a la forma en que los valores de los datos se traducen en
 propiedades visuales. La elección adecuada de las escalas es esencial
 para que los gráficos sean interpretables y precisos.</p>
 <p>A continuación, veremos algunos de los diferentes tipos de escalas
 disponibles en <code>ggplot2</code> y sus funciones:</p>
-<div id="checklist4" class="callout checklist">
+<div id="para-datos-de-tipo-continuo-o-numéricos-tenemos-escalas-continuas-como" class="callout checklist">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check-square"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Lista de verificación</h3>
+<div id="para-datos-de-tipo-continuo-o-numéricos-tenemos-escalas-continuas-como" class="callout-inner">
+<h3 class="callout-title">1. Para <strong>datos de tipo continuo o
+numéricos</strong> tenemos <strong>escalas continuas como:</strong>
+</h3>
 <div class="callout-content">
-<ol style="list-style-type: decimal"><li>Para <strong>datos de tipo continuo o numéricos</strong> tenemos
-<strong>escalas continuas como:</strong>
-</li>
-</ol><ul><li><p><code>scale_x_continuous()</code> y
+<ul><li><p><code>scale_x_continuous()</code> y
 <code>scale_y_continuous()</code> : para el eje x y el eje y,
 respectivamente.</p></li>
 <li><p><code>scale_color_continuous()</code>: asigna colores a los
@@ -712,16 +726,15 @@ valores.</p></li>
 </ul></div>
 </div>
 </div>
-<div id="checklist5" class="callout checklist">
+<div id="para-datos-categóricos-o-de-carácter-tenemos-escalas-discretas-como" class="callout checklist">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check-square"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Lista de verificación</h3>
+<div id="para-datos-categóricos-o-de-carácter-tenemos-escalas-discretas-como" class="callout-inner">
+<h3 class="callout-title">2. Para <strong>datos categóricos o de
+carácter</strong> tenemos escalas discretas como:</h3>
 <div class="callout-content">
-<ol start="2" style="list-style-type: decimal"><li>Para <strong>datos categóricos o de carácter</strong> tenemos
-escalas discretas como:</li>
-</ol><ul><li><p><code>scale_x_discrete()</code> y
+<ul><li><p><code>scale_x_discrete()</code> y
 <code>scale_y_discrete()</code>: para el eje x y el eje y,
 respectivamente.</p></li>
 <li><p><code>scale_color_discrete()</code>: asigna colores a los valores
@@ -731,46 +744,43 @@ los diferentes valores discretos.</p></li>
 </ul></div>
 </div>
 </div>
-<div id="checklist6" class="callout checklist">
+<div id="para-datos-de-fecha-tenemos-escalas-de-fechas-como" class="callout checklist">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check-square"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Lista de verificación</h3>
+<div id="para-datos-de-fecha-tenemos-escalas-de-fechas-como" class="callout-inner">
+<h3 class="callout-title">3. Para <strong>datos de fecha</strong>
+tenemos escalas de fechas como:</h3>
 <div class="callout-content">
-<ol start="3" style="list-style-type: decimal"><li>Para <strong>datos de fecha</strong> tenemos escalas de fechas
-como:</li>
-</ol><ul><li>
+<ul><li>
 <code>scale_x_date()</code> y <code>scale_y_date()</code>: para el
 eje x y el eje y, respectivamente cuando se tengan datos de fecha.</li>
 </ul></div>
 </div>
 </div>
-<div id="checklist7" class="callout checklist">
+<div id="para-hacer-uso-de-escalas-personalizadas-se-hace-uso-de-escalas-manuales-en-las-que-podemos-especificar-nuestros-propios-valores." class="callout checklist">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check-square"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Lista de verificación</h3>
+<div id="para-hacer-uso-de-escalas-personalizadas-se-hace-uso-de-escalas-manuales-en-las-que-podemos-especificar-nuestros-propios-valores." class="callout-inner">
+<h3 class="callout-title">4. Para hacer uso de escalas personalizadas se hace uso de escalas manuales en las que podemos especificar nuestros
+propios valores.</h3>
 <div class="callout-content">
-<ol start="4" style="list-style-type: decimal"><li>Para hacer uso de escalas personalizadas se hace uso de escalas
-manuales en las que podemos especificar nuestros propios valores.</li>
-</ol><ul><li><p><code>scale_color_manual()</code>: se especifica manualmente los
+<ul><li><p><code>scale_color_manual()</code>: se especifica manualmente los
 colores para los valores.</p></li>
 <li><p><code>scale_shape_manual()</code>: se especifica manualmente las
 formas para los valores.</p></li>
 </ul></div>
 </div>
 </div>
-<div id="checklist8" class="callout checklist">
+<div id="otras-escalas" class="callout checklist">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check-square"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Lista de verificación</h3>
+<div id="otras-escalas" class="callout-inner">
+<h3 class="callout-title">5. Otras escalas:</h3>
 <div class="callout-content">
-<ol start="5" style="list-style-type: decimal"><li>Otras escalas:</li>
-</ol><ul><li><p><code>scale_fill_*</code>: se usa similar a las escalas de color
+<ul><li><p><code>scale_fill_*</code>: se usa similar a las escalas de color
 pero para colores que queramos con relleno.</p></li>
 <li><p><code>scale_size_area()</code>: Asigna los valores al área en
 lugar del diámetro, lo que puede ser útil para los puntos.</p></li>
@@ -787,7 +797,8 @@ y alto.</p></li>
 </div>
 </div>
 </div>
-<p><strong>Ejemplo 5. Gráfico con escala logarítmica</strong></p>
+<div class="section level4">
+<h4 id="ejemplo-5--gráfico-con-escala-logarítmica">Ejemplo 5. Gráfico con escala logarítmica<a class="anchor" aria-label="anchor" href="#ejemplo-5--gr%C3%A1fico-con-escala-logar%C3%ADtmica"></a></h4>
 <p>Usaremos exactamente el mismo ejemplo anterior, pero en este caso al
 final agregamos la escala <code>logarítmica scale_y_log10()</code>
 así:</p>
@@ -813,7 +824,10 @@ así:</p>
 </div>
 </div>
 </div>
-<p><strong>Facetas</strong></p>
+</div>
+</div>
+<div class="section level3">
+<h3 id="facetas">Facetas<a class="anchor" aria-label="anchor" href="#facetas"></a></h3>
 <p>Las Facetas (<code>Facets</code>) en la gramática de gráficos son una
 forma de dividir los datos en subconjuntos y representarlos en múltiples
 paneles dentro del mismo gráfico. Esto nos permite visualizar diferentes
@@ -821,7 +835,8 @@ aspectos de los datos o comparar grupos de manera más efectiva. En
 <code>ggplot2</code>, podemos usar la función <code>facet_wrap()</code>
 o <code>facet_grid()</code> para implementar las facetas, dependiendo
 del número de variables a usar para la creación de los paneles.</p>
-<p><strong>Ejemplo 5. Gráfico con facet wrap</strong></p>
+<div class="section level4">
+<h4 id="ejemplo-5--gráfico-con-facet-wrap">Ejemplo 5. Gráfico con facet wrap<a class="anchor" aria-label="anchor" href="#ejemplo-5--gr%C3%A1fico-con-facet-wrap"></a></h4>
 <p>Primero vamos a preparar los datos en una tabla de datos que permita
 contar el número de casos por <code>edad</code> y <code>sexo</code>:</p>
 <div class="codewrapper sourceCode" id="cb16">
@@ -887,7 +902,10 @@ la variable <code>sexo</code> ¿cómo cambiaría el código?</p>
 <span>  <span class="fu">scale_colour_gradient2</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span><span class="va">sexo</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-25-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p><strong>Tema</strong></p>
+<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-25-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
+</div>
+<div class="section level3">
+<h3 id="tema">Tema<a class="anchor" aria-label="anchor" href="#tema"></a></h3>
 <p>En la gramática de gráficos, el tema se refiere a la personalización
 de la apariencia visual general del gráfico; como los títulos, etiquetas
 de ejes, fondos, colores, tamaños de fuente, entre otros elementos. Con
@@ -911,7 +929,8 @@ proporcionamos algunos ejemplos de cómo utilizar los temas en
 </div>
 </div>
 </div>
-<p><strong>Ejemplo 6. Usando theme classic</strong></p>
+<div class="section level4">
+<h4 id="ejemplo-6--usando-theme-classic">Ejemplo 6. Usando theme classic<a class="anchor" aria-label="anchor" href="#ejemplo-6--usando-theme-classic"></a></h4>
 <p>Para usar el tema clásico tenemos:</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -922,7 +941,9 @@ proporcionamos algunos ejemplos de cómo utilizar los temas en
 <span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span><span class="va">sexo</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_classic</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-26-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p><strong>Ejemplo 7. Usando theme classic</strong></p>
+<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-26-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
+<div class="section level4">
+<h4 id="ejemplo-7--usando-theme-classic">Ejemplo 7. Usando theme classic<a class="anchor" aria-label="anchor" href="#ejemplo-7--usando-theme-classic"></a></h4>
 <p>Para este tema tendríamos lo siguiente:</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -947,7 +968,9 @@ proporcionamos algunos ejemplos de cómo utilizar los temas en
 </div>
 <p>Finalmente, veamos un ejemplo de cómo modificar los themes
 manualmente.</p>
-<p><strong>Ejemplo 8. Cambiando títulos, subtítulos y ejes</strong></p>
+</div>
+<div class="section level4">
+<h4 id="ejemplo-8--cambiando-títulos-subtítulos-y-ejes">Ejemplo 8. Cambiando títulos, subtítulos y ejes<a class="anchor" aria-label="anchor" href="#ejemplo-8--cambiando-t%C3%ADtulos-subt%C3%ADtulos-y-ejes"></a></h4>
 <p>Podemos usar comandos como <code>xlab</code>, <code>ylab</code> para
 cambiar los nombres de los ejes. Igualmente, comandos como title y
 subtitle de la siguiente forma:</p>
@@ -965,12 +988,12 @@ subtitle de la siguiente forma:</p>
 <span>    title <span class="op">=</span> <span class="st">"Distribución de casos de COVID-19 por edad y sexo en Latinoamerica"</span></span>
 <span>  <span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-28-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="puntos-clave" class="callout keypoints">
+<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-28-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
-<div id="puntos-clave" class="callout-inner">
-<h3 class="callout-title">Puntos clave</h3>
+<div class="callout-inner">
+<h3 class="callout-title">Puntos Clave</h3>
 <div class="callout-content">
 <p>Revise si al final de esta lección adquirió estas competencias:</p>
 <ul><li>Reconocer las funciones que componen el paquete ggplot2.</li>
@@ -978,18 +1001,24 @@ subtitle de la siguiente forma:</p>
 </ul></div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="contribuciones">Contribuciones<a class="anchor" aria-label="anchor" href="#contribuciones"></a></h2>
-<hr class="half-width"><ul><li>Zulma M. Cucunuba: Versión inicial</li>
+</div>
+</div>
+<div class="section level3">
+<h3 id="contribuciones">Contribuciones<a class="anchor" aria-label="anchor" href="#contribuciones"></a></h3>
+<ul><li>Zulma M. Cucunuba: Versión inicial</li>
 <li>Geraldine Gomez: Edición</li>
 <li>Andree Valle: Ediciones menores</li>
 <li>Laura Gómez-Bermeo: Ediciones menores</li>
 <li>José M. Velasco-España: Ediciones menores</li>
-</ul></section><section><h2 class="section-heading" id="asuntos-legales">Asuntos legales<a class="anchor" aria-label="anchor" href="#asuntos-legales"></a></h2>
-<hr class="half-width"><p><strong>Copyright</strong>: Zulma M. Cucunuba, 2019</p>
+</ul></div>
+<div class="section level3">
+<h3 id="asuntos-legales">Asuntos legales<a class="anchor" aria-label="anchor" href="#asuntos-legales"></a></h3>
+<p><strong>Copyright</strong>: Zulma M. Cucunuba, 2023</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Capítulo previo y siguiente"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/Taller-R-RStudio.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previo</a>
@@ -1048,7 +1077,7 @@ any links that you are not going to use.
   "url": "https://epiverse-trace.github.io/epitkit/instructor/Visualizacion.html",
   "identifier": "https://epiverse-trace.github.io/epitkit/instructor/Visualizacion.html",
   "dateCreated": "2024-09-09",
-  "dateModified": "2024-10-08",
+  "dateModified": "2024-10-22",
   "datePublished": "2024-10-22"
 }
 

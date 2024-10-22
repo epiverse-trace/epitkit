@@ -92,11 +92,11 @@
   Curso en ciencia de datos en salud pública y modelamiento de enfermedades infecciosas
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 56%" class="percentage">
-    56%
+<aside class="col-md-12 lesson-progress"><div style="width: 62%" class="percentage">
+    62%
   </div>
   <div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 56%" aria-valuenow="56" aria-label="Progreso de la lección" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar incubator" role="progressbar" style="width: 62%" aria-valuenow="62" aria-label="Progreso de la lección" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -191,6 +191,11 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#introducci%C3%B3n">Introducción</a></li>
+<li><a href="#tema-2-exploraci%C3%B3n-y-caracterizaci%C3%B3n-de-los-datos"><strong>Tema 2: Exploración y caracterización de los
+datos</strong></a></li>
+<li><a href="#tema-3-modificaci%C3%B3n-limpieza-y-correcci%C3%B3n-de-los-datos-errores-frecuentes-y-sus-soluciones"><strong>Tema 3: Modificación, limpieza y corrección de los datos:
+Errores frecuentes y sus soluciones</strong></a></li>
+<li><a href="#tema-4-organizaci%C3%B3n-de-los-datos"><strong>Tema 4: Organización de los datos</strong></a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -200,7 +205,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="zika.html">5. Construyendo un modelo deterministico simple</a>
+        <a href="Banco_errores.html">5. Banco de preguntas y errores frecuentes</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -249,7 +254,7 @@
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Capítulo previo y siguiente"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/Reporte.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previo</a>
-        <a class="chapter-link float-end" href="../instructor/zika.html">Siguiente<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/Banco_errores.html">Siguiente<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -257,14 +262,14 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previo: Reporte e informes
         </a>
-        <a class="chapter-link float-end" href="../instructor/zika.html" rel="next">
-          Siguiente: Construyendo un...
+        <a class="chapter-link float-end" href="../instructor/Banco_errores.html" rel="next">
+          Siguiente: Banco de preguntas y...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Unidad de Limpieza de datos epidemiológicos</h1>
-        <p>Última actualización: 2024-10-08 |
+        <p>Última actualización: 2024-10-22 |
 
         <a href="https://github.com/epiverse-trace/epitkit/edit/main/episodes/limpieza.Rmd" class="external-link">Mejora esta página <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -317,55 +322,55 @@ de datos epidemiológicos.</p></li>
 </ul></div>
 </div>
 </div>
-<div id="callout1" class="callout">
+<div id="tabla-de-contenido" class="callout checklist">
 <div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
+<i class="callout-icon" data-feather="check-square"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Aviso</h3>
+<div id="tabla-de-contenido" class="callout-inner">
+<h3 class="callout-title"><strong>Tabla de contenido</strong></h3>
 <div class="callout-content">
-<p><strong>Tabla de contenido</strong></p>
-<table style="width:97%;" class="table"><colgroup><col width="97%"></colgroup><tbody><tr class="odd"><td><ul><li><p>Tema 1: Introducción a la limpieza de datos (Ver en plataforma
-del curso)</p></li>
-<li><p>Tema 2: Exploración y caracterización de los datos</p></li>
-<li><p>Tema 3: Limpieza y corrección de los datos: errores frecuentes y
-sus soluciones</p></li>
-<li><p>Tema 4: Organización de los datos</p></li>
-</ul></td>
-</tr></tbody></table></div>
+<ul><li>Módulo: Ciencia de datos en salud pública
+<ul><li>Unidad: Limpieza de datos epidemiológicos
+<ul><li>Tema 1: Introducción a la limpieza de datos (Ver en plataforma del
+curso)</li>
+<li>Tema 2: Exploración y caracterización de los datos</li>
+<li>Tema 3: Modificación, limpieza y corrección de los datos: Errores
+frecuentes y sus soluciones</li>
+<li>Tema 4: Organización de los datos</li>
+</ul></li>
+</ul></li>
+</ul></div>
 </div>
 </div>
 <section><h2 class="section-heading" id="introducción">Introducción<a class="anchor" aria-label="anchor" href="#introducci%C3%B3n"></a></h2>
 <hr class="half-width"><p>En esta unidad abordaremos el proceso de limpieza de datos
-epidemiológicos,       utilizando los conocimientos previos de la unidad
-de la introducción a R y RStudio, abordaremos la limpieza de datos como
-un proceso fundamental para obtener insumos idóneos para el análisis de
-los datos, la visualización y la creación de reportes
-epidemiológicos.</p>
+epidemiológicos, utilizando los conocimientos previos de la unidad de la
+introducción a R y RStudio, abordaremos la limpieza de datos como un
+proceso fundamental para obtener insumos idóneos para el análisis de los
+datos, la visualización y la creación de reportes epidemiológicos.</p>
 <p>En esta unidad, aprenderá a reconocer las actividades necesarias para
 llevar a cabo el proceso de limpieza de datos, aprenderá cómo solucionar
 los errores más comunes en las bases de datos que pueden afectar el
 análisis y comprenderá cómo describir y organizar los datos, clasificar
 variables, aplicar formatos a las variables, manejar datos duplicados y
 abordar la ausencia de datos.</p>
-</section><div class="section level1">
-<h1 id="tema-2-exploración-y-caracterización-de-los-datos"><strong>Tema 2: Exploración y caracterización de los
-datos</strong><a class="anchor" aria-label="anchor" href="#tema-2-exploraci%C3%B3n-y-caracterizaci%C3%B3n-de-los-datos"></a></h1>
-<div class="section level2">
-<h2 id="exploración-de-la-estructura-de-los-datos-en-r"><strong>2.2. Exploración de la estructura de los datos en
-R</strong><a class="anchor" aria-label="anchor" href="#exploraci%C3%B3n-de-la-estructura-de-los-datos-en-r"></a></h2>
+</section><section><h2 class="section-heading" id="tema-2-exploración-y-caracterización-de-los-datos"><strong>Tema 2: Exploración y caracterización de los
+datos</strong><a class="anchor" aria-label="anchor" href="#tema-2-exploraci%C3%B3n-y-caracterizaci%C3%B3n-de-los-datos"></a></h2>
+<hr class="half-width"><div class="section level3">
+<h3 id="exploración-de-la-estructura-de-los-datos-en-r"><strong>2.2. Exploración de la estructura de los datos en
+R</strong><a class="anchor" aria-label="anchor" href="#exploraci%C3%B3n-de-la-estructura-de-los-datos-en-r"></a></h3>
 <p>Una vez hecha la exploración y la caracterización de los datos
 mediante la documentación se procederá a explorar el dataset.</p>
-<div class="section level3">
-<h3 id="carga-de-la-información"><strong>2.2.1. Carga de la información</strong><a class="anchor" aria-label="anchor" href="#carga-de-la-informaci%C3%B3n"></a></h3>
-<div id="checklist1" class="callout checklist">
+<div class="section level4">
+<h4 id="carga-de-la-información"><strong>2.2.1. Carga de la información</strong><a class="anchor" aria-label="anchor" href="#carga-de-la-informaci%C3%B3n"></a></h4>
+<div id="instrucciones" class="callout checklist">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check-square"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Lista de verificación</h3>
+<div id="instrucciones" class="callout-inner">
+<h3 class="callout-title">⚠️ <strong>Instrucciones:</strong>
+</h3>
 <div class="callout-content">
-<p>⚠️ <strong>Instrucciones:</strong></p>
 <p>Antes de empezar a trabajar verifique que ya cuenta con los
 siguientes pasos:</p>
 <ol style="list-style-type: decimal"><li><p>Cree un proyecto en R</p></li>
@@ -379,7 +384,7 @@ carpeta “datos”</p></li>
 </ol></div>
 </div>
 </div>
-<div id="callout2" class="callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -395,7 +400,7 @@ carpeta “datos”</p></li>
 debería ver así:</p>
 <figure><img src="../fig/vista_proyecto.png" class="figure mx-auto d-block"></figure><ol start="6" style="list-style-type: decimal"><li>
 <p>Cargue las librerías: tidyverse, rio y cleanepi.</p>
-<div id="callout3" class="callout">
+<div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -447,8 +452,8 @@ siguiente código:</p>
 <p>Ahora que la base está cargada podemos hacer la revisión del formato
 de los datos.</p>
 </div>
-<div class="section level3">
-<h3 id="exploración-del-dataset"><strong>2.2.2. Exploración del dataset</strong><a class="anchor" aria-label="anchor" href="#exploraci%C3%B3n-del-dataset"></a></h3>
+<div class="section level4">
+<h4 id="exploración-del-dataset"><strong>2.2.2. Exploración del dataset</strong><a class="anchor" aria-label="anchor" href="#exploraci%C3%B3n-del-dataset"></a></h4>
 <p>En este ejercicio para explorar las variables contenidas en el objeto
 covid se puede realizar una aproximación general o específica a cada
 variable.</p>
@@ -495,10 +500,10 @@ $ Vacunado                      &lt;lgl&gt; FALSE, TRUE, FALSE, TRUE, TRUE, TRUE
 $ talla                         &lt;chr&gt; "1.73", "1.67", "1m69", "1.66", "1.63", …
 $ peso                          &lt;dbl&gt; 69.6, 73.9, 66.4, 72.5, 64.6, 66.7, 68.9…</code></pre>
 </div>
-<div class="section level3">
-<h3 id="aplicación-de-buenas-prácticas-para-nombrar-variables"><strong>2.2.3. Aplicación de buenas prácticas para nombrar
-variables</strong><a class="anchor" aria-label="anchor" href="#aplicaci%C3%B3n-de-buenas-pr%C3%A1cticas-para-nombrar-variables"></a></h3>
-<div id="callout4" class="callout">
+<div class="section level4">
+<h4 id="aplicación-de-buenas-prácticas-para-nombrar-variables"><strong>2.2.3. Aplicación de buenas prácticas para nombrar
+variables</strong><a class="anchor" aria-label="anchor" href="#aplicaci%C3%B3n-de-buenas-pr%C3%A1cticas-para-nombrar-variables"></a></h4>
+<div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -518,7 +523,7 @@ tengan características como:</p>
 equipo. Para este módulo vamos a hacer uso de la función
 <code>standardize_column_names</code> del paquete
 <code>cleanepi</code>.</p>
-<div id="callout5" class="callout">
+<div id="callout4" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -591,8 +596,8 @@ $ vacunado                    &lt;lgl&gt; FALSE, TRUE, FALSE, TRUE, TRUE, TRUE, 
 $ talla                       &lt;chr&gt; "1.73", "1.67", "1m69", "1.66", "1.63", "1…
 $ peso                        &lt;dbl&gt; 69.6, 73.9, 66.4, 72.5, 64.6, 66.7, 68.9, …</code></pre>
 </div>
-<div class="section level3">
-<h3 id="resumen-de-variables"><strong>2.2.4. Resumen de variables</strong><a class="anchor" aria-label="anchor" href="#resumen-de-variables"></a></h3>
+<div class="section level4">
+<h4 id="resumen-de-variables"><strong>2.2.4. Resumen de variables</strong><a class="anchor" aria-label="anchor" href="#resumen-de-variables"></a></h4>
 <p>Para empezar la exploración de las variables, emplearemos la función
 summary.</p>
 <p>⚠️️ <strong>Instrucción:</strong> Emplee la función summary para
@@ -662,7 +667,7 @@ el mismo dataset se obtiene el siguiente resultado:</p>
                                                        3rd Qu.:72.70
                                                        Max.   :87.10
                                                                       </code></pre>
-<div id="callout6" class="callout">
+<div id="callout5" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -698,8 +703,8 @@ el mismo dataset se obtiene el siguiente resultado:</p>
  3rd Qu.: 52.00
  Max.   :109.00  </code></pre>
 </div>
-<div class="section level3">
-<h3 id="exploración-de-variables-cuantitativas"><strong>2.2.5. Exploración de variables cuantitativas</strong><a class="anchor" aria-label="anchor" href="#exploraci%C3%B3n-de-variables-cuantitativas"></a></h3>
+<div class="section level4">
+<h4 id="exploración-de-variables-cuantitativas"><strong>2.2.5. Exploración de variables cuantitativas</strong><a class="anchor" aria-label="anchor" href="#exploraci%C3%B3n-de-variables-cuantitativas"></a></h4>
 <p>Otra forma de explorar variables cuantitativas es en forma de
 gráfica. Empleando gráficos como histogramas, diagrama de cajas y
 bigotes, líneas de tendencia, nubes de puntos, diagrama de violines,
@@ -731,7 +736,7 @@ generar un boxplot de la variable <code>edad</code>:</p>
 el mismo dataset se obtiene el siguiente resultado:</p>
 <figure><img src="../fig/limpieza-rendered-unnamed-chunk-18-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Estos gráficos pueden resultar útiles para examinar la tendencia y
 distribución de los datos, así como observar datos atípicos.</p>
-<div id="callout7" class="callout">
+<div id="callout6" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -745,8 +750,8 @@ ggplot2</strong>.</p>
 </div>
 </div>
 </div>
-<div class="section level3">
-<h3 id="exploración-de-variables-cualitativas"><strong>2.2.6. Exploración de variables cualitativas</strong><a class="anchor" aria-label="anchor" href="#exploraci%C3%B3n-de-variables-cualitativas"></a></h3>
+<div class="section level4">
+<h4 id="exploración-de-variables-cualitativas"><strong>2.2.6. Exploración de variables cualitativas</strong><a class="anchor" aria-label="anchor" href="#exploraci%C3%B3n-de-variables-cualitativas"></a></h4>
 <p>Ahondemos un poco más en la exploración de variables cualitativas.
 Cuando usamos <code>summary</code>, al inicio de esta sección, pudimos
 ver que sucedía con algunas variables cualitativas. Ahora observaremos
@@ -848,20 +853,18 @@ contenido de la variable <code>sexo</code>:</p>
 el mismo dataset se obtiene el siguiente resultado:</p>
 <figure><img src="../fig/limpieza-rendered-unnamed-chunk-28-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
 </div>
-</div>
-<div class="section level1">
-<h1 id="tema-3-modificación-limpieza-y-corrección-de-los-datos-errores-frecuentes-y-sus-soluciones"><strong>Tema 3: Modificación, limpieza y corrección de los datos:
-Errores frecuentes y sus soluciones</strong><a class="anchor" aria-label="anchor" href="#tema-3-modificaci%C3%B3n-limpieza-y-correcci%C3%B3n-de-los-datos-errores-frecuentes-y-sus-soluciones"></a></h1>
-<div class="section level2">
-<h2 id="revisión-de-la-coherencia-del-contenido-de-las-variables-"><strong>3.1. Revisión de la coherencia del contenido de las
-variables.</strong><a class="anchor" aria-label="anchor" href="#revisi%C3%B3n-de-la-coherencia-del-contenido-de-las-variables-"></a></h2>
+</section><section><h2 class="section-heading" id="tema-3-modificación-limpieza-y-corrección-de-los-datos-errores-frecuentes-y-sus-soluciones"><strong>Tema 3: Modificación, limpieza y corrección de los datos:
+Errores frecuentes y sus soluciones</strong><a class="anchor" aria-label="anchor" href="#tema-3-modificaci%C3%B3n-limpieza-y-correcci%C3%B3n-de-los-datos-errores-frecuentes-y-sus-soluciones"></a></h2>
+<hr class="half-width"><div class="section level3">
+<h3 id="revisión-de-la-coherencia-del-contenido-de-las-variables-"><strong>3.1. Revisión de la coherencia del contenido de las
+variables.</strong><a class="anchor" aria-label="anchor" href="#revisi%C3%B3n-de-la-coherencia-del-contenido-de-las-variables-"></a></h3>
 <p>Para emplear estas funciones de conversión podemos emplearlas
 directamente a cada variable (ej. <code>as.factor(covid$sexo)</code>) o
 hacer uso de la función <code>across</code>. La función
 <code>across</code> es una función del paquete <code>dplyr</code> que
 permite aplicar transformaciones a múltiples variables de un data frame
 de manera simultánea. </p>
-<div id="callout8" class="callout">
+<div id="callout7" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -932,7 +935,7 @@ usar la función <code>fct_relevel</code>.</p>
 <p>⚠️ <strong>Instrucción:</strong> Emplee la función
 <code>fct_relevel</code> para modificar el orden de las categorías de la
 variable:</p>
-<div id="callout9" class="callout">
+<div id="callout8" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -1044,18 +1047,18 @@ cambios, puede convertir el dataset:</p>
 <span>    lang <span class="op">=</span> <span class="st">"es"</span><span class="op">)</span></span></code></pre>
 </div>
 </div>
-<div class="section level2">
-<h2 id="identificación-de-valores-erróneos-o-faltantes-"><strong>3.2. Identificación de valores erróneos o
-faltantes.</strong><a class="anchor" aria-label="anchor" href="#identificaci%C3%B3n-de-valores-err%C3%B3neos-o-faltantes-"></a></h2>
+<div class="section level3">
+<h3 id="identificación-de-valores-erróneos-o-faltantes-"><strong>3.2. Identificación de valores erróneos o
+faltantes.</strong><a class="anchor" aria-label="anchor" href="#identificaci%C3%B3n-de-valores-err%C3%B3neos-o-faltantes-"></a></h3>
 <p>Además de los valores NA en nuestro procesamiento de datos podemos
 encontrar otros valores Inf (valores infinitos) o NaN (valores numéricos
 indeterminados).</p>
 <p>La identificación de datos faltantes requiere en primera instancia
 identificar la causa de la ausencia de estos datos.</p>
-<div class="section level3">
-<h3 id="valores-na"><strong>3.2.1. Valores NA</strong><a class="anchor" aria-label="anchor" href="#valores-na"></a></h3>
 <div class="section level4">
-<h4 id="nas-relacionados-con-separadores-incorrectos"><strong>NAs relacionados con separadores incorrectos</strong><a class="anchor" aria-label="anchor" href="#nas-relacionados-con-separadores-incorrectos"></a></h4>
+<h4 id="valores-na"><strong>3.2.1. Valores NA</strong><a class="anchor" aria-label="anchor" href="#valores-na"></a></h4>
+<div class="section level5">
+<h5 id="nas-relacionados-con-separadores-incorrectos"><strong>NAs relacionados con separadores incorrectos</strong><a class="anchor" aria-label="anchor" href="#nas-relacionados-con-separadores-incorrectos"></a></h5>
 <p>Veamos un ejemplo común de aparición de <code>NA</code>: cuando
 tenemos diferentes separadores para números (ej. en talla).</p>
 <p>⚠️ <strong>Instrucción:</strong> Antes de convertir el dataset,
@@ -1100,7 +1103,7 @@ caracteres en lugar de números, podemos recurrir a funciones de búsqueda
 y reemplazo de caracteres dentro del contenido de la variable. Una
 opción es utilizar la función <code>str_replace</code> que se encuentra
 en el paquete <code>stringr</code> de R.</p>
-<div id="callout10" class="callout">
+<div id="callout9" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -1183,9 +1186,9 @@ formato numérico e imprima las primeras filas.</p>
 <p>Como podemos ver, una vez hecha la transformación ya no aparecen
 comillas ““, indicando que ya se hizo la conversión a numéricos.</p>
 </div>
-<div class="section level4">
-<h4 id="nas-relacionados-con-errores-en-la-escritura-de-fechas"><strong>NAs relacionados con errores en la escritura de
-fechas</strong><a class="anchor" aria-label="anchor" href="#nas-relacionados-con-errores-en-la-escritura-de-fechas"></a></h4>
+<div class="section level5">
+<h5 id="nas-relacionados-con-errores-en-la-escritura-de-fechas"><strong>NAs relacionados con errores en la escritura de
+fechas</strong><a class="anchor" aria-label="anchor" href="#nas-relacionados-con-errores-en-la-escritura-de-fechas"></a></h5>
 <p>En algunas ocasiones puede ocurrir que la escritura de fechas sigue
 el criterio de quién recolecta los datos. Por ejemplo, en un formulario
 que contiene día/mes/año podemos encontrar diligenciamientos como:
@@ -1195,7 +1198,7 @@ una tarea inviable, la función standardize_dates del paquete
 <code>cleanepi</code> ofrece una alternativa para hacer corrección
 automática, además de convertir la columna al formato fecha
 (<code>date</code>).</p>
-<div id="callout11" class="callout">
+<div id="callout10" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -1278,9 +1281,9 @@ la columna está en formato fecha (<code>date</code>).</p>
 <span>    target_columns <span class="op">=</span> <span class="st">"fecha_reporte_web"</span><span class="op">)</span></span></code></pre>
 </div>
 </div>
-<div class="section level4">
-<h4 id="nas-relacionados-con-errores-en-la-escritura-de-números"><strong>NAs relacionados con errores en la escritura de
-números</strong><a class="anchor" aria-label="anchor" href="#nas-relacionados-con-errores-en-la-escritura-de-n%C3%BAmeros"></a></h4>
+<div class="section level5">
+<h5 id="nas-relacionados-con-errores-en-la-escritura-de-números"><strong>NAs relacionados con errores en la escritura de
+números</strong><a class="anchor" aria-label="anchor" href="#nas-relacionados-con-errores-en-la-escritura-de-n%C3%BAmeros"></a></h5>
 <p>En algunos casos pueden ocurrir errores en la recolección que no se
 corrigen en la digitación como, por ejemplo, escribir el nombre de un
 número (ej. “tres”) en lugar del símbolo que representa al número (ej.
@@ -1304,7 +1307,7 @@ valor.</p>
 <p>Para corregir estos errores luego de identificarlos podemos
 sustituirlos uno por uno con <code>gsub</code> o podemos aprovechar la
 función <code>convert_to_numeric</code> del paquete cleanepi.</p>
-<div id="callout12" class="callout">
+<div id="callout11" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -1349,9 +1352,9 @@ cambio en la variable <code>num_hos_rec</code></p>
 respectivos equivalentes numéricos. Mientras que todo elemento no
 reconocido como número fue convertido en <code>NA</code>.</p>
 </div>
-<div class="section level4">
-<h4 id="nas-relacionados-con-dos-datos-en-la-misma-columna"><strong>NAs relacionados con dos datos en la misma
-columna</strong><a class="anchor" aria-label="anchor" href="#nas-relacionados-con-dos-datos-en-la-misma-columna"></a></h4>
+<div class="section level5">
+<h5 id="nas-relacionados-con-dos-datos-en-la-misma-columna"><strong>NAs relacionados con dos datos en la misma
+columna</strong><a class="anchor" aria-label="anchor" href="#nas-relacionados-con-dos-datos-en-la-misma-columna"></a></h5>
 <p>En algunos casos un dataset puede contener dos variables en una misma
 columna.</p>
 <p>⚠️ <strong>Instrucción:</strong> Explore las primeras filas de la
@@ -1371,7 +1374,7 @@ variable tension_arterial contiene dos datos en una misma columna
 <p>Para solucionar este problema podemos utilizar la función
 <code>separate_wider_delim</code> de la librería <code>tidyr</code>
 dentro del conjunto de librerías de <code>tidyverse</code>.</p>
-<div id="callout13" class="callout">
+<div id="callout12" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -1424,8 +1427,8 @@ cada circunstancia y hacer pruebas que le permitan revisar si los
 resultados son los esperados.</p>
 </div>
 </div>
-<div class="section level3">
-<h3 id="valores-infinitos-inf"><strong>3.2.2. Valores infinitos (<code>Inf</code>)</strong><a class="anchor" aria-label="anchor" href="#valores-infinitos-inf"></a></h3>
+<div class="section level4">
+<h4 id="valores-infinitos-inf"><strong>3.2.2. Valores infinitos (<code>Inf</code>)</strong><a class="anchor" aria-label="anchor" href="#valores-infinitos-inf"></a></h4>
 <p>Los valores infinitos pueden generarse cuando una operación resulta
 en un número demasiado grande (Inf+) o demasiado pequeño (Inf -) para R.
 En R si intentamos calcular valores superiores o iguales a 2^1024 (más
@@ -1476,9 +1479,9 @@ multiplicación (*) se usó el operador de potencia (^).</p>
 <span id="cb55-7"><a href="#cb55-7" tabindex="-1"></a>[<span class="dv">1</span>]  <span class="dv">9490</span> <span class="dv">10220</span> <span class="dv">22265</span>  <span class="dv">8760</span> <span class="dv">18615</span>  <span class="dv">9125</span></span></code></pre>
 </div>
 </div>
-<div class="section level3">
-<h3 id="valores-indeterminados-nan"><strong>3.2.3. Valores indeterminados
-(<code>NaN</code>)</strong><a class="anchor" aria-label="anchor" href="#valores-indeterminados-nan"></a></h3>
+<div class="section level4">
+<h4 id="valores-indeterminados-nan"><strong>3.2.3. Valores indeterminados
+(<code>NaN</code>)</strong><a class="anchor" aria-label="anchor" href="#valores-indeterminados-nan"></a></h4>
 <p>Estos valores se generan cuando se realizan operaciones
 matemáticamente indefinidas. Por ejemplo, si intentamos dividir cero
 entre cero o restar o dividir un número infinito de otro número
@@ -1510,8 +1513,8 @@ conversión de variables cometemos un error o al crear una variable tras
 una operación errónea y el error se propaga en operaciones
 subsecuentes.</p>
 </div>
-<div class="section level3">
-<h3 id="datos-duplicados"><strong>3.2.4. Datos duplicados</strong><a class="anchor" aria-label="anchor" href="#datos-duplicados"></a></h3>
+<div class="section level4">
+<h4 id="datos-duplicados"><strong>3.2.4. Datos duplicados</strong><a class="anchor" aria-label="anchor" href="#datos-duplicados"></a></h4>
 <p>Otro error que puede ocurrir frecuentemente son los datos duplicados.
 Estos pueden ser tanto una observación de una variable duplicada o todo
 un registro duplicado.</p>
@@ -1547,7 +1550,7 @@ duplicated y sumar los registros así:</p>
 <p>Para solucionar este problema podemos usar la función
 <code>remove_duplicates</code> de cleanepi el cual permite eliminar las
 filas que se repiten exactamente.</p>
-<div id="callout14" class="callout">
+<div id="callout13" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -1619,8 +1622,8 @@ estar seguro de querer remover esas filas, de lo contrario puede
 ejecutar la función sin sobrescribir el objeto para observar los
 resultados y cuando se este seguro almacenarlo.</p>
 </div>
-<div class="section level3">
-<h3 id="errores-tipográficos"><strong>3.2.5. Errores tipográficos</strong><a class="anchor" aria-label="anchor" href="#errores-tipogr%C3%A1ficos"></a></h3>
+<div class="section level4">
+<h4 id="errores-tipográficos"><strong>3.2.5. Errores tipográficos</strong><a class="anchor" aria-label="anchor" href="#errores-tipogr%C3%A1ficos"></a></h4>
 <p>A veces, podemos encontrar que las categorías de una variable se han
 escrito de múltiples maneras. Veamos un ejemplo:</p>
 <div class="codewrapper sourceCode" id="cb64">
@@ -1660,8 +1663,8 @@ seleccionado como correcto, “Casa”.</p>
 <span id="cb66-6"><a href="#cb66-6" tabindex="-1"></a>       <span class="dv">74852</span>         <span class="dv">1727</span>           <span class="dv">12</span>            <span class="dv">1</span>          <span class="dv">407</span>            <span class="dv">0</span> </span></code></pre>
 </div>
 </div>
-<div class="section level3">
-<h3 id="reemplazar-valores-perdidos"><strong>3.2.6. Reemplazar valores perdidos</strong><a class="anchor" aria-label="anchor" href="#reemplazar-valores-perdidos"></a></h3>
+<div class="section level4">
+<h4 id="reemplazar-valores-perdidos"><strong>3.2.6. Reemplazar valores perdidos</strong><a class="anchor" aria-label="anchor" href="#reemplazar-valores-perdidos"></a></h4>
 <p>En algunas ocasiones los dataset contienen valores que no
 corresponden a las categorías de las variables, faltan o desde la
 documentación sabemos que esos valores corresponden a <code>NA</code>.
@@ -1669,7 +1672,7 @@ Para garantizar un análisis robusto, es una buena práctica reemplazar
 todos esos valores por <code>NA</code>. Para hacer este reemplazo lo
 podemos hacer empleando la función <code>replace_missing_values</code>
 del paquete cleanepi.</p>
-<div id="callout15" class="callout">
+<div id="callout14" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -1721,15 +1724,15 @@ posibles NA pueden aparecer en el dataset y reemplacelos por NA.</p>
 <span id="cb69-6"><a href="#cb69-6" tabindex="-1"></a>       <span class="dv">74852</span>         <span class="dv">1727</span>           <span class="dv">12</span>            <span class="dv">1</span>          <span class="dv">407</span> </span></code></pre>
 </div>
 </div>
-<div class="section level3">
-<h3 id="columnas-con-valores-constantes"><strong>3.2.7. Columnas con valores constantes</strong><a class="anchor" aria-label="anchor" href="#columnas-con-valores-constantes"></a></h3>
+<div class="section level4">
+<h4 id="columnas-con-valores-constantes"><strong>3.2.7. Columnas con valores constantes</strong><a class="anchor" aria-label="anchor" href="#columnas-con-valores-constantes"></a></h4>
 <p>En algunas ocasiones, es posible encontrar columnas que contienen un
 único valor. Esto puede ocurrir, por ejemplo, cuando se divide un
 dataset de mayor tamaño en una fracción más pequeña. En estos casos, la
 columna que servía para separar los datos se vuelve innecesaria. Para
 estos casos se puede emplear la función <code>remove_constants</code>
 del paquete cleanepi.</p>
-<div id="callout16" class="callout">
+<div id="callout15" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -1764,8 +1767,8 @@ proceso, puede utilizar la función <code>ncol</code>:</p>
 <span id="cb71-3"><a href="#cb71-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">25</span></span></code></pre>
 </div>
 </div>
-<div class="section level3">
-<h3 id="verificación-de-valores-atípicos"><strong>3.2.8. Verificación de valores atípicos</strong><a class="anchor" aria-label="anchor" href="#verificaci%C3%B3n-de-valores-at%C3%ADpicos"></a></h3>
+<div class="section level4">
+<h4 id="verificación-de-valores-atípicos"><strong>3.2.8. Verificación de valores atípicos</strong><a class="anchor" aria-label="anchor" href="#verificaci%C3%B3n-de-valores-at%C3%ADpicos"></a></h4>
 <p>Para evaluar si los datos se encuentran dentro de un rango esperado o
 si existen valores atípicos, se puede emplear la creación de gráficas o
 la exploración de la cabeza y cola de los datos cuando están ordenados;
@@ -1852,8 +1855,8 @@ corregir este tipo de errores se puede eliminar las filas que contienen
 estos datos o reasignar a estos valores con datos tipo NA para no perder
 la demás información.</p>
 </div>
-<div class="section level3">
-<h3 id="corrección-de-errores-en-fechas"><strong>3.2.9. Corrección de errores en fechas</strong><a class="anchor" aria-label="anchor" href="#correcci%C3%B3n-de-errores-en-fechas"></a></h3>
+<div class="section level4">
+<h4 id="corrección-de-errores-en-fechas"><strong>3.2.9. Corrección de errores en fechas</strong><a class="anchor" aria-label="anchor" href="#correcci%C3%B3n-de-errores-en-fechas"></a></h4>
 <p>Una vez explorados los datos e identificados posibles errores,
 podemos explorar las medidas correctivas a utilizar. En este caso
 teniendo en cuenta que los primeros casos de COVID en latinoamérica
@@ -1911,8 +1914,8 @@ la corrección en las fechas.</p>
 <figure><img src="../fig/limpieza-rendered-unnamed-chunk-84-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p><strong>Resultado esperado:</strong> Al usar el anterior código con
 el mismo dataset se obtiene el siguiente resultado:</p>
 </div>
-<div class="section level3">
-<h3 id="filtrado-de-registros-con-na"><strong>3.2.10. Filtrado de registros con NA</strong><a class="anchor" aria-label="anchor" href="#filtrado-de-registros-con-na"></a></h3>
+<div class="section level4">
+<h4 id="filtrado-de-registros-con-na"><strong>3.2.10. Filtrado de registros con NA</strong><a class="anchor" aria-label="anchor" href="#filtrado-de-registros-con-na"></a></h4>
 <p>En ciertos análisis, puede ser necesario excluir los valores NA. Para
 lograr esto, podemos utilizar la función de filtrado proporcionada por
 <code>dplyr</code>. Esto nos permite centrarnos en los datos
@@ -1953,9 +1956,9 @@ ubicacion_del_caso para ver los cambios:</p>
 </div>
 <p>Como puede observar ahora los NA son 0.</p>
 </div>
-<div class="section level3">
-<h3 id="reemplazo-de-siglas-abreviaturas-o-valores-códigos"><strong>3.2.11. Reemplazo de siglas, abreviaturas o valores
-códigos</strong><a class="anchor" aria-label="anchor" href="#reemplazo-de-siglas-abreviaturas-o-valores-c%C3%B3digos"></a></h3>
+<div class="section level4">
+<h4 id="reemplazo-de-siglas-abreviaturas-o-valores-códigos"><strong>3.2.11. Reemplazo de siglas, abreviaturas o valores
+códigos</strong><a class="anchor" aria-label="anchor" href="#reemplazo-de-siglas-abreviaturas-o-valores-c%C3%B3digos"></a></h4>
 <p>En el proceso de la recopilación o entrada de datos, es común el uso
 de siglas, abreviaturas o códigos para registrar información. Por
 ejemplo, en el caso de la variable de sexo, a veces se puede emplear
@@ -1988,7 +1991,7 @@ para la conversión de estos valores, es posible utilizar la función
 <span id="cb84-5"><a href="#cb84-5" tabindex="-1"></a>    F     M  <span class="sc">&lt;</span><span class="cn">NA</span><span class="sc">&gt;</span> </span>
 <span id="cb84-6"><a href="#cb84-6" tabindex="-1"></a><span class="dv">40962</span> <span class="dv">35627</span>     <span class="dv">0</span> </span></code></pre>
 </div>
-<div id="callout17" class="callout">
+<div id="callout16" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -2030,14 +2033,12 @@ sexo para ver los cambios:</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section level1">
-<h1 id="tema-4-organización-de-los-datos"><strong>Tema 4: Organización de los datos</strong><a class="anchor" aria-label="anchor" href="#tema-4-organizaci%C3%B3n-de-los-datos"></a></h1>
-<p>Finalmente podemos realizar algunas actividades de organización de
+</section><section><h2 class="section-heading" id="tema-4-organización-de-los-datos"><strong>Tema 4: Organización de los datos</strong><a class="anchor" aria-label="anchor" href="#tema-4-organizaci%C3%B3n-de-los-datos"></a></h2>
+<hr class="half-width"><p>Finalmente podemos realizar algunas actividades de organización de
 datos. Como, por ejemplo:</p>
-<div class="section level2">
-<h2 id="eliminación-de-variables-repetidas-o-que-no-tengan-utilidad-en-responder-la-pregunta-de-investigación">4.1. Eliminación de variables repetidas o que no tengan utilidad en
-responder la pregunta de investigación<a class="anchor" aria-label="anchor" href="#eliminaci%C3%B3n-de-variables-repetidas-o-que-no-tengan-utilidad-en-responder-la-pregunta-de-investigaci%C3%B3n"></a></h2>
+<div class="section level3">
+<h3 id="eliminación-de-variables-repetidas-o-que-no-tengan-utilidad-en-responder-la-pregunta-de-investigación">4.1. Eliminación de variables repetidas o que no tengan utilidad en
+responder la pregunta de investigación<a class="anchor" aria-label="anchor" href="#eliminaci%C3%B3n-de-variables-repetidas-o-que-no-tengan-utilidad-en-responder-la-pregunta-de-investigaci%C3%B3n"></a></h3>
 <p>Durante la exploración de datos es posible encontrar variables cuyo
 contenido no es necesario para el análisis o que ya no se requieren.
 Para optimizar el uso de recursos de memoria en el equipo, podemos
@@ -2053,8 +2054,8 @@ acompañada del símbolo - elimine la variable edad_repetida.</p>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">select</span> <span class="op">(</span><span class="op">!</span><span class="va">edad_repetida</span><span class="op">)</span></span></code></pre>
 </div>
 </div>
-<div class="section level2">
-<h2 id="organización-de-las-variables">4.2. Organización de las variables<a class="anchor" aria-label="anchor" href="#organizaci%C3%B3n-de-las-variables"></a></h2>
+<div class="section level3">
+<h3 id="organización-de-las-variables">4.2. Organización de las variables<a class="anchor" aria-label="anchor" href="#organizaci%C3%B3n-de-las-variables"></a></h3>
 <p>Parte de la organización de las variables incluye asignar nombres
 apropiados a las variables, según la necesidad del proyecto. Esto se
 puede lograr mediante la función <code>rename</code> de
@@ -2071,14 +2072,14 @@ nombre más corto como, por ejemplo: <code>inicio_sintomas</code>.</p>
 </div>
 <p>¿A qué otras columnas les cambiaría el nombre?</p>
 </div>
-<div class="section level2">
-<h2 id="almacenamiento-del-dataset-limpio">4.3. Almacenamiento del dataset limpio<a class="anchor" aria-label="anchor" href="#almacenamiento-del-dataset-limpio"></a></h2>
+<div class="section level3">
+<h3 id="almacenamiento-del-dataset-limpio">4.3. Almacenamiento del dataset limpio<a class="anchor" aria-label="anchor" href="#almacenamiento-del-dataset-limpio"></a></h3>
 <p>Una vez se haya terminado la modificación, limpieza y corrección de
 los datos podemos guardar el dataset limpio. Esto se debe a que, todos
 los cambios que han sido realizados se han guardado únicamente en la
 sesión de R, y se perderán una vez que esta se cierre. Para hacerlo, se
 puede utilizar la función export del paquete rio.</p>
-<div id="callout18" class="callout">
+<div id="callout17" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -2110,12 +2111,12 @@ llamado datos_limpios_covid.RDS. También puede almacenar el archivo en
 formato .xls o .xlsx para Excel, así como en otros múltiples formatos.
 Sin embargo, se recomienda RDS por su bajo peso y capacidad de
 almacenamiento.</p>
-<div id="puntos-clave" class="callout keypoints">
+<div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
-<div id="puntos-clave" class="callout-inner">
-<h3 class="callout-title">Puntos clave</h3>
+<div class="callout-inner">
+<h3 class="callout-title">Puntos Clave</h3>
 <div class="callout-content">
 <p>Revise si al final de esta lección adquirió estas competencias:</p>
 <ul><li><p>Reconocer las herramientas que facilitan la limpieza de datos
@@ -2128,30 +2129,26 @@ de datos epidemiológicos.</p></li>
 </div>
 </div>
 </div>
-<div class="section level2">
-<h2 id="contribuciones">Contribuciones<a class="anchor" aria-label="anchor" href="#contribuciones"></a></h2>
+<div class="section level3">
+<h3 id="contribuciones">Contribuciones<a class="anchor" aria-label="anchor" href="#contribuciones"></a></h3>
 <ul><li>Zulma M. Cucunuba: Versión inicial</li>
 <li>Laura Gómez-Bermeo: Edición</li>
 <li>Geraldine Gomez: Ediciones menores</li>
 <li>Andree Valle: Ediciones menores</li>
 <li>José M. Velasco España: Ediciones menores</li>
 </ul></div>
-<div class="section level2">
-<h2 id="asuntos-legales">Asuntos legales<a class="anchor" aria-label="anchor" href="#asuntos-legales"></a></h2>
+<div class="section level3">
+<h3 id="asuntos-legales">Asuntos legales<a class="anchor" aria-label="anchor" href="#asuntos-legales"></a></h3>
 <p><strong>Copyright</strong>: Zulma M. Cucunuba, 2019</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </div>
-</div>
-
-
-
-      </div> <!-- / div.lesson-content -->
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Capítulo previo y siguiente"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/Reporte.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previo</a>
-        <a class="chapter-link float-end" href="../instructor/zika.html">Siguiente<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/Banco_errores.html">Siguiente<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -2159,8 +2156,8 @@ any links that you are not going to use.
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previo: Reporte e informes
         </a>
-        <a class="chapter-link float-end" href="../instructor/zika.html" rel="next">
-          Siguiente: Construyendo un...
+        <a class="chapter-link float-end" href="../instructor/Banco_errores.html" rel="next">
+          Siguiente: Banco de preguntas y...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -2206,7 +2203,7 @@ any links that you are not going to use.
   "url": "https://epiverse-trace.github.io/epitkit/instructor/limpieza.html",
   "identifier": "https://epiverse-trace.github.io/epitkit/instructor/limpieza.html",
   "dateCreated": "2024-09-09",
-  "dateModified": "2024-10-08",
+  "dateModified": "2024-10-22",
   "datePublished": "2024-10-22"
 }
 

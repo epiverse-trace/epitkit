@@ -163,17 +163,14 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#tabla-de-contenido">Tabla de contenido</a></li>
-<li><a href="#tema-1-introducci%C3%B3n">Tema 1: Introducción</a></li>
+        <ul><li><a href="#tema-1-introducci%C3%B3n">Tema 1: Introducción</a></li>
 <li><a href="#tema-2-instalaci%C3%B3n-de-r-y-rstudio">Tema 2: Instalación de R y RStudio</a></li>
 <li><a href="#tema-3-ambiente-de-rstudio">Tema 3: Ambiente de RStudio</a></li>
 <li><a href="#tema-4-configuraci%C3%B3n-de-un-proyecto-en-rstudio">Tema 4: Configuración de un proyecto en RStudio</a></li>
 <li><a href="#tema-5-tipos-de-datos-y-operadores-en-r">Tema 5: Tipos de datos y operadores en R</a></li>
-<li><a href="#tema-6-estructuras-en-r">Tema 6: Estructuras en R</a></li>
-<li><a href="#tema-7-funciones">Tema 7: Funciones</a></li>
+<li><a href="#tema-6-funciones">Tema 6: Funciones</a></li>
+<li><a href="#tema-7-estructuras-en-r">Tema 7: Estructuras en R</a></li>
 <li><a href="#tema-8-manipulaci%C3%B3n-de-datos-con-tidyverse">Tema 8: Manipulación de datos con <code>tidyverse</code></a></li>
-<li><a href="#contribuciones">Contribuciones</a></li>
-<li><a href="#asuntos-legales">Asuntos legales</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -210,7 +207,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="zika.html">5. Construyendo un modelo deterministico simple</a>
+        <a href="Banco_errores.html">5. Banco de preguntas y errores frecuentes</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -274,7 +271,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introducción a R y Rstudio</h1>
-        <p>Última actualización: 2024-10-08 |
+        <p>Última actualización: 2024-10-22 |
 
         <a href="https://github.com/epiverse-trace/epitkit/edit/main/episodes/Taller-R-RStudio.Rmd" class="external-link">Mejora esta página <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -328,16 +325,15 @@ bases de datos con Tidyverse.</li>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="tabla-de-contenido">Tabla de contenido<a class="anchor" aria-label="anchor" href="#tabla-de-contenido"></a></h2>
-<hr class="half-width"><div id="checklist1" class="callout checklist">
+<div id="tabla-de-contenido" class="callout checklist">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check-square"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Lista de verificación</h3>
+<div id="tabla-de-contenido" class="callout-inner">
+<h3 class="callout-title">Tabla de contenido</h3>
 <div class="callout-content">
-<ul><li>Módulo 2 : Ciencia de datos en salud pública
-<ul><li>Unidad 1: Introducción a R y RStudio
+<ul><li>Módulo: Ciencia de datos en salud pública
+<ul><li>Unidad: Introducción a R y RStudio
 <ul><li>Tema 1: Introducción</li>
 <li>Tema 2: Instalación de R y RStudio</li>
 <li>Tema 3: Ambiente de RStudio</li>
@@ -351,7 +347,7 @@ bases de datos con Tidyverse.</li>
 </ul></div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="tema-1-introducción">Tema 1: Introducción<a class="anchor" aria-label="anchor" href="#tema-1-introducci%C3%B3n"></a></h2>
+<section><h2 class="section-heading" id="tema-1-introducción">Tema 1: Introducción<a class="anchor" aria-label="anchor" href="#tema-1-introducci%C3%B3n"></a></h2>
 <hr class="half-width"><p>R es un lenguaje de programación especializado para análisis de
 datos, es de uso gratuito y software libre. Por otra parte, RStudio es
 un editor de R también disponible de manera gratuita. La diferencia
@@ -391,9 +387,9 @@ hacer uso de R y RStudio debemos buscar en la ubicación que hayamos
 elegido en la instalación donde quedó Rstudio y dar doble clic o clic
 derecho y abrir. Lo primero que vemos al momento de abrir Rstudio es la
 siguiente pantalla:</p>
-<figure><img src="../fig/pantalla_r.png" class="figure mx-auto d-block"></figure><p>Escribe 2+2 donde aparece el curso y da enter, si te aparece el
+<figure><img src="../fig/pantalla_r.png" class="figure mx-auto d-block"></figure><p>Escribe 2+2 donde aparece el cursor y da enter, si te aparece el
 resultado 4 ¡Está todo listo para empezar!</p>
-</section><section><h2 class="section-heading" id="tema-3-ambiente-de-rstudio">Tema 3: Ambiente de RStudio<a class="anchor" aria-label="anchor" href="#tema-3-ambiente-de-rstudio"></a></h2>
+<figure><img src="../fig/2mas2.png" class="figure mx-auto d-block"></figure></section><section><h2 class="section-heading" id="tema-3-ambiente-de-rstudio">Tema 3: Ambiente de RStudio<a class="anchor" aria-label="anchor" href="#tema-3-ambiente-de-rstudio"></a></h2>
 <hr class="half-width"><p>RStudio está compuesto por 4 secciones principales:</p>
 <figure><img src="../fig/partes_pantalla.png" class="figure mx-auto d-block"></figure><ol style="list-style-type: decimal"><li><p><strong>Editor (sección superior izquierda)</strong>: en esta
 sección escribimos y editamos el código a través de la creación de
@@ -435,20 +431,21 @@ importante seguir los siguientes pasos:</p>
 <div class="callout-inner">
 <h3 class="callout-title">Desafío</h3>
 <div class="callout-content">
-<ol style="list-style-type: decimal"><li><p>Abrir RStudio y, en la esquina superior derecha, seleccionar la
+<ol style="list-style-type: decimal"><li>Abrir RStudio y, en la esquina superior izquierda, seleccionar la
 pestaña <strong>File (Archivo)</strong> -&gt; <strong>New Project…
-(Proyecto Nuevo)</strong>.</p></li>
-<li><p>Se desplegará una ventana con encabezado <strong>New Project
+(Proyecto Nuevo)</strong>.</li>
+</ol><figure><img src="../fig/file_new_project.png" class="figure mx-auto d-block"></figure><ol start="2" style="list-style-type: decimal"><li>Se desplegará una ventana con encabezado <strong>New Project
 Wizard</strong>: <strong>Create Project</strong>, ahora se debe
-seleccionar <strong>New Directory (Directorio Nuevo)</strong>.</p></li>
-</ol><figure><img src="../fig/proyecto_r.png" class="figure mx-auto d-block"></figure><ol start="3" style="list-style-type: decimal"><li><p>En la ventana <strong>Project Type</strong>, se debe seleccionar
-<strong>New Project</strong> -&gt; <strong>Create New Project</strong>.
-En la casilla <strong>Directory Name (Nombre del Directorio)</strong>
-coloque el nombre deseado para su proyecto (e.g.
-“<code>IntroR</code>”).<br></p></li>
+seleccionar <strong>New Directory (Directorio Nuevo)</strong>.</li>
+</ol><figure><img src="../fig/proyecto_r.png" class="figure mx-auto d-block"></figure><ol start="3" style="list-style-type: decimal"><li><p>En la ventana con encabezado <strong>New Project
+Wizard</strong>:<strong>Project Type</strong>, se debe seleccionar
+<strong>New Project</strong> <img src="../fig/tipo_projecto.png" class="figure"></p></li>
+<li><p>En la ventana con encabezado <strong>New Project
+Wizard</strong>:<strong>Create New Project</strong>. En la casilla
+<strong>Directory Name (Nombre del Directorio)</strong> coloque el
+nombre deseado para su proyecto (e.g. “<code>IntroR</code>”).<br><img src="../fig/projectoR_introR.png" class="figure"></p></li>
 <li><p>Hacemos clic en el botón <strong>Browse….</strong> Para buscar la
-ubicación dentro de nuestro computador donde deseamos guardar el
-proyecto</p></li>
+ubicación dentro del computador donde deseamos guardar el proyecto <img src="../fig/browse.png" class="figure"></p></li>
 <li><p>Creamos una nueva carpeta con el mismo nombre del proyecto (e.g.
 “<code>IntroR</code>”), así como las subcarpetas que necesitamos para
 organizar nuestro trabajo y resultados: datos, scripts y figuras. Al
@@ -457,14 +454,13 @@ final, el proyecto debería parecerse a esta imagen:</p></li>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="tema-5-tipos-de-datos-y-operadores-en-r">Tema 5: Tipos de datos y operadores en R<a class="anchor" aria-label="anchor" href="#tema-5-tipos-de-datos-y-operadores-en-r"></a></h2>
-<hr class="half-width"><div id="checklist2" class="callout checklist">
+<hr class="half-width"><div id="tipos-de-datos" class="callout checklist">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check-square"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Lista de verificación</h3>
+<div id="tipos-de-datos" class="callout-inner">
+<h3 class="callout-title">Tipos de datos</h3>
 <div class="callout-content">
-<p><strong>Tipos de datos</strong></p>
 <p>R tiene la capacidad de almacenar y procesar distintos tipos de
 datos. Entre estos se encuentran:</p>
 <ul><li>Numéricos decimales<code>(double. Ej: 3.3)</code>
@@ -489,14 +485,13 @@ tipos variables se pueden obtener <code>Inf</code>.</li>
 </ul></div>
 </div>
 </div>
-<div id="checklist3" class="callout checklist">
+<div id="operadores-matemáticos-y-lógicos" class="callout checklist">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check-square"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Lista de verificación</h3>
+<div id="operadores-matemáticos-y-lógicos" class="callout-inner">
+<h3 class="callout-title">Operadores matemáticos y lógicos</h3>
 <div class="callout-content">
-<p><strong>Operadores matemáticos y lógicos</strong></p>
 <p>Los operadores son herramientas matemáticas que nos permiten realizar
 diferentes tareas con los datos que tenemos disponibles; por ejemplo,
 con el operador <code>+</code> podemos efectuar una suma o incrementar
@@ -511,7 +506,8 @@ booleanos <code>(&amp; (and), | (or), ! (not))</code></p>
 </div>
 </div>
 </div>
-<p><strong>Operadores de asignación</strong></p>
+<div class="section level3">
+<h3 id="operadores-de-asignación---y">Operadores de asignación &lt;- y =<a class="anchor" aria-label="anchor" href="#operadores-de-asignaci%C3%B3n---y"></a></h3>
 <p>&lt;- Este es un operador común en R para asignar un determinado
 valor a una variable y el alcance está dentro de la función y también
 fuera de ella.</p>
@@ -522,11 +518,129 @@ fuera de ella.</p>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nombre</span> <span class="op">&lt;-</span> <span class="st">"Laura"</span></span></code></pre>
 </div>
+<p>Se abra creado un objeto en el ambiente global (ubiquelo en la
+sección lateral derecha superior): <img src="../fig/nombrelaura.png" class="figure"></p>
 <p>= Este operador se utiliza para establecer un parámetro en un valor
 dentro de una función. El alcance está solo dentro de la función. La
 variable todavía contiene su valor original fuera de la función.</p>
-</section><section><h2 class="section-heading" id="tema-6-estructuras-en-r">Tema 6: Estructuras en R<a class="anchor" aria-label="anchor" href="#tema-6-estructuras-en-r"></a></h2>
-<hr class="half-width"><p><strong>Vector</strong></p>
+</div>
+</section><section><h2 class="section-heading" id="tema-6-funciones">Tema 6: Funciones<a class="anchor" aria-label="anchor" href="#tema-6-funciones"></a></h2>
+<hr class="half-width"><p>Imaginemos una función como una especie de “caja mágica” que recibe
+ciertos datos o información como entrada y produce un resultado o
+respuesta específica como salida. Es como seguir una receta que toma
+ingredientes y como resultado tenemos un plato delicioso.</p>
+<p>Para qué podamos utilizar una función debemos proporcionar unos datos
+de entrada (<em>input</em>) que entran a la caja (la función) y de ahí
+sale un resultado o datos de salida (<em>output</em>). La función puede
+ser suma, resta, regresión logística o un modelo matemático. Entran
+datos y salen otros que son producto de las operaciones en la
+función.</p>
+<div id="componentes-básicos-de-una-función" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<div id="componentes-básicos-de-una-función" class="callout-inner">
+<h3 class="callout-title">Componentes básicos de una función</h3>
+<div class="callout-content">
+<p>Los componentes básicos de una función son:</p>
+<ul><li><p><strong><code>name</code> (nombre)</strong>: es el nombre que se
+da a la función (Por ejemplo: myfun).</p></li>
+<li><p><strong><code>formals</code> (argumentos)</strong>: son la serie
+de elementos que controlan cómo llamar a la función.</p></li>
+<li><p><strong><code>body</code> (cuerpo)</strong>: es la serie de
+operaciones o modificaciones a los argumentos.</p></li>
+<li><p><strong><code>output</code> (salida o resultado)</strong>: son
+los resultados después de modificar los argumentos. Si esta salida
+corresponde a una serie de datos, podemos extraerla usando el comando
+<code>return</code>.</p></li>
+</ul></div>
+</div>
+</div>
+<p><strong>Ejemplo</strong>: con una base de datos queremos generar una
+variable que es producto de una operación, por ejemplo, IMC (índice masa
+corporal).</p>
+<p>La función del IMC es conocida (<span class="math display">\[peso/(talla^2 )\]</span>) , y sus argumentos son
+peso y talla.</p>
+<p>Recordemos que en esta fórmula el peso debe estar en kg y la talla en
+metros.</p>
+<p>Para este ejemplo el input, o datos de entrada son el peso y la
+variable talla, y el output sería el índice de masa corporal. Si tenemos
+que el peso es 50kg y la talla 1.5m, el IMC será igual a 22.2.</p>
+<figure><img src="../fig/ilustracion_imc.png" class="figure mx-auto d-block"></figure><p>(Ilustración adaptada por Maria Paula Forero)</p>
+<p>En R podemos producir la función IMC mediante el siguiente
+código:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">IMC</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">peso_kg</span>, <span class="va">talla_m</span><span class="op">)</span> <span class="op">{</span> <span class="co"># Aquí van los argumentos o input</span></span>
+<span>    <span class="va">resultado</span> <span class="op">&lt;-</span> <span class="va">peso_kg</span><span class="op">/</span> <span class="va">talla_m</span><span class="op">^</span><span class="fl">2</span>  <span class="co"># Esta es el cuerpo u operación       </span></span>
+<span>    <span class="kw">return</span><span class="op">(</span><span class="va">resultado</span><span class="op">)</span>           <span class="co"># Este es el output o resultado</span></span>
+<span> <span class="op">}</span></span></code></pre>
+</div>
+<p>Ahora, utilicemos la función para calcular el IMC de una persona de
+talla 1.75 cm y peso 80 kg, mediante el siguiente código</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">IMC</span>(<span class="at">peso_kg =</span> <span class="dv">80</span>, <span class="at">talla_m =</span> <span class="fl">1.75</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">26.12245</span></span></code></pre>
+</div>
+<p>Como se puede ver, para usar la función una vez establecida solo se
+requiere el nombre y los argumentos.</p>
+<div id="discussion2" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Desafío</h3>
+<div class="callout-content">
+<p><strong>Reto</strong>: Usando la misma función calcula tu IMC.</p>
+</div>
+</div>
+</div>
+<p>En general, una función consiste en una secuencia de instrucciones
+con el fin de llevar a cabo una tarea. De esta forma, por medio del uso
+de funciones es posible sistematizar procesos complejos que se realizan
+de manera rutinaria.</p>
+<div class="section level3">
+<h3 id="paquetes-o-librerías">Paquetes o librerías<a class="anchor" aria-label="anchor" href="#paquetes-o-librer%C3%ADas"></a></h3>
+<p>En R, los paquetes, también llamados “librerías” se refieren a
+conjuntos de funciones organizadas de manera lógica que pueden ser
+utilizadas para llevar a cabo diversas tareas, como análisis, limpieza y
+visualización de datos, ente otros.</p>
+<div id="las-librerías-más-usadas-en-r-son" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<div id="las-librerías-más-usadas-en-r-son" class="callout-inner">
+<h3 class="callout-title">Las librerías más usadas en R son:</h3>
+<div class="callout-content">
+<ul><li>
+<strong><code>ggplot2</code></strong>: sirve para la creación de
+gráficos y visualizaciones de datos de alta calidad.</li>
+<li>
+<strong><code>dplyr</code></strong>: permite la manipulación y
+transformación eficiente de datos.</li>
+<li>
+<strong><code>tidyr</code></strong>: utilizada para organizar y
+reorganizar datos en un formato tabular ordenado.</li>
+<li>
+<strong><code>readr</code></strong>: sirve para leer y escribir
+datos en formatos como <code>CSV</code>, <code>TSV</code> y otros.</li>
+<li>
+<strong><code>plyr</code></strong>: funciona para dividir, aplicar y
+combinar datos de manera eficiente.</li>
+</ul></div>
+</div>
+</div>
+<p>A su vez, hay meta-librerías, es decir, aquellas que combinan varias
+librerías. Un ejemplo de estas es la librería
+<code>tidyverse</code>.</p>
+</div>
+</section><section><h2 class="section-heading" id="tema-7-estructuras-en-r">Tema 7: Estructuras en R<a class="anchor" aria-label="anchor" href="#tema-7-estructuras-en-r"></a></h2>
+<hr class="half-width"><div class="section level3">
+<h3 id="vector">Vector<a class="anchor" aria-label="anchor" href="#vector"></a></h3>
 <p>En R, un vector es una estructura de datos indexada que permite
 almacenar varios elementos del mismo tipo en una única estructura. Por
 ejemplo, podríamos tener un vector que contenga las edades de varias
@@ -546,7 +660,7 @@ el vector). Luego se escribe letra c que es la asignación que permite
 inicializar el vector. Cada componente debe ir separado por comas, si
 son caracteres debe ir entre comillas (si son números no), si es dato
 booleano (falso o verdadero) tampoco va en comillas.</p>
-<div id="discussion2" class="callout discussion">
+<div id="discussion3" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
@@ -556,7 +670,7 @@ booleano (falso o verdadero) tampoco va en comillas.</p>
 <p>Así, los vectores se pueden crear ejecutando el comando
 <code>c()</code>, como se puede visualizar a continuación:</p>
 <p>Ejemplos</p>
-<div class="codewrapper sourceCode" id="cb2">
+<div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -586,7 +700,9 @@ código.</em></p>
 </div>
 </div>
 </div>
-<p><strong>Data.frame (Tabla de datos)</strong></p>
+</div>
+<div class="section level3">
+<h3 id="data-frame-tabla-de-datos">Data.frame (Tabla de datos)<a class="anchor" aria-label="anchor" href="#data-frame-tabla-de-datos"></a></h3>
 <p>Imaginemos un <code>data.frame</code> como una tabla con filas y
 columnas, similar a una hoja de cálculo en Excel. Cada columna
 representa un tipo de información específica (un vector) o variable (Por
@@ -603,7 +719,7 @@ aumentando, en R se puede trabajar más rápido y eficientemente.</p>
 <p>Para crear una tabla de datos se debe ejecutar el comando
 <code>data.frame()</code>. Por ejemplo, utilizando los vectores que
 definimos en la sección anterior:</p>
-<div class="codewrapper sourceCode" id="cb3">
+<div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -615,22 +731,22 @@ definimos en la sección anterior:</p>
 <span>  dosis <span class="op">=</span> <span class="va">dosis</span><span class="op">)</span></span></code></pre>
 </div>
 <p>Ahora observemos cómo quedó la tabla de datos</p>
-<div class="codewrapper sourceCode" id="cb4">
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>datos_vacunas</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>  nombre     ciudad edad vacunado dosis</span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="dv">1</span> Emilia   La Plata   <span class="dv">18</span>     <span class="cn">TRUE</span>     <span class="dv">2</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="dv">2</span> Maximo Concepción   <span class="dv">20</span>    <span class="cn">FALSE</span>     <span class="dv">0</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="dv">3</span>   Axel      Cuzco   <span class="dv">37</span>    <span class="cn">FALSE</span>     <span class="dv">1</span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="dv">4</span>  Diana     Bogota   <span class="dv">42</span>     <span class="cn">TRUE</span>     <span class="dv">2</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>datos_vacunas</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>  nombre     ciudad edad vacunado dosis</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="dv">1</span> Emilia   La Plata   <span class="dv">18</span>     <span class="cn">TRUE</span>     <span class="dv">2</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="dv">2</span> Maximo Concepción   <span class="dv">20</span>    <span class="cn">FALSE</span>     <span class="dv">0</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="dv">3</span>   Axel      Cuzco   <span class="dv">37</span>    <span class="cn">FALSE</span>     <span class="dv">1</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="dv">4</span>  Diana     Bogota   <span class="dv">42</span>     <span class="cn">TRUE</span>     <span class="dv">2</span></span></code></pre>
 </div>
-<div id="checklist4" class="callout checklist">
+<div id="parte-de-un-data.frame" class="callout checklist">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check-square"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Lista de verificación</h3>
+<div id="parte-de-un-data.frame" class="callout-inner">
+<h3 class="callout-title">Parte de un data.frame</h3>
 <div class="callout-content">
 <p>Algunas funciones que permiten conocer características como nombres o
 tamaños de las filas o columnas del <code>data.frame</code> son:</p>
@@ -645,16 +761,16 @@ tamaños de las filas o columnas del <code>data.frame</code> son:</p>
 <p>Ahora, para acceder a la descripción de la estructura general de una
 tabla de datos (y en general cualquier objeto de R) usamos el comando
 <code>str</code>, en este caso escribimos:</p>
-<div class="codewrapper sourceCode" id="cb5">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">str</span>(datos_vacunas)</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="st">'data.frame'</span><span class="sc">:</span>	<span class="dv">4</span> obs. of  <span class="dv">5</span> variables<span class="sc">:</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a> <span class="er">$</span> nombre  <span class="sc">:</span> chr  <span class="st">"Emilia"</span> <span class="st">"Maximo"</span> <span class="st">"Axel"</span> <span class="st">"Diana"</span></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a> <span class="sc">$</span> ciudad  <span class="sc">:</span> chr  <span class="st">"La Plata"</span> <span class="st">"Concepción"</span> <span class="st">"Cuzco"</span> <span class="st">"Bogota"</span></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a> <span class="sc">$</span> edad    <span class="sc">:</span> num  <span class="dv">18</span> <span class="dv">20</span> <span class="dv">37</span> <span class="dv">42</span></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a> <span class="sc">$</span> vacunado<span class="sc">:</span> logi  <span class="cn">TRUE</span> <span class="cn">FALSE</span> <span class="cn">FALSE</span> <span class="cn">TRUE</span></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a> <span class="sc">$</span> dosis   <span class="sc">:</span> int  <span class="dv">2</span> <span class="dv">0</span> <span class="dv">1</span> <span class="dv">2</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">str</span>(datos_vacunas)</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="st">'data.frame'</span><span class="sc">:</span>	<span class="dv">4</span> obs. of  <span class="dv">5</span> variables<span class="sc">:</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a> <span class="er">$</span> nombre  <span class="sc">:</span> chr  <span class="st">"Emilia"</span> <span class="st">"Maximo"</span> <span class="st">"Axel"</span> <span class="st">"Diana"</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a> <span class="sc">$</span> ciudad  <span class="sc">:</span> chr  <span class="st">"La Plata"</span> <span class="st">"Concepción"</span> <span class="st">"Cuzco"</span> <span class="st">"Bogota"</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a> <span class="sc">$</span> edad    <span class="sc">:</span> num  <span class="dv">18</span> <span class="dv">20</span> <span class="dv">37</span> <span class="dv">42</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a> <span class="sc">$</span> vacunado<span class="sc">:</span> logi  <span class="cn">TRUE</span> <span class="cn">FALSE</span> <span class="cn">FALSE</span> <span class="cn">TRUE</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a> <span class="sc">$</span> dosis   <span class="sc">:</span> int  <span class="dv">2</span> <span class="dv">0</span> <span class="dv">1</span> <span class="dv">2</span></span></code></pre>
 </div>
 <p>Esto nos indica que la estructura (<code>datos_vacunas</code>)
 corresponde a un <code>data.frame</code> con 4 observaciones y 5
@@ -662,16 +778,16 @@ variables.</p>
 <p>Si usamos el comando <code>str(datos_vacunas$nombre)</code> podemos
 ver la estructura de esa variable, que en este caro es un vector de
 caracteres con longitud de 1 a 4.</p>
-<div class="codewrapper sourceCode" id="cb6">
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">str</span>(datos_vacunas<span class="sc">$</span>nombre)</span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a> chr [<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>] <span class="st">"Emilia"</span> <span class="st">"Maximo"</span> <span class="st">"Axel"</span> <span class="st">"Diana"</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">str</span>(datos_vacunas<span class="sc">$</span>nombre)</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a> chr [<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>] <span class="st">"Emilia"</span> <span class="st">"Maximo"</span> <span class="st">"Axel"</span> <span class="st">"Diana"</span></span></code></pre>
 </div>
 <p>Para acceder a los diferentes componentes de la tabla de datos usamos
 la sintaxis <code>[,]</code>, donde la primera dimensión corresponde a
 filas y la segunda dimensión a columnas.</p>
-<div id="discussion3" class="callout discussion">
+<div id="discussion4" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
@@ -684,7 +800,7 @@ Maximo ¿qué debemos hacer?</p>
 </div>
 </div>
 <p>Veamos a qué fila y columna corresponde este dato:</p>
-<div class="codewrapper sourceCode" id="cb7">
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -693,24 +809,26 @@ Maximo ¿qué debemos hacer?</p>
 <figure><img src="../fig/maximo.png" class="figure mx-auto d-block"></figure><p>Vemos que Maximo está en la fila 2 y las dosis en la columna 5. Por
 lo tanto, la intersección de estas dos variables nos dará el número de
 dosis que tiene Maximo.</p>
-<div class="codewrapper sourceCode" id="cb8">
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>datos_vacunas[<span class="dv">2</span>, <span class="dv">5</span>] </span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">0</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>datos_vacunas[<span class="dv">2</span>, <span class="dv">5</span>] </span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">0</span></span></code></pre>
 </div>
-<p><strong>Crear y abrir tablas de datos</strong></p>
+</div>
+<div class="section level3">
+<h3 id="crear-y-abrir-tablas-de-datos">Crear y abrir tablas de datos<a class="anchor" aria-label="anchor" href="#crear-y-abrir-tablas-de-datos"></a></h3>
 <p>R nos permite no solo crear tablas de datos sino también abrir
 archivos que las contengan. De hecho, la mayoría de las veces no se
 crean directamente los <code>data.frame</code> en R sino que se importa
 un <code>data.frame</code> de alguna fuente de datos, por ejemplo, la
 base de datos del sistema de vigilancia de algún evento de interés.</p>
-<div id="checklist5" class="callout checklist">
+<div id="fuentes-de-conjunto-de-datos" class="callout checklist">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check-square"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Lista de verificación</h3>
+<div id="fuentes-de-conjunto-de-datos" class="callout-inner">
+<h3 class="callout-title">FUentes de conjunto de datos</h3>
 <div class="callout-content">
 <p>Para esto, en R hay tres fuentes de conjuntos de datos que podemos
 utilizar:</p>
@@ -724,16 +842,11 @@ los primeros ejercicios)</li>
 </ul></div>
 </div>
 </div>
-<p><strong>Importar una tabla de datos</strong></p>
+</div>
+<div class="section level3">
+<h3 id="importar-una-tabla-de-datos">Importar una tabla de datos<a class="anchor" aria-label="anchor" href="#importar-una-tabla-de-datos"></a></h3>
 <p>Para importar una tabla de datos de diferentes fuentes necesitamos
 emplear diferentes tipos de funciones.</p>
-<div id="callout2" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Aviso</h3>
-<div class="callout-content">
 <p>Aquí algunos ejemplos del tipo de datos, y la librería que es
 necesario cargar y la función a utilizar.</p>
 <table class="table"><tbody><tr class="odd"><td><strong>Tipo de datos</strong></td>
@@ -755,121 +868,6 @@ necesario cargar y la función a utilizar.</p>
 <td><code>read_sas</code></td>
 <td><code>haven</code></td>
 </tr></tbody></table></div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="tema-7-funciones">Tema 7: Funciones<a class="anchor" aria-label="anchor" href="#tema-7-funciones"></a></h2>
-<hr class="half-width"><p>Imaginemos una función como una especie de “caja mágica” que recibe
-ciertos datos o información como entrada y produce un resultado o
-respuesta específica como salida. Es como seguir una receta que toma
-ingredientes y como resultado tenemos un plato delicioso.</p>
-<p>Para qué podamos utilizar una función debemos proporcionar unos datos
-de entrada (<em>input</em>) que entran a la caja (la función) y de ahí
-sale un resultado o datos de salida (<em>output</em>). La función puede
-ser suma, resta, regresión logística o un modelo matemático. Entran
-datos y salen otros que son producto de las operaciones en la
-función.</p>
-<div id="checklist6" class="callout checklist">
-<div class="callout-square">
-<i class="callout-icon" data-feather="check-square"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Lista de verificación</h3>
-<div class="callout-content">
-<p>Los componentes básicos de una función son:</p>
-<ul><li><p><strong><code>name</code> (nombre)</strong>: es el nombre que se
-da a la función (Por ejemplo: myfun).</p></li>
-<li><p><strong><code>formals</code> (argumentos)</strong>: son la serie
-de elementos que controlan cómo llamar a la función.</p></li>
-<li><p><strong><code>body</code> (cuerpo)</strong>: es la serie de
-operaciones o modificaciones a los argumentos.</p></li>
-<li><p><strong><code>output</code> (salida o resultado)</strong>: son
-los resultados después de modificar los argumentos. Si esta salida
-corresponde a una serie de datos, podemos extraerla usando el comando
-<code>return</code>.</p></li>
-</ul></div>
-</div>
-</div>
-<p><strong>Ejemplo</strong>: con una base de datos queremos generar una
-variable que es producto de una operación, por ejemplo, IMC (índice masa
-corporal).</p>
-<p>La función del IMC es conocida (<span class="math display">\[peso/(talla^2 )\]</span>) , y sus argumentos son
-peso y talla.</p>
-<p>Recordemos que en esta fórmula el peso debe estar en kg y la talla en
-metros.</p>
-<p>Para este ejemplo el input, o datos de entrada son el peso y la
-variable talla, y el output sería el índice de masa corporal. Si tenemos
-que el peso es 50kg y la talla 1.5m, el IMC será igual a 22.2.</p>
-<figure><img src="../fig/ilustracion_imc.png" class="figure mx-auto d-block"></figure><p>(Ilustración adaptada por Maria Paula Forero)</p>
-<p>En R podemos producir la función IMC mediante el siguiente
-código:</p>
-<div class="codewrapper sourceCode" id="cb9">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">IMC</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">peso_kg</span>, <span class="va">talla_m</span><span class="op">)</span> <span class="op">{</span> <span class="co"># Aquí van los argumentos o input</span></span>
-<span>    <span class="va">resultado</span> <span class="op">&lt;-</span> <span class="va">peso_kg</span><span class="op">/</span> <span class="va">talla_m</span><span class="op">^</span><span class="fl">2</span>  <span class="co"># Esta es el cuerpo u operación       </span></span>
-<span>    <span class="kw">return</span><span class="op">(</span><span class="va">resultado</span><span class="op">)</span>           <span class="co"># Este es el output o resultado</span></span>
-<span> <span class="op">}</span></span></code></pre>
-</div>
-<p>Ahora, utilicemos la función para calcular el IMC de una persona de
-talla 1.75 cm y peso 80 kg, mediante el siguiente código</p>
-<div class="codewrapper sourceCode" id="cb10">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">IMC</span>(<span class="at">peso_kg =</span> <span class="dv">80</span>, <span class="at">talla_m =</span> <span class="fl">1.75</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">26.12245</span></span></code></pre>
-</div>
-<p>Como se puede ver, para usar la función una vez establecida solo se
-requiere el nombre y los argumentos.</p>
-<div id="discussion4" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Desafío</h3>
-<div class="callout-content">
-<p><strong>Reto</strong>: Usando la misma función calcula tu IMC.</p>
-</div>
-</div>
-</div>
-<p>En general, una función consiste en una secuencia de instrucciones
-con el fin de llevar a cabo una tarea. De esta forma, por medio del uso
-de funciones es posible sistematizar procesos complejos que se realizan
-de manera rutinaria.</p>
-<p><strong>Librerías</strong></p>
-<p>En R, las “librerías” se refieren a conjuntos de funciones
-organizadas de manera lógica que pueden ser utilizadas para llevar a
-cabo diversas tareas, como análisis, limpieza y visualización de datos,
-ente otros.</p>
-<div id="checklist7" class="callout checklist">
-<div class="callout-square">
-<i class="callout-icon" data-feather="check-square"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Lista de verificación</h3>
-<div class="callout-content">
-<p>Las librerías más usadas en R son:</p>
-<ul><li>
-<strong><code>ggplot2</code></strong>: sirve para la creación de
-gráficos y visualizaciones de datos de alta calidad.</li>
-<li>
-<strong><code>dplyr</code></strong>: permite la manipulación y
-transformación eficiente de datos.</li>
-<li>
-<strong><code>tidyr</code></strong>: utilizada para organizar y
-reorganizar datos en un formato tabular ordenado.</li>
-<li>
-<strong><code>readr</code></strong>: sirve para leer y escribir
-datos en formatos como <code>CSV</code>, <code>TSV</code> y otros.</li>
-<li>
-<strong><code>plyr</code></strong>: funciona para dividir, aplicar y
-combinar datos de manera eficiente.</li>
-</ul></div>
-</div>
-</div>
-<p>A su vez, hay meta-librerías, es decir, aquellas que combinan varias
-librerías. Un ejemplo de estas es la librería
-<code>tidyverse</code>.</p>
 </section><section><h2 class="section-heading" id="tema-8-manipulación-de-datos-con-tidyverse">Tema 8: Manipulación de datos con <code>tidyverse</code>
 <a class="anchor" aria-label="anchor" href="#tema-8-manipulaci%C3%B3n-de-datos-con-tidyverse"></a></h2>
 <hr class="half-width"><p><code>tidyverse</code> es una meta-librería que combina varias
@@ -893,9 +891,9 @@ tidyverse:</p>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">install.packages</span><span class="op">(</span><span class="st">'tidyverse'</span><span class="op">)</span></span></code></pre>
 </div>
-<p>Mientras que para llamar o importar una librería ya instalada usamos
-el comando <code>library</code>. Este en cambio debemos ejecutarlo cada
-vez que re-iniciamos R o abrimos RStudio.</p>
+<p>Para llamar o importar una librería ya instalada usamos el comando
+<code>library</code>. Este en comando debemos ejecutarlo cada vez que
+re-iniciamos R o abrimos RStudio.</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -911,9 +909,9 @@ vez que re-iniciamos R o abrimos RStudio.</p>
 <span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a>✖ dplyr<span class="sc">::</span><span class="fu">lag</span>()    masks stats<span class="sc">::</span><span class="fu">lag</span>()</span>
 <span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a>ℹ Use the conflicted <span class="fu">package</span> (<span class="sc">&lt;</span>http<span class="sc">:</span><span class="er">//</span>conflicted.r<span class="sc">-</span>lib.org<span class="sc">/</span><span class="er">&gt;</span>) to force all conflicts to become errors</span></code></pre>
 </div>
-<p><strong>Abrir y explorar una tabla de datos importados de
-Excel</strong></p>
-<div id="callout3" class="callout">
+<div class="section level3">
+<h3 id="abrir-y-explorar-una-tabla-de-datos-importados-de-excel">Abrir y explorar una tabla de datos importados de Excel<a class="anchor" aria-label="anchor" href="#abrir-y-explorar-una-tabla-de-datos-importados-de-excel"></a></h3>
+<div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -942,9 +940,12 @@ la consola:</p>
 <span> </span>
 <span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu">read_excel</span><span class="op">(</span><span class="st">"data/datos_covid.xlsx"</span><span class="op">)</span></span></code></pre>
 </div>
+<p>Ahora se ha creado un objeto tipo <code>data.frame</code>. <img src="../fig/read_excel.png" class="figure"></p>
 <p>A continuación, veremos algunas de las funciones más utilizadas de
 <code>tidyverse</code>.</p>
-<p><strong>Operador tubería (<em>pipe</em>)</strong></p>
+</div>
+<div class="section level3">
+<h3 id="operador-tubería-pipe">Operador tubería (<em>pipe</em>)<a class="anchor" aria-label="anchor" href="#operador-tuber%C3%ADa-pipe"></a></h3>
 <p>El operador tubería (<em>pipe</em>) <code>%&gt;%</code> es un
 operador clave en <code>tidyverse</code>, el cual permite al usuario
 enfatizar una secuencia de acciones en un objeto. Además, el uso de este
@@ -977,25 +978,28 @@ sería el siguiente :</p>
 <span></span>
 <span><span class="va">datos_agrupados</span> <span class="op">&lt;-</span> <span class="fu">group_by</span><span class="op">(</span><span class="va">datos_con_esquema</span>, <span class="va">esquema</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">datos_por_esquema</span> <span class="op">&lt;-</span> <span class="fu">summarize</span><span class="op">(</span><span class="va">datos_agrupados</span>, personas <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+<span><span class="va">datos_por_esquema</span> <span class="op">&lt;-</span> <span class="fu">summarise</span><span class="op">(</span><span class="va">datos_agrupados</span>, personas <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <p>Ahora, con la ayuda de una tubería o <em>pipe</em>, tenemos:</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">datos_por_esquema</span> <span class="op">&lt;-</span> <span class="fu">filter</span><span class="op">(</span><span class="va">datos</span>, <span class="va">edad</span> <span class="op">&gt;</span> <span class="fl">18</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<code class="sourceCode R"><span><span class="va">datos_por_esquema</span> <span class="op">&lt;-</span> </span>
+<span>  <span class="fu">filter</span><span class="op">(</span><span class="va">datos</span>, <span class="va">edad</span> <span class="op">&gt;</span> <span class="fl">18</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
 <span>  <span class="fu">mutate</span><span class="op">(</span> esquema <span class="op">=</span> <span class="fu">ifelse</span><span class="op">(</span><span class="va">dosis</span> <span class="op">&gt;</span> <span class="fl">2</span>, <span class="st">"Completo"</span>, <span class="st">"Incompleto"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">esquema</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">summarise</span><span class="op">(</span>personas <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">esquema</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">summarise</span><span class="op">(</span>personas <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
-<div id="checklist8" class="callout checklist">
+<div id="funciones-básicas-de-tidyverse" class="callout checklist">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check-square"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Lista de verificación</h3>
+<div id="funciones-básicas-de-tidyverse" class="callout-inner">
+<h3 class="callout-title">Funciones básicas de
+<code>tidyverse</code>
+</h3>
 <div class="callout-content">
-<p><strong>Funciones básicas de <code>tidyverse</code></strong></p>
 <ul><li><p><strong><code>glimpse()</code></strong>: utilizado para explorar
 rápidamente una tabla de datos.</p></li>
 <li><p><strong><code>group_by()</code></strong>: crea grupos dentro de
@@ -1374,12 +1378,12 @@ del caso (<code>id_de_caso</code>).</li>
 </ol></div>
 </div>
 </div>
-<div id="puntos-clave" class="callout keypoints">
+<div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
-<div id="puntos-clave" class="callout-inner">
-<h3 class="callout-title">Puntos clave</h3>
+<div class="callout-inner">
+<h3 class="callout-title">Puntos Clave</h3>
 <div class="callout-content">
 <p>Revise si al final de esta lección adquirió estas competencias:</p>
 <ul><li>Reconocer y hacer uso de R y RStudio.</li>
@@ -1392,8 +1396,10 @@ bases de datos con Tidyverse.</li>
 </ul></div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="contribuciones">Contribuciones<a class="anchor" aria-label="anchor" href="#contribuciones"></a></h2>
-<hr class="half-width"><ul><li>Zulma M. Cucunuba: Versión inicial</li>
+</div>
+<div class="section level3">
+<h3 id="contribuciones">Contribuciones<a class="anchor" aria-label="anchor" href="#contribuciones"></a></h3>
+<ul><li>Zulma M. Cucunuba: Versión inicial</li>
 <li>Zhian N. Kamvar: Ediciones menores</li>
 <li>Kelly A. Charniga: Ediciones menores</li>
 <li>José M. Velasco-España: Traducción de Inglés a Español y
@@ -1404,12 +1410,15 @@ edición</li>
 <li>Laura Gómez-Bermeo: Ediciones menores</li>
 <li>Geraldine Gomez: Ediciones menores</li>
 <li>Jaime A. Pavlich-Mariscal: Edición</li>
-</ul></section><section><h2 class="section-heading" id="asuntos-legales">Asuntos legales<a class="anchor" aria-label="anchor" href="#asuntos-legales"></a></h2>
-<hr class="half-width"><p><strong>Copyright</strong>: Zulma M. Cucunuba, 2019</p>
+</ul></div>
+<div class="section level3">
+<h3 id="asuntos-legales">Asuntos legales<a class="anchor" aria-label="anchor" href="#asuntos-legales"></a></h3>
+<p><strong>Copyright</strong>: Zulma M. Cucunuba, 2019</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Capítulo previo y siguiente"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previo</a>
@@ -1468,7 +1477,7 @@ any links that you are not going to use.
   "url": "https://epiverse-trace.github.io/epitkit/instructor/Taller-R-RStudio.html",
   "identifier": "https://epiverse-trace.github.io/epitkit/instructor/Taller-R-RStudio.html",
   "dateCreated": "2024-09-09",
-  "dateModified": "2024-10-08",
+  "dateModified": "2024-10-22",
   "datePublished": "2024-10-22"
 }
 
