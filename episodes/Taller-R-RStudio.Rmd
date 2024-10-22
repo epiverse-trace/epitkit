@@ -129,6 +129,7 @@ siguiente pantalla:
 ![](fig/pantalla_r.png)
 
 Escribe 2+2 donde aparece el cursor y da enter, si te aparece el
+Escribe 2+2 donde aparece el cursor y da enter, si te aparece el
 resultado 4 ¡Está todo listo para empezar!
 
 ![](fig/2mas2.png)
@@ -178,7 +179,10 @@ pasos:
 ::::::::::::::::::::::::::::::::::::: challenge 
 
 1.  Abrir RStudio y, en la esquina superior izquierda, seleccionar la
+1.  Abrir RStudio y, en la esquina superior izquierda, seleccionar la
     pestaña **File (Archivo)** -\> **New Project... (Proyecto Nuevo)**.
+
+![](fig/file_new_project.png)
 
 ![](fig/file_new_project.png)
 
