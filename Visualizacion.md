@@ -9,6 +9,7 @@ output:
   word_document: default
 image: null
 licenses: CC-BY
+always_allow_html: yes
 teaching: 80
 exercises: 4
 ---
@@ -60,11 +61,11 @@ Esta unidad tiene como prerequisitos:
 **Desarrollo del contenido** (desarrolle cada uno de los temas teniendo
 en cuenta la tabla de contenido)
 
-### Introducción
+# Introducción
 
 En el ámbito de la ciencia de datos y la toma de decisiones, la habilidad para transformar datos en información comprensible y que genere impacto es esencial. Esta unidad brindará una introducción a las herramientas necesarias para convertir conjuntos de datos en gráficos. En esta unidad haremos uso de ggplot2, una poderosa librería de gráficos de R basada en la gramática de gráficos, para crear visualizaciones impactantes.
 
-**Tema 1: Principios de la gramática de gráficos con `ggplot2`**
+# Tema 1: Principios de la gramática de gráficos con `ggplot2`
 
 `ggplot2` es un paquete de R basado en la gramática de gráficos que
 permite visualizar datos de una manera consistente y estructurada.
@@ -83,7 +84,7 @@ combinan estos componentes para representar datos.
 
 ::::::::::::::::::: checklist
 
-Estos componentes básicos son:
+## Estos componentes básicos son:
 
 **1. Datos (Data):** representan los datos que queremos visualizar.
 Puede ser una tabla de datos (data.frame) en R u otra fuente de datos.
@@ -128,7 +129,7 @@ ggplot(data, \# Los datos
 ```
 :::::::::::::::::::
 
-**Tema 2: Ejemplos del uso de la gramática de gráficos con ggplot**
+# Tema 2: Ejemplos del uso de la gramática de gráficos con ggplot
 
 Aquí vamos a ir explicando cómo puedes hacer uso de esta herramienta en
 tu computador. A medida que avanzas trata de ir replicando los
@@ -136,12 +137,13 @@ ejercicios.
 
 :::::::::::::::::::::::::::::::::::: callout
 
-**NOTA.** Para hacer más versátil su uso, se recomienda conocer el
-funcionamiento del paquete dplyr y el uso de tuberías (pipes %\>%),
+#### **NOTA.** 
+Para hacer más versátil su uso, se recomienda conocer el
+funcionamiento del paquete dplyr y el uso de tuberías (pipes `%>%`),
 puedes repasar estos temas en la Unidad 1 de este módulo "Introducción a
 R y RStudio". Por su parte, `ggplot2` está contenido dentro de la
 librería Tidyverse. Además, Tidiverse incluye otras librerías como dplyr
-que, a su vez, incluye las pipes (%\>%). Para más detalles sobre
+que, a su vez, incluye las pipes (`%>%`). Para más detalles sobre
 Tidyverse consulta la unidad de "Introducción a R y RStudio".
 :::::::::::::::::::::::::::::::::::::::::::
 
@@ -222,7 +224,7 @@ $ tension_sistolica                     <dbl> 107, 126, 107, 134, 126, 156, 14�
 $ tension_diastolica                    <dbl> 87, 64, 73, 76, 83, 96, 76, 87, …
 ```
 
-## **Estética (Aesthetics)**
+## Estética (Aesthetics)
 
 En el contexto de la gramática de gráficos, la estética (aesthetics) se
 refiere a cómo mapeamos los atributos de nuestros datos a propiedades
@@ -236,7 +238,7 @@ En `ggplot2` la función principal para especificar la estética es `aes()`.
 A continuación algunos ejemplos para ilustrar cómo usar la estética en
 `ggplot2`.
 
-**Ejemplo 1: Gráfico de dispersión (scatter plot)**
+#### Ejemplo 1: Gráfico de dispersión (scatter plot)
 
 Supongamos que tenemos una tabla que cuenta con las variables x e y*.*
 Queremos crear un gráfico de dispersión donde la variable x se mapea en
@@ -281,7 +283,7 @@ La visualización que generamos es la siguiente:
 
 
 
-**Geometría (Geometry):**
+## Geometría (Geometry):
 
 La geometría representa la forma en que los datos se visualizan en el
 gráfico; como puntos, líneas, barras, áreas, etc. Cada tipo de gráfico
@@ -298,7 +300,7 @@ comando:
 ![](fig/tipogeom.png) 
 :::::::::::::::::::
 
-**Ejemplo 2: Gráfico de líneas**
+#### Ejemplo 2: Gráfico de líneas
 
 Supongamos que queremos visualizar la evolución del número de casos de
 covid-19 a lo largo del tiempo. Para esto, primero debemos preparar el
@@ -325,7 +327,7 @@ Y obtenemos el siguiente gráfico:
 
 <img src="fig/Visualizacion-rendered-unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
 
-**Ejemplo 3: Gráfico de barras**
+#### Ejemplo 3: Gráfico de barras
 
 Ahora, hagamos una visualización en forma de gráfico de barras del total
 de casos positivos por sexo, para esto utilizamos el comando
@@ -341,8 +343,8 @@ ggplot(data = covid19) +
 
 En este ejemplo podemos observar que `ggplot2` automáticamente calcula
 el eje Y.
-
-**Ejemplo 4. Gráfico de barras más complejo**
+ 
+#### Ejemplo 4. Gráfico de barras más complejo
 
 Primero vamos a preparar los datos en una tabla de datos que permita
 contar el número de casos por ubicación del caso:
@@ -407,7 +409,7 @@ Pregunta ¿cómo produciría esta misma gráfica, pero en orden
 ascendente?
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-**Escala:**
+## **Escala:**
 
 En la gramática de gráficos en `ggplot2`, la escala se refiere a la
 forma en que los valores de los datos se traducen en propiedades
@@ -418,7 +420,7 @@ A continuación, veremos algunos de los diferentes tipos de escalas disponibles 
 
 ::::::::::::::::::: checklist
 
-1.  Para **datos de tipo continuo o numéricos** tenemos **escalas continuas como:**
+### 1.  Para **datos de tipo continuo o numéricos** tenemos **escalas continuas como:**
 
 - `scale_x_continuous()` y `scale_y_continuous()` : para el eje x y el eje y, respectivamente. 
 
@@ -430,7 +432,7 @@ A continuación, veremos algunos de los diferentes tipos de escalas disponibles 
 
 ::::::::::::::::::: checklist
 
-2.  Para **datos categóricos o de carácter** tenemos escalas discretas como: 
+### 2.  Para **datos categóricos o de carácter** tenemos escalas discretas como: 
  
 - `scale_x_discrete()` y `scale_y_discrete()`: para el eje x y el eje y, respectivamente.
 
@@ -442,7 +444,7 @@ A continuación, veremos algunos de los diferentes tipos de escalas disponibles 
 
 ::::::::::::::::::: checklist 
 
-3.  Para **datos de fecha** tenemos escalas de fechas como:
+### 3.  Para **datos de fecha** tenemos escalas de fechas como:
    
 - `scale_x_date()` y `scale_y_date()`: para el eje x y el eje y, respectivamente cuando se tengan datos de fecha. 
 
@@ -450,7 +452,7 @@ A continuación, veremos algunos de los diferentes tipos de escalas disponibles 
 
 ::::::::::::::::::: checklist 
 
-4.  Para hacer uso de escalas personalizadas se hace uso de escalas manuales en las que podemos especificar nuestros propios valores. 
+### 4.  Para hacer uso de escalas personalizadas se hace uso de escalas manuales en las que podemos especificar nuestros propios valores. 
  
 - `scale_color_manual()`: se especifica manualmente los colores para los valores. 
  
@@ -460,7 +462,7 @@ A continuación, veremos algunos de los diferentes tipos de escalas disponibles 
 
 ::::::::::::::::::: checklist 
 
-5.  Otras escalas: 
+### 5.  Otras escalas: 
  
 - `scale_fill_*`: se usa similar a las escalas de color pero para colores que queramos con relleno. 
  
@@ -476,7 +478,7 @@ A continuación, veremos algunos ejemplos de cómo usar la escala en `ggplot2`co
 
 :::::::::::::::::::
 
-**Ejemplo 5. Gráfico con escala logarítmica**
+#### Ejemplo 5. Gráfico con escala logarítmica
 
 Usaremos exactamente el mismo ejemplo anterior, pero en este caso al final agregamos la escala `logarítmica scale_y_log10()` así:
 
@@ -499,7 +501,7 @@ De esta manera, el nuevo gráfico se vería así:
 
 :::::::::::::::::::::::::
 
-**Facetas**
+## Facetas
 
 Las Facetas (`Facets`) en la gramática de gráficos son una forma de
 dividir los datos en subconjuntos y representarlos en múltiples paneles
@@ -509,7 +511,7 @@ aspectos de los datos o comparar grupos de manera más efectiva. En
 implementar las facetas, dependiendo del número de variables a usar para
 la creación de los paneles.
 
-**Ejemplo 5. Gráfico con facet wrap**
+#### Ejemplo 5. Gráfico con facet wrap
 
 Primero vamos a preparar los datos en una tabla de datos que permita
 contar el número de casos por `edad` y `sexo`:
@@ -570,7 +572,7 @@ ggplot(covid19_sexo, aes(edad, casos)) +
 
 <img src="fig/Visualizacion-rendered-unnamed-chunk-25-1.png" style="display: block; margin: auto;" />
 
-**Tema**
+## Tema
 
 En la gramática de gráficos, el tema se refiere a la
 personalización de la apariencia visual general del gráfico; como los
@@ -592,7 +594,7 @@ Usando la misma gráfica del ejemplo anterior, comparemos dos temas:
 
 :::::::::::::::::::::::::
 
-**Ejemplo 6. Usando theme classic**
+#### Ejemplo 6. Usando theme classic
 
 Para usar el tema clásico tenemos:
 
@@ -606,7 +608,7 @@ ggplot(data = covid19_sexo, aes(x = edad, y = casos)) +
 
 <img src="fig/Visualizacion-rendered-unnamed-chunk-26-1.png" style="display: block; margin: auto;" />
 
-**Ejemplo 7. Usando theme classic**
+#### Ejemplo 7. Usando theme classic
 
 Para este tema tendríamos lo siguiente:
 
@@ -630,7 +632,7 @@ consultarse en
 
 Finalmente, veamos un ejemplo de cómo modificar los themes manualmente.
 
-**Ejemplo 8. Cambiando títulos, subtítulos y ejes**
+#### Ejemplo 8. Cambiando títulos, subtítulos y ejes
 
 Podemos usar comandos como `xlab`, `ylab` para cambiar los nombres de los
 ejes. Igualmente, comandos como title y subtitle de la siguiente forma:
@@ -673,4 +675,4 @@ Revise si al final de esta lección adquirió estas competencias:
 
 ## Asuntos legales
 
-**Copyright**: Zulma M. Cucunuba, 2019
+**Copyright**: Zulma M. Cucunuba, 2023

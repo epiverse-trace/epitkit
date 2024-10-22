@@ -34,7 +34,7 @@ exercises: 8
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
-# Objetivos 
+### Objetivos 
 
 Al final de este taller usted podrá:
 
@@ -53,9 +53,10 @@ Esta unidad no tiene prerequisitos
 
 
 
-## Tabla de contenido
 
 ::::::::::::::::::: checklist
+
+### Tabla de contenido
 
 -   Módulo 2 : Ciencia de datos en salud pública
     -   Unidad 1: Introducción a R y RStudio
@@ -124,8 +125,11 @@ siguiente pantalla:
 
 ![](fig/pantalla_r.png)
 
-Escribe 2+2 donde aparece el curso y da enter, si te aparece el
+Escribe 2+2 donde aparece el cursor y da enter, si te aparece el
+Escribe 2+2 donde aparece el cursor y da enter, si te aparece el
 resultado 4 ¡Está todo listo para empezar!
+
+![](fig/2mas2.png)
 
 ## Tema 3: Ambiente de RStudio
 
@@ -171,8 +175,13 @@ pasos:
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-1.  Abrir RStudio y, en la esquina superior derecha, seleccionar la
+1.  Abrir RStudio y, en la esquina superior izquierda, seleccionar la
+1.  Abrir RStudio y, en la esquina superior izquierda, seleccionar la
     pestaña **File (Archivo)** -\> **New Project... (Proyecto Nuevo)**.
+
+![](fig/file_new_project.png)
+
+![](fig/file_new_project.png)
 
 2.  Se desplegará una ventana con encabezado **New Project Wizard**:
     **Create Project**, ahora se debe seleccionar **New Directory
@@ -180,15 +189,15 @@ pasos:
 
 ![](fig/proyecto_r.png)
 
-3.  En la ventana **Project Type**, se debe seleccionar **New Project**
-    -\> **Create New Project**. En la casilla **Directory Name (Nombre
-    del Directorio)** coloque el nombre deseado para su proyecto (e.g.
-    "`IntroR`").\
+3.  En la ventana con encabezado **New Project Wizard**:**Project Type**, se debe seleccionar **New Project**
+    ![](fig/tipo_projecto.png)
+4.  En la ventana con encabezado **New Project Wizard**:**Create New Project**. En la casilla **Directory Name (Nombre del Directorio)** coloque el nombre deseado para su proyecto (e.g. "`IntroR`").  
+![](fig/projectoR_introR.png)
+5.  Hacemos clic en el botón **Browse....** Para buscar la ubicación
+    dentro del computador donde deseamos guardar el proyecto
+    ![](fig/browse.png)
 
-4.  Hacemos clic en el botón **Browse....** Para buscar la ubicación
-    dentro de nuestro computador donde deseamos guardar el proyecto
-
-5.  Creamos una nueva carpeta con el mismo nombre del proyecto (e.g.
+6.  Creamos una nueva carpeta con el mismo nombre del proyecto (e.g.
     "`IntroR`"), así como las subcarpetas que necesitamos para organizar
     nuestro trabajo y resultados: datos, scripts y figuras. Al final, el
     proyecto debería parecerse a esta imagen:
@@ -199,7 +208,7 @@ pasos:
 ## Tema 5: Tipos de datos y operadores en R
 
 ::::::::::::::::::: checklist
-**Tipos de datos**
+### Tipos de datos
 
 R tiene la capacidad de almacenar y procesar distintos tipos de datos.
 Entre estos se encuentran:
@@ -219,7 +228,7 @@ Entre estos se encuentran:
 
 ::::::::::::::::::: checklist
 
-**Operadores matemáticos y lógicos**
+### Operadores matemáticos y lógicos
 
 Los operadores son herramientas matemáticas que nos permiten realizar
 diferentes tareas con los datos que tenemos disponibles; por ejemplo,
@@ -232,7 +241,7 @@ resta y multiplicación respectivamente)
 
 :::::::::::::::::::
 
-**Operadores de asignación**
+### Operadores de asignación \<- y =
 
 \<- Este es un operador común en R para asignar un determinado valor a
 una variable y el alcance está dentro de la función y también fuera de
@@ -245,13 +254,125 @@ ella.
 nombre <- "Laura"
 ```
 
+Se abra creado un objeto en el ambiente global (ubiquelo en la sección lateral derecha superior):
+![](fig/nombrelaura.png)
+
 = Este operador se utiliza para establecer un parámetro en un valor
 dentro de una función. El alcance está solo dentro de la función. La
 variable todavía contiene su valor original fuera de la función.
 
-## Tema 6: Estructuras en R
+## Tema 6: Funciones
 
-**Vector**
+Imaginemos una función como una especie de "caja mágica" que recibe
+ciertos datos o información como entrada y produce un resultado o
+respuesta específica como salida. Es como seguir una receta que toma
+ingredientes y como resultado tenemos un plato delicioso.
+
+Para qué podamos utilizar una función debemos proporcionar unos datos de
+entrada (*input*) que entran a la caja (la función) y de ahí sale un
+resultado o datos de salida (*output*). La función puede ser suma,
+resta, regresión logística o un modelo matemático. Entran datos y salen
+otros que son producto de las operaciones en la función.
+
+::::::::::::::::::: checklist
+
+### Componentes básicos de una función
+
+Los componentes básicos de una función son:
+
+-   **`name` (nombre)**: es el nombre que se da a la función (Por
+    ejemplo: myfun).
+
+-   **`formals` (argumentos)**: son la serie de elementos que controlan
+    cómo llamar a la función.
+
+-   **`body` (cuerpo)**: es la serie de operaciones o modificaciones a
+    los argumentos.
+
+-   **`output` (salida o resultado)**: son los resultados después de
+    modificar los argumentos. Si esta salida corresponde a una serie de
+    datos, podemos extraerla usando el comando `return`.
+
+:::::::::::::::::::
+
+
+**Ejemplo**: con una base de datos queremos generar una variable que es
+producto de una operación, por ejemplo, IMC (índice masa corporal).
+
+La función del IMC es conocida ($$peso/(talla^2 )$$) , y sus argumentos
+son peso y talla.
+
+Recordemos que en esta fórmula el peso debe estar en kg y la talla en
+metros.
+
+Para este ejemplo el input, o datos de entrada son el peso y la variable
+talla, y el output sería el índice de masa corporal. Si tenemos que el
+peso es 50kg y la talla 1.5m, el IMC será igual a 22.2.
+
+![](fig/ilustracion_imc.png)
+
+(Ilustración adaptada por Maria Paula Forero)
+
+En R podemos producir la función IMC mediante el siguiente código:
+
+
+``` r
+IMC <- function(peso_kg, talla_m) { # Aquí van los argumentos o input
+    resultado <- peso_kg/ talla_m^2  # Esta es el cuerpo u operación       
+    return(resultado)           # Este es el output o resultado
+ }
+```
+
+Ahora, utilicemos la función para calcular el IMC de una persona de
+talla 1.75 cm y peso 80 kg, mediante el siguiente código
+
+
+``` r
+IMC(peso_kg = 80, talla_m = 1.75)
+[1] 26.12245
+```
+
+Como se puede ver, para usar la función una vez establecida solo se
+requiere el nombre y los argumentos.
+
+::::::::::::::::::::::::::::::::::::: challenge 
+
+**Reto**: Usando la misma función calcula tu IMC.
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+En general, una función consiste en una secuencia de instrucciones con
+el fin de llevar a cabo una tarea. De esta forma, por medio del uso de
+funciones es posible sistematizar procesos complejos que se realizan de
+manera rutinaria.
+
+### Paquetes o librerías
+
+En R, los paquetes, también llamados "librerías" se refieren a conjuntos de funciones organizadas de manera lógica que pueden ser utilizadas para llevar a cabo diversas
+tareas, como análisis, limpieza y visualización de datos, ente otros.
+
+::::::::::::::::::: checklist
+
+#### Las librerías más usadas en R son:
+
+-   **`ggplot2`**: sirve para la creación de gráficos y visualizaciones
+    de datos de alta calidad.
+-   **`dplyr`**: permite la manipulación y transformación eficiente de
+    datos.
+-   **`tidyr`**: utilizada para organizar y reorganizar datos en un
+    formato tabular ordenado.
+-   **`readr`**: sirve para leer y escribir datos en formatos como
+    `CSV`, `TSV` y otros.
+-   **`plyr`**: funciona para dividir, aplicar y combinar datos de
+    manera eficiente.
+:::::::::::::::::::
+
+A su vez, hay meta-librerías, es decir, aquellas que combinan varias
+librerías. Un ejemplo de estas es la librería `tidyverse`.
+
+
+## Tema 7: Estructuras en R
+
+### Vector
 
 En R, un vector es una estructura de datos indexada que permite
 almacenar varios elementos del mismo tipo en una única estructura. Por
@@ -304,7 +425,7 @@ notas que expliquen una o más líneas del código.*
 
 :::::::::::::::::::::::::::::::::::::::::::
 
-**Data.frame (Tabla de datos)**
+### Data.frame (Tabla de datos)
 
 Imaginemos un `data.frame` como una tabla con filas y columnas, similar
 a una hoja de cálculo en Excel. Cada columna representa un tipo de
@@ -348,6 +469,8 @@ datos_vacunas
 ```
 
 ::::::::::::::::::: checklist
+
+### Parte de un data.frame
 
 Algunas funciones que permiten conocer características como nombres o
 tamaños de las filas o columnas del `data.frame` son:
@@ -420,7 +543,7 @@ datos_vacunas[2, 5]
 [1] 0
 ```
 
-**Crear y abrir tablas de datos**
+### Crear y abrir tablas de datos
 
 R nos permite no solo crear tablas de datos sino también abrir archivos
 que las contengan. De hecho, la mayoría de las veces no se crean
@@ -429,6 +552,8 @@ de alguna fuente de datos, por ejemplo, la base de datos del sistema de
 vigilancia de algún evento de interés.  
  
 ::::::::::::::::::: checklist
+### FUentes de conjunto de datos
+
 Para esto, en R hay tres fuentes de conjuntos de datos que podemos utilizar:
  
 -   Tabla de datos importada (desde los formatos `.xlsx`, `.csv`,
@@ -439,14 +564,13 @@ Para esto, en R hay tres fuentes de conjuntos de datos que podemos utilizar:
     los primeros ejercicios) 
 :::::::::::::::::::
 
-**Importar una tabla de datos**
+### Importar una tabla de datos
 
 Para importar una tabla de datos de diferentes fuentes necesitamos
 emplear diferentes tipos de funciones. 
 
 :::::::::::::::::::::::::::::::::::: callout
-Aquí algunos ejemplos del tipo de
-datos, y la librería que es necesario cargar y la función a utilizar.
+Aquí algunos ejemplos del tipo de datos, y la librería que es necesario cargar y la función a utilizar.
 
 |                   |                                  |             |
 |-------------------|----------------------------------|-------------|
@@ -459,113 +583,6 @@ datos, y la librería que es necesario cargar y la función a utilizar.
 
 :::::::::::::::::::::::::::::::::::::::::::
 
-
-## Tema 7: Funciones
-
-Imaginemos una función como una especie de "caja mágica" que recibe
-ciertos datos o información como entrada y produce un resultado o
-respuesta específica como salida. Es como seguir una receta que toma
-ingredientes y como resultado tenemos un plato delicioso.
-
-Para qué podamos utilizar una función debemos proporcionar unos datos de
-entrada (*input*) que entran a la caja (la función) y de ahí sale un
-resultado o datos de salida (*output*). La función puede ser suma,
-resta, regresión logística o un modelo matemático. Entran datos y salen
-otros que son producto de las operaciones en la función.
-
-::::::::::::::::::: checklist
-
-Los componentes básicos de una función son:
-
--   **`name` (nombre)**: es el nombre que se da a la función (Por
-    ejemplo: myfun).
-
--   **`formals` (argumentos)**: son la serie de elementos que controlan
-    cómo llamar a la función.
-
--   **`body` (cuerpo)**: es la serie de operaciones o modificaciones a
-    los argumentos.
-
--   **`output` (salida o resultado)**: son los resultados después de
-    modificar los argumentos. Si esta salida corresponde a una serie de
-    datos, podemos extraerla usando el comando `return`.
-
-:::::::::::::::::::
-
-
-**Ejemplo**: con una base de datos queremos generar una variable que es
-producto de una operación, por ejemplo, IMC (índice masa corporal).
-
-La función del IMC es conocida ($$peso/(talla^2 )$$) , y sus argumentos
-son peso y talla.
-
-Recordemos que en esta fórmula el peso debe estar en kg y la talla en
-metros.
-
-Para este ejemplo el input, o datos de entrada son el peso y la variable
-talla, y el output sería el índice de masa corporal. Si tenemos que el
-peso es 50kg y la talla 1.5m, el IMC será igual a 22.2.
-
-![](fig/ilustracion_imc.png)
-
-(Ilustración adaptada por Maria Paula Forero)
-
-En R podemos producir la función IMC mediante el siguiente código:
-
-
-``` r
-IMC <- function(peso_kg, talla_m) { # Aquí van los argumentos o input
-    resultado <- peso_kg/ talla_m^2  # Esta es el cuerpo u operación       
-    return(resultado)           # Este es el output o resultado
- }
-```
-
-Ahora, utilicemos la función para calcular el IMC de una persona de
-talla 1.75 cm y peso 80 kg, mediante el siguiente código
-
-
-``` r
-IMC(peso_kg = 80, talla_m = 1.75)
-[1] 26.12245
-```
-
-Como se puede ver, para usar la función una vez establecida solo se
-requiere el nombre y los argumentos.
-
-::::::::::::::::::::::::::::::::::::: challenge 
-
-**Reto**: Usando la misma función calcula tu IMC.
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-En general, una función consiste en una secuencia de instrucciones con
-el fin de llevar a cabo una tarea. De esta forma, por medio del uso de
-funciones es posible sistematizar procesos complejos que se realizan de
-manera rutinaria.
-
-**Librerías**
-
-En R, las "librerías" se refieren a conjuntos de funciones organizadas
-de manera lógica que pueden ser utilizadas para llevar a cabo diversas
-tareas, como análisis, limpieza y visualización de datos, ente otros.
-
-::::::::::::::::::: checklist
-
-Las librerías más usadas en R son:
-
--   **`ggplot2`**: sirve para la creación de gráficos y visualizaciones
-    de datos de alta calidad.
--   **`dplyr`**: permite la manipulación y transformación eficiente de
-    datos.
--   **`tidyr`**: utilizada para organizar y reorganizar datos en un
-    formato tabular ordenado.
--   **`readr`**: sirve para leer y escribir datos en formatos como
-    `CSV`, `TSV` y otros.
--   **`plyr`**: funciona para dividir, aplicar y combinar datos de
-    manera eficiente.
-:::::::::::::::::::
-
-A su vez, hay meta-librerías, es decir, aquellas que combinan varias
-librerías. Un ejemplo de estas es la librería `tidyverse`.
 
 ## Tema 8: Manipulación de datos con `tidyverse`
 
@@ -588,8 +605,8 @@ utilizarlo para instalar tidyverse:
 install.packages('tidyverse')
 ```
 
-Mientras que para llamar o importar una librería ya instalada usamos el
-comando `library`. Este en cambio debemos ejecutarlo cada vez que
+Para llamar o importar una librería ya instalada usamos el
+comando `library`. Este en comando debemos ejecutarlo cada vez que
 re-iniciamos R o abrimos RStudio.
 
 
@@ -608,7 +625,7 @@ library(tidyverse)
 ```
 
 
-**Abrir y explorar una tabla de datos importados de Excel**
+### Abrir y explorar una tabla de datos importados de Excel
 
 
 :::::::::::::::::::::::::::::::::::: callout
@@ -622,8 +639,7 @@ Ahora debemos guardar la tabla de datos descargado en la carpeta data que acabam
 :::::::::::::::::::::::::::::::::::::::::::
 
 
-Para importar tablas de datos desde `RDS`, se puede usar la función `read_excel`, que está en el paquete `readxl` vinculado a `tidyverse`. Sin embargo, todavía es necesario cargar la biblioteca `readxl`, ya que no es un
-paquete `tidyverse` principal. Para esto, escribimos en la consola:
+Para importar tablas de datos desde `RDS`, se puede usar la función `read_excel`, que está en el paquete `readxl` vinculado a `tidyverse`. Sin embargo, todavía es necesario cargar la biblioteca `readxl`, ya que no es un paquete `tidyverse` principal. Para esto, escribimos en la consola:
 
 
 ``` r
@@ -631,11 +647,12 @@ library(readxl)
  
 dat <- read_excel("data/datos_covid.xlsx")
 ```
+Ahora se ha creado un objeto tipo `data.frame`.
+![](fig/read_excel.png)
 
-A continuación, veremos algunas de las funciones más utilizadas de
-`tidyverse`.
+A continuación, veremos algunas de las funciones más utilizadas de `tidyverse`.
 
-**Operador tubería (*pipe*)**
+### Operador tubería (*pipe*)
 
 El operador tubería (*pipe*) `%>%` es un operador clave en `tidyverse`,
 el cual permite al usuario enfatizar una secuencia de acciones en un
@@ -673,21 +690,23 @@ datos_con_esquema <- mutate(datos_filtrados,
 
 datos_agrupados <- group_by(datos_con_esquema, esquema)
 
-datos_por_esquema <- summarize(datos_agrupados, personas = n())
+datos_por_esquema <- summarise(datos_agrupados, personas = n())
 ```
 
 Ahora, con la ayuda de una tubería o *pipe*, tenemos:
 
 
 ``` r
-datos_por_esquema <- filter(datos, edad > 18) %>% 
+datos_por_esquema <- 
+  filter(datos, edad > 18) %>% 
   mutate( esquema = ifelse(dosis > 2, "Completo", "Incompleto")) %>%
-  group_by(esquema) %>% summarise(personas = n())
+  group_by(esquema) %>% 
+  summarise(personas = n())
 ```
 
 ::::::::::::::::::: checklist
 
-**Funciones básicas de `tidyverse`**
+### Funciones básicas de `tidyverse`
 
 -   **`glimpse()`**: utilizado para explorar rápidamente una tabla de
     datos.
@@ -1086,7 +1105,7 @@ Revise si al final de esta lección adquirió estas competencias:
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-## Contribuciones
+### Contribuciones
 
 -   Zulma M. Cucunuba: Versión inicial
 -   Zhian N. Kamvar: Ediciones menores
@@ -1099,6 +1118,6 @@ Revise si al final de esta lección adquirió estas competencias:
 -   Geraldine Gomez: Ediciones menores
 -   Jaime A. Pavlich-Mariscal: Edición
 
-## Asuntos legales
+### Asuntos legales
 
 **Copyright**: Zulma M. Cucunuba, 2019

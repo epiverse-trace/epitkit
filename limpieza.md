@@ -17,13 +17,13 @@ editor_options:
 ---
 
 ::: questions
-### Pregunta introductoria
+## Pregunta introductoria
 
 -   ¿Cómo limpiar datos epidemiológicos con R?
 :::
 
 ::: objectives
-# Objetivos
+## Objetivos
 
 Al final de este taller usted podrá:
 
@@ -46,22 +46,22 @@ Esta unidad tiene como prerequisitos:
 
 
 ::: callout
-**Tabla de contenido**
+## **Tabla de contenido**
 
-+---------------------------------------------------------------------+
-| -   Tema 1: Introducción a la limpieza de datos (Ver en plataforma  |
-|     del curso)                                                      |
-|                                                                     |
-| -   Tema 2: Exploración y caracterización de los datos              |
-|                                                                     |
-| -   Tema 3: Limpieza y corrección de los datos: errores frecuentes  |
-|     y sus soluciones                                                |
-|                                                                     |
-| -   Tema 4: Organización de los datos                               |
-+---------------------------------------------------------------------+
++----------------------------------------------------------------------+
+| -   Tema 1: Introducción a la limpieza de datos (Ver en plataforma   |
+|     del curso)                                                       |
+|                                                                      |
+| -   Tema 2: Exploración y caracterización de los datos               |
+|                                                                      |
+| -   Tema 3: Limpieza y corrección de los datos: errores frecuentes y |
+|     sus soluciones                                                   |
+|                                                                      |
+| -   Tema 4: Organización de los datos                                |
++----------------------------------------------------------------------+
 :::
 
-## Introducción
+# Introducción
 
 En esta unidad abordaremos el proceso de limpieza de datos
 epidemiológicos,       utilizando los conocimientos previos de la unidad
@@ -86,7 +86,7 @@ la documentación se procederá a explorar el dataset.
 ### **2.2.1. Carga de la información**
 
 ::: checklist
-⚠️ **Instrucciones:**
+## ⚠️ **Instrucciones:**
 
 Antes de empezar a trabajar verifique que ya cuenta con los siguientes
 pasos:

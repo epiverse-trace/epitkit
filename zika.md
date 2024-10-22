@@ -27,14 +27,14 @@ editor_options:
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-### Pregunta introductoria
+## Pregunta introductoria
 
 -   ¿Cómo construir un modelo simplificado de zika?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
-# Objetivos
+## Objetivos
 
 Al final de este taller usted podrá:
 
@@ -63,7 +63,7 @@ Esta unidad tiene como prerequisitos:
 
 
 ::::::::::::::::::: checklist
-**Tabla de contenido**
+## **Tabla de contenido**
 
 +--------------------------------------------------------------------+
 | 1.  Tema 1: Enfermedades transmitidas por vectores: Biología del   |
@@ -84,7 +84,7 @@ Esta unidad tiene como prerequisitos:
 +--------------------------------------------------------------------+
 :::::::::::::::::::
 
-## Introducción
+# Introducción
 
 En esta unidad abordaremos la construcción de un modelo determinístico
 simple, específicamente para el virus del Zika, una enfermedad que
@@ -109,7 +109,7 @@ temas clave como son: Modelo SIR, Inmunidad de rebaño, Parámetros e
 intervenciones de control (fumigación, mosquiteros y vacunación) para
 una Enfermedad transmitida por vectores (ETV).
 
-## **Tema 6: Modelo Zika en R**
+# **Tema 6: Modelo Zika en R**
 
 En esta sección pondremos en uso el conocimiento adquirido sobre el
 Zika, los mecanismos involucrados en la transmisión y las ecuaciones del
@@ -119,6 +119,8 @@ El único paquete que se requiere para el modelamiento es deSolve, el
 cual permite resolver las ecuaciones diferenciales. Adicionalmente para
 manejar los datos y graficar los resultados recomendamos usar tidyverse
 y cowplot.
+
+## 6.1 Inicio práctica en R
 
 Para iniciar nuestra práctica en **R**, por favor abra un **proyecto de
 R** y cree un nuevo documento. En este documento debemos cargar las
@@ -166,11 +168,11 @@ recopilado y hacen parte del comportamiento de la enfermedad. En la
 sección anterior hablamos sobre ellos y los completamos en una tabla. Es
 hora de ingresarlos en R.
 
-Instrucción: Por favor, tome la tabla que trabajó anteriormente e
-ingrese el valor de cada uno de estos parámetros.
+**Instrucción**: Por favor, tome la tabla que trabajó anteriormente e ingrese el valor de cada uno de estos parámetros.
 
 :::::::::::::::::::::::::::::::::::: callout
-NOTA: Es importante recordar que en R, puede utilizar objetos
+### NOTA: 
+Es importante recordar que en R, puede utilizar objetos
 previamente creados para realizar cálculos. Por ejemplo, el parámetro
 muv es el inverso del parámetro Lv, es decir, muv = 1/Lv. Por lo tanto,
 en R se puede asignar este valor directamente con muv \<- 1/Lv. No es
@@ -241,6 +243,7 @@ TIME     <-  1       # Número de años que se va a simular. Para este ejercicio
 ```
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
 
+## 6.2 Ecuaciones del modelo
 Ahora que ya ingresamos al script los parámetros es hora de emplear las
 ecuaciones que se escribieron antes, las cuales permiten conocer el
 número de individuos en cada uno de los seis compartimentos en función
@@ -252,6 +255,7 @@ palabra **SIR**) y para los mosquitos los compartimientos son:
 susceptibles, expuestos e infecciosos (**SEI**).
 
 ::::::::::::::::::: checklist
+### Compartimentos
 -   $S_h$ : Humanos susceptibles
 
 -   $I_h$ : Humanos infecciosos
@@ -266,11 +270,10 @@ susceptibles, expuestos e infecciosos (**SEI**).
 -   $I_v$ : Vectores infecciosos
 :::::::::::::::::::
 
-## Ecuaciones del modelo
 
 Para este modelo emplearemos las siguientes ecuaciones diferenciales:
 
-### Humanos
+### 6.2.1 Humanos
 
 $$\ \frac{dSh}{dt}  = \alpha_h N_h - \beta_h \frac {I_v}{N_h}S_h - \mu_h  S_h $$
 
@@ -278,7 +281,7 @@ $$\ \frac{dIh}{dt}  = \beta_h \frac {I_v}{N_h}S_h - (\gamma + \mu_h) I_h $$\
 
 $$\ \frac{dRh}{dt}  = \gamma I_h  - \mu_h R_h$$
 
-### Vectores
+### 6.2.2 Vectores
 
 $$\ \frac{dSv}{dt}  = \alpha_v N_v  - \beta_v \frac{ I_h} {N_h}S_v  - \mu_v Sv$$
 
@@ -286,7 +289,7 @@ $$\ \frac{dE_v}{dt}  = \beta_v \frac{I_h} {N_h}S_v- (\delta + \mu_v) Ev$$\
 
 $$\ \frac{dI_v}{dt}  = \delta Ev - \mu_v I_v$$
 
-## Fórmula para calcular $R_0$ (Número reproductivo básico)
+## 6.3 Fórmula para calcular $R_0$ (Número reproductivo básico)
 
 Fórmula necesaria para estimar $R_0$:
 
@@ -314,7 +317,7 @@ $$ R_0 = \frac{mb^2 p_h p_v \delta}{\mu_v (\mu_v+\delta)(\mu_h+\gamma)} $$
 
 Una vez sepamos traducir las ecuaciones a código,  se procederá a
 ejecutar el modelo. Para esto se usará la función ode del
-paquete deSolve.
+paquete deSolve.
 
 Se empezará por crear la función (que luego se usará en el argumento
 **fun**). Para ello es necesario traducir las ecuaciones del modelo de
@@ -385,7 +388,7 @@ modelo_zika <- function(tiempo, variable_estado, parametros) {
 ```
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
 
-## Resuelva el Sistema
+## 6.4 Resolviendo el Sistema
 
 Para resolver el sistema es necesario crear los tres argumentos
 faltantes (**times**, **parms** y **y**) para usar la función `ode`.
@@ -420,7 +423,7 @@ En el código que ejecutó se creó tiempo (**times)** y parametros
 (**params)**. Aún nos falta crear el argumento **y**, el cual
 desarrollaremos en la siguiente sección.
 
-## **Condiciones iniciales del sistema (y)**
+### 6.4.1. **Condiciones iniciales del sistema (y)**
 
 Para definir las condiciones iniciales, recuerde que el escenario a
 modelar en este ejercicio es para una fecha **antes del reporte del
@@ -431,9 +434,11 @@ contexto.  
 **Reflexión:** ¿Qué condiciones iniciales tendrían cada uno de los
 compartimientos?
 :::::::::::::::::::::::::
-## Desafío 5
+
 
 ::::::::::::::::::::::::::::::::::::: challenge 
+## Desafío 5
+
 **Instrucción:** Complete los espacios según lo aprendido en el
 tutorial.
 
@@ -464,6 +469,8 @@ inicio <- c(Sh = Nh ,      # Número inicial de Sh en el tiempo 0
            Iv = 0)        # Número inicial de Iv en el tiempo 0
 ```
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+
+### 6.4.2 Función ode
 
 Una vez creados todos los argumentos necesarios, es hora de ingresarlos
 a ode.  Recordemos los cuatro argumentos de ode y a que corresponden a:
@@ -513,7 +520,7 @@ salida <- ode(y      = inicio,     # Condiciones iniciales
 ```
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
 
-## **Introduciendo el primer caso**
+### 6.4.3 **Introduciendo el primer caso**
 
 Ahora que tenemos todos los compartimentos definidos, es hora de
 ingresar al modelo un individuo infeccioso para iniciar la epidemia. 
@@ -567,7 +574,7 @@ salida <- ode(y      = inicio,     # Condiciones iniciales
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
 
-## **¡Ahora ejecutaremos el modelo!**
+## 6.5 **¡Ahora ejecutaremos el modelo!**
 
 **Hasta este punto, usted ha completado toda la información faltante en
 el script  para poder ejecutar el modelo.**
@@ -587,7 +594,7 @@ en el código otros caracteres que no corresponden como por ejemplo
 :::::::::::::::::::::::::::::::::::::::::::
 
 
-## **Visualizando los resultados**
+## 6.6 **Visualizando los resultados**
 
 **En nuestro curso usaremos ggplot para la visualización de datos. Es
 importante que repase la Unidad 4. Visualización de datos en ggplot**
@@ -613,7 +620,7 @@ salida$semanas <- salida$time/7
 ```
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## **Visualice y analice la primer epidemia**
+### 6.7 **Visualice y analice la primer epidemia**
 
 Empecemos realizando una visualización de la primera epidemia. Dado que
 es un periodo de un año visualicemos las gráficas en semanas. 
@@ -702,7 +709,7 @@ plot_grid(p1h, p2h, p3h, p4h, ncol = 2)
 
 <img src="fig/zika-rendered-p4-1.png" style="display: block; margin: auto;" />
 
-### **Comportamiento General (Población de mosquitos)**
+**Comportamiento General (Población de mosquitos)**
 
 **Instrucción:** Ejecute el siguiente bloque de código y observe cuántos
 brotes se producen en la población de mosquitos y el tamaño de cada
@@ -786,7 +793,7 @@ Revise si al final de esta lección adquirió estas competencias:
 
 **Copyright**: Zulma Cucunuba & Pierre Nouvellet, 2017
 
-## Referencias
+### Referencias
 
 de Carvalho, S. S., Rodovalho, C. M., Gaviraghi, A., Mota, M. B. S.,
 Jablonka, W., Rocha-Santos, C., Nunes, R. D., Sá-Guimarães, T. da E.,
