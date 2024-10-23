@@ -2,26 +2,54 @@
 title: Setup
 ---
 
-El curso Ciencia de Datos en Salud Pública y Modelamiento de Enfermedades Infecciosas, ha sido desarrollado por la Pontificia Universidad Javeriana como parte de la estrategia de entrenamiento EpiTKit del proyecto Epiverse TRACE-LAC. Este curso está diseñado para impulsar el conocimiento y las habilidades en modelamiento de enfermedades y análisis de datos en el contexto de la salud pública.  
+El curso Ciencia de Datos en Salud Pública y 
+Modelamiento de Enfermedades Infecciosas, 
+ha sido desarrollado por la Pontificia Universidad Javeriana 
+como parte de la estrategia de entrenamiento EpiTKit 
+del proyecto Epiverse TRACE-LAC. 
+Este curso está diseñado para impulsar el conocimiento y 
+las habilidades en modelamiento de enfermedades y 
+análisis de datos en el contexto de la salud pública.  
   
 ## ¿Qué es el EpiTKit?  
   
-El EpiTKit es un kit de entrenamiento en modelamiento matemático de enfermedades infecciosas y ciencia de datos en salud pública. Su objetivo principal es proporcionar material educativo de acceso abierto en español, adaptado al contexto de América Latina y el Caribe para fortalecer las capacidades en ciencia de datos y modelamiento matemático de enfermedades infecciosas en la región. Además, promueve la equidad de género en estos campos, con el fin de garantizar un desarrollo más inclusivo y efectivo en la respuesta a emergencias de salud pública.
+El EpiTKit es un kit de entrenamiento en modelamiento matemático de 
+enfermedades infecciosas y ciencia de datos en salud pública. 
+Su objetivo principal es proporcionar material educativo de 
+acceso abierto en español, adaptado al contexto de América Latina y 
+el Caribe para fortalecer las capacidades en ciencia de datos y 
+modelamiento matemático de enfermedades infecciosas en la región. 
+Además, promueve la equidad de género en estos campos, 
+con el fin de garantizar un desarrollo más inclusivo y 
+efectivo en la respuesta a emergencias de salud pública.
 
 ## Epiverse TRACE: una colaboración global   
   
-Este curso forma parte de una colaboración internacional que incluye instituciones como la Pontificia Universidad Javeriana y la Universidad de los Andes en Colombia, el London School of Hygiene and Tropical Medicine en el Reino Unido, el Medical Research Council Unit en Gambia y data.org, con el respaldo financiero del International Development Research Center (IDRC) de Canadá.  
+Este curso forma parte de una colaboración internacional que incluye 
+instituciones como la Pontificia Universidad Javeriana y 
+la Universidad de los Andes en Colombia, 
+el London School of Hygiene and Tropical Medicine en el Reino Unido, 
+el Medical Research Council Unit en Gambia y data.org, 
+con el respaldo financiero del 
+International Development Research Center (IDRC) de Canadá.  
   
 ## ¿Cuál es el objetivo de este curso?   
     
-Brindar herramientas clave para el modelamiento matemático de enfermedades infecciosas y el uso de R para el análisis de datos epidemiológicos. Con un enfoque práctico y teórico, adaptado a las necesidades de la región, este curso busca desarrollar competencias que  permitan analizar y  responder ante brotes y epidemias.  
+Brindar herramientas clave para el modelamiento matemático de 
+enfermedades infecciosas y el uso de R para el análisis de datos epidemiológicos. 
+Con un enfoque práctico y teórico, 
+adaptado a las necesidades de la región, 
+este curso busca desarrollar competencias que  permitan analizar y 
+responder ante brotes y epidemias.  
   
-Para más información sobre el proyecto consulte nuestra página: [Página del proyecto en github](https://epiverse-trace.github.io/epi-training-kit/)
+Para más información sobre el proyecto consulte nuestra página: 
+[Página del proyecto en github](https://epiverse-trace.github.io/epi-training-kit/)
 
 
 ## Normas del curso
 
-Conozca nuestro [código de conducta TRACE-LAC](https://drive.google.com/file/d/1z9EecMJR0CIyrUI6hzUugS4i9aAgSD-5/view?usp=sharing).
+Conozca nuestro 
+[código de conducta TRACE-LAC](https://drive.google.com/file/d/1z9EecMJR0CIyrUI6hzUugS4i9aAgSD-5/view?usp=sharing).
 
 ## Configuración del software
 
