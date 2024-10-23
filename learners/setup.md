@@ -2,13 +2,20 @@
 title: Setup
 ---
 
-El ‘Curso en ciencia de datos en salud pública y modelamiento de enfermedades infecciosas’ es liderado por la Pontificia Universidad Javeriana en el marco del proyecto Epiverse-TRACE-LAC y cuenta con el apoyo de la Universidad de los Andes, el London School of Hygiene and Tropical Medicine, data.org, el Centro Internacional de Investigaciones para el Desarrollo (IDRC) de Canadá, la Secretaría de Salud de Bogotá, el Instituto Nacional de Salud (INS), el Field Epidemiology Training Program (FETP), la Red de Programas de Epidemiología de Campo en América del Sur (REDSUR), el Imperial College de Londres y la Universidad de Sussex. 
+El curso Ciencia de Datos en Salud Pública y Modelamiento de Enfermedades Infecciosas, ha sido desarrollado por la Pontificia Universidad Javeriana como parte de la estrategia de entrenamiento EpiTKit del proyecto Epiverse TRACE-LAC. Este curso está diseñado para impulsar el conocimiento y las habilidades en modelamiento de enfermedades y análisis de datos en el contexto de la salud pública.  
+  
+## ¿Qué es el EpiTKit?  
+  
+El EpiTKit es un kit de entrenamiento en modelamiento matemático de enfermedades infecciosas y ciencia de datos en salud pública. Su objetivo principal es proporcionar material educativo de acceso abierto en español, adaptado al contexto de América Latina y el Caribe para fortalecer las capacidades en ciencia de datos y modelamiento matemático de enfermedades infecciosas en la región. Además, promueve la equidad de género en estos campos, con el fin de garantizar un desarrollo más inclusivo y efectivo en la respuesta a emergencias de salud pública.
 
-
-Este curso asincrónico tiene como objetivo fortalecer la capacidad de análisis y modelamiento de brotes de enfermedades infecciosas en la región de América Latina y el Caribe, mediante el uso de herramientas de alta calidad, de código abierto e interoperables que ayuden en la toma de decisiones en salud pública. El curso está dirigido a 1000 profesionales de la salud y otras áreas de STEM que buscan mejorar sus habilidades dentro del ecosistema de ciencia de datos y salud pública para responder a futuras crisis de salud.
-
-En esta página encontrará el material práctico de los talleres.
-
+## Epiverse TRACE: una colaboración global   
+  
+Este curso forma parte de una colaboración internacional que incluye instituciones como la Pontificia Universidad Javeriana y la Universidad de los Andes en Colombia, el London School of Hygiene and Tropical Medicine en el Reino Unido, el Medical Research Council Unit en Gambia y data.org, con el respaldo financiero del International Development Research Center (IDRC) de Canadá.  
+  
+## ¿Cuál es el objetivo de este curso?   
+    
+Brindar herramientas clave para el modelamiento matemático de enfermedades infecciosas y el uso de R para el análisis de datos epidemiológicos. Con un enfoque práctico y teórico, adaptado a las necesidades de la región, este curso busca desarrollar competencias que  permitan analizar y  responder ante brotes y epidemias.  
+  
 Para más información sobre el proyecto consulte nuestra página: [Página del proyecto en github](https://epiverse-trace.github.io/epi-training-kit/)
 
 
