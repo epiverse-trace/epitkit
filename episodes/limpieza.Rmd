@@ -128,6 +128,7 @@ Si aún no las ha instalado puede hacerlo con el siguiente código
 if(!require("tidyverse")) install.packages("tidyverse") #si necesita instalar tidyverse
 if(!require("cleanepi")) install.packages("cleanepi") #si necesita instalar cleanepi
 if(!require("rio")) install.packages("rio") #si necesita instalar rio
+```
 
 :::
 
