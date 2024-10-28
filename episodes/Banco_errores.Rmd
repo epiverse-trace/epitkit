@@ -379,7 +379,7 @@ datos <- datos %>%
   
 Veamos un ejemplo de un error que puede ocurrir por no desagrupar:
  
-```{r}
+```{r,warning=FALSE,message=FALSE}
 set.seed(123) # Para reproducibilidad
 #dataframe de ejemplo
     tipo_sanguineo <- c("A", "B", "O","AB")
