@@ -1,5 +1,5 @@
 ---
-title: "Unidad de Limpieza de datos epidemiológicos "
+title: "Limpieza de datos epidemiológicos "
 authors: [""]
 date: '2024-07-31'
 output:
@@ -84,6 +84,7 @@ la documentación se procederá a explorar el dataset.
 #### **2.2.1. Carga de la información**
 
 ::: checklist
+
 ### ⚠️ **Instrucciones:**
 
 Antes de empezar a trabajar verifique que ya cuenta con los siguientes
@@ -116,16 +117,18 @@ así:
 
 6.  Cargue las librerías: tidyverse, rio y cleanepi.
 
-    ::: callout
-    Si aún no las ha instalado puede hacerlo con el siguiente código
+::: callout
 
-    
-    ``` r
-    if(!require("tidyverse")) install.packages("tidyverse") #si necesita instalar tidyverse
-    if(!require("cleanepi")) install.packages("cleanepi") #si necesita instalar cleanepi
-    if(!require("rio")) install.packages("rio") #si necesita instalar rio
-    ```
-    :::
+Si aún no las ha instalado puede hacerlo con el siguiente código
+
+
+``` r
+if(!require("tidyverse")) install.packages("tidyverse") #si necesita instalar tidyverse
+if(!require("cleanepi")) install.packages("cleanepi") #si necesita instalar cleanepi
+if(!require("rio")) install.packages("rio") #si necesita instalar rio
+```
+
+:::
 
 
 ``` r
@@ -306,6 +309,7 @@ $ vacunado                    <lgl> FALSE, TRUE, FALSE, TRUE, TRUE, TRUE, TRUE�
 $ talla                       <chr> "1.73", "1.67", "1m69", "1.66", "1.63", "1…
 $ peso                        <dbl> 69.6, 73.9, 66.4, 72.5, 64.6, 66.7, 68.9, …
 ```
+
 
 #### **2.2.4. Resumen de variables**
 
@@ -592,7 +596,11 @@ covid %>%
 se obtiene el siguiente resultado:
 
 <img src="fig/limpieza-rendered-unnamed-chunk-28-1.png" style="display: block; margin: auto;" />
-
+ <center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center>
 ## **Tema 3: Modificación, limpieza y corrección de los datos: Errores frecuentes y sus soluciones**
 
 ### **3.1. Revisión de la coherencia del contenido de las variables.**
@@ -1397,6 +1405,12 @@ covid %>%
        74852         1727           12            1          407            0 
 ```
 
+ <center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center>
+
 #### **3.2.6. Reemplazar valores perdidos**
 
 En algunas ocasiones los dataset contienen valores que no corresponden a
@@ -1764,6 +1778,14 @@ masculino  femenino      <NA>
     35627     40962         0 
 ```
 
+
+ <center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center>
+
+
 ## **Tema 4: Organización de los datos**
 
 Finalmente podemos realizar algunas actividades de organización de
@@ -1837,6 +1859,12 @@ datos_limpios_covid.RDS. También puede almacenar el archivo en formato
 .xls o .xlsx para Excel, así como en otros múltiples formatos. Sin
 embargo, se recomienda RDS por su bajo peso y capacidad de
 almacenamiento.
+
+ <center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center>
 
 ::: keypoints
 

@@ -317,6 +317,12 @@ femenino.
 
 ¡Felicitaciones, ha producido su primer reporte R Markdown en html!
 
+ <center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center>
+
 ::: keypoints
 
 Revise si al final de esta lección adquirió estas competencias:

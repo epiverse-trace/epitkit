@@ -27,22 +27,23 @@ editor_options:
 
 ::: questions
 
-- ¿Cómo se utilizan R y RStudio en el análisis de datos y la salud pública?
-
+-   ¿Cómo se utilizan R y RStudio en el análisis de datos y la salud
+    pública?
+    
 :::
 
 ::: objectives
 
 Al final de este taller usted podrá:
 
-- Reconocer y hacer uso de R y RStudio.
-- Conocer los tipos de datos y operados básicos en R.
-- Comprender las estructuras básicas de datos en R tales como vectores
+-   Reconocer y hacer uso de R y RStudio.
+-   Conocer los tipos de datos y operados básicos en R.
+-   Comprender las estructuras básicas de datos en R tales como vectores
     y tablas de datos.
-- Comprender el proceso de creación de funciones.
-- Reconocer el proceso de importación, exportación y transformación de
+-   Comprender el proceso de creación de funciones.
+-   Reconocer el proceso de importación, exportación y transformación de
     bases de datos con Tidyverse.
-
+    
 :::
 
 ::: prereq
@@ -54,6 +55,7 @@ Esta unidad no tiene prerequisitos
 
 
 ::: checklist
+
 ### Tabla de contenido
 
 -   Módulo: Ciencia de datos en salud pública
@@ -169,8 +171,7 @@ permite organizar el espacio de trabajo, el historial y los documentos
 fuente. Para crear un Proyecto en R, es importante seguir los siguientes
 pasos:
 
-::::::::::::::::::::::::::::::::::::: challenge 
-
+::: challenge
 1.  Abrir RStudio y, en la esquina superior izquierda, seleccionar la
     pestaña **File (Archivo)** -\> **New Project... (Proyecto Nuevo)**.
 
@@ -538,7 +539,7 @@ de alguna fuente de datos, por ejemplo, la base de datos del sistema de
 vigilancia de algún evento de interés.
 
 ::: checklist
-### FUentes de conjunto de datos
+### Fuentes de conjunto de datos
 
 Para esto, en R hay tres fuentes de conjuntos de datos que podemos
 utilizar:
@@ -568,7 +569,23 @@ cargar y la función a utilizar.
 | dta               | `read_dta`                       | `haven`     |
 | sas               | `read_sas`                       | `haven`     |
 
+:::::::::::::::::::::::::::::::::::: callout
 
+**Recordatorio**: Si se desea almacenar los datos en un objeto se debe usar el operador de asignación. 
+ 
+Ejemplo: 
+
+``` r
+library("paquete que contiene la función")
+datos <- funcion_read("direccion_de_los_datos.formato")
+```
+ <center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center>
+
+:::::::::::::::::::::::::::::::::::::::::::
 
 ## Tema 8: Manipulación de datos con `tidyverse`
 
@@ -609,11 +626,14 @@ library(tidyverse)
 ✖ dplyr::lag()    masks stats::lag()
 ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 ```
-
+<center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center>
 ### Abrir y explorar una tabla de datos importados de Excel
 
 ::: callout
-
 Este es el conjunto de datos para esta práctica:
 [datos_covid.xlsx](https://raw.githubusercontent.com/TRACE-LAC/TRACE-LAC-data/main/datos_covid.xlsx)
 
@@ -621,7 +641,6 @@ Dentro del directorio en el que estamos trabajando actualmente, debemos
 crear una carpeta llamada *data*.\
 Ahora debemos guardar la tabla de datos descargado en la carpeta data
 que acabamos de crear.
-
 :::
 
 Para importar tablas de datos desde `RDS`, se puede usar la función
@@ -776,7 +795,7 @@ dentro de `tidyverse`.
     1  40.1 50000
     ```
 
--   **`group_by`**
+-   **`group_by` (agrupar)**
 
 La función `group_by` no tiene un uso evidente si es empleada sola, dado
 que ocurre un proceso interno de agrupación de los datos. Pero, al ser
@@ -1046,6 +1065,22 @@ dat %>% slice(10:15)
 #   tension_diastolica <dbl>
 ```
 
+Si se desea modificar un objeto ya creado con estas funciones, también se debe usar el operador de asignación.
+Ejemplo:
+
+
+``` r
+objeto <- objeto %>% mutate(nueva_columna = contenido_nuevo)
+```
+
+Si se realiza sin asignación el cambio solo se verá reflejado en la consola. Recuerde tener seguridad de querer guardar el cambio (esta acción podría ser irreversible). Si quiere conocer más sobre errores frecuentes y como prevenirlos visite nuestro banco de errores.
+
+<center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center>
+ 
 ::: challenge
 ## Actividad de afianzamiento:
 
@@ -1081,9 +1116,14 @@ Después de cargar los datos debe realizar lo siguiente:
 9.  Selecciona las 5 primeras filas de solo el número de identificación
     del caso (`id_de_caso`).
 :::
-
+ 
+<center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center>
+ 
 ::: keypoints
-
 Revise si al final de esta lección adquirió estas competencias:
 
 -   Reconocer y hacer uso de R y RStudio.
@@ -1093,7 +1133,6 @@ Revise si al final de esta lección adquirió estas competencias:
 -   Comprender el proceso de creación de funciones.
 -   Reconocer el proceso de importación, exportación y transformación de
     bases de datos con Tidyverse.
-
 :::
 
 ### Contribuciones

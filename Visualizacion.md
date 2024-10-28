@@ -480,6 +480,12 @@ A continuación, veremos algunos ejemplos de cómo usar la escala en
 `ggplot2`con el `data.frame` previamente cargada `covid19`.
 :::
 
+ <center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center>
+
 #### Ejemplo 5. Gráfico con escala logarítmica
 
 Usaremos exactamente el mismo ejemplo anterior, pero en este caso al
@@ -654,6 +660,13 @@ Revise si al final de esta lección adquirió estas competencias:
 -   Realizar gráficos básicos con la estructura de ggplot2.
 
 :::
+
+
+ <center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center>
 
 ### Contribuciones
 

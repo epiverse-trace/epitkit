@@ -32,6 +32,7 @@ exercises: 8
 
 
 
+
 ## Banco de preguntas
 
 ### [¿Cómo instalar un paquete o "librería" en R?]{#instr}
@@ -168,7 +169,7 @@ Esto puede ocurrir por varios motivos:
 
     2.  También puede ocurrir que el `+` queda en la línea de abajo, es importante destacar que para concatenar funciones debe estar al terminar la línea anterior a la que se quiere concadenar.
 
-        ![](fig/bpggplot.png)
+![](fig/bpggplot.png)
 
 -   No especificar estéticas (aesthetics):
 
@@ -243,9 +244,16 @@ Cuando se crea un objeto este se almacena en el ambiente global. Podemos ver el 
 
 ### No funciona el pipe `%>%`
 
-Recuerde que es importante cargar previamente una librería quecontenga el pipe. Por ejemplo: `magrittr`, `dplyr`, `tidyr` o `purrr`.
+Recuerde los siguientes puntos: 
 
-### Cómo evitar accidentes {#prevención}
+- Es importante cargar previamente una librería que contenga el pipe. Por ejemplo: `magrittr`, `dplyr`, `tidyr` o `purrr`. 
+- El pipe debe ir al final de la línea que se va a conectar. No al inicio de la línea conectada:
+
+![](fig/bp_pipe.png)
+
+
+
+### ¿Cómo evitar accidentes? {#prevencion}
 
 Cuando se va a almacenar cambios en el objeto donde esta almacenado el dataframe, es recomendable tener algunas precauciones para evitar perder información:
 
@@ -289,7 +297,7 @@ Cuando tenemos accidentes con nuestros datos algunas opciones son:
 
 -          Revisar cual es el daño y ver si es reparable. Por ejemplo, se cambió el carácter incorrecto en una cadena de texto.
 
--          Cargar los datos a partir de un respaldo. Si hemos creado respaldos del proceso podemos evitarnos tiempos largo de procesamiento. Entre estos respaldos están las variables de respaldo o los objetos de respaldo (ver (Cómo evitar accidentes)[prevencion]).
+-          Cargar los datos a partir de un respaldo. Si hemos creado respaldos del proceso podemos evitarnos tiempos largo de procesamiento. Entre estos respaldos están las variables de respaldo o los objetos de respaldo (ver [¿Cómo evitar accidentes?](Banco_errores.Rmd#prevencion)).
 
 ### Uso de la función `rename`
 
@@ -334,7 +342,7 @@ La función `group_by` creará grupos de datos según una variable determinada e
 datos <- datos %>% group_by(variabledeinteres) %>% head()
 ```
 
-### Cómo usar `summarise`
+### ¿Cómo usar `summarise`?
 
 1.      Llame la base de datos
 
@@ -378,6 +386,193 @@ datos %>%  group_by(pais) %>%
     sd = sd(variabledeinteres))
 ```
 
+### Errores relacionados a grupos (group_by y ungroup)
+  
+- Un error muy frecuente es que se almacena el objeto agrupado (`group_by`), dado que no se realizó la acción de desagrupar al final. Esto puede generar errores como cálculos incorrectos, resúmenes por grupo en lugar de sobre la totalidad de los datos, y problemas al realizar operaciones subsecuentes en el conjunto de datos.  Por ello, recomendamos siempre emplear (`ungroup`) antes de almacenar. Para usar `ungroup()` basta con ponerlo al final.
+
+
+``` r
+datos <- datos %>% 
+  group_by(categoria) %>% 
+  procesamiento_de_datos(...) %>% 
+  ungroup() 
+```
+  
+Veamos un ejemplo de un error que puede ocurrir por no desagrupar:
+ 
+
+``` r
+library("tidyverse")
+set.seed(123) # Para reproducibilidad
+#dataframe de ejemplo
+tipo_sanguineo <- c("A", "B", "O","AB")
+rh <- sample(c("+", "-"), 10, replace = TRUE)
+dia <-c(1:5)
+f_latidos <- sample(60:100, 200, replace = TRUE)
+f_respiratoria <- sample(12:20, 200, replace = TRUE)
+df <- data.frame(tipo_sanguineo, rh, dia, f_latidos, f_respiratoria)
+
+#resumen por columnas
+por_dia <- df %>%
+  group_by(tipo_sanguineo,rh, dia) %>%
+  summarize(
+    f_l = mean(f_latidos), 
+    f_r = mean(f_respiratoria)
+  )
+```
+
+Creemos una variable que contenga id únicos por cada fila
+
+
+``` r
+por_dia %>% mutate(id = row_number())
+# A tibble: 20 × 6
+# Groups:   tipo_sanguineo, rh [8]
+   tipo_sanguineo rh      dia   f_l   f_r    id
+   <chr>          <chr> <int> <dbl> <dbl> <int>
+ 1 A              +         1  76.3  15.2     1
+ 2 A              +         3  81.5  16.6     2
+ 3 A              +         4  81.2  15.6     3
+ 4 A              +         5  81    15.9     4
+ 5 A              -         2  78.3  16.2     1
+ 6 AB             +         2  79.3  16       1
+ 7 AB             +         5  73.1  17.4     2
+ 8 AB             -         1  83    16.6     1
+ 9 AB             -         3  79.8  15       2
+10 AB             -         4  84.8  17.4     3
+11 B              +         2  77.8  16.4     1
+12 B              +         5  83.8  14.6     2
+13 B              -         1  74.5  14.9     1
+14 B              -         3  85.1  16.2     2
+15 B              -         4  83.3  16.6     3
+16 O              +         1  80.3  15       1
+17 O              +         3  78.9  14.8     2
+18 O              +         4  81.2  14.9     3
+19 O              +         5  84.9  15       4
+20 O              -         2  80.7  16.1     1
+```
+
+Cómo puede observar en la columna id en lugar de identificadores únicos tenemos id que se repiten. ¿Por qué sucedió si cada fila es diferente?
+  
+La razón a este problema subyace en que los datos siguen agrupados. Aún si no aplicamos directamente el `ungroup` como se explico antes, todavía podemos solucionarlo.
+
+Veamos como no se solucionaría primero. Un error frecuente al tratar de solucionar este problema es aplicar la función ungroup sin almacenar el resultado.
+
+``` r
+# aplicación equivocada de ungroup
+por_dia %>% ungroup() 
+# A tibble: 20 × 5
+   tipo_sanguineo rh      dia   f_l   f_r
+   <chr>          <chr> <int> <dbl> <dbl>
+ 1 A              +         1  76.3  15.2
+ 2 A              +         3  81.5  16.6
+ 3 A              +         4  81.2  15.6
+ 4 A              +         5  81    15.9
+ 5 A              -         2  78.3  16.2
+ 6 AB             +         2  79.3  16  
+ 7 AB             +         5  73.1  17.4
+ 8 AB             -         1  83    16.6
+ 9 AB             -         3  79.8  15  
+10 AB             -         4  84.8  17.4
+11 B              +         2  77.8  16.4
+12 B              +         5  83.8  14.6
+13 B              -         1  74.5  14.9
+14 B              -         3  85.1  16.2
+15 B              -         4  83.3  16.6
+16 O              +         1  80.3  15  
+17 O              +         3  78.9  14.8
+18 O              +         4  81.2  14.9
+19 O              +         5  84.9  15  
+20 O              -         2  80.7  16.1
+
+# si bien desagrupa el objeto para imprimirlo, 
+# mientras no se almacene  el objeto serguirá agrupado
+por_dia %>% mutate(id = row_number())
+# A tibble: 20 × 6
+# Groups:   tipo_sanguineo, rh [8]
+   tipo_sanguineo rh      dia   f_l   f_r    id
+   <chr>          <chr> <int> <dbl> <dbl> <int>
+ 1 A              +         1  76.3  15.2     1
+ 2 A              +         3  81.5  16.6     2
+ 3 A              +         4  81.2  15.6     3
+ 4 A              +         5  81    15.9     4
+ 5 A              -         2  78.3  16.2     1
+ 6 AB             +         2  79.3  16       1
+ 7 AB             +         5  73.1  17.4     2
+ 8 AB             -         1  83    16.6     1
+ 9 AB             -         3  79.8  15       2
+10 AB             -         4  84.8  17.4     3
+11 B              +         2  77.8  16.4     1
+12 B              +         5  83.8  14.6     2
+13 B              -         1  74.5  14.9     1
+14 B              -         3  85.1  16.2     2
+15 B              -         4  83.3  16.6     3
+16 O              +         1  80.3  15       1
+17 O              +         3  78.9  14.8     2
+18 O              +         4  81.2  14.9     3
+19 O              +         5  84.9  15       4
+20 O              -         2  80.7  16.1     1
+```
+Como puede observar el problema no se ha corregido.
+
+Para conrregirlo podemos o incluir el `ungroup` desde el inicio cuando creamos el objeto `por_dia`, o aplicar el cambio y guardarlo en el objeto: 
+
+
+``` r
+#ahora estamos almacenando el desagrupamiento
+por_dia_sin_grupo <- por_dia %>% ungroup()
+
+por_dia_sin_grupo %>% mutate(id = row_number())
+# A tibble: 20 × 6
+   tipo_sanguineo rh      dia   f_l   f_r    id
+   <chr>          <chr> <int> <dbl> <dbl> <int>
+ 1 A              +         1  76.3  15.2     1
+ 2 A              +         3  81.5  16.6     2
+ 3 A              +         4  81.2  15.6     3
+ 4 A              +         5  81    15.9     4
+ 5 A              -         2  78.3  16.2     5
+ 6 AB             +         2  79.3  16       6
+ 7 AB             +         5  73.1  17.4     7
+ 8 AB             -         1  83    16.6     8
+ 9 AB             -         3  79.8  15       9
+10 AB             -         4  84.8  17.4    10
+11 B              +         2  77.8  16.4    11
+12 B              +         5  83.8  14.6    12
+13 B              -         1  74.5  14.9    13
+14 B              -         3  85.1  16.2    14
+15 B              -         4  83.3  16.6    15
+16 O              +         1  80.3  15      16
+17 O              +         3  78.9  14.8    17
+18 O              +         4  81.2  14.9    18
+19 O              +         5  84.9  15      19
+20 O              -         2  80.7  16.1    20
+```
+Como puede observar ahora si tenemos cada fila con su propio id.
+
+
+Advertencia: Es importante aclarar que el desagrupamiento en los escenarios anteriores iría después de la operación, sin embargo, en este caso iría antes de la operación.
+    
+    
+
+### Cuando trato de crear un pdf en RMarkdown me sale error
+
+Si el archivo sale correctamente en otros formatos a excepción de pdf. Una de las situaciones más frecuentes es que falte la instalación de LaTeX: RMarkdown necesita LaTeX para generar PDFs. Asegúrate de tener LaTeX instalado en tu sistema. 
+
+Para instalar LaTeX desde RStudio, puede usar el paquete TinyTeX:
+
+
+``` r
+install.packages("tinytex")
+tinytex::install_tinytex()
+```
+
+Configure RStudio:
+
+Vaya a Tools > Global Options > Sweave.
+
+Asegúrese de que la opción "Typeset PDF" esté configurada para usar TinyTeX. 
+ 
+
 ### Material adicional que puede aportar a su aprendizaje:
 
 **Manejo de datos con Tidyverse y R:**
@@ -387,10 +582,9 @@ datos %>%  group_by(pais) %>%
 ::: keypoints
 
 Si después de buscar en esta guía sus preguntas no encontro respuesta por favor diligencie el siguiente formulario [Dudas por resolver](https://forms.office.com/pages/responsepage.aspx?id=Dpn32j-KnECbdipUdQmAAMjWJqHZ8P1DkQQdb07M30RUOEY5N1U1UDFYMExGMzFHRkRKT1BTRTFRWS4u&route=shorturl&sid=6a94f23c-049c-4f54-9732-fc25789059b3){.uri}
-
 :::
 
-### Contribuciones
+## Contribuciones
 
 -   José M. Velasco-España: Versión inicial
 
