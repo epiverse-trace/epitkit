@@ -235,7 +235,7 @@ Cuando se crea un objeto este se almacena en el ambiente global. Podemos ver el 
 ### No funciona el pipe `%>%`
 
 Recuerde los siguientes puntos: 
-- Es importante cargar previamente una librería quecontenga el pipe. Por ejemplo: `magrittr`, `dplyr`, `tidyr` o `purrr`. 
+- Es importante cargar previamente una librería que contenga el pipe. Por ejemplo: `magrittr`, `dplyr`, `tidyr` o `purrr`. 
 - El pipe debe ir al final de la línea que se va a conectar no al inicio de la línea conectada:
 
 ![](fig/bp_pipe.png)
