@@ -423,7 +423,8 @@ Como puede observar el problema no se ha corregido.
 Para conrregirlo podemos o incluir el `ungroup` desde el inicio cuando creamos el objeto `por_dia`, o aplicar el cambio y guardarlo en el objeto: 
 
 ```{r}
-por_dia_sin_grupo <- por_dia %>% ungroup() #ahora estamos almacenando el desagrupamiento
+#ahora estamos almacenando el desagrupamiento
+por_dia_sin_grupo <- por_dia %>% ungroup()
 
 por_dia_sin_grupo %>% mutate(id = row_number())
 ```
