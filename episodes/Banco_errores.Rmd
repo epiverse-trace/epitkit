@@ -243,7 +243,7 @@ Recuerde los siguientes puntos:
 
 
 
-### ¿Cómo evitar accidentes? {#prevención}
+### ¿Cómo evitar accidentes? {#prevencion}
 
 Cuando se va a almacenar cambios en el objeto donde esta almacenado el dataframe, es recomendable tener algunas precauciones para evitar perder información:
 
