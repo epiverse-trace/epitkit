@@ -147,6 +147,12 @@ library(tidyverse)
 library(cowplot)
 ```
 
+ <center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center>
+
 Recordemos que para crear un modelo necesitamos compartimentos,
 condiciones iniciales, parámetros y ecuaciones.
 
@@ -229,7 +235,12 @@ TIME     <-  1       # Número de años que se va a simular. Para este ejercicio
 
 ```
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
-
+ <center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center>
+  
 ## 6.2 Ecuaciones del modelo
 Ahora que ya ingresamos al script los parámetros es hora de emplear las
 ecuaciones que se escribieron antes, las cuales permiten conocer el
@@ -371,7 +382,13 @@ modelo_zika <- function(tiempo, variable_estado, parametros) {
 }
 ```
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
-
+ 
+<center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center> 
+ 
 ## 6.4 Resolviendo el Sistema
 
 Para resolver el sistema es necesario crear los tres argumentos
@@ -451,7 +468,13 @@ inicio <- c(Sh = Nh ,      # Número inicial de Sh en el tiempo 0
 
 ```
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
+ <center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center> 
 
+ 
 ### 6.4.2 Función ode
 
 Una vez creados todos los argumentos necesarios, es hora de ingresarlos
@@ -499,7 +522,13 @@ salida <- ode(y      = inicio,     # Condiciones iniciales
   as.data.frame() # Convertir a data frame
 ```
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
-
+ 
+ <center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center> 
+ 
 ### 6.4.3 **Introduciendo el primer caso**
 
 Ahora que tenemos todos los compartimentos definidos, es hora de
@@ -551,7 +580,13 @@ salida <- ode(y      = inicio,     # Condiciones iniciales
 ```
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
-
+ 
+ <center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center> 
+  
 ## 6.5 **¡Ahora ejecutaremos el modelo!**
 
 **Hasta este punto, usted ha completado toda la información faltante en
@@ -728,7 +763,13 @@ p3 <- ggplot(data = salida, aes(y = Rh/(Sh+Ih+Rh), x = años)) +
   coord_cartesian(ylim = c(0,1))
 plot_grid(p1, p2, p3, ncol = 2)  
 ```
-
+ 
+ <center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center> 
+   
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 ## Puntos clave

@@ -109,7 +109,13 @@ if (!require(epitools)) install.packages("epitools")
 if (!require("cfr")) install.packages("cfr")
 
 ```
-
+ 
+ <center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center>  
+   
 ## **Tema 2: Estadística Descriptiva**
 
 **Ejercicio: Visualizando y Analizando Datos en R**
@@ -268,6 +274,12 @@ edad por debajo de este valor. Es importante resaltar que, debido a la
 asimetría de la distribución, la media y la mediana no coinciden,
 comportamiento esperado en las distribuciones asimétricas.  
 
+ <center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center>
+ 
 **Gráfico de Barras y Tablas de Frecuencia**
 
 Las variables cualitativas se recomiendan que sean representadas por
@@ -298,7 +310,13 @@ ggplot(data = tabla, aes(x = tipo_de_contagio, y = perc)) +
   geom_bar(stat = "identity", color = "darkblue", fill = "lightblue")+
   labs(y = "%", x = " ",title = "Tipo de Contagio")
 ```
-
+   
+<center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center>
+  
 ## **Tema 3: Probabilidad**
 
 En un estudio publicado en el NEJM en el año 2014. titulado "Ebola Virus
@@ -337,6 +355,13 @@ epitools::riskratio(tabla2x2)
 En el Tema 5 de esta Unidad encontrará una introducción a la inferencia
 estadística e intervalos de confianza.
 
+ 
+ <center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center>  
+   
 ## **Tema 4: Principales distribuciones de probabilidad**
 
 Cómo se describió en el Tema 3, la probabilidad estudia el
@@ -954,7 +979,13 @@ influenza_incubacion
 plot(influenza_incubacion)
 ```
 :::
-
+   
+<center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center>
+  
 ## **Tema 5: Introducción a la inferencia estadística**
 
 La estadística puede dividirse en dos grandes ramas: descriptiva e
@@ -1128,7 +1159,13 @@ paso a paso y el reportado por la función `cfr_static`. Esto se debe a
 que el paquete CFR realiza la construcción del IC por el método basado
 en máxima verosimilitud y diferentes distribuciones estadísticas según
 el número total de casos, pero la interpretación no cambia.
-
+  
+<center>  
+   
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
+  
+</center>
+   
 ::: keypoints
 **Al final de la sesión revise si alcanzo los objetivos:**
 
