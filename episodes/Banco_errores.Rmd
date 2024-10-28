@@ -383,17 +383,20 @@ Veamos un ejemplo de un error que puede ocurrir por no desagrupar:
 library("tidyverse")
 set.seed(123) # Para reproducibilidad
 #dataframe de ejemplo
-    tipo_sanguineo <- c("A", "B", "O","AB")
-    rh <- sample(c("+", "-"), 10, replace = TRUE)
-    dia <-c(1:5)
-    f_latidos <- sample(60:100, 200, replace = TRUE)
-    f_respiratoria <- sample(12:20, 200, replace = TRUE)
-    df <- data.frame(tipo_sanguineo, rh, dia, f_latidos, f_respiratoria)
+tipo_sanguineo <- c("A", "B", "O","AB")
+rh <- sample(c("+", "-"), 10, replace = TRUE)
+dia <-c(1:5)
+f_latidos <- sample(60:100, 200, replace = TRUE)
+f_respiratoria <- sample(12:20, 200, replace = TRUE)
+df <- data.frame(tipo_sanguineo, rh, dia, f_latidos, f_respiratoria)
 
- #resumen por columnas
-    por_dia <- df %>%
-      group_by(tipo_sanguineo,rh, dia) %>%
-      summarize(f_l = mean(f_latidos), f_r = mean(f_respiratoria))
+#resumen por columnas
+por_dia <- df %>%
+  group_by(tipo_sanguineo,rh, dia) %>%
+  summarize(
+    f_l = mean(f_latidos), 
+    f_r = mean(f_respiratoria)
+  )
 ```
 
 Creemos una variable que contenga id únicos por cada fila
