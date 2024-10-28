@@ -412,7 +412,10 @@ La razón a este problema subyace en que los datos siguen agrupados. Aún si no 
 Veamos como no se solucionaría primero. Un error frecuente al tratar de solucionar este problema es aplicar la función ungroup sin almacenar el resultado.
 ```{r}
 # aplicación equivocada de ungroup
-por_dia %>% ungroup() #si bien desagrupa el objeto para imprimirlo, mientras no se almacene  el objeto serguirá agrupado
+por_dia %>% ungroup() 
+
+# si bien desagrupa el objeto para imprimirlo, 
+# mientras no se almacene  el objeto serguirá agrupado
 por_dia %>% mutate(id = row_number())
 ```
 Como puede observar el problema no se ha corregido.
