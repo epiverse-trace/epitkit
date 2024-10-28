@@ -287,7 +287,7 @@ Cuando tenemos accidentes con nuestros datos algunas opciones son:
 
 -          Revisar cual es el daño y ver si es reparable. Por ejemplo, se cambió el carácter incorrecto en una cadena de texto.
 
--          Cargar los datos a partir de un respaldo. Si hemos creado respaldos del proceso podemos evitarnos tiempos largo de procesamiento. Entre estos respaldos están las variables de respaldo o los objetos de respaldo (ver (¿Cómo evitar accidentes?)[prevencion]).
+-          Cargar los datos a partir de un respaldo. Si hemos creado respaldos del proceso podemos evitarnos tiempos largo de procesamiento. Entre estos respaldos están las variables de respaldo o los objetos de respaldo (ver [¿Cómo evitar accidentes?](Banco_errores.Rmd#prevencion)).
 
 ### Uso de la función `rename`
 
