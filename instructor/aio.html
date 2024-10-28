@@ -286,7 +286,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="limpieza.html">4. Unidad de Limpieza de datos epidemiológicos</a>
+        <a href="limpieza.html">4. Limpieza de datos epidemiológicos</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -364,7 +364,7 @@
         
 <section id="aio-Taller-R-RStudio"><p>Content from <a href="Taller-R-RStudio.html">Introducción a R y Rstudio</a></p>
 <hr>
-<p>Última actualización: 2024-10-22 |
+<p>Última actualización: 2024-10-28 |
 
         <a href="https://github.com/epiverse-trace/epitkit/edit/main/episodes/Taller-R-RStudio.Rmd" class="external-link">Mejora esta página <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Tiempo estimado: <i aria-hidden="true" data-feather="clock"></i> 88 minutos</p>
@@ -959,7 +959,7 @@ base de datos del sistema de vigilancia de algún evento de interés.</p>
 <i class="callout-icon" data-feather="check-square"></i>
 </div>
 <div id="fuentes-de-conjunto-de-datos" class="callout-inner">
-<h3 class="callout-title">FUentes de conjunto de datos</h3>
+<h3 class="callout-title">Fuentes de conjunto de datos</h3>
 <div class="callout-content">
 <p>Para esto, en R hay tres fuentes de conjuntos de datos que podemos
 utilizar:</p>
@@ -1015,6 +1015,29 @@ necesario cargar y la función a utilizar.</p>
 <td><code>haven</code></td>
 </tr>
 </tbody></table>
+<div id="callout2" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Aviso</h3>
+<div class="callout-content">
+<p><strong>Recordatorio</strong>: Si se desea almacenar los datos en un
+objeto se debe usar el operador de asignación.</p>
+<p>Ejemplo:</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="st">"paquete que contiene la función"</span><span class="op">)</span></span>
+<span><span class="va">datos</span> <span class="op">&lt;-</span> <span class="fu">funcion_read</span><span class="op">(</span><span class="st">"direccion_de_los_datos.formato"</span><span class="op">)</span></span></code></pre>
+</div>
+<center>
+<p><a href="https://epiverse-trace.github.io/epitkit/Banco_errores.html" class="external-link"><img src="../fig/dudas.png" width="100" class="figure"></a></p>
+</center>
+</div>
+</div>
+</div>
 </div>
 </section><section><h2 class="section-heading" id="tema-8-manipulación-de-datos-con-tidyverse">Tema 8: Manipulación de datos con <code>tidyverse</code>
 <a class="anchor" aria-label="anchor" href="#tema-8-manipulaci%C3%B3n-de-datos-con-tidyverse"></a>
@@ -1035,7 +1058,7 @@ datos.</p>
 <code>install.packages</code>. Esto sólo lo debemos hacer una vez en
 nuestro computador. Veamos cómo podemos utilizarlo para instalar
 tidyverse:</p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1044,25 +1067,28 @@ tidyverse:</p>
 <p>Para llamar o importar una librería ya instalada usamos el comando
 <code>library</code>. Este en comando debemos ejecutarlo cada vez que
 re-iniciamos R o abrimos RStudio.</p>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>── Attaching core tidyverse packages ──────────────────────── tidyverse <span class="dv">2</span>.<span class="fl">0.0</span> ──</span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>✔ dplyr     <span class="dv">1</span>.<span class="fl">1.4</span>     ✔ readr     <span class="dv">2</span>.<span class="fl">1.5</span></span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>✔ forcats   <span class="dv">1</span>.<span class="fl">0.0</span>     ✔ stringr   <span class="dv">1</span>.<span class="fl">5.1</span></span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>✔ ggplot2   <span class="dv">3</span>.<span class="fl">5.1</span>     ✔ tibble    <span class="dv">3</span>.<span class="fl">2.1</span></span>
-<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>✔ lubridate <span class="dv">1</span>.<span class="fl">9.3</span>     ✔ tidyr     <span class="dv">1</span>.<span class="fl">3.1</span></span>
-<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a>✔ purrr     <span class="dv">1</span>.<span class="fl">0.2</span>     </span>
-<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a>── Conflicts ────────────────────────────────────────── <span class="fu">tidyverse_conflicts</span>() ──</span>
-<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a>✖ dplyr<span class="sc">::</span><span class="fu">filter</span>() masks stats<span class="sc">::</span><span class="fu">filter</span>()</span>
-<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a>✖ dplyr<span class="sc">::</span><span class="fu">lag</span>()    masks stats<span class="sc">::</span><span class="fu">lag</span>()</span>
-<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a>ℹ Use the conflicted <span class="fu">package</span> (<span class="sc">&lt;</span>http<span class="sc">:</span><span class="er">//</span>conflicted.r<span class="sc">-</span>lib.org<span class="sc">/</span><span class="er">&gt;</span>) to force all conflicts to become errors</span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>── Attaching core tidyverse packages ──────────────────────── tidyverse <span class="dv">2</span>.<span class="fl">0.0</span> ──</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>✔ dplyr     <span class="dv">1</span>.<span class="fl">1.4</span>     ✔ readr     <span class="dv">2</span>.<span class="fl">1.5</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>✔ forcats   <span class="dv">1</span>.<span class="fl">0.0</span>     ✔ stringr   <span class="dv">1</span>.<span class="fl">5.1</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>✔ ggplot2   <span class="dv">3</span>.<span class="fl">5.1</span>     ✔ tibble    <span class="dv">3</span>.<span class="fl">2.1</span></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>✔ lubridate <span class="dv">1</span>.<span class="fl">9.3</span>     ✔ tidyr     <span class="dv">1</span>.<span class="fl">3.1</span></span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a>✔ purrr     <span class="dv">1</span>.<span class="fl">0.2</span>     </span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a>── Conflicts ────────────────────────────────────────── <span class="fu">tidyverse_conflicts</span>() ──</span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a>✖ dplyr<span class="sc">::</span><span class="fu">filter</span>() masks stats<span class="sc">::</span><span class="fu">filter</span>()</span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a>✖ dplyr<span class="sc">::</span><span class="fu">lag</span>()    masks stats<span class="sc">::</span><span class="fu">lag</span>()</span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a>ℹ Use the conflicted <span class="fu">package</span> (<span class="sc">&lt;</span>http<span class="sc">:</span><span class="er">//</span>conflicted.r<span class="sc">-</span>lib.org<span class="sc">/</span><span class="er">&gt;</span>) to force all conflicts to become errors</span></code></pre>
 </div>
+<center>
+<p><a href="https://epiverse-trace.github.io/epitkit/Banco_errores.html" class="external-link"><img src="../fig/dudas.png" width="100" class="figure"></a></p>
+</center>
 <div class="section level3">
 <h3 id="abrir-y-explorar-una-tabla-de-datos-importados-de-excel">Abrir y explorar una tabla de datos importados de Excel<a class="anchor" aria-label="anchor" href="#abrir-y-explorar-una-tabla-de-datos-importados-de-excel"></a>
 </h3>
-<div id="callout2" class="callout">
+<div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -1083,7 +1109,7 @@ la función <code>read_excel</code>, que está en el paquete
 todavía es necesario cargar la biblioteca <code>readxl</code>, ya que no
 es un paquete <code>tidyverse</code> principal. Para esto, escribimos en
 la consola:</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1109,7 +1135,7 @@ diferentes funciones a un conjunto de datos y sus resultados.</p>
 <p>Vamos a comparar el código cuando usamos vs cuando no usamos el pipe.
 Para esto, debemos cargar la librería dplyr y vamos a hacer una tabla de
 datos de ejemplo</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1119,7 +1145,7 @@ datos de ejemplo</p>
 </div>
 <p>El código del diagrama anterior sin el uso del operador <em>pipe</em>
 sería el siguiente :</p>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1133,7 +1159,7 @@ sería el siguiente :</p>
 <span><span class="va">datos_por_esquema</span> <span class="op">&lt;-</span> <span class="fu">summarise</span><span class="op">(</span><span class="va">datos_agrupados</span>, personas <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <p>Ahora, con la ayuda de una tubería o <em>pipe</em>, tenemos:</p>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1189,31 +1215,31 @@ dato (<code>dbl</code> para double, <code>chr</code> para character,
 entre otros) y un breve listado de algunos de los primeros valores de
 los datos. Por ejemplo, la función <code>glimpse</code> se puede aplicar
 sobre el elemento <em>dat</em> (que se cargó arriba), así:</p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>Rows<span class="sc">:</span> <span class="dv">50</span>,<span class="dv">000</span></span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>Columns<span class="sc">:</span> <span class="dv">19</span></span>
-<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a><span class="sc">$</span> fecha_reporte_web                     <span class="sc">&lt;</span>dttm<span class="sc">&gt;</span> <span class="dv">2021-07-14</span>, <span class="dv">2021-04-24</span>, <span class="dv">2021-05</span>…</span>
-<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a><span class="sc">$</span> id_de_caso                            <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="dv">4565159</span>, <span class="dv">2747373</span>, <span class="dv">2963299</span>, <span class="dv">15526</span>…</span>
-<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a><span class="sc">$</span> fecha_de_notificacion                 <span class="sc">&lt;</span>dttm<span class="sc">&gt;</span> <span class="dv">2021-07-07</span>, <span class="dv">2021-04-21</span>, <span class="dv">2021-05</span>…</span>
-<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a><span class="sc">$</span> edad                                  <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="dv">23</span>, <span class="dv">15</span>, <span class="dv">11</span>, <span class="dv">39</span>, <span class="dv">25</span>, <span class="dv">8</span>, <span class="dv">53</span>, <span class="dv">29</span>, <span class="dv">4</span>…</span>
-<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a><span class="sc">$</span> sexo                                  <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"masculino"</span>, <span class="st">"femenino"</span>, <span class="st">"mascul…</span></span>
-<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a><span class="st">$ tipo_de_contagio                      &lt;chr&gt; "</span>Comunitaria<span class="st">", "</span>Relacionado<span class="st">", "</span>R…</span>
-<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a><span class="sc">$</span> ubicacion_del_caso                    <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"Casa"</span>, <span class="st">"Casa"</span>, <span class="st">"Casa"</span>, <span class="st">"Casa"</span>, …</span>
-<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a><span class="sc">$</span> estado                                <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"Leve"</span>, <span class="st">"Leve"</span>, <span class="st">"Leve"</span>, <span class="st">"Leve"</span>, …</span>
-<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a><span class="sc">$</span> recuperado                            <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"Recuperado"</span>, <span class="st">"Recuperado"</span>, <span class="st">"Rec…</span></span>
-<span id="cb17-13"><a href="#cb17-13" tabindex="-1"></a><span class="st">$ fecha_de_inicio_de_sintomas           &lt;dttm&gt; 2021-06-22, 2021-04-16, 2021-04…</span></span>
-<span id="cb17-14"><a href="#cb17-14" tabindex="-1"></a><span class="st">$ fecha_de_muerte                       &lt;dttm&gt; NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
-<span id="cb17-15"><a href="#cb17-15" tabindex="-1"></a><span class="st">$ fecha_de_diagnostico                  &lt;dttm&gt; 2021-07-07, 2021-04-23, 2021-05…</span></span>
-<span id="cb17-16"><a href="#cb17-16" tabindex="-1"></a><span class="st">$ fecha_de_recuperacion                 &lt;dttm&gt; 2021-07-15, 2021-05-05, 2021-05…</span></span>
-<span id="cb17-17"><a href="#cb17-17" tabindex="-1"></a><span class="st">$ fecha_de_nacimiento                   &lt;dttm&gt; 1975-06-23, 1975-07-01, 1975-07…</span></span>
-<span id="cb17-18"><a href="#cb17-18" tabindex="-1"></a><span class="st">$ nombre_del_pais                       &lt;chr&gt; "</span>Argentina<span class="st">", "</span>Paraguay<span class="st">", "</span>Ecuado…</span>
-<span id="cb17-19"><a href="#cb17-19" tabindex="-1"></a><span class="sc">$</span> sintomas                              <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"Leve"</span>, <span class="st">"Leve"</span>, <span class="st">"Leve"</span>, <span class="st">"Leve"</span>, …</span>
-<span id="cb17-20"><a href="#cb17-20" tabindex="-1"></a><span class="sc">$</span> numero_de_hospitalizaciones_recientes <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>,…</span>
-<span id="cb17-21"><a href="#cb17-21" tabindex="-1"></a><span class="sc">$</span> tension_sistolica                     <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="dv">105</span>, <span class="dv">122</span>, <span class="dv">121</span>, <span class="dv">101</span>, <span class="dv">101</span>, <span class="dv">134</span>, <span class="dv">10</span>…</span>
-<span id="cb17-22"><a href="#cb17-22" tabindex="-1"></a><span class="sc">$</span> tension_diastolica                    <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="dv">83</span>, <span class="dv">72</span>, <span class="dv">85</span>, <span class="dv">69</span>, <span class="dv">101</span>, <span class="dv">80</span>, <span class="dv">85</span>, <span class="dv">67</span>,…</span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>Rows<span class="sc">:</span> <span class="dv">50</span>,<span class="dv">000</span></span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>Columns<span class="sc">:</span> <span class="dv">19</span></span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="sc">$</span> fecha_reporte_web                     <span class="sc">&lt;</span>dttm<span class="sc">&gt;</span> <span class="dv">2021-07-14</span>, <span class="dv">2021-04-24</span>, <span class="dv">2021-05</span>…</span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a><span class="sc">$</span> id_de_caso                            <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="dv">4565159</span>, <span class="dv">2747373</span>, <span class="dv">2963299</span>, <span class="dv">15526</span>…</span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a><span class="sc">$</span> fecha_de_notificacion                 <span class="sc">&lt;</span>dttm<span class="sc">&gt;</span> <span class="dv">2021-07-07</span>, <span class="dv">2021-04-21</span>, <span class="dv">2021-05</span>…</span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a><span class="sc">$</span> edad                                  <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="dv">23</span>, <span class="dv">15</span>, <span class="dv">11</span>, <span class="dv">39</span>, <span class="dv">25</span>, <span class="dv">8</span>, <span class="dv">53</span>, <span class="dv">29</span>, <span class="dv">4</span>…</span>
+<span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a><span class="sc">$</span> sexo                                  <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"masculino"</span>, <span class="st">"femenino"</span>, <span class="st">"mascul…</span></span>
+<span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a><span class="st">$ tipo_de_contagio                      &lt;chr&gt; "</span>Comunitaria<span class="st">", "</span>Relacionado<span class="st">", "</span>R…</span>
+<span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a><span class="sc">$</span> ubicacion_del_caso                    <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"Casa"</span>, <span class="st">"Casa"</span>, <span class="st">"Casa"</span>, <span class="st">"Casa"</span>, …</span>
+<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a><span class="sc">$</span> estado                                <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"Leve"</span>, <span class="st">"Leve"</span>, <span class="st">"Leve"</span>, <span class="st">"Leve"</span>, …</span>
+<span id="cb18-12"><a href="#cb18-12" tabindex="-1"></a><span class="sc">$</span> recuperado                            <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"Recuperado"</span>, <span class="st">"Recuperado"</span>, <span class="st">"Rec…</span></span>
+<span id="cb18-13"><a href="#cb18-13" tabindex="-1"></a><span class="st">$ fecha_de_inicio_de_sintomas           &lt;dttm&gt; 2021-06-22, 2021-04-16, 2021-04…</span></span>
+<span id="cb18-14"><a href="#cb18-14" tabindex="-1"></a><span class="st">$ fecha_de_muerte                       &lt;dttm&gt; NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
+<span id="cb18-15"><a href="#cb18-15" tabindex="-1"></a><span class="st">$ fecha_de_diagnostico                  &lt;dttm&gt; 2021-07-07, 2021-04-23, 2021-05…</span></span>
+<span id="cb18-16"><a href="#cb18-16" tabindex="-1"></a><span class="st">$ fecha_de_recuperacion                 &lt;dttm&gt; 2021-07-15, 2021-05-05, 2021-05…</span></span>
+<span id="cb18-17"><a href="#cb18-17" tabindex="-1"></a><span class="st">$ fecha_de_nacimiento                   &lt;dttm&gt; 1975-06-23, 1975-07-01, 1975-07…</span></span>
+<span id="cb18-18"><a href="#cb18-18" tabindex="-1"></a><span class="st">$ nombre_del_pais                       &lt;chr&gt; "</span>Argentina<span class="st">", "</span>Paraguay<span class="st">", "</span>Ecuado…</span>
+<span id="cb18-19"><a href="#cb18-19" tabindex="-1"></a><span class="sc">$</span> sintomas                              <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"Leve"</span>, <span class="st">"Leve"</span>, <span class="st">"Leve"</span>, <span class="st">"Leve"</span>, …</span>
+<span id="cb18-20"><a href="#cb18-20" tabindex="-1"></a><span class="sc">$</span> numero_de_hospitalizaciones_recientes <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>,…</span>
+<span id="cb18-21"><a href="#cb18-21" tabindex="-1"></a><span class="sc">$</span> tension_sistolica                     <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="dv">105</span>, <span class="dv">122</span>, <span class="dv">121</span>, <span class="dv">101</span>, <span class="dv">101</span>, <span class="dv">134</span>, <span class="dv">10</span>…</span>
+<span id="cb18-22"><a href="#cb18-22" tabindex="-1"></a><span class="sc">$</span> tension_diastolica                    <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="dv">83</span>, <span class="dv">72</span>, <span class="dv">85</span>, <span class="dv">69</span>, <span class="dv">101</span>, <span class="dv">80</span>, <span class="dv">85</span>, <span class="dv">67</span>,…</span></code></pre>
 </div>
 </li>
 <li>
@@ -1222,17 +1248,17 @@ sobre el elemento <em>dat</em> (que se cargó arriba), así:</p>
 operaciones de interés sobre una tabla de datos. Por ejemplo, para
 calcular la media de la edad, utilizamos la función <code>mean()</code>
 y para el conteo total de casos la función <code>n()</code>:</p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">media =</span> <span class="fu">mean</span>(edad), <span class="at">casos=</span> <span class="fu">n</span>())</span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="co"># A tibble: 1 × 2</span></span>
-<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>  media casos</span>
-<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>  <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>int<span class="sc">&gt;</span></span>
-<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a><span class="dv">1</span>  <span class="fl">40.1</span> <span class="dv">50000</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">media =</span> <span class="fu">mean</span>(edad), <span class="at">casos=</span> <span class="fu">n</span>())</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="co"># A tibble: 1 × 2</span></span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>  media casos</span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a>  <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>int<span class="sc">&gt;</span></span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a><span class="dv">1</span>  <span class="fl">40.1</span> <span class="dv">50000</span></span></code></pre>
 </div>
 </li>
-<li><p><strong><code>group_by</code></strong></p></li>
+<li><p><strong><code>group_by</code> (agrupar)</strong></p></li>
 </ul>
 <p>La función <code>group_by</code> no tiene un uso evidente si es
 empleada sola, dado que ocurre un proceso interno de agrupación de los
@@ -1240,16 +1266,16 @@ datos. Pero, al ser usada con otras funciones como por ejemplo
 <code>summarise</code> es posible ver su efecto. Por ejemplo, el
 siguiente comando agrupa los datos por sexo y calcula, para cada grupo
 el conteo de casos y su correspondiente media de la edad:</p>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(sexo) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">casos =</span> <span class="fu">n</span>(), <span class="at">media_edad =</span> <span class="fu">mean</span>(edad))</span>
-<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a><span class="co"># A tibble: 2 × 3</span></span>
-<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a>  sexo      casos media_edad</span>
-<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a>  <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>     <span class="er">&lt;</span>int<span class="sc">&gt;</span>      <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
-<span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a><span class="dv">1</span> femenino  <span class="dv">26799</span>       <span class="fl">40.3</span></span>
-<span id="cb19-7"><a href="#cb19-7" tabindex="-1"></a><span class="dv">2</span> masculino <span class="dv">23201</span>       <span class="fl">39.9</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(sexo) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">casos =</span> <span class="fu">n</span>(), <span class="at">media_edad =</span> <span class="fu">mean</span>(edad))</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a><span class="co"># A tibble: 2 × 3</span></span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a>  sexo      casos media_edad</span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a>  <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>     <span class="er">&lt;</span>int<span class="sc">&gt;</span>      <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a><span class="dv">1</span> femenino  <span class="dv">26799</span>       <span class="fl">40.3</span></span>
+<span id="cb20-7"><a href="#cb20-7" tabindex="-1"></a><span class="dv">2</span> masculino <span class="dv">23201</span>       <span class="fl">39.9</span></span></code></pre>
 </div>
 <ul>
 <li>
@@ -1258,24 +1284,24 @@ el conteo de casos y su correspondiente media de la edad:</p>
 una o varias columnas de un <code>data.frame</code> o tabla de datos.
 Por ejemplo, se pueden seleccionar las variables edad y sexo de
 <em>dat</em> mediante el siguiente comando:</p>
-<div class="codewrapper sourceCode" id="cb20">
+<div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">select</span>(edad, sexo) <span class="co">#empleando el nombre de la columna</span></span>
-<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="co"># A tibble: 50,000 × 2</span></span>
-<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>    edad sexo     </span>
-<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a>   <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>    </span>
-<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a> <span class="dv">1</span>    <span class="dv">23</span> masculino</span>
-<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a> <span class="dv">2</span>    <span class="dv">15</span> femenino </span>
-<span id="cb20-7"><a href="#cb20-7" tabindex="-1"></a> <span class="dv">3</span>    <span class="dv">11</span> masculino</span>
-<span id="cb20-8"><a href="#cb20-8" tabindex="-1"></a> <span class="dv">4</span>    <span class="dv">39</span> femenino </span>
-<span id="cb20-9"><a href="#cb20-9" tabindex="-1"></a> <span class="dv">5</span>    <span class="dv">25</span> masculino</span>
-<span id="cb20-10"><a href="#cb20-10" tabindex="-1"></a> <span class="dv">6</span>     <span class="dv">8</span> femenino </span>
-<span id="cb20-11"><a href="#cb20-11" tabindex="-1"></a> <span class="dv">7</span>    <span class="dv">53</span> masculino</span>
-<span id="cb20-12"><a href="#cb20-12" tabindex="-1"></a> <span class="dv">8</span>    <span class="dv">29</span> masculino</span>
-<span id="cb20-13"><a href="#cb20-13" tabindex="-1"></a> <span class="dv">9</span>    <span class="dv">41</span> femenino </span>
-<span id="cb20-14"><a href="#cb20-14" tabindex="-1"></a><span class="dv">10</span>    <span class="dv">61</span> masculino</span>
-<span id="cb20-15"><a href="#cb20-15" tabindex="-1"></a><span class="co"># ℹ 49,990 more rows</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">select</span>(edad, sexo) <span class="co">#empleando el nombre de la columna</span></span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="co"># A tibble: 50,000 × 2</span></span>
+<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a>    edad sexo     </span>
+<span id="cb21-4"><a href="#cb21-4" tabindex="-1"></a>   <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>    </span>
+<span id="cb21-5"><a href="#cb21-5" tabindex="-1"></a> <span class="dv">1</span>    <span class="dv">23</span> masculino</span>
+<span id="cb21-6"><a href="#cb21-6" tabindex="-1"></a> <span class="dv">2</span>    <span class="dv">15</span> femenino </span>
+<span id="cb21-7"><a href="#cb21-7" tabindex="-1"></a> <span class="dv">3</span>    <span class="dv">11</span> masculino</span>
+<span id="cb21-8"><a href="#cb21-8" tabindex="-1"></a> <span class="dv">4</span>    <span class="dv">39</span> femenino </span>
+<span id="cb21-9"><a href="#cb21-9" tabindex="-1"></a> <span class="dv">5</span>    <span class="dv">25</span> masculino</span>
+<span id="cb21-10"><a href="#cb21-10" tabindex="-1"></a> <span class="dv">6</span>     <span class="dv">8</span> femenino </span>
+<span id="cb21-11"><a href="#cb21-11" tabindex="-1"></a> <span class="dv">7</span>    <span class="dv">53</span> masculino</span>
+<span id="cb21-12"><a href="#cb21-12" tabindex="-1"></a> <span class="dv">8</span>    <span class="dv">29</span> masculino</span>
+<span id="cb21-13"><a href="#cb21-13" tabindex="-1"></a> <span class="dv">9</span>    <span class="dv">41</span> femenino </span>
+<span id="cb21-14"><a href="#cb21-14" tabindex="-1"></a><span class="dv">10</span>    <span class="dv">61</span> masculino</span>
+<span id="cb21-15"><a href="#cb21-15" tabindex="-1"></a><span class="co"># ℹ 49,990 more rows</span></span></code></pre>
 </div>
 </li>
 <li><p><strong><code>filter</code> (filtrar)</strong></p></li>
@@ -1283,30 +1309,30 @@ Por ejemplo, se pueden seleccionar las variables edad y sexo de
 <p>Esta función se puede usar para filtrar una tabla de datos a partir
 de una condición lógica del valor de sus filas. Por ejemplo, para
 filtrar los registros menores de 28 años, usamos:</p>
-<div class="codewrapper sourceCode" id="cb21">
+<div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">filter</span>(edad <span class="sc">&lt;</span> <span class="dv">28</span>)</span>
-<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="co"># A tibble: 13,235 × 19</span></span>
-<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a>   fecha_reporte_web   id_de_caso fecha_de_notificacion  edad sexo     </span>
-<span id="cb21-4"><a href="#cb21-4" tabindex="-1"></a>   <span class="sc">&lt;</span>dttm<span class="sc">&gt;</span>                   <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dttm<span class="sc">&gt;</span>                <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>    </span>
-<span id="cb21-5"><a href="#cb21-5" tabindex="-1"></a> <span class="dv">1</span> <span class="dv">2021-07-14</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4565159</span> <span class="dv">2021-07-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">23</span> masculino</span>
-<span id="cb21-6"><a href="#cb21-6" tabindex="-1"></a> <span class="dv">2</span> <span class="dv">2021-04-24</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2747373</span> <span class="dv">2021-04-21</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">15</span> femenino </span>
-<span id="cb21-7"><a href="#cb21-7" tabindex="-1"></a> <span class="dv">3</span> <span class="dv">2021-05-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2963299</span> <span class="dv">2021-05-04</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">11</span> masculino</span>
-<span id="cb21-8"><a href="#cb21-8" tabindex="-1"></a> <span class="dv">4</span> <span class="dv">2020-10-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1018415</span> <span class="dv">2020-10-23</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">25</span> masculino</span>
-<span id="cb21-9"><a href="#cb21-9" tabindex="-1"></a> <span class="dv">5</span> <span class="dv">2020-08-09</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">380193</span> <span class="dv">2020-07-25</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">8</span> femenino </span>
-<span id="cb21-10"><a href="#cb21-10" tabindex="-1"></a> <span class="dv">6</span> <span class="dv">2020-09-25</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">798355</span> <span class="dv">2020-09-25</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">13</span> femenino </span>
-<span id="cb21-11"><a href="#cb21-11" tabindex="-1"></a> <span class="dv">7</span> <span class="dv">2022-07-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">6184438</span> <span class="dv">2022-07-03</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">23</span> masculino</span>
-<span id="cb21-12"><a href="#cb21-12" tabindex="-1"></a> <span class="dv">8</span> <span class="dv">2020-11-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1276271</span> <span class="dv">2020-11-11</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">26</span> femenino </span>
-<span id="cb21-13"><a href="#cb21-13" tabindex="-1"></a> <span class="dv">9</span> <span class="dv">2020-12-27</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1592983</span> <span class="dv">2020-12-13</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">25</span> femenino </span>
-<span id="cb21-14"><a href="#cb21-14" tabindex="-1"></a><span class="dv">10</span> <span class="dv">2022-01-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">5798751</span> <span class="dv">2022-01-22</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">18</span> femenino </span>
-<span id="cb21-15"><a href="#cb21-15" tabindex="-1"></a><span class="co"># ℹ 13,225 more rows</span></span>
-<span id="cb21-16"><a href="#cb21-16" tabindex="-1"></a><span class="co"># ℹ 14 more variables: tipo_de_contagio &lt;chr&gt;, ubicacion_del_caso &lt;chr&gt;,</span></span>
-<span id="cb21-17"><a href="#cb21-17" tabindex="-1"></a><span class="co">#   estado &lt;chr&gt;, recuperado &lt;chr&gt;, fecha_de_inicio_de_sintomas &lt;dttm&gt;,</span></span>
-<span id="cb21-18"><a href="#cb21-18" tabindex="-1"></a><span class="co">#   fecha_de_muerte &lt;dttm&gt;, fecha_de_diagnostico &lt;dttm&gt;,</span></span>
-<span id="cb21-19"><a href="#cb21-19" tabindex="-1"></a><span class="co">#   fecha_de_recuperacion &lt;dttm&gt;, fecha_de_nacimiento &lt;dttm&gt;,</span></span>
-<span id="cb21-20"><a href="#cb21-20" tabindex="-1"></a><span class="co">#   nombre_del_pais &lt;chr&gt;, sintomas &lt;chr&gt;,</span></span>
-<span id="cb21-21"><a href="#cb21-21" tabindex="-1"></a><span class="co">#   numero_de_hospitalizaciones_recientes &lt;dbl&gt;, tension_sistolica &lt;dbl&gt;, …</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">filter</span>(edad <span class="sc">&lt;</span> <span class="dv">28</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="co"># A tibble: 13,235 × 19</span></span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a>   fecha_reporte_web   id_de_caso fecha_de_notificacion  edad sexo     </span>
+<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a>   <span class="sc">&lt;</span>dttm<span class="sc">&gt;</span>                   <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dttm<span class="sc">&gt;</span>                <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>    </span>
+<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a> <span class="dv">1</span> <span class="dv">2021-07-14</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4565159</span> <span class="dv">2021-07-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">23</span> masculino</span>
+<span id="cb22-6"><a href="#cb22-6" tabindex="-1"></a> <span class="dv">2</span> <span class="dv">2021-04-24</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2747373</span> <span class="dv">2021-04-21</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">15</span> femenino </span>
+<span id="cb22-7"><a href="#cb22-7" tabindex="-1"></a> <span class="dv">3</span> <span class="dv">2021-05-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2963299</span> <span class="dv">2021-05-04</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">11</span> masculino</span>
+<span id="cb22-8"><a href="#cb22-8" tabindex="-1"></a> <span class="dv">4</span> <span class="dv">2020-10-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1018415</span> <span class="dv">2020-10-23</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">25</span> masculino</span>
+<span id="cb22-9"><a href="#cb22-9" tabindex="-1"></a> <span class="dv">5</span> <span class="dv">2020-08-09</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">380193</span> <span class="dv">2020-07-25</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">8</span> femenino </span>
+<span id="cb22-10"><a href="#cb22-10" tabindex="-1"></a> <span class="dv">6</span> <span class="dv">2020-09-25</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">798355</span> <span class="dv">2020-09-25</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">13</span> femenino </span>
+<span id="cb22-11"><a href="#cb22-11" tabindex="-1"></a> <span class="dv">7</span> <span class="dv">2022-07-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">6184438</span> <span class="dv">2022-07-03</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">23</span> masculino</span>
+<span id="cb22-12"><a href="#cb22-12" tabindex="-1"></a> <span class="dv">8</span> <span class="dv">2020-11-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1276271</span> <span class="dv">2020-11-11</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">26</span> femenino </span>
+<span id="cb22-13"><a href="#cb22-13" tabindex="-1"></a> <span class="dv">9</span> <span class="dv">2020-12-27</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1592983</span> <span class="dv">2020-12-13</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">25</span> femenino </span>
+<span id="cb22-14"><a href="#cb22-14" tabindex="-1"></a><span class="dv">10</span> <span class="dv">2022-01-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">5798751</span> <span class="dv">2022-01-22</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">18</span> femenino </span>
+<span id="cb22-15"><a href="#cb22-15" tabindex="-1"></a><span class="co"># ℹ 13,225 more rows</span></span>
+<span id="cb22-16"><a href="#cb22-16" tabindex="-1"></a><span class="co"># ℹ 14 more variables: tipo_de_contagio &lt;chr&gt;, ubicacion_del_caso &lt;chr&gt;,</span></span>
+<span id="cb22-17"><a href="#cb22-17" tabindex="-1"></a><span class="co">#   estado &lt;chr&gt;, recuperado &lt;chr&gt;, fecha_de_inicio_de_sintomas &lt;dttm&gt;,</span></span>
+<span id="cb22-18"><a href="#cb22-18" tabindex="-1"></a><span class="co">#   fecha_de_muerte &lt;dttm&gt;, fecha_de_diagnostico &lt;dttm&gt;,</span></span>
+<span id="cb22-19"><a href="#cb22-19" tabindex="-1"></a><span class="co">#   fecha_de_recuperacion &lt;dttm&gt;, fecha_de_nacimiento &lt;dttm&gt;,</span></span>
+<span id="cb22-20"><a href="#cb22-20" tabindex="-1"></a><span class="co">#   nombre_del_pais &lt;chr&gt;, sintomas &lt;chr&gt;,</span></span>
+<span id="cb22-21"><a href="#cb22-21" tabindex="-1"></a><span class="co">#   numero_de_hospitalizaciones_recientes &lt;dbl&gt;, tension_sistolica &lt;dbl&gt;, …</span></span></code></pre>
 </div>
 <p>Como se puede observar, el resultado contiene todas las variables de
 la tabla, pero los datos se limitan a aquellos que en edad sean menores
@@ -1315,7 +1341,7 @@ a 28 años y con sexo femenino. En este caso, al pedir que se incluyan
 adicionalmente los registros de 28 años también ya no se emplea
 únicamente el signo “&lt;” sino que se lo acompaña del símbolo “=”:</p>
 <p>Veamos un ejemplo con doble fitro:</p>
-<div class="codewrapper sourceCode" id="cb22">
+<div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1335,81 +1361,81 @@ adicionalmente los registros de 28 años también ya no se emplea
 <p>Para los casos donde se necesita organizar los datos por una o más
 variables, se puede emplear la función <code>arrange</code>. Por
 ejemplo, para organizar los datos por edad, o por edad y sexo:</p>
-<div class="codewrapper sourceCode" id="cb23">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(edad) </span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="co"># A tibble: 50,000 × 19</span></span>
-<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a>   fecha_reporte_web   id_de_caso fecha_de_notificacion  edad sexo     </span>
-<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a>   <span class="sc">&lt;</span>dttm<span class="sc">&gt;</span>                   <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dttm<span class="sc">&gt;</span>                <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>    </span>
-<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a> <span class="dv">1</span> <span class="dv">2021-06-19</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">3896591</span> <span class="dv">2021-06-17</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino </span>
-<span id="cb23-6"><a href="#cb23-6" tabindex="-1"></a> <span class="dv">2</span> <span class="dv">2021-04-11</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2525260</span> <span class="dv">2021-04-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino </span>
-<span id="cb23-7"><a href="#cb23-7" tabindex="-1"></a> <span class="dv">3</span> <span class="dv">2022-07-28</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">6264159</span> <span class="dv">2022-07-25</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> masculino</span>
-<span id="cb23-8"><a href="#cb23-8" tabindex="-1"></a> <span class="dv">4</span> <span class="dv">2022-01-03</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">5184827</span> <span class="dv">2021-12-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> masculino</span>
-<span id="cb23-9"><a href="#cb23-9" tabindex="-1"></a> <span class="dv">5</span> <span class="dv">2022-02-19</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">6039958</span> <span class="dv">2022-02-16</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino </span>
-<span id="cb23-10"><a href="#cb23-10" tabindex="-1"></a> <span class="dv">6</span> <span class="dv">2021-10-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4967494</span> <span class="dv">2021-09-24</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> masculino</span>
-<span id="cb23-11"><a href="#cb23-11" tabindex="-1"></a> <span class="dv">7</span> <span class="dv">2022-01-13</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">5410872</span> <span class="dv">2021-12-30</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> masculino</span>
-<span id="cb23-12"><a href="#cb23-12" tabindex="-1"></a> <span class="dv">8</span> <span class="dv">2021-06-23</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4006796</span> <span class="dv">2021-06-18</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> masculino</span>
-<span id="cb23-13"><a href="#cb23-13" tabindex="-1"></a> <span class="dv">9</span> <span class="dv">2020-09-02</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">628110</span> <span class="dv">2020-08-21</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> masculino</span>
-<span id="cb23-14"><a href="#cb23-14" tabindex="-1"></a><span class="dv">10</span> <span class="dv">2021-07-09</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4453365</span> <span class="dv">2021-06-29</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino </span>
-<span id="cb23-15"><a href="#cb23-15" tabindex="-1"></a><span class="co"># ℹ 49,990 more rows</span></span>
-<span id="cb23-16"><a href="#cb23-16" tabindex="-1"></a><span class="co"># ℹ 14 more variables: tipo_de_contagio &lt;chr&gt;, ubicacion_del_caso &lt;chr&gt;,</span></span>
-<span id="cb23-17"><a href="#cb23-17" tabindex="-1"></a><span class="co">#   estado &lt;chr&gt;, recuperado &lt;chr&gt;, fecha_de_inicio_de_sintomas &lt;dttm&gt;,</span></span>
-<span id="cb23-18"><a href="#cb23-18" tabindex="-1"></a><span class="co">#   fecha_de_muerte &lt;dttm&gt;, fecha_de_diagnostico &lt;dttm&gt;,</span></span>
-<span id="cb23-19"><a href="#cb23-19" tabindex="-1"></a><span class="co">#   fecha_de_recuperacion &lt;dttm&gt;, fecha_de_nacimiento &lt;dttm&gt;,</span></span>
-<span id="cb23-20"><a href="#cb23-20" tabindex="-1"></a><span class="co">#   nombre_del_pais &lt;chr&gt;, sintomas &lt;chr&gt;,</span></span>
-<span id="cb23-21"><a href="#cb23-21" tabindex="-1"></a><span class="co">#   numero_de_hospitalizaciones_recientes &lt;dbl&gt;, tension_sistolica &lt;dbl&gt;, …</span></span>
-<span id="cb23-22"><a href="#cb23-22" tabindex="-1"></a></span>
-<span id="cb23-23"><a href="#cb23-23" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(edad,sexo)</span>
-<span id="cb23-24"><a href="#cb23-24" tabindex="-1"></a><span class="co"># A tibble: 50,000 × 19</span></span>
-<span id="cb23-25"><a href="#cb23-25" tabindex="-1"></a>   fecha_reporte_web   id_de_caso fecha_de_notificacion  edad sexo    </span>
-<span id="cb23-26"><a href="#cb23-26" tabindex="-1"></a>   <span class="sc">&lt;</span>dttm<span class="sc">&gt;</span>                   <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dttm<span class="sc">&gt;</span>                <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>   </span>
-<span id="cb23-27"><a href="#cb23-27" tabindex="-1"></a> <span class="dv">1</span> <span class="dv">2021-06-19</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">3896591</span> <span class="dv">2021-06-17</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino</span>
-<span id="cb23-28"><a href="#cb23-28" tabindex="-1"></a> <span class="dv">2</span> <span class="dv">2021-04-11</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2525260</span> <span class="dv">2021-04-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino</span>
-<span id="cb23-29"><a href="#cb23-29" tabindex="-1"></a> <span class="dv">3</span> <span class="dv">2022-02-19</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">6039958</span> <span class="dv">2022-02-16</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino</span>
-<span id="cb23-30"><a href="#cb23-30" tabindex="-1"></a> <span class="dv">4</span> <span class="dv">2021-07-09</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4453365</span> <span class="dv">2021-06-29</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino</span>
-<span id="cb23-31"><a href="#cb23-31" tabindex="-1"></a> <span class="dv">5</span> <span class="dv">2020-12-28</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1596742</span> <span class="dv">2020-12-24</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino</span>
-<span id="cb23-32"><a href="#cb23-32" tabindex="-1"></a> <span class="dv">6</span> <span class="dv">2021-08-29</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4905206</span> <span class="dv">2021-08-12</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino</span>
-<span id="cb23-33"><a href="#cb23-33" tabindex="-1"></a> <span class="dv">7</span> <span class="dv">2022-07-28</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">6263673</span> <span class="dv">2022-07-24</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino</span>
-<span id="cb23-34"><a href="#cb23-34" tabindex="-1"></a> <span class="dv">8</span> <span class="dv">2020-10-14</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">929871</span> <span class="dv">2020-10-02</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino</span>
-<span id="cb23-35"><a href="#cb23-35" tabindex="-1"></a> <span class="dv">9</span> <span class="dv">2021-03-28</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2381786</span> <span class="dv">2021-03-25</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino</span>
-<span id="cb23-36"><a href="#cb23-36" tabindex="-1"></a><span class="dv">10</span> <span class="dv">2021-01-06</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1708679</span> <span class="dv">2021-01-04</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino</span>
-<span id="cb23-37"><a href="#cb23-37" tabindex="-1"></a><span class="co"># ℹ 49,990 more rows</span></span>
-<span id="cb23-38"><a href="#cb23-38" tabindex="-1"></a><span class="co"># ℹ 14 more variables: tipo_de_contagio &lt;chr&gt;, ubicacion_del_caso &lt;chr&gt;,</span></span>
-<span id="cb23-39"><a href="#cb23-39" tabindex="-1"></a><span class="co">#   estado &lt;chr&gt;, recuperado &lt;chr&gt;, fecha_de_inicio_de_sintomas &lt;dttm&gt;,</span></span>
-<span id="cb23-40"><a href="#cb23-40" tabindex="-1"></a><span class="co">#   fecha_de_muerte &lt;dttm&gt;, fecha_de_diagnostico &lt;dttm&gt;,</span></span>
-<span id="cb23-41"><a href="#cb23-41" tabindex="-1"></a><span class="co">#   fecha_de_recuperacion &lt;dttm&gt;, fecha_de_nacimiento &lt;dttm&gt;,</span></span>
-<span id="cb23-42"><a href="#cb23-42" tabindex="-1"></a><span class="co">#   nombre_del_pais &lt;chr&gt;, sintomas &lt;chr&gt;,</span></span>
-<span id="cb23-43"><a href="#cb23-43" tabindex="-1"></a><span class="co">#   numero_de_hospitalizaciones_recientes &lt;dbl&gt;, tension_sistolica &lt;dbl&gt;, …</span></span></code></pre>
-</div>
-<p>Por configuración predeterminada la función organiza los valores de
-menor a mayor; en caso de querer organizarlos de mayor a menor se puede
-emplear <code>desc</code> al interior de la función
-<code>arrange</code>.</p>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(edad))</span>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(edad) </span>
 <span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a><span class="co"># A tibble: 50,000 × 19</span></span>
 <span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a>   fecha_reporte_web   id_de_caso fecha_de_notificacion  edad sexo     </span>
 <span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a>   <span class="sc">&lt;</span>dttm<span class="sc">&gt;</span>                   <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dttm<span class="sc">&gt;</span>                <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>    </span>
-<span id="cb24-5"><a href="#cb24-5" tabindex="-1"></a> <span class="dv">1</span> <span class="dv">2021-06-27</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4128658</span> <span class="dv">2021-06-25</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">101</span> femenino </span>
-<span id="cb24-6"><a href="#cb24-6" tabindex="-1"></a> <span class="dv">2</span> <span class="dv">2022-02-03</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">5928342</span> <span class="dv">2022-01-28</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">101</span> femenino </span>
-<span id="cb24-7"><a href="#cb24-7" tabindex="-1"></a> <span class="dv">3</span> <span class="dv">2021-04-17</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2625780</span> <span class="dv">2021-04-16</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">101</span> femenino </span>
-<span id="cb24-8"><a href="#cb24-8" tabindex="-1"></a> <span class="dv">4</span> <span class="dv">2021-07-14</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4557691</span> <span class="dv">2021-07-09</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">101</span> femenino </span>
-<span id="cb24-9"><a href="#cb24-9" tabindex="-1"></a> <span class="dv">5</span> <span class="dv">2022-06-30</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">6153260</span> <span class="dv">2022-06-22</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">100</span> femenino </span>
-<span id="cb24-10"><a href="#cb24-10" tabindex="-1"></a> <span class="dv">6</span> <span class="dv">2020-10-16</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">942890</span> <span class="dv">2020-10-13</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">100</span> femenino </span>
-<span id="cb24-11"><a href="#cb24-11" tabindex="-1"></a> <span class="dv">7</span> <span class="dv">2022-02-10</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">6000702</span> <span class="dv">2022-01-16</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">100</span> masculino</span>
-<span id="cb24-12"><a href="#cb24-12" tabindex="-1"></a> <span class="dv">8</span> <span class="dv">2021-07-19</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4650913</span> <span class="dv">2021-07-05</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">99</span> femenino </span>
-<span id="cb24-13"><a href="#cb24-13" tabindex="-1"></a> <span class="dv">9</span> <span class="dv">2021-06-11</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">3680598</span> <span class="dv">2021-06-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">99</span> femenino </span>
-<span id="cb24-14"><a href="#cb24-14" tabindex="-1"></a><span class="dv">10</span> <span class="dv">2021-02-24</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2236252</span> <span class="dv">2021-02-23</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">99</span> masculino</span>
+<span id="cb24-5"><a href="#cb24-5" tabindex="-1"></a> <span class="dv">1</span> <span class="dv">2021-06-19</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">3896591</span> <span class="dv">2021-06-17</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino </span>
+<span id="cb24-6"><a href="#cb24-6" tabindex="-1"></a> <span class="dv">2</span> <span class="dv">2021-04-11</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2525260</span> <span class="dv">2021-04-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino </span>
+<span id="cb24-7"><a href="#cb24-7" tabindex="-1"></a> <span class="dv">3</span> <span class="dv">2022-07-28</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">6264159</span> <span class="dv">2022-07-25</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> masculino</span>
+<span id="cb24-8"><a href="#cb24-8" tabindex="-1"></a> <span class="dv">4</span> <span class="dv">2022-01-03</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">5184827</span> <span class="dv">2021-12-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> masculino</span>
+<span id="cb24-9"><a href="#cb24-9" tabindex="-1"></a> <span class="dv">5</span> <span class="dv">2022-02-19</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">6039958</span> <span class="dv">2022-02-16</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino </span>
+<span id="cb24-10"><a href="#cb24-10" tabindex="-1"></a> <span class="dv">6</span> <span class="dv">2021-10-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4967494</span> <span class="dv">2021-09-24</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> masculino</span>
+<span id="cb24-11"><a href="#cb24-11" tabindex="-1"></a> <span class="dv">7</span> <span class="dv">2022-01-13</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">5410872</span> <span class="dv">2021-12-30</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> masculino</span>
+<span id="cb24-12"><a href="#cb24-12" tabindex="-1"></a> <span class="dv">8</span> <span class="dv">2021-06-23</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4006796</span> <span class="dv">2021-06-18</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> masculino</span>
+<span id="cb24-13"><a href="#cb24-13" tabindex="-1"></a> <span class="dv">9</span> <span class="dv">2020-09-02</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">628110</span> <span class="dv">2020-08-21</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> masculino</span>
+<span id="cb24-14"><a href="#cb24-14" tabindex="-1"></a><span class="dv">10</span> <span class="dv">2021-07-09</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4453365</span> <span class="dv">2021-06-29</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino </span>
 <span id="cb24-15"><a href="#cb24-15" tabindex="-1"></a><span class="co"># ℹ 49,990 more rows</span></span>
 <span id="cb24-16"><a href="#cb24-16" tabindex="-1"></a><span class="co"># ℹ 14 more variables: tipo_de_contagio &lt;chr&gt;, ubicacion_del_caso &lt;chr&gt;,</span></span>
 <span id="cb24-17"><a href="#cb24-17" tabindex="-1"></a><span class="co">#   estado &lt;chr&gt;, recuperado &lt;chr&gt;, fecha_de_inicio_de_sintomas &lt;dttm&gt;,</span></span>
 <span id="cb24-18"><a href="#cb24-18" tabindex="-1"></a><span class="co">#   fecha_de_muerte &lt;dttm&gt;, fecha_de_diagnostico &lt;dttm&gt;,</span></span>
 <span id="cb24-19"><a href="#cb24-19" tabindex="-1"></a><span class="co">#   fecha_de_recuperacion &lt;dttm&gt;, fecha_de_nacimiento &lt;dttm&gt;,</span></span>
 <span id="cb24-20"><a href="#cb24-20" tabindex="-1"></a><span class="co">#   nombre_del_pais &lt;chr&gt;, sintomas &lt;chr&gt;,</span></span>
-<span id="cb24-21"><a href="#cb24-21" tabindex="-1"></a><span class="co">#   numero_de_hospitalizaciones_recientes &lt;dbl&gt;, tension_sistolica &lt;dbl&gt;, …</span></span></code></pre>
+<span id="cb24-21"><a href="#cb24-21" tabindex="-1"></a><span class="co">#   numero_de_hospitalizaciones_recientes &lt;dbl&gt;, tension_sistolica &lt;dbl&gt;, …</span></span>
+<span id="cb24-22"><a href="#cb24-22" tabindex="-1"></a></span>
+<span id="cb24-23"><a href="#cb24-23" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(edad,sexo)</span>
+<span id="cb24-24"><a href="#cb24-24" tabindex="-1"></a><span class="co"># A tibble: 50,000 × 19</span></span>
+<span id="cb24-25"><a href="#cb24-25" tabindex="-1"></a>   fecha_reporte_web   id_de_caso fecha_de_notificacion  edad sexo    </span>
+<span id="cb24-26"><a href="#cb24-26" tabindex="-1"></a>   <span class="sc">&lt;</span>dttm<span class="sc">&gt;</span>                   <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dttm<span class="sc">&gt;</span>                <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>   </span>
+<span id="cb24-27"><a href="#cb24-27" tabindex="-1"></a> <span class="dv">1</span> <span class="dv">2021-06-19</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">3896591</span> <span class="dv">2021-06-17</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino</span>
+<span id="cb24-28"><a href="#cb24-28" tabindex="-1"></a> <span class="dv">2</span> <span class="dv">2021-04-11</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2525260</span> <span class="dv">2021-04-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino</span>
+<span id="cb24-29"><a href="#cb24-29" tabindex="-1"></a> <span class="dv">3</span> <span class="dv">2022-02-19</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">6039958</span> <span class="dv">2022-02-16</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino</span>
+<span id="cb24-30"><a href="#cb24-30" tabindex="-1"></a> <span class="dv">4</span> <span class="dv">2021-07-09</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4453365</span> <span class="dv">2021-06-29</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino</span>
+<span id="cb24-31"><a href="#cb24-31" tabindex="-1"></a> <span class="dv">5</span> <span class="dv">2020-12-28</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1596742</span> <span class="dv">2020-12-24</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino</span>
+<span id="cb24-32"><a href="#cb24-32" tabindex="-1"></a> <span class="dv">6</span> <span class="dv">2021-08-29</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4905206</span> <span class="dv">2021-08-12</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino</span>
+<span id="cb24-33"><a href="#cb24-33" tabindex="-1"></a> <span class="dv">7</span> <span class="dv">2022-07-28</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">6263673</span> <span class="dv">2022-07-24</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino</span>
+<span id="cb24-34"><a href="#cb24-34" tabindex="-1"></a> <span class="dv">8</span> <span class="dv">2020-10-14</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">929871</span> <span class="dv">2020-10-02</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino</span>
+<span id="cb24-35"><a href="#cb24-35" tabindex="-1"></a> <span class="dv">9</span> <span class="dv">2021-03-28</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2381786</span> <span class="dv">2021-03-25</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino</span>
+<span id="cb24-36"><a href="#cb24-36" tabindex="-1"></a><span class="dv">10</span> <span class="dv">2021-01-06</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1708679</span> <span class="dv">2021-01-04</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>       <span class="dv">1</span> femenino</span>
+<span id="cb24-37"><a href="#cb24-37" tabindex="-1"></a><span class="co"># ℹ 49,990 more rows</span></span>
+<span id="cb24-38"><a href="#cb24-38" tabindex="-1"></a><span class="co"># ℹ 14 more variables: tipo_de_contagio &lt;chr&gt;, ubicacion_del_caso &lt;chr&gt;,</span></span>
+<span id="cb24-39"><a href="#cb24-39" tabindex="-1"></a><span class="co">#   estado &lt;chr&gt;, recuperado &lt;chr&gt;, fecha_de_inicio_de_sintomas &lt;dttm&gt;,</span></span>
+<span id="cb24-40"><a href="#cb24-40" tabindex="-1"></a><span class="co">#   fecha_de_muerte &lt;dttm&gt;, fecha_de_diagnostico &lt;dttm&gt;,</span></span>
+<span id="cb24-41"><a href="#cb24-41" tabindex="-1"></a><span class="co">#   fecha_de_recuperacion &lt;dttm&gt;, fecha_de_nacimiento &lt;dttm&gt;,</span></span>
+<span id="cb24-42"><a href="#cb24-42" tabindex="-1"></a><span class="co">#   nombre_del_pais &lt;chr&gt;, sintomas &lt;chr&gt;,</span></span>
+<span id="cb24-43"><a href="#cb24-43" tabindex="-1"></a><span class="co">#   numero_de_hospitalizaciones_recientes &lt;dbl&gt;, tension_sistolica &lt;dbl&gt;, …</span></span></code></pre>
+</div>
+<p>Por configuración predeterminada la función organiza los valores de
+menor a mayor; en caso de querer organizarlos de mayor a menor se puede
+emplear <code>desc</code> al interior de la función
+<code>arrange</code>.</p>
+<div class="codewrapper sourceCode" id="cb25">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(edad))</span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="co"># A tibble: 50,000 × 19</span></span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a>   fecha_reporte_web   id_de_caso fecha_de_notificacion  edad sexo     </span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a>   <span class="sc">&lt;</span>dttm<span class="sc">&gt;</span>                   <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dttm<span class="sc">&gt;</span>                <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>    </span>
+<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a> <span class="dv">1</span> <span class="dv">2021-06-27</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4128658</span> <span class="dv">2021-06-25</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">101</span> femenino </span>
+<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a> <span class="dv">2</span> <span class="dv">2022-02-03</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">5928342</span> <span class="dv">2022-01-28</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">101</span> femenino </span>
+<span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a> <span class="dv">3</span> <span class="dv">2021-04-17</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2625780</span> <span class="dv">2021-04-16</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">101</span> femenino </span>
+<span id="cb25-8"><a href="#cb25-8" tabindex="-1"></a> <span class="dv">4</span> <span class="dv">2021-07-14</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4557691</span> <span class="dv">2021-07-09</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">101</span> femenino </span>
+<span id="cb25-9"><a href="#cb25-9" tabindex="-1"></a> <span class="dv">5</span> <span class="dv">2022-06-30</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">6153260</span> <span class="dv">2022-06-22</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">100</span> femenino </span>
+<span id="cb25-10"><a href="#cb25-10" tabindex="-1"></a> <span class="dv">6</span> <span class="dv">2020-10-16</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">942890</span> <span class="dv">2020-10-13</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">100</span> femenino </span>
+<span id="cb25-11"><a href="#cb25-11" tabindex="-1"></a> <span class="dv">7</span> <span class="dv">2022-02-10</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">6000702</span> <span class="dv">2022-01-16</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">100</span> masculino</span>
+<span id="cb25-12"><a href="#cb25-12" tabindex="-1"></a> <span class="dv">8</span> <span class="dv">2021-07-19</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4650913</span> <span class="dv">2021-07-05</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">99</span> femenino </span>
+<span id="cb25-13"><a href="#cb25-13" tabindex="-1"></a> <span class="dv">9</span> <span class="dv">2021-06-11</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">3680598</span> <span class="dv">2021-06-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">99</span> femenino </span>
+<span id="cb25-14"><a href="#cb25-14" tabindex="-1"></a><span class="dv">10</span> <span class="dv">2021-02-24</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2236252</span> <span class="dv">2021-02-23</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">99</span> masculino</span>
+<span id="cb25-15"><a href="#cb25-15" tabindex="-1"></a><span class="co"># ℹ 49,990 more rows</span></span>
+<span id="cb25-16"><a href="#cb25-16" tabindex="-1"></a><span class="co"># ℹ 14 more variables: tipo_de_contagio &lt;chr&gt;, ubicacion_del_caso &lt;chr&gt;,</span></span>
+<span id="cb25-17"><a href="#cb25-17" tabindex="-1"></a><span class="co">#   estado &lt;chr&gt;, recuperado &lt;chr&gt;, fecha_de_inicio_de_sintomas &lt;dttm&gt;,</span></span>
+<span id="cb25-18"><a href="#cb25-18" tabindex="-1"></a><span class="co">#   fecha_de_muerte &lt;dttm&gt;, fecha_de_diagnostico &lt;dttm&gt;,</span></span>
+<span id="cb25-19"><a href="#cb25-19" tabindex="-1"></a><span class="co">#   fecha_de_recuperacion &lt;dttm&gt;, fecha_de_nacimiento &lt;dttm&gt;,</span></span>
+<span id="cb25-20"><a href="#cb25-20" tabindex="-1"></a><span class="co">#   nombre_del_pais &lt;chr&gt;, sintomas &lt;chr&gt;,</span></span>
+<span id="cb25-21"><a href="#cb25-21" tabindex="-1"></a><span class="co">#   numero_de_hospitalizaciones_recientes &lt;dbl&gt;, tension_sistolica &lt;dbl&gt;, …</span></span></code></pre>
 </div>
 <ul>
 <li>
@@ -1422,24 +1448,24 @@ predeterminada se ubicará al final de las variables en la tabla de
 datos. En este ejemplo, vamos a crear una variable llamada pais en la
 cual usamos la variable <code>nombre_pais</code> pero en forma de
 mayúsculas con <code>toupper</code></p>
-<div class="codewrapper sourceCode" id="cb25">
+<div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">SEXO=</span> <span class="fu">toupper</span>(sexo)) <span class="sc">%&gt;%</span> <span class="fu">select</span>(SEXO)</span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="co"># A tibble: 50,000 × 1</span></span>
-<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a>   SEXO     </span>
-<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>    </span>
-<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a> <span class="dv">1</span> MASCULINO</span>
-<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a> <span class="dv">2</span> FEMENINO </span>
-<span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a> <span class="dv">3</span> MASCULINO</span>
-<span id="cb25-8"><a href="#cb25-8" tabindex="-1"></a> <span class="dv">4</span> FEMENINO </span>
-<span id="cb25-9"><a href="#cb25-9" tabindex="-1"></a> <span class="dv">5</span> MASCULINO</span>
-<span id="cb25-10"><a href="#cb25-10" tabindex="-1"></a> <span class="dv">6</span> FEMENINO </span>
-<span id="cb25-11"><a href="#cb25-11" tabindex="-1"></a> <span class="dv">7</span> MASCULINO</span>
-<span id="cb25-12"><a href="#cb25-12" tabindex="-1"></a> <span class="dv">8</span> MASCULINO</span>
-<span id="cb25-13"><a href="#cb25-13" tabindex="-1"></a> <span class="dv">9</span> FEMENINO </span>
-<span id="cb25-14"><a href="#cb25-14" tabindex="-1"></a><span class="dv">10</span> MASCULINO</span>
-<span id="cb25-15"><a href="#cb25-15" tabindex="-1"></a><span class="co"># ℹ 49,990 more rows</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">SEXO=</span> <span class="fu">toupper</span>(sexo)) <span class="sc">%&gt;%</span> <span class="fu">select</span>(SEXO)</span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="co"># A tibble: 50,000 × 1</span></span>
+<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>   SEXO     </span>
+<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>    </span>
+<span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a> <span class="dv">1</span> MASCULINO</span>
+<span id="cb26-6"><a href="#cb26-6" tabindex="-1"></a> <span class="dv">2</span> FEMENINO </span>
+<span id="cb26-7"><a href="#cb26-7" tabindex="-1"></a> <span class="dv">3</span> MASCULINO</span>
+<span id="cb26-8"><a href="#cb26-8" tabindex="-1"></a> <span class="dv">4</span> FEMENINO </span>
+<span id="cb26-9"><a href="#cb26-9" tabindex="-1"></a> <span class="dv">5</span> MASCULINO</span>
+<span id="cb26-10"><a href="#cb26-10" tabindex="-1"></a> <span class="dv">6</span> FEMENINO </span>
+<span id="cb26-11"><a href="#cb26-11" tabindex="-1"></a> <span class="dv">7</span> MASCULINO</span>
+<span id="cb26-12"><a href="#cb26-12" tabindex="-1"></a> <span class="dv">8</span> MASCULINO</span>
+<span id="cb26-13"><a href="#cb26-13" tabindex="-1"></a> <span class="dv">9</span> FEMENINO </span>
+<span id="cb26-14"><a href="#cb26-14" tabindex="-1"></a><span class="dv">10</span> MASCULINO</span>
+<span id="cb26-15"><a href="#cb26-15" tabindex="-1"></a><span class="co"># ℹ 49,990 more rows</span></span></code></pre>
 </div>
 </li>
 <li><p><strong><code>rename</code> (renombrar)</strong></p></li>
@@ -1448,30 +1474,30 @@ mayúsculas con <code>toupper</code></p>
 una ya existente, conviene usar la función <code>rename</code>. Por
 ejemplo, para cambiar el nombre <code>nombre_del_pais</code> por el
 nombre <code>pais</code> usamos:</p>
-<div class="codewrapper sourceCode" id="cb26">
+<div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">rename</span>(edad_años <span class="ot">=</span> edad)</span>
-<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="co"># A tibble: 50,000 × 19</span></span>
-<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>   fecha_reporte_web   id_de_caso fecha_de_notificacion edad_años sexo     </span>
-<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a>   <span class="sc">&lt;</span>dttm<span class="sc">&gt;</span>                   <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dttm<span class="sc">&gt;</span>                    <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>    </span>
-<span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a> <span class="dv">1</span> <span class="dv">2021-07-14</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4565159</span> <span class="dv">2021-07-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">23</span> masculino</span>
-<span id="cb26-6"><a href="#cb26-6" tabindex="-1"></a> <span class="dv">2</span> <span class="dv">2021-04-24</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2747373</span> <span class="dv">2021-04-21</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">15</span> femenino </span>
-<span id="cb26-7"><a href="#cb26-7" tabindex="-1"></a> <span class="dv">3</span> <span class="dv">2021-05-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2963299</span> <span class="dv">2021-05-04</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">11</span> masculino</span>
-<span id="cb26-8"><a href="#cb26-8" tabindex="-1"></a> <span class="dv">4</span> <span class="dv">2020-12-24</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1552683</span> <span class="dv">2020-12-21</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">39</span> femenino </span>
-<span id="cb26-9"><a href="#cb26-9" tabindex="-1"></a> <span class="dv">5</span> <span class="dv">2020-10-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1018415</span> <span class="dv">2020-10-23</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">25</span> masculino</span>
-<span id="cb26-10"><a href="#cb26-10" tabindex="-1"></a> <span class="dv">6</span> <span class="dv">2020-08-09</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">380193</span> <span class="dv">2020-07-25</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>           <span class="dv">8</span> femenino </span>
-<span id="cb26-11"><a href="#cb26-11" tabindex="-1"></a> <span class="dv">7</span> <span class="dv">2021-06-04</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">3503818</span> <span class="dv">2021-06-02</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">53</span> masculino</span>
-<span id="cb26-12"><a href="#cb26-12" tabindex="-1"></a> <span class="dv">8</span> <span class="dv">2021-05-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">3270945</span> <span class="dv">2021-05-14</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">29</span> masculino</span>
-<span id="cb26-13"><a href="#cb26-13" tabindex="-1"></a> <span class="dv">9</span> <span class="dv">2021-02-16</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2201217</span> <span class="dv">2021-02-13</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">41</span> femenino </span>
-<span id="cb26-14"><a href="#cb26-14" tabindex="-1"></a><span class="dv">10</span> <span class="dv">2020-10-30</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1056515</span> <span class="dv">2020-10-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">61</span> masculino</span>
-<span id="cb26-15"><a href="#cb26-15" tabindex="-1"></a><span class="co"># ℹ 49,990 more rows</span></span>
-<span id="cb26-16"><a href="#cb26-16" tabindex="-1"></a><span class="co"># ℹ 14 more variables: tipo_de_contagio &lt;chr&gt;, ubicacion_del_caso &lt;chr&gt;,</span></span>
-<span id="cb26-17"><a href="#cb26-17" tabindex="-1"></a><span class="co">#   estado &lt;chr&gt;, recuperado &lt;chr&gt;, fecha_de_inicio_de_sintomas &lt;dttm&gt;,</span></span>
-<span id="cb26-18"><a href="#cb26-18" tabindex="-1"></a><span class="co">#   fecha_de_muerte &lt;dttm&gt;, fecha_de_diagnostico &lt;dttm&gt;,</span></span>
-<span id="cb26-19"><a href="#cb26-19" tabindex="-1"></a><span class="co">#   fecha_de_recuperacion &lt;dttm&gt;, fecha_de_nacimiento &lt;dttm&gt;,</span></span>
-<span id="cb26-20"><a href="#cb26-20" tabindex="-1"></a><span class="co">#   nombre_del_pais &lt;chr&gt;, sintomas &lt;chr&gt;,</span></span>
-<span id="cb26-21"><a href="#cb26-21" tabindex="-1"></a><span class="co">#   numero_de_hospitalizaciones_recientes &lt;dbl&gt;, tension_sistolica &lt;dbl&gt;, …</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">rename</span>(edad_años <span class="ot">=</span> edad)</span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="co"># A tibble: 50,000 × 19</span></span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>   fecha_reporte_web   id_de_caso fecha_de_notificacion edad_años sexo     </span>
+<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>   <span class="sc">&lt;</span>dttm<span class="sc">&gt;</span>                   <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dttm<span class="sc">&gt;</span>                    <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>    </span>
+<span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a> <span class="dv">1</span> <span class="dv">2021-07-14</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">4565159</span> <span class="dv">2021-07-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">23</span> masculino</span>
+<span id="cb27-6"><a href="#cb27-6" tabindex="-1"></a> <span class="dv">2</span> <span class="dv">2021-04-24</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2747373</span> <span class="dv">2021-04-21</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">15</span> femenino </span>
+<span id="cb27-7"><a href="#cb27-7" tabindex="-1"></a> <span class="dv">3</span> <span class="dv">2021-05-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2963299</span> <span class="dv">2021-05-04</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">11</span> masculino</span>
+<span id="cb27-8"><a href="#cb27-8" tabindex="-1"></a> <span class="dv">4</span> <span class="dv">2020-12-24</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1552683</span> <span class="dv">2020-12-21</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">39</span> femenino </span>
+<span id="cb27-9"><a href="#cb27-9" tabindex="-1"></a> <span class="dv">5</span> <span class="dv">2020-10-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1018415</span> <span class="dv">2020-10-23</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">25</span> masculino</span>
+<span id="cb27-10"><a href="#cb27-10" tabindex="-1"></a> <span class="dv">6</span> <span class="dv">2020-08-09</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">380193</span> <span class="dv">2020-07-25</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>           <span class="dv">8</span> femenino </span>
+<span id="cb27-11"><a href="#cb27-11" tabindex="-1"></a> <span class="dv">7</span> <span class="dv">2021-06-04</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">3503818</span> <span class="dv">2021-06-02</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">53</span> masculino</span>
+<span id="cb27-12"><a href="#cb27-12" tabindex="-1"></a> <span class="dv">8</span> <span class="dv">2021-05-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">3270945</span> <span class="dv">2021-05-14</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">29</span> masculino</span>
+<span id="cb27-13"><a href="#cb27-13" tabindex="-1"></a> <span class="dv">9</span> <span class="dv">2021-02-16</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">2201217</span> <span class="dv">2021-02-13</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">41</span> femenino </span>
+<span id="cb27-14"><a href="#cb27-14" tabindex="-1"></a><span class="dv">10</span> <span class="dv">2020-10-30</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1056515</span> <span class="dv">2020-10-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>          <span class="dv">61</span> masculino</span>
+<span id="cb27-15"><a href="#cb27-15" tabindex="-1"></a><span class="co"># ℹ 49,990 more rows</span></span>
+<span id="cb27-16"><a href="#cb27-16" tabindex="-1"></a><span class="co"># ℹ 14 more variables: tipo_de_contagio &lt;chr&gt;, ubicacion_del_caso &lt;chr&gt;,</span></span>
+<span id="cb27-17"><a href="#cb27-17" tabindex="-1"></a><span class="co">#   estado &lt;chr&gt;, recuperado &lt;chr&gt;, fecha_de_inicio_de_sintomas &lt;dttm&gt;,</span></span>
+<span id="cb27-18"><a href="#cb27-18" tabindex="-1"></a><span class="co">#   fecha_de_muerte &lt;dttm&gt;, fecha_de_diagnostico &lt;dttm&gt;,</span></span>
+<span id="cb27-19"><a href="#cb27-19" tabindex="-1"></a><span class="co">#   fecha_de_recuperacion &lt;dttm&gt;, fecha_de_nacimiento &lt;dttm&gt;,</span></span>
+<span id="cb27-20"><a href="#cb27-20" tabindex="-1"></a><span class="co">#   nombre_del_pais &lt;chr&gt;, sintomas &lt;chr&gt;,</span></span>
+<span id="cb27-21"><a href="#cb27-21" tabindex="-1"></a><span class="co">#   numero_de_hospitalizaciones_recientes &lt;dbl&gt;, tension_sistolica &lt;dbl&gt;, …</span></span></code></pre>
 </div>
 <ul>
 <li><strong><code>slice</code></strong></li>
@@ -1480,27 +1506,42 @@ nombre <code>pais</code> usamos:</p>
 función <code>select</code>. En caso de requerir seleccionar filas
 específicas de un <code>data.frame</code>, la función slice resulta de
 gran utilidad. Por ejemplo, para seleccionar de la fila 10 a la 15:</p>
-<div class="codewrapper sourceCode" id="cb27">
+<div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">15</span>)</span>
-<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="co"># A tibble: 6 × 19</span></span>
-<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>  fecha_reporte_web   id_de_caso fecha_de_notificacion  edad sexo     </span>
-<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>  <span class="sc">&lt;</span>dttm<span class="sc">&gt;</span>                   <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dttm<span class="sc">&gt;</span>                <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>    </span>
-<span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a><span class="dv">1</span> <span class="dv">2020-10-30</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1056515</span> <span class="dv">2020-10-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">61</span> masculino</span>
-<span id="cb27-6"><a href="#cb27-6" tabindex="-1"></a><span class="dv">2</span> <span class="dv">2020-09-25</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">798355</span> <span class="dv">2020-09-25</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">13</span> femenino </span>
-<span id="cb27-7"><a href="#cb27-7" tabindex="-1"></a><span class="dv">3</span> <span class="dv">2021-01-04</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1680221</span> <span class="dv">2020-12-29</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">57</span> masculino</span>
-<span id="cb27-8"><a href="#cb27-8" tabindex="-1"></a><span class="dv">4</span> <span class="dv">2022-07-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">6184438</span> <span class="dv">2022-07-03</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">23</span> masculino</span>
-<span id="cb27-9"><a href="#cb27-9" tabindex="-1"></a><span class="dv">5</span> <span class="dv">2022-01-16</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">5535687</span> <span class="dv">2022-01-15</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">29</span> masculino</span>
-<span id="cb27-10"><a href="#cb27-10" tabindex="-1"></a><span class="dv">6</span> <span class="dv">2021-05-27</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">3294426</span> <span class="dv">2021-05-15</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">52</span> masculino</span>
-<span id="cb27-11"><a href="#cb27-11" tabindex="-1"></a><span class="co"># ℹ 14 more variables: tipo_de_contagio &lt;chr&gt;, ubicacion_del_caso &lt;chr&gt;,</span></span>
-<span id="cb27-12"><a href="#cb27-12" tabindex="-1"></a><span class="co">#   estado &lt;chr&gt;, recuperado &lt;chr&gt;, fecha_de_inicio_de_sintomas &lt;dttm&gt;,</span></span>
-<span id="cb27-13"><a href="#cb27-13" tabindex="-1"></a><span class="co">#   fecha_de_muerte &lt;dttm&gt;, fecha_de_diagnostico &lt;dttm&gt;,</span></span>
-<span id="cb27-14"><a href="#cb27-14" tabindex="-1"></a><span class="co">#   fecha_de_recuperacion &lt;dttm&gt;, fecha_de_nacimiento &lt;dttm&gt;,</span></span>
-<span id="cb27-15"><a href="#cb27-15" tabindex="-1"></a><span class="co">#   nombre_del_pais &lt;chr&gt;, sintomas &lt;chr&gt;,</span></span>
-<span id="cb27-16"><a href="#cb27-16" tabindex="-1"></a><span class="co">#   numero_de_hospitalizaciones_recientes &lt;dbl&gt;, tension_sistolica &lt;dbl&gt;,</span></span>
-<span id="cb27-17"><a href="#cb27-17" tabindex="-1"></a><span class="co">#   tension_diastolica &lt;dbl&gt;</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">15</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a><span class="co"># A tibble: 6 × 19</span></span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a>  fecha_reporte_web   id_de_caso fecha_de_notificacion  edad sexo     </span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a>  <span class="sc">&lt;</span>dttm<span class="sc">&gt;</span>                   <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dttm<span class="sc">&gt;</span>                <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>    </span>
+<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a><span class="dv">1</span> <span class="dv">2020-10-30</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1056515</span> <span class="dv">2020-10-26</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">61</span> masculino</span>
+<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a><span class="dv">2</span> <span class="dv">2020-09-25</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>     <span class="dv">798355</span> <span class="dv">2020-09-25</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">13</span> femenino </span>
+<span id="cb28-7"><a href="#cb28-7" tabindex="-1"></a><span class="dv">3</span> <span class="dv">2021-01-04</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">1680221</span> <span class="dv">2020-12-29</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">57</span> masculino</span>
+<span id="cb28-8"><a href="#cb28-8" tabindex="-1"></a><span class="dv">4</span> <span class="dv">2022-07-07</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">6184438</span> <span class="dv">2022-07-03</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">23</span> masculino</span>
+<span id="cb28-9"><a href="#cb28-9" tabindex="-1"></a><span class="dv">5</span> <span class="dv">2022-01-16</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">5535687</span> <span class="dv">2022-01-15</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">29</span> masculino</span>
+<span id="cb28-10"><a href="#cb28-10" tabindex="-1"></a><span class="dv">6</span> <span class="dv">2021-05-27</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>    <span class="dv">3294426</span> <span class="dv">2021-05-15</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span><span class="dv">00</span>      <span class="dv">52</span> masculino</span>
+<span id="cb28-11"><a href="#cb28-11" tabindex="-1"></a><span class="co"># ℹ 14 more variables: tipo_de_contagio &lt;chr&gt;, ubicacion_del_caso &lt;chr&gt;,</span></span>
+<span id="cb28-12"><a href="#cb28-12" tabindex="-1"></a><span class="co">#   estado &lt;chr&gt;, recuperado &lt;chr&gt;, fecha_de_inicio_de_sintomas &lt;dttm&gt;,</span></span>
+<span id="cb28-13"><a href="#cb28-13" tabindex="-1"></a><span class="co">#   fecha_de_muerte &lt;dttm&gt;, fecha_de_diagnostico &lt;dttm&gt;,</span></span>
+<span id="cb28-14"><a href="#cb28-14" tabindex="-1"></a><span class="co">#   fecha_de_recuperacion &lt;dttm&gt;, fecha_de_nacimiento &lt;dttm&gt;,</span></span>
+<span id="cb28-15"><a href="#cb28-15" tabindex="-1"></a><span class="co">#   nombre_del_pais &lt;chr&gt;, sintomas &lt;chr&gt;,</span></span>
+<span id="cb28-16"><a href="#cb28-16" tabindex="-1"></a><span class="co">#   numero_de_hospitalizaciones_recientes &lt;dbl&gt;, tension_sistolica &lt;dbl&gt;,</span></span>
+<span id="cb28-17"><a href="#cb28-17" tabindex="-1"></a><span class="co">#   tension_diastolica &lt;dbl&gt;</span></span></code></pre>
 </div>
+<p>Si se desea modificar un objeto ya creado con estas funciones,
+también se debe usar el operador de asignación. Ejemplo:</p>
+<div class="codewrapper sourceCode" id="cb29">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">objeto</span> <span class="op">&lt;-</span> <span class="va">objeto</span> <span class="op">%&gt;%</span> <span class="fu">mutate</span><span class="op">(</span>nueva_columna <span class="op">=</span> <span class="va">contenido_nuevo</span><span class="op">)</span></span></code></pre>
+</div>
+<p>Si se realiza sin asignación el cambio solo se verá reflejado en la
+consola. Recuerde tener seguridad de querer guardar el cambio (esta
+acción podría ser irreversible). Si quiere conocer más sobre errores
+frecuentes y como prevenirlos visite nuestro banco de errores.</p>
+<center>
+<p><a href="https://epiverse-trace.github.io/epitkit/Banco_errores.html" class="external-link"><img src="../fig/dudas.png" width="100" class="figure"></a></p>
+</center>
 <div id="actividad-de-afianzamiento" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -1513,7 +1554,7 @@ siguiente link podrás descargarlos <a href="https://github.com/TRACE-LAC/TRACE-
 Los datos pueden ser cargados desde el computador o desde una ubicación
 en internet. Para cargar los datos <code>datos_limpios_covid.RDS</code>
 directamente desde internet se deben usar los comandos:</p>
-<div class="codewrapper sourceCode" id="cb28">
+<div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1544,6 +1585,9 @@ del caso (<code>id_de_caso</code>).</li>
 </div>
 </div>
 </div>
+<center>
+<p><a href="https://epiverse-trace.github.io/epitkit/Banco_errores.html" class="external-link"><img src="../fig/dudas.png" width="100" class="figure"></a></p>
+</center>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1593,7 +1637,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-Visualizacion"><p>Content from <a href="Visualizacion.html">Introduccion a la visualizacion de datos en R con ggplot2.</a></p>
 <hr>
-<p>Última actualización: 2024-10-22 |
+<p>Última actualización: 2024-10-28 |
 
         <a href="https://github.com/epiverse-trace/epitkit/edit/main/episodes/Visualizacion.Rmd" class="external-link">Mejora esta página <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Tiempo estimado: <i aria-hidden="true" data-feather="clock"></i> 84 minutos</p>
@@ -2156,6 +2200,9 @@ y alto.</p></li>
 </div>
 </div>
 </div>
+<center>
+<p><a href="https://epiverse-trace.github.io/epitkit/Banco_errores.html" class="external-link"><img src="../fig/dudas.png" width="100" class="figure"></a></p>
+</center>
 <div class="section level4">
 <h4 id="ejemplo-5--gráfico-con-escala-logarítmica">Ejemplo 5. Gráfico con escala logarítmica<a class="anchor" aria-label="anchor" href="#ejemplo-5--gr%C3%A1fico-con-escala-logar%C3%ADtmica"></a>
 </h4>
@@ -2241,7 +2288,7 @@ la variable <code>sexo</code> ¿cómo cambiaría el código?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Mostrar la solución </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2372,6 +2419,9 @@ subtitle de la siguiente forma:</p>
 </div>
 </div>
 </div>
+<center>
+<p><a href="https://epiverse-trace.github.io/epitkit/Banco_errores.html" class="external-link"><img src="../fig/dudas.png" width="100" class="figure"></a></p>
+</center>
 </div>
 </div>
 <div class="section level3">
@@ -2396,7 +2446,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-Reporte"><p>Content from <a href="Reporte.html">Reporte e informes tecnicos en R Markdown</a></p>
 <hr>
-<p>Última actualización: 2024-10-22 |
+<p>Última actualización: 2024-10-28 |
 
         <a href="https://github.com/epiverse-trace/epitkit/edit/main/episodes/Reporte.Rmd" class="external-link">Mejora esta página <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Tiempo estimado: <i aria-hidden="true" data-feather="clock"></i> 44 minutos</p>
@@ -2817,6 +2867,9 @@ femenino.</p>
 </div>
 <p>¡Felicitaciones, ha producido su primer reporte R Markdown en
 html!</p>
+<center>
+<p><a href="https://epiverse-trace.github.io/epitkit/Banco_errores.html" class="external-link"><img src="../fig/dudas.png" width="100" class="figure"></a></p>
+</center>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -2854,9 +2907,9 @@ Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </div>
-</section></section><section id="aio-limpieza"><p>Content from <a href="limpieza.html">Unidad de Limpieza de datos epidemiológicos</a></p>
+</section></section><section id="aio-limpieza"><p>Content from <a href="limpieza.html">Limpieza de datos epidemiológicos</a></p>
 <hr>
-<p>Última actualización: 2024-10-22 |
+<p>Última actualización: 2024-10-28 |
 
         <a href="https://github.com/epiverse-trace/epitkit/edit/main/episodes/limpieza.Rmd" class="external-link">Mejora esta página <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Tiempo estimado: <i aria-hidden="true" data-feather="clock"></i> 44 minutos</p>
@@ -3002,8 +3055,8 @@ carpeta “datos”</p></li>
 <p><strong>Resultado esperado:</strong> Hasta este punto, el proyecto se
 debería ver así:</p>
 <figure><img src="../fig/vista_proyecto.png" class="figure mx-auto d-block"></figure><ol start="6" style="list-style-type: decimal">
-<li>
-<p>Cargue las librerías: tidyverse, rio y cleanepi.</p>
+<li>Cargue las librerías: tidyverse, rio y cleanepi.</li>
+</ol>
 <div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -3023,8 +3076,6 @@ debería ver así:</p>
 </div>
 </div>
 </div>
-</li>
-</ol>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -3474,7 +3525,9 @@ contenido de la variable <code>sexo</code>:</p>
 </div>
 <p><strong>Resultado esperado:</strong> Al usar el anterior código con
 el mismo dataset se obtiene el siguiente resultado:</p>
-<figure><img src="../fig/limpieza-rendered-unnamed-chunk-28-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure>
+<img src="../fig/limpieza-rendered-unnamed-chunk-28-1.png" style="display: block; margin: auto;" class="figure"><center>
+<p><a href="https://epiverse-trace.github.io/epitkit/Banco_errores.html" class="external-link"><img src="../fig/dudas.png" width="100" class="figure"></a></p>
+</center>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="tema-3-modificación-limpieza-y-corrección-de-los-datos-errores-frecuentes-y-sus-soluciones">
@@ -4331,6 +4384,9 @@ seleccionado como correcto, “Casa”.</p>
 <span id="cb66-5"><a href="#cb66-5" tabindex="-1"></a>        Casa    Fallecido     Hospital Hospital UCI          N<span class="sc">/</span>A         <span class="sc">&lt;</span><span class="cn">NA</span><span class="sc">&gt;</span> </span>
 <span id="cb66-6"><a href="#cb66-6" tabindex="-1"></a>       <span class="dv">74852</span>         <span class="dv">1727</span>           <span class="dv">12</span>            <span class="dv">1</span>          <span class="dv">407</span>            <span class="dv">0</span> </span></code></pre>
 </div>
+<center>
+<p><a href="https://epiverse-trace.github.io/epitkit/Banco_errores.html" class="external-link"><img src="../fig/dudas.png" width="100" class="figure"></a></p>
+</center>
 </div>
 <div class="section level4">
 <h4 id="reemplazar-valores-perdidos">
@@ -4718,6 +4774,9 @@ sexo para ver los cambios:</p>
 <span id="cb86-5"><a href="#cb86-5" tabindex="-1"></a>masculino  femenino      <span class="sc">&lt;</span><span class="cn">NA</span><span class="sc">&gt;</span> </span>
 <span id="cb86-6"><a href="#cb86-6" tabindex="-1"></a>    <span class="dv">35627</span>     <span class="dv">40962</span>         <span class="dv">0</span> </span></code></pre>
 </div>
+<center>
+<p><a href="https://epiverse-trace.github.io/epitkit/Banco_errores.html" class="external-link"><img src="../fig/dudas.png" width="100" class="figure"></a></p>
+</center>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="tema-4-organización-de-los-datos">
@@ -4806,6 +4865,9 @@ llamado datos_limpios_covid.RDS. También puede almacenar el archivo en
 formato .xls o .xlsx para Excel, así como en otros múltiples formatos.
 Sin embargo, se recomienda RDS por su bajo peso y capacidad de
 almacenamiento.</p>
+<center>
+<p><a href="https://epiverse-trace.github.io/epitkit/Banco_errores.html" class="external-link"><img src="../fig/dudas.png" width="100" class="figure"></a></p>
+</center>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -4848,7 +4910,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-Banco_errores"><p>Content from <a href="Banco_errores.html">Banco de preguntas y errores frecuentes</a></p>
 <hr>
-<p>Última actualización: 2024-10-22 |
+<p>Última actualización: 2024-10-28 |
 
         <a href="https://github.com/epiverse-trace/epitkit/edit/main/episodes/Banco_errores.Rmd" class="external-link">Mejora esta página <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Tiempo estimado: <i aria-hidden="true" data-feather="clock"></i> 88 minutos</p>
@@ -5080,14 +5142,13 @@ orden correcto.</p></li>
 <ol style="list-style-type: decimal">
 <li><p>Usar <code>++</code> en lugar de <code>+</code> para concatenar
 funciones.</p></li>
-<li>
-<p>También puede ocurrir que el <code>+</code> queda en la línea de
+<li><p>También puede ocurrir que el <code>+</code> queda en la línea de
 abajo, es importante destacar que para concatenar funciones debe estar
-al terminar la línea anterior a la que se quiere concadenar.</p>
-<figure><img src="../fig/bpggplot.png" class="figure mx-auto d-block"></figure>
-</li>
+al terminar la línea anterior a la que se quiere concadenar.</p></li>
 </ol>
 </li>
+</ul>
+<figure><img src="../fig/bpggplot.png" class="figure mx-auto d-block"></figure><ul>
 <li>
 <p>No especificar estéticas (aesthetics):</p>
 <ol style="list-style-type: decimal">
@@ -5178,12 +5239,18 @@ superior lateral derecha.</p>
 <h3 id="no-funciona-el-pipe">No funciona el pipe <code>%&gt;%</code>
 <a class="anchor" aria-label="anchor" href="#no-funciona-el-pipe"></a>
 </h3>
-<p>Recuerde que es importante cargar previamente una librería
-quecontenga el pipe. Por ejemplo: <code>magrittr</code>,
-<code>dplyr</code>, <code>tidyr</code> o <code>purrr</code>.</p>
+<p>Recuerde los siguientes puntos:</p>
+<ul>
+<li>Es importante cargar previamente una librería que contenga el pipe.
+Por ejemplo: <code>magrittr</code>, <code>dplyr</code>,
+<code>tidyr</code> o <code>purrr</code>.</li>
+<li>El pipe debe ir al final de la línea que se va a conectar. No al
+inicio de la línea conectada:</li>
+</ul>
+<figure><img src="../fig/bp_pipe.png" class="figure mx-auto d-block"></figure>
 </div>
 <div class="section level3">
-<h3 id="prevención">Cómo evitar accidentes<a class="anchor" aria-label="anchor" href="#prevenci%C3%B3n"></a>
+<h3 id="prevencion">¿Cómo evitar accidentes?<a class="anchor" aria-label="anchor" href="#prevencion"></a>
 </h3>
 <p>Cuando se va a almacenar cambios en el objeto donde esta almacenado
 el dataframe, es recomendable tener algunas precauciones para evitar
@@ -5241,7 +5308,8 @@ ejemplo, se cambió el carácter incorrecto en una cadena de texto.</p>
 <p>-          Cargar los datos a partir de un respaldo. Si hemos creado
 respaldos del proceso podemos evitarnos tiempos largo de procesamiento.
 Entre estos respaldos están las variables de respaldo o los objetos de
-respaldo (ver (Cómo evitar accidentes)[prevencion]).</p>
+respaldo (ver <a href="Banco_errores.html#prevencion">¿Cómo evitar
+accidentes?</a>).</p>
 </div>
 <div class="section level3">
 <h3 id="uso-de-la-función-rename">Uso de la función <code>rename</code>
@@ -5294,8 +5362,7 @@ por ejemplo seleccionar los datos en el encabezado de cada grupo.</p>
 </div>
 </div>
 <div class="section level3">
-<h3 id="cómo-usar-summarise">Cómo usar <code>summarise</code>
-<a class="anchor" aria-label="anchor" href="#c%C3%B3mo-usar-summarise"></a>
+<h3 id="cómo-usar-summarise">¿Cómo usar <code>summarise</code>?<a class="anchor" aria-label="anchor" href="#c%C3%B3mo-usar-summarise"></a>
 </h3>
 <p>1.      Llame la base de datos</p>
 <div class="codewrapper sourceCode" id="cb20">
@@ -5344,6 +5411,208 @@ ejemplo,</p>
 </div>
 </div>
 <div class="section level3">
+<h3 id="errores-relacionados-a-grupos-group_by-y-ungroup">Errores relacionados a grupos (group_by y ungroup)<a class="anchor" aria-label="anchor" href="#errores-relacionados-a-grupos-group_by-y-ungroup"></a>
+</h3>
+<ul>
+<li>Un error muy frecuente es que se almacena el objeto agrupado
+(<code>group_by</code>), dado que no se realizó la acción de desagrupar
+al final. Esto puede generar errores como cálculos incorrectos,
+resúmenes por grupo en lugar de sobre la totalidad de los datos, y
+problemas al realizar operaciones subsecuentes en el conjunto de datos.
+Por ello, recomendamos siempre emplear (<code>ungroup</code>) antes de
+almacenar. Para usar <code>ungroup()</code> basta con ponerlo al
+final.</li>
+</ul>
+<div class="codewrapper sourceCode" id="cb25">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">datos</span> <span class="op">&lt;-</span> <span class="va">datos</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">categoria</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">procesamiento_de_datos</span><span class="op">(</span><span class="va">...</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> </span></code></pre>
+</div>
+<p>Veamos un ejemplo de un error que puede ocurrir por no
+desagrupar:</p>
+<div class="codewrapper sourceCode" id="cb26">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></span>
+<span><span class="fu">set.seed</span><span class="op">(</span><span class="fl">123</span><span class="op">)</span> <span class="co"># Para reproducibilidad</span></span>
+<span><span class="co">#dataframe de ejemplo</span></span>
+<span><span class="va">tipo_sanguineo</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"O"</span>,<span class="st">"AB"</span><span class="op">)</span></span>
+<span><span class="va">rh</span> <span class="op">&lt;-</span> <span class="fu">sample</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="st">"+"</span>, <span class="st">"-"</span><span class="op">)</span>, <span class="fl">10</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">dia</span> <span class="op">&lt;-</span><span class="fu">c</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span></span>
+<span><span class="va">f_latidos</span> <span class="op">&lt;-</span> <span class="fu">sample</span><span class="op">(</span><span class="fl">60</span><span class="op">:</span><span class="fl">100</span>, <span class="fl">200</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">f_respiratoria</span> <span class="op">&lt;-</span> <span class="fu">sample</span><span class="op">(</span><span class="fl">12</span><span class="op">:</span><span class="fl">20</span>, <span class="fl">200</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">data.frame</span><span class="op">(</span><span class="va">tipo_sanguineo</span>, <span class="va">rh</span>, <span class="va">dia</span>, <span class="va">f_latidos</span>, <span class="va">f_respiratoria</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#resumen por columnas</span></span>
+<span><span class="va">por_dia</span> <span class="op">&lt;-</span> <span class="va">df</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">tipo_sanguineo</span>,<span class="va">rh</span>, <span class="va">dia</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">summarize</span><span class="op">(</span></span>
+<span>    f_l <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">f_latidos</span><span class="op">)</span>, </span>
+<span>    f_r <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">f_respiratoria</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code></pre>
+</div>
+<p>Creemos una variable que contenga id únicos por cada fila</p>
+<div class="codewrapper sourceCode" id="cb27">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>por_dia <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">row_number</span>())</span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="co"># A tibble: 20 × 6</span></span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a><span class="co"># Groups:   tipo_sanguineo, rh [8]</span></span>
+<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>   tipo_sanguineo rh      dia   f_l   f_r    id</span>
+<span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>          <span class="er">&lt;</span>chr<span class="sc">&gt;</span> <span class="er">&lt;</span>int<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>int<span class="sc">&gt;</span></span>
+<span id="cb27-6"><a href="#cb27-6" tabindex="-1"></a> <span class="dv">1</span> A              <span class="sc">+</span>         <span class="dv">1</span>  <span class="fl">76.3</span>  <span class="fl">15.2</span>     <span class="dv">1</span></span>
+<span id="cb27-7"><a href="#cb27-7" tabindex="-1"></a> <span class="dv">2</span> A              <span class="sc">+</span>         <span class="dv">3</span>  <span class="fl">81.5</span>  <span class="fl">16.6</span>     <span class="dv">2</span></span>
+<span id="cb27-8"><a href="#cb27-8" tabindex="-1"></a> <span class="dv">3</span> A              <span class="sc">+</span>         <span class="dv">4</span>  <span class="fl">81.2</span>  <span class="fl">15.6</span>     <span class="dv">3</span></span>
+<span id="cb27-9"><a href="#cb27-9" tabindex="-1"></a> <span class="dv">4</span> A              <span class="sc">+</span>         <span class="dv">5</span>  <span class="dv">81</span>    <span class="fl">15.9</span>     <span class="dv">4</span></span>
+<span id="cb27-10"><a href="#cb27-10" tabindex="-1"></a> <span class="dv">5</span> A              <span class="sc">-</span>         <span class="dv">2</span>  <span class="fl">78.3</span>  <span class="fl">16.2</span>     <span class="dv">1</span></span>
+<span id="cb27-11"><a href="#cb27-11" tabindex="-1"></a> <span class="dv">6</span> AB             <span class="sc">+</span>         <span class="dv">2</span>  <span class="fl">79.3</span>  <span class="dv">16</span>       <span class="dv">1</span></span>
+<span id="cb27-12"><a href="#cb27-12" tabindex="-1"></a> <span class="dv">7</span> AB             <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">73.1</span>  <span class="fl">17.4</span>     <span class="dv">2</span></span>
+<span id="cb27-13"><a href="#cb27-13" tabindex="-1"></a> <span class="dv">8</span> AB             <span class="sc">-</span>         <span class="dv">1</span>  <span class="dv">83</span>    <span class="fl">16.6</span>     <span class="dv">1</span></span>
+<span id="cb27-14"><a href="#cb27-14" tabindex="-1"></a> <span class="dv">9</span> AB             <span class="sc">-</span>         <span class="dv">3</span>  <span class="fl">79.8</span>  <span class="dv">15</span>       <span class="dv">2</span></span>
+<span id="cb27-15"><a href="#cb27-15" tabindex="-1"></a><span class="dv">10</span> AB             <span class="sc">-</span>         <span class="dv">4</span>  <span class="fl">84.8</span>  <span class="fl">17.4</span>     <span class="dv">3</span></span>
+<span id="cb27-16"><a href="#cb27-16" tabindex="-1"></a><span class="dv">11</span> B              <span class="sc">+</span>         <span class="dv">2</span>  <span class="fl">77.8</span>  <span class="fl">16.4</span>     <span class="dv">1</span></span>
+<span id="cb27-17"><a href="#cb27-17" tabindex="-1"></a><span class="dv">12</span> B              <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">83.8</span>  <span class="fl">14.6</span>     <span class="dv">2</span></span>
+<span id="cb27-18"><a href="#cb27-18" tabindex="-1"></a><span class="dv">13</span> B              <span class="sc">-</span>         <span class="dv">1</span>  <span class="fl">74.5</span>  <span class="fl">14.9</span>     <span class="dv">1</span></span>
+<span id="cb27-19"><a href="#cb27-19" tabindex="-1"></a><span class="dv">14</span> B              <span class="sc">-</span>         <span class="dv">3</span>  <span class="fl">85.1</span>  <span class="fl">16.2</span>     <span class="dv">2</span></span>
+<span id="cb27-20"><a href="#cb27-20" tabindex="-1"></a><span class="dv">15</span> B              <span class="sc">-</span>         <span class="dv">4</span>  <span class="fl">83.3</span>  <span class="fl">16.6</span>     <span class="dv">3</span></span>
+<span id="cb27-21"><a href="#cb27-21" tabindex="-1"></a><span class="dv">16</span> O              <span class="sc">+</span>         <span class="dv">1</span>  <span class="fl">80.3</span>  <span class="dv">15</span>       <span class="dv">1</span></span>
+<span id="cb27-22"><a href="#cb27-22" tabindex="-1"></a><span class="dv">17</span> O              <span class="sc">+</span>         <span class="dv">3</span>  <span class="fl">78.9</span>  <span class="fl">14.8</span>     <span class="dv">2</span></span>
+<span id="cb27-23"><a href="#cb27-23" tabindex="-1"></a><span class="dv">18</span> O              <span class="sc">+</span>         <span class="dv">4</span>  <span class="fl">81.2</span>  <span class="fl">14.9</span>     <span class="dv">3</span></span>
+<span id="cb27-24"><a href="#cb27-24" tabindex="-1"></a><span class="dv">19</span> O              <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">84.9</span>  <span class="dv">15</span>       <span class="dv">4</span></span>
+<span id="cb27-25"><a href="#cb27-25" tabindex="-1"></a><span class="dv">20</span> O              <span class="sc">-</span>         <span class="dv">2</span>  <span class="fl">80.7</span>  <span class="fl">16.1</span>     <span class="dv">1</span></span></code></pre>
+</div>
+<p>Cómo puede observar en la columna id en lugar de identificadores
+únicos tenemos id que se repiten. ¿Por qué sucedió si cada fila es
+diferente?</p>
+<p>La razón a este problema subyace en que los datos siguen agrupados.
+Aún si no aplicamos directamente el <code>ungroup</code> como se explico
+antes, todavía podemos solucionarlo.</p>
+<p>Veamos como no se solucionaría primero. Un error frecuente al tratar
+de solucionar este problema es aplicar la función ungroup sin almacenar
+el resultado.</p>
+<div class="codewrapper sourceCode" id="cb28">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="co"># aplicación equivocada de ungroup</span></span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>por_dia <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>() </span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a><span class="co"># A tibble: 20 × 5</span></span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a>   tipo_sanguineo rh      dia   f_l   f_r</span>
+<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>          <span class="er">&lt;</span>chr<span class="sc">&gt;</span> <span class="er">&lt;</span>int<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a> <span class="dv">1</span> A              <span class="sc">+</span>         <span class="dv">1</span>  <span class="fl">76.3</span>  <span class="fl">15.2</span></span>
+<span id="cb28-7"><a href="#cb28-7" tabindex="-1"></a> <span class="dv">2</span> A              <span class="sc">+</span>         <span class="dv">3</span>  <span class="fl">81.5</span>  <span class="fl">16.6</span></span>
+<span id="cb28-8"><a href="#cb28-8" tabindex="-1"></a> <span class="dv">3</span> A              <span class="sc">+</span>         <span class="dv">4</span>  <span class="fl">81.2</span>  <span class="fl">15.6</span></span>
+<span id="cb28-9"><a href="#cb28-9" tabindex="-1"></a> <span class="dv">4</span> A              <span class="sc">+</span>         <span class="dv">5</span>  <span class="dv">81</span>    <span class="fl">15.9</span></span>
+<span id="cb28-10"><a href="#cb28-10" tabindex="-1"></a> <span class="dv">5</span> A              <span class="sc">-</span>         <span class="dv">2</span>  <span class="fl">78.3</span>  <span class="fl">16.2</span></span>
+<span id="cb28-11"><a href="#cb28-11" tabindex="-1"></a> <span class="dv">6</span> AB             <span class="sc">+</span>         <span class="dv">2</span>  <span class="fl">79.3</span>  <span class="dv">16</span>  </span>
+<span id="cb28-12"><a href="#cb28-12" tabindex="-1"></a> <span class="dv">7</span> AB             <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">73.1</span>  <span class="fl">17.4</span></span>
+<span id="cb28-13"><a href="#cb28-13" tabindex="-1"></a> <span class="dv">8</span> AB             <span class="sc">-</span>         <span class="dv">1</span>  <span class="dv">83</span>    <span class="fl">16.6</span></span>
+<span id="cb28-14"><a href="#cb28-14" tabindex="-1"></a> <span class="dv">9</span> AB             <span class="sc">-</span>         <span class="dv">3</span>  <span class="fl">79.8</span>  <span class="dv">15</span>  </span>
+<span id="cb28-15"><a href="#cb28-15" tabindex="-1"></a><span class="dv">10</span> AB             <span class="sc">-</span>         <span class="dv">4</span>  <span class="fl">84.8</span>  <span class="fl">17.4</span></span>
+<span id="cb28-16"><a href="#cb28-16" tabindex="-1"></a><span class="dv">11</span> B              <span class="sc">+</span>         <span class="dv">2</span>  <span class="fl">77.8</span>  <span class="fl">16.4</span></span>
+<span id="cb28-17"><a href="#cb28-17" tabindex="-1"></a><span class="dv">12</span> B              <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">83.8</span>  <span class="fl">14.6</span></span>
+<span id="cb28-18"><a href="#cb28-18" tabindex="-1"></a><span class="dv">13</span> B              <span class="sc">-</span>         <span class="dv">1</span>  <span class="fl">74.5</span>  <span class="fl">14.9</span></span>
+<span id="cb28-19"><a href="#cb28-19" tabindex="-1"></a><span class="dv">14</span> B              <span class="sc">-</span>         <span class="dv">3</span>  <span class="fl">85.1</span>  <span class="fl">16.2</span></span>
+<span id="cb28-20"><a href="#cb28-20" tabindex="-1"></a><span class="dv">15</span> B              <span class="sc">-</span>         <span class="dv">4</span>  <span class="fl">83.3</span>  <span class="fl">16.6</span></span>
+<span id="cb28-21"><a href="#cb28-21" tabindex="-1"></a><span class="dv">16</span> O              <span class="sc">+</span>         <span class="dv">1</span>  <span class="fl">80.3</span>  <span class="dv">15</span>  </span>
+<span id="cb28-22"><a href="#cb28-22" tabindex="-1"></a><span class="dv">17</span> O              <span class="sc">+</span>         <span class="dv">3</span>  <span class="fl">78.9</span>  <span class="fl">14.8</span></span>
+<span id="cb28-23"><a href="#cb28-23" tabindex="-1"></a><span class="dv">18</span> O              <span class="sc">+</span>         <span class="dv">4</span>  <span class="fl">81.2</span>  <span class="fl">14.9</span></span>
+<span id="cb28-24"><a href="#cb28-24" tabindex="-1"></a><span class="dv">19</span> O              <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">84.9</span>  <span class="dv">15</span>  </span>
+<span id="cb28-25"><a href="#cb28-25" tabindex="-1"></a><span class="dv">20</span> O              <span class="sc">-</span>         <span class="dv">2</span>  <span class="fl">80.7</span>  <span class="fl">16.1</span></span>
+<span id="cb28-26"><a href="#cb28-26" tabindex="-1"></a></span>
+<span id="cb28-27"><a href="#cb28-27" tabindex="-1"></a><span class="co"># si bien desagrupa el objeto para imprimirlo, </span></span>
+<span id="cb28-28"><a href="#cb28-28" tabindex="-1"></a><span class="co"># mientras no se almacene  el objeto serguirá agrupado</span></span>
+<span id="cb28-29"><a href="#cb28-29" tabindex="-1"></a>por_dia <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">row_number</span>())</span>
+<span id="cb28-30"><a href="#cb28-30" tabindex="-1"></a><span class="co"># A tibble: 20 × 6</span></span>
+<span id="cb28-31"><a href="#cb28-31" tabindex="-1"></a><span class="co"># Groups:   tipo_sanguineo, rh [8]</span></span>
+<span id="cb28-32"><a href="#cb28-32" tabindex="-1"></a>   tipo_sanguineo rh      dia   f_l   f_r    id</span>
+<span id="cb28-33"><a href="#cb28-33" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>          <span class="er">&lt;</span>chr<span class="sc">&gt;</span> <span class="er">&lt;</span>int<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>int<span class="sc">&gt;</span></span>
+<span id="cb28-34"><a href="#cb28-34" tabindex="-1"></a> <span class="dv">1</span> A              <span class="sc">+</span>         <span class="dv">1</span>  <span class="fl">76.3</span>  <span class="fl">15.2</span>     <span class="dv">1</span></span>
+<span id="cb28-35"><a href="#cb28-35" tabindex="-1"></a> <span class="dv">2</span> A              <span class="sc">+</span>         <span class="dv">3</span>  <span class="fl">81.5</span>  <span class="fl">16.6</span>     <span class="dv">2</span></span>
+<span id="cb28-36"><a href="#cb28-36" tabindex="-1"></a> <span class="dv">3</span> A              <span class="sc">+</span>         <span class="dv">4</span>  <span class="fl">81.2</span>  <span class="fl">15.6</span>     <span class="dv">3</span></span>
+<span id="cb28-37"><a href="#cb28-37" tabindex="-1"></a> <span class="dv">4</span> A              <span class="sc">+</span>         <span class="dv">5</span>  <span class="dv">81</span>    <span class="fl">15.9</span>     <span class="dv">4</span></span>
+<span id="cb28-38"><a href="#cb28-38" tabindex="-1"></a> <span class="dv">5</span> A              <span class="sc">-</span>         <span class="dv">2</span>  <span class="fl">78.3</span>  <span class="fl">16.2</span>     <span class="dv">1</span></span>
+<span id="cb28-39"><a href="#cb28-39" tabindex="-1"></a> <span class="dv">6</span> AB             <span class="sc">+</span>         <span class="dv">2</span>  <span class="fl">79.3</span>  <span class="dv">16</span>       <span class="dv">1</span></span>
+<span id="cb28-40"><a href="#cb28-40" tabindex="-1"></a> <span class="dv">7</span> AB             <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">73.1</span>  <span class="fl">17.4</span>     <span class="dv">2</span></span>
+<span id="cb28-41"><a href="#cb28-41" tabindex="-1"></a> <span class="dv">8</span> AB             <span class="sc">-</span>         <span class="dv">1</span>  <span class="dv">83</span>    <span class="fl">16.6</span>     <span class="dv">1</span></span>
+<span id="cb28-42"><a href="#cb28-42" tabindex="-1"></a> <span class="dv">9</span> AB             <span class="sc">-</span>         <span class="dv">3</span>  <span class="fl">79.8</span>  <span class="dv">15</span>       <span class="dv">2</span></span>
+<span id="cb28-43"><a href="#cb28-43" tabindex="-1"></a><span class="dv">10</span> AB             <span class="sc">-</span>         <span class="dv">4</span>  <span class="fl">84.8</span>  <span class="fl">17.4</span>     <span class="dv">3</span></span>
+<span id="cb28-44"><a href="#cb28-44" tabindex="-1"></a><span class="dv">11</span> B              <span class="sc">+</span>         <span class="dv">2</span>  <span class="fl">77.8</span>  <span class="fl">16.4</span>     <span class="dv">1</span></span>
+<span id="cb28-45"><a href="#cb28-45" tabindex="-1"></a><span class="dv">12</span> B              <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">83.8</span>  <span class="fl">14.6</span>     <span class="dv">2</span></span>
+<span id="cb28-46"><a href="#cb28-46" tabindex="-1"></a><span class="dv">13</span> B              <span class="sc">-</span>         <span class="dv">1</span>  <span class="fl">74.5</span>  <span class="fl">14.9</span>     <span class="dv">1</span></span>
+<span id="cb28-47"><a href="#cb28-47" tabindex="-1"></a><span class="dv">14</span> B              <span class="sc">-</span>         <span class="dv">3</span>  <span class="fl">85.1</span>  <span class="fl">16.2</span>     <span class="dv">2</span></span>
+<span id="cb28-48"><a href="#cb28-48" tabindex="-1"></a><span class="dv">15</span> B              <span class="sc">-</span>         <span class="dv">4</span>  <span class="fl">83.3</span>  <span class="fl">16.6</span>     <span class="dv">3</span></span>
+<span id="cb28-49"><a href="#cb28-49" tabindex="-1"></a><span class="dv">16</span> O              <span class="sc">+</span>         <span class="dv">1</span>  <span class="fl">80.3</span>  <span class="dv">15</span>       <span class="dv">1</span></span>
+<span id="cb28-50"><a href="#cb28-50" tabindex="-1"></a><span class="dv">17</span> O              <span class="sc">+</span>         <span class="dv">3</span>  <span class="fl">78.9</span>  <span class="fl">14.8</span>     <span class="dv">2</span></span>
+<span id="cb28-51"><a href="#cb28-51" tabindex="-1"></a><span class="dv">18</span> O              <span class="sc">+</span>         <span class="dv">4</span>  <span class="fl">81.2</span>  <span class="fl">14.9</span>     <span class="dv">3</span></span>
+<span id="cb28-52"><a href="#cb28-52" tabindex="-1"></a><span class="dv">19</span> O              <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">84.9</span>  <span class="dv">15</span>       <span class="dv">4</span></span>
+<span id="cb28-53"><a href="#cb28-53" tabindex="-1"></a><span class="dv">20</span> O              <span class="sc">-</span>         <span class="dv">2</span>  <span class="fl">80.7</span>  <span class="fl">16.1</span>     <span class="dv">1</span></span></code></pre>
+</div>
+<p>Como puede observar el problema no se ha corregido.</p>
+<p>Para conrregirlo podemos o incluir el <code>ungroup</code> desde el
+inicio cuando creamos el objeto <code>por_dia</code>, o aplicar el
+cambio y guardarlo en el objeto:</p>
+<div class="codewrapper sourceCode" id="cb29">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="co">#ahora estamos almacenando el desagrupamiento</span></span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>por_dia_sin_grupo <span class="ot">&lt;-</span> por_dia <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>()</span>
+<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" tabindex="-1"></a>por_dia_sin_grupo <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">row_number</span>())</span>
+<span id="cb29-5"><a href="#cb29-5" tabindex="-1"></a><span class="co"># A tibble: 20 × 6</span></span>
+<span id="cb29-6"><a href="#cb29-6" tabindex="-1"></a>   tipo_sanguineo rh      dia   f_l   f_r    id</span>
+<span id="cb29-7"><a href="#cb29-7" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>          <span class="er">&lt;</span>chr<span class="sc">&gt;</span> <span class="er">&lt;</span>int<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>int<span class="sc">&gt;</span></span>
+<span id="cb29-8"><a href="#cb29-8" tabindex="-1"></a> <span class="dv">1</span> A              <span class="sc">+</span>         <span class="dv">1</span>  <span class="fl">76.3</span>  <span class="fl">15.2</span>     <span class="dv">1</span></span>
+<span id="cb29-9"><a href="#cb29-9" tabindex="-1"></a> <span class="dv">2</span> A              <span class="sc">+</span>         <span class="dv">3</span>  <span class="fl">81.5</span>  <span class="fl">16.6</span>     <span class="dv">2</span></span>
+<span id="cb29-10"><a href="#cb29-10" tabindex="-1"></a> <span class="dv">3</span> A              <span class="sc">+</span>         <span class="dv">4</span>  <span class="fl">81.2</span>  <span class="fl">15.6</span>     <span class="dv">3</span></span>
+<span id="cb29-11"><a href="#cb29-11" tabindex="-1"></a> <span class="dv">4</span> A              <span class="sc">+</span>         <span class="dv">5</span>  <span class="dv">81</span>    <span class="fl">15.9</span>     <span class="dv">4</span></span>
+<span id="cb29-12"><a href="#cb29-12" tabindex="-1"></a> <span class="dv">5</span> A              <span class="sc">-</span>         <span class="dv">2</span>  <span class="fl">78.3</span>  <span class="fl">16.2</span>     <span class="dv">5</span></span>
+<span id="cb29-13"><a href="#cb29-13" tabindex="-1"></a> <span class="dv">6</span> AB             <span class="sc">+</span>         <span class="dv">2</span>  <span class="fl">79.3</span>  <span class="dv">16</span>       <span class="dv">6</span></span>
+<span id="cb29-14"><a href="#cb29-14" tabindex="-1"></a> <span class="dv">7</span> AB             <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">73.1</span>  <span class="fl">17.4</span>     <span class="dv">7</span></span>
+<span id="cb29-15"><a href="#cb29-15" tabindex="-1"></a> <span class="dv">8</span> AB             <span class="sc">-</span>         <span class="dv">1</span>  <span class="dv">83</span>    <span class="fl">16.6</span>     <span class="dv">8</span></span>
+<span id="cb29-16"><a href="#cb29-16" tabindex="-1"></a> <span class="dv">9</span> AB             <span class="sc">-</span>         <span class="dv">3</span>  <span class="fl">79.8</span>  <span class="dv">15</span>       <span class="dv">9</span></span>
+<span id="cb29-17"><a href="#cb29-17" tabindex="-1"></a><span class="dv">10</span> AB             <span class="sc">-</span>         <span class="dv">4</span>  <span class="fl">84.8</span>  <span class="fl">17.4</span>    <span class="dv">10</span></span>
+<span id="cb29-18"><a href="#cb29-18" tabindex="-1"></a><span class="dv">11</span> B              <span class="sc">+</span>         <span class="dv">2</span>  <span class="fl">77.8</span>  <span class="fl">16.4</span>    <span class="dv">11</span></span>
+<span id="cb29-19"><a href="#cb29-19" tabindex="-1"></a><span class="dv">12</span> B              <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">83.8</span>  <span class="fl">14.6</span>    <span class="dv">12</span></span>
+<span id="cb29-20"><a href="#cb29-20" tabindex="-1"></a><span class="dv">13</span> B              <span class="sc">-</span>         <span class="dv">1</span>  <span class="fl">74.5</span>  <span class="fl">14.9</span>    <span class="dv">13</span></span>
+<span id="cb29-21"><a href="#cb29-21" tabindex="-1"></a><span class="dv">14</span> B              <span class="sc">-</span>         <span class="dv">3</span>  <span class="fl">85.1</span>  <span class="fl">16.2</span>    <span class="dv">14</span></span>
+<span id="cb29-22"><a href="#cb29-22" tabindex="-1"></a><span class="dv">15</span> B              <span class="sc">-</span>         <span class="dv">4</span>  <span class="fl">83.3</span>  <span class="fl">16.6</span>    <span class="dv">15</span></span>
+<span id="cb29-23"><a href="#cb29-23" tabindex="-1"></a><span class="dv">16</span> O              <span class="sc">+</span>         <span class="dv">1</span>  <span class="fl">80.3</span>  <span class="dv">15</span>      <span class="dv">16</span></span>
+<span id="cb29-24"><a href="#cb29-24" tabindex="-1"></a><span class="dv">17</span> O              <span class="sc">+</span>         <span class="dv">3</span>  <span class="fl">78.9</span>  <span class="fl">14.8</span>    <span class="dv">17</span></span>
+<span id="cb29-25"><a href="#cb29-25" tabindex="-1"></a><span class="dv">18</span> O              <span class="sc">+</span>         <span class="dv">4</span>  <span class="fl">81.2</span>  <span class="fl">14.9</span>    <span class="dv">18</span></span>
+<span id="cb29-26"><a href="#cb29-26" tabindex="-1"></a><span class="dv">19</span> O              <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">84.9</span>  <span class="dv">15</span>      <span class="dv">19</span></span>
+<span id="cb29-27"><a href="#cb29-27" tabindex="-1"></a><span class="dv">20</span> O              <span class="sc">-</span>         <span class="dv">2</span>  <span class="fl">80.7</span>  <span class="fl">16.1</span>    <span class="dv">20</span></span></code></pre>
+</div>
+<p>Como puede observar ahora si tenemos cada fila con su propio id.</p>
+<p>Advertencia: Es importante aclarar que el desagrupamiento en los
+escenarios anteriores iría después de la operación, sin embargo, en este
+caso iría antes de la operación.</p>
+</div>
+<div class="section level3">
+<h3 id="cuando-trato-de-crear-un-pdf-en-rmarkdown-me-sale-error">Cuando trato de crear un pdf en RMarkdown me sale error<a class="anchor" aria-label="anchor" href="#cuando-trato-de-crear-un-pdf-en-rmarkdown-me-sale-error"></a>
+</h3>
+<p>Si el archivo sale correctamente en otros formatos a excepción de
+pdf. Una de las situaciones más frecuentes es que falte la instalación
+de LaTeX: RMarkdown necesita LaTeX para generar PDFs. Asegúrate de tener
+LaTeX instalado en tu sistema.</p>
+<p>Para instalar LaTeX desde RStudio, puede usar el paquete TinyTeX:</p>
+<div class="codewrapper sourceCode" id="cb30">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">install.packages</span><span class="op">(</span><span class="st">"tinytex"</span><span class="op">)</span></span>
+<span><span class="fu">tinytex</span><span class="fu">::</span><span class="fu">install_tinytex</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+<p>Configure RStudio:</p>
+<p>Vaya a Tools &gt; Global Options &gt; Sweave.</p>
+<p>Asegúrese de que la opción “Typeset PDF” esté configurada para usar
+TinyTeX.</p>
+</div>
+<div class="section level3">
 <h3 id="material-adicional-que-puede-aportar-a-su-aprendizaje">Material adicional que puede aportar a su aprendizaje:<a class="anchor" aria-label="anchor" href="#material-adicional-que-puede-aportar-a-su-aprendizaje"></a>
 </h3>
 <p><strong>Manejo de datos con Tidyverse y R:</strong></p>
@@ -5361,9 +5630,9 @@ por favor diligencie el siguiente formulario <a href="https://forms.office.com/p
 </div>
 </div>
 </div>
-<div class="section level3">
-<h3 id="contribuciones">Contribuciones<a class="anchor" aria-label="anchor" href="#contribuciones"></a>
-</h3>
+</section><section><h2 class="section-heading" id="contribuciones">Contribuciones<a class="anchor" aria-label="anchor" href="#contribuciones"></a>
+</h2>
+<hr class="half-width">
 <ul>
 <li><p>José M. Velasco-España: Versión inicial</p></li>
 <li><p>Andree Valle-Campos: Ediciones menores</p></li>
@@ -5373,9 +5642,7 @@ por favor diligencie el siguiente formulario <a href="https://forms.office.com/p
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- -->
-</div>
-</section></section>
+ --></section></section>
 </div>
     </main>
 </div>
@@ -5423,8 +5690,8 @@ any links that you are not going to use.
   "url": "https://epiverse-trace.github.io/epitkit/instructor/aio.html",
   "identifier": "https://epiverse-trace.github.io/epitkit/instructor/aio.html",
   "dateCreated": "2024-09-09",
-  "dateModified": "2024-10-23",
-  "datePublished": "2024-10-23"
+  "dateModified": "2024-10-28",
+  "datePublished": "2024-10-28"
 }
 
   </script><script>

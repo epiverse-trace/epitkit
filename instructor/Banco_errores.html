@@ -239,7 +239,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="limpieza.html">4. Unidad de Limpieza de datos epidemiológicos</a>
+        <a href="limpieza.html">4. Limpieza de datos epidemiológicos</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -259,6 +259,7 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#banco-de-preguntas">Banco de preguntas</a></li>
+<li><a href="#contribuciones">Contribuciones</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -314,7 +315,7 @@
       <div class="d-none d-sm-none d-md-block">
         <a class="chapter-link" href="../instructor/limpieza.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
-          Previo: Unidad de Limpieza
+          Previo: Limpieza de datos
         </a>
         <a class="chapter-link float-end" href="../instructor/index.html" rel="next">
           Inicio
@@ -323,7 +324,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Banco de preguntas y errores frecuentes</h1>
-        <p>Última actualización: 2024-10-22 |
+        <p>Última actualización: 2024-10-28 |
 
         <a href="https://github.com/epiverse-trace/epitkit/edit/main/episodes/Banco_errores.Rmd" class="external-link">Mejora esta página <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -515,13 +516,11 @@ orden correcto.</p></li>
 <p>Sintaxis incorrecta:</p>
 <ol style="list-style-type: decimal"><li><p>Usar <code>++</code> en lugar de <code>+</code> para concatenar
 funciones.</p></li>
-<li>
-<p>También puede ocurrir que el <code>+</code> queda en la línea de
+<li><p>También puede ocurrir que el <code>+</code> queda en la línea de
 abajo, es importante destacar que para concatenar funciones debe estar
-al terminar la línea anterior a la que se quiere concadenar.</p>
-<figure><img src="../fig/bpggplot.png" class="figure mx-auto d-block"></figure></li>
+al terminar la línea anterior a la que se quiere concadenar.</p></li>
 </ol></li>
-<li>
+</ul><figure><img src="../fig/bpggplot.png" class="figure mx-auto d-block"></figure><ul><li>
 <p>No especificar estéticas (aesthetics):</p>
 <ol style="list-style-type: decimal"><li>No incluir <code>aes()</code>.</li>
 <li>No definir <code>aes()</code> correctamente, por ejemplo, no indicar
@@ -600,12 +599,15 @@ superior lateral derecha.</p>
 <div class="section level3">
 <h3 id="no-funciona-el-pipe">No funciona el pipe <code>%&gt;%</code>
 <a class="anchor" aria-label="anchor" href="#no-funciona-el-pipe"></a></h3>
-<p>Recuerde que es importante cargar previamente una librería
-quecontenga el pipe. Por ejemplo: <code>magrittr</code>,
-<code>dplyr</code>, <code>tidyr</code> o <code>purrr</code>.</p>
-</div>
+<p>Recuerde los siguientes puntos:</p>
+<ul><li>Es importante cargar previamente una librería que contenga el pipe.
+Por ejemplo: <code>magrittr</code>, <code>dplyr</code>,
+<code>tidyr</code> o <code>purrr</code>.</li>
+<li>El pipe debe ir al final de la línea que se va a conectar. No al
+inicio de la línea conectada:</li>
+</ul><figure><img src="../fig/bp_pipe.png" class="figure mx-auto d-block"></figure></div>
 <div class="section level3">
-<h3 id="prevención">Cómo evitar accidentes<a class="anchor" aria-label="anchor" href="#prevenci%C3%B3n"></a></h3>
+<h3 id="prevencion">¿Cómo evitar accidentes?<a class="anchor" aria-label="anchor" href="#prevencion"></a></h3>
 <p>Cuando se va a almacenar cambios en el objeto donde esta almacenado
 el dataframe, es recomendable tener algunas precauciones para evitar
 perder información:</p>
@@ -650,7 +652,8 @@ ejemplo, se cambió el carácter incorrecto en una cadena de texto.</p>
 <p>-          Cargar los datos a partir de un respaldo. Si hemos creado
 respaldos del proceso podemos evitarnos tiempos largo de procesamiento.
 Entre estos respaldos están las variables de respaldo o los objetos de
-respaldo (ver (Cómo evitar accidentes)[prevencion]).</p>
+respaldo (ver <a href="Banco_errores.html#prevencion">¿Cómo evitar
+accidentes?</a>).</p>
 </div>
 <div class="section level3">
 <h3 id="uso-de-la-función-rename">Uso de la función <code>rename</code>
@@ -702,8 +705,7 @@ por ejemplo seleccionar los datos en el encabezado de cada grupo.</p>
 </div>
 </div>
 <div class="section level3">
-<h3 id="cómo-usar-summarise">Cómo usar <code>summarise</code>
-<a class="anchor" aria-label="anchor" href="#c%C3%B3mo-usar-summarise"></a></h3>
+<h3 id="cómo-usar-summarise">¿Cómo usar <code>summarise</code>?<a class="anchor" aria-label="anchor" href="#c%C3%B3mo-usar-summarise"></a></h3>
 <p>1.      Llame la base de datos</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -751,6 +753,204 @@ ejemplo,</p>
 </div>
 </div>
 <div class="section level3">
+<h3 id="errores-relacionados-a-grupos-group_by-y-ungroup">Errores relacionados a grupos (group_by y ungroup)<a class="anchor" aria-label="anchor" href="#errores-relacionados-a-grupos-group_by-y-ungroup"></a></h3>
+<ul><li>Un error muy frecuente es que se almacena el objeto agrupado
+(<code>group_by</code>), dado que no se realizó la acción de desagrupar
+al final. Esto puede generar errores como cálculos incorrectos,
+resúmenes por grupo en lugar de sobre la totalidad de los datos, y
+problemas al realizar operaciones subsecuentes en el conjunto de datos.
+Por ello, recomendamos siempre emplear (<code>ungroup</code>) antes de
+almacenar. Para usar <code>ungroup()</code> basta con ponerlo al
+final.</li>
+</ul><div class="codewrapper sourceCode" id="cb25">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">datos</span> <span class="op">&lt;-</span> <span class="va">datos</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">categoria</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">procesamiento_de_datos</span><span class="op">(</span><span class="va">...</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span> </span></code></pre>
+</div>
+<p>Veamos un ejemplo de un error que puede ocurrir por no
+desagrupar:</p>
+<div class="codewrapper sourceCode" id="cb26">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></span>
+<span><span class="fu">set.seed</span><span class="op">(</span><span class="fl">123</span><span class="op">)</span> <span class="co"># Para reproducibilidad</span></span>
+<span><span class="co">#dataframe de ejemplo</span></span>
+<span><span class="va">tipo_sanguineo</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"O"</span>,<span class="st">"AB"</span><span class="op">)</span></span>
+<span><span class="va">rh</span> <span class="op">&lt;-</span> <span class="fu">sample</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="st">"+"</span>, <span class="st">"-"</span><span class="op">)</span>, <span class="fl">10</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">dia</span> <span class="op">&lt;-</span><span class="fu">c</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span></span>
+<span><span class="va">f_latidos</span> <span class="op">&lt;-</span> <span class="fu">sample</span><span class="op">(</span><span class="fl">60</span><span class="op">:</span><span class="fl">100</span>, <span class="fl">200</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">f_respiratoria</span> <span class="op">&lt;-</span> <span class="fu">sample</span><span class="op">(</span><span class="fl">12</span><span class="op">:</span><span class="fl">20</span>, <span class="fl">200</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">data.frame</span><span class="op">(</span><span class="va">tipo_sanguineo</span>, <span class="va">rh</span>, <span class="va">dia</span>, <span class="va">f_latidos</span>, <span class="va">f_respiratoria</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#resumen por columnas</span></span>
+<span><span class="va">por_dia</span> <span class="op">&lt;-</span> <span class="va">df</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">tipo_sanguineo</span>,<span class="va">rh</span>, <span class="va">dia</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">summarize</span><span class="op">(</span></span>
+<span>    f_l <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">f_latidos</span><span class="op">)</span>, </span>
+<span>    f_r <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">f_respiratoria</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code></pre>
+</div>
+<p>Creemos una variable que contenga id únicos por cada fila</p>
+<div class="codewrapper sourceCode" id="cb27">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>por_dia <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">row_number</span>())</span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="co"># A tibble: 20 × 6</span></span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a><span class="co"># Groups:   tipo_sanguineo, rh [8]</span></span>
+<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>   tipo_sanguineo rh      dia   f_l   f_r    id</span>
+<span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>          <span class="er">&lt;</span>chr<span class="sc">&gt;</span> <span class="er">&lt;</span>int<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>int<span class="sc">&gt;</span></span>
+<span id="cb27-6"><a href="#cb27-6" tabindex="-1"></a> <span class="dv">1</span> A              <span class="sc">+</span>         <span class="dv">1</span>  <span class="fl">76.3</span>  <span class="fl">15.2</span>     <span class="dv">1</span></span>
+<span id="cb27-7"><a href="#cb27-7" tabindex="-1"></a> <span class="dv">2</span> A              <span class="sc">+</span>         <span class="dv">3</span>  <span class="fl">81.5</span>  <span class="fl">16.6</span>     <span class="dv">2</span></span>
+<span id="cb27-8"><a href="#cb27-8" tabindex="-1"></a> <span class="dv">3</span> A              <span class="sc">+</span>         <span class="dv">4</span>  <span class="fl">81.2</span>  <span class="fl">15.6</span>     <span class="dv">3</span></span>
+<span id="cb27-9"><a href="#cb27-9" tabindex="-1"></a> <span class="dv">4</span> A              <span class="sc">+</span>         <span class="dv">5</span>  <span class="dv">81</span>    <span class="fl">15.9</span>     <span class="dv">4</span></span>
+<span id="cb27-10"><a href="#cb27-10" tabindex="-1"></a> <span class="dv">5</span> A              <span class="sc">-</span>         <span class="dv">2</span>  <span class="fl">78.3</span>  <span class="fl">16.2</span>     <span class="dv">1</span></span>
+<span id="cb27-11"><a href="#cb27-11" tabindex="-1"></a> <span class="dv">6</span> AB             <span class="sc">+</span>         <span class="dv">2</span>  <span class="fl">79.3</span>  <span class="dv">16</span>       <span class="dv">1</span></span>
+<span id="cb27-12"><a href="#cb27-12" tabindex="-1"></a> <span class="dv">7</span> AB             <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">73.1</span>  <span class="fl">17.4</span>     <span class="dv">2</span></span>
+<span id="cb27-13"><a href="#cb27-13" tabindex="-1"></a> <span class="dv">8</span> AB             <span class="sc">-</span>         <span class="dv">1</span>  <span class="dv">83</span>    <span class="fl">16.6</span>     <span class="dv">1</span></span>
+<span id="cb27-14"><a href="#cb27-14" tabindex="-1"></a> <span class="dv">9</span> AB             <span class="sc">-</span>         <span class="dv">3</span>  <span class="fl">79.8</span>  <span class="dv">15</span>       <span class="dv">2</span></span>
+<span id="cb27-15"><a href="#cb27-15" tabindex="-1"></a><span class="dv">10</span> AB             <span class="sc">-</span>         <span class="dv">4</span>  <span class="fl">84.8</span>  <span class="fl">17.4</span>     <span class="dv">3</span></span>
+<span id="cb27-16"><a href="#cb27-16" tabindex="-1"></a><span class="dv">11</span> B              <span class="sc">+</span>         <span class="dv">2</span>  <span class="fl">77.8</span>  <span class="fl">16.4</span>     <span class="dv">1</span></span>
+<span id="cb27-17"><a href="#cb27-17" tabindex="-1"></a><span class="dv">12</span> B              <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">83.8</span>  <span class="fl">14.6</span>     <span class="dv">2</span></span>
+<span id="cb27-18"><a href="#cb27-18" tabindex="-1"></a><span class="dv">13</span> B              <span class="sc">-</span>         <span class="dv">1</span>  <span class="fl">74.5</span>  <span class="fl">14.9</span>     <span class="dv">1</span></span>
+<span id="cb27-19"><a href="#cb27-19" tabindex="-1"></a><span class="dv">14</span> B              <span class="sc">-</span>         <span class="dv">3</span>  <span class="fl">85.1</span>  <span class="fl">16.2</span>     <span class="dv">2</span></span>
+<span id="cb27-20"><a href="#cb27-20" tabindex="-1"></a><span class="dv">15</span> B              <span class="sc">-</span>         <span class="dv">4</span>  <span class="fl">83.3</span>  <span class="fl">16.6</span>     <span class="dv">3</span></span>
+<span id="cb27-21"><a href="#cb27-21" tabindex="-1"></a><span class="dv">16</span> O              <span class="sc">+</span>         <span class="dv">1</span>  <span class="fl">80.3</span>  <span class="dv">15</span>       <span class="dv">1</span></span>
+<span id="cb27-22"><a href="#cb27-22" tabindex="-1"></a><span class="dv">17</span> O              <span class="sc">+</span>         <span class="dv">3</span>  <span class="fl">78.9</span>  <span class="fl">14.8</span>     <span class="dv">2</span></span>
+<span id="cb27-23"><a href="#cb27-23" tabindex="-1"></a><span class="dv">18</span> O              <span class="sc">+</span>         <span class="dv">4</span>  <span class="fl">81.2</span>  <span class="fl">14.9</span>     <span class="dv">3</span></span>
+<span id="cb27-24"><a href="#cb27-24" tabindex="-1"></a><span class="dv">19</span> O              <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">84.9</span>  <span class="dv">15</span>       <span class="dv">4</span></span>
+<span id="cb27-25"><a href="#cb27-25" tabindex="-1"></a><span class="dv">20</span> O              <span class="sc">-</span>         <span class="dv">2</span>  <span class="fl">80.7</span>  <span class="fl">16.1</span>     <span class="dv">1</span></span></code></pre>
+</div>
+<p>Cómo puede observar en la columna id en lugar de identificadores
+únicos tenemos id que se repiten. ¿Por qué sucedió si cada fila es
+diferente?</p>
+<p>La razón a este problema subyace en que los datos siguen agrupados.
+Aún si no aplicamos directamente el <code>ungroup</code> como se explico
+antes, todavía podemos solucionarlo.</p>
+<p>Veamos como no se solucionaría primero. Un error frecuente al tratar
+de solucionar este problema es aplicar la función ungroup sin almacenar
+el resultado.</p>
+<div class="codewrapper sourceCode" id="cb28">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="co"># aplicación equivocada de ungroup</span></span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>por_dia <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>() </span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a><span class="co"># A tibble: 20 × 5</span></span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a>   tipo_sanguineo rh      dia   f_l   f_r</span>
+<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>          <span class="er">&lt;</span>chr<span class="sc">&gt;</span> <span class="er">&lt;</span>int<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a> <span class="dv">1</span> A              <span class="sc">+</span>         <span class="dv">1</span>  <span class="fl">76.3</span>  <span class="fl">15.2</span></span>
+<span id="cb28-7"><a href="#cb28-7" tabindex="-1"></a> <span class="dv">2</span> A              <span class="sc">+</span>         <span class="dv">3</span>  <span class="fl">81.5</span>  <span class="fl">16.6</span></span>
+<span id="cb28-8"><a href="#cb28-8" tabindex="-1"></a> <span class="dv">3</span> A              <span class="sc">+</span>         <span class="dv">4</span>  <span class="fl">81.2</span>  <span class="fl">15.6</span></span>
+<span id="cb28-9"><a href="#cb28-9" tabindex="-1"></a> <span class="dv">4</span> A              <span class="sc">+</span>         <span class="dv">5</span>  <span class="dv">81</span>    <span class="fl">15.9</span></span>
+<span id="cb28-10"><a href="#cb28-10" tabindex="-1"></a> <span class="dv">5</span> A              <span class="sc">-</span>         <span class="dv">2</span>  <span class="fl">78.3</span>  <span class="fl">16.2</span></span>
+<span id="cb28-11"><a href="#cb28-11" tabindex="-1"></a> <span class="dv">6</span> AB             <span class="sc">+</span>         <span class="dv">2</span>  <span class="fl">79.3</span>  <span class="dv">16</span>  </span>
+<span id="cb28-12"><a href="#cb28-12" tabindex="-1"></a> <span class="dv">7</span> AB             <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">73.1</span>  <span class="fl">17.4</span></span>
+<span id="cb28-13"><a href="#cb28-13" tabindex="-1"></a> <span class="dv">8</span> AB             <span class="sc">-</span>         <span class="dv">1</span>  <span class="dv">83</span>    <span class="fl">16.6</span></span>
+<span id="cb28-14"><a href="#cb28-14" tabindex="-1"></a> <span class="dv">9</span> AB             <span class="sc">-</span>         <span class="dv">3</span>  <span class="fl">79.8</span>  <span class="dv">15</span>  </span>
+<span id="cb28-15"><a href="#cb28-15" tabindex="-1"></a><span class="dv">10</span> AB             <span class="sc">-</span>         <span class="dv">4</span>  <span class="fl">84.8</span>  <span class="fl">17.4</span></span>
+<span id="cb28-16"><a href="#cb28-16" tabindex="-1"></a><span class="dv">11</span> B              <span class="sc">+</span>         <span class="dv">2</span>  <span class="fl">77.8</span>  <span class="fl">16.4</span></span>
+<span id="cb28-17"><a href="#cb28-17" tabindex="-1"></a><span class="dv">12</span> B              <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">83.8</span>  <span class="fl">14.6</span></span>
+<span id="cb28-18"><a href="#cb28-18" tabindex="-1"></a><span class="dv">13</span> B              <span class="sc">-</span>         <span class="dv">1</span>  <span class="fl">74.5</span>  <span class="fl">14.9</span></span>
+<span id="cb28-19"><a href="#cb28-19" tabindex="-1"></a><span class="dv">14</span> B              <span class="sc">-</span>         <span class="dv">3</span>  <span class="fl">85.1</span>  <span class="fl">16.2</span></span>
+<span id="cb28-20"><a href="#cb28-20" tabindex="-1"></a><span class="dv">15</span> B              <span class="sc">-</span>         <span class="dv">4</span>  <span class="fl">83.3</span>  <span class="fl">16.6</span></span>
+<span id="cb28-21"><a href="#cb28-21" tabindex="-1"></a><span class="dv">16</span> O              <span class="sc">+</span>         <span class="dv">1</span>  <span class="fl">80.3</span>  <span class="dv">15</span>  </span>
+<span id="cb28-22"><a href="#cb28-22" tabindex="-1"></a><span class="dv">17</span> O              <span class="sc">+</span>         <span class="dv">3</span>  <span class="fl">78.9</span>  <span class="fl">14.8</span></span>
+<span id="cb28-23"><a href="#cb28-23" tabindex="-1"></a><span class="dv">18</span> O              <span class="sc">+</span>         <span class="dv">4</span>  <span class="fl">81.2</span>  <span class="fl">14.9</span></span>
+<span id="cb28-24"><a href="#cb28-24" tabindex="-1"></a><span class="dv">19</span> O              <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">84.9</span>  <span class="dv">15</span>  </span>
+<span id="cb28-25"><a href="#cb28-25" tabindex="-1"></a><span class="dv">20</span> O              <span class="sc">-</span>         <span class="dv">2</span>  <span class="fl">80.7</span>  <span class="fl">16.1</span></span>
+<span id="cb28-26"><a href="#cb28-26" tabindex="-1"></a></span>
+<span id="cb28-27"><a href="#cb28-27" tabindex="-1"></a><span class="co"># si bien desagrupa el objeto para imprimirlo, </span></span>
+<span id="cb28-28"><a href="#cb28-28" tabindex="-1"></a><span class="co"># mientras no se almacene  el objeto serguirá agrupado</span></span>
+<span id="cb28-29"><a href="#cb28-29" tabindex="-1"></a>por_dia <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">row_number</span>())</span>
+<span id="cb28-30"><a href="#cb28-30" tabindex="-1"></a><span class="co"># A tibble: 20 × 6</span></span>
+<span id="cb28-31"><a href="#cb28-31" tabindex="-1"></a><span class="co"># Groups:   tipo_sanguineo, rh [8]</span></span>
+<span id="cb28-32"><a href="#cb28-32" tabindex="-1"></a>   tipo_sanguineo rh      dia   f_l   f_r    id</span>
+<span id="cb28-33"><a href="#cb28-33" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>          <span class="er">&lt;</span>chr<span class="sc">&gt;</span> <span class="er">&lt;</span>int<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>int<span class="sc">&gt;</span></span>
+<span id="cb28-34"><a href="#cb28-34" tabindex="-1"></a> <span class="dv">1</span> A              <span class="sc">+</span>         <span class="dv">1</span>  <span class="fl">76.3</span>  <span class="fl">15.2</span>     <span class="dv">1</span></span>
+<span id="cb28-35"><a href="#cb28-35" tabindex="-1"></a> <span class="dv">2</span> A              <span class="sc">+</span>         <span class="dv">3</span>  <span class="fl">81.5</span>  <span class="fl">16.6</span>     <span class="dv">2</span></span>
+<span id="cb28-36"><a href="#cb28-36" tabindex="-1"></a> <span class="dv">3</span> A              <span class="sc">+</span>         <span class="dv">4</span>  <span class="fl">81.2</span>  <span class="fl">15.6</span>     <span class="dv">3</span></span>
+<span id="cb28-37"><a href="#cb28-37" tabindex="-1"></a> <span class="dv">4</span> A              <span class="sc">+</span>         <span class="dv">5</span>  <span class="dv">81</span>    <span class="fl">15.9</span>     <span class="dv">4</span></span>
+<span id="cb28-38"><a href="#cb28-38" tabindex="-1"></a> <span class="dv">5</span> A              <span class="sc">-</span>         <span class="dv">2</span>  <span class="fl">78.3</span>  <span class="fl">16.2</span>     <span class="dv">1</span></span>
+<span id="cb28-39"><a href="#cb28-39" tabindex="-1"></a> <span class="dv">6</span> AB             <span class="sc">+</span>         <span class="dv">2</span>  <span class="fl">79.3</span>  <span class="dv">16</span>       <span class="dv">1</span></span>
+<span id="cb28-40"><a href="#cb28-40" tabindex="-1"></a> <span class="dv">7</span> AB             <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">73.1</span>  <span class="fl">17.4</span>     <span class="dv">2</span></span>
+<span id="cb28-41"><a href="#cb28-41" tabindex="-1"></a> <span class="dv">8</span> AB             <span class="sc">-</span>         <span class="dv">1</span>  <span class="dv">83</span>    <span class="fl">16.6</span>     <span class="dv">1</span></span>
+<span id="cb28-42"><a href="#cb28-42" tabindex="-1"></a> <span class="dv">9</span> AB             <span class="sc">-</span>         <span class="dv">3</span>  <span class="fl">79.8</span>  <span class="dv">15</span>       <span class="dv">2</span></span>
+<span id="cb28-43"><a href="#cb28-43" tabindex="-1"></a><span class="dv">10</span> AB             <span class="sc">-</span>         <span class="dv">4</span>  <span class="fl">84.8</span>  <span class="fl">17.4</span>     <span class="dv">3</span></span>
+<span id="cb28-44"><a href="#cb28-44" tabindex="-1"></a><span class="dv">11</span> B              <span class="sc">+</span>         <span class="dv">2</span>  <span class="fl">77.8</span>  <span class="fl">16.4</span>     <span class="dv">1</span></span>
+<span id="cb28-45"><a href="#cb28-45" tabindex="-1"></a><span class="dv">12</span> B              <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">83.8</span>  <span class="fl">14.6</span>     <span class="dv">2</span></span>
+<span id="cb28-46"><a href="#cb28-46" tabindex="-1"></a><span class="dv">13</span> B              <span class="sc">-</span>         <span class="dv">1</span>  <span class="fl">74.5</span>  <span class="fl">14.9</span>     <span class="dv">1</span></span>
+<span id="cb28-47"><a href="#cb28-47" tabindex="-1"></a><span class="dv">14</span> B              <span class="sc">-</span>         <span class="dv">3</span>  <span class="fl">85.1</span>  <span class="fl">16.2</span>     <span class="dv">2</span></span>
+<span id="cb28-48"><a href="#cb28-48" tabindex="-1"></a><span class="dv">15</span> B              <span class="sc">-</span>         <span class="dv">4</span>  <span class="fl">83.3</span>  <span class="fl">16.6</span>     <span class="dv">3</span></span>
+<span id="cb28-49"><a href="#cb28-49" tabindex="-1"></a><span class="dv">16</span> O              <span class="sc">+</span>         <span class="dv">1</span>  <span class="fl">80.3</span>  <span class="dv">15</span>       <span class="dv">1</span></span>
+<span id="cb28-50"><a href="#cb28-50" tabindex="-1"></a><span class="dv">17</span> O              <span class="sc">+</span>         <span class="dv">3</span>  <span class="fl">78.9</span>  <span class="fl">14.8</span>     <span class="dv">2</span></span>
+<span id="cb28-51"><a href="#cb28-51" tabindex="-1"></a><span class="dv">18</span> O              <span class="sc">+</span>         <span class="dv">4</span>  <span class="fl">81.2</span>  <span class="fl">14.9</span>     <span class="dv">3</span></span>
+<span id="cb28-52"><a href="#cb28-52" tabindex="-1"></a><span class="dv">19</span> O              <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">84.9</span>  <span class="dv">15</span>       <span class="dv">4</span></span>
+<span id="cb28-53"><a href="#cb28-53" tabindex="-1"></a><span class="dv">20</span> O              <span class="sc">-</span>         <span class="dv">2</span>  <span class="fl">80.7</span>  <span class="fl">16.1</span>     <span class="dv">1</span></span></code></pre>
+</div>
+<p>Como puede observar el problema no se ha corregido.</p>
+<p>Para conrregirlo podemos o incluir el <code>ungroup</code> desde el
+inicio cuando creamos el objeto <code>por_dia</code>, o aplicar el
+cambio y guardarlo en el objeto:</p>
+<div class="codewrapper sourceCode" id="cb29">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="co">#ahora estamos almacenando el desagrupamiento</span></span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>por_dia_sin_grupo <span class="ot">&lt;-</span> por_dia <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>()</span>
+<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" tabindex="-1"></a>por_dia_sin_grupo <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">row_number</span>())</span>
+<span id="cb29-5"><a href="#cb29-5" tabindex="-1"></a><span class="co"># A tibble: 20 × 6</span></span>
+<span id="cb29-6"><a href="#cb29-6" tabindex="-1"></a>   tipo_sanguineo rh      dia   f_l   f_r    id</span>
+<span id="cb29-7"><a href="#cb29-7" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>          <span class="er">&lt;</span>chr<span class="sc">&gt;</span> <span class="er">&lt;</span>int<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>int<span class="sc">&gt;</span></span>
+<span id="cb29-8"><a href="#cb29-8" tabindex="-1"></a> <span class="dv">1</span> A              <span class="sc">+</span>         <span class="dv">1</span>  <span class="fl">76.3</span>  <span class="fl">15.2</span>     <span class="dv">1</span></span>
+<span id="cb29-9"><a href="#cb29-9" tabindex="-1"></a> <span class="dv">2</span> A              <span class="sc">+</span>         <span class="dv">3</span>  <span class="fl">81.5</span>  <span class="fl">16.6</span>     <span class="dv">2</span></span>
+<span id="cb29-10"><a href="#cb29-10" tabindex="-1"></a> <span class="dv">3</span> A              <span class="sc">+</span>         <span class="dv">4</span>  <span class="fl">81.2</span>  <span class="fl">15.6</span>     <span class="dv">3</span></span>
+<span id="cb29-11"><a href="#cb29-11" tabindex="-1"></a> <span class="dv">4</span> A              <span class="sc">+</span>         <span class="dv">5</span>  <span class="dv">81</span>    <span class="fl">15.9</span>     <span class="dv">4</span></span>
+<span id="cb29-12"><a href="#cb29-12" tabindex="-1"></a> <span class="dv">5</span> A              <span class="sc">-</span>         <span class="dv">2</span>  <span class="fl">78.3</span>  <span class="fl">16.2</span>     <span class="dv">5</span></span>
+<span id="cb29-13"><a href="#cb29-13" tabindex="-1"></a> <span class="dv">6</span> AB             <span class="sc">+</span>         <span class="dv">2</span>  <span class="fl">79.3</span>  <span class="dv">16</span>       <span class="dv">6</span></span>
+<span id="cb29-14"><a href="#cb29-14" tabindex="-1"></a> <span class="dv">7</span> AB             <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">73.1</span>  <span class="fl">17.4</span>     <span class="dv">7</span></span>
+<span id="cb29-15"><a href="#cb29-15" tabindex="-1"></a> <span class="dv">8</span> AB             <span class="sc">-</span>         <span class="dv">1</span>  <span class="dv">83</span>    <span class="fl">16.6</span>     <span class="dv">8</span></span>
+<span id="cb29-16"><a href="#cb29-16" tabindex="-1"></a> <span class="dv">9</span> AB             <span class="sc">-</span>         <span class="dv">3</span>  <span class="fl">79.8</span>  <span class="dv">15</span>       <span class="dv">9</span></span>
+<span id="cb29-17"><a href="#cb29-17" tabindex="-1"></a><span class="dv">10</span> AB             <span class="sc">-</span>         <span class="dv">4</span>  <span class="fl">84.8</span>  <span class="fl">17.4</span>    <span class="dv">10</span></span>
+<span id="cb29-18"><a href="#cb29-18" tabindex="-1"></a><span class="dv">11</span> B              <span class="sc">+</span>         <span class="dv">2</span>  <span class="fl">77.8</span>  <span class="fl">16.4</span>    <span class="dv">11</span></span>
+<span id="cb29-19"><a href="#cb29-19" tabindex="-1"></a><span class="dv">12</span> B              <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">83.8</span>  <span class="fl">14.6</span>    <span class="dv">12</span></span>
+<span id="cb29-20"><a href="#cb29-20" tabindex="-1"></a><span class="dv">13</span> B              <span class="sc">-</span>         <span class="dv">1</span>  <span class="fl">74.5</span>  <span class="fl">14.9</span>    <span class="dv">13</span></span>
+<span id="cb29-21"><a href="#cb29-21" tabindex="-1"></a><span class="dv">14</span> B              <span class="sc">-</span>         <span class="dv">3</span>  <span class="fl">85.1</span>  <span class="fl">16.2</span>    <span class="dv">14</span></span>
+<span id="cb29-22"><a href="#cb29-22" tabindex="-1"></a><span class="dv">15</span> B              <span class="sc">-</span>         <span class="dv">4</span>  <span class="fl">83.3</span>  <span class="fl">16.6</span>    <span class="dv">15</span></span>
+<span id="cb29-23"><a href="#cb29-23" tabindex="-1"></a><span class="dv">16</span> O              <span class="sc">+</span>         <span class="dv">1</span>  <span class="fl">80.3</span>  <span class="dv">15</span>      <span class="dv">16</span></span>
+<span id="cb29-24"><a href="#cb29-24" tabindex="-1"></a><span class="dv">17</span> O              <span class="sc">+</span>         <span class="dv">3</span>  <span class="fl">78.9</span>  <span class="fl">14.8</span>    <span class="dv">17</span></span>
+<span id="cb29-25"><a href="#cb29-25" tabindex="-1"></a><span class="dv">18</span> O              <span class="sc">+</span>         <span class="dv">4</span>  <span class="fl">81.2</span>  <span class="fl">14.9</span>    <span class="dv">18</span></span>
+<span id="cb29-26"><a href="#cb29-26" tabindex="-1"></a><span class="dv">19</span> O              <span class="sc">+</span>         <span class="dv">5</span>  <span class="fl">84.9</span>  <span class="dv">15</span>      <span class="dv">19</span></span>
+<span id="cb29-27"><a href="#cb29-27" tabindex="-1"></a><span class="dv">20</span> O              <span class="sc">-</span>         <span class="dv">2</span>  <span class="fl">80.7</span>  <span class="fl">16.1</span>    <span class="dv">20</span></span></code></pre>
+</div>
+<p>Como puede observar ahora si tenemos cada fila con su propio id.</p>
+<p>Advertencia: Es importante aclarar que el desagrupamiento en los
+escenarios anteriores iría después de la operación, sin embargo, en este
+caso iría antes de la operación.</p>
+</div>
+<div class="section level3">
+<h3 id="cuando-trato-de-crear-un-pdf-en-rmarkdown-me-sale-error">Cuando trato de crear un pdf en RMarkdown me sale error<a class="anchor" aria-label="anchor" href="#cuando-trato-de-crear-un-pdf-en-rmarkdown-me-sale-error"></a></h3>
+<p>Si el archivo sale correctamente en otros formatos a excepción de
+pdf. Una de las situaciones más frecuentes es que falte la instalación
+de LaTeX: RMarkdown necesita LaTeX para generar PDFs. Asegúrate de tener
+LaTeX instalado en tu sistema.</p>
+<p>Para instalar LaTeX desde RStudio, puede usar el paquete TinyTeX:</p>
+<div class="codewrapper sourceCode" id="cb30">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">install.packages</span><span class="op">(</span><span class="st">"tinytex"</span><span class="op">)</span></span>
+<span><span class="fu">tinytex</span><span class="fu">::</span><span class="fu">install_tinytex</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+<p>Configure RStudio:</p>
+<p>Vaya a Tools &gt; Global Options &gt; Sweave.</p>
+<p>Asegúrese de que la opción “Typeset PDF” esté configurada para usar
+TinyTeX.</p>
+</div>
+<div class="section level3">
 <h3 id="material-adicional-que-puede-aportar-a-su-aprendizaje">Material adicional que puede aportar a su aprendizaje:<a class="anchor" aria-label="anchor" href="#material-adicional-que-puede-aportar-a-su-aprendizaje"></a></h3>
 <p><strong>Manejo de datos con Tidyverse y R:</strong></p>
 <p><a href="https://www.youtube.com/watch?v=6STcQVX8Hk0" class="external-link uri">https://www.youtube.com/watch?v=6STcQVX8Hk0</a></p>
@@ -767,17 +967,15 @@ por favor diligencie el siguiente formulario <a href="https://forms.office.com/p
 </div>
 </div>
 </div>
-<div class="section level3">
-<h3 id="contribuciones">Contribuciones<a class="anchor" aria-label="anchor" href="#contribuciones"></a></h3>
-<ul><li><p>José M. Velasco-España: Versión inicial</p></li>
+</section><section><h2 class="section-heading" id="contribuciones">Contribuciones<a class="anchor" aria-label="anchor" href="#contribuciones"></a></h2>
+<hr class="half-width"><ul><li><p>José M. Velasco-España: Versión inicial</p></li>
 <li><p>Andree Valle-Campos: Ediciones menores</p></li>
 <li><p>Laura Gómez-Bermeo: Ediciones menores</p></li>
 <li><p>Geraldine Gomez: Ediciones menores</p></li>
 </ul><!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></div>
-</section></div> <!-- / div.lesson-content -->
+ --></section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Capítulo previo y siguiente"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/limpieza.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previo</a>
         <a class="chapter-link float-end" href="../instructor/index.html">Siguiente<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -786,7 +984,7 @@ any links that you are not going to use.
       <div class="d-none d-sm-none d-md-block">
         <a class="chapter-link" href="../instructor/limpieza.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
-          Previo: Unidad de Limpieza
+          Previo: Limpieza de datos
         </a>
         <a class="chapter-link float-end" href="../instructor/index.html" rel="next">
           Inicio
@@ -835,8 +1033,8 @@ any links that you are not going to use.
   "url": "https://epiverse-trace.github.io/epitkit/instructor/Banco_errores.html",
   "identifier": "https://epiverse-trace.github.io/epitkit/instructor/Banco_errores.html",
   "dateCreated": "2024-09-09",
-  "dateModified": "2024-10-22",
-  "datePublished": "2024-10-23"
+  "dateModified": "2024-10-28",
+  "datePublished": "2024-10-28"
 }
 
   </script><script>
