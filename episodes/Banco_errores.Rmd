@@ -430,13 +430,6 @@ por_dia_sin_grupo %>% mutate(id = row_number())
 ```
 Como puede observar ahora si tenemos cada fila con su propio id.
 
-En caso que no quiera almacenar el cambio de desagrupar en el objeto principal, puede aplicarlo cada vez que lo necesite 
- 
-```{r}
-por_dia %>% ungroup() %>% mutate(id = row_number())
-```
- 
-Como puede ver cada fila tiene su propio id.
 
 Advertencia: Es importante aclarar que el desagrupamiento en los escenarios anteriores iría después de la operación, sin embargo, en este caso iría antes de la operación.
     
