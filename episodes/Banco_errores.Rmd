@@ -30,11 +30,6 @@ exercises: 8
 
 :::
 
-```{r setup, include=FALSE}
-library(knitr)
-opts_chunk$set(collapse = TRUE)
-```
-
 
 ## Banco de preguntas
 
