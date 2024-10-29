@@ -27,14 +27,11 @@ editor_options:
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-## Pregunta introductoria
-
 -   ¿Cómo construir un modelo simplificado de zika?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
-## Objetivos
 
 Al final de este taller usted podrá:
 
@@ -89,7 +86,7 @@ full_version <- TRUE
 +--------------------------------------------------------------------+
 :::::::::::::::::::
 
-# Introducción
+## Introducción
 
 En esta unidad abordaremos la construcción de un modelo determinístico
 simple, específicamente para el virus del Zika, una enfermedad que
@@ -114,7 +111,7 @@ temas clave como son: Modelo SIR, Inmunidad de rebaño, Parámetros e
 intervenciones de control (fumigación, mosquiteros y vacunación) para
 una Enfermedad transmitida por vectores (ETV).
 
-# **Tema 6: Modelo Zika en R**
+## **Tema 6: Modelo Zika en R**
 
 En esta sección pondremos en uso el conocimiento adquirido sobre el
 Zika, los mecanismos involucrados en la transmisión y las ecuaciones del
@@ -174,7 +171,7 @@ necesario realizar la división y asignar el resultado manualmente.
 :::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: challenge 
-## Desafío 1
+### Desafío 1
 
 Instrucción: Por favor, tome la tabla que trabajó anteriormente e
 ingrese el valor de cada uno de estos parámetros.
@@ -206,7 +203,7 @@ TIME     <-  1      # Número de años que se va a simular. Para este ejercicio 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor 
-## Solución 1
+### Solución 1
 
 ```{r, include = full_version}
 
@@ -322,7 +319,7 @@ Zika a **R**. Abajo encontrará la función ya construida `modelo_zika`
 para que usted reemplace las ecuaciones que ya completó arriba.
 
 ::::::::::::::::::::::::::::::::::::: challenge 
-## Desafío 3
+### Desafío 3
 
 **Instrucción**: Reemplace las ecuaciones incompletas del siguiente
 código por las ecuaciones completas del modelo Zika que trabajó  en la
@@ -355,7 +352,7 @@ modelo_zika <- function(tiempo, variable_estado, parametros) {
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor 
-## Solución 3
+### Solución 3
 
 ```{r, include = full_version}
 
@@ -395,7 +392,7 @@ Para resolver el sistema es necesario crear los tres argumentos
 faltantes (**times**, **parms** y **y**) para usar la función `ode`.
 
 ::::::::::::::::::::::::::::::::::::: challenge 
-## Desafío 4
+### Desafío 4
 
 **Instrucción:** Para `times` y `parms`, copie el código que se
 encuentra a continuación y ejecútelo.
@@ -437,7 +434,7 @@ compartimientos?
 
 
 ::::::::::::::::::::::::::::::::::::: challenge 
-## Desafío 5
+### Desafío 5
 
 **Instrucción:** Complete los espacios según lo aprendido en el
 tutorial.
@@ -455,7 +452,7 @@ inicio <- c(Sh = _______ ,        # COMPLETE Y COMENTE
 
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor 
-## Solución 5
+### Solución 5
 
 ```{r, include = full_version}
 # Condiciones iniciales del sistema (y)
@@ -492,7 +489,7 @@ a ode.  Recordemos los cuatro argumentos de ode y a que corresponden a:
     parámetros necesarios para simular el modelo.
 
 ::::::::::::::::::::::::::::::::::::: challenge 
-## Desafío 6
+### Desafío 6
 
 **Instrucción**: Complete los espacios en blanco según lo trabajado
 hasta el momento.
@@ -510,7 +507,7 @@ salida <- ode(y      =   _______ , # COMPLETE Y COMENTE
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor 
-## Solución 6
+### Solución 6
 
 ```{r, include = full_version}
 # Resuelva las ecuaciones
@@ -556,7 +553,7 @@ Ih = 1 y Sh = Nh - 1.
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor 
 
-## Solución
+### Solución
 
 ```{r, include = full_version}
 # Condiciones iniciales del sistema (y)
@@ -620,7 +617,7 @@ meses o años puede hacerlo a partir de los resultados del modelo
 (`salida$time`). Para hacerlo, puede usar el siguiente código.
 
 ::::::::::::::::::::::::::::::::::::: challenge 
-## Desafío 7
+### Desafío 7
 
 Para tener una visualización más significativa de los resultados,
 convierta las unidades de tiempo de *días* a *años* y a *semanas*.
@@ -632,7 +629,7 @@ salida$semanas <- salida$time/7
 ```
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-### 6.7 **Visualice y analice la primer epidemia**
+## 6.7 **Visualice y analice la primer epidemia**
 
 Empecemos realizando una visualización de la primera epidemia. Dado que
 es un periodo de un año visualicemos las gráficas en semanas. 
@@ -771,8 +768,6 @@ plot_grid(p1, p2, p3, ncol = 2)
 </center> 
    
 ::::::::::::::::::::::::::::::::::::: keypoints 
-
-## Puntos clave
 
 Revise si al final de esta lección adquirió estas competencias:
 
