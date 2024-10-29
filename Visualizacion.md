@@ -39,7 +39,6 @@ Esta unidad tiene como prerequisitos:
 :::
 
 
-
 ::: checklist
 ### Tabla de contenido
 
@@ -161,6 +160,9 @@ library(ggplot2)
 
 ``` r
 library(tidyverse)
+```
+
+``` output
 ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ✔ forcats   1.0.0     ✔ stringr   1.5.1
@@ -203,6 +205,9 @@ verifica la estructura de la tabla de datos
 
 ``` r
 glimpse(covid19)
+```
+
+``` output
 Rows: 100,000
 Columns: 19
 $ fecha_reporte_web                     <date> 2021-04-09, 2021-03-18, 2022-01…
@@ -262,6 +267,9 @@ y RStudio" de la siguiente manera:
 covid19_resumen <- covid19 %>%
   group_by(fecha_reporte_web, sexo) %>%
   summarise(casos = n())
+```
+
+``` output
 `summarise()` has grouped output by 'fecha_reporte_web'. You can override using
 the `.groups` argument.
 ```
@@ -528,6 +536,9 @@ contar el número de casos por `edad` y `sexo`:
 covid19_sexo <- covid19 %>%
   group_by(edad, sexo) %>%
   summarise(casos = n())
+```
+
+``` output
 `summarise()` has grouped output by 'edad'. You can override using the
 `.groups` argument.
 ```

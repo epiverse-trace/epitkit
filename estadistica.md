@@ -53,7 +53,6 @@ pública y modelamiento de enfermedades infecciosas***
 :::
 
 
-
 ::: callout
 
 ### **Tabla de contenido**
@@ -104,7 +103,6 @@ if (!require(epitools)) install.packages("epitools")
 # Para instalar el paquete de cfr si aún no lo tiene (o no tiene seguridad de tenerlo)  ejercute el siguiente código
 
 if (!require("cfr")) install.packages("cfr")
-
 ```
  
  <center>  
@@ -153,15 +151,26 @@ de la siguiente manera:
 ``` r
 library(ggplot2)
 library(dplyr)
+```
+
+``` output
 
 Attaching package: 'dplyr'
+```
+
+``` output
 The following objects are masked from 'package:stats':
 
     filter, lag
+```
+
+``` output
 The following objects are masked from 'package:base':
 
     intersect, setdiff, setequal, union
+```
 
+``` r
 # Histograma con frecuencia absoluta
 
 ggplot(muestra_covid, aes(x = edad)) +
@@ -169,6 +178,9 @@ ggplot(muestra_covid, aes(x = edad)) +
                  fill = "lightblue") +
   labs(y = "Frecuencia Absoluta", x = "Edad en años",
        title = "Distribución de la edad")
+```
+
+``` output
 `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
@@ -184,6 +196,9 @@ ggplot(muestra_covid, aes(x = edad)) +
                  fill = "lightblue") +
   labs(y = "Densidad", x = "Edad en años",
        title = "Distribución de la edad")
+```
+
+``` output
 `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
@@ -283,6 +298,9 @@ muestra_covid %>%
   mediana = quantile(edad, 0.50), # Mediana-Percentil 50
   P25 = quantile(edad, 0.25), # Percentil 25
   P75 = quantile(edad, 0.75)) # Percentil 75
+```
+
+``` output
        n    media       sd mediana P25 P75
 1 100000 41.99912 19.51872      39  28  55
 ```
@@ -319,6 +337,9 @@ tabla <- muestra_covid %>% # se crea la tabla de frecuencia
                 perc = base::prop.table(n)*100) #porcentaje
 
 tabla
+```
+
+``` output
   tipo_de_contagio     n    prop   perc
 1      Comunitaria 69985 0.69985 69.985
 2        Importado    63 0.00063  0.063
@@ -379,6 +400,9 @@ library(epitools)
 tabla2x2 <- matrix(c(311, 51, 768, 299),nrow = 2, ncol = 2)
 
 epitools::riskratio(tabla2x2)
+```
+
+``` output
 $data
           Outcome
 Predictor  Disease1 Disease2 Total
@@ -479,6 +503,9 @@ n <- 20
 x <- 10 
 
 pbinom(x,n,p, lower.tail = TRUE)
+```
+
+``` output
 [1] 0.2446628
 ```
 
@@ -589,12 +616,17 @@ datos_resultados <- base::data.frame(numeros_reproduccion, resultados_poisson)
 numero_mas_probable <- datos_resultados %>%  dplyr::filter(resultados_poisson == max(resultados_poisson)) %>%  dplyr::pull(numeros_reproduccion) 
 
 p <- ggplot(data = datos_resultados, aes(x = numeros_reproduccion, y = resultados_poisson)) + geom_line() +  geom_vline(xintercept = numero_mas_probable ,color = "red", size=1)
+```
+
+``` warning
 Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
 ℹ Please use `linewidth` instead.
 This warning is displayed once every 8 hours.
 Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
 generated.
+```
 
+``` r
 p+labs(y = "Probabilidad", x = "Número Reproductivo (R) ",title = "Modelo de Poisson")
 ```
 
@@ -677,11 +709,20 @@ SARS_R <- epiparameter::epiparameter_db(
     epi_name = "offspring distribution",
     single_epiparameter = TRUE
 )
+```
+
+``` output
 Using Lloyd-Smith J, Schreiber S, Kopp P, Getz W (2005). "Superspreading and
 the effect of individual variation on disease emergence." _Nature_.
 doi:10.1038/nature04153 <https://doi.org/10.1038/nature04153>.. 
 To retrieve the citation use the 'get_citation' function
+```
+
+``` r
 SARS_R
+```
+
+``` output
 Disease: SARS
 Pathogen: SARS-Cov-1
 Epi Parameter: offspring distribution
@@ -813,7 +854,10 @@ n <- 5
 a <- 2
 b <- 5
 stats::runif(n, a, b)
-[1] 2.750456 3.098455 4.750918 4.635462 4.201815
+```
+
+``` output
+[1] 2.528508 3.998464 3.942946 2.943177 2.466154
 ```
 :::
 
@@ -883,6 +927,9 @@ mu <- 67.8
 sigma <- 15.4 
 x <- 40 
 stats::pnorm(x, mean = mu, sd = sigma)
+```
+
+``` output
 [1] 0.0355221
 ```
 
@@ -930,13 +977,22 @@ SARS_incubacion <- epiparameter::epiparameter_db(
     epi_name = "incubation period",
     single_epiparameter = TRUE
 )
+```
+
+``` output
 Using Lessler J, Reich N, Brookmeyer R, Perl T, Nelson K, Cummings D (2009).
 "Incubation periods of acute respiratory viral infections: a systematic
 review." _The Lancet Infectious Diseases_.
 doi:10.1016/S1473-3099(09)70069-8
 <https://doi.org/10.1016/S1473-3099%2809%2970069-8>.. 
 To retrieve the citation use the 'get_citation' function
+```
+
+``` r
 SARS_incubacion
+```
+
+``` output
 Disease: SARS
 Pathogen: SARS-Cov-1
 Epi Parameter: incubation period
@@ -968,6 +1024,9 @@ de la infección?
 
 ``` r
 stats::plnorm(2, meanlog = 0.660, sdlog = 1.205, lower.tail = FALSE)
+```
+
+``` output
 [1] 0.4890273
 ```
 :::
@@ -1027,6 +1086,9 @@ influenza_s <- epiparameter::epiparameter_db(
   epi_name = "serial_interval",
   single_epiparameter = TRUE
 )
+```
+
+``` output
 Using Ghani A, Baguelin M, Griffin J, Flasche S, van Hoek A, Cauchemez S,
 Donnelly C, Robertson C, White M, Truscott J, Fraser C, Garske T, White
 P, Leach S, Hall I, Jenkins H, Ferguson N, Cooper B (2009). "The Early
@@ -1034,7 +1096,13 @@ Transmission Dynamics of H1N1pdm Influenza in the United Kingdom."
 _PLoS Currents_. doi:10.1371/currents.RRN1130
 <https://doi.org/10.1371/currents.RRN1130>.. 
 To retrieve the citation use the 'get_citation' function
+```
+
+``` r
 influenza_s
+```
+
+``` output
 Disease: Influenza
 Pathogen: Influenza-A-H1N1Pdm
 Epi Parameter: serial interval
@@ -1067,6 +1135,9 @@ scale <- 0.957
 mean <- shape*scale
 sd <- sqrt(shape*scale^2)
 print(c(mean, sd))
+```
+
+``` output
 [1] 2.509254 1.549631
 ```
 
@@ -1105,19 +1176,27 @@ con el siguiente comando:
 
 
 ``` r
-
 influenza_incubacion <- epiparameter::epiparameter_db(
   disease = "Influenza",
   epi_name = "incubation period",
   single_epiparameter = TRUE
 )
+```
+
+``` output
 Using Virlogeux V, Li M, Tsang T, Feng L, Fang V, Jiang H, Wu P, Zheng J, Lau
 E, Cao Y, Qin Y, Liao Q, Yu H, Cowling B (2015). "Estimating the
 Distribution of the Incubation Periods of Human Avian Influenza A(H7N9)
 Virus Infections." _American Journal of Epidemiology_.
 doi:10.1093/aje/kwv115 <https://doi.org/10.1093/aje/kwv115>.. 
 To retrieve the citation use the 'get_citation' function
+```
+
+``` r
 influenza_incubacion
+```
+
+``` output
 Disease: Influenza
 Pathogen: Influenza-A-H7N9
 Epi Parameter: incubation period
@@ -1175,11 +1254,20 @@ similares con un menor RIQ. 
 
 ``` r
 library(infer)
+```
+
+``` output
 
 Attaching package: 'infer'
+```
+
+``` output
 The following object is masked from 'package:epiparameter':
 
     generate
+```
+
+``` r
 set.seed(200)
 poblacion <- base::data.frame(muerto=c(base::rep(1,40), base::rep(0,160)))
 muestrasn5 <- poblacion %>%
@@ -1227,6 +1315,9 @@ cfr %>%
     P25 = quantile(cfr, 0.25),
     P75 = quantile(cfr, 0.75)
   )
+```
+
+``` output
 # A tibble: 2 × 6
   size  media    sd mediana   P25   P75
   <fct> <dbl> <dbl>   <dbl> <dbl> <dbl>
@@ -1313,6 +1404,9 @@ ebola1976%>%  dplyr::summarise(
     lim_inf = cfr_est -1.96*error, #Limite inferior del IC
     lim_sup = cfr_est +1.96*error #Limite superior del IC
 ) 
+```
+
+``` output
     n muertes  cfr_est      error   lim_inf   lim_sup
 1 245     234 0.955102 0.01322986 0.9291715 0.9810326
 ```
@@ -1329,6 +1423,9 @@ epidemia por medio de la función:
 
 ``` r
 cfr::cfr_static(data = ebola1976)
+```
+
+``` output
   severity_estimate severity_low severity_high
 1          0.955102    0.9210866     0.9773771
 ```

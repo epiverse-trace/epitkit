@@ -43,7 +43,6 @@ Esta unidad tiene como prerequisitos:
 :::
 
 
-
 ::: checklist
 
 ### **Tabla de contenido**
@@ -141,7 +140,7 @@ library("rio")
 se obtiene el siguiente resultado:
 
 
-```
+``` output
 ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ✔ forcats   1.0.0     ✔ stringr   1.5.1
@@ -191,7 +190,7 @@ covid %>%
 se obtiene el siguiente resultado:
 
 
-```
+``` output
 Rows: 79,200
 Columns: 25
 $ `fecha reporte web`           <chr> "2021-03-15", "21-03-23", "2021-mar-15",…
@@ -280,7 +279,7 @@ covid %>%
 se obtiene el siguiente resultado:
 
 
-```
+``` output
 Rows: 79,200
 Columns: 25
 $ fecha_reporte_web           <chr> "2021-03-15", "21-03-23", "2021-mar-15", "…
@@ -329,7 +328,7 @@ covid %>%
 se obtiene el siguiente resultado:
 
 
-```
+``` output
  fecha_reporte_web    id_de_caso      fecha_de_notificacion      edad       
  Length:79200       Min.   :    150   Length:79200          Min.   :  1.00  
  Class :character   1st Qu.:1555387   Class :character      1st Qu.: 27.00  
@@ -412,7 +411,7 @@ covid %>%
 se obtiene el siguiente resultado:
 
 
-```
+``` output
       edad       
  Min.   :  1.00  
  1st Qu.: 27.00  
@@ -490,7 +489,7 @@ covid %>%
 se obtiene el siguiente resultado:
 
 
-```
+``` output
    sintomas        
  Length:79200      
  Class :character  
@@ -519,7 +518,7 @@ covid %>%
 debió obtener los siguientes resultados:
 
 
-```
+``` output
 .
      Critico        Grave         Leve     Moderado Sin sintomas 
         1781            1        76976           13          429 
@@ -548,7 +547,7 @@ covid %>%
 se obtiene el siguiente resultado:
 
 
-```
+``` output
 .
      Critico        Grave         Leve     Moderado Sin sintomas 
  2.248737374  0.001262626 97.191919192  0.016414141  0.541666667 
@@ -572,7 +571,7 @@ covid %>%
 se obtiene el siguiente resultado:
 
 
-```
+``` output
 [1] "Leve"         "Critico"      "Moderado"     "Sin sintomas" "Grave"       
 ```
 
@@ -649,7 +648,7 @@ covid %>%
 se obtiene el siguiente resultado:
 
 
-```
+``` output
  sexo              sintomas       nombre_del_pais 
  F:42336   Critico     : 1781   Honduras  : 3730  
  M:36864   Grave       :    1   Ecuador   : 3715  
@@ -704,7 +703,7 @@ covid %>%
 se obtiene el siguiente resultado:
 
 
-```
+``` output
       sintomas     n
 1 Sin sintomas   429
 2         Leve 76976
@@ -743,7 +742,7 @@ covid %>%
 se obtiene el siguiente resultado:
 
 
-```
+``` output
 .
           0           1           2           3        cero         dos 
         545          18          22          19         180          26 
@@ -771,8 +770,11 @@ covid %>%
 se obtiene el siguiente resultado:
 
 
-```
+``` warning
 Warning in base::table(., useNA = "always"): NAs introduced by coercion
+```
+
+``` output
 .
    0    1    2    3 <NA> 
  545   18   22   19  396 
@@ -825,7 +827,13 @@ covid %>%
   base::as.numeric() %>%
   base::is.na() %>%
   base::table()
+```
+
+``` warning
 Warning in base::table(.): NAs introduced by coercion
+```
+
+``` output
 .
 FALSE  TRUE 
 54068 25132 
@@ -839,6 +847,9 @@ Ahora use el siguiente código para comprender por qué se generan estos
 covid %>%
   dplyr::pull(talla) %>%
   utils::head()
+```
+
+``` output
 [1] "1.73" "1.67" "1m69" "1.66" "1.63" "1 68"
 ```
 
@@ -894,6 +905,9 @@ covid <- covid %>%
 covid %>%
   dplyr::pull(talla) %>%
   utils::head()
+```
+
+``` output
 [1] "1.73" "1.67" "1.69" "1.66" "1.63" "1.68"
 ```
 
@@ -910,6 +924,9 @@ covid %>%
   base::as.numeric() %>%
   base::is.na() %>%
   base::table()
+```
+
+``` output
 .
 FALSE 
 79200 
@@ -930,6 +947,9 @@ covid <- covid %>%
 covid %>%
   dplyr::pull(talla) %>%
   utils::head()
+```
+
+``` output
 [1] 1.73 1.67 1.69 1.66 1.63 1.68
 ```
 
@@ -974,6 +994,9 @@ Y tres argumentos opcionales:
 covid %>%
   dplyr::select(fecha_reporte_web) %>%
   dplyr::slice(1:10)
+```
+
+``` output
    fecha_reporte_web
 1         2021-03-15
 2           21-03-23
@@ -1001,6 +1024,9 @@ covid %>%
   dplyr::select(fecha_reporte_web) %>%
   dplyr::slice(1:10) %>%
   cleanepi::standardize_dates() 
+```
+
+``` output
    fecha_reporte_web
 1         2021-03-15
 2         2023-03-21
@@ -1044,6 +1070,9 @@ número (ej. "tres") en lugar del símbolo que representa al número (ej.
 covid %>%
   dplyr::pull(num_hos_rec) %>%
   base::table(useNA = "always")
+```
+
+``` output
 .
     0     1     2     3  <NA> 
 57789  3094  3059  3100 12158 
@@ -1088,6 +1117,9 @@ variable `num_hos_rec`
 covid %>%
   dplyr::pull(num_hos_rec) %>%
   base::table(useNA = "always")
+```
+
+``` output
 .
     0     1     2     3  <NA> 
 57789  3094  3059  3100 12158 
@@ -1110,6 +1142,9 @@ columna.
 covid %>%
   dplyr::pull(tension_arterial) %>%
   utils::head()
+```
+
+``` output
 [1] "102/85" "148/72" "92/84"  "122/71" "153/88" "129/87"
 ```
 
@@ -1148,6 +1183,9 @@ covid <- covid %>%
 covid %>%
   dplyr::pull(tension_sistolica) %>%
   utils::head()
+```
+
+``` output
 [1] "102" "148" "92"  "122" "153" "129"
 ```
 
@@ -1156,6 +1194,9 @@ covid %>%
 covid %>%
   dplyr::pull(tension_diastolica) %>%
   utils::head()
+```
+
+``` output
 [1] "85" "72" "84" "71" "88" "87"
 ```
 
@@ -1184,24 +1225,36 @@ operaciones:
 
 ``` r
 2^1024
+```
+
+``` output
 [1] Inf
 ```
 
 
 ``` r
 -2^1024
+```
+
+``` output
 [1] -Inf
 ```
 
 
 ``` r
 1/1e-309
+```
+
+``` output
 [1] Inf
 ```
 
 
 ``` r
 1/0
+```
+
+``` output
 [1] Inf
 ```
 
@@ -1219,6 +1272,9 @@ covid <- covid %>%
 covid %>%
   dplyr::pull(edad_en_dias) %>% 
   utils::head()
+```
+
+``` output
 [1]  9490 10220 22265  8760 18615  9125
 ```
 
@@ -1235,18 +1291,27 @@ ejemplos:
 
 ``` r
 Inf/Inf
+```
+
+``` output
 [1] NaN
 ```
 
 
 ``` r
 Inf-Inf
+```
+
+``` output
 [1] NaN
 ```
 
 
 ``` r
 0/0
+```
+
+``` output
 [1] NaN
 ```
 
@@ -1270,6 +1335,9 @@ covid %>%
   dplyr::pull(id_de_caso) %>%
   base::table() %>%
   base::table()
+```
+
+``` output
 .
     1     2     3 
 75797   203   999 
@@ -1289,6 +1357,9 @@ duplicated y sumar los registros así:
 covid %>%
   base::duplicated() %>%
   base::sum()
+```
+
+``` output
 [1] 1196
 ```
 
@@ -1314,6 +1385,9 @@ dataset covid las filas repetidas.
 ``` r
 covid <- covid %>%
   cleanepi::remove_duplicates()
+```
+
+``` output
 Found 2391 duplicated rows. Please consult the report for more details.
 ```
 
@@ -1331,6 +1405,9 @@ covid %>%
   dplyr::select(id_de_caso) %>%
   base::table() %>%
   base::table()
+```
+
+``` output
 .
     1     2 
 75994  1005 
@@ -1353,6 +1430,9 @@ dataset los datos correspondiente a "`id_de_caso`" repetidos.
 covid <- covid %>%
   cleanepi::remove_duplicates(
     target_columns = "id_de_caso")
+```
+
+``` output
 Found 2010 duplicated rows. Please consult the report for more details.
 ```
 
@@ -1373,6 +1453,9 @@ escrito de múltiples maneras. Veamos un ejemplo:
 covid %>%
   dplyr::pull(ubicacion_del_caso) %>%
   base::table(useNA = "always")
+```
+
+``` output
 .
         casa         Casa    Fallecido     Hospital Hospital UCI          N/A 
          319        74533         1727           12            1          407 
@@ -1400,6 +1483,9 @@ Como resultado, los valores han sido reemplazados:
 covid %>%
   dplyr::pull(ubicacion_del_caso) %>%
   base::table(useNA = "always")
+```
+
+``` output
 .
         Casa    Fallecido     Hospital Hospital UCI          N/A         <NA> 
        74852         1727           12            1          407            0 
@@ -1441,6 +1527,9 @@ opcionales:
 covid %>% 
   dplyr::pull(ubicacion_del_caso) %>% 
   base::table(useNA = "always")
+```
+
+``` output
 .
         Casa    Fallecido     Hospital Hospital UCI          N/A         <NA> 
        74852         1727           12            1          407            0 
@@ -1463,6 +1552,9 @@ para ver los cambios:
 covid %>%
   dplyr::pull(ubicacion_del_caso) %>%
   base::table(useNA = "always")
+```
+
+``` output
 .
         Casa    Fallecido     Hospital Hospital UCI         <NA> 
        74852         1727           12            1          407 
@@ -1499,6 +1591,9 @@ proceso, puede utilizar la función `ncol`:
 ``` r
 covid %>%
   base::ncol()
+```
+
+``` output
 [1] 25
 ```
 
@@ -1526,6 +1621,9 @@ formato fecha, para revisar puede emplear la función **`class`()**
 covid %>%
   dplyr::pull(fecha_reporte_web) %>%
   base::class()
+```
+
+``` output
 [1] "Date"
 ```
 
@@ -1579,6 +1677,9 @@ covid %>%
   dplyr::arrange(fecha_reporte_web) %>%
   dplyr::select(fecha_reporte_web) %>%
   utils::head()
+```
+
+``` output
 # A tibble: 6 × 1
   fecha_reporte_web
   <date>           
@@ -1620,7 +1721,7 @@ covid %>%
 se obtiene el siguiente resultado:
 
 
-```
+``` output
 # A tibble: 1 × 25
   fecha_reporte_web id_de_caso fecha_de_notificacion  edad sexo 
   <date>                 <int> <chr>                 <int> <fct>
@@ -1680,6 +1781,9 @@ lograr esto, podemos utilizar la función de filtrado proporcionada por
 covid %>%
   dplyr::pull(ubicacion_del_caso) %>%
   base::table(useNA = "always")
+```
+
+``` output
 .
         Casa    Fallecido     Hospital Hospital UCI         <NA> 
        74850         1726           12            1          407 
@@ -1702,6 +1806,9 @@ para ver los cambios:
 covid %>% 
   dplyr::pull(ubicacion_del_caso) %>% 
   base::table(useNA = "always")
+```
+
+``` output
 .
         Casa    Fallecido     Hospital Hospital UCI         <NA> 
        74850         1726           12            1            0 
@@ -1739,6 +1846,9 @@ diccionario <- base::data.frame(
 covid %>%
   dplyr::pull(sexo) %>%
   base::table(useNA = "always")
+```
+
+``` output
 .
     F     M  <NA> 
 40962 35627     0 
@@ -1773,6 +1883,9 @@ cambios:
 covid %>%
   dplyr::pull(sexo) %>%
   base::table(useNA = "always")
+```
+
+``` output
 .
 masculino  femenino      <NA> 
     35627     40962         0 

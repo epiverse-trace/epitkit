@@ -38,7 +38,6 @@ Esta unidad tiene como prerequisitos:
 :::
 
 
-
 ::: checklist
 ### Tabla de contenido
 
@@ -229,7 +228,6 @@ kable(covid_paises)
 Como resultado, obtenemos la siguiente tabla:
 
 
-
 |nombre_del_pais      | casos|
 |:--------------------|-----:|
 |Argentina            |  5059|
@@ -252,8 +250,6 @@ Como resultado, obtenemos la siguiente tabla:
 |República Dominicana |  5021|
 |Uruguay              |  4986|
 |Venezuela            |  4947|
-
-
 
 #### **Poner parámetros automatizados en el texto**
 
@@ -286,6 +282,9 @@ objeto `total_casos_fem`
 
 ``` r
 total_casos_fem
+```
+
+``` output
 [1] 52453
 ```
 

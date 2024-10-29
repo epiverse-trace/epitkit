@@ -204,7 +204,6 @@ TIME     <-  1      # Número de años que se va a simular. Para este ejercicio 
 
 
 ``` r
-
 Lv       <-   10     # Esperanza de vida de los mosquitos (en días)
 Lh       <-   50*365 # Esperanza de vida de los humanos (en días)
 PIh      <-   7      # Periodo infeccioso en humanos (en días)
@@ -227,7 +226,6 @@ b        <-        sqrt((R0 * muv*(muv+delta) * (muh+gamma)) /
 betah    <-  ph*b    # Coeficiente de transmisión de un mosquito infeccioso a un humano susceptible después de una picadura (ph*b)
 betav    <-  pv*b    # Coeficiente de transmisión de un humano infeccioso a un mosquito susceptible después de una picadura (pv*b)
 TIME     <-  1       # Número de años que se va a simular. Para este ejercicio iniciaremos con el primer año de la epidemia.
-
 ```
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
  <center>  
@@ -294,7 +292,6 @@ $$ R_0 = \frac{mb^2 p_h p_v \delta}{\mu_v (\mu_v+\delta)(\mu_h+\gamma)} $$
 
 
 ``` r
-
 # Humanos
          dSh   <-  alphah * Nh - betah * (Iv/Nh) * Sh - muh * Sh   
          dIh   <-______ * (Iv/Nh) * Sh - (____ + _____) * Ih
@@ -304,7 +301,6 @@ $$ R_0 = \frac{mb^2 p_h p_v \delta}{\mu_v (\mu_v+\delta)(\mu_h+\gamma)} $$
          dSv  <-  alphav * Nv - _____ * (Ih/Nh) * Sv - _____ * Sv 
          dEv  <-  _____ * (Ih/Nh) * Sv - (____ + _____)* Ev
          dIv  <-  _____ * Ev - _____ * Iv
-
 ```
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -326,7 +322,6 @@ instrucción anterior.
 
 
 ``` r
-
 # Modelo determinístico simple (fun)
 modelo_zika <- function(tiempo, variable_estado, parametros) {
   
@@ -347,7 +342,6 @@ modelo_zika <- function(tiempo, variable_estado, parametros) {
        }
   )
 }
-
 ```
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -356,7 +350,6 @@ modelo_zika <- function(tiempo, variable_estado, parametros) {
 
 
 ``` r
-
 # Modelo determinístico simple (fun)
 modelo_zika <- function(tiempo, variable_estado, parametros) {
   
@@ -466,7 +459,6 @@ inicio <- c(Sh = Nh ,      # Número inicial de Sh en el tiempo 0
            Sv = Nv,     # Número inicial de Sv en el tiempo 0
            Ev = 0,        # Número inicial de Ev en el tiempo 0
            Iv = 0)        # Número inicial de Iv en el tiempo 0
-
 ```
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
  <center>  
@@ -500,7 +492,6 @@ hasta el momento.
 
 
 ``` r
-
 # Resuelva las ecuaciones
 salida <- ode(y      =   _______ , # COMPLETE Y COMENTE
               times  = _______ ,   # COMPLETE Y COMENTE

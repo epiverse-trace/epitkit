@@ -53,7 +53,6 @@ Esta unidad no tiene prerequisitos
 :::
 
 
-
 ::: checklist
 
 ### Tabla de contenido
@@ -323,6 +322,9 @@ talla 1.75 cm y peso 80 kg, mediante el siguiente código
 
 ``` r
 IMC(peso_kg = 80, talla_m = 1.75)
+```
+
+``` output
 [1] 26.12245
 ```
 
@@ -450,6 +452,9 @@ Ahora observemos cómo quedó la tabla de datos
 
 ``` r
 datos_vacunas
+```
+
+``` output
   nombre     ciudad edad vacunado dosis
 1 Emilia   La Plata   18     TRUE     2
 2 Maximo Concepción   20    FALSE     0
@@ -481,6 +486,9 @@ tabla de datos (y en general cualquier objeto de R) usamos el comando
 
 ``` r
 str(datos_vacunas)
+```
+
+``` output
 'data.frame':	4 obs. of  5 variables:
  $ nombre  : chr  "Emilia" "Maximo" "Axel" "Diana"
  $ ciudad  : chr  "La Plata" "Concepción" "Cuzco" "Bogota"
@@ -499,6 +507,9 @@ con longitud de 1 a 4.
 
 ``` r
 str(datos_vacunas$nombre)
+```
+
+``` output
  chr [1:4] "Emilia" "Maximo" "Axel" "Diana"
 ```
 
@@ -527,6 +538,9 @@ dosis que tiene Maximo.
 
 ``` r
 datos_vacunas[2, 5] 
+```
+
+``` output
 [1] 0
 ```
 
@@ -615,6 +629,9 @@ R o abrimos RStudio.
 
 ``` r
 library(tidyverse)
+```
+
+``` output
 ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ✔ forcats   1.0.0     ✔ stringr   1.5.1
@@ -756,6 +773,9 @@ dentro de `tidyverse`.
     
     ``` r
     dat %>% glimpse()
+    ```
+    
+    ``` output
     Rows: 50,000
     Columns: 19
     $ fecha_reporte_web                     <dttm> 2021-07-14, 2021-04-24, 2021-05…
@@ -789,6 +809,9 @@ dentro de `tidyverse`.
     
     ``` r
     dat %>% summarise(media = mean(edad), casos= n())
+    ```
+    
+    ``` output
     # A tibble: 1 × 2
       media casos
       <dbl> <int>
@@ -808,6 +831,9 @@ de la edad:
 ``` r
 dat %>% group_by(sexo) %>% 
   summarise(casos = n(), media_edad = mean(edad))
+```
+
+``` output
 # A tibble: 2 × 3
   sexo      casos media_edad
   <chr>     <int>      <dbl>
@@ -825,6 +851,9 @@ dat %>% group_by(sexo) %>%
     
     ``` r
     dat %>% select(edad, sexo) #empleando el nombre de la columna
+    ```
+    
+    ``` output
     # A tibble: 50,000 × 2
         edad sexo     
        <dbl> <chr>    
@@ -850,6 +879,9 @@ los registros menores de 28 años, usamos:
 
 ``` r
 dat %>% filter(edad < 28)
+```
+
+``` output
 # A tibble: 13,235 × 19
    fecha_reporte_web   id_de_caso fecha_de_notificacion  edad sexo     
    <dttm>                   <dbl> <dttm>                <dbl> <chr>    
@@ -884,6 +916,9 @@ Veamos un ejemplo con doble fitro:
 
 ``` r
 dat %>% filter(sexo == "F", edad <= 28) #Ahora sabe como filtrar el sexo
+```
+
+``` output
 # A tibble: 0 × 19
 # ℹ 19 variables: fecha_reporte_web <dttm>, id_de_caso <dbl>,
 #   fecha_de_notificacion <dttm>, edad <dbl>, sexo <chr>,
@@ -903,6 +938,9 @@ organizar los datos por edad, o por edad y sexo:
 
 ``` r
 dat %>% arrange(edad) 
+```
+
+``` output
 # A tibble: 50,000 × 19
    fecha_reporte_web   id_de_caso fecha_de_notificacion  edad sexo     
    <dttm>                   <dbl> <dttm>                <dbl> <chr>    
@@ -923,8 +961,13 @@ dat %>% arrange(edad)
 #   fecha_de_recuperacion <dttm>, fecha_de_nacimiento <dttm>,
 #   nombre_del_pais <chr>, sintomas <chr>,
 #   numero_de_hospitalizaciones_recientes <dbl>, tension_sistolica <dbl>, …
+```
 
+``` r
 dat %>% arrange(edad,sexo)
+```
+
+``` output
 # A tibble: 50,000 × 19
    fecha_reporte_web   id_de_caso fecha_de_notificacion  edad sexo    
    <dttm>                   <dbl> <dttm>                <dbl> <chr>   
@@ -954,6 +997,9 @@ emplear `desc` al interior de la función `arrange`.
 
 ``` r
 dat %>% arrange(desc(edad))
+```
+
+``` output
 # A tibble: 50,000 × 19
    fecha_reporte_web   id_de_caso fecha_de_notificacion  edad sexo     
    <dttm>                   <dbl> <dttm>                <dbl> <chr>    
@@ -990,6 +1036,9 @@ dat %>% arrange(desc(edad))
     
     ``` r
     dat %>% mutate(SEXO= toupper(sexo)) %>% select(SEXO)
+    ```
+    
+    ``` output
     # A tibble: 50,000 × 1
        SEXO     
        <chr>    
@@ -1015,6 +1064,9 @@ cambiar el nombre `nombre_del_pais` por el nombre `pais` usamos:
 
 ``` r
 dat %>% rename(edad_años = edad)
+```
+
+``` output
 # A tibble: 50,000 × 19
    fecha_reporte_web   id_de_caso fecha_de_notificacion edad_años sexo     
    <dttm>                   <dbl> <dttm>                    <dbl> <chr>    
@@ -1047,6 +1099,9 @@ para seleccionar de la fila 10 a la 15:
 
 ``` r
 dat %>% slice(10:15)
+```
+
+``` output
 # A tibble: 6 × 19
   fecha_reporte_web   id_de_caso fecha_de_notificacion  edad sexo     
   <dttm>                   <dbl> <dttm>                <dbl> <chr>    

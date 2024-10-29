@@ -31,8 +31,6 @@ exercises: 8
 :::
 
 
-
-
 ## Banco de preguntas
 
 ### [¿Cómo instalar un paquete o "librería" en R?]{#instr}
@@ -426,6 +424,9 @@ Creemos una variable que contenga id únicos por cada fila
 
 ``` r
 por_dia %>% mutate(id = row_number())
+```
+
+``` output
 # A tibble: 20 × 6
 # Groups:   tipo_sanguineo, rh [8]
    tipo_sanguineo rh      dia   f_l   f_r    id
@@ -461,6 +462,9 @@ Veamos como no se solucionaría primero. Un error frecuente al tratar de solucio
 ``` r
 # aplicación equivocada de ungroup
 por_dia %>% ungroup() 
+```
+
+``` output
 # A tibble: 20 × 5
    tipo_sanguineo rh      dia   f_l   f_r
    <chr>          <chr> <int> <dbl> <dbl>
@@ -484,10 +488,15 @@ por_dia %>% ungroup()
 18 O              +         4  81.2  14.9
 19 O              +         5  84.9  15  
 20 O              -         2  80.7  16.1
+```
 
+``` r
 # si bien desagrupa el objeto para imprimirlo, 
 # mientras no se almacene  el objeto serguirá agrupado
 por_dia %>% mutate(id = row_number())
+```
+
+``` output
 # A tibble: 20 × 6
 # Groups:   tipo_sanguineo, rh [8]
    tipo_sanguineo rh      dia   f_l   f_r    id
@@ -523,6 +532,9 @@ Para conrregirlo podemos o incluir el `ungroup` desde el inicio cuando creamos e
 por_dia_sin_grupo <- por_dia %>% ungroup()
 
 por_dia_sin_grupo %>% mutate(id = row_number())
+```
+
+``` output
 # A tibble: 20 × 6
    tipo_sanguineo rh      dia   f_l   f_r    id
    <chr>          <chr> <int> <dbl> <dbl> <int>
