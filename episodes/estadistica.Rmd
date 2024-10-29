@@ -17,14 +17,12 @@ editor_options:
 ---
 
 ::: questions
-# Pregunta introductoria
 
 -   ¿Cómo se pueden utilizar la estadística y la probabilidad para
     resolver preguntas en la epidemiología de enfermedades infecciosas?
 :::
 
 ::: objectives
-# Objetivos
 
 **Al final de este taller usted podrá:**
 
@@ -60,7 +58,8 @@ opts_chunk$set(collapse = TRUE)
 ```
 
 ::: callout
-# **Tabla de contenido**
+
+### **Tabla de contenido**
 
 +-----------------------------------------------------------------------+
 | -   Tema 1: Introducción al Pensamiento Estadístico (Ver en           |
@@ -85,7 +84,7 @@ Por favor revise que tenga instaladas las librerías
 `tidyverse, pak, epiparameter e infer`, en caso de que no estén
 instaladas ejecute el código a continuación de acuerdo a su necesidad:
 
-```{r}
+```{r,eval=FALSE}
 #Para instalar el paquete de epiparameter si aún no lo tiene (o no tiene seguridad de tenerlo) ejercute el siguiente código
 
 if(!require("pak")) install.packages("pak")
@@ -1185,7 +1184,7 @@ el número total de casos, pero la interpretación no cambia.
     de las pruebas de hipótesis.
 :::
 
-## Contribuciones
+### Contribuciones
 
 -   Erika Cantor: Versión inicial
 -   Zulma M. Cucunuba: Edición
