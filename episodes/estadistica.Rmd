@@ -52,10 +52,6 @@ Esta unidad es un complemento al ***Curso en ciencia de datos en salud
 pública y modelamiento de enfermedades infecciosas***
 :::
 
-```{r setup, include=FALSE}
-library(knitr)
-opts_chunk$set(collapse = TRUE)
-```
 
 ::: callout
 

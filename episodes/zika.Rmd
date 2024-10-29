@@ -59,8 +59,6 @@ Esta unidad tiene como prerequisitos:
 
 ```{r options, include = FALSE, message = FALSE, warning = FALSE, error = FALSE}
 #Versión última modificación 21/10/2022
-library(knitr)
-opts_chunk$set(collapse = TRUE)
 full_version <- TRUE
 ```
 

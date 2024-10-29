@@ -52,10 +52,6 @@ Esta unidad no tiene prerequisitos
 
 :::
 
-```{r setup, include=FALSE}
-library(knitr)
-opts_chunk$set(collapse = TRUE)
-```
 
 ::: checklist
 

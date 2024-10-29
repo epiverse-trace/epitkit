@@ -42,10 +42,6 @@ Esta unidad tiene como prerequisitos:
 -   Introducción a R y RStudio
 :::
 
-```{r setup, include=FALSE}
-library(knitr)
-opts_chunk$set(collapse = TRUE)
-```
 
 ::: checklist
 
