@@ -139,7 +139,7 @@ Una vez instalado el paquete deSolve por favor cárgue los paquetes con
 las siguientes líneas de código, cópielas en su script de R y
 ejecútelas.
 
-```{r}
+```{r,message=FALSE,warning=FALSE}
 library(deSolve)
 
 library(tidyverse)

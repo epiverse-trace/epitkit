@@ -85,7 +85,7 @@ Por favor revise que tenga instaladas las librerías
 `tidyverse, pak, epiparameter e infer`, en caso de que no estén
 instaladas ejecute el código a continuación de acuerdo a su necesidad:
 
-```{r}
+```{r,eval=FALSE}
 #Para instalar el paquete de epiparameter si aún no lo tiene (o no tiene seguridad de tenerlo) ejercute el siguiente código
 
 if(!require("pak")) install.packages("pak")
