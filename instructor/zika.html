@@ -563,8 +563,7 @@ ingrese el valor de cada uno de estos parámetros.</p>
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span></span>
-<span><span class="va">Lv</span>       <span class="op">&lt;-</span>   <span class="fl">10</span>     <span class="co"># Esperanza de vida de los mosquitos (en días)</span></span>
+<code class="sourceCode R"><span><span class="va">Lv</span>       <span class="op">&lt;-</span>   <span class="fl">10</span>     <span class="co"># Esperanza de vida de los mosquitos (en días)</span></span>
 <span><span class="va">Lh</span>       <span class="op">&lt;-</span>   <span class="fl">50</span><span class="op">*</span><span class="fl">365</span> <span class="co"># Esperanza de vida de los humanos (en días)</span></span>
 <span><span class="va">PIh</span>      <span class="op">&lt;-</span>   <span class="fl">7</span>      <span class="co"># Periodo infeccioso en humanos (en días)</span></span>
 <span><span class="va">PIv</span>      <span class="op">&lt;-</span>   <span class="fl">6</span>      <span class="co"># Periodo infeccioso en vectores (en días)</span></span>
@@ -663,16 +662,15 @@ I_v\]</span></p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co"># Humanos</span></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>         dSh   <span class="ot">&lt;-</span>  alphah <span class="sc">*</span> Nh <span class="sc">-</span> betah <span class="sc">*</span> (Iv<span class="sc">/</span>Nh) <span class="sc">*</span> Sh <span class="sc">-</span> muh <span class="sc">*</span> Sh   </span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>         dIh   <span class="ot">&lt;-</span>______ <span class="sc">*</span> (Iv<span class="sc">/</span>Nh) <span class="sc">*</span> Sh <span class="sc">-</span> (____ <span class="sc">+</span> _____) <span class="sc">*</span> Ih</span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>         dRh   <span class="ot">&lt;-</span>  ______ <span class="sc">*</span> Ih  <span class="sc">-</span> ______ <span class="sc">*</span> Rh</span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>         </span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a> <span class="co"># Mosquitos</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>         dSv  <span class="ot">&lt;-</span>  alphav <span class="sc">*</span> Nv <span class="sc">-</span> _____ <span class="sc">*</span> (Ih<span class="sc">/</span>Nh) <span class="sc">*</span> Sv <span class="sc">-</span> _____ <span class="sc">*</span> Sv </span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>         dEv  <span class="ot">&lt;-</span>  _____ <span class="sc">*</span> (Ih<span class="sc">/</span>Nh) <span class="sc">*</span> Sv <span class="sc">-</span> (____ <span class="sc">+</span> _____)<span class="sc">*</span> Ev</span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>         dIv  <span class="ot">&lt;-</span>  _____ <span class="sc">*</span> Ev <span class="sc">-</span> _____ <span class="sc">*</span> Iv</span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Humanos</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>         dSh   <span class="ot">&lt;-</span>  alphah <span class="sc">*</span> Nh <span class="sc">-</span> betah <span class="sc">*</span> (Iv<span class="sc">/</span>Nh) <span class="sc">*</span> Sh <span class="sc">-</span> muh <span class="sc">*</span> Sh   </span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>         dIh   <span class="ot">&lt;-</span>______ <span class="sc">*</span> (Iv<span class="sc">/</span>Nh) <span class="sc">*</span> Sh <span class="sc">-</span> (____ <span class="sc">+</span> _____) <span class="sc">*</span> Ih</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>         dRh   <span class="ot">&lt;-</span>  ______ <span class="sc">*</span> Ih  <span class="sc">-</span> ______ <span class="sc">*</span> Rh</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>         </span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a> <span class="co"># Mosquitos</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>         dSv  <span class="ot">&lt;-</span>  alphav <span class="sc">*</span> Nv <span class="sc">-</span> _____ <span class="sc">*</span> (Ih<span class="sc">/</span>Nh) <span class="sc">*</span> Sv <span class="sc">-</span> _____ <span class="sc">*</span> Sv </span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>         dEv  <span class="ot">&lt;-</span>  _____ <span class="sc">*</span> (Ih<span class="sc">/</span>Nh) <span class="sc">*</span> Sv <span class="sc">-</span> (____ <span class="sc">+</span> _____)<span class="sc">*</span> Ev</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>         dIv  <span class="ot">&lt;-</span>  _____ <span class="sc">*</span> Ev <span class="sc">-</span> _____ <span class="sc">*</span> Iv</span></code></pre>
 </div>
 </div>
 </div>
@@ -698,27 +696,26 @@ trabajó  en la instrucción anterior.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co"># Modelo determinístico simple (fun)</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>modelo_zika <span class="ot">&lt;-</span> <span class="cf">function</span>(tiempo, variable_estado, parametros) {</span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>  </span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>  <span class="fu">with</span>(<span class="fu">as.list</span>(<span class="fu">c</span>(variable_estado, parametros))</span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>, <span class="co"># entorno local para evaluar derivados</span></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>       {</span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>         <span class="co"># Humanos</span></span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>         dSh   <span class="ot">&lt;-</span>  ____ <span class="sc">*</span> Nh <span class="sc">-</span> ____ <span class="sc">*</span> (Iv<span class="sc">/</span>Nh) <span class="sc">*</span> Sh <span class="sc">-</span> ____ <span class="sc">*</span> Sh   </span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>         dIh   <span class="ot">&lt;-</span>  ____ <span class="sc">*</span> (Iv<span class="sc">/</span>Nh) <span class="sc">*</span> Sh <span class="sc">-</span> (____ <span class="sc">+</span> ____) <span class="sc">*</span> Ih</span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>         dRh   <span class="ot">&lt;-</span>  ____ <span class="sc">*</span> Ih  <span class="sc">-</span> ____ <span class="sc">*</span> Rh</span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>         </span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>         <span class="co"># Mosquitos</span></span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>         dSv  <span class="ot">&lt;-</span>  alphav <span class="sc">*</span> Nv <span class="sc">-</span> ____ <span class="sc">*</span> (Ih<span class="sc">/</span>Nh) <span class="sc">*</span> Sv <span class="sc">-</span> ____ <span class="sc">*</span> Sv </span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>         dEv  <span class="ot">&lt;-</span>  ____ <span class="sc">*</span> (Ih<span class="sc">/</span>Nh) <span class="sc">*</span> Sv <span class="sc">-</span> (____ <span class="sc">+</span> ____)<span class="sc">*</span> Ev</span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>         dIv  <span class="ot">&lt;-</span>  ____ <span class="sc">*</span> Ev <span class="sc">-</span> ____ <span class="sc">*</span> Iv</span>
-<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>         </span>
-<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a>         <span class="fu">list</span>(<span class="fu">c</span>(dSh, dIh, dRh, dSv, dEv, dIv))</span>
-<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a>       }</span>
-<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a>  )</span>
-<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a>}</span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># Modelo determinístico simple (fun)</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>modelo_zika <span class="ot">&lt;-</span> <span class="cf">function</span>(tiempo, variable_estado, parametros) {</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>  </span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>  <span class="fu">with</span>(<span class="fu">as.list</span>(<span class="fu">c</span>(variable_estado, parametros))</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>, <span class="co"># entorno local para evaluar derivados</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>       {</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>         <span class="co"># Humanos</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>         dSh   <span class="ot">&lt;-</span>  ____ <span class="sc">*</span> Nh <span class="sc">-</span> ____ <span class="sc">*</span> (Iv<span class="sc">/</span>Nh) <span class="sc">*</span> Sh <span class="sc">-</span> ____ <span class="sc">*</span> Sh   </span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>         dIh   <span class="ot">&lt;-</span>  ____ <span class="sc">*</span> (Iv<span class="sc">/</span>Nh) <span class="sc">*</span> Sh <span class="sc">-</span> (____ <span class="sc">+</span> ____) <span class="sc">*</span> Ih</span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>         dRh   <span class="ot">&lt;-</span>  ____ <span class="sc">*</span> Ih  <span class="sc">-</span> ____ <span class="sc">*</span> Rh</span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>         </span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>         <span class="co"># Mosquitos</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>         dSv  <span class="ot">&lt;-</span>  alphav <span class="sc">*</span> Nv <span class="sc">-</span> ____ <span class="sc">*</span> (Ih<span class="sc">/</span>Nh) <span class="sc">*</span> Sv <span class="sc">-</span> ____ <span class="sc">*</span> Sv </span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>         dEv  <span class="ot">&lt;-</span>  ____ <span class="sc">*</span> (Ih<span class="sc">/</span>Nh) <span class="sc">*</span> Sv <span class="sc">-</span> (____ <span class="sc">+</span> ____)<span class="sc">*</span> Ev</span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>         dIv  <span class="ot">&lt;-</span>  ____ <span class="sc">*</span> Ev <span class="sc">-</span> ____ <span class="sc">*</span> Iv</span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>         </span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>         <span class="fu">list</span>(<span class="fu">c</span>(dSh, dIh, dRh, dSv, dEv, dIv))</span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a>       }</span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a>  )</span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a>}</span></code></pre>
 </div>
 </div>
 </div>
@@ -737,8 +734,7 @@ trabajó  en la instrucción anterior.</p>
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span></span>
-<span><span class="co"># Modelo determinístico simple (fun)</span></span>
+<code class="sourceCode R"><span><span class="co"># Modelo determinístico simple (fun)</span></span>
 <span><span class="va">modelo_zika</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">tiempo</span>, <span class="va">variable_estado</span>, <span class="va">parametros</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  </span>
 <span>  <span class="fu">with</span><span class="op">(</span><span class="fu">as.list</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="va">variable_estado</span>, <span class="va">parametros</span><span class="op">)</span><span class="op">)</span></span>
@@ -904,14 +900,13 @@ lo trabajado hasta el momento.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a></span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co"># Resuelva las ecuaciones</span></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>salida <span class="ot">&lt;-</span> <span class="fu">ode</span>(<span class="at">y      =</span>   _______ , <span class="co"># COMPLETE Y COMENTE</span></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>              <span class="at">times  =</span> _______ ,   <span class="co"># COMPLETE Y COMENTE</span></span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>              <span class="at">fun    =</span> _______ ,   <span class="co"># COMPLETE Y COMENTE</span></span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>              <span class="at">parms  =</span> _______  <span class="co"># COMPLETE Y COMENTE</span></span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="co"># Convertir a data frame</span></span></code></pre>
+<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Resuelva las ecuaciones</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>salida <span class="ot">&lt;-</span> <span class="fu">ode</span>(<span class="at">y      =</span>   _______ , <span class="co"># COMPLETE Y COMENTE</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>              <span class="at">times  =</span> _______ ,   <span class="co"># COMPLETE Y COMENTE</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>              <span class="at">fun    =</span> _______ ,   <span class="co"># COMPLETE Y COMENTE</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>              <span class="at">parms  =</span> _______  <span class="co"># COMPLETE Y COMENTE</span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="co"># Convertir a data frame</span></span></code></pre>
 </div>
 </div>
 </div>

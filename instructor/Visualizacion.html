@@ -524,16 +524,21 @@ siguientes librerías:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>── Attaching core tidyverse packages ──────────────────────── tidyverse <span class="dv">2</span>.<span class="fl">0.0</span> ──</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>✔ dplyr     <span class="dv">1</span>.<span class="fl">1.4</span>     ✔ readr     <span class="dv">2</span>.<span class="fl">1.5</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>✔ forcats   <span class="dv">1</span>.<span class="fl">0.0</span>     ✔ stringr   <span class="dv">1</span>.<span class="fl">5.1</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>✔ lubridate <span class="dv">1</span>.<span class="fl">9.3</span>     ✔ tibble    <span class="dv">3</span>.<span class="fl">2.1</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>✔ purrr     <span class="dv">1</span>.<span class="fl">0.2</span>     ✔ tidyr     <span class="dv">1</span>.<span class="fl">3.1</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>── Conflicts ────────────────────────────────────────── <span class="fu">tidyverse_conflicts</span>() ──</span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>✖ dplyr<span class="sc">::</span><span class="fu">filter</span>() masks stats<span class="sc">::</span><span class="fu">filter</span>()</span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>✖ dplyr<span class="sc">::</span><span class="fu">lag</span>()    masks stats<span class="sc">::</span><span class="fu">lag</span>()</span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>ℹ Use the conflicted <span class="fu">package</span> (<span class="sc">&lt;</span>http<span class="sc">:</span><span class="er">//</span>conflicted.r<span class="sc">-</span>lib.org<span class="sc">/</span><span class="er">&gt;</span>) to force all conflicts to become errors</span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ lubridate 1.9.3     ✔ tibble    3.2.1
+✔ purrr     1.0.2     ✔ tidyr     1.3.1
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
 <p>Ahora, veremos cada uno de los componentes para realizar gráficos de
 datos con <code>ggplot2</code> a través de un ejercicio práctico. Se
@@ -556,7 +561,7 @@ visualizaciones sin la necesidad de pre-procesar los datos.</p>
 </div>
 <p>Cuando ya tengas los datos descargados en tu computador y en la
 carpeta de data de tu proyecto puedes ejecutar el siguiente comando:</p>
-<div class="codewrapper sourceCode" id="cb4">
+<div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -568,31 +573,36 @@ visualizaciones. Para esto utilizamos una de las funciones vistas en la
 unidad de “Introducción a R y RStudio” llamada
 <code>glimpse.</code>Úsala y verifica la estructura de la tabla de
 datos</p>
-<div class="codewrapper sourceCode" id="cb5">
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">glimpse</span>(covid19)</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>Rows<span class="sc">:</span> <span class="dv">100</span>,<span class="dv">000</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>Columns<span class="sc">:</span> <span class="dv">19</span></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="sc">$</span> fecha_reporte_web                     <span class="sc">&lt;</span>date<span class="sc">&gt;</span> <span class="dv">2021-04-09</span>, <span class="dv">2021-03-18</span>, <span class="dv">2022-01</span>…</span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="sc">$</span> id_de_caso                            <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="dv">2493495</span>, <span class="dv">2318883</span>, <span class="dv">5290100</span>, <span class="dv">43526</span>…</span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="sc">$</span> fecha_de_notificacion                 <span class="sc">&lt;</span>date<span class="sc">&gt;</span> <span class="dv">2021-03-27</span>, <span class="dv">2021-03-06</span>, <span class="dv">2022-01</span>…</span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="sc">$</span> edad                                  <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="dv">45</span>, <span class="dv">38</span>, <span class="dv">34</span>, <span class="dv">64</span>, <span class="dv">24</span>, <span class="dv">16</span>, <span class="dv">25</span>, <span class="dv">72</span>, …</span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="sc">$</span> sexo                                  <span class="sc">&lt;</span>fct<span class="sc">&gt;</span> femenino, masculino, masculino, …</span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="sc">$</span> tipo_de_contagio                      <span class="sc">&lt;</span>chr<span class="sc">&gt;</span> <span class="st">"Comunitaria"</span>, <span class="st">"Comunitaria"</span>, <span class="st">"C…</span></span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="st">$ ubicacion_del_caso                    &lt;chr&gt; "</span>Casa<span class="st">", "</span>Casa<span class="st">", "</span>Casa<span class="st">", "</span>Casa<span class="st">", …</span></span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="st">$ estado                                &lt;fct&gt; Leve, Leve, Leve, Leve, Leve, Le…</span></span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="st">$ recuperado                            &lt;fct&gt; Recuperado, Recuperado, Recupera…</span></span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="st">$ fecha_de_inicio_de_sintomas           &lt;date&gt; 2021-03-24, 2021-03-03, 2022-01…</span></span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="st">$ fecha_de_muerte                       &lt;date&gt; NA, NA, NA, NA, NA, NA, NA, NA,…</span></span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="st">$ fecha_de_diagnostico                  &lt;date&gt; 2021-04-07, 2021-03-17, 2022-01…</span></span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="st">$ fecha_de_recuperacion                 &lt;date&gt; 2021-04-10, 2021-03-19, 2022-01…</span></span>
-<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="st">$ fecha_de_nacimiento                   &lt;date&gt; 1975-06-01, 1975-06-08, 1975-06…</span></span>
-<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="st">$ nombre_del_pais                       &lt;chr&gt; "</span>Colombia<span class="st">", "</span>Cuba<span class="st">", "</span>Nicaragua<span class="st">",…</span></span>
-<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a><span class="st">$ sintomas                              &lt;fct&gt; Leve, Leve, Leve, Leve, Leve, Le…</span></span>
-<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="st">$ numero_de_hospitalizaciones_recientes &lt;dbl&gt; 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 1,…</span></span>
-<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a><span class="st">$ tension_sistolica                     &lt;dbl&gt; 107, 126, 107, 134, 126, 156, 14…</span></span>
-<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a><span class="st">$ tension_diastolica                    &lt;dbl&gt; 87, 64, 73, 76, 83, 96, 76, 87, …</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">glimpse</span><span class="op">(</span><span class="va">covid19</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Rows: 100,000
+Columns: 19
+$ fecha_reporte_web                     &lt;date&gt; 2021-04-09, 2021-03-18, 2022-01…
+$ id_de_caso                            &lt;dbl&gt; 2493495, 2318883, 5290100, 43526…
+$ fecha_de_notificacion                 &lt;date&gt; 2021-03-27, 2021-03-06, 2022-01…
+$ edad                                  &lt;dbl&gt; 45, 38, 34, 64, 24, 16, 25, 72, …
+$ sexo                                  &lt;fct&gt; femenino, masculino, masculino, …
+$ tipo_de_contagio                      &lt;chr&gt; "Comunitaria", "Comunitaria", "C…
+$ ubicacion_del_caso                    &lt;chr&gt; "Casa", "Casa", "Casa", "Casa", …
+$ estado                                &lt;fct&gt; Leve, Leve, Leve, Leve, Leve, Le…
+$ recuperado                            &lt;fct&gt; Recuperado, Recuperado, Recupera…
+$ fecha_de_inicio_de_sintomas           &lt;date&gt; 2021-03-24, 2021-03-03, 2022-01…
+$ fecha_de_muerte                       &lt;date&gt; NA, NA, NA, NA, NA, NA, NA, NA,…
+$ fecha_de_diagnostico                  &lt;date&gt; 2021-04-07, 2021-03-17, 2022-01…
+$ fecha_de_recuperacion                 &lt;date&gt; 2021-04-10, 2021-03-19, 2022-01…
+$ fecha_de_nacimiento                   &lt;date&gt; 1975-06-01, 1975-06-08, 1975-06…
+$ nombre_del_pais                       &lt;chr&gt; "Colombia", "Cuba", "Nicaragua",…
+$ sintomas                              &lt;fct&gt; Leve, Leve, Leve, Leve, Leve, Le…
+$ numero_de_hospitalizaciones_recientes &lt;dbl&gt; 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 1,…
+$ tension_sistolica                     &lt;dbl&gt; 107, 126, 107, 134, 126, 156, 14…
+$ tension_diastolica                    &lt;dbl&gt; 87, 64, 73, 76, 83, 96, 76, 87, …</code></pre>
 </div>
 <div class="section level3">
 <h3 id="estética-aesthetics">Estética (Aesthetics)<a class="anchor" aria-label="anchor" href="#est%C3%A9tica-aesthetics"></a></h3>
@@ -621,14 +631,19 @@ de casos por fecha de reporte y desagregados por sexo. Para esto,
 primero organizamos los datos para lograr una tabla resumen con la
 información que queremos graficar, usando las funciones vistas en la
 unidad de “Introducción a R y RStudio” de la siguiente manera:</p>
-<div class="codewrapper sourceCode" id="cb6">
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>covid19_resumen <span class="ot">&lt;-</span> covid19 <span class="sc">%&gt;%</span></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>  <span class="fu">group_by</span>(fecha_reporte_web, sexo) <span class="sc">%&gt;%</span></span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">casos =</span> <span class="fu">n</span>())</span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="st">`</span><span class="at">summarise()</span><span class="st">`</span> has grouped output by <span class="st">'fecha_reporte_web'</span>. You can override using</span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>the <span class="st">`</span><span class="at">.groups</span><span class="st">`</span> argument.</span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid19_resumen</span> <span class="op">&lt;-</span> <span class="va">covid19</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">fecha_reporte_web</span>, <span class="va">sexo</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">summarise</span><span class="op">(</span>casos <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>`summarise()` has grouped output by 'fecha_reporte_web'. You can override using
+the `.groups` argument.</code></pre>
 </div>
 <p>Luego, podemos usar la estética de los gráficos de
 <code>ggplot2</code> indicando las variables a usar en cada dimensión,
@@ -637,7 +652,7 @@ en este caso en el eje X tendremos la variable de tiempo
 la desagregación por sexo haremos uso de uno de los atributos como el
 color. Estas instrucciones pueden seguirse a través del siguiente
 código:</p>
-<div class="codewrapper sourceCode" id="cb7">
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -673,7 +688,7 @@ correspondiente comando:</p>
 <p>Supongamos que queremos visualizar la evolución del número de casos
 de covid-19 a lo largo del tiempo. Para esto, primero debemos preparar
 el conjunto de datos que formarán el gráfico:</p>
-<div class="codewrapper sourceCode" id="cb8">
+<div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -683,7 +698,7 @@ el conjunto de datos que formarán el gráfico:</p>
 </div>
 <p>Una vez el conjunto de datos esté listo, procedemos a usar la
 geometría de <code>ggplot2</code>:</p>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -698,7 +713,7 @@ geometría de <code>ggplot2</code>:</p>
 <p>Ahora, hagamos una visualización en forma de gráfico de barras del
 total de casos positivos por sexo, para esto utilizamos el comando
 <code>geom_bar()</code> así:</p>
-<div class="codewrapper sourceCode" id="cb10">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -712,7 +727,7 @@ automáticamente calcula el eje Y.</p>
 <h4 id="ejemplo-4--gráfico-de-barras-más-complejo">Ejemplo 4. Gráfico de barras más complejo<a class="anchor" aria-label="anchor" href="#ejemplo-4--gr%C3%A1fico-de-barras-m%C3%A1s-complejo"></a></h4>
 <p>Primero vamos a preparar los datos en una tabla de datos que permita
 contar el número de casos por ubicación del caso:</p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -724,7 +739,7 @@ contar el número de casos por ubicación del caso:</p>
 visualización usando el argumento <code>stat = "identity"</code> que
 calcula la suma de la variable <code>y = casos</code> agrupando por la
 variable <code>x = ubicacion_del_caso</code>:</p>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -736,7 +751,7 @@ variable <code>x = ubicacion_del_caso</code>:</p>
 desearamos poner las barras en orientación horizontal podemos lograrlo,
 usando al final el comando <code>coord_flip</code> de la siguiente
 manera:</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -752,7 +767,7 @@ argumentos: el primero es la variable a ordenar y el segundo es la
 variable que otorga el orden. En este caso sería
 <code>reorder(ubicacion_del_caso, +casos)</code> si queremos ordenar de
 mayor a menor cantidad de casos. El código sería el siguiente:</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -882,7 +897,7 @@ y alto.</p></li>
 <p>Usaremos exactamente el mismo ejemplo anterior, pero en este caso al
 final agregamos la escala <code>logarítmica scale_y_log10()</code>
 así:</p>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -919,19 +934,24 @@ del número de variables a usar para la creación de los paneles.</p>
 <h4 id="ejemplo-5--gráfico-con-facet-wrap">Ejemplo 5. Gráfico con facet wrap<a class="anchor" aria-label="anchor" href="#ejemplo-5--gr%C3%A1fico-con-facet-wrap"></a></h4>
 <p>Primero vamos a preparar los datos en una tabla de datos que permita
 contar el número de casos por <code>edad</code> y <code>sexo</code>:</p>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>covid19_sexo <span class="ot">&lt;-</span> covid19 <span class="sc">%&gt;%</span></span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>  <span class="fu">group_by</span>(edad, sexo) <span class="sc">%&gt;%</span></span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">casos =</span> <span class="fu">n</span>())</span>
-<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="st">`</span><span class="at">summarise()</span><span class="st">`</span> has grouped output by <span class="st">'edad'</span>. You can override using the</span>
-<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a><span class="st">`</span><span class="at">.groups</span><span class="st">`</span> argument.</span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid19_sexo</span> <span class="op">&lt;-</span> <span class="va">covid19</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">edad</span>, <span class="va">sexo</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">summarise</span><span class="op">(</span>casos <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>`summarise()` has grouped output by 'edad'. You can override using the
+`.groups` argument.</code></pre>
 </div>
 <p>Usando los datos de <code>covid-19</code>, vamos a representar la
 variable <code>casos</code> por <code>edad</code> en dos paneles por
 <code>sexo</code> usando <code>facet_wrap</code> así:</p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -960,7 +980,7 @@ la variable <code>sexo</code> ¿cómo cambiaría el código?</p>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -973,7 +993,7 @@ la variable <code>sexo</code> ¿cómo cambiaría el código?</p>
 </div>
 </div>
 <p>Agregando una escala de color degradé tenemos:</p>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1012,7 +1032,7 @@ proporcionamos algunos ejemplos de cómo utilizar los temas en
 <div class="section level4">
 <h4 id="ejemplo-6--usando-theme-classic">Ejemplo 6. Usando theme classic<a class="anchor" aria-label="anchor" href="#ejemplo-6--usando-theme-classic"></a></h4>
 <p>Para usar el tema clásico tenemos:</p>
-<div class="codewrapper sourceCode" id="cb20">
+<div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1025,7 +1045,7 @@ proporcionamos algunos ejemplos de cómo utilizar los temas en
 <div class="section level4">
 <h4 id="ejemplo-7--usando-theme-classic">Ejemplo 7. Usando theme classic<a class="anchor" aria-label="anchor" href="#ejemplo-7--usando-theme-classic"></a></h4>
 <p>Para este tema tendríamos lo siguiente:</p>
-<div class="codewrapper sourceCode" id="cb21">
+<div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1054,7 +1074,7 @@ manualmente.</p>
 <p>Podemos usar comandos como <code>xlab</code>, <code>ylab</code> para
 cambiar los nombres de los ejes. Igualmente, comandos como title y
 subtitle de la siguiente forma:</p>
-<div class="codewrapper sourceCode" id="cb22">
+<div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">

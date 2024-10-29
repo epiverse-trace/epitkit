@@ -496,38 +496,64 @@ construido de la siguiente manera:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>Attaching package<span class="sc">:</span> <span class="st">'dplyr'</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>The following objects are masked from <span class="st">'package:stats'</span><span class="sc">:</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>    filter, lag</span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>The following objects are masked from <span class="st">'package:base'</span><span class="sc">:</span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>    intersect, setdiff, setequal, union</span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co"># Histograma con frecuencia absoluta</span></span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="fu">ggplot</span>(muestra_covid, <span class="fu">aes</span>(<span class="at">x =</span> edad)) <span class="sc">+</span></span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"darkblue"</span>, </span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">"lightblue"</span>) <span class="sc">+</span></span>
-<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Frecuencia Absoluta"</span>, <span class="at">x =</span> <span class="st">"Edad en años"</span>,</span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Distribución de la edad"</span>)</span>
-<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="st">`</span><span class="at">stat_bin()</span><span class="st">`</span> using <span class="st">`</span><span class="at">bins = 30</span><span class="st">`</span>. Pick better value with <span class="st">`</span><span class="at">binwidth</span><span class="st">`</span>.</span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">ggplot2</span><span class="op">)</span></span>
+<span><span class="kw">library</span><span class="op">(</span><span class="va">dplyr</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/estadistica-rendered-unnamed-chunk-3-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div class="codewrapper sourceCode" id="cb4">
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Histograma con densidad</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="fu">ggplot</span>(muestra_covid, <span class="fu">aes</span>(<span class="at">x =</span> edad)) <span class="sc">+</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(density)),</span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">"darkblue"</span>,</span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">"lightblue"</span>) <span class="sc">+</span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Densidad"</span>, <span class="at">x =</span> <span class="st">"Edad en años"</span>,</span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Distribución de la edad"</span>)</span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="st">`</span><span class="at">stat_bin()</span><span class="st">`</span> using <span class="st">`</span><span class="at">bins = 30</span><span class="st">`</span>. Pick better value with <span class="st">`</span><span class="at">binwidth</span><span class="st">`</span>.</span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Histograma con frecuencia absoluta</span></span>
+<span></span>
+<span><span class="fu">ggplot</span><span class="op">(</span><span class="va">muestra_covid</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">edad</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_histogram</span><span class="op">(</span>color <span class="op">=</span> <span class="st">"darkblue"</span>, </span>
+<span>                 fill <span class="op">=</span> <span class="st">"lightblue"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>y <span class="op">=</span> <span class="st">"Frecuencia Absoluta"</span>, x <span class="op">=</span> <span class="st">"Edad en años"</span>,</span>
+<span>       title <span class="op">=</span> <span class="st">"Distribución de la edad"</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<figure><img src="../fig/estadistica-rendered-unnamed-chunk-3-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Histograma con densidad</span></span>
+<span></span>
+<span><span class="fu">ggplot</span><span class="op">(</span><span class="va">muestra_covid</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">edad</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_histogram</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>y <span class="op">=</span> <span class="fu">after_stat</span><span class="op">(</span><span class="va">density</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>                 color <span class="op">=</span> <span class="st">"darkblue"</span>,</span>
+<span>                 fill <span class="op">=</span> <span class="st">"lightblue"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>y <span class="op">=</span> <span class="st">"Densidad"</span>, x <span class="op">=</span> <span class="st">"Edad en años"</span>,</span>
+<span>       title <span class="op">=</span> <span class="st">"Distribución de la edad"</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 </div>
 <figure><img src="../fig/estadistica-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Los <strong>Boxplot</strong> se construyen a partir de la
 visualización en sentido horizontal o vertical de los siguientes
@@ -583,7 +609,7 @@ recomienda realizar la descripción de los datos por medio de la mediana
 y rango intercuartílico.</p></li>
 </ul><p>A continuación realizaremos la visualización de la edad de los casos
 de COVID-19 a través de un boxplot.</p>
-<div class="codewrapper sourceCode" id="cb5">
+<div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -599,21 +625,26 @@ valores del Q1 y la mediana, por lo que es recomendar describir el
 comportamiento de la misma por medio de la mediana y rango
 intercuartílico, esto en R puede ser encontrado de la siguiente manera
 utilizando las funciones resaltadas en azul:</p>
-<div class="codewrapper sourceCode" id="cb6">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># Estadísticas Descriptivas Variables cuantitativas</span></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>muestra_covid <span class="sc">%&gt;%</span></span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(</span>
-<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>  <span class="at">n =</span> <span class="fu">n</span> (), <span class="co"># Número de observaciones</span></span>
-<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>  <span class="at">media =</span> <span class="fu">mean</span>(edad), <span class="co">#Media</span></span>
-<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>  <span class="at">sd =</span> <span class="fu">sd</span>(edad), <span class="co">#Desviación estándar</span></span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>  <span class="at">mediana =</span> <span class="fu">quantile</span>(edad, <span class="fl">0.50</span>), <span class="co"># Mediana-Percentil 50</span></span>
-<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>  <span class="at">P25 =</span> <span class="fu">quantile</span>(edad, <span class="fl">0.25</span>), <span class="co"># Percentil 25</span></span>
-<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>  <span class="at">P75 =</span> <span class="fu">quantile</span>(edad, <span class="fl">0.75</span>)) <span class="co"># Percentil 75</span></span>
-<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>       n    media       sd mediana P25 P75</span>
-<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="dv">1</span> <span class="dv">100000</span> <span class="fl">41.99912</span> <span class="fl">19.51872</span>      <span class="dv">39</span>  <span class="dv">28</span>  <span class="dv">55</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Estadísticas Descriptivas Variables cuantitativas</span></span>
+<span></span>
+<span><span class="va">muestra_covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">summarise</span><span class="op">(</span></span>
+<span>  n <span class="op">=</span> <span class="fu">n</span> <span class="op">(</span><span class="op">)</span>, <span class="co"># Número de observaciones</span></span>
+<span>  media <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">edad</span><span class="op">)</span>, <span class="co">#Media</span></span>
+<span>  sd <span class="op">=</span> <span class="fu">sd</span><span class="op">(</span><span class="va">edad</span><span class="op">)</span>, <span class="co">#Desviación estándar</span></span>
+<span>  mediana <span class="op">=</span> <span class="fu">quantile</span><span class="op">(</span><span class="va">edad</span>, <span class="fl">0.50</span><span class="op">)</span>, <span class="co"># Mediana-Percentil 50</span></span>
+<span>  P25 <span class="op">=</span> <span class="fu">quantile</span><span class="op">(</span><span class="va">edad</span>, <span class="fl">0.25</span><span class="op">)</span>, <span class="co"># Percentil 25</span></span>
+<span>  P75 <span class="op">=</span> <span class="fu">quantile</span><span class="op">(</span><span class="va">edad</span>, <span class="fl">0.75</span><span class="op">)</span><span class="op">)</span> <span class="co"># Percentil 75</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>       n    media       sd mediana P25 P75
+1 100000 41.99912 19.51872      39  28  55</code></pre>
 </div>
 <p>Finalmente, para la variable edad se puede concluir que la mitad de
 los pacientes con covid-19 tienen edades entre 27 y 52 años (“RIQ”) con
@@ -633,25 +664,30 @@ necesidades, es decir, siempre es necesario primero evaluar la tabla de
 frecuencia de la variable. Supongamos que se desea conocer el tipo de
 contagio de COVID-19. Esto en R puede realizarse utilizando el siguiente
 comando:</p>
-<div class="codewrapper sourceCode" id="cb7">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>tabla <span class="ot">&lt;-</span> muestra_covid <span class="sc">%&gt;%</span> <span class="co"># se crea la tabla de frecuencia</span></span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">count</span>(tipo_de_contagio) <span class="sc">%&gt;%</span> <span class="co">#conteo de frecuencia para la variable estado</span></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">prop =</span> base<span class="sc">::</span><span class="fu">prop.table</span>(n), <span class="co">#proporción</span></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>                <span class="at">perc =</span> base<span class="sc">::</span><span class="fu">prop.table</span>(n)<span class="sc">*</span><span class="dv">100</span>) <span class="co">#porcentaje</span></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>tabla</span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>  tipo_de_contagio     n    prop   perc</span>
-<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="dv">1</span>      Comunitaria <span class="dv">69985</span> <span class="fl">0.69985</span> <span class="fl">69.985</span></span>
-<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="dv">2</span>        Importado    <span class="dv">63</span> <span class="fl">0.00063</span>  <span class="fl">0.063</span></span>
-<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="dv">3</span>      Relacionado <span class="dv">29952</span> <span class="fl">0.29952</span> <span class="fl">29.952</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">tabla</span> <span class="op">&lt;-</span> <span class="va">muestra_covid</span> <span class="op">%&gt;%</span> <span class="co"># se crea la tabla de frecuencia</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">count</span><span class="op">(</span><span class="va">tipo_de_contagio</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="co">#conteo de frecuencia para la variable estado</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">mutate</span><span class="op">(</span>prop <span class="op">=</span> <span class="fu">base</span><span class="fu">::</span><span class="fu">prop.table</span><span class="op">(</span><span class="va">n</span><span class="op">)</span>, <span class="co">#proporción</span></span>
+<span>                perc <span class="op">=</span> <span class="fu">base</span><span class="fu">::</span><span class="fu">prop.table</span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">*</span><span class="fl">100</span><span class="op">)</span> <span class="co">#porcentaje</span></span>
+<span></span>
+<span><span class="va">tabla</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>  tipo_de_contagio     n    prop   perc
+1      Comunitaria 69985 0.69985 69.985
+2        Importado    63 0.00063  0.063
+3      Relacionado 29952 0.29952 29.952</code></pre>
 </div>
 <p>Con esta información se puede concluir que el 70% de los casos de
 covid-19 fueron de la comunidad y sólo el 0.06% fueron importados de
 otros lugares. Esto puede ser visualizado por medio de un gráfico de
 barras:</p>
-<div class="codewrapper sourceCode" id="cb8">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -685,38 +721,43 @@ o más es 1.20 veces el riesgo de muerte en casos con 44 años o menos,
 con un intervalo de confianza del 95% de 1.13 a 1.27, y un valor p menor
 a 0.01. Para reproducir este cálculo puede  usar la librería
 <strong>epitools</strong> como se muestra acontinuación.</p>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">library</span>(epitools)</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>tabla2x2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">311</span>, <span class="dv">51</span>, <span class="dv">768</span>, <span class="dv">299</span>),<span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>epitools<span class="sc">::</span><span class="fu">riskratio</span>(tabla2x2)</span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="sc">$</span>data</span>
-<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>          Outcome</span>
-<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>Predictor  Disease1 Disease2 Total</span>
-<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a>  Exposed1      <span class="dv">311</span>      <span class="dv">768</span>  <span class="dv">1079</span></span>
-<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a>  Exposed2       <span class="dv">51</span>      <span class="dv">299</span>   <span class="dv">350</span></span>
-<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a>  Total         <span class="dv">362</span>     <span class="dv">1067</span>  <span class="dv">1429</span></span>
-<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a></span>
-<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a><span class="sc">$</span>measure</span>
-<span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a>          risk ratio with <span class="dv">95</span>% C.I.</span>
-<span id="cb9-15"><a href="#cb9-15" tabindex="-1"></a>Predictor  estimate    lower    upper</span>
-<span id="cb9-16"><a href="#cb9-16" tabindex="-1"></a>  Exposed1 <span class="fl">1.000000</span>       <span class="cn">NA</span>       <span class="cn">NA</span></span>
-<span id="cb9-17"><a href="#cb9-17" tabindex="-1"></a>  Exposed2 <span class="fl">1.200227</span> <span class="fl">1.133086</span> <span class="fl">1.271346</span></span>
-<span id="cb9-18"><a href="#cb9-18" tabindex="-1"></a></span>
-<span id="cb9-19"><a href="#cb9-19" tabindex="-1"></a><span class="sc">$</span>p.value</span>
-<span id="cb9-20"><a href="#cb9-20" tabindex="-1"></a>          two<span class="sc">-</span>sided</span>
-<span id="cb9-21"><a href="#cb9-21" tabindex="-1"></a>Predictor    midp.exact fisher.exact   chi.square</span>
-<span id="cb9-22"><a href="#cb9-22" tabindex="-1"></a>  Exposed1           <span class="cn">NA</span>           <span class="cn">NA</span>           <span class="cn">NA</span></span>
-<span id="cb9-23"><a href="#cb9-23" tabindex="-1"></a>  Exposed2 <span class="fl">3.179312e-08</span> <span class="fl">4.200177e-08</span> <span class="fl">9.982161e-08</span></span>
-<span id="cb9-24"><a href="#cb9-24" tabindex="-1"></a></span>
-<span id="cb9-25"><a href="#cb9-25" tabindex="-1"></a><span class="sc">$</span>correction</span>
-<span id="cb9-26"><a href="#cb9-26" tabindex="-1"></a>[<span class="dv">1</span>] <span class="cn">FALSE</span></span>
-<span id="cb9-27"><a href="#cb9-27" tabindex="-1"></a></span>
-<span id="cb9-28"><a href="#cb9-28" tabindex="-1"></a><span class="fu">attr</span>(,<span class="st">"method"</span>)</span>
-<span id="cb9-29"><a href="#cb9-29" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Unconditional MLE &amp; normal approximation (Wald) CI"</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">epitools</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">tabla2x2</span> <span class="op">&lt;-</span> <span class="fu">matrix</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="fl">311</span>, <span class="fl">51</span>, <span class="fl">768</span>, <span class="fl">299</span><span class="op">)</span>,nrow <span class="op">=</span> <span class="fl">2</span>, ncol <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">epitools</span><span class="fu">::</span><span class="fu">riskratio</span><span class="op">(</span><span class="va">tabla2x2</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>$data
+          Outcome
+Predictor  Disease1 Disease2 Total
+  Exposed1      311      768  1079
+  Exposed2       51      299   350
+  Total         362     1067  1429
+
+$measure
+          risk ratio with 95% C.I.
+Predictor  estimate    lower    upper
+  Exposed1 1.000000       NA       NA
+  Exposed2 1.200227 1.133086 1.271346
+
+$p.value
+          two-sided
+Predictor    midp.exact fisher.exact   chi.square
+  Exposed1           NA           NA           NA
+  Exposed2 3.179312e-08 4.200177e-08 9.982161e-08
+
+$correction
+[1] FALSE
+
+attr(,"method")
+[1] "Unconditional MLE &amp; normal approximation (Wald) CI"</code></pre>
 </div>
 <p>En el Tema 5 de esta Unidad encontrará una introducción a la
 inferencia estadística e intervalos de confianza.</p>
@@ -733,7 +774,7 @@ número real a cada evento que puede suceder en el espacio muestral.</p>
 <p>Para la explicación y ejemplos de las principales distribuciones es
 importante que instale y cargue los paquetes
 <strong>epiparameter</strong> del Epiverse.</p>
-<div class="codewrapper sourceCode" id="cb10">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -768,15 +809,20 @@ se necesita calcular la siguiente expresión:</p>
 <p><span class="math inline">\(P(X≤10)=∑_(x=0)^10 (20 x ) 〖0.60〗^x
 (1-0.60)^(20-x)\)</span></p>
 <p>En R esto puede ser calculado de la siguiente forma:</p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.60</span> </span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span> </span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span> </span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="fu">pbinom</span>(x,n,p, <span class="at">lower.tail =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.2446628</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fl">0.60</span> </span>
+<span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">20</span> </span>
+<span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">10</span> </span>
+<span></span>
+<span><span class="fu">pbinom</span><span class="op">(</span><span class="va">x</span>,<span class="va">n</span>,<span class="va">p</span>, lower.tail <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] 0.2446628</code></pre>
 </div>
 <p>Por lo tanto, la probabilidad de que máximo 10 individuos se infecten
 es del 24.5%.</p>
@@ -848,36 +894,45 @@ el día 2, es decir:</p>
 *5)^{10}}{10!}\)</span></p>
 <p><strong>En R lo podríamos descubrir al variar diferentes valores del
 número de reproducción (R) de la siguiente manera:</strong></p>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># Calculo probabilidad de poisson</span></span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>prob_poisson <span class="ot">&lt;-</span> <span class="cf">function</span>(x1, x2, r){</span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>  <span class="fu">dpois</span>(x2, r<span class="sc">*</span>x1)</span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>}</span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a> <span class="co"># Aplicar la función con los datos observados</span></span>
-<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a></span>
-<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a>numeros_reproduccion <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="fl">0.01</span>) <span class="co"># Diferentes valores de R</span></span>
-<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a>resultados_poisson <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">vector</span>(<span class="at">length =</span> base<span class="sc">::</span><span class="fu">length</span>(numeros_reproduccion))</span>
-<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a></span>
-<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="co">#crear un vector vacío </span></span>
-<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a></span>
-<span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(numeros_reproduccion)){</span>
-<span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a> resultados_poisson[i] <span class="ot">&lt;-</span> <span class="fu">prob_poisson</span>(<span class="at">x1 =</span> <span class="dv">5</span>, <span class="at">x2 =</span> <span class="dv">10</span>, <span class="at">r =</span> numeros_reproduccion[i])</span>
-<span id="cb12-15"><a href="#cb12-15" tabindex="-1"></a>}</span>
-<span id="cb12-16"><a href="#cb12-16" tabindex="-1"></a></span>
-<span id="cb12-17"><a href="#cb12-17" tabindex="-1"></a>datos_resultados <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">data.frame</span>(numeros_reproduccion, resultados_poisson)</span>
-<span id="cb12-18"><a href="#cb12-18" tabindex="-1"></a>numero_mas_probable <span class="ot">&lt;-</span> datos_resultados <span class="sc">%&gt;%</span>  dplyr<span class="sc">::</span><span class="fu">filter</span>(resultados_poisson <span class="sc">==</span> <span class="fu">max</span>(resultados_poisson)) <span class="sc">%&gt;%</span>  dplyr<span class="sc">::</span><span class="fu">pull</span>(numeros_reproduccion) </span>
-<span id="cb12-19"><a href="#cb12-19" tabindex="-1"></a></span>
-<span id="cb12-20"><a href="#cb12-20" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> datos_resultados, <span class="fu">aes</span>(<span class="at">x =</span> numeros_reproduccion, <span class="at">y =</span> resultados_poisson)) <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> numero_mas_probable ,<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size=</span><span class="dv">1</span>)</span>
-<span id="cb12-21"><a href="#cb12-21" tabindex="-1"></a>Warning<span class="sc">:</span> Using <span class="st">`</span><span class="at">size</span><span class="st">`</span> aesthetic <span class="cf">for</span> lines was deprecated <span class="cf">in</span> ggplot2 <span class="dv">3</span>.<span class="dv">4</span>.<span class="fl">0.</span></span>
-<span id="cb12-22"><a href="#cb12-22" tabindex="-1"></a>ℹ Please use <span class="st">`</span><span class="at">linewidth</span><span class="st">`</span> instead.</span>
-<span id="cb12-23"><a href="#cb12-23" tabindex="-1"></a>This warning is displayed once every <span class="dv">8</span> hours.</span>
-<span id="cb12-24"><a href="#cb12-24" tabindex="-1"></a>Call <span class="st">`</span><span class="at">lifecycle::last_lifecycle_warnings()</span><span class="st">`</span> to see where this warning was</span>
-<span id="cb12-25"><a href="#cb12-25" tabindex="-1"></a>generated.</span>
-<span id="cb12-26"><a href="#cb12-26" tabindex="-1"></a></span>
-<span id="cb12-27"><a href="#cb12-27" tabindex="-1"></a>p<span class="sc">+</span><span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Probabilidad"</span>, <span class="at">x =</span> <span class="st">"Número Reproductivo (R) "</span>,<span class="at">title =</span> <span class="st">"Modelo de Poisson"</span>)</span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Calculo probabilidad de poisson</span></span>
+<span><span class="va">prob_poisson</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x1</span>, <span class="va">x2</span>, <span class="va">r</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="fu">dpois</span><span class="op">(</span><span class="va">x2</span>, <span class="va">r</span><span class="op">*</span><span class="va">x1</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span> <span class="co"># Aplicar la función con los datos observados</span></span>
+<span></span>
+<span><span class="va">numeros_reproduccion</span> <span class="op">&lt;-</span> <span class="fu">base</span><span class="fu">::</span><span class="fu">seq</span><span class="op">(</span><span class="fl">0</span>,<span class="fl">5</span>,<span class="fl">0.01</span><span class="op">)</span> <span class="co"># Diferentes valores de R</span></span>
+<span><span class="va">resultados_poisson</span> <span class="op">&lt;-</span> <span class="fu">base</span><span class="fu">::</span><span class="fu">vector</span><span class="op">(</span>length <span class="op">=</span> <span class="fu">base</span><span class="fu">::</span><span class="fu">length</span><span class="op">(</span><span class="va">numeros_reproduccion</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#crear un vector vacío </span></span>
+<span></span>
+<span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu">seq_along</span><span class="op">(</span><span class="va">numeros_reproduccion</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
+<span> <span class="va">resultados_poisson</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu">prob_poisson</span><span class="op">(</span>x1 <span class="op">=</span> <span class="fl">5</span>, x2 <span class="op">=</span> <span class="fl">10</span>, r <span class="op">=</span> <span class="va">numeros_reproduccion</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="va">datos_resultados</span> <span class="op">&lt;-</span> <span class="fu">base</span><span class="fu">::</span><span class="fu">data.frame</span><span class="op">(</span><span class="va">numeros_reproduccion</span>, <span class="va">resultados_poisson</span><span class="op">)</span></span>
+<span><span class="va">numero_mas_probable</span> <span class="op">&lt;-</span> <span class="va">datos_resultados</span> <span class="op">%&gt;%</span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">filter</span><span class="op">(</span><span class="va">resultados_poisson</span> <span class="op">==</span> <span class="fu">max</span><span class="op">(</span><span class="va">resultados_poisson</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">numeros_reproduccion</span><span class="op">)</span> </span>
+<span></span>
+<span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">datos_resultados</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">numeros_reproduccion</span>, y <span class="op">=</span> <span class="va">resultados_poisson</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu">geom_line</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>  <span class="fu">geom_vline</span><span class="op">(</span>xintercept <span class="op">=</span> <span class="va">numero_mas_probable</span> ,color <span class="op">=</span> <span class="st">"red"</span>, size<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ADVERTENCIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="warning" tabindex="0"><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.
+This warning is displayed once every 8 hours.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+generated.</code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb24">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">p</span><span class="op">+</span><span class="fu">labs</span><span class="op">(</span>y <span class="op">=</span> <span class="st">"Probabilidad"</span>, x <span class="op">=</span> <span class="st">"Número Reproductivo (R) "</span>,title <span class="op">=</span> <span class="st">"Modelo de Poisson"</span><span class="op">)</span></span></code></pre>
 </div>
 <figure><img src="../fig/estadistica-rendered-unnamed-chunk-12-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Por lo tanto, si el número de casos secundarios se comporta de
 acuerdo a una distribución de Poisson, existe una alta probabilidad de
@@ -946,35 +1001,49 @@ disponibles en el paquete <code>epiparameter</code>, el cual es un
 paquete disponible en <code>R</code> que recopila las principales
 estimaciones para varios parámetros epidemiológicos de interés en el
 estudio de las enfermedades infecciosas.</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>SARS_R <span class="ot">&lt;-</span> epiparameter<span class="sc">::</span><span class="fu">epiparameter_db</span>(</span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>    <span class="at">disease =</span> <span class="st">"SARS"</span>,</span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>    <span class="at">epi_name =</span> <span class="st">"offspring distribution"</span>,</span>
-<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>    <span class="at">single_epiparameter =</span> <span class="cn">TRUE</span></span>
-<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>)</span>
-<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>Using Lloyd<span class="sc">-</span>Smith J, Schreiber S, Kopp P, Getz <span class="fu">W</span> (<span class="dv">2005</span>). <span class="st">"Superspreading and</span></span>
-<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="st">the effect of individual variation on disease emergence."</span> _Nature_.</span>
-<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a>doi<span class="sc">:</span><span class="fl">10.1038</span><span class="sc">/</span>nature04153 <span class="sc">&lt;</span>https<span class="sc">:</span><span class="er">//</span>doi.org<span class="sc">/</span><span class="fl">10.1038</span><span class="sc">/</span>nature04153<span class="sc">&gt;</span>.. </span>
-<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a>To retrieve the citation use the <span class="st">'get_citation'</span> <span class="cf">function</span></span>
-<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a>SARS_R</span>
-<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a>Disease<span class="sc">:</span> SARS</span>
-<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a>Pathogen<span class="sc">:</span> SARS<span class="sc">-</span>Cov<span class="dv">-1</span></span>
-<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a>Epi Parameter<span class="sc">:</span> offspring distribution</span>
-<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a>Study<span class="sc">:</span> Lloyd<span class="sc">-</span>Smith J, Schreiber S, Kopp P, Getz <span class="fu">W</span> (<span class="dv">2005</span>). <span class="st">"Superspreading and</span></span>
-<span id="cb13-15"><a href="#cb13-15" tabindex="-1"></a><span class="st">the effect of individual variation on disease emergence."</span> _Nature_.</span>
-<span id="cb13-16"><a href="#cb13-16" tabindex="-1"></a>doi<span class="sc">:</span><span class="fl">10.1038</span><span class="sc">/</span>nature04153 <span class="sc">&lt;</span>https<span class="sc">:</span><span class="er">//</span>doi.org<span class="sc">/</span><span class="fl">10.1038</span><span class="sc">/</span>nature04153<span class="sc">&gt;</span>.</span>
-<span id="cb13-17"><a href="#cb13-17" tabindex="-1"></a>Distribution<span class="sc">:</span> nbinom</span>
-<span id="cb13-18"><a href="#cb13-18" tabindex="-1"></a>Parameters<span class="sc">:</span></span>
-<span id="cb13-19"><a href="#cb13-19" tabindex="-1"></a>  mean<span class="sc">:</span> <span class="fl">1.630</span></span>
-<span id="cb13-20"><a href="#cb13-20" tabindex="-1"></a>  dispersion<span class="sc">:</span> <span class="fl">0.160</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">SARS_R</span> <span class="op">&lt;-</span> <span class="fu">epiparameter</span><span class="fu">::</span><span class="fu">epiparameter_db</span><span class="op">(</span></span>
+<span>    disease <span class="op">=</span> <span class="st">"SARS"</span>,</span>
+<span>    epi_name <span class="op">=</span> <span class="st">"offspring distribution"</span>,</span>
+<span>    single_epiparameter <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Using Lloyd-Smith J, Schreiber S, Kopp P, Getz W (2005). "Superspreading and
+the effect of individual variation on disease emergence." _Nature_.
+doi:10.1038/nature04153 &lt;https://doi.org/10.1038/nature04153&gt;..
+To retrieve the citation use the 'get_citation' function</code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb27">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">SARS_R</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Disease: SARS
+Pathogen: SARS-Cov-1
+Epi Parameter: offspring distribution
+Study: Lloyd-Smith J, Schreiber S, Kopp P, Getz W (2005). "Superspreading and
+the effect of individual variation on disease emergence." _Nature_.
+doi:10.1038/nature04153 &lt;https://doi.org/10.1038/nature04153&gt;.
+Distribution: nbinom
+Parameters:
+  mean: 1.630
+  dispersion: 0.160</code></pre>
 </div>
 <p>Con estos resultados sería posible graficar la distribución del
 número de casos secundarios del SARS para poder sugerir medidas de
 control. Esto también está disponible en el paquete
 <code>epiparameter</code> con la función <code>plot</code>.</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1021,7 +1090,7 @@ podría escribir como:</p>
 <p><span class="math inline">\(X \sim Geom(p=0.613)\)</span></p>
 <p>En R podríamos simular el comportamiento del número de casos
 secundarios con el siguiente código:</p>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1074,15 +1143,20 @@ sigue una distribución uniforme entre 2 y 5:</p>
 <p><span class="math inline">\(R0∼U[2,5]\)</span></p>
 <p>Para su simulación necesita generar cinco posibles valores de <span class="math inline">\(R_0\)</span> con igual probabilidad, lo anterior
 en <code>R</code> se resuelve utilizando el siguiente código:</p>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="co"># Generación de números aleatorios con la distribución uniforme</span></span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">runif</span>(n, a, b)</span>
-<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">2.750456</span> <span class="fl">3.098455</span> <span class="fl">4.750918</span> <span class="fl">4.635462</span> <span class="fl">4.201815</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Generación de números aleatorios con la distribución uniforme</span></span>
+<span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">5</span></span>
+<span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fl">2</span></span>
+<span><span class="va">b</span> <span class="op">&lt;-</span> <span class="fl">5</span></span>
+<span><span class="fu">stats</span><span class="fu">::</span><span class="fu">runif</span><span class="op">(</span><span class="va">n</span>, <span class="va">a</span>, <span class="va">b</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] 2.528508 3.998464 3.942946 2.943177 2.466154</code></pre>
 </div>
 </div>
 </div>
@@ -1140,14 +1214,19 @@ fallecidos por COVID-19</p>
 <p>En R, podemos usar la función <code>pnorm()</code> de la siguiente
 manera para encontrar:</p>
 <p><span class="math inline">\(P(X&lt;40)=?\)</span></p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fl">67.8</span></span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="fl">15.4</span> </span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">40</span> </span>
-<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">pnorm</span>(x, <span class="at">mean =</span> mu, <span class="at">sd =</span> sigma)</span>
-<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.0355221</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mu</span> <span class="op">&lt;-</span> <span class="fl">67.8</span></span>
+<span><span class="va">sigma</span> <span class="op">&lt;-</span> <span class="fl">15.4</span> </span>
+<span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">40</span> </span>
+<span><span class="fu">stats</span><span class="fu">::</span><span class="fu">pnorm</span><span class="op">(</span><span class="va">x</span>, mean <span class="op">=</span> <span class="va">mu</span>, sd <span class="op">=</span> <span class="va">sigma</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] 0.0355221</code></pre>
 </div>
 <p>Por lo tanto, la probabilidad de que un fallecido por COVID-19 sea
 menor de 40 años es del 3.5%.</p>
@@ -1190,37 +1269,51 @@ y <span class="math inline">\(σ=1.205\)</span>, lo que implica que en
 promedio un caso infectado desarrolla síntomas en 0.7 días. Esta
 información puede ser obtenida en el paquete epiparameter con el
 siguiente comando:</p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>SARS_incubacion <span class="ot">&lt;-</span> epiparameter<span class="sc">::</span><span class="fu">epiparameter_db</span>(</span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>    <span class="at">disease =</span> <span class="st">"SARS"</span>,</span>
-<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>    <span class="at">epi_name =</span> <span class="st">"incubation period"</span>,</span>
-<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>    <span class="at">single_epiparameter =</span> <span class="cn">TRUE</span></span>
-<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>)</span>
-<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a>Using Lessler J, Reich N, Brookmeyer R, Perl T, Nelson K, Cummings <span class="fu">D</span> (<span class="dv">2009</span>).</span>
-<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a><span class="st">"Incubation periods of acute respiratory viral infections: a systematic</span></span>
-<span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a><span class="st">review."</span> _The Lancet Infectious Diseases_.</span>
-<span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a>doi<span class="sc">:</span><span class="fl">10.1016</span><span class="sc">/</span>S1473<span class="dv">-3099</span>(<span class="dv">09</span>)<span class="dv">70069-8</span></span>
-<span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a><span class="sc">&lt;</span>https<span class="sc">:</span><span class="er">//</span>doi.org<span class="sc">/</span><span class="fl">10.1016</span><span class="sc">/</span>S1473<span class="dv">-3099</span><span class="sc">%2809%</span><span class="dv">2970069-8</span><span class="sc">&gt;</span>.. </span>
-<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a>To retrieve the citation use the <span class="st">'get_citation'</span> <span class="cf">function</span></span>
-<span id="cb18-12"><a href="#cb18-12" tabindex="-1"></a>SARS_incubacion</span>
-<span id="cb18-13"><a href="#cb18-13" tabindex="-1"></a>Disease<span class="sc">:</span> SARS</span>
-<span id="cb18-14"><a href="#cb18-14" tabindex="-1"></a>Pathogen<span class="sc">:</span> SARS<span class="sc">-</span>Cov<span class="dv">-1</span></span>
-<span id="cb18-15"><a href="#cb18-15" tabindex="-1"></a>Epi Parameter<span class="sc">:</span> incubation period</span>
-<span id="cb18-16"><a href="#cb18-16" tabindex="-1"></a>Study<span class="sc">:</span> Lessler J, Reich N, Brookmeyer R, Perl T, Nelson K, Cummings <span class="fu">D</span> (<span class="dv">2009</span>).</span>
-<span id="cb18-17"><a href="#cb18-17" tabindex="-1"></a><span class="st">"Incubation periods of acute respiratory viral infections: a systematic</span></span>
-<span id="cb18-18"><a href="#cb18-18" tabindex="-1"></a><span class="st">review."</span> _The Lancet Infectious Diseases_.</span>
-<span id="cb18-19"><a href="#cb18-19" tabindex="-1"></a>doi<span class="sc">:</span><span class="fl">10.1016</span><span class="sc">/</span>S1473<span class="dv">-3099</span>(<span class="dv">09</span>)<span class="dv">70069-8</span></span>
-<span id="cb18-20"><a href="#cb18-20" tabindex="-1"></a><span class="sc">&lt;</span>https<span class="sc">:</span><span class="er">//</span>doi.org<span class="sc">/</span><span class="fl">10.1016</span><span class="sc">/</span>S1473<span class="dv">-3099</span><span class="sc">%2809%</span><span class="dv">2970069-8</span><span class="sc">&gt;</span>.</span>
-<span id="cb18-21"><a href="#cb18-21" tabindex="-1"></a>Distribution<span class="sc">:</span> lnorm</span>
-<span id="cb18-22"><a href="#cb18-22" tabindex="-1"></a>Parameters<span class="sc">:</span></span>
-<span id="cb18-23"><a href="#cb18-23" tabindex="-1"></a>  meanlog<span class="sc">:</span> <span class="fl">1.386</span></span>
-<span id="cb18-24"><a href="#cb18-24" tabindex="-1"></a>  sdlog<span class="sc">:</span> <span class="fl">0.593</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">SARS_incubacion</span> <span class="op">&lt;-</span> <span class="fu">epiparameter</span><span class="fu">::</span><span class="fu">epiparameter_db</span><span class="op">(</span></span>
+<span>    disease <span class="op">=</span> <span class="st">"SARS"</span>,</span>
+<span>    epi_name <span class="op">=</span> <span class="st">"incubation period"</span>,</span>
+<span>    single_epiparameter <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Using Lessler J, Reich N, Brookmeyer R, Perl T, Nelson K, Cummings D (2009).
+"Incubation periods of acute respiratory viral infections: a systematic
+review." _The Lancet Infectious Diseases_.
+doi:10.1016/S1473-3099(09)70069-8
+&lt;https://doi.org/10.1016/S1473-3099%2809%2970069-8&gt;..
+To retrieve the citation use the 'get_citation' function</code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb37">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">SARS_incubacion</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Disease: SARS
+Pathogen: SARS-Cov-1
+Epi Parameter: incubation period
+Study: Lessler J, Reich N, Brookmeyer R, Perl T, Nelson K, Cummings D (2009).
+"Incubation periods of acute respiratory viral infections: a systematic
+review." _The Lancet Infectious Diseases_.
+doi:10.1016/S1473-3099(09)70069-8
+&lt;https://doi.org/10.1016/S1473-3099%2809%2970069-8&gt;.
+Distribution: lnorm
+Parameters:
+  meanlog: 1.386
+  sdlog: 0.593</code></pre>
 </div>
 <p>La distribución completa del periodo de incubación para SARS puede
 graficarse por medio de:</p>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb39">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1229,11 +1322,16 @@ graficarse por medio de:</p>
 <figure><img src="../fig/estadistica-rendered-unnamed-chunk-19-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Lo anterior es útil para responder preguntas tipo: ¿Cuál es la
 probabilidad de que un caso de SARS desarrolle síntomas dos días después
 de la infección?</p>
-<div class="codewrapper sourceCode" id="cb20">
+<div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">plnorm</span>(<span class="dv">2</span>, <span class="at">meanlog =</span> <span class="fl">0.660</span>, <span class="at">sdlog =</span> <span class="fl">1.205</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.4890273</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">stats</span><span class="fu">::</span><span class="fu">plnorm</span><span class="op">(</span><span class="fl">2</span>, meanlog <span class="op">=</span> <span class="fl">0.660</span>, sdlog <span class="op">=</span> <span class="fl">1.205</span>, lower.tail <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] 0.4890273</code></pre>
 </div>
 </div>
 </div>
@@ -1278,37 +1376,51 @@ distribución gamma encontrando los siguientes parámetros:</p>
 <p><span class="math inline">\(s ∼Gamma( α=2.622,θ=0.957)\)</span></p>
 <p>Esta información puede ser obtenida también en el paquete
 <code>epiparameter</code> con el siguiente comando:</p>
-<div class="codewrapper sourceCode" id="cb21">
+<div class="codewrapper sourceCode" id="cb42">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a>influenza_s <span class="ot">&lt;-</span> epiparameter<span class="sc">::</span><span class="fu">epiparameter_db</span>(</span>
-<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a>  <span class="at">disease =</span> <span class="st">"Influenza"</span>,</span>
-<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a>  <span class="at">epi_name =</span> <span class="st">"serial_interval"</span>,</span>
-<span id="cb21-4"><a href="#cb21-4" tabindex="-1"></a>  <span class="at">single_epiparameter =</span> <span class="cn">TRUE</span></span>
-<span id="cb21-5"><a href="#cb21-5" tabindex="-1"></a>)</span>
-<span id="cb21-6"><a href="#cb21-6" tabindex="-1"></a>Using Ghani A, Baguelin M, Griffin J, Flasche S, van Hoek A, Cauchemez S,</span>
-<span id="cb21-7"><a href="#cb21-7" tabindex="-1"></a>Donnelly C, Robertson C, White M, Truscott J, Fraser C, Garske T, White</span>
-<span id="cb21-8"><a href="#cb21-8" tabindex="-1"></a>P, Leach S, Hall I, Jenkins H, Ferguson N, Cooper <span class="fu">B</span> (<span class="dv">2009</span>). <span class="st">"The Early</span></span>
-<span id="cb21-9"><a href="#cb21-9" tabindex="-1"></a><span class="st">Transmission Dynamics of H1N1pdm Influenza in the United Kingdom."</span></span>
-<span id="cb21-10"><a href="#cb21-10" tabindex="-1"></a>_PLoS Currents_. doi<span class="sc">:</span><span class="fl">10.1371</span><span class="sc">/</span>currents.RRN1130</span>
-<span id="cb21-11"><a href="#cb21-11" tabindex="-1"></a><span class="sc">&lt;</span>https<span class="sc">:</span><span class="er">//</span>doi.org<span class="sc">/</span><span class="fl">10.1371</span><span class="sc">/</span>currents.RRN1130<span class="sc">&gt;</span>.. </span>
-<span id="cb21-12"><a href="#cb21-12" tabindex="-1"></a>To retrieve the citation use the <span class="st">'get_citation'</span> <span class="cf">function</span></span>
-<span id="cb21-13"><a href="#cb21-13" tabindex="-1"></a>influenza_s</span>
-<span id="cb21-14"><a href="#cb21-14" tabindex="-1"></a>Disease<span class="sc">:</span> Influenza</span>
-<span id="cb21-15"><a href="#cb21-15" tabindex="-1"></a>Pathogen<span class="sc">:</span> Influenza<span class="sc">-</span>A<span class="sc">-</span>H1N1Pdm</span>
-<span id="cb21-16"><a href="#cb21-16" tabindex="-1"></a>Epi Parameter<span class="sc">:</span> serial interval</span>
-<span id="cb21-17"><a href="#cb21-17" tabindex="-1"></a>Study<span class="sc">:</span> Ghani A, Baguelin M, Griffin J, Flasche S, van Hoek A, Cauchemez S,</span>
-<span id="cb21-18"><a href="#cb21-18" tabindex="-1"></a>Donnelly C, Robertson C, White M, Truscott J, Fraser C, Garske T, White</span>
-<span id="cb21-19"><a href="#cb21-19" tabindex="-1"></a>P, Leach S, Hall I, Jenkins H, Ferguson N, Cooper <span class="fu">B</span> (<span class="dv">2009</span>). <span class="st">"The Early</span></span>
-<span id="cb21-20"><a href="#cb21-20" tabindex="-1"></a><span class="st">Transmission Dynamics of H1N1pdm Influenza in the United Kingdom."</span></span>
-<span id="cb21-21"><a href="#cb21-21" tabindex="-1"></a>_PLoS Currents_. doi<span class="sc">:</span><span class="fl">10.1371</span><span class="sc">/</span>currents.RRN1130</span>
-<span id="cb21-22"><a href="#cb21-22" tabindex="-1"></a><span class="sc">&lt;</span>https<span class="sc">:</span><span class="er">//</span>doi.org<span class="sc">/</span><span class="fl">10.1371</span><span class="sc">/</span>currents.RRN1130<span class="sc">&gt;</span>.</span>
-<span id="cb21-23"><a href="#cb21-23" tabindex="-1"></a>Distribution<span class="sc">:</span> gamma</span>
-<span id="cb21-24"><a href="#cb21-24" tabindex="-1"></a>Parameters<span class="sc">:</span></span>
-<span id="cb21-25"><a href="#cb21-25" tabindex="-1"></a>  shape<span class="sc">:</span> <span class="fl">2.622</span></span>
-<span id="cb21-26"><a href="#cb21-26" tabindex="-1"></a>  scale<span class="sc">:</span> <span class="fl">0.957</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">influenza_s</span> <span class="op">&lt;-</span> <span class="fu">epiparameter</span><span class="fu">::</span><span class="fu">epiparameter_db</span><span class="op">(</span></span>
+<span>  disease <span class="op">=</span> <span class="st">"Influenza"</span>,</span>
+<span>  epi_name <span class="op">=</span> <span class="st">"serial_interval"</span>,</span>
+<span>  single_epiparameter <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span></code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb22">
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Using Ghani A, Baguelin M, Griffin J, Flasche S, van Hoek A, Cauchemez S,
+Donnelly C, Robertson C, White M, Truscott J, Fraser C, Garske T, White
+P, Leach S, Hall I, Jenkins H, Ferguson N, Cooper B (2009). "The Early
+Transmission Dynamics of H1N1pdm Influenza in the United Kingdom."
+_PLoS Currents_. doi:10.1371/currents.RRN1130
+&lt;https://doi.org/10.1371/currents.RRN1130&gt;..
+To retrieve the citation use the 'get_citation' function</code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb44">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">influenza_s</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Disease: Influenza
+Pathogen: Influenza-A-H1N1Pdm
+Epi Parameter: serial interval
+Study: Ghani A, Baguelin M, Griffin J, Flasche S, van Hoek A, Cauchemez S,
+Donnelly C, Robertson C, White M, Truscott J, Fraser C, Garske T, White
+P, Leach S, Hall I, Jenkins H, Ferguson N, Cooper B (2009). "The Early
+Transmission Dynamics of H1N1pdm Influenza in the United Kingdom."
+_PLoS Currents_. doi:10.1371/currents.RRN1130
+&lt;https://doi.org/10.1371/currents.RRN1130&gt;.
+Distribution: gamma
+Parameters:
+  shape: 2.622
+  scale: 0.957</code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb46">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1317,15 +1429,20 @@ distribución gamma encontrando los siguientes parámetros:</p>
 <figure><img src="../fig/estadistica-rendered-unnamed-chunk-22-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Con esta información se podría encontrar la media y desviación
 estándar de la distribución con base en la aplicación de la distribución
 gamma:</p>
-<div class="codewrapper sourceCode" id="cb23">
+<div class="codewrapper sourceCode" id="cb47">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>shape <span class="ot">&lt;-</span> <span class="fl">2.622</span></span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>scale <span class="ot">&lt;-</span> <span class="fl">0.957</span></span>
-<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a>mean <span class="ot">&lt;-</span> shape<span class="sc">*</span>scale</span>
-<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(shape<span class="sc">*</span>scale<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">c</span>(mean, sd))</span>
-<span id="cb23-6"><a href="#cb23-6" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">2.509254</span> <span class="fl">1.549631</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">shape</span> <span class="op">&lt;-</span> <span class="fl">2.622</span></span>
+<span><span class="va">scale</span> <span class="op">&lt;-</span> <span class="fl">0.957</span></span>
+<span><span class="va">mean</span> <span class="op">&lt;-</span> <span class="va">shape</span><span class="op">*</span><span class="va">scale</span></span>
+<span><span class="va">sd</span> <span class="op">&lt;-</span> <span class="fu">sqrt</span><span class="op">(</span><span class="va">shape</span><span class="op">*</span><span class="va">scale</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu">print</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="va">mean</span>, <span class="va">sd</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] 2.509254 1.549631</code></pre>
 </div>
 <p>Por lo tanto, el promedio del intervalo serial de la influenza es de
 5.51 días con una desviación estándar de 1.55 días.</p>
@@ -1362,36 +1479,49 @@ Weibull encontrando los siguientes parámetros:</p>
 <p><span class="math inline">\(x∼Gamma( β=2.101,η=3.839)\)</span></p>
 <p>Esta información puede ser obtenida también en el paquete
 epiparameter con el siguiente comando:</p>
-<div class="codewrapper sourceCode" id="cb24">
+<div class="codewrapper sourceCode" id="cb49">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a></span>
-<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a>influenza_incubacion <span class="ot">&lt;-</span> epiparameter<span class="sc">::</span><span class="fu">epiparameter_db</span>(</span>
-<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a>  <span class="at">disease =</span> <span class="st">"Influenza"</span>,</span>
-<span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a>  <span class="at">epi_name =</span> <span class="st">"incubation period"</span>,</span>
-<span id="cb24-5"><a href="#cb24-5" tabindex="-1"></a>  <span class="at">single_epiparameter =</span> <span class="cn">TRUE</span></span>
-<span id="cb24-6"><a href="#cb24-6" tabindex="-1"></a>)</span>
-<span id="cb24-7"><a href="#cb24-7" tabindex="-1"></a>Using Virlogeux V, Li M, Tsang T, Feng L, Fang V, Jiang H, Wu P, Zheng J, Lau</span>
-<span id="cb24-8"><a href="#cb24-8" tabindex="-1"></a>E, Cao Y, Qin Y, Liao Q, Yu H, Cowling <span class="fu">B</span> (<span class="dv">2015</span>). <span class="st">"Estimating the</span></span>
-<span id="cb24-9"><a href="#cb24-9" tabindex="-1"></a><span class="st">Distribution of the Incubation Periods of Human Avian Influenza A(H7N9)</span></span>
-<span id="cb24-10"><a href="#cb24-10" tabindex="-1"></a><span class="st">Virus Infections."</span> _American Journal of Epidemiology_.</span>
-<span id="cb24-11"><a href="#cb24-11" tabindex="-1"></a>doi<span class="sc">:</span><span class="fl">10.1093</span><span class="sc">/</span>aje<span class="sc">/</span>kwv115 <span class="sc">&lt;</span>https<span class="sc">:</span><span class="er">//</span>doi.org<span class="sc">/</span><span class="fl">10.1093</span><span class="sc">/</span>aje<span class="sc">/</span>kwv115<span class="sc">&gt;</span>.. </span>
-<span id="cb24-12"><a href="#cb24-12" tabindex="-1"></a>To retrieve the citation use the <span class="st">'get_citation'</span> <span class="cf">function</span></span>
-<span id="cb24-13"><a href="#cb24-13" tabindex="-1"></a>influenza_incubacion</span>
-<span id="cb24-14"><a href="#cb24-14" tabindex="-1"></a>Disease<span class="sc">:</span> Influenza</span>
-<span id="cb24-15"><a href="#cb24-15" tabindex="-1"></a>Pathogen<span class="sc">:</span> Influenza<span class="sc">-</span>A<span class="sc">-</span>H7N9</span>
-<span id="cb24-16"><a href="#cb24-16" tabindex="-1"></a>Epi Parameter<span class="sc">:</span> incubation period</span>
-<span id="cb24-17"><a href="#cb24-17" tabindex="-1"></a>Study<span class="sc">:</span> Virlogeux V, Li M, Tsang T, Feng L, Fang V, Jiang H, Wu P, Zheng J, Lau</span>
-<span id="cb24-18"><a href="#cb24-18" tabindex="-1"></a>E, Cao Y, Qin Y, Liao Q, Yu H, Cowling <span class="fu">B</span> (<span class="dv">2015</span>). <span class="st">"Estimating the</span></span>
-<span id="cb24-19"><a href="#cb24-19" tabindex="-1"></a><span class="st">Distribution of the Incubation Periods of Human Avian Influenza A(H7N9)</span></span>
-<span id="cb24-20"><a href="#cb24-20" tabindex="-1"></a><span class="st">Virus Infections."</span> _American Journal of Epidemiology_.</span>
-<span id="cb24-21"><a href="#cb24-21" tabindex="-1"></a>doi<span class="sc">:</span><span class="fl">10.1093</span><span class="sc">/</span>aje<span class="sc">/</span>kwv115 <span class="sc">&lt;</span>https<span class="sc">:</span><span class="er">//</span>doi.org<span class="sc">/</span><span class="fl">10.1093</span><span class="sc">/</span>aje<span class="sc">/</span>kwv115<span class="sc">&gt;</span>.</span>
-<span id="cb24-22"><a href="#cb24-22" tabindex="-1"></a>Distribution<span class="sc">:</span> weibull</span>
-<span id="cb24-23"><a href="#cb24-23" tabindex="-1"></a>Parameters<span class="sc">:</span></span>
-<span id="cb24-24"><a href="#cb24-24" tabindex="-1"></a>  shape<span class="sc">:</span> <span class="fl">2.101</span></span>
-<span id="cb24-25"><a href="#cb24-25" tabindex="-1"></a>  scale<span class="sc">:</span> <span class="fl">3.839</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">influenza_incubacion</span> <span class="op">&lt;-</span> <span class="fu">epiparameter</span><span class="fu">::</span><span class="fu">epiparameter_db</span><span class="op">(</span></span>
+<span>  disease <span class="op">=</span> <span class="st">"Influenza"</span>,</span>
+<span>  epi_name <span class="op">=</span> <span class="st">"incubation period"</span>,</span>
+<span>  single_epiparameter <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span></code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb25">
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Using Virlogeux V, Li M, Tsang T, Feng L, Fang V, Jiang H, Wu P, Zheng J, Lau
+E, Cao Y, Qin Y, Liao Q, Yu H, Cowling B (2015). "Estimating the
+Distribution of the Incubation Periods of Human Avian Influenza A(H7N9)
+Virus Infections." _American Journal of Epidemiology_.
+doi:10.1093/aje/kwv115 &lt;https://doi.org/10.1093/aje/kwv115&gt;..
+To retrieve the citation use the 'get_citation' function</code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb51">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">influenza_incubacion</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Disease: Influenza
+Pathogen: Influenza-A-H7N9
+Epi Parameter: incubation period
+Study: Virlogeux V, Li M, Tsang T, Feng L, Fang V, Jiang H, Wu P, Zheng J, Lau
+E, Cao Y, Qin Y, Liao Q, Yu H, Cowling B (2015). "Estimating the
+Distribution of the Incubation Periods of Human Avian Influenza A(H7N9)
+Virus Infections." _American Journal of Epidemiology_.
+doi:10.1093/aje/kwv115 &lt;https://doi.org/10.1093/aje/kwv115&gt;.
+Distribution: weibull
+Parameters:
+  shape: 2.101
+  scale: 3.839</code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb53">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1426,64 +1556,83 @@ una simulación en R y seleccionar 1000 muestras de tamaño 5 y 10,
 respectivamente. Como se observa en la siguiente figura, las CFR
 estimadas al incrementar el tamaño de la muestra de 5 a 10 fueron más
 similares con un menor RIQ. </p>
-<div class="codewrapper sourceCode" id="cb26">
+<div class="codewrapper sourceCode" id="cb54">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">library</span>(infer)</span>
-<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a></span>
-<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>Attaching package<span class="sc">:</span> <span class="st">'infer'</span></span>
-<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a>The following object is masked from <span class="st">'package:epiparameter'</span><span class="sc">:</span></span>
-<span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a></span>
-<span id="cb26-6"><a href="#cb26-6" tabindex="-1"></a>    generate</span>
-<span id="cb26-7"><a href="#cb26-7" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">200</span>)</span>
-<span id="cb26-8"><a href="#cb26-8" tabindex="-1"></a>poblacion <span class="ot">&lt;-</span> base<span class="sc">::</span><span class="fu">data.frame</span>(<span class="at">muerto=</span><span class="fu">c</span>(base<span class="sc">::</span><span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">40</span>), base<span class="sc">::</span><span class="fu">rep</span>(<span class="dv">0</span>,<span class="dv">160</span>)))</span>
-<span id="cb26-9"><a href="#cb26-9" tabindex="-1"></a>muestrasn5 <span class="ot">&lt;-</span> poblacion <span class="sc">%&gt;%</span></span>
-<span id="cb26-10"><a href="#cb26-10" tabindex="-1"></a>  infer<span class="sc">::</span><span class="fu">rep_sample_n</span>(<span class="at">size =</span> <span class="dv">5</span>, <span class="at">reps =</span> <span class="dv">100</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb26-11"><a href="#cb26-11" tabindex="-1"></a></span>
-<span id="cb26-12"><a href="#cb26-12" tabindex="-1"></a>cfrn5 <span class="ot">&lt;-</span>muestrasn5 <span class="sc">%&gt;%</span></span>
-<span id="cb26-13"><a href="#cb26-13" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(replicate) <span class="sc">%&gt;%</span></span>
-<span id="cb26-14"><a href="#cb26-14" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">cfr =</span> <span class="fu">mean</span>(muerto))</span>
-<span id="cb26-15"><a href="#cb26-15" tabindex="-1"></a></span>
-<span id="cb26-16"><a href="#cb26-16" tabindex="-1"></a>muestrasn10 <span class="ot">&lt;-</span> poblacion <span class="sc">%&gt;%</span></span>
-<span id="cb26-17"><a href="#cb26-17" tabindex="-1"></a>  infer<span class="sc">::</span><span class="fu">rep_sample_n</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">reps =</span> <span class="dv">100</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb26-18"><a href="#cb26-18" tabindex="-1"></a></span>
-<span id="cb26-19"><a href="#cb26-19" tabindex="-1"></a>cfrn10<span class="ot">&lt;-</span>muestrasn10 <span class="sc">%&gt;%</span></span>
-<span id="cb26-20"><a href="#cb26-20" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(replicate) <span class="sc">%&gt;%</span></span>
-<span id="cb26-21"><a href="#cb26-21" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">cfr =</span> <span class="fu">mean</span>(muerto))</span>
-<span id="cb26-22"><a href="#cb26-22" tabindex="-1"></a></span>
-<span id="cb26-23"><a href="#cb26-23" tabindex="-1"></a>cfr <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">bind_rows</span>(cfrn5, cfrn10)</span>
-<span id="cb26-24"><a href="#cb26-24" tabindex="-1"></a>cfr <span class="ot">&lt;-</span> cfr <span class="sc">%&gt;%</span> </span>
-<span id="cb26-25"><a href="#cb26-25" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">size =</span> base<span class="sc">::</span><span class="fu">as.factor</span>(<span class="fu">c</span>(base<span class="sc">::</span><span class="fu">rep</span>(<span class="dv">5</span>,<span class="dv">100</span>), base<span class="sc">::</span><span class="fu">rep</span>(<span class="dv">10</span>, <span class="dv">100</span>))))</span>
-<span id="cb26-26"><a href="#cb26-26" tabindex="-1"></a></span>
-<span id="cb26-27"><a href="#cb26-27" tabindex="-1"></a></span>
-<span id="cb26-28"><a href="#cb26-28" tabindex="-1"></a><span class="co"># Plot sampling distribution</span></span>
-<span id="cb26-29"><a href="#cb26-29" tabindex="-1"></a><span class="fu">ggplot</span>(cfr, <span class="fu">aes</span>(<span class="at">x =</span>size, <span class="at">y=</span>cfr, <span class="at">fill=</span>size)) <span class="sc">+</span></span>
-<span id="cb26-30"><a href="#cb26-30" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb26-31"><a href="#cb26-31" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Tamaño muestral"</span>, <span class="at">y =</span> <span class="st">"CFR estimación"</span>,</span>
-<span id="cb26-32"><a href="#cb26-32" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">" "</span>) <span class="sc">+</span> <span class="fu">scale_fill_brewer</span>(<span class="at">palette=</span><span class="st">"Blues"</span>)</span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">infer</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>
+Attaching package: 'infer'</code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>The following object is masked from 'package:epiparameter':
+
+    generate</code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb57">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">set.seed</span><span class="op">(</span><span class="fl">200</span><span class="op">)</span></span>
+<span><span class="va">poblacion</span> <span class="op">&lt;-</span> <span class="fu">base</span><span class="fu">::</span><span class="fu">data.frame</span><span class="op">(</span>muerto<span class="op">=</span><span class="fu">c</span><span class="op">(</span><span class="fu">base</span><span class="fu">::</span><span class="fu">rep</span><span class="op">(</span><span class="fl">1</span>,<span class="fl">40</span><span class="op">)</span>, <span class="fu">base</span><span class="fu">::</span><span class="fu">rep</span><span class="op">(</span><span class="fl">0</span>,<span class="fl">160</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">muestrasn5</span> <span class="op">&lt;-</span> <span class="va">poblacion</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">infer</span><span class="fu">::</span><span class="fu">rep_sample_n</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">5</span>, reps <span class="op">=</span> <span class="fl">100</span>, replace <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">cfrn5</span> <span class="op">&lt;-</span><span class="va">muestrasn5</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">group_by</span><span class="op">(</span><span class="va">replicate</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">summarise</span><span class="op">(</span>cfr <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">muerto</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">muestrasn10</span> <span class="op">&lt;-</span> <span class="va">poblacion</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">infer</span><span class="fu">::</span><span class="fu">rep_sample_n</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">10</span>, reps <span class="op">=</span> <span class="fl">100</span>, replace <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">cfrn10</span><span class="op">&lt;-</span><span class="va">muestrasn10</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">group_by</span><span class="op">(</span><span class="va">replicate</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">summarise</span><span class="op">(</span>cfr <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">muerto</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">cfr</span> <span class="op">&lt;-</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">bind_rows</span><span class="op">(</span><span class="va">cfrn5</span>, <span class="va">cfrn10</span><span class="op">)</span></span>
+<span><span class="va">cfr</span> <span class="op">&lt;-</span> <span class="va">cfr</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">mutate</span><span class="op">(</span>size <span class="op">=</span> <span class="fu">base</span><span class="fu">::</span><span class="fu">as.factor</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="fu">base</span><span class="fu">::</span><span class="fu">rep</span><span class="op">(</span><span class="fl">5</span>,<span class="fl">100</span><span class="op">)</span>, <span class="fu">base</span><span class="fu">::</span><span class="fu">rep</span><span class="op">(</span><span class="fl">10</span>, <span class="fl">100</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="co"># Plot sampling distribution</span></span>
+<span><span class="fu">ggplot</span><span class="op">(</span><span class="va">cfr</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span><span class="va">size</span>, y<span class="op">=</span><span class="va">cfr</span>, fill<span class="op">=</span><span class="va">size</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_boxplot</span><span class="op">(</span>show.legend <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Tamaño muestral"</span>, y <span class="op">=</span> <span class="st">"CFR estimación"</span>,</span>
+<span>       title <span class="op">=</span> <span class="st">" "</span><span class="op">)</span> <span class="op">+</span> <span class="fu">scale_fill_brewer</span><span class="op">(</span>palette<span class="op">=</span><span class="st">"Blues"</span><span class="op">)</span></span></code></pre>
 </div>
 <figure><img src="../fig/estadistica-rendered-unnamed-chunk-26-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Si calculamos la media y desviación estándar de los valores estimados
 de la CRF con las muestras de tamaño 5 y tamaño 10, vemos que
 efectivamente la desviación estándar de las estimaciones es menor al
 incrementar el tamaño de la muestra, pero en ambos casos en promedio las
 muestras se acercaron al verdadero valor del parámetro del 0.20. </p>
-<div class="codewrapper sourceCode" id="cb27">
+<div class="codewrapper sourceCode" id="cb58">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>cfr <span class="sc">%&gt;%</span></span>
-<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>  <span class="fu">group_by</span>(size) <span class="sc">%&gt;%</span></span>
-<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>    <span class="at">media =</span> <span class="fu">mean</span>(cfr),</span>
-<span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a>    <span class="at">sd =</span> <span class="fu">sd</span>(cfr),</span>
-<span id="cb27-6"><a href="#cb27-6" tabindex="-1"></a>    <span class="at">mediana =</span> <span class="fu">median</span>(cfr),</span>
-<span id="cb27-7"><a href="#cb27-7" tabindex="-1"></a>    <span class="at">P25 =</span> <span class="fu">quantile</span>(cfr, <span class="fl">0.25</span>),</span>
-<span id="cb27-8"><a href="#cb27-8" tabindex="-1"></a>    <span class="at">P75 =</span> <span class="fu">quantile</span>(cfr, <span class="fl">0.75</span>)</span>
-<span id="cb27-9"><a href="#cb27-9" tabindex="-1"></a>  )</span>
-<span id="cb27-10"><a href="#cb27-10" tabindex="-1"></a><span class="co"># A tibble: 2 × 6</span></span>
-<span id="cb27-11"><a href="#cb27-11" tabindex="-1"></a>  size  media    sd mediana   P25   P75</span>
-<span id="cb27-12"><a href="#cb27-12" tabindex="-1"></a>  <span class="sc">&lt;</span>fct<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>   <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
-<span id="cb27-13"><a href="#cb27-13" tabindex="-1"></a><span class="dv">1</span> <span class="dv">5</span>     <span class="fl">0.208</span> <span class="fl">0.180</span>     <span class="fl">0.2</span>   <span class="dv">0</span>     <span class="fl">0.4</span></span>
-<span id="cb27-14"><a href="#cb27-14" tabindex="-1"></a><span class="dv">2</span> <span class="dv">10</span>    <span class="fl">0.197</span> <span class="fl">0.116</span>     <span class="fl">0.2</span>   <span class="fl">0.1</span>   <span class="fl">0.3</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">cfr</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">size</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">summarise</span><span class="op">(</span></span>
+<span>    media <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">cfr</span><span class="op">)</span>,</span>
+<span>    sd <span class="op">=</span> <span class="fu">sd</span><span class="op">(</span><span class="va">cfr</span><span class="op">)</span>,</span>
+<span>    mediana <span class="op">=</span> <span class="fu">median</span><span class="op">(</span><span class="va">cfr</span><span class="op">)</span>,</span>
+<span>    P25 <span class="op">=</span> <span class="fu">quantile</span><span class="op">(</span><span class="va">cfr</span>, <span class="fl">0.25</span><span class="op">)</span>,</span>
+<span>    P75 <span class="op">=</span> <span class="fu">quantile</span><span class="op">(</span><span class="va">cfr</span>, <span class="fl">0.75</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code># A tibble: 2 × 6
+  size  media    sd mediana   P25   P75
+  &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 5     0.208 0.180     0.2   0     0.4
+2 10    0.197 0.116     0.2   0.1   0.3</code></pre>
 </div>
 <p>Pero, si en la vida real solo podemos tomar una muestra aleatoria,
 esto significa que solo vamos a tener una única oportunidad de calcular
@@ -1546,23 +1695,28 @@ manera más rápida y eficaz de la siguiente manera:</p>
 <p>Como hasta ahora se han dado cuenta este paso a paso puede llegar a
 ser engorroso por los cálculos, pero en R podemos obtener todo de una
 manera más rápida y eficaz de la siguiente manera:</p>
-<div class="codewrapper sourceCode" id="cb28">
+<div class="codewrapper sourceCode" id="cb60">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="co">#Cargue librería cfr</span></span>
-<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a><span class="fu">library</span>(cfr)</span>
-<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a><span class="co"># Cargue los datos de Ebola 1976 </span></span>
-<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a>utils<span class="sc">::</span><span class="fu">data</span>(ebola1976)</span>
-<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a>ebola1976<span class="sc">%&gt;%</span>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(</span>
-<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a>    <span class="at">n=</span><span class="fu">sum</span>(cases), <span class="co">#Total de casos</span></span>
-<span id="cb28-7"><a href="#cb28-7" tabindex="-1"></a>    <span class="at">muertes =</span> <span class="fu">sum</span>(deaths), <span class="co">#Total de muertes</span></span>
-<span id="cb28-8"><a href="#cb28-8" tabindex="-1"></a>    <span class="at">cfr_est =</span> muertes<span class="sc">/</span>n, <span class="co"># Estimación </span></span>
-<span id="cb28-9"><a href="#cb28-9" tabindex="-1"></a>    <span class="at">error =</span> <span class="fu">sqrt</span>((cfr_est<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>cfr_est))<span class="sc">/</span>n),</span>
-<span id="cb28-10"><a href="#cb28-10" tabindex="-1"></a>    <span class="at">lim_inf =</span> cfr_est <span class="sc">-</span><span class="fl">1.96</span><span class="sc">*</span>error, <span class="co">#Limite inferior del IC</span></span>
-<span id="cb28-11"><a href="#cb28-11" tabindex="-1"></a>    <span class="at">lim_sup =</span> cfr_est <span class="sc">+</span><span class="fl">1.96</span><span class="sc">*</span>error <span class="co">#Limite superior del IC</span></span>
-<span id="cb28-12"><a href="#cb28-12" tabindex="-1"></a>) </span>
-<span id="cb28-13"><a href="#cb28-13" tabindex="-1"></a>    n muertes  cfr_est      error   lim_inf   lim_sup</span>
-<span id="cb28-14"><a href="#cb28-14" tabindex="-1"></a><span class="dv">1</span> <span class="dv">245</span>     <span class="dv">234</span> <span class="fl">0.955102</span> <span class="fl">0.01322986</span> <span class="fl">0.9291715</span> <span class="fl">0.9810326</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#Cargue librería cfr</span></span>
+<span><span class="kw">library</span><span class="op">(</span><span class="va">cfr</span><span class="op">)</span></span>
+<span><span class="co"># Cargue los datos de Ebola 1976 </span></span>
+<span><span class="fu">utils</span><span class="fu">::</span><span class="fu">data</span><span class="op">(</span><span class="va">ebola1976</span><span class="op">)</span></span>
+<span><span class="va">ebola1976</span><span class="op">%&gt;%</span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">summarise</span><span class="op">(</span></span>
+<span>    n<span class="op">=</span><span class="fu">sum</span><span class="op">(</span><span class="va">cases</span><span class="op">)</span>, <span class="co">#Total de casos</span></span>
+<span>    muertes <span class="op">=</span> <span class="fu">sum</span><span class="op">(</span><span class="va">deaths</span><span class="op">)</span>, <span class="co">#Total de muertes</span></span>
+<span>    cfr_est <span class="op">=</span> <span class="va">muertes</span><span class="op">/</span><span class="va">n</span>, <span class="co"># Estimación </span></span>
+<span>    error <span class="op">=</span> <span class="fu">sqrt</span><span class="op">(</span><span class="op">(</span><span class="va">cfr_est</span><span class="op">*</span><span class="op">(</span><span class="fl">1</span><span class="op">-</span><span class="va">cfr_est</span><span class="op">)</span><span class="op">)</span><span class="op">/</span><span class="va">n</span><span class="op">)</span>,</span>
+<span>    lim_inf <span class="op">=</span> <span class="va">cfr_est</span> <span class="op">-</span><span class="fl">1.96</span><span class="op">*</span><span class="va">error</span>, <span class="co">#Limite inferior del IC</span></span>
+<span>    lim_sup <span class="op">=</span> <span class="va">cfr_est</span> <span class="op">+</span><span class="fl">1.96</span><span class="op">*</span><span class="va">error</span> <span class="co">#Limite superior del IC</span></span>
+<span><span class="op">)</span> </span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>    n muertes  cfr_est      error   lim_inf   lim_sup
+1 245     234 0.955102 0.01322986 0.9291715 0.9810326</code></pre>
 </div>
 </div>
 </div>
@@ -1573,12 +1727,17 @@ encuentra contenida en el intervalo entre 92.9% y 98.1%.</p>
 <p>El paquete CFR también tiene una función incorporada para estimar
 automáticamente con su respectivo intervalo al 95% la CFR durante una
 epidemia por medio de la función:</p>
-<div class="codewrapper sourceCode" id="cb29">
+<div class="codewrapper sourceCode" id="cb62">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a>cfr<span class="sc">::</span><span class="fu">cfr_static</span>(<span class="at">data =</span> ebola1976)</span>
-<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>  severity_estimate severity_low severity_high</span>
-<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a><span class="dv">1</span>          <span class="fl">0.955102</span>    <span class="fl">0.9210866</span>     <span class="fl">0.9773771</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">cfr</span><span class="fu">::</span><span class="fu">cfr_static</span><span class="op">(</span>data <span class="op">=</span> <span class="va">ebola1976</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>  severity_estimate severity_low severity_high
+1          0.955102    0.9210866     0.9773771</code></pre>
 </div>
 <p>Cómo pueden observar existen ligeras diferencias entre el IC
 construido paso a paso y el reportado por la función

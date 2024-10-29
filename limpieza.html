@@ -503,7 +503,10 @@ debería ver así:</p>
 </div>
 <p><strong>Resultado esperado:</strong> Al usar el anterior código con
 el mismo dataset se obtiene el siguiente resultado:</p>
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ✔ forcats   1.0.0     ✔ stringr   1.5.1
 ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
@@ -513,6 +516,7 @@ el mismo dataset se obtiene el siguiente resultado:</p>
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
 <ol start="7" style="list-style-type: decimal"><li>Cargue el dataset</li>
 </ol><p>⚠️ <strong>Instrucción:</strong> Cargue el dataset en R con el
 siguiente código:</p>
@@ -545,7 +549,10 @@ permite identificar rápidamente el contenido del dataset.</p>
 </div>
 <p><strong>Resultado esperado :</strong> Al usar el anterior código con
 el mismo dataset se obtiene el siguiente resultado:</p>
-<pre><code>Rows: 79,200
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Rows: 79,200
 Columns: 25
 $ `fecha reporte web`           &lt;chr&gt; "2021-03-15", "21-03-23", "2021-mar-15",…
 $ `ID de caso`                  &lt;int&gt; 1804713, 3202309, 5651419, 59067, 523826…
@@ -572,6 +579,7 @@ $ `Central de reporte`          &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, 
 $ Vacunado                      &lt;lgl&gt; FALSE, TRUE, FALSE, TRUE, TRUE, TRUE, TR…
 $ talla                         &lt;chr&gt; "1.73", "1.67", "1m69", "1.66", "1.63", …
 $ peso                          &lt;dbl&gt; 69.6, 73.9, 66.4, 72.5, 64.6, 66.7, 68.9…</code></pre>
+</div>
 </div>
 <div class="section level4">
 <h4 id="aplicación-de-buenas-prácticas-para-nombrar-variables"><strong>2.2.3. Aplicación de buenas prácticas para nombrar
@@ -641,7 +649,10 @@ el cambio en el nombre de la variable Tipo de recuperación:</p>
 </div>
 <p><strong>Resultado esperado:</strong> Al usar el anterior código con
 el mismo dataset se obtiene el siguiente resultado:</p>
-<pre><code>Rows: 79,200
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Rows: 79,200
 Columns: 25
 $ fecha_reporte_web           &lt;chr&gt; "2021-03-15", "21-03-23", "2021-mar-15", "…
 $ id_de_caso                  &lt;int&gt; 1804713, 3202309, 5651419, 59067, 5238264,…
@@ -669,6 +680,7 @@ $ vacunado                    &lt;lgl&gt; FALSE, TRUE, FALSE, TRUE, TRUE, TRUE, 
 $ talla                       &lt;chr&gt; "1.73", "1.67", "1m69", "1.66", "1.63", "1…
 $ peso                        &lt;dbl&gt; 69.6, 73.9, 66.4, 72.5, 64.6, 66.7, 68.9, …</code></pre>
 </div>
+</div>
 <div class="section level4">
 <h4 id="resumen-de-variables"><strong>2.2.4. Resumen de variables</strong><a class="anchor" aria-label="anchor" href="#resumen-de-variables"></a></h4>
 <p>Para empezar la exploración de las variables, emplearemos la función
@@ -684,7 +696,10 @@ explorar las variables:</p>
 </div>
 <p><strong>Resultado esperado:</strong> Al usar el anterior código con
 el mismo dataset se obtiene el siguiente resultado:</p>
-<pre><code> fecha_reporte_web    id_de_caso      fecha_de_notificacion      edad
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code> fecha_reporte_web    id_de_caso      fecha_de_notificacion      edad
  Length:79200       Min.   :    150   Length:79200          Min.   :  1.00
  Class :character   1st Qu.:1555387   Class :character      1st Qu.: 27.00
  Mode  :character   Median :3134996   Mode  :character      Median : 38.00
@@ -740,6 +755,7 @@ el mismo dataset se obtiene el siguiente resultado:</p>
                                                        3rd Qu.:72.70
                                                        Max.   :87.10
                                                                       </code></pre>
+</div>
 <div id="callout5" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -768,13 +784,17 @@ explorar la variable edad:</p>
 </div>
 <p><strong>Resultado esperado:</strong> Al usar el anterior código con
 el mismo dataset se obtiene el siguiente resultado:</p>
-<pre><code>      edad
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>      edad
  Min.   :  1.00
  1st Qu.: 27.00
  Median : 38.00
  Mean   : 39.84
  3rd Qu.: 52.00
  Max.   :109.00  </code></pre>
+</div>
 </div>
 <div class="section level4">
 <h4 id="exploración-de-variables-cuantitativas"><strong>2.2.5. Exploración de variables cuantitativas</strong><a class="anchor" aria-label="anchor" href="#exploraci%C3%B3n-de-variables-cuantitativas"></a></h4>
@@ -842,10 +862,14 @@ para ver el resumen de esta variable.</p>
 </div>
 <p><strong>Resultado esperado:</strong> Al usar el anterior código con
 el mismo dataset se obtiene el siguiente resultado:</p>
-<pre><code><span>   <span class="va">sintomas</span></span>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span>   <span class="va">sintomas</span></span>
 <span> <span class="va">Length</span><span class="op">:</span><span class="fl">79200</span></span>
 <span> <span class="va">Class</span> <span class="op">:</span><span class="va">character</span></span>
 <span> <span class="va">Mode</span>  <span class="op">:</span><span class="va">character</span>  </span></code></pre>
+</div>
 <div class="discusión">
 <p>¿Qué puede observar?</p>
 </div>
@@ -864,9 +888,13 @@ una tabla de la variable sintomas :</p>
 </div>
 <p><strong>Resultado esperado:</strong> Al usar el anterior código con
 el mismo dataset debió obtener los siguientes resultados:</p>
-<pre><code>.
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>.
      Critico        Grave         Leve     Moderado Sin sintomas
         1781            1        76976           13          429 </code></pre>
+</div>
 <div class="discusión">
 <p>¿Qué puede observar?</p>
 </div>
@@ -887,9 +915,13 @@ variable <code>sintomas</code>:</p>
 </div>
 <p><strong>Resultado esperado:</strong> Al usar el anterior código con
 el mismo dataset se obtiene el siguiente resultado:</p>
-<pre><code>.
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>.
      Critico        Grave         Leve     Moderado Sin sintomas
  2.248737374  0.001262626 97.191919192  0.016414141  0.541666667 </code></pre>
+</div>
 <p>Como puede observar ahora podemos ver cada categoría con su
 respectivo porcentaje. En caso de que sólo deseemos ver los objetos
 contenidos sin otros datos podemos emplear la función
@@ -906,7 +938,11 @@ extraer los valores únicos de la variable sintomas:</p>
 </div>
 <p><strong>Resultado esperado:</strong> Al usar el anterior código con
 el mismo dataset se obtiene el siguiente resultado:</p>
-<pre><code>[1] "Leve"         "Critico"      "Moderado"     "Sin sintomas" "Grave"       </code></pre>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] "Leve"         "Critico"      "Moderado"     "Sin sintomas" "Grave"       </code></pre>
+</div>
 <p>Con esto pudimos obtener los diferentes valores de la variable
 <code>sintomas</code>. Además, las variables cualitativas pueden ser
 examinadas mediante gráficos de barras o de torta.</p>
@@ -983,7 +1019,10 @@ explorar las variables transformadas a tipo factor:</p>
 </div>
 <p><strong>Resultado esperado:</strong> Al usar el anterior código con
 el mismo dataset se obtiene el siguiente resultado:</p>
-<pre><code> sexo              sintomas       nombre_del_pais
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code> sexo              sintomas       nombre_del_pais
  F:42336   Critico     : 1781   Honduras  : 3730
  M:36864   Grave       :    1   Ecuador   : 3715
            Leve        :76976   Nicaragua : 3690
@@ -991,6 +1030,7 @@ el mismo dataset se obtiene el siguiente resultado:</p>
            Sin sintomas:  429   Bolivia   : 3661
                                 Costa Rica: 3658
                                 (Other)   :57081  </code></pre>
+</div>
 <p>Al utilizar la función summary con las variables que acabamos de
 convertir en tipo factor, podemos observar que a diferencia de la
 primera vez que usamos summary en el paso 4 del tema 2 los resultados
@@ -1046,12 +1086,16 @@ variable están en el orden deseado:</p>
 </div>
 <p><strong>Resultado esperado:</strong> Al usar el anterior código con
 el mismo dataset se obtiene el siguiente resultado:</p>
-<pre><code>      sintomas     n
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>      sintomas     n
 1 Sin sintomas   429
 2         Leve 76976
 3     Moderado    13
 4        Grave     1
 5      Critico  1781</code></pre>
+</div>
 <p>Tener en orden los niveles de las variables es fundamental para un
 adecuado análisis estadístico y una correcta interpretación de los
 resultados.</p>
@@ -1077,11 +1121,15 @@ observar?</li>
 </div>
 <p><strong>Resultado esperado:</strong> Al usar el anterior código con
 el mismo dataset se obtiene el siguiente resultado:</p>
-<pre><code>.
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>.
           0           1           2           3        cero         dos
         545          18          22          19         180          26
 no registra No registra        tres         uno        &lt;NA&gt;
          81          72          22          15           0 </code></pre>
+</div>
 <p>Esta variable contiene elementos numéricos, caracteres y
 <code>NA</code> para convertir la variable a numérica se emplea la
 función <code>as.numeric</code>.</p>
@@ -1101,10 +1149,18 @@ numérica.</li>
 </div>
 <p><strong>Resultado esperado:</strong> Al usar el anterior código con
 el mismo dataset se obtiene el siguiente resultado:</p>
-<pre><code>Warning in base::table(., useNA = "always"): NAs introduced by coercion
-.
+<div class="codewrapper">
+<h3 class="code-label">ADVERTENCIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="warning" tabindex="0"><code>Warning in base::table(., useNA = "always"): NAs introduced by coercion</code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>.
    0    1    2    3 &lt;NA&gt;
  545   18   22   19  396 </code></pre>
+</div>
 <div class="discusión">
 <p>¿Qué cambios pudo observar?</p>
 </div>
@@ -1113,7 +1169,7 @@ permanecen mientras que los elementos no numéricos (“no registra” y “No
 registra”) se unieron al grupo de <code>NA</code>. Más adelante
 profundizaremos en los datos <code>NA</code>. Si esta conforme con los
 cambios, puede convertir el dataset:</p>
-<div class="codewrapper sourceCode" id="cb35">
+<div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1142,28 +1198,42 @@ obtenga una tabla (usando la función table) que cuantifique los NA
 resultantes de convertir la variable talla en formato numérico con la
 función as.numeric. Para comprobar si un valor es <code>NA</code> puede
 usar la función <code>is.na</code>.</p>
-<div class="codewrapper sourceCode" id="cb36">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb36-2"><a href="#cb36-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(talla) <span class="sc">%&gt;%</span></span>
-<span id="cb36-3"><a href="#cb36-3" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">as.numeric</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb36-4"><a href="#cb36-4" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">is.na</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb36-5"><a href="#cb36-5" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">table</span>()</span>
-<span id="cb36-6"><a href="#cb36-6" tabindex="-1"></a>Warning <span class="cf">in</span> base<span class="sc">::</span><span class="fu">table</span>(.)<span class="sc">:</span> NAs introduced by coercion</span>
-<span id="cb36-7"><a href="#cb36-7" tabindex="-1"></a>.</span>
-<span id="cb36-8"><a href="#cb36-8" tabindex="-1"></a><span class="cn">FALSE</span>  <span class="cn">TRUE</span> </span>
-<span id="cb36-9"><a href="#cb36-9" tabindex="-1"></a><span class="dv">54068</span> <span class="dv">25132</span> </span></code></pre>
-</div>
-<p>Ahora use el siguiente código para comprender por qué se generan
-estos <code>NA</code></p>
 <div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(talla) <span class="sc">%&gt;%</span></span>
-<span id="cb37-3"><a href="#cb37-3" tabindex="-1"></a>  utils<span class="sc">::</span><span class="fu">head</span>()</span>
-<span id="cb37-4"><a href="#cb37-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"1.73"</span> <span class="st">"1.67"</span> <span class="st">"1m69"</span> <span class="st">"1.66"</span> <span class="st">"1.63"</span> <span class="st">"1 68"</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">talla</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">as.numeric</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">is.na</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">table</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ADVERTENCIA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="warning" tabindex="0"><code>Warning in base::table(.): NAs introduced by coercion</code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>.
+FALSE  TRUE
+54068 25132 </code></pre>
+</div>
+<p>Ahora use el siguiente código para comprender por qué se generan
+estos <code>NA</code></p>
+<div class="codewrapper sourceCode" id="cb40">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">talla</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">utils</span><span class="fu">::</span><span class="fu">head</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] "1.73" "1.67" "1m69" "1.66" "1.63" "1 68"</code></pre>
 </div>
 <p><strong>Resultado esperado:</strong> Como puede observar aparece una
 advertencia indicando que algunos de los valores han sido convertidos en
@@ -1203,7 +1273,7 @@ primer argumento. Se pone entre comillas.</p></li>
 <code>str_replace</code> para reemplazar dentro de la variable talla
 (introducida como carácter) todos los elementos que no sean (^) números
 del 0 al 9 o un punto: por un punto.</p>
-<div class="codewrapper sourceCode" id="cb38">
+<div class="codewrapper sourceCode" id="cb42">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1217,20 +1287,25 @@ del 0 al 9 o un punto: por un punto.</p>
 </div>
 <p>⚠️ <strong>Instrucción:</strong> Verifique si se realizo el cambio
 deseado:</p>
-<div class="codewrapper sourceCode" id="cb39">
+<div class="codewrapper sourceCode" id="cb43">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb39-2"><a href="#cb39-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(talla) <span class="sc">%&gt;%</span></span>
-<span id="cb39-3"><a href="#cb39-3" tabindex="-1"></a>  utils<span class="sc">::</span><span class="fu">head</span>()</span>
-<span id="cb39-4"><a href="#cb39-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"1.73"</span> <span class="st">"1.67"</span> <span class="st">"1.69"</span> <span class="st">"1.66"</span> <span class="st">"1.63"</span> <span class="st">"1.68"</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">talla</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">utils</span><span class="fu">::</span><span class="fu">head</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] "1.73" "1.67" "1.69" "1.66" "1.63" "1.68"</code></pre>
 </div>
 <p>⚠️ <strong>Instrucción:</strong> Compruebe el efecto de la
 transformación y usando la función table obtenga una tabla que
 cuantifique los NA resultante de convertir la variable talla en formato
 numérico con la función <code>as.numeric</code>. Para comprobar si un
 dato es NA puede usar la función <code>is.na</code>.</p>
-<div class="codewrapper sourceCode" id="cb40">
+<div class="codewrapper sourceCode" id="cb45">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1238,9 +1313,13 @@ dato es NA puede usar la función <code>is.na</code>.</p>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">talla</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">as.numeric</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">is.na</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">table</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="va">.</span></span>
-<span><span class="cn">FALSE</span> </span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">table</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="va">.</span></span>
+<span><span class="cn">FALSE</span></span>
 <span><span class="fl">79200</span> </span></code></pre>
 </div>
 <p><strong>Resultado esperado:</strong> Si el cambio de decimales fue
@@ -1248,16 +1327,21 @@ exitoso con el dataset y que en caso de reemplazarlo por numérico no
 tendría NAs. Por lo tanto está bien hacer el cambio a numérico.</p>
 <p>⚠️ <strong>Instrucción:</strong> Transforme la variable talla a
 formato numérico e imprima las primeras filas.</p>
-<div class="codewrapper sourceCode" id="cb41">
+<div class="codewrapper sourceCode" id="cb47">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a>covid <span class="ot">&lt;-</span> covid <span class="sc">%&gt;%</span></span>
-<span id="cb41-2"><a href="#cb41-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">talla =</span> <span class="fu">as.numeric</span> (talla))</span>
-<span id="cb41-3"><a href="#cb41-3" tabindex="-1"></a></span>
-<span id="cb41-4"><a href="#cb41-4" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb41-5"><a href="#cb41-5" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(talla) <span class="sc">%&gt;%</span></span>
-<span id="cb41-6"><a href="#cb41-6" tabindex="-1"></a>  utils<span class="sc">::</span><span class="fu">head</span>()</span>
-<span id="cb41-7"><a href="#cb41-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.73</span> <span class="fl">1.67</span> <span class="fl">1.69</span> <span class="fl">1.66</span> <span class="fl">1.63</span> <span class="fl">1.68</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">&lt;-</span> <span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">mutate</span><span class="op">(</span>talla <span class="op">=</span> <span class="fu">as.numeric</span> <span class="op">(</span><span class="va">talla</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">talla</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">utils</span><span class="fu">::</span><span class="fu">head</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] 1.73 1.67 1.69 1.66 1.63 1.68</code></pre>
 </div>
 <p>Como podemos ver, una vez hecha la transformación ya no aparecen
 comillas ““, indicando que ya se hizo la conversión a numéricos.</p>
@@ -1298,23 +1382,28 @@ como NULL, la función no restringirá las fechas. </p></li>
 </div>
 <p>⚠️ <strong>Instrucción:</strong> Observe cómo está compuesta la
 variable <code>fecha_reporte_web</code>.</p>
-<div class="codewrapper sourceCode" id="cb42">
+<div class="codewrapper sourceCode" id="cb49">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb42-2"><a href="#cb42-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(fecha_reporte_web) <span class="sc">%&gt;%</span></span>
-<span id="cb42-3"><a href="#cb42-3" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
-<span id="cb42-4"><a href="#cb42-4" tabindex="-1"></a>   fecha_reporte_web</span>
-<span id="cb42-5"><a href="#cb42-5" tabindex="-1"></a><span class="dv">1</span>         <span class="dv">2021-03-15</span></span>
-<span id="cb42-6"><a href="#cb42-6" tabindex="-1"></a><span class="dv">2</span>           <span class="dv">21-03-23</span></span>
-<span id="cb42-7"><a href="#cb42-7" tabindex="-1"></a><span class="dv">3</span>        <span class="dv">2021</span><span class="sc">-</span>mar<span class="dv">-15</span></span>
-<span id="cb42-8"><a href="#cb42-8" tabindex="-1"></a><span class="dv">4</span>        <span class="dv">01</span><span class="sc">/</span>mar<span class="sc">/</span><span class="dv">2021</span></span>
-<span id="cb42-9"><a href="#cb42-9" tabindex="-1"></a><span class="dv">5</span>           <span class="dv">21</span><span class="sc">/</span><span class="dv">15</span><span class="sc">/</span><span class="dv">01</span></span>
-<span id="cb42-10"><a href="#cb42-10" tabindex="-1"></a><span class="dv">6</span>             ene<span class="sc">/</span><span class="dv">15</span></span>
-<span id="cb42-11"><a href="#cb42-11" tabindex="-1"></a><span class="dv">7</span>         <span class="dv">28</span><span class="sc">/</span><span class="dv">01</span><span class="sc">/</span><span class="dv">2022</span></span>
-<span id="cb42-12"><a href="#cb42-12" tabindex="-1"></a><span class="dv">8</span>         <span class="dv">07</span><span class="sc">/</span><span class="dv">07</span><span class="sc">/</span><span class="dv">2022</span></span>
-<span id="cb42-13"><a href="#cb42-13" tabindex="-1"></a><span class="dv">9</span>         <span class="dv">21</span><span class="sc">/</span><span class="dv">01</span><span class="sc">/</span><span class="dv">2022</span></span>
-<span id="cb42-14"><a href="#cb42-14" tabindex="-1"></a><span class="dv">10</span>        <span class="dv">22</span><span class="sc">/</span><span class="dv">03</span><span class="sc">/</span><span class="dv">2021</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">select</span><span class="op">(</span><span class="va">fecha_reporte_web</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">slice</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>   fecha_reporte_web
+1         2021-03-15
+2           21-03-23
+3        2021-mar-15
+4        01/mar/2021
+5           21/15/01
+6             ene/15
+7         28/01/2022
+8         07/07/2022
+9         21/01/2022
+10        22/03/2021</code></pre>
 </div>
 <p>Como puede observar las fechas se presentan en varios formatos,
 además como se vio cuando usamos glimpse la columna está en formato
@@ -1323,24 +1412,29 @@ a la variable emplearemos la función <code>standarize_dates</code>. </p>
 <p>⚠️ <strong>Instrucción:</strong> Convierta la variable
 <code>fecha_reporte_web</code> a tipo fecha usando la función
 <code>standardize_dates</code>.</p>
-<div class="codewrapper sourceCode" id="cb43">
+<div class="codewrapper sourceCode" id="cb51">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb43-2"><a href="#cb43-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(fecha_reporte_web) <span class="sc">%&gt;%</span></span>
-<span id="cb43-3"><a href="#cb43-3" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb43-4"><a href="#cb43-4" tabindex="-1"></a>  cleanepi<span class="sc">::</span><span class="fu">standardize_dates</span>() </span>
-<span id="cb43-5"><a href="#cb43-5" tabindex="-1"></a>   fecha_reporte_web</span>
-<span id="cb43-6"><a href="#cb43-6" tabindex="-1"></a><span class="dv">1</span>         <span class="dv">2021-03-15</span></span>
-<span id="cb43-7"><a href="#cb43-7" tabindex="-1"></a><span class="dv">2</span>         <span class="dv">2023-03-21</span></span>
-<span id="cb43-8"><a href="#cb43-8" tabindex="-1"></a><span class="dv">3</span>         <span class="dv">2021-03-15</span></span>
-<span id="cb43-9"><a href="#cb43-9" tabindex="-1"></a><span class="dv">4</span>         <span class="dv">2021-03-01</span></span>
-<span id="cb43-10"><a href="#cb43-10" tabindex="-1"></a><span class="dv">5</span>               <span class="sc">&lt;</span><span class="cn">NA</span><span class="sc">&gt;</span></span>
-<span id="cb43-11"><a href="#cb43-11" tabindex="-1"></a><span class="dv">6</span>               <span class="sc">&lt;</span><span class="cn">NA</span><span class="sc">&gt;</span></span>
-<span id="cb43-12"><a href="#cb43-12" tabindex="-1"></a><span class="dv">7</span>         <span class="dv">2022-01-28</span></span>
-<span id="cb43-13"><a href="#cb43-13" tabindex="-1"></a><span class="dv">8</span>         <span class="dv">2022-07-07</span></span>
-<span id="cb43-14"><a href="#cb43-14" tabindex="-1"></a><span class="dv">9</span>         <span class="dv">2022-01-21</span></span>
-<span id="cb43-15"><a href="#cb43-15" tabindex="-1"></a><span class="dv">10</span>        <span class="dv">2021-03-22</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">select</span><span class="op">(</span><span class="va">fecha_reporte_web</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">slice</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">cleanepi</span><span class="fu">::</span><span class="fu">standardize_dates</span><span class="op">(</span><span class="op">)</span> </span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>   fecha_reporte_web
+1         2021-03-15
+2         2023-03-21
+3         2021-03-15
+4         2021-03-01
+5               &lt;NA&gt;
+6               &lt;NA&gt;
+7         2022-01-28
+8         2022-07-07
+9         2022-01-21
+10        2021-03-22</code></pre>
 </div>
 <p>Como puede observar, dado que no especificamos el formato, la función
 lo identificó de forma automática. En los casos en que la identificación
@@ -1348,7 +1442,7 @@ falló, los datos fueron transformados a <code>NA</code>.  Además, ahora
 la columna está en formato fecha (<code>date</code>).</p>
 <p>⚠️ <strong>Instrucción:</strong> Almacene el cambio en la variable
 <code>fecha_reporte_web</code></p>
-<div class="codewrapper sourceCode" id="cb44">
+<div class="codewrapper sourceCode" id="cb53">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1366,15 +1460,20 @@ número (ej. “tres”) en lugar del símbolo que representa al número (ej.
 “3”).</p>
 <p>⚠️ <strong>Instrucción:</strong> Usando la función table explore la
 variable <code>num_hos_rec</code></p>
-<div class="codewrapper sourceCode" id="cb45">
+<div class="codewrapper sourceCode" id="cb54">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb45-2"><a href="#cb45-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(num_hos_rec) <span class="sc">%&gt;%</span></span>
-<span id="cb45-3"><a href="#cb45-3" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">table</span>(<span class="at">useNA =</span> <span class="st">"always"</span>)</span>
-<span id="cb45-4"><a href="#cb45-4" tabindex="-1"></a>.</span>
-<span id="cb45-5"><a href="#cb45-5" tabindex="-1"></a>    <span class="dv">0</span>     <span class="dv">1</span>     <span class="dv">2</span>     <span class="dv">3</span>  <span class="sc">&lt;</span><span class="cn">NA</span><span class="sc">&gt;</span> </span>
-<span id="cb45-6"><a href="#cb45-6" tabindex="-1"></a><span class="dv">57789</span>  <span class="dv">3094</span>  <span class="dv">3059</span>  <span class="dv">3100</span> <span class="dv">12158</span> </span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">num_hos_rec</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">table</span><span class="op">(</span>useNA <span class="op">=</span> <span class="st">"always"</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>.
+    0     1     2     3  &lt;NA&gt;
+57789  3094  3059  3100 12158 </code></pre>
 </div>
 <p>Como puede observar hay números escritos como letras y en símbolos,
 así como dos categorías de datos que no se registraron y no hay
@@ -1403,7 +1502,7 @@ c(“en”, “fr”, “es”).</p></li>
 <p>⚠️ <strong>Instrucción:</strong> Usando la función
 <code>convert_to_numeric</code> corrija los errores de la variable
 <code>num_hos_rec</code></p>
-<div class="codewrapper sourceCode" id="cb46">
+<div class="codewrapper sourceCode" id="cb56">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1414,15 +1513,20 @@ c(“en”, “fr”, “es”).</p></li>
 </div>
 <p>⚠️ <strong>Instrucción:</strong> Usando la función table compruebe el
 cambio en la variable <code>num_hos_rec</code></p>
-<div class="codewrapper sourceCode" id="cb47">
+<div class="codewrapper sourceCode" id="cb57">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb47-2"><a href="#cb47-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(num_hos_rec) <span class="sc">%&gt;%</span></span>
-<span id="cb47-3"><a href="#cb47-3" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">table</span>(<span class="at">useNA =</span> <span class="st">"always"</span>)</span>
-<span id="cb47-4"><a href="#cb47-4" tabindex="-1"></a>.</span>
-<span id="cb47-5"><a href="#cb47-5" tabindex="-1"></a>    <span class="dv">0</span>     <span class="dv">1</span>     <span class="dv">2</span>     <span class="dv">3</span>  <span class="sc">&lt;</span><span class="cn">NA</span><span class="sc">&gt;</span> </span>
-<span id="cb47-6"><a href="#cb47-6" tabindex="-1"></a><span class="dv">57789</span>  <span class="dv">3094</span>  <span class="dv">3059</span>  <span class="dv">3100</span> <span class="dv">12158</span> </span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">num_hos_rec</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">table</span><span class="op">(</span>useNA <span class="op">=</span> <span class="st">"always"</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>.
+    0     1     2     3  &lt;NA&gt;
+57789  3094  3059  3100 12158 </code></pre>
 </div>
 <p>Como puede observar los números en letras fueron convertidos a sus
 respectivos equivalentes numéricos. Mientras que todo elemento no
@@ -1435,13 +1539,18 @@ columna</strong><a class="anchor" aria-label="anchor" href="#nas-relacionados-co
 columna.</p>
 <p>⚠️ <strong>Instrucción:</strong> Explore las primeras filas de la
 variable <code>tension_arterial</code>.</p>
-<div class="codewrapper sourceCode" id="cb48">
+<div class="codewrapper sourceCode" id="cb59">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb48-2"><a href="#cb48-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(tension_arterial) <span class="sc">%&gt;%</span></span>
-<span id="cb48-3"><a href="#cb48-3" tabindex="-1"></a>  utils<span class="sc">::</span><span class="fu">head</span>()</span>
-<span id="cb48-4"><a href="#cb48-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"102/85"</span> <span class="st">"148/72"</span> <span class="st">"92/84"</span>  <span class="st">"122/71"</span> <span class="st">"153/88"</span> <span class="st">"129/87"</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">tension_arterial</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">utils</span><span class="fu">::</span><span class="fu">head</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] "102/85" "148/72" "92/84"  "122/71" "153/88" "129/87"</code></pre>
 </div>
 <p><strong>Resultado esperado:</strong> En consistencia con lo
 mencionado en la documentación del dataset “covid_LA_info.txt”, la
@@ -1472,27 +1581,37 @@ crearán.</p></li>
 <code>separate_wider_delim</code> separe la variable tension_arterial en
 dos variables: <code>tension_sistolica</code> y
 <code>tension_diastolica</code>.</p>
-<div class="codewrapper sourceCode" id="cb49">
+<div class="codewrapper sourceCode" id="cb61">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" tabindex="-1"></a>covid <span class="ot">&lt;-</span> covid <span class="sc">%&gt;%</span></span>
-<span id="cb49-2"><a href="#cb49-2" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">separate_wider_delim</span>(<span class="at">cols =</span> tension_arterial,</span>
-<span id="cb49-3"><a href="#cb49-3" tabindex="-1"></a>                              <span class="at">delim =</span> <span class="st">"/"</span>,</span>
-<span id="cb49-4"><a href="#cb49-4" tabindex="-1"></a>                              <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"tension_sistolica"</span>,</span>
-<span id="cb49-5"><a href="#cb49-5" tabindex="-1"></a>                                        <span class="st">"tension_diastolica"</span>))</span>
-<span id="cb49-6"><a href="#cb49-6" tabindex="-1"></a></span>
-<span id="cb49-7"><a href="#cb49-7" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb49-8"><a href="#cb49-8" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(tension_sistolica) <span class="sc">%&gt;%</span></span>
-<span id="cb49-9"><a href="#cb49-9" tabindex="-1"></a>  utils<span class="sc">::</span><span class="fu">head</span>()</span>
-<span id="cb49-10"><a href="#cb49-10" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"102"</span> <span class="st">"148"</span> <span class="st">"92"</span>  <span class="st">"122"</span> <span class="st">"153"</span> <span class="st">"129"</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">&lt;-</span> <span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu">separate_wider_delim</span><span class="op">(</span>cols <span class="op">=</span> <span class="va">tension_arterial</span>,</span>
+<span>                              delim <span class="op">=</span> <span class="st">"/"</span>,</span>
+<span>                              names <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="st">"tension_sistolica"</span>,</span>
+<span>                                        <span class="st">"tension_diastolica"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">tension_sistolica</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">utils</span><span class="fu">::</span><span class="fu">head</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb50">
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] "102" "148" "92"  "122" "153" "129"</code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb63">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb50-2"><a href="#cb50-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(tension_diastolica) <span class="sc">%&gt;%</span></span>
-<span id="cb50-3"><a href="#cb50-3" tabindex="-1"></a>  utils<span class="sc">::</span><span class="fu">head</span>()</span>
-<span id="cb50-4"><a href="#cb50-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"85"</span> <span class="st">"72"</span> <span class="st">"84"</span> <span class="st">"71"</span> <span class="st">"88"</span> <span class="st">"87"</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">tension_diastolica</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">utils</span><span class="fu">::</span><span class="fu">head</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] "85" "72" "84" "71" "88" "87"</code></pre>
 </div>
 <p><strong>Resultado esperado:</strong> El código anterior genera los
 cambios directamente en el dataset <code>covid</code> y se obtienen las
@@ -1514,45 +1633,70 @@ menores de 1/1e-309, obtendremos Inf. En el caso de valores inferiores a
 1e-324 R los asume como 0:</p>
 <p>⚠️ <strong>Instrucción:</strong> Observe los resultados de las
 siguientes operaciones:</p>
-<div class="codewrapper sourceCode" id="cb51">
+<div class="codewrapper sourceCode" id="cb65">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" tabindex="-1"></a><span class="dv">2</span><span class="sc">^</span><span class="dv">1024</span></span>
-<span id="cb51-2"><a href="#cb51-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="cn">Inf</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">2</span><span class="op">^</span><span class="fl">1024</span></span></code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb52">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" tabindex="-1"></a><span class="sc">-</span><span class="dv">2</span><span class="sc">^</span><span class="dv">1024</span></span>
-<span id="cb52-2"><a href="#cb52-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="sc">-</span><span class="cn">Inf</span></span></code></pre>
+<pre class="output" tabindex="0"><code>[1] Inf</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb53">
+<div class="codewrapper sourceCode" id="cb67">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" tabindex="-1"></a><span class="dv">1</span><span class="sc">/</span><span class="fl">1e-309</span></span>
-<span id="cb53-2"><a href="#cb53-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="cn">Inf</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">-</span><span class="fl">2</span><span class="op">^</span><span class="fl">1024</span></span></code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb54">
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] -Inf</code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb69">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" tabindex="-1"></a><span class="dv">1</span><span class="sc">/</span><span class="dv">0</span></span>
-<span id="cb54-2"><a href="#cb54-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="cn">Inf</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">1</span><span class="op">/</span><span class="fl">1e-309</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] Inf</code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb71">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">1</span><span class="op">/</span><span class="fl">0</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] Inf</code></pre>
 </div>
 <p>La aparición de los valores <code>Inf</code> puede suceder en
 cualquier momento del manejo de datos, particularmente cuando hay una
 equivocación al realizar operaciones aritméticas. Por ejemplo, cuando se
 quería calcular los días de vida, y en lugar de usar el operador de
 multiplicación (*) se usó el operador de potencia (^).</p>
-<div class="codewrapper sourceCode" id="cb55">
+<div class="codewrapper sourceCode" id="cb73">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" tabindex="-1"></a>covid <span class="ot">&lt;-</span> covid <span class="sc">%&gt;%</span></span>
-<span id="cb55-2"><a href="#cb55-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">edad_en_dias =</span> edad <span class="sc">*</span> <span class="dv">365</span>)</span>
-<span id="cb55-3"><a href="#cb55-3" tabindex="-1"></a></span>
-<span id="cb55-4"><a href="#cb55-4" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb55-5"><a href="#cb55-5" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(edad_en_dias) <span class="sc">%&gt;%</span> </span>
-<span id="cb55-6"><a href="#cb55-6" tabindex="-1"></a>  utils<span class="sc">::</span><span class="fu">head</span>()</span>
-<span id="cb55-7"><a href="#cb55-7" tabindex="-1"></a>[<span class="dv">1</span>]  <span class="dv">9490</span> <span class="dv">10220</span> <span class="dv">22265</span>  <span class="dv">8760</span> <span class="dv">18615</span>  <span class="dv">9125</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">&lt;-</span> <span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">mutate</span><span class="op">(</span>edad_en_dias <span class="op">=</span> <span class="va">edad</span> <span class="op">*</span> <span class="fl">365</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">edad_en_dias</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">utils</span><span class="fu">::</span><span class="fu">head</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1]  9490 10220 22265  8760 18615  9125</code></pre>
 </div>
 </div>
 <div class="section level4">
@@ -1565,23 +1709,38 @@ infinito, obtendremos <code>NaN</code> (que significa “No es un
 número”). A continuación se muestran unos ejemplos:</p>
 <p>⚠️ <strong>Instrucción:</strong> Observe las siguientes
 operaciones</p>
-<div class="codewrapper sourceCode" id="cb56">
+<div class="codewrapper sourceCode" id="cb75">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" tabindex="-1"></a><span class="cn">Inf</span><span class="sc">/</span><span class="cn">Inf</span></span>
-<span id="cb56-2"><a href="#cb56-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="cn">NaN</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="cn">Inf</span><span class="op">/</span><span class="cn">Inf</span></span></code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb57">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" tabindex="-1"></a><span class="cn">Inf</span><span class="sc">-</span><span class="cn">Inf</span></span>
-<span id="cb57-2"><a href="#cb57-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="cn">NaN</span></span></code></pre>
+<pre class="output" tabindex="0"><code>[1] NaN</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb58">
+<div class="codewrapper sourceCode" id="cb77">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" tabindex="-1"></a><span class="dv">0</span><span class="sc">/</span><span class="dv">0</span></span>
-<span id="cb58-2"><a href="#cb58-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="cn">NaN</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="cn">Inf</span><span class="op">-</span><span class="cn">Inf</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] NaN</code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb79">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">0</span><span class="op">/</span><span class="fl">0</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] NaN</code></pre>
 </div>
 <p>Aunque los resultados como <code>Inf</code> o <code>NaN</code> puedan
 parecer imposibles, estos pueden aparecer cuando en el proceso de
@@ -1596,16 +1755,21 @@ Estos pueden ser tanto una observación de una variable duplicada o todo
 un registro duplicado.</p>
 <p>⚠️ <strong>Instrucción:</strong> Explore si en la variable
 <code>id_de_caso</code> se repiten valores</p>
-<div class="codewrapper sourceCode" id="cb59">
+<div class="codewrapper sourceCode" id="cb81">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb59-2"><a href="#cb59-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(id_de_caso) <span class="sc">%&gt;%</span></span>
-<span id="cb59-3"><a href="#cb59-3" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">table</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb59-4"><a href="#cb59-4" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">table</span>()</span>
-<span id="cb59-5"><a href="#cb59-5" tabindex="-1"></a>.</span>
-<span id="cb59-6"><a href="#cb59-6" tabindex="-1"></a>    <span class="dv">1</span>     <span class="dv">2</span>     <span class="dv">3</span> </span>
-<span id="cb59-7"><a href="#cb59-7" tabindex="-1"></a><span class="dv">75797</span>   <span class="dv">203</span>   <span class="dv">999</span> </span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">id_de_caso</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">table</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">table</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>.
+    1     2     3
+75797   203   999 </code></pre>
 </div>
 <p>Como puede observar al menos 1000 códigos de identificación se
 repiten en el dataset dos o tres veces. Pero en ese punto aún no sabemos
@@ -1615,13 +1779,18 @@ reinfecciones).</p>
 <p>Para identificar cuáles son registros (filas) totalmente duplicados
 en todas sus variables que sí son errores podemos usar la función
 duplicated y sumar los registros así:</p>
-<div class="codewrapper sourceCode" id="cb60">
+<div class="codewrapper sourceCode" id="cb83">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb60-2"><a href="#cb60-2" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">duplicated</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb60-3"><a href="#cb60-3" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">sum</span>()</span>
-<span id="cb60-4"><a href="#cb60-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">1196</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">duplicated</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">sum</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] 1196</code></pre>
 </div>
 <p>Para solucionar este problema podemos usar la función
 <code>remove_duplicates</code> de cleanepi el cual permite eliminar las
@@ -1648,12 +1817,17 @@ columnas que se usaran para buscar los duplicados.</li>
 <p>⚠️ <strong>Instrucción:</strong> Empleando la función
 <code>remove_duplicates</code> elimine del dataset covid las filas
 repetidas.</p>
-<div class="codewrapper sourceCode" id="cb61">
+<div class="codewrapper sourceCode" id="cb85">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" tabindex="-1"></a>covid <span class="ot">&lt;-</span> covid <span class="sc">%&gt;%</span></span>
-<span id="cb61-2"><a href="#cb61-2" tabindex="-1"></a>  cleanepi<span class="sc">::</span><span class="fu">remove_duplicates</span>()</span>
-<span id="cb61-3"><a href="#cb61-3" tabindex="-1"></a>Found <span class="dv">2391</span> duplicated rows. Please consult the report <span class="cf">for</span> more details.</span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">&lt;-</span> <span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">cleanepi</span><span class="fu">::</span><span class="fu">remove_duplicates</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Found 2391 duplicated rows. Please consult the report for more details.</code></pre>
 </div>
 <p>Como puede ver en la salida la función detectó 2391 filas replicadas
 en su totalidad (pueden estar presentes dos veces o más). Si explora
@@ -1661,16 +1835,21 @@ nuevamente el dataset <code>covid</code> podrá observar que 1196 filas
 desaparecieron. Además podrá observar que se genero una nueva columna en
 el dataset llamada <code>row_id</code>.</p>
 <p>Ahora observemos qué efecto tuvo en los identificadores únicos.</p>
-<div class="codewrapper sourceCode" id="cb62">
+<div class="codewrapper sourceCode" id="cb87">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb62-2"><a href="#cb62-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(id_de_caso) <span class="sc">%&gt;%</span></span>
-<span id="cb62-3"><a href="#cb62-3" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">table</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb62-4"><a href="#cb62-4" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">table</span>()</span>
-<span id="cb62-5"><a href="#cb62-5" tabindex="-1"></a>.</span>
-<span id="cb62-6"><a href="#cb62-6" tabindex="-1"></a>    <span class="dv">1</span>     <span class="dv">2</span> </span>
-<span id="cb62-7"><a href="#cb62-7" tabindex="-1"></a><span class="dv">75994</span>  <span class="dv">1005</span> </span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">select</span><span class="op">(</span><span class="va">id_de_caso</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">table</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">table</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>.
+    1     2
+75994  1005 </code></pre>
 </div>
 <p>De acuerdo con esta tabla, una vez removimos los registros
 duplicados, quedan 1005 identificadores de casos
@@ -1683,13 +1862,18 @@ ejemplo.</p>
 <p>️<strong>Instrucción:</strong> Empleando la función
 <code>remove_duplicates</code> elimine del dataset los datos
 correspondiente a “<code>id_de_caso</code>” repetidos.</p>
-<div class="codewrapper sourceCode" id="cb63">
+<div class="codewrapper sourceCode" id="cb89">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" tabindex="-1"></a>covid <span class="ot">&lt;-</span> covid <span class="sc">%&gt;%</span></span>
-<span id="cb63-2"><a href="#cb63-2" tabindex="-1"></a>  cleanepi<span class="sc">::</span><span class="fu">remove_duplicates</span>(</span>
-<span id="cb63-3"><a href="#cb63-3" tabindex="-1"></a>    <span class="at">target_columns =</span> <span class="st">"id_de_caso"</span>)</span>
-<span id="cb63-4"><a href="#cb63-4" tabindex="-1"></a>Found <span class="dv">2010</span> duplicated rows. Please consult the report <span class="cf">for</span> more details.</span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">&lt;-</span> <span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">cleanepi</span><span class="fu">::</span><span class="fu">remove_duplicates</span><span class="op">(</span></span>
+<span>    target_columns <span class="op">=</span> <span class="st">"id_de_caso"</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Found 2010 duplicated rows. Please consult the report for more details.</code></pre>
 </div>
 <p>Como puede observar se encontraron 2010 <code>id_de_caso</code>
 replicados. Por lo que si se explora el dataset covid podrá observar que
@@ -1702,22 +1886,27 @@ resultados y cuando se este seguro almacenarlo.</p>
 <h4 id="errores-tipográficos"><strong>3.2.5. Errores tipográficos</strong><a class="anchor" aria-label="anchor" href="#errores-tipogr%C3%A1ficos"></a></h4>
 <p>A veces, podemos encontrar que las categorías de una variable se han
 escrito de múltiples maneras. Veamos un ejemplo:</p>
-<div class="codewrapper sourceCode" id="cb64">
+<div class="codewrapper sourceCode" id="cb91">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb64-2"><a href="#cb64-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(ubicacion_del_caso) <span class="sc">%&gt;%</span></span>
-<span id="cb64-3"><a href="#cb64-3" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">table</span>(<span class="at">useNA =</span> <span class="st">"always"</span>)</span>
-<span id="cb64-4"><a href="#cb64-4" tabindex="-1"></a>.</span>
-<span id="cb64-5"><a href="#cb64-5" tabindex="-1"></a>        casa         Casa    Fallecido     Hospital Hospital UCI          N<span class="sc">/</span>A </span>
-<span id="cb64-6"><a href="#cb64-6" tabindex="-1"></a>         <span class="dv">319</span>        <span class="dv">74533</span>         <span class="dv">1727</span>           <span class="dv">12</span>            <span class="dv">1</span>          <span class="dv">407</span> </span>
-<span id="cb64-7"><a href="#cb64-7" tabindex="-1"></a>        <span class="sc">&lt;</span><span class="cn">NA</span><span class="sc">&gt;</span> </span>
-<span id="cb64-8"><a href="#cb64-8" tabindex="-1"></a>           <span class="dv">0</span> </span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">ubicacion_del_caso</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">table</span><span class="op">(</span>useNA <span class="op">=</span> <span class="st">"always"</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>.
+        casa         Casa    Fallecido     Hospital Hospital UCI          N/A
+         319        74533         1727           12            1          407
+        &lt;NA&gt;
+           0 </code></pre>
 </div>
 <p>Para corregir este error, podemos usar la función <code>gsub</code>
 para reemplazar el valor incorrecto “casa” por el valor que hemos
 seleccionado como correcto, “Casa”.</p>
-<div class="codewrapper sourceCode" id="cb65">
+<div class="codewrapper sourceCode" id="cb93">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1728,15 +1917,20 @@ seleccionado como correcto, “Casa”.</p>
 <span>                                        x<span class="op">=</span> <span class="va">ubicacion_del_caso</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <p>Como resultado, los valores han sido reemplazados:</p>
-<div class="codewrapper sourceCode" id="cb66">
+<div class="codewrapper sourceCode" id="cb94">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb66-2"><a href="#cb66-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(ubicacion_del_caso) <span class="sc">%&gt;%</span></span>
-<span id="cb66-3"><a href="#cb66-3" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">table</span>(<span class="at">useNA =</span> <span class="st">"always"</span>)</span>
-<span id="cb66-4"><a href="#cb66-4" tabindex="-1"></a>.</span>
-<span id="cb66-5"><a href="#cb66-5" tabindex="-1"></a>        Casa    Fallecido     Hospital Hospital UCI          N<span class="sc">/</span>A         <span class="sc">&lt;</span><span class="cn">NA</span><span class="sc">&gt;</span> </span>
-<span id="cb66-6"><a href="#cb66-6" tabindex="-1"></a>       <span class="dv">74852</span>         <span class="dv">1727</span>           <span class="dv">12</span>            <span class="dv">1</span>          <span class="dv">407</span>            <span class="dv">0</span> </span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">ubicacion_del_caso</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">table</span><span class="op">(</span>useNA <span class="op">=</span> <span class="st">"always"</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>.
+        Casa    Fallecido     Hospital Hospital UCI          N/A         &lt;NA&gt;
+       74852         1727           12            1          407            0 </code></pre>
 </div>
 <center>
 <p><a href="https://epiverse-trace.github.io/epitkit/Banco_errores.html" class="external-link"><img src="fig/dudas.png" width="100" class="figure"></a></p>
@@ -1771,19 +1965,24 @@ columnas en las cuales se ejecutará la función.</p></li>
 </div>
 <p>⚠️ <strong>Instrucción:</strong> Revise el contenido de la variable
 <code>ubicacion_del_caso</code>:</p>
-<div class="codewrapper sourceCode" id="cb67">
+<div class="codewrapper sourceCode" id="cb96">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span> </span>
-<span id="cb67-2"><a href="#cb67-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(ubicacion_del_caso) <span class="sc">%&gt;%</span> </span>
-<span id="cb67-3"><a href="#cb67-3" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">table</span>(<span class="at">useNA =</span> <span class="st">"always"</span>)</span>
-<span id="cb67-4"><a href="#cb67-4" tabindex="-1"></a>.</span>
-<span id="cb67-5"><a href="#cb67-5" tabindex="-1"></a>        Casa    Fallecido     Hospital Hospital UCI          N<span class="sc">/</span>A         <span class="sc">&lt;</span><span class="cn">NA</span><span class="sc">&gt;</span> </span>
-<span id="cb67-6"><a href="#cb67-6" tabindex="-1"></a>       <span class="dv">74852</span>         <span class="dv">1727</span>           <span class="dv">12</span>            <span class="dv">1</span>          <span class="dv">407</span>            <span class="dv">0</span> </span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">ubicacion_del_caso</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">table</span><span class="op">(</span>useNA <span class="op">=</span> <span class="st">"always"</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>.
+        Casa    Fallecido     Hospital Hospital UCI          N/A         &lt;NA&gt;
+       74852         1727           12            1          407            0 </code></pre>
 </div>
 <p>⚠️ <strong>Instrucción</strong>: Revise en la documentación que
 posibles NA pueden aparecer en el dataset y reemplacelos por NA.</p>
-<div class="codewrapper sourceCode" id="cb68">
+<div class="codewrapper sourceCode" id="cb98">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1792,15 +1991,20 @@ posibles NA pueden aparecer en el dataset y reemplacelos por NA.</p>
 </div>
 <p><strong>Instrucción:</strong> Revise el contenido de la variable
 <code>ubicacion_del_caso</code> para ver los cambios:</p>
-<div class="codewrapper sourceCode" id="cb69">
+<div class="codewrapper sourceCode" id="cb99">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb69-2"><a href="#cb69-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(ubicacion_del_caso) <span class="sc">%&gt;%</span></span>
-<span id="cb69-3"><a href="#cb69-3" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">table</span>(<span class="at">useNA =</span> <span class="st">"always"</span>)</span>
-<span id="cb69-4"><a href="#cb69-4" tabindex="-1"></a>.</span>
-<span id="cb69-5"><a href="#cb69-5" tabindex="-1"></a>        Casa    Fallecido     Hospital Hospital UCI         <span class="sc">&lt;</span><span class="cn">NA</span><span class="sc">&gt;</span> </span>
-<span id="cb69-6"><a href="#cb69-6" tabindex="-1"></a>       <span class="dv">74852</span>         <span class="dv">1727</span>           <span class="dv">12</span>            <span class="dv">1</span>          <span class="dv">407</span> </span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">ubicacion_del_caso</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">table</span><span class="op">(</span>useNA <span class="op">=</span> <span class="st">"always"</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>.
+        Casa    Fallecido     Hospital Hospital UCI         &lt;NA&gt;
+       74852         1727           12            1          407 </code></pre>
 </div>
 </div>
 <div class="section level4">
@@ -1829,7 +2033,7 @@ modificar.</li>
 <p>⚠️ <strong>Instrucción:</strong> Empleando la función
 <code>remove_constants</code> remueva las filas que tengan valores
 constantes. </p>
-<div class="codewrapper sourceCode" id="cb70">
+<div class="codewrapper sourceCode" id="cb101">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1838,12 +2042,17 @@ constantes. </p>
 </div>
 <p>Para verificar la cantidad de columnas que permanecen después del
 proceso, puede utilizar la función <code>ncol</code>:</p>
-<div class="codewrapper sourceCode" id="cb71">
+<div class="codewrapper sourceCode" id="cb102">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb71-2"><a href="#cb71-2" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">ncol</span>()</span>
-<span id="cb71-3"><a href="#cb71-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">25</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">ncol</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] 25</code></pre>
 </div>
 </div>
 <div class="section level4">
@@ -1863,13 +2072,18 @@ siguen el comportamiento esperado. Veamos un ejemplo con fechas:</p>
 <p>⚠️ <strong>Instrucción:</strong> Antes de comenzar asegúrese que la
 variable este en formato fecha, para revisar puede emplear la función
 <strong><code>class</code>()</strong></p>
-<div class="codewrapper sourceCode" id="cb72">
+<div class="codewrapper sourceCode" id="cb104">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb72-2"><a href="#cb72-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(fecha_reporte_web) <span class="sc">%&gt;%</span></span>
-<span id="cb72-3"><a href="#cb72-3" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">class</span>()</span>
-<span id="cb72-4"><a href="#cb72-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Date"</span></span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">fecha_reporte_web</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">class</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>[1] "Date"</code></pre>
 </div>
 <p>Si su variable no está en formato fecha (<code>date</code>), por
 favor, revise nuevamente la sección <strong>NAs relacionados con errores
@@ -1878,7 +2092,7 @@ aprendida.</p>
 <p>⚠️ <strong>Instrucción:</strong> Empleando la función
 <code>hist</code>, cree un histograma de las fechas en que fueron
 reportados los casos por semana.</p>
-<div class="codewrapper sourceCode" id="cb73">
+<div class="codewrapper sourceCode" id="cb106">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1899,7 +2113,7 @@ identificar potenciales fechas erróneas al comienzo de la serie. Como se
 muestra en el ejemplo a continuación:</p>
 <p>⚠️ <strong>Instrucción:</strong> Observe los datos que encabezan el
 dataset cuando está ordenada por fecha.</p>
-<div class="codewrapper sourceCode" id="cb74">
+<div class="codewrapper sourceCode" id="cb107">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1910,22 +2124,27 @@ dataset cuando está ordenada por fecha.</p>
 </div>
 <p><strong>Resultado esperado:</strong> Al usar el anterior código con
 el mismo dataset se obtiene el siguiente resultado:</p>
-<div class="codewrapper sourceCode" id="cb75">
+<div class="codewrapper sourceCode" id="cb108">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb75-2"><a href="#cb75-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(fecha_reporte_web) <span class="sc">%&gt;%</span></span>
-<span id="cb75-3"><a href="#cb75-3" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(fecha_reporte_web) <span class="sc">%&gt;%</span></span>
-<span id="cb75-4"><a href="#cb75-4" tabindex="-1"></a>  utils<span class="sc">::</span><span class="fu">head</span>()</span>
-<span id="cb75-5"><a href="#cb75-5" tabindex="-1"></a><span class="co"># A tibble: 6 × 1</span></span>
-<span id="cb75-6"><a href="#cb75-6" tabindex="-1"></a>  fecha_reporte_web</span>
-<span id="cb75-7"><a href="#cb75-7" tabindex="-1"></a>  <span class="sc">&lt;</span>date<span class="sc">&gt;</span>           </span>
-<span id="cb75-8"><a href="#cb75-8" tabindex="-1"></a><span class="dv">1</span> <span class="dv">1970-01-01</span>       </span>
-<span id="cb75-9"><a href="#cb75-9" tabindex="-1"></a><span class="dv">2</span> <span class="dv">2020-03-20</span>       </span>
-<span id="cb75-10"><a href="#cb75-10" tabindex="-1"></a><span class="dv">3</span> <span class="dv">2020-03-20</span>       </span>
-<span id="cb75-11"><a href="#cb75-11" tabindex="-1"></a><span class="dv">4</span> <span class="dv">2020-03-21</span>       </span>
-<span id="cb75-12"><a href="#cb75-12" tabindex="-1"></a><span class="dv">5</span> <span class="dv">2020-03-23</span>       </span>
-<span id="cb75-13"><a href="#cb75-13" tabindex="-1"></a><span class="dv">6</span> <span class="dv">2020-03-24</span>       </span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">arrange</span><span class="op">(</span><span class="va">fecha_reporte_web</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">select</span><span class="op">(</span><span class="va">fecha_reporte_web</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">utils</span><span class="fu">::</span><span class="fu">head</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code># A tibble: 6 × 1
+  fecha_reporte_web
+  &lt;date&gt;
+1 1970-01-01
+2 2020-03-20
+3 2020-03-20
+4 2020-03-21
+5 2020-03-23
+6 2020-03-24       </code></pre>
 </div>
 <p>En la primera fila tenemos el valor por fuera del rango esperado, es
 decir, una fecha de 1970. En este caso es un solo dato el que debemos
@@ -1945,7 +2164,7 @@ datos como válidos. Podemos definir la fecha de corte a partir del
 contexto epidemiológico, o la documentación.</p>
 <p>⚠️ <strong>Instrucción:</strong> Filtre los datos por la fecha de
 reporte antes de la fecha “2020-02-01”.</p>
-<div class="codewrapper sourceCode" id="cb76">
+<div class="codewrapper sourceCode" id="cb110">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1954,7 +2173,10 @@ reporte antes de la fecha “2020-02-01”.</p>
 </div>
 <p><strong>Resultado esperado:</strong> Al usar el anterior código con
 el mismo dataset se obtiene el siguiente resultado:</p>
-<pre><code># A tibble: 1 × 25
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code># A tibble: 1 × 25
   fecha_reporte_web id_de_caso fecha_de_notificacion  edad sexo
   &lt;date&gt;                 &lt;int&gt; &lt;chr&gt;                 &lt;int&gt; &lt;fct&gt;
 1 1970-01-01           1631715 21/12/2020               24 F
@@ -1965,6 +2187,7 @@ el mismo dataset se obtiene el siguiente resultado:</p>
 #   nombre_del_pais &lt;fct&gt;, sintomas &lt;fct&gt;, edad_repetida &lt;int&gt;,
 #   num_hos_rec &lt;dbl&gt;, tension_sistolica &lt;chr&gt;, tension_diastolica &lt;chr&gt;,
 #   vacunado &lt;lgl&gt;, talla &lt;dbl&gt;, peso &lt;dbl&gt;, edad_en_dias &lt;dbl&gt;, row_id &lt;int&gt;</code></pre>
+</div>
 <p>Una vez identificados los datos, podemos corregirlos reemplazándolos
 por el valor correcto (si lo conocemos), convirtiéndolos en valores NA o
 excluyéndolos del análisis.</p>
@@ -1972,7 +2195,7 @@ excluyéndolos del análisis.</p>
 las fechas previas a la fecha “2020-02-01” en la variable
 fecha_reporte_web. Recuerde usar la expresión ! antes del nombre de la
 variable para lograr una selección inversa.</p>
-<div class="codewrapper sourceCode" id="cb78">
+<div class="codewrapper sourceCode" id="cb112">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1982,7 +2205,7 @@ variable para lograr una selección inversa.</p>
 <p>Ahora volvamos a producir la gráfica y observemos.</p>
 <p>⚠️ <strong>Instrucción:</strong> Vuelva a producir el histograma con
 la corrección en las fechas.</p>
-<div class="codewrapper sourceCode" id="cb79">
+<div class="codewrapper sourceCode" id="cb113">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2001,20 +2224,25 @@ lograr esto, podemos utilizar la función de filtrado proporcionada por
 completos.</p>
 <p>⚠️ <strong>Instrucción:</strong> Revise el contenido de la variable
 <code>ubicacion_del_caso</code>:</p>
-<div class="codewrapper sourceCode" id="cb80">
+<div class="codewrapper sourceCode" id="cb114">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb80-2"><a href="#cb80-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(ubicacion_del_caso) <span class="sc">%&gt;%</span></span>
-<span id="cb80-3"><a href="#cb80-3" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">table</span>(<span class="at">useNA =</span> <span class="st">"always"</span>)</span>
-<span id="cb80-4"><a href="#cb80-4" tabindex="-1"></a>.</span>
-<span id="cb80-5"><a href="#cb80-5" tabindex="-1"></a>        Casa    Fallecido     Hospital Hospital UCI         <span class="sc">&lt;</span><span class="cn">NA</span><span class="sc">&gt;</span> </span>
-<span id="cb80-6"><a href="#cb80-6" tabindex="-1"></a>       <span class="dv">74850</span>         <span class="dv">1726</span>           <span class="dv">12</span>            <span class="dv">1</span>          <span class="dv">407</span> </span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">ubicacion_del_caso</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">table</span><span class="op">(</span>useNA <span class="op">=</span> <span class="st">"always"</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>.
+        Casa    Fallecido     Hospital Hospital UCI         &lt;NA&gt;
+       74850         1726           12            1          407 </code></pre>
 </div>
 <p><strong>Instrucción</strong>: Filtre la variable
 <code>ubicacion_del_caso</code> para excluir los registros con
 <code>NA</code> presentes en esta variable:</p>
-<div class="codewrapper sourceCode" id="cb81">
+<div class="codewrapper sourceCode" id="cb116">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2023,15 +2251,20 @@ completos.</p>
 </div>
 <p><strong>Instrucción:</strong> Revise el contenido de la variable
 ubicacion_del_caso para ver los cambios:</p>
-<div class="codewrapper sourceCode" id="cb82">
+<div class="codewrapper sourceCode" id="cb117">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span> </span>
-<span id="cb82-2"><a href="#cb82-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(ubicacion_del_caso) <span class="sc">%&gt;%</span> </span>
-<span id="cb82-3"><a href="#cb82-3" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">table</span>(<span class="at">useNA =</span> <span class="st">"always"</span>)</span>
-<span id="cb82-4"><a href="#cb82-4" tabindex="-1"></a>.</span>
-<span id="cb82-5"><a href="#cb82-5" tabindex="-1"></a>        Casa    Fallecido     Hospital Hospital UCI         <span class="sc">&lt;</span><span class="cn">NA</span><span class="sc">&gt;</span> </span>
-<span id="cb82-6"><a href="#cb82-6" tabindex="-1"></a>       <span class="dv">74850</span>         <span class="dv">1726</span>           <span class="dv">12</span>            <span class="dv">1</span>            <span class="dv">0</span> </span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">ubicacion_del_caso</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">table</span><span class="op">(</span>useNA <span class="op">=</span> <span class="st">"always"</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>.
+        Casa    Fallecido     Hospital Hospital UCI         &lt;NA&gt;
+       74850         1726           12            1            0 </code></pre>
 </div>
 <p>Como puede observar ahora los NA son 0.</p>
 </div>
@@ -2047,7 +2280,7 @@ para la conversión de estos valores, es posible utilizar la función
 <code>clean_using_dictionary</code> de del paquete 
 <code>cleanepi</code> para realizar el reemplazo correspondiente.</p>
 <p>Dado que de momento no tenemos un diccionario podemos crear uno.</p>
-<div class="codewrapper sourceCode" id="cb83">
+<div class="codewrapper sourceCode" id="cb119">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2060,15 +2293,20 @@ para la conversión de estos valores, es posible utilizar la función
 </div>
 <p>⚠️ <strong>Instrucción:</strong> Revise el contenido de la variable
 <code>sexo</code>:</p>
-<div class="codewrapper sourceCode" id="cb84">
+<div class="codewrapper sourceCode" id="cb120">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb84-2"><a href="#cb84-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(sexo) <span class="sc">%&gt;%</span></span>
-<span id="cb84-3"><a href="#cb84-3" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">table</span>(<span class="at">useNA =</span> <span class="st">"always"</span>)</span>
-<span id="cb84-4"><a href="#cb84-4" tabindex="-1"></a>.</span>
-<span id="cb84-5"><a href="#cb84-5" tabindex="-1"></a>    F     M  <span class="sc">&lt;</span><span class="cn">NA</span><span class="sc">&gt;</span> </span>
-<span id="cb84-6"><a href="#cb84-6" tabindex="-1"></a><span class="dv">40962</span> <span class="dv">35627</span>     <span class="dv">0</span> </span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">sexo</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">table</span><span class="op">(</span>useNA <span class="op">=</span> <span class="st">"always"</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>.
+    F     M  &lt;NA&gt;
+40962 35627     0 </code></pre>
 </div>
 <div id="callout16" class="callout">
 <div class="callout-square">
@@ -2091,7 +2329,7 @@ dato.</p></li>
 </div>
 <p>⚠️ <strong>Instrucción:</strong> Aplique la función
 <code>clean_using_dictionary</code> al dataset:</p>
-<div class="codewrapper sourceCode" id="cb85">
+<div class="codewrapper sourceCode" id="cb122">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2100,15 +2338,20 @@ dato.</p></li>
 </div>
 <p>⚠️ <strong>Instrucción:</strong> Revise el contenido de la variable
 sexo para ver los cambios:</p>
-<div class="codewrapper sourceCode" id="cb86">
+<div class="codewrapper sourceCode" id="cb123">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode r" tabindex="0"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" tabindex="-1"></a>covid <span class="sc">%&gt;%</span></span>
-<span id="cb86-2"><a href="#cb86-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">pull</span>(sexo) <span class="sc">%&gt;%</span></span>
-<span id="cb86-3"><a href="#cb86-3" tabindex="-1"></a>  base<span class="sc">::</span><span class="fu">table</span>(<span class="at">useNA =</span> <span class="st">"always"</span>)</span>
-<span id="cb86-4"><a href="#cb86-4" tabindex="-1"></a>.</span>
-<span id="cb86-5"><a href="#cb86-5" tabindex="-1"></a>masculino  femenino      <span class="sc">&lt;</span><span class="cn">NA</span><span class="sc">&gt;</span> </span>
-<span id="cb86-6"><a href="#cb86-6" tabindex="-1"></a>    <span class="dv">35627</span>     <span class="dv">40962</span>         <span class="dv">0</span> </span></code></pre>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">covid</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="va">sexo</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">base</span><span class="fu">::</span><span class="fu">table</span><span class="op">(</span>useNA <span class="op">=</span> <span class="st">"always"</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>.
+masculino  femenino      &lt;NA&gt;
+    35627     40962         0 </code></pre>
 </div>
 <center>
 <p><a href="https://epiverse-trace.github.io/epitkit/Banco_errores.html" class="external-link"><img src="fig/dudas.png" width="100" class="figure"></a></p>
@@ -2128,7 +2371,7 @@ eliminar estas variables. Para lograrlo podemos usar la función select
 del paquete tidyverse.</p>
 <p>⚠️ <strong>Instrucción:</strong> Empleando la función select
 acompañada del símbolo - elimine la variable edad_repetida.</p>
-<div class="codewrapper sourceCode" id="cb87">
+<div class="codewrapper sourceCode" id="cb125">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2145,7 +2388,7 @@ puede lograr mediante la función <code>rename</code> de
 <p>⚠️ <strong>Instrucción:</strong> Empleando la función rename cambie
 el nombre de la variable <code>fecha_de_inicio_de_sintomas</code> a un
 nombre más corto como, por ejemplo: <code>inicio_sintomas</code>.</p>
-<div class="codewrapper sourceCode" id="cb88">
+<div class="codewrapper sourceCode" id="cb126">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2181,7 +2424,7 @@ agrega la ruta a la carpeta antes del nombre del archivo
 <p>⚠️ <strong>Instrucción:</strong> Cree un directorio de datos limpios
 y almacene los datos corregidos en el formato de su preferencia. Le
 recomendamos .RDS.</p>
-<div class="codewrapper sourceCode" id="cb89">
+<div class="codewrapper sourceCode" id="cb127">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
