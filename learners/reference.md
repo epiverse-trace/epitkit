@@ -352,8 +352,8 @@ observacionales o inferencias a partir de modelos matemáticos.
 
 :   Intervalo de tiempo entre el inicio del periodo infeccioso de un
     caso primario y el inicio del periodo infeccioso en un caso
-    secundario al caso primario. Normalmente es desconocido y se hace
-    una aproximación con el intervalo serial. No se puede medir, sólo
+    secundario, infectado por el caso primario. Normalmente es desconocido 
+    y se hace una aproximación con el intervalo serial. No se puede medir, sólo
     estimar. 
 
 **Ejemplo**
