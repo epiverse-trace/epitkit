@@ -132,6 +132,33 @@ detach("package:paquete", unload = TRUE)
     1.  Vaya a la sección derecha inferior a la pestaña `Packages`
 
     2.  De click en el cuadro frente a cada función (si el cuadro tiene un visto, el paquete está cargado; si el cuadro está vacío, el paquete no está cargado), esto activará la función `detach`. ***Advertencia*****: Si presiona el simbolo de x al lado del paquete lo desinstalará.**
+    
+### No se creó el objeto o función
+
+Esto puede ocurrir por varios motivos:   
+  
+- **Ejecución incompleta del código**: El motivo más frecuente es que no se haya ejecutado el código parcial o totalmente. Asegúrese de ejecutar el script completo para que todas las líneas de código se ejecuten en el orden correcto. Para crear el objeto, asegúrese de haber realizado una de estas dos acciones:
+   
+1. escriba el código en la consola y ejecute (presionando `Enter`)  
+  
+2. o que en el script o Chunck de RMarkdown presione `Control` + `Enter` en Windows o `Command` + `Enter` en Mac.
+
+Si el objeto o función se creó correctamente, aparecerá en el ambiente global (*Enviroment*) ubicado en la zona superior lateral derecha.
+
+- Falta algún paquete necesario: Revise que todas los paquetes o librerías necesarios estén cargados al inicio del script.  
+   
+- Errores en el código: Verifique que no haya errores que impidan que el código se ejecute correctamente. Al ejecutar el código en la consola, aparecerán algunas alertas de errores que pueda tener el código.   
+
+:::::::::::::::::::::::::::::::::::: callout
+  
+## Recomendación 
+  
+Siempre observe la consola (console) para verificar si:
+  
+1. El código se ejecutó correctamente. En caso de que no se haya ejecutado, puede volver a ejecutarlo.   
+2. Si aún se está ejecutando algún comando y aparece el símbolo rojo de **stop**. En este caso, espere a que R termine el proceso antes de ejecutar otros comandos.    
+3. Si ha ocurrido algún error. Revise los errores o advertencias, ya que esto puede darle pistas sobre cómo solucionar el problema.       
+:::::::::::::::::::::::::::::::::::::::::::
 
 ### No veo el resultado de mi código
 
@@ -148,9 +175,7 @@ Esto puede ocurrir por varios motivos:
 -   Hay errores en el código. Verifique que no haya errores que impidan que el código se ejecute correctamente. Al ejecutar el código en la consola le aparecerán algunas alertas de errores que pueda tener el código.
 
 -   El script no se ha ejecutado completamente. Asegúrese de ejecutar el script completo para que todas las líneas de código se ejecuten en el orden correcto.
-
--   El script no se ha ejecutado completamente. Asegúrese de ejecutar el script completo para que todas las líneas de código se ejecuten en el orden correcto.
-
+ 
 ### Errores frecuentes al usar `ggplot`
 
 -   Sintaxis incorrecta:
@@ -234,7 +259,7 @@ Recuerde los siguientes puntos:
 - Es importante cargar previamente una librería que contenga el pipe. Por ejemplo: `magrittr`, `dplyr`, `tidyr` o `purrr`. 
 - El pipe debe ir al final de la línea que se va a conectar. No al inicio de la línea conectada:
 
-![](fig/bp_pipe.png)
+![](fig/bp_pipe.png){width="300"}
 
 
 
@@ -415,7 +440,7 @@ por_dia %>% mutate(id = row_number())
 ```
 Como puede observar el problema no se ha corregido.
 
-Para conrregirlo podemos o incluir el `ungroup` desde el inicio cuando creamos el objeto `por_dia`, o aplicar el cambio y guardarlo en el objeto: 
+Para corregirlo podemos o incluir el `ungroup` desde el inicio cuando creamos el objeto `por_dia`, o aplicar el cambio y guardarlo en el objeto: 
 
 ```{r}
 #ahora estamos almacenando el desagrupamiento
