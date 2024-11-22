@@ -147,7 +147,15 @@ serían 
     durante muchos años los individuos pueden permanecer infectados,
     pero controlando la enfermedad, sin transmitirla, estos individuos
     son considerados expuestos en los modelos dinámicos de transmisión.
+    
+[Spillover]{#spillover} 
+ 
+: En epidemiología, el término spillover se refiere al proceso por el cual un patógeno (microorganismo, ya sea virus, bacteria, parásito u otro), que normalmente afecta a una especie animal específica, se transmite a otro reservorio. En otras palabras, es el salto evolutivo de un patógeno entre especies, lo cual incluye la transmisión de un animal a un humano. 
 
+[Zoonosis]{#zoonosis}  
+ 
+: La OPS define zoonosis como "enfermedades infecciosas transmisibles naturalmente desde animales vertebrados al ser humano".  
+   
 # Parámetros de Transmisión
 
 [Número de reproducción básico, R0]{#R0}
@@ -592,7 +600,7 @@ Donde:
 
 -   $t$ es el tiempo transcurrido.
 
-# [Parámetros de Severidad]{.smallcaps}
+# Parámetros de Severidad
 
 [Letalidad]{#letalidad}
 
