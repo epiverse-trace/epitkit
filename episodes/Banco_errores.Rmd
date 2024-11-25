@@ -64,7 +64,7 @@ sessionInfo()
 \
 
 |                                           |                                                                                         |
-|------------------------|------------------------------------------------|
+|-------------------------------------------|-----------------------------------------------------------------------------------------|
 | Para versiones de R desde 4.4.0           | [RTools 4.4](https://cran.r-project.org/bin/windows/Rtools/rtools44/rtools.html)        |
 | Para versiones de R desde 4.3.0           | [RTools 4.3](https://cran.r-project.org/bin/windows/Rtools/rtools43/rtools.html)        |
 | Para versiones de R que empiezan por 4.2. | [RTools 4.2](https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html)        |
