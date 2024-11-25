@@ -28,6 +28,41 @@ exercises: 8
 
 ## Banco de preguntas
 
+### ¿Cúal es la diferencia entre entorno local y entorno global?
+
+El entorno global consiste en todos los elementos disponibles para su uso en cualquier momento. Por ejemplo, cuando creamos un objeto en la consola, los creamos en el entorno global (esto se puede ver en la sección superior derecha de la pantalla). Ejemplo:
+
+```{r}
+nombre <- "Laura"
+```
+
+Estos elementos pueden ser llamados y visualizados en cualquier parte del código.
+
+```{r}
+nombre
+```
+
+Por otro lado, un entorno local está disponible solo para el contexto específico en el que se define. Por ejemplo, al interior de una función, cuando creamos un elemento, este solo se crea un entorno local. Si tratamos de llamar estos elementos fuera de esta función, no estarán disponibles porque están definidos solo dentro del entorno de la función. Ejemplo:
+
+```{r}
+IMC <- function(peso, talla){
+  calculo = peso/talla^2
+  return(calculo)
+}
+```
+
+Si ejecuta el código podrá obervar que el objeto calculo no se creo en el ambiente global (esquina superior derecha), este objeto se creo al interior de la función, por lo tanto si intentamos llamarlo directamente tendremos un error.
+
+```{r}
+calculo
+```
+
+Para acceder a él, necesitamos devolverlo explícitamente desde la función:
+
+```{r}
+IMC(70, 1.75)
+```
+
 ### ¿Es necesario RTools?
 
 Hay varios problemas comunes en R que pueden requerir la instalación de Rtools.
@@ -64,7 +99,7 @@ sessionInfo()
 \
 
 |                                           |                                                                                         |
-|------------------------|------------------------------------------------|
+|-------------------------------------------|-----------------------------------------------------------------------------------------|
 | Para versiones de R desde 4.4.0           | [RTools 4.4](https://cran.r-project.org/bin/windows/Rtools/rtools44/rtools.html)        |
 | Para versiones de R desde 4.3.0           | [RTools 4.3](https://cran.r-project.org/bin/windows/Rtools/rtools43/rtools.html)        |
 | Para versiones de R que empiezan por 4.2. | [RTools 4.2](https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html)        |
