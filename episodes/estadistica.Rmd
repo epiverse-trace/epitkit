@@ -20,6 +20,7 @@ editor_options:
 
 -   ¿Cómo se pueden utilizar la estadística y la probabilidad para
     resolver preguntas en la epidemiología de enfermedades infecciosas?
+
 :::
 
 ::: objectives
