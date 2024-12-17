@@ -19,7 +19,9 @@ exercises: 8
 ---
 
 ::: questions
+
 -   ¿Tiene algunas dificultades con el código en R?
+
 :::
 
 ::: objectives
