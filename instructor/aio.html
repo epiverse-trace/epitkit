@@ -2424,7 +2424,7 @@ la variable <code>sexo</code> ¿cómo cambiaría el código?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Mostrar la solución </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -7749,7 +7749,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-Banco_errores"><p>Content from <a href="Banco_errores.html">Banco de preguntas y errores frecuentes</a></p>
 <hr>
-<p>Última actualización: 2024-11-19 |
+<p>Última actualización: 2024-12-17 |
 
         <a href="https://github.com/epiverse-trace/epitkit/edit/main/episodes/Banco_errores.Rmd" class="external-link">Mejora esta página <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Tiempo estimado: <i aria-hidden="true" data-feather="clock"></i> 88 minutos</p>
@@ -7786,6 +7786,143 @@ errores frecuentes de la ejecución del código en R.</li>
 </h2>
 <hr class="half-width">
 <div class="section level3">
+<h3 id="es-necesario-rtools">¿Es necesario RTools?<a class="anchor" aria-label="anchor" href="#es-necesario-rtools"></a>
+</h3>
+<p>Hay varios problemas comunes en R que pueden requerir la instalación
+de Rtools.</p>
+<ol style="list-style-type: decimal">
+<li><p>Instalación de paquetes que requieren compilación: Algunos
+paquetes de R necesitan ser compilados desde el código fuente, lo cual
+requiere herramientas de compilación que Rtools proporciona.</p></li>
+<li><p>Dependencias de C, C++ o Fortran: Si desea instalar paquetes que
+dependen de código escrito en C, C++ o Fortran, necesitará Rtools para
+compilar estos componentes.</p></li>
+<li><p>Errores de compilación: Si encuentra errores durante la
+instalación de paquetes que mencionan problemas de compilación, Rtools
+puede resolver estos problemas al proporcionar las herramientas
+necesarias.</p></li>
+<li><p>Desarrollo de paquetes personalizados: Si está desarrollando su
+propio paquete de R y necesita compilar código fuente, Rtools es
+esencial para este proceso.</p></li>
+</ol>
+</div>
+<div class="section level3">
+<h3 id="cómo-instalar-rtools">¿Cómo instalar RTools?<a class="anchor" aria-label="anchor" href="#c%C3%B3mo-instalar-rtools"></a>
+</h3>
+<p><em>Antes de empezar por favor revise que cuenta con permisos de
+administrador en el computador o laptop.</em></p>
+<p>Instalación de Rtools</p>
+<p>La instalación de Rtools depende del sistema operativo que este
+utilizando</p>
+</div>
+<div class="section level3">
+<h3 id="windows">Windows<a class="anchor" aria-label="anchor" href="#windows"></a>
+</h3>
+<p>1.      Verifique que versión de R tiene:<br>
+En la consola de R escriba y ejecute este comando: <strong><br></strong></p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">sessionInfo</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>R version 4.4.2 (2024-10-31)
+Platform: x86_64-pc-linux-gnu
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.10.0
+LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.10.0
+
+locale:
+ [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8
+ [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8
+ [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C
+[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C
+
+time zone: UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base
+
+loaded via a namespace (and not attached):
+[1] compiler_4.4.2 tools_4.4.2    yaml_2.3.10    knitr_1.48     xfun_0.48
+[6] renv_1.0.11    evaluate_1.0.1</code></pre>
+</div>
+<p><strong>Obtendrá una información similar a esta. En este caso la
+versión es 4.4.1</strong></p>
+<p>2.      Visite la página de RTools en CRAN en el navegador de su
+preferencia: <a href="https://cran.r-project.org/bin/windows/Rtools/" class="external-link uri">https://cran.r-project.org/bin/windows/Rtools/</a> y
+seleccione la versión de Rtools que se ajuste a la versión actual de R
+que tiene en su máquina y a la arquitectura de su computador. O de click
+en alguno de los siguientes enlaces para descargar el instalador:<br><br></p>
+<table class="table">
+<colgroup>
+<col width="50%">
+<col width="50%">
+</colgroup>
+<thead><tr class="header">
+<th>Para versiones de R…</th>
+<th>Installar:</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Desde 4.4.0</td>
+<td><a href="https://cran.r-project.org/bin/windows/Rtools/rtools44/rtools.html" class="external-link">RTools
+4.4</a></td>
+</tr>
+<tr class="even">
+<td>Desde 4.3.0</td>
+<td><a href="https://cran.r-project.org/bin/windows/Rtools/rtools43/rtools.html" class="external-link">RTools
+4.3</a></td>
+</tr>
+<tr class="odd">
+<td>Que empiezan por 4.2.</td>
+<td><a href="https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html" class="external-link">RTools
+4.2</a></td>
+</tr>
+<tr class="even">
+<td>Entre 4.0.0 a 4.1.3</td>
+<td><a href="https://cran.r-project.org/bin/windows/Rtools/rtools40.html" class="external-link">RTools
+4.0</a></td>
+</tr>
+<tr class="odd">
+<td>Anteriores a 4.0.0</td>
+<td><a href="https://cran.r-project.org/bin/windows/Rtools/history.html" class="external-link">versiones
+antiguas RTools</a></td>
+</tr>
+</tbody>
+</table>
+<p>3.      En la página de descarga, busque la frase: "<strong><em>may
+be installed from the"</em></strong>  y de clic en <strong><a href="https://cran.r-project.org/bin/windows/Rtools/rtools44/files/rtools44-6335-6327.exe" class="external-link"><em>Rtools44
+installer</em></a></strong> o en la versión que haya seleccionado
+<strong>anteriormente <em>RtoolsXX installer</em></strong>.<br><br><img src="../fig/rtools.png" class="figure"></p>
+<p>4.      Espere a que finalice la descarga y ejecute el archivo.</p>
+<p>5.      Haga clic en "N<em>ext"</em> o "<em>Siguiente"</em> para
+todas las opciones que se muestran en pantalla.</p>
+</div>
+<div class="section level3">
+<h3 id="mac">Mac<a class="anchor" aria-label="anchor" href="#mac"></a>
+</h3>
+<p>En Mac, solamente necesita instalar Xcode Command Line Tools.</p>
+<p>1.      Haga clic en Búsqueda de Spotlight en la parte superior
+derecha de la pantalla, luego busque “Terminal”.</p>
+<p>2.      Abra una terminal o línea de comandos en su máquina.</p>
+<p>3.      En la terminal copie y pegue el siguiente comando:
+<code>xcode-select –install</code></p>
+<p>4.      Probablemente necesite proporcionar su contraseña para
+instalar el software.</p>
+<p>5.      Siga las instrucciones que aparecen en la terminal y espere
+hasta que finalice la instalación.</p>
+<p>También puede hacerlo directamente desde R como explican en este
+video: <a href="https://www.youtube.com/watch?v=_fckF0fefXQ&amp;t=5s" class="external-link">Instalación
+usando R</a></p>
+</div>
+<div class="section level3">
 <h3 id="cómo-instalar-un-paquete-o-librería-en-r">
 <span id="instr">¿Cómo instalar un paquete o “librería” en
 R?</span><a class="anchor" aria-label="anchor" href="#c%C3%B3mo-instalar-un-paquete-o-librer%C3%ADa-en-r"></a>
@@ -7794,7 +7931,7 @@ R?</span><a class="anchor" aria-label="anchor" href="#c%C3%B3mo-instalar-un-paqu
 <ul>
 <li>Le recomendamos que lo haga a través de la función:</li>
 </ul>
-<div class="codewrapper sourceCode" id="cb1">
+<div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -7806,7 +7943,7 @@ utilizando los paquetes remotes o pak.</p>
 <ul>
 <li>Otra opción es usar la función require:</li>
 </ul>
-<div class="codewrapper sourceCode" id="cb2">
+<div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -7839,7 +7976,7 @@ dos formas:</p>
 <code>(::)</code> y en seguida llamar el nombre de la función. Ahora
 debe diligenciar los argumentos</li>
 </ul>
-<div class="codewrapper sourceCode" id="cb3">
+<div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -7848,7 +7985,7 @@ debe diligenciar los argumentos</li>
 <ul>
 <li>Cargar el paquete de R con <code>library</code>:</li>
 </ul>
-<div class="codewrapper sourceCode" id="cb4">
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -7856,7 +7993,7 @@ debe diligenciar los argumentos</li>
 </div>
 <p>y una vez cargada. Llamar el nombre de la función y diligenciar los
 argumentos</p>
-<div class="codewrapper sourceCode" id="cb5">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -7870,7 +8007,7 @@ ambiente global:</li>
 </ul>
 <p>Simplemente llame la función por su nombre y proporcione los
 argumentos necesarios:</p>
-<div class="codewrapper sourceCode" id="cb6">
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -7884,7 +8021,7 @@ argumentos necesarios:</p>
 <ul>
 <li>La recomendada es utilizar la función library:</li>
 </ul>
-<div class="codewrapper sourceCode" id="cb7">
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -7918,7 +8055,7 @@ sesión y, por lo tanto, debe cargarlas de nuevo para poder trabajar.</p>
 <li>Utilice la función <code>detach</code>
 </li>
 </ul>
-<div class="codewrapper sourceCode" id="cb8">
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -7938,6 +8075,60 @@ paquete lo desinstalará.</strong></p></li>
 </ol>
 </li>
 </ul>
+</div>
+<div class="section level3">
+<h3 id="no-se-creó-el-objeto-o-función">No se creó el objeto o función<a class="anchor" aria-label="anchor" href="#no-se-cre%C3%B3-el-objeto-o-funci%C3%B3n"></a>
+</h3>
+<p>Esto puede ocurrir por varios motivos:</p>
+<ul>
+<li>
+<strong>Ejecución incompleta del código</strong>: El motivo más
+frecuente es que no se haya ejecutado el código parcial o totalmente.
+Asegúrese de ejecutar el script completo para que todas las líneas de
+código se ejecuten en el orden correcto. Para crear el objeto, asegúrese
+de haber realizado una de estas dos acciones:</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><p>escriba el código en la consola y ejecute (presionando
+<code>Enter</code>)</p></li>
+<li><p>o que en el script o Chunck de RMarkdown presione
+<code>Control</code> + <code>Enter</code> en Windows o
+<code>Command</code> + <code>Enter</code> en Mac.</p></li>
+</ol>
+<p>Si el objeto o función se creó correctamente, aparecerá en el
+ambiente global (<em>Enviroment</em>) ubicado en la zona superior
+lateral derecha.</p>
+<ul>
+<li><p>Falta algún paquete necesario: Revise que todas los paquetes o
+librerías necesarios estén cargados al inicio del script.</p></li>
+<li><p>Errores en el código: Verifique que no haya errores que impidan
+que el código se ejecute correctamente. Al ejecutar el código en la
+consola, aparecerán algunas alertas de errores que pueda tener el
+código.</p></li>
+</ul>
+<div id="recomendación" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="recomendación" class="callout-inner">
+<h3 class="callout-title">Recomendación</h3>
+<div class="callout-content">
+<p>Siempre observe la consola (console) para verificar si:</p>
+<ol style="list-style-type: decimal">
+<li>El código se ejecutó correctamente. En caso de que no se haya
+ejecutado, puede volver a ejecutarlo.<br>
+</li>
+<li>Si aún se está ejecutando algún comando y aparece el símbolo rojo de
+<strong>stop</strong>. En este caso, espere a que R termine el proceso
+antes de ejecutar otros comandos.<br>
+</li>
+<li>Si ha ocurrido algún error. Revise los errores o advertencias, ya
+que esto puede darle pistas sobre cómo solucionar el problema.<br>
+</li>
+</ol>
+</div>
+</div>
+</div>
 </div>
 <div class="section level3">
 <h3 id="no-veo-el-resultado-de-mi-código">No veo el resultado de mi código<a class="anchor" aria-label="anchor" href="#no-veo-el-resultado-de-mi-c%C3%B3digo"></a>
@@ -7963,9 +8154,6 @@ necesarias estén cargadas al inicio del script.</p></li>
 impidan que el código se ejecute correctamente. Al ejecutar el código en
 la consola le aparecerán algunas alertas de errores que pueda tener el
 código.</p></li>
-<li><p>El script no se ha ejecutado completamente. Asegúrese de ejecutar
-el script completo para que todas las líneas de código se ejecuten en el
-orden correcto.</p></li>
 <li><p>El script no se ha ejecutado completamente. Asegúrese de ejecutar
 el script completo para que todas las líneas de código se ejecuten en el
 orden correcto.</p></li>
@@ -8010,7 +8198,7 @@ minúsculas por los tanto <code>VariableX</code> es diferente a
 </ul>
 <p>Antes de trabajar con <code>ggplot</code> siempre recuerde cargar la
 librería con <code>library</code>:</p>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -8038,28 +8226,28 @@ adecuados.</p></li>
 <p><code>filter</code> acepta condiciones lógicas para seleccionar
 filas. Veamos unos ejemplos:</p>
 <p>-          Valores específicos:</p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">covid19</span> <span class="op">%&gt;%</span> <span class="fu">filter</span><span class="op">(</span><span class="va">estado</span> <span class="op">==</span> <span class="st">"Fallecido"</span><span class="op">)</span></span></code></pre>
 </div>
 <p>-          Rangos de valores:</p>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">covid19</span> <span class="op">%&gt;%</span> <span class="fu">filter</span><span class="op">(</span><span class="va">fecha_de_notificacion</span> <span class="op">&gt;=</span> <span class="st">"2020-01-01"</span> <span class="op">&amp;</span> <span class="va">fecha_de_notificacion</span> <span class="op">&lt;=</span> <span class="st">"2020-12-31"</span><span class="op">)</span></span></code></pre>
 </div>
 <p>-          Condiciones múltiples:</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">covid19</span> <span class="op">%&gt;%</span> <span class="fu">filter</span><span class="op">(</span><span class="va">estado</span> <span class="op">==</span> <span class="st">"Fallecido"</span> <span class="op">&amp;</span> <span class="va">nombre_del_pais</span> <span class="op">==</span> <span class="st">"Colombia"</span><span class="op">)</span></span></code></pre>
 </div>
 <p>-          Condiciones con funciones:</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -8086,7 +8274,7 @@ Por ejemplo: <code>magrittr</code>, <code>dplyr</code>,
 <li>El pipe debe ir al final de la línea que se va a conectar. No al
 inicio de la línea conectada:</li>
 </ul>
-<figure><img src="../fig/bp_pipe.png" class="figure mx-auto d-block"></figure>
+<figure><img src="../fig/bp_pipe.png" width="300" class="figure mx-auto d-block"></figure>
 </div>
 <div class="section level3">
 <h3 id="prevencion">¿Cómo evitar accidentes?<a class="anchor" aria-label="anchor" href="#prevencion"></a>
@@ -8155,7 +8343,7 @@ accidentes?</a>).</p>
 <a class="anchor" aria-label="anchor" href="#uso-de-la-funci%C3%B3n-rename"></a>
 </h3>
 <p>1.      Llame la base de datos</p>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -8166,7 +8354,7 @@ rename</p>
 <p>3.      Llame la función <code>rename</code> y escriba primero el
 nuevo nombre de la columna y después el nombre de la columna
 preexistente a la que quiere cambiar el nombre</p>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -8174,7 +8362,7 @@ preexistente a la que quiere cambiar el nombre</p>
 </div>
 <p>n.      Seleccionar algunas filas de un grupo de datos</p>
 <p>1.      Llame la base de datos</p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -8182,7 +8370,7 @@ preexistente a la que quiere cambiar el nombre</p>
 </div>
 <p>2.      Use el pipe <code>%&gt;%</code> para enlazarlo a la función
 <code>group_by</code></p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -8193,7 +8381,7 @@ variable determinada en los cuales puede realizar otras acciones como
 por ejemplo seleccionar los datos en el encabezado de cada grupo.</p>
 <p>4.      Enseguida use la función como en este ejemplo podríamos usar
 <code>head</code> solo para los datos del encabezado de cada grupo.</p>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -8204,7 +8392,7 @@ por ejemplo seleccionar los datos en el encabezado de cada grupo.</p>
 <h3 id="cómo-usar-summarise">¿Cómo usar <code>summarise</code>?<a class="anchor" aria-label="anchor" href="#c%C3%B3mo-usar-summarise"></a>
 </h3>
 <p>1.      Llame la base de datos</p>
-<div class="codewrapper sourceCode" id="cb20">
+<div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -8212,7 +8400,7 @@ por ejemplo seleccionar los datos en el encabezado de cada grupo.</p>
 </div>
 <p>2.      Use el pipe<code>%&gt;%</code>para enlazarlo a la función
 <code>summarise</code></p>
-<div class="codewrapper sourceCode" id="cb21">
+<div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -8221,7 +8409,7 @@ por ejemplo seleccionar los datos en el encabezado de cada grupo.</p>
 <p>La función summarise no puede utilizarse de forma directa, por lo
 tanto, debe usarse junto a un argumento adentro, por ejemplo:</p>
 <p>a.      Obtener el promedio</p>
-<div class="codewrapper sourceCode" id="cb22">
+<div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -8229,7 +8417,7 @@ tanto, debe usarse junto a un argumento adentro, por ejemplo:</p>
 <span>  <span class="fu">summarise</span><span class="op">(</span>mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">variabledeinteres</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <p>b.      Obtener la desviación estandar</p>
-<div class="codewrapper sourceCode" id="cb23">
+<div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -8239,7 +8427,7 @@ tanto, debe usarse junto a un argumento adentro, por ejemplo:</p>
 <p>Esta función puede usarse con agrupación previa
 (<code>group_by</code>) para obtener estos valores por cada grupo, por
 ejemplo,</p>
-<div class="codewrapper sourceCode" id="cb24">
+<div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -8262,7 +8450,7 @@ Por ello, recomendamos siempre emplear (<code>ungroup</code>) antes de
 almacenar. Para usar <code>ungroup()</code> basta con ponerlo al
 final.</li>
 </ul>
-<div class="codewrapper sourceCode" id="cb25">
+<div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -8273,7 +8461,7 @@ final.</li>
 </div>
 <p>Veamos un ejemplo de un error que puede ocurrir por no
 desagrupar:</p>
-<div class="codewrapper sourceCode" id="cb26">
+<div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -8296,7 +8484,7 @@ desagrupar:</p>
 <span>  <span class="op">)</span></span></code></pre>
 </div>
 <p>Creemos una variable que contenga id únicos por cada fila</p>
-<div class="codewrapper sourceCode" id="cb27">
+<div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -8339,7 +8527,7 @@ antes, todavía podemos solucionarlo.</p>
 <p>Veamos como no se solucionaría primero. Un error frecuente al tratar
 de solucionar este problema es aplicar la función ungroup sin almacenar
 el resultado.</p>
-<div class="codewrapper sourceCode" id="cb29">
+<div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -8373,7 +8561,7 @@ el resultado.</p>
 19 O              +         5  84.9  15
 20 O              -         2  80.7  16.1</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb31">
+<div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -8410,10 +8598,10 @@ el resultado.</p>
 20 O              -         2  80.7  16.1     1</code></pre>
 </div>
 <p>Como puede observar el problema no se ha corregido.</p>
-<p>Para conrregirlo podemos o incluir el <code>ungroup</code> desde el
+<p>Para corregirlo podemos o incluir el <code>ungroup</code> desde el
 inicio cuando creamos el objeto <code>por_dia</code>, o aplicar el
 cambio y guardarlo en el objeto:</p>
-<div class="codewrapper sourceCode" id="cb33">
+<div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -8459,10 +8647,10 @@ caso iría antes de la operación.</p>
 </h3>
 <p>Si el archivo sale correctamente en otros formatos a excepción de
 pdf. Una de las situaciones más frecuentes es que falte la instalación
-de LaTeX: RMarkdown necesita LaTeX para generar PDFs. Asegúrate de tener
-LaTeX instalado en tu sistema.</p>
+de LaTeX: RMarkdown necesita LaTeX para generar PDFs. Asegúrese de tener
+LaTeX instalado en su sistema.</p>
 <p>Para instalar LaTeX desde RStudio, puede usar el paquete TinyTeX:</p>
-<div class="codewrapper sourceCode" id="cb35">
+<div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
