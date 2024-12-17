@@ -1,6 +1,6 @@
 ---
 title: "Banco de preguntas y errores frecuentes"
-date: '2024-10-21'
+date: '2024-11-22'
 output:
   html_document: 
     self_contained: true
@@ -20,18 +20,109 @@ exercises: 8
 
 ::: questions
 
-- ¿Tiene algunas dificultades con el código en R?
+-   ¿Tiene algunas dificultades con el código en R?
 
 :::
 
 ::: objectives
-
-- En este documento usted podrá encontrar algunas de las preguntas y errores frecuentes de la ejecución del código en R.
-
+-   En este documento usted podrá encontrar algunas de las preguntas y errores frecuentes de la ejecución del código en R.
 :::
 
-
 ## Banco de preguntas
+
+### ¿Es necesario RTools?
+
+Hay varios problemas comunes en R que pueden requerir la instalación de Rtools.
+
+1.  Instalación de paquetes que requieren compilación: Algunos paquetes de R necesitan ser compilados desde el código fuente, lo cual requiere herramientas de compilación que Rtools proporciona.
+
+2.  Dependencias de C, C++ o Fortran: Si desea instalar paquetes que dependen de código escrito en C, C++ o Fortran, necesitará Rtools para compilar estos componentes.
+
+3.  Errores de compilación: Si encuentra errores durante la instalación de paquetes que mencionan problemas de compilación, Rtools puede resolver estos problemas al proporcionar las herramientas necesarias.
+
+4.  Desarrollo de paquetes personalizados: Si está desarrollando su propio paquete de R y necesita compilar código fuente, Rtools es esencial para este proceso.
+
+### ¿Cómo instalar RTools?
+
+*Antes de empezar por favor revise que cuenta con permisos de administrador en el computador o laptop.*
+
+Instalación de Rtools
+
+La instalación de Rtools depende del sistema operativo que este utilizando
+
+### Windows
+
+1.      Verifique que versión de R tiene:\
+En la consola de R escriba y ejecute este comando: **\
+**
+
+
+``` r
+sessionInfo()
+```
+
+``` output
+R version 4.4.2 (2024-10-31)
+Platform: x86_64-pc-linux-gnu
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.10.0 
+LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.10.0
+
+locale:
+ [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
+ [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
+ [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
+[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
+
+time zone: UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.4.2 tools_4.4.2    yaml_2.3.10    knitr_1.48     xfun_0.48     
+[6] renv_1.0.11    evaluate_1.0.1
+```
+
+**Obtendrá una información similar a esta. En este caso la versión es 4.4.1**
+
+2.      Visite la página de RTools en CRAN en el navegador de su preferencia: <https://cran.r-project.org/bin/windows/Rtools/> y seleccione la versión de Rtools que se ajuste a la versión actual de R que tiene en su máquina y a la arquitectura de su computador. O de click en alguno de los siguientes enlaces para descargar el instalador:\
+\
+
+| Para versiones de R... | Installar: |
+|---|---|
+| Desde 4.4.0 | [RTools 4.4](https://cran.r-project.org/bin/windows/Rtools/rtools44/rtools.html) |
+| Desde 4.3.0 | [RTools 4.3](https://cran.r-project.org/bin/windows/Rtools/rtools43/rtools.html) |
+| Que empiezan por 4.2. | [RTools 4.2](https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html) |
+| Entre 4.0.0 a 4.1.3 | [RTools 4.0](https://cran.r-project.org/bin/windows/Rtools/rtools40.html) |
+| Anteriores a 4.0.0 | [versiones antiguas RTools](https://cran.r-project.org/bin/windows/Rtools/history.html) |
+
+3.      En la página de descarga, busque la frase: \"***may be installed from the\"***  y de clic en **[*Rtools44 installer*](https://cran.r-project.org/bin/windows/Rtools/rtools44/files/rtools44-6335-6327.exe)** o en la versión que haya seleccionado **anteriormente *RtoolsXX installer***. \
+\
+![](fig/rtools.png)
+
+4.      Espere a que finalice la descarga y ejecute el archivo.
+
+5.      Haga clic en \"N*ext\"* o \"*Siguiente\"* para todas las opciones que se muestran en pantalla.
+
+### Mac
+
+En Mac, solamente necesita instalar Xcode Command Line Tools.
+
+1.      Haga clic en Búsqueda de Spotlight en la parte superior derecha de la pantalla, luego busque "Terminal".
+
+2.      Abra una terminal o línea de comandos en su máquina.
+
+3.      En la terminal copie y pegue el siguiente comando: `xcode-select –install`
+
+4.      Probablemente necesite proporcionar su contraseña para instalar el software.
+
+5.      Siga las instrucciones que aparecen en la terminal y espere hasta que finalice la instalación.
+
+También puede hacerlo directamente desde R como explican en este video: [Instalación usando R](https://www.youtube.com/watch?v=_fckF0fefXQ&t=5s)
 
 ### [¿Cómo instalar un paquete o "librería" en R?]{#instr}
 
@@ -141,6 +232,32 @@ detach("package:paquete", unload = TRUE)
 
     2.  De click en el cuadro frente a cada función (si el cuadro tiene un visto, el paquete está cargado; si el cuadro está vacío, el paquete no está cargado), esto activará la función `detach`. ***Advertencia*****: Si presiona el simbolo de x al lado del paquete lo desinstalará.**
 
+### No se creó el objeto o función
+
+Esto puede ocurrir por varios motivos:
+
+-   **Ejecución incompleta del código**: El motivo más frecuente es que no se haya ejecutado el código parcial o totalmente. Asegúrese de ejecutar el script completo para que todas las líneas de código se ejecuten en el orden correcto. Para crear el objeto, asegúrese de haber realizado una de estas dos acciones:
+
+1.  escriba el código en la consola y ejecute (presionando `Enter`)
+
+2.  o que en el script o Chunck de RMarkdown presione `Control` + `Enter` en Windows o `Command` + `Enter` en Mac.
+
+Si el objeto o función se creó correctamente, aparecerá en el ambiente global (*Enviroment*) ubicado en la zona superior lateral derecha.
+
+-   Falta algún paquete necesario: Revise que todas los paquetes o librerías necesarios estén cargados al inicio del script.
+
+-   Errores en el código: Verifique que no haya errores que impidan que el código se ejecute correctamente. Al ejecutar el código en la consola, aparecerán algunas alertas de errores que pueda tener el código.
+
+::: callout
+## Recomendación
+
+Siempre observe la consola (console) para verificar si:
+
+1.  El código se ejecutó correctamente. En caso de que no se haya ejecutado, puede volver a ejecutarlo.\
+2.  Si aún se está ejecutando algún comando y aparece el símbolo rojo de **stop**. En este caso, espere a que R termine el proceso antes de ejecutar otros comandos.\
+3.  Si ha ocurrido algún error. Revise los errores o advertencias, ya que esto puede darle pistas sobre cómo solucionar el problema.\
+:::
+
 ### No veo el resultado de mi código
 
 Esto puede ocurrir por varios motivos:
@@ -154,8 +271,6 @@ Esto puede ocurrir por varios motivos:
 -   Falta alguna librería necesaria. Revise que todas las librerías necesarias estén cargadas al inicio del script.
 
 -   Hay errores en el código. Verifique que no haya errores que impidan que el código se ejecute correctamente. Al ejecutar el código en la consola le aparecerán algunas alertas de errores que pueda tener el código.
-
--   El script no se ha ejecutado completamente. Asegúrese de ejecutar el script completo para que todas las líneas de código se ejecuten en el orden correcto.
 
 -   El script no se ha ejecutado completamente. Asegúrese de ejecutar el script completo para que todas las líneas de código se ejecuten en el orden correcto.
 
@@ -242,14 +357,12 @@ Cuando se crea un objeto este se almacena en el ambiente global. Podemos ver el 
 
 ### No funciona el pipe `%>%`
 
-Recuerde los siguientes puntos: 
+Recuerde los siguientes puntos:
 
-- Es importante cargar previamente una librería que contenga el pipe. Por ejemplo: `magrittr`, `dplyr`, `tidyr` o `purrr`. 
-- El pipe debe ir al final de la línea que se va a conectar. No al inicio de la línea conectada:
+-   Es importante cargar previamente una librería que contenga el pipe. Por ejemplo: `magrittr`, `dplyr`, `tidyr` o `purrr`.
+-   El pipe debe ir al final de la línea que se va a conectar. No al inicio de la línea conectada:
 
-![](fig/bp_pipe.png)
-
-
+![](fig/bp_pipe.png){width="300"}
 
 ### ¿Cómo evitar accidentes? {#prevencion}
 
@@ -385,8 +498,8 @@ datos %>%  group_by(pais) %>%
 ```
 
 ### Errores relacionados a grupos (group_by y ungroup)
-  
-- Un error muy frecuente es que se almacena el objeto agrupado (`group_by`), dado que no se realizó la acción de desagrupar al final. Esto puede generar errores como cálculos incorrectos, resúmenes por grupo en lugar de sobre la totalidad de los datos, y problemas al realizar operaciones subsecuentes en el conjunto de datos.  Por ello, recomendamos siempre emplear (`ungroup`) antes de almacenar. Para usar `ungroup()` basta con ponerlo al final.
+
+-   Un error muy frecuente es que se almacena el objeto agrupado (`group_by`), dado que no se realizó la acción de desagrupar al final. Esto puede generar errores como cálculos incorrectos, resúmenes por grupo en lugar de sobre la totalidad de los datos, y problemas al realizar operaciones subsecuentes en el conjunto de datos. Por ello, recomendamos siempre emplear (`ungroup`) antes de almacenar. Para usar `ungroup()` basta con ponerlo al final.
 
 
 ``` r
@@ -395,9 +508,9 @@ datos <- datos %>%
   procesamiento_de_datos(...) %>% 
   ungroup() 
 ```
-  
+
 Veamos un ejemplo de un error que puede ocurrir por no desagrupar:
- 
+
 
 ``` r
 library("tidyverse")
@@ -454,10 +567,11 @@ por_dia %>% mutate(id = row_number())
 ```
 
 Cómo puede observar en la columna id en lugar de identificadores únicos tenemos id que se repiten. ¿Por qué sucedió si cada fila es diferente?
-  
+
 La razón a este problema subyace en que los datos siguen agrupados. Aún si no aplicamos directamente el `ungroup` como se explico antes, todavía podemos solucionarlo.
 
 Veamos como no se solucionaría primero. Un error frecuente al tratar de solucionar este problema es aplicar la función ungroup sin almacenar el resultado.
+
 
 ``` r
 # aplicación equivocada de ungroup
@@ -522,9 +636,10 @@ por_dia %>% mutate(id = row_number())
 19 O              +         5  84.9  15       4
 20 O              -         2  80.7  16.1     1
 ```
+
 Como puede observar el problema no se ha corregido.
 
-Para conrregirlo podemos o incluir el `ungroup` desde el inicio cuando creamos el objeto `por_dia`, o aplicar el cambio y guardarlo en el objeto: 
+Para corregirlo podemos o incluir el `ungroup` desde el inicio cuando creamos el objeto `por_dia`, o aplicar el cambio y guardarlo en el objeto:
 
 
 ``` r
@@ -559,16 +674,14 @@ por_dia_sin_grupo %>% mutate(id = row_number())
 19 O              +         5  84.9  15      19
 20 O              -         2  80.7  16.1    20
 ```
+
 Como puede observar ahora si tenemos cada fila con su propio id.
 
-
 Advertencia: Es importante aclarar que el desagrupamiento en los escenarios anteriores iría después de la operación, sin embargo, en este caso iría antes de la operación.
-    
-    
 
 ### Cuando trato de crear un pdf en RMarkdown me sale error
 
-Si el archivo sale correctamente en otros formatos a excepción de pdf. Una de las situaciones más frecuentes es que falte la instalación de LaTeX: RMarkdown necesita LaTeX para generar PDFs. Asegúrate de tener LaTeX instalado en tu sistema. 
+Si el archivo sale correctamente en otros formatos a excepción de pdf. Una de las situaciones más frecuentes es que falte la instalación de LaTeX: RMarkdown necesita LaTeX para generar PDFs. Asegúrese de tener LaTeX instalado en su sistema.
 
 Para instalar LaTeX desde RStudio, puede usar el paquete TinyTeX:
 
@@ -580,10 +693,9 @@ tinytex::install_tinytex()
 
 Configure RStudio:
 
-Vaya a Tools > Global Options > Sweave.
+Vaya a Tools \> Global Options \> Sweave.
 
-Asegúrese de que la opción "Typeset PDF" esté configurada para usar TinyTeX. 
- 
+Asegúrese de que la opción "Typeset PDF" esté configurada para usar TinyTeX.
 
 ### Material adicional que puede aportar a su aprendizaje:
 
@@ -592,7 +704,6 @@ Asegúrese de que la opción "Typeset PDF" esté configurada para usar TinyTeX.
 <https://www.youtube.com/watch?v=6STcQVX8Hk0>
 
 ::: keypoints
-
 Si después de buscar en esta guía sus preguntas no encontro respuesta por favor diligencie el siguiente formulario [Dudas por resolver](https://forms.office.com/pages/responsepage.aspx?id=Dpn32j-KnECbdipUdQmAAMjWJqHZ8P1DkQQdb07M30RUOEY5N1U1UDFYMExGMzFHRkRKT1BTRTFRWS4u&route=shorturl&sid=6a94f23c-049c-4f54-9732-fc25789059b3){.uri}
 :::
 
