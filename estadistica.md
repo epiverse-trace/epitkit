@@ -20,6 +20,7 @@ editor_options:
 
 -   ¿Cómo se pueden utilizar la estadística y la probabilidad para
     resolver preguntas en la epidemiología de enfermedades infecciosas?
+
 :::
 
 ::: objectives
@@ -857,7 +858,7 @@ stats::runif(n, a, b)
 ```
 
 ``` output
-[1] 3.296493 2.735185 2.097067 2.509185 4.294340
+[1] 4.296535 4.071935 4.112089 2.544913 2.011042
 ```
 :::
 
