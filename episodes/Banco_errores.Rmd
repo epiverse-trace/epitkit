@@ -95,9 +95,7 @@ En Mac, solamente necesita instalar Xcode Command Line Tools.
 
 5.      Siga las instrucciones que aparecen en la terminal y espere hasta que finalice la instalación.
 
-También puede hacerlo directamente desde R como explican en este video:
-
-[Instalación usando R](https://www.youtube.com/watch?v=_fckF0fefXQ&t=5s)
+También puede hacerlo directamente desde R como explican en este video: [Instalación usando R](https://www.youtube.com/watch?v=_fckF0fefXQ&t=5s)
 
 ### [¿Cómo instalar un paquete o "librería" en R?]{#instr}
 
