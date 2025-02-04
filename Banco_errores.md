@@ -84,7 +84,7 @@ attached base packages:
 
 loaded via a namespace (and not attached):
 [1] compiler_4.4.2 tools_4.4.2    yaml_2.3.10    knitr_1.49     xfun_0.49     
-[6] renv_1.0.11    evaluate_1.0.1
+[6] renv_1.1.0     evaluate_1.0.1
 ```
 
 **Obtendrá una información similar a esta. En este caso la versión es 4.4.1**
