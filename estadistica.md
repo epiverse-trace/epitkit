@@ -730,7 +730,7 @@ Epi Parameter: offspring distribution
 Study: Lloyd-Smith J, Schreiber S, Kopp P, Getz W (2005). "Superspreading and
 the effect of individual variation on disease emergence." _Nature_.
 doi:10.1038/nature04153 <https://doi.org/10.1038/nature04153>.
-Distribution: nbinom
+Distribution: nbinom (No units)
 Parameters:
   mean: 1.630
   dispersion: 0.160
@@ -858,7 +858,7 @@ stats::runif(n, a, b)
 ```
 
 ``` output
-[1] 4.569785 2.729501 4.483298 4.349128 3.628392
+[1] 2.548315 4.225673 4.316456 3.363346 3.175741
 ```
 :::
 
@@ -1002,7 +1002,7 @@ Study: Lessler J, Reich N, Brookmeyer R, Perl T, Nelson K, Cummings D (2009).
 review." _The Lancet Infectious Diseases_.
 doi:10.1016/S1473-3099(09)70069-8
 <https://doi.org/10.1016/S1473-3099%2809%2970069-8>.
-Distribution: lnorm
+Distribution: lnorm (days)
 Parameters:
   meanlog: 1.386
   sdlog: 0.593
@@ -1113,7 +1113,7 @@ P, Leach S, Hall I, Jenkins H, Ferguson N, Cooper B (2009). "The Early
 Transmission Dynamics of H1N1pdm Influenza in the United Kingdom."
 _PLoS Currents_. doi:10.1371/currents.RRN1130
 <https://doi.org/10.1371/currents.RRN1130>.
-Distribution: gamma
+Distribution: gamma (days)
 Parameters:
   shape: 2.622
   scale: 0.957
@@ -1206,7 +1206,7 @@ E, Cao Y, Qin Y, Liao Q, Yu H, Cowling B (2015). "Estimating the
 Distribution of the Incubation Periods of Human Avian Influenza A(H7N9)
 Virus Infections." _American Journal of Epidemiology_.
 doi:10.1093/aje/kwv115 <https://doi.org/10.1093/aje/kwv115>.
-Distribution: weibull
+Distribution: weibull (days)
 Parameters:
   shape: 2.101
   scale: 3.839
