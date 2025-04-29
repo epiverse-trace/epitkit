@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.4.3",
+    "Version": "4.5.0",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -1588,7 +1588,7 @@
       "LazyData": "true",
       "Roxygen": "list(markdown = TRUE)",
       "RoxygenNote": "7.3.2",
-      "Author": "Joshua W. Lambert [aut, cre, cph] (<https://orcid.org/0000-0001-5218-3046>), Adam Kucharski [aut, cph] (<https://orcid.org/0000-0001-8814-9421>), Carmen Tamayo [aut] (<https://orcid.org/0000-0003-4184-2864>), Hugo Gruson [ctb, rev] (<https://orcid.org/0000-0002-4094-1476>), Sebastian Funk [ctb] (<https://orcid.org/0000-0002-2842-3406>), Pratik Gupte [rev] (<https://orcid.org/0000-0001-5294-7819>), James M. Azam [rev] (<https://orcid.org/0000-0001-5782-7330>), Chris Hartgerink [rev] (<https://orcid.org/0000-0003-1050-6809>), Tim Taylor [rev] (<https://orcid.org/0000-0002-8587-7113>)",
+      "Author": "Joshua W. Lambert [aut, cre, cph] (ORCID: <https://orcid.org/0000-0001-5218-3046>), Adam Kucharski [aut, cph] (ORCID: <https://orcid.org/0000-0001-8814-9421>), Carmen Tamayo [aut] (ORCID: <https://orcid.org/0000-0003-4184-2864>), Hugo Gruson [ctb, rev] (ORCID: <https://orcid.org/0000-0002-4094-1476>), Sebastian Funk [ctb] (ORCID: <https://orcid.org/0000-0002-2842-3406>), Pratik Gupte [rev] (ORCID: <https://orcid.org/0000-0001-5294-7819>), James M. Azam [rev] (ORCID: <https://orcid.org/0000-0001-5782-7330>), Chris Hartgerink [rev] (ORCID: <https://orcid.org/0000-0003-1050-6809>), Tim Taylor [rev] (ORCID: <https://orcid.org/0000-0002-8587-7113>)",
       "Maintainer": "Joshua W. Lambert <joshua.lambert@lshtm.ac.uk>",
       "RemoteType": "github",
       "RemoteUsername": "epiverse-trace",
