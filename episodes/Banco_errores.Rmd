@@ -471,7 +471,7 @@ datos %>%  group_by(pais) %>%
     sd = sd(variabledeinteres))
 ```
 
-### Errores relacionados a grupos (group_by y ungroup)
+### Errores relacionados a grupos (`group_by` y `ungroup`)
 
 - Un error muy frecuente es que se almacena el objeto agrupado (`group_by`), dado que no se realizó la acción de desagrupar al final. Esto puede generar errores como cálculos incorrectos, resúmenes por grupo en lugar de sobre la totalidad de los datos, y problemas al realizar operaciones subsecuentes en el conjunto de datos. Por ello, recomendamos siempre emplear (`ungroup`) antes de almacenar. Para usar `ungroup()` basta con ponerlo al final.
 
