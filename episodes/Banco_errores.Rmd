@@ -2,7 +2,7 @@
 title: "Banco de preguntas y errores frecuentes"
 date: '2024-11-22'
 output:
-  html_document: 
+  html_document:
     self_contained: true
   pdf_document: default
   word_document: default
@@ -20,12 +20,13 @@ exercises: 8
 
 ::: questions
 
--   ¿Tiene algunas dificultades con el código en R?
+- ¿Tiene algunas dificultades con el código en R?
 
 :::
 
 ::: objectives
--   En este documento usted podrá encontrar algunas de las preguntas y errores frecuentes de la ejecución del código en R.
+
+- En este documento usted podrá encontrar algunas de las preguntas y errores frecuentes de la ejecución del código en R.
 :::
 
 ## Banco de preguntas
@@ -34,13 +35,13 @@ exercises: 8
 
 Hay varios problemas comunes en R que pueden requerir la instalación de Rtools.
 
-1.  Instalación de paquetes que requieren compilación: Algunos paquetes de R necesitan ser compilados desde el código fuente, lo cual requiere herramientas de compilación que Rtools proporciona.
+1. Instalación de paquetes que requieren compilación: Algunos paquetes de R necesitan ser compilados desde el código fuente, lo cual requiere herramientas de compilación que Rtools proporciona.
 
-2.  Dependencias de C, C++ o Fortran: Si desea instalar paquetes que dependen de código escrito en C, C++ o Fortran, necesitará Rtools para compilar estos componentes.
+2. Dependencias de C, C++ o Fortran: Si desea instalar paquetes que dependen de código escrito en C, C++ o Fortran, necesitará Rtools para compilar estos componentes.
 
-3.  Errores de compilación: Si encuentra errores durante la instalación de paquetes que mencionan problemas de compilación, Rtools puede resolver estos problemas al proporcionar las herramientas necesarias.
+3. Errores de compilación: Si encuentra errores durante la instalación de paquetes que mencionan problemas de compilación, Rtools puede resolver estos problemas al proporcionar las herramientas necesarias.
 
-4.  Desarrollo de paquetes personalizados: Si está desarrollando su propio paquete de R y necesita compilar código fuente, Rtools es esencial para este proceso.
+4. Desarrollo de paquetes personalizados: Si está desarrollando su propio paquete de R y necesita compilar código fuente, Rtools es esencial para este proceso.
 
 ### ¿Cómo instalar RTools?
 
@@ -52,9 +53,9 @@ La instalación de Rtools depende del sistema operativo que este utilizando
 
 ### Windows
 
-1.      Verifique que versión de R tiene:\
-En la consola de R escriba y ejecute este comando: **\
-**
+1. Verifique que versión de R tiene:
+
+  En la consola de R escriba y ejecute este comando:
 
 ```{r}
 sessionInfo()
@@ -62,38 +63,42 @@ sessionInfo()
 
 **Obtendrá una información similar a esta. En este caso la versión es 4.4.1**
 
-2.      Visite la página de RTools en CRAN en el navegador de su preferencia: <https://cran.r-project.org/bin/windows/Rtools/> y seleccione la versión de Rtools que se ajuste a la versión actual de R que tiene en su máquina y a la arquitectura de su computador. O de click en alguno de los siguientes enlaces para descargar el instalador:\
-\
+2. Visite la página de RTools en CRAN en el navegador de su preferencia:
+<https://cran.r-project.org/bin/windows/Rtools/>y seleccione la versión de Rtools que se ajuste a la versión actual de R que tiene en su máquina y a la arquitectura de su computador.
+O de click en alguno de los siguientes enlaces para descargar el instalador:
+
+\\
 
 | Para versiones de R... | Installar: |
-|---|---|
-| Desde 4.4.0 | [RTools 4.4](https://cran.r-project.org/bin/windows/Rtools/rtools44/rtools.html) |
-| Desde 4.3.0 | [RTools 4.3](https://cran.r-project.org/bin/windows/Rtools/rtools43/rtools.html) |
-| Que empiezan por 4.2. | [RTools 4.2](https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html) |
-| Entre 4.0.0 a 4.1.3 | [RTools 4.0](https://cran.r-project.org/bin/windows/Rtools/rtools40.html) |
-| Anteriores a 4.0.0 | [versiones antiguas RTools](https://cran.r-project.org/bin/windows/Rtools/history.html) |
+| ---------------------- | ---------- |
+| Desde 4.4.0            | [RTools 4.4](https://cran.r-project.org/bin/windows/Rtools/rtools44/rtools.html)           |
+| Desde 4.3.0            | [RTools 4.3](https://cran.r-project.org/bin/windows/Rtools/rtools43/rtools.html)           |
+| Que empiezan por 4.2.  | [RTools 4.2](https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html)           |
+| Entre 4.0.0 a 4.1.3    | [RTools 4.0](https://cran.r-project.org/bin/windows/Rtools/rtools40.html)           |
+| Anteriores a 4.0.0     | [versiones antiguas RTools](https://cran.r-project.org/bin/windows/Rtools/history.html)           |
 
-3.      En la página de descarga, busque la frase: \"***may be installed from the\"***  y de clic en **[*Rtools44 installer*](https://cran.r-project.org/bin/windows/Rtools/rtools44/files/rtools44-6335-6327.exe)** o en la versión que haya seleccionado **anteriormente *RtoolsXX installer***. \
-\
+3. En la página de descarga, busque la frase: "***may be installed from the***"  y de clic en **[*Rtools44 installer*](https://cran.r-project.org/bin/windows/Rtools/rtools44/files/rtools44-6335-6327.exe)** o en la versión que haya seleccionado **anteriormente *RtoolsXX installer***.
+
 ![](fig/rtools.png)
 
-4.      Espere a que finalice la descarga y ejecute el archivo.
+4. Espere a que finalice la descarga y ejecute el archivo.
 
-5.      Haga clic en \"N*ext\"* o \"*Siguiente\"* para todas las opciones que se muestran en pantalla.
+5. Haga clic en "*Next*" o "*Siguiente*" para todas las opciones que se muestran en pantalla.
 
 ### Mac
 
 En Mac, solamente necesita instalar Xcode Command Line Tools.
 
-1.      Haga clic en Búsqueda de Spotlight en la parte superior derecha de la pantalla, luego busque "Terminal".
+1. Haga clic en Búsqueda de Spotlight en la parte superior derecha de la pantalla, luego busque "Terminal".
 
-2.      Abra una terminal o línea de comandos en su máquina.
+2. Abra una terminal o línea de comandos en su máquina.
 
-3.      En la terminal copie y pegue el siguiente comando: `xcode-select –install`
+3. En la terminal copie y pegue el siguiente comando:
+`xcode-select –install`
 
-4.      Probablemente necesite proporcionar su contraseña para instalar el software.
+4. Probablemente necesite proporcionar su contraseña para instalar el software.
 
-5.      Siga las instrucciones que aparecen en la terminal y espere hasta que finalice la instalación.
+5. Siga las instrucciones que aparecen en la terminal y espere hasta que finalice la instalación.
 
 También puede hacerlo directamente desde R como explican en este video: [Instalación usando R](https://www.youtube.com/watch?v=_fckF0fefXQ&t=5s)
 
@@ -101,63 +106,66 @@ También puede hacerlo directamente desde R como explican en este video: [Instal
 
 Para instalar un paquete en R puede hacerlo a través de:
 
--   Le recomendamos que lo haga a través de la función:
+- Le recomendamos que lo haga a través de la función:
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 install.packages("paquete")
 ```
 
 Algunos paquetes que están en su fase de desarrollo pueden ser instalados desde la última versión en github u otras ubicaciones utilizando los paquetes remotes o pak.
 
--   Otra opción es usar la función require:
+- Otra opción es usar la función require:
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 if (!require("paquete")) {
   install.packages("paquete")
 }
 ```
 
-Esta opción es útil porque instala el paquete si no está previamente instalado. Se puede combinar con remotes o pak
+Esta opción es útil porque instala el paquete si no está previamente instalado.
+Se puede combinar con remotes o pak
 
--   Usar la interfaz de RStudio:
+- Usar la interfaz de RStudio:
 
-    1.  Haga click en la ventana `Packages`
+  1. Haga click en la ventana `Packages`
 
-    2.  Presione el botón `Install`
+  2. Presione el botón `Install`
 
-    3.  Escriba el nombre del (de los) paquete(s) a instalar
+  3. Escriba el nombre del (de los) paquete(s) a instalar
 
-    4.  Presione botón `Install`.
+  4. Presione botón `Install`.
 
 ### [¿Cómo usar una función?]{#funcr}
 
-          Si la función pertenece a un paquete de R, puede hacerse de dos formas:
+Si la función pertenece a un paquete de R, puede hacerse de dos formas:
 
--   Llamar el nombre del paquete de R y poner dos veces dos puntos `(::)` y en seguida llamar el nombre de la función. Ahora debe diligenciar los argumentos
+- Llamar el nombre del paquete de R y poner dos veces dos puntos `(::)` y en seguida llamar el nombre de la función. Ahora debe diligenciar los argumentos
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 paquete::nombre_de_la_funcion(argumentos)
 ```
 
--   Cargar el paquete de R con `library`:
+- Cargar el paquete de R con `library`:
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 library("paquete")
 ```
 
-y una vez cargada. Llamar el nombre de la función y diligenciar los argumentos
+y una vez cargada.
+Llamar el nombre de la función y diligenciar los argumentos
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 nombre_de_la_funcion(argumentos)
 ```
 
-Es importante tener previamente el paquete instalado. Si tiene dudas vaya a [¿Cómo instalar un paquete en R?](instr)
+Es importante tener previamente el paquete instalado.
+Si tiene dudas vaya a [¿Cómo instalar un paquete en R?](instr)
 
--             Si la función fue creada por usted y se encuentra en el ambiente global:
+-           Si la función fue creada por usted y se encuentra en el ambiente global:
 
 Simplemente llame la función por su nombre y proporcione los argumentos necesarios:
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 nombre_de_su_funcion(argumentos)
 ```
 
@@ -165,111 +173,115 @@ nombre_de_su_funcion(argumentos)
 
 Algunas opciones para cargar un paquete son:
 
--   La recomendada es utilizar la función library:
+- La recomendada es utilizar la función library:
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 library("paquete")
 ```
 
--   Utilizando la interfaz de RStudio:
+- Utilizando la interfaz de RStudio:
 
-    1.  Vaya a la sección derecha inferior a la pestaña `Packages`
+  1. Vaya a la sección derecha inferior a la pestaña `Packages`
 
-    2.  De click en el cuadro frente a cada función, esto activará la función `library`.
+  2. De click en el cuadro frente a cada función, esto activará la función `library`.
 
 ### ¿Si cargo las librerías debo cargarlas cada vez que vaya a usar la función?
 
-No, solo es necesario cargarlas una vez por sesión de R. Sin embargo, si cerro su RStudio o abrió un nuevo proyecto, cuenta como una nueva sesión y, por lo tanto, debe cargarlas de nuevo para poder trabajar.
+No, solo es necesario cargarlas una vez por sesión de R.
+Sin embargo, si cerro su RStudio o abrió un nuevo proyecto, cuenta como una nueva sesión y, por lo tanto, debe cargarlas de nuevo para poder trabajar.
 
 ### ¿Puedo desactivar una librería que ya cargué sin reiniciar R?
 
 Si, es posible mediante dos opciones:
 
--   Utilice la función `detach`
+- Utilice la función `detach`
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 detach("package:paquete", unload = TRUE)
 ```
 
--   Utilizando la interfaz de RStudio:
+- Utilizando la interfaz de RStudio:
 
-    1.  Vaya a la sección derecha inferior a la pestaña `Packages`
+  1. Vaya a la sección derecha inferior a la pestaña `Packages`
 
-    2.  De click en el cuadro frente a cada función (si el cuadro tiene un visto, el paquete está cargado; si el cuadro está vacío, el paquete no está cargado), esto activará la función `detach`. ***Advertencia*****: Si presiona el simbolo de x al lado del paquete lo desinstalará.**
+  2. De click en el cuadro frente a cada función (si el cuadro tiene un visto, el paquete está cargado; si el cuadro está vacío, el paquete no está cargado), esto activará la función `detach`. ***Advertencia*: Si presiona el simbolo de x al lado del paquete lo desinstalará.**
 
 ### No se creó el objeto o función
 
 Esto puede ocurrir por varios motivos:
 
--   **Ejecución incompleta del código**: El motivo más frecuente es que no se haya ejecutado el código parcial o totalmente. Asegúrese de ejecutar el script completo para que todas las líneas de código se ejecuten en el orden correcto. Para crear el objeto, asegúrese de haber realizado una de estas dos acciones:
+- **Ejecución incompleta del código**: El motivo más frecuente es que no se haya ejecutado el código parcial o totalmente. Asegúrese de ejecutar el script completo para que todas las líneas de código se ejecuten en el orden correcto. Para crear el objeto, asegúrese de haber realizado una de estas dos acciones:
 
-1.  escriba el código en la consola y ejecute (presionando `Enter`)
+1. escriba el código en la consola y ejecute (presionando `Enter`)
 
-2.  o que en el script o Chunck de RMarkdown presione `Control` + `Enter` en Windows o `Command` + `Enter` en Mac.
+2. o que en el script o Chunck de RMarkdown presione `Control` + `Enter` en Windows o `Command` + `Enter` en Mac.
 
 Si el objeto o función se creó correctamente, aparecerá en el ambiente global (*Enviroment*) ubicado en la zona superior lateral derecha.
 
--   Falta algún paquete necesario: Revise que todas los paquetes o librerías necesarios estén cargados al inicio del script.
+- Falta algún paquete necesario: Revise que todas los paquetes o librerías necesarios estén cargados al inicio del script.
 
--   Errores en el código: Verifique que no haya errores que impidan que el código se ejecute correctamente. Al ejecutar el código en la consola, aparecerán algunas alertas de errores que pueda tener el código.
+- Errores en el código: Verifique que no haya errores que impidan que el código se ejecute correctamente. Al ejecutar el código en la consola, aparecerán algunas alertas de errores que pueda tener el código.
 
 ::: callout
+
 ## Recomendación
 
 Siempre observe la consola (console) para verificar si:
 
-1.  El código se ejecutó correctamente. En caso de que no se haya ejecutado, puede volver a ejecutarlo.\
-2.  Si aún se está ejecutando algún comando y aparece el símbolo rojo de **stop**. En este caso, espere a que R termine el proceso antes de ejecutar otros comandos.\
-3.  Si ha ocurrido algún error. Revise los errores o advertencias, ya que esto puede darle pistas sobre cómo solucionar el problema.\
+1. El código se ejecutó correctamente. En caso de que no se haya ejecutado, puede volver a ejecutarlo.
+2. Si aún se está ejecutando algún comando y aparece el símbolo rojo de **stop**. En este caso, espere a que R termine el proceso antes de ejecutar otros comandos.
+3. Si ha ocurrido algún error. Revise los errores o advertencias, ya que esto puede darle pistas sobre cómo solucionar el problema.
+
 :::
 
 ### No veo el resultado de mi código
 
 Esto puede ocurrir por varios motivos:
 
--   Si guardo el resultado usando el símbolo de asignación (ej. `nombre <- "Laura"`). Este aparecerá en el ambiente global (zona superior lateral derecha) y no se ejecutará en la consola a menos que se llame el objeto, es decir,
+- Si guardo el resultado usando el símbolo de asignación (ej. `nombre <- "Laura"`). Este aparecerá en el ambiente global (zona superior lateral derecha) y no se ejecutará en la consola a menos que se llame el objeto, es decir,
 
-    1.  se ponga el nombre del objeto en la consola y se ejecute (presionando `Enter`)
+  1. se ponga el nombre del objeto en la consola y se ejecute (presionando `Enter`)
 
-    2.  o que en el script o Chunck de RMarkdown se presione `Control + Enter` en Windows o `Command + Enter` en Mac.
+  2. o que en el script o Chunck de RMarkdown se presione `Control + Enter` en Windows o `Command + Enter` en Mac.
 
--   Falta alguna librería necesaria. Revise que todas las librerías necesarias estén cargadas al inicio del script.
+- Falta alguna librería necesaria. Revise que todas las librerías necesarias estén cargadas al inicio del script.
 
--   Hay errores en el código. Verifique que no haya errores que impidan que el código se ejecute correctamente. Al ejecutar el código en la consola le aparecerán algunas alertas de errores que pueda tener el código.
+- Hay errores en el código. Verifique que no haya errores que impidan que el código se ejecute correctamente. Al ejecutar el código en la consola le aparecerán algunas alertas de errores que pueda tener el código.
 
--   El script no se ha ejecutado completamente. Asegúrese de ejecutar el script completo para que todas las líneas de código se ejecuten en el orden correcto.
+- El script no se ha ejecutado completamente. Asegúrese de ejecutar el script completo para que todas las líneas de código se ejecuten en el orden correcto.
 
 ### Errores frecuentes al usar `ggplot`
 
--   Sintaxis incorrecta:
+- Sintaxis incorrecta:
 
-    1.  Usar `++` en lugar de `+` para concatenar funciones.
+  1. Usar `++` en lugar de `+` para concatenar funciones.
 
-    2.  También puede ocurrir que el `+` queda en la línea de abajo, es importante destacar que para concatenar funciones debe estar al terminar la línea anterior a la que se quiere concadenar.
+  2. También puede ocurrir que el `+` queda en la línea de abajo, es importante destacar que para concatenar funciones debe estar al terminar la línea anterior a la que se quiere concadenar.
 
 ![](fig/bpggplot.png)
 
--   No especificar estéticas (aesthetics):
+- No especificar estéticas (aesthetics):
 
-    1.  No incluir `aes()`.
-    2.  No definir `aes()` correctamente, por ejemplo, no indicar x o y.
-    3.  Si bien aes en algunos casos puede ir en la parte inicial, la geometría o estar dividido en secciones, es fundamental que siempre este presente.
+  1. No incluir `aes()`.
+  2. No definir `aes()` correctamente, por ejemplo, no indicar x o y.
+  3. Si bien aes en algunos casos puede ir en la parte inicial, la geometría o estar dividido en secciones, es fundamental que siempre este presente.
 
--   Datos no presentes:
+- Datos no presentes:
 
-La columna mencionada en aes() no existe en el conjunto de datos. Usar el nombre incorrecto, recuerde que R es sensible a mayúsculas y minúsculas por los tanto `VariableX` es diferente a `variableX` o a `variablex`.
+La columna mencionada en aes() no existe en el conjunto de datos.
+Usar el nombre incorrecto, recuerde que R es sensible a mayúsculas y minúsculas por los tanto`VariableX` es diferente a `variableX` o a `variablex`.
 
--   Falta de librerías:
+- Falta de librerías:
 
 Antes de trabajar con `ggplot` siempre recuerde cargar la librería con `library`:
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 library(ggplot2)
 ```
 
--   Errores en `geom`:
+- Errores en `geom`:
 
-```         
+```
 Seleccionar la geom incorrecta para el tipo de datos que se desea representar.
 
 ### `filter` no funciona
@@ -277,35 +289,35 @@ Seleccionar la geom incorrecta para el tipo de datos que se desea representar.
 Esto puede ocurrir por varios motivos:
 ```
 
--   El paquete `dplyr` no está cargada. Aseguresé de incluir `library(dplyr)` o `library(tidyverse)` en su script, y ejecutarlo cada nueva sesión.
+- El paquete `dplyr` no está cargada. Aseguresé de incluir `library(dplyr)` o `library(tidyverse)` en su script, y ejecutarlo cada nueva sesión.
 
--   Hay conflictos de nombres de funciones con otros paquetes. Use `dplyr::filter()` para especificar qué quiere utilizar la función `filter` de `dplyr`.
+- Hay conflictos de nombres de funciones con otros paquetes. Use `dplyr::filter()` para especificar qué quiere utilizar la función `filter` de `dplyr`.
 
--   Los datos pueden no estar en el formato esperado. Verifique que la columna que está filtrando existe y tiene los valores adecuados.
+- Los datos pueden no estar en el formato esperado. Verifique que la columna que está filtrando existe y tiene los valores adecuados.
 
-`filter` acepta condiciones lógicas para seleccionar filas. Veamos unos ejemplos:
+`filter` acepta condiciones lógicas para seleccionar filas.
+Veamos unos ejemplos:
 
--          Valores específicos:
+- Valores específicos:
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 covid19 %>% filter(estado == "Fallecido")
 ```
 
--          Rangos de valores:
+- Rangos de valores:
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 covid19 %>% filter(fecha_de_notificacion >= "2020-01-01" & fecha_de_notificacion <= "2020-12-31")
 ```
+- Condiciones múltiples:
 
--          Condiciones múltiples:
-
-```{r eval = FALSE}
+```{r, eval=FALSE}
 covid19 %>% filter(estado == "Fallecido" & nombre_del_pais == "Colombia")
 ```
 
--          Condiciones con funciones:
+- Condiciones con funciones:
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 covid19 %>% filter(grepl("Colombia", nombre_del_pais))
 ```
 
@@ -313,14 +325,15 @@ Para saber más sobre filter consulte la [documentación](https://dplyr.tidyvers
 
 ### ¿Dónde está el objeto que cree?
 
-Cuando se crea un objeto este se almacena en el ambiente global. Podemos ver el ambiente global en la interfaz de R ubicado en la parte superior lateral derecha.
+Cuando se crea un objeto este se almacena en el ambiente global.
+Podemos ver el ambiente global en la interfaz de R ubicado en la parte superior lateral derecha.
 
 ### No funciona el pipe `%>%`
 
 Recuerde los siguientes puntos:
 
--   Es importante cargar previamente una librería que contenga el pipe. Por ejemplo: `magrittr`, `dplyr`, `tidyr` o `purrr`.
--   El pipe debe ir al final de la línea que se va a conectar. No al inicio de la línea conectada:
+- Es importante cargar previamente una librería que contenga el pipe. Por ejemplo: `magrittr`, `dplyr`, `tidyr` o `purrr`.
+- El pipe debe ir al final de la línea que se va a conectar. No al inicio de la línea conectada:
 
 ![](fig/bp_pipe.png){width="300"}
 
@@ -328,19 +341,25 @@ Recuerde los siguientes puntos:
 
 Cuando se va a almacenar cambios en el objeto donde esta almacenado el dataframe, es recomendable tener algunas precauciones para evitar perder información:
 
--   Crear un respaldo de los datos en objetos:
+- Crear un respaldo de los datos en objetos:
 
-o   Hacer copias de seguridad regularmente durante el proceso. Se recomienda hacer una copia inicial para evitar cargar la base de nuevo. Tras hacer algunos procesos, en especial, aquellos que consumen tiempo se recomienda crear respaldos. Puede crear tanto como considere convenientes. Se recomienda crear notas para identificar cada proceso
+o   Hacer copias de seguridad regularmente durante el proceso.
+Se recomienda hacer una copia inicial para evitar cargar la base de nuevo.
+Tras hacer algunos procesos, en especial, aquellos que consumen tiempo se recomienda crear respaldos.
+Puede crear tanto como considere convenientes.
+Se recomienda crear notas para identificar cada proceso
 
 ![](fig/bpaccidentes.png)
 
--   Crear un respaldo de los datos en archivos:
+- Crear un respaldo de los datos en archivos:
 
-o   Al igual que guardar en objetos, es buena idea guardar los datos que ya han pasado algunos procesos en el disco del computador. Esto evita que si se bloquea la sesión o se apaga el computador los datos procesados estén resguardados. Cada cuanto se deben almacenar depende de quién realiza el procesamiento.
+o   Al igual que guardar en objetos, es buena idea guardar los datos que ya han pasado algunos procesos en el disco del computador.
+Esto evita que si se bloquea la sesión o se apaga el computador los datos procesados estén resguardados.
+Cada cuanto se deben almacenar depende de quién realiza el procesamiento.
 
 ![](fig/bpaccidentes1.png)
 
--   Pruebas antes de almacenar:
+- Pruebas antes de almacenar:
 
 o   Realizar pruebas de los cambios deseados antes de guardarlos definitivamente.
 
@@ -348,13 +367,14 @@ o   Ejemplo: Si se quiere transformar una variable a numérica, antes de almac
 
 ![](fig/bpaccidentes2.png)
 
--   Crear variables de respaldo:
+- Crear variables de respaldo:
 
-o   Algunas veces cuando vamos a transformar una variable es mejor crear una nueva que almacene el contenido de la transformación. Esto evita el riesgo de pérdida de información al transformar una variable.
+o   Algunas veces cuando vamos a transformar una variable es mejor crear una nueva que almacene el contenido de la transformación.
+Esto evita el riesgo de pérdida de información al transformar una variable.
 
 ![](fig/bpaccidentes3.png)
 
--   Cuidado al almacenar:
+- Cuidado al almacenar:
 
 o   No almacenar tablas u objetos transformados accidentalmente.
 
@@ -366,101 +386,105 @@ o   Ej. si creamos una tabla para ver si la variable cambio como se deseaba y 
 
 Cuando tenemos accidentes con nuestros datos algunas opciones son:
 
--          Revisar cual es el daño y ver si es reparable. Por ejemplo, se cambió el carácter incorrecto en una cadena de texto.
+- Revisar cual es el daño y ver si es reparable.
+Por ejemplo, se cambió el carácter incorrecto en una cadena de texto.
 
--          Cargar los datos a partir de un respaldo. Si hemos creado respaldos del proceso podemos evitarnos tiempos largo de procesamiento. Entre estos respaldos están las variables de respaldo o los objetos de respaldo (ver [¿Cómo evitar accidentes?](Banco_errores.Rmd#prevencion)).
+- Cargar los datos a partir de un respaldo.
+Si hemos creado respaldos del proceso podemos evitarnos tiempos largo de procesamiento.
+Entre estos respaldos están las variables de respaldo o los objetos de respaldo (ver [¿Cómo evitar accidentes?](Banco_errores.Rmd#prevencion)).
 
 ### Uso de la función `rename`
 
-1.      Llame la base de datos
+1. Llame la base de datos
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 datos
 ```
 
-2.      Use el pipe`%>%` para enlazarlo a la función rename
+2. Use el pipe`%>%` para enlazarlo a la función rename
 
-3.      Llame la función `rename` y escriba primero el nuevo nombre de la columna y después el nombre de la columna preexistente a la que quiere cambiar el nombre
+3. Llame la función`rename` y escriba primero el nuevo nombre de la columna y después el nombre de la columna preexistente a la que quiere cambiar el nombre
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 datos <- datos %>% rename(nombrenuevo = nombreantiguo)
 ```
 
-n.      Seleccionar algunas filas de un grupo de datos
+n.
+Seleccionar algunas filas de un grupo de datos
 
-1.      Llame la base de datos
+1. Llame la base de datos
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 datos
 ```
 
-2.      Use el pipe `%>%` para enlazarlo a la función `group_by`
+2. Use el pipe`%>%` para enlazarlo a la función `group_by`
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 datos %>% group_by(variable_grupo)
 ```
 
 La función `group_by` creará grupos de datos según una variable determinada en los cuales puede realizar otras acciones como por ejemplo seleccionar los datos en el encabezado de cada grupo.
 
-4.      Enseguida use la función como en este ejemplo podríamos usar `head` solo para los datos del encabezado de cada grupo.
+4. Enseguida use la función como en este ejemplo podríamos usar`head` solo para los datos del encabezado de cada grupo.
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 datos <- datos %>% group_by(variabledeinteres) %>% head()
 ```
 
 ### ¿Cómo usar `summarise`?
 
-1.      Llame la base de datos
+1. Llame la base de datos
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 datos
 ```
 
-2.      Use el pipe`%>%`para enlazarlo a la función `summarise`
+2. Use el pipe`%>%`para enlazarlo a la función `summarise`
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 datos %>% summarise()
 ```
 
 La función summarise no puede utilizarse de forma directa, por lo tanto, debe usarse junto a un argumento adentro, por ejemplo:
 
-a.      Obtener el promedio
+a. Obtener el promedio
 
-```{r eval = FALSE}
-datos %>% 
+```{r, eval=FALSE}
+datos %>%
   summarise(mean = mean(variabledeinteres))
 ```
 
-b.      Obtener la desviación estandar
+b. Obtener la desviación estandar
 
-```{r eval = FALSE}
-datos %>% 
+```{r, eval=FALSE}
+datos %>%
   summarise(sd = sd(variabledeinteres))
 ```
 
 Esta función puede usarse con agrupación previa (`group_by`) para obtener estos valores por cada grupo, por ejemplo,
 
-```{r eval = FALSE}
-datos %>%  group_by(pais) %>% 
+```{r, eval=FALSE}
+datos %>%  group_by(pais) %>%
   summarise(
-    mean = mean(variabledeinteres), 
+    mean = mean(variabledeinteres),
     sd = sd(variabledeinteres))
 ```
 
 ### Errores relacionados a grupos (group_by y ungroup)
 
--   Un error muy frecuente es que se almacena el objeto agrupado (`group_by`), dado que no se realizó la acción de desagrupar al final. Esto puede generar errores como cálculos incorrectos, resúmenes por grupo en lugar de sobre la totalidad de los datos, y problemas al realizar operaciones subsecuentes en el conjunto de datos. Por ello, recomendamos siempre emplear (`ungroup`) antes de almacenar. Para usar `ungroup()` basta con ponerlo al final.
+- Un error muy frecuente es que se almacena el objeto agrupado (`group_by`), dado que no se realizó la acción de desagrupar al final. Esto puede generar errores como cálculos incorrectos, resúmenes por grupo en lugar de sobre la totalidad de los datos, y problemas al realizar operaciones subsecuentes en el conjunto de datos. Por ello, recomendamos siempre emplear (`ungroup`) antes de almacenar. Para usar `ungroup()` basta con ponerlo al final.
 
-```{r eval=FALSE}
-datos <- datos %>% 
-  group_by(categoria) %>% 
-  procesamiento_de_datos(...) %>% 
-  ungroup() 
+```{r, eval=FALSE}
+datos <- datos %>%
+  group_by(categoria) %>%
+  procesamiento_de_datos(...) %>%
+  ungroup()
 ```
 
 Veamos un ejemplo de un error que puede ocurrir por no desagrupar:
 
-```{r,warning=FALSE,message=FALSE}
+```{r, warning=FALSE, message=FALSE}
 library("tidyverse")
 set.seed(123) # Para reproducibilidad
 #dataframe de ejemplo
@@ -475,7 +499,7 @@ df <- data.frame(tipo_sanguineo, rh, dia, f_latidos, f_respiratoria)
 por_dia <- df %>%
   group_by(tipo_sanguineo,rh, dia) %>%
   summarize(
-    f_l = mean(f_latidos), 
+    f_l = mean(f_latidos),
     f_r = mean(f_respiratoria)
   )
 ```
@@ -486,17 +510,20 @@ Creemos una variable que contenga id únicos por cada fila
 por_dia %>% mutate(id = row_number())
 ```
 
-Cómo puede observar en la columna id en lugar de identificadores únicos tenemos id que se repiten. ¿Por qué sucedió si cada fila es diferente?
+Cómo puede observar en la columna id en lugar de identificadores únicos tenemos id que se repiten.
+¿Por qué sucedió si cada fila es diferente?
 
-La razón a este problema subyace en que los datos siguen agrupados. Aún si no aplicamos directamente el `ungroup` como se explico antes, todavía podemos solucionarlo.
+La razón a este problema subyace en que los datos siguen agrupados.
+Aún si no aplicamos directamente el`ungroup` como se explico antes, todavía podemos solucionarlo.
 
-Veamos como no se solucionaría primero. Un error frecuente al tratar de solucionar este problema es aplicar la función ungroup sin almacenar el resultado.
+Veamos como no se solucionaría primero.
+Un error frecuente al tratar de solucionar este problema es aplicar la función ungroup sin almacenar el resultado.
 
 ```{r}
 # aplicación equivocada de ungroup
-por_dia %>% ungroup() 
+por_dia %>% ungroup()
 
-# si bien desagrupa el objeto para imprimirlo, 
+# si bien desagrupa el objeto para imprimirlo,
 # mientras no se almacene  el objeto serguirá agrupado
 por_dia %>% mutate(id = row_number())
 ```
@@ -518,18 +545,20 @@ Advertencia: Es importante aclarar que el desagrupamiento en los escenarios ante
 
 ### Cuando trato de crear un pdf en RMarkdown me sale error
 
-Si el archivo sale correctamente en otros formatos a excepción de pdf. Una de las situaciones más frecuentes es que falte la instalación de LaTeX: RMarkdown necesita LaTeX para generar PDFs. Asegúrese de tener LaTeX instalado en su sistema.
+Si el archivo sale correctamente en otros formatos a excepción de pdf.
+Una de las situaciones más frecuentes es que falte la instalación de LaTeX: RMarkdown necesita LaTeX para generar PDFs.
+Asegúrese de tener LaTeX instalado en su sistema.
 
 Para instalar LaTeX desde RStudio, puede usar el paquete TinyTeX:
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 install.packages("tinytex")
 tinytex::install_tinytex()
 ```
 
 Configure RStudio:
 
-Vaya a Tools \> Global Options \> Sweave.
+Vaya a Tools > Global Options > Sweave.
 
 Asegúrese de que la opción "Typeset PDF" esté configurada para usar TinyTeX.
 
@@ -540,15 +569,17 @@ Asegúrese de que la opción "Typeset PDF" esté configurada para usar TinyTeX.
 <https://www.youtube.com/watch?v=6STcQVX8Hk0>
 
 ::: keypoints
+
 Si después de buscar en esta guía sus preguntas no encontro respuesta por favor diligencie el siguiente formulario [Dudas por resolver](https://forms.office.com/pages/responsepage.aspx?id=Dpn32j-KnECbdipUdQmAAMjWJqHZ8P1DkQQdb07M30RUOEY5N1U1UDFYMExGMzFHRkRKT1BTRTFRWS4u&route=shorturl&sid=6a94f23c-049c-4f54-9732-fc25789059b3){.uri}
+
 :::
 
 ## Contribuciones
 
--   José M. Velasco-España: Versión inicial
+- José M. Velasco-España: Versión inicial
 
--   Andree Valle-Campos: Ediciones menores
+- Andree Valle-Campos: Ediciones menores
 
--   Laura Gómez-Bermeo: Ediciones menores
+- Laura Gómez-Bermeo: Ediciones menores
 
--   Geraldine Gomez: Ediciones menores
+- Geraldine Gomez: Ediciones menores

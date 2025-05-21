@@ -20,14 +20,14 @@ authors:
 - José M. Velasco-España
 teaching: 120
 exercises: 8
-editor_options: 
-  markdown: 
+editor_options:
+  markdown:
     wrap: 72
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+:::::::::::::::::::::::::::::::::::::: questions
 
--   ¿Cómo construir un modelo simplificado de zika?
+- ¿Cómo construir un modelo simplificado de zika?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -35,34 +35,36 @@ editor_options:
 
 Al final de este taller usted podrá:
 
--   Reconocer cómo se construye un modelo determinístico simple mediante
-    ecuaciones diferenciales ordinarias.
--   Identificar parámetros relevantes para modelar epidemias de ETV.
--   Diagramar la interacción entre los diferentes compartimentos del
-    sistema mediante los parámetros.
--   Traducir ecuaciones matemáticas del modelo determinístico a código
-    de lenguaje R.
--   Explorar el uso de las simulaciones del modelo para proyectar
-    escenarios de transmisión y potencial impacto de las intervenciones
-::::::::::::::::::::::::::::::::::::::::::::::::
+- Reconocer cómo se construye un modelo determinístico simple mediante
+  ecuaciones diferenciales ordinarias.
+- Identificar parámetros relevantes para modelar epidemias de ETV.
+- Diagramar la interacción entre los diferentes compartimentos del
+  sistema mediante los parámetros.
+- Traducir ecuaciones matemáticas del modelo determinístico a código
+  de lenguaje R.
+- Explorar el uso de las simulaciones del modelo para proyectar
+  escenarios de transmisión y potencial impacto de las intervenciones
 
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::: prereq
 
 Esta unidad tiene como prerequisitos:
 
--   Introducción a R y RStudio
--   Introducción a la teoría epidémica
--   Historia de las epidemias y las pandemias
--   Visualización de datos en R con ggplot
+- Introducción a R y RStudio
+- Introducción a la teoría epidémica
+- Historia de las epidemias y las pandemias
+- Visualización de datos en R con ggplot
+
 :::::::::::::::::::::
 
-```{r options, include = FALSE, message = FALSE, warning = FALSE, error = FALSE}
+```{r options, include=FALSE, message=FALSE, warning=FALSE, error=FALSE}
 #Versión última modificación 21/10/2022
 full_version <- TRUE
 ```
 
 ::::::::::::::::::: checklist
+
 ## **Tabla de contenido**
 
 +--------------------------------------------------------------------+
@@ -82,59 +84,42 @@ full_version <- TRUE
 |                                                                    |
 | 7.  Tema 7: Parametrización de intervenciones de control para Zika |
 +--------------------------------------------------------------------+
+
 :::::::::::::::::::
 
 ## Introducción
 
-En esta unidad abordaremos la construcción de un modelo determinístico
-simple, específicamente para el virus del Zika, una enfermedad que
-desencadenó una gran epidemia en Latinoamérica y el Caribe, y que fue
-declarada como emergencia de salud pública de importancia internacional.
-Utilizando los conocimientos previos de teoría epidémica, construiremos
-un modelo determinístico tipo SIR que incorpora aspectos demográficos.
+En esta unidad abordaremos la construcción de un modelo determinístico simple, específicamente para el virus del Zika, una enfermedad que desencadenó una gran epidemia en Latinoamérica y el Caribe, y que fue declarada como emergencia de salud pública de importancia internacional.
+Utilizando los conocimientos previos de teoría epidémica, construiremos un modelo determinístico tipo SIR que incorpora aspectos demográficos.
 
-Para la construcción de este modelo, aprenderemos sobre la dinámica de
-interacción entre humanos y vectores, así como de los parámetros
-fundamentales que rigen estos procesos biológicos. Mediante la
-construcción de un diagrama, examinaremos estas relaciones y
-formularemos ecuaciones que describen el comportamiento del sistema.
-Estas ecuaciones serán la base para simular el modelo en el lenguaje de
-programación R. A su vez propondremos y modelaremos estrategias de
-intervención.
+Para la construcción de este modelo, aprenderemos sobre la dinámica de interacción entre humanos y vectores, así como de los parámetros fundamentales que rigen estos procesos biológicos.
+Mediante la construcción de un diagrama, examinaremos estas relaciones y formularemos ecuaciones que describen el comportamiento del sistema.
+Estas ecuaciones serán la base para simular el modelo en el lenguaje de programación R.
+A su vez propondremos y modelaremos estrategias de intervención.
 
-Mediante el análisis del modelo, evaluaremos el potencial impacto de
-esta epidemia en la sociedad, contextualizando algunas de estas
-intervenciones en América Latina. Además, reforzaremos y aplicaremos
-temas clave como son: Modelo SIR, Inmunidad de rebaño, Parámetros e
-intervenciones de control (fumigación, mosquiteros y vacunación) para
-una Enfermedad transmitida por vectores (ETV).
+Mediante el análisis del modelo, evaluaremos el potencial impacto de esta epidemia en la sociedad, contextualizando algunas de estas intervenciones en América Latina.
+Además, reforzaremos y aplicaremos temas clave como son: Modelo SIR, Inmunidad de rebaño, Parámetros e intervenciones de control (fumigación, mosquiteros y vacunación) para una Enfermedad transmitida por vectores (ETV).
 
 ## **Tema 6: Modelo Zika en R**
 
-En esta sección pondremos en uso el conocimiento adquirido sobre el
-Zika, los mecanismos involucrados en la transmisión y las ecuaciones del
-modelo. El objetivo es construirlo en R.
+En esta sección pondremos en uso el conocimiento adquirido sobre el Zika, los mecanismos involucrados en la transmisión y las ecuaciones del modelo.
+El objetivo es construirlo en R.
 
-El único paquete que se requiere para el modelamiento es deSolve, el
-cual permite resolver las ecuaciones diferenciales. Adicionalmente para
-manejar los datos y graficar los resultados recomendamos usar tidyverse
-y cowplot.
+El único paquete que se requiere para el modelamiento es deSolve, el cual permite resolver las ecuaciones diferenciales.
+Adicionalmente para manejar los datos y graficar los resultados recomendamos usar tidyverse y cowplot.
 
 ## 6.1 Inicio práctica en R
 
 Para iniciar nuestra práctica en **R**, por favor abra un **proyecto de
-R** y cree un nuevo documento. En este documento debemos cargar las
-funciones que acabamos de explicar. Si tiene dificultades con este
-proceso por favor repase la **unidad Introducción a R**.
+R**y cree un nuevo documento.
+En este documento debemos cargar las funciones que acabamos de explicar.
+Si tiene dificultades con este proceso por favor repase la **unidad Introducción a R**.
 
-install.packages(deSolve) \# Paquete deSolve para resolver las
-ecuaciones diferenciales
+install.packages(deSolve) # Paquete deSolve para resolver las ecuaciones diferenciales
 
-Una vez instalado el paquete deSolve por favor cárgue los paquetes con
-las siguientes líneas de código, cópielas en su script de R y
-ejecútelas.
+Una vez instalado el paquete deSolve por favor cárgue los paquetes con las siguientes líneas de código, cópielas en su script de R y ejecútelas.
 
-```{r,message=FALSE,warning=FALSE}
+```{r, message=FALSE, warning=FALSE}
 library(deSolve)
 
 library(tidyverse)
@@ -142,39 +127,37 @@ library(tidyverse)
 library(cowplot)
 ```
 
- <center>  
-   
-[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
-  
+<center>
+
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)
+
 </center>
 
-Recordemos que para crear un modelo necesitamos compartimentos,
-condiciones iniciales, parámetros y ecuaciones.
+Recordemos que para crear un modelo necesitamos compartimentos, condiciones iniciales, parámetros y ecuaciones.
 
-Para este modelo en R empezaremos por definir los parámetros, es decir,
-todos aquellos valores que a través de la investigación se han
-recopilado y hacen parte del comportamiento de la enfermedad. En la
-sección anterior hablamos sobre ellos y los completamos en una tabla. Es
-hora de ingresarlos en R.
+Para este modelo en R empezaremos por definir los parámetros, es decir, todos aquellos valores que a través de la investigación se han recopilado y hacen parte del comportamiento de la enfermedad.
+En la sección anterior hablamos sobre ellos y los completamos en una tabla.
+Es hora de ingresarlos en R.
 
 **Instrucción**: Por favor, tome la tabla que trabajó anteriormente e ingrese el valor de cada uno de estos parámetros.
 
 :::::::::::::::::::::::::::::::::::: callout
-### NOTA: 
-Es importante recordar que en R, puede utilizar objetos
-previamente creados para realizar cálculos. Por ejemplo, el parámetro
-muv es el inverso del parámetro Lv, es decir, muv = 1/Lv. Por lo tanto,
-en R se puede asignar este valor directamente con muv \<- 1/Lv. No es
-necesario realizar la división y asignar el resultado manualmente.
+
+### NOTA:
+
+Es importante recordar que en R, puede utilizar objetos previamente creados para realizar cálculos.
+Por ejemplo, el parámetro muv es el inverso del parámetro Lv, es decir, muv = 1/Lv.
+Por lo tanto, en R se puede asignar este valor directamente con muv \<- 1/Lv.
+No es necesario realizar la división y asignar el resultado manualmente.
 :::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::: challenge 
+::::::::::::::::::::::::::::::::::::: challenge
+
 ### Desafío 1
 
-Instrucción: Por favor, tome la tabla que trabajó anteriormente e
-ingrese el valor de cada uno de estos parámetros.
+Instrucción: Por favor, tome la tabla que trabajó anteriormente e ingrese el valor de cada uno de estos parámetros.
 
-```{r, eval = FALSE}
+```{r, eval=FALSE}
 Lv       <-        # Esperanza de vida de los mosquitos (en días)
 Lh       <-        # Esperanza de vida de los humanos (en días)
 PIh      <-        # Periodo infeccioso en humanos (en días)
@@ -198,12 +181,14 @@ betah    <-        # Coeficiente de transmisión de un mosquito infeccioso a un 
 betav    <-        # Coeficiente de transmisión de un humano infeccioso a un mosquito susceptible después de una picadura (pv*b)
 TIME     <-  1      # Número de años que se va a simular. Para este ejercicio iniciaremos con el primer año de la epidemia.
 ```
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor 
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
+
 ### Solución 1
 
-```{r, include = full_version}
+```{r, include=full_version}
 
 Lv       <-   10     # Esperanza de vida de los mosquitos (en días)
 Lh       <-   50*365 # Esperanza de vida de los humanos (en días)
@@ -229,40 +214,40 @@ betav    <-  pv*b    # Coeficiente de transmisión de un humano infeccioso a un 
 TIME     <-  1       # Número de años que se va a simular. Para este ejercicio iniciaremos con el primer año de la epidemia.
 
 ```
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
- <center>  
-   
-[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
-  
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+<center>
+
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)
+
 </center>
-  
+
 ## 6.2 Ecuaciones del modelo
-Ahora que ya ingresamos al script los parámetros es hora de emplear las
-ecuaciones que se escribieron antes, las cuales permiten conocer el
-número de individuos en cada uno de los seis compartimentos en función
-del tiempo. Tres compartimentos para los humanos y tres compartimentos
-para los mosquitos, los cuales están identificados por una **h** (para
-humanos) y una **v** (para mosquitos). Para los humanos tenemos los
-compartimentos; susceptibles, infectados y recuperados (de ahí la
-palabra **SIR**) y para los mosquitos los compartimientos son:
+
+Ahora que ya ingresamos al script los parámetros es hora de emplear las ecuaciones que se escribieron antes, las cuales permiten conocer el número de individuos en cada uno de los seis compartimentos en función del tiempo.
+Tres compartimentos para los humanos y tres compartimentos para los mosquitos, los cuales están identificados por una **h** (para humanos) y una **v**(para mosquitos).
+Para los humanos tenemos los compartimentos; susceptibles, infectados y recuperados (de ahí la palabra **SIR**) y para los mosquitos los compartimientos son:
 susceptibles, expuestos e infecciosos (**SEI**).
 
 ::::::::::::::::::: checklist
+
 ### Compartimentos
--   $S_h$ : Humanos susceptibles
 
--   $I_h$ : Humanos infecciosos
+- $S_h$ : Humanos susceptibles
 
--   $R_h$ : Humanos recuperados de la infección (inmunizados frente a
-    nueva infección)
+- $I_h$ : Humanos infecciosos
 
--   $S_v$ : Vectores susceptibles
+- $R_h$ : Humanos recuperados de la infección (inmunizados frente a
+  nueva infección)
 
--   $E_v$ : Vectores expuestos
+- $S_v$ : Vectores susceptibles
 
--   $I_v$ : Vectores infecciosos
+- $E_v$ : Vectores expuestos
+
+- $I_v$ : Vectores infecciosos
+
 :::::::::::::::::::
-
 
 Para este modelo emplearemos las siguientes ecuaciones diferenciales:
 
@@ -288,75 +273,75 @@ Fórmula necesaria para estimar $R_0$:
 
 $$ R_0 = \frac{mb^2 p_h p_v \delta}{\mu_v (\mu_v+\delta)(\mu_h+\gamma)} $$
 
-::::::::::::::::::::::::::::::::::::: challenge 
+::::::::::::::::::::::::::::::::::::: challenge
 
 **Instrucción**: Traduzca las ecuaciones a R
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 
 # Humanos
-         dSh   <-  alphah * Nh - betah * (Iv/Nh) * Sh - muh * Sh   
+         dSh   <-  alphah * Nh - betah * (Iv/Nh) * Sh - muh * Sh
          dIh   <-______ * (Iv/Nh) * Sh - (____ + _____) * Ih
          dRh   <-  ______ * Ih  - ______ * Rh
-         
+
  # Mosquitos
-         dSv  <-  alphav * Nv - _____ * (Ih/Nh) * Sv - _____ * Sv 
+         dSv  <-  alphav * Nv - _____ * (Ih/Nh) * Sv - _____ * Sv
          dEv  <-  _____ * (Ih/Nh) * Sv - (____ + _____)* Ev
          dIv  <-  _____ * Ev - _____ * Iv
 
 ```
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-Una vez sepamos traducir las ecuaciones a código,  se procederá a
-ejecutar el modelo. Para esto se usará la función ode del
-paquete deSolve.
+Una vez sepamos traducir las ecuaciones a código,  se procederá a ejecutar el modelo.
+Para esto se usará la función ode del paquete deSolve.
 
-Se empezará por crear la función (que luego se usará en el argumento
-**fun**). Para ello es necesario traducir las ecuaciones del modelo de
-Zika a **R**. Abajo encontrará la función ya construida `modelo_zika`
-para que usted reemplace las ecuaciones que ya completó arriba.
+Se empezará por crear la función (que luego se usará en el argumento **fun**).
+Para ello es necesario traducir las ecuaciones del modelo de Zika a **R**.
+Abajo encontrará la función ya construida `modelo_zika` para que usted reemplace las ecuaciones que ya completó arriba.
 
-::::::::::::::::::::::::::::::::::::: challenge 
+::::::::::::::::::::::::::::::::::::: challenge
+
 ### Desafío 3
 
-**Instrucción**: Reemplace las ecuaciones incompletas del siguiente
-código por las ecuaciones completas del modelo Zika que trabajó  en la
-instrucción anterior.
+**Instrucción**: Reemplace las ecuaciones incompletas del siguiente código por las ecuaciones completas del modelo Zika que trabajó  en la instrucción anterior.
 
-```{r, eval = FALSE}
+```{r, eval=FALSE}
 
 # Modelo determinístico simple (fun)
 modelo_zika <- function(tiempo, variable_estado, parametros) {
-  
+
   with(as.list(c(variable_estado, parametros))
 , # entorno local para evaluar derivados
        {
          # Humanos
-         dSh   <-  ____ * Nh - ____ * (Iv/Nh) * Sh - ____ * Sh   
+         dSh   <-  ____ * Nh - ____ * (Iv/Nh) * Sh - ____ * Sh
          dIh   <-  ____ * (Iv/Nh) * Sh - (____ + ____) * Ih
          dRh   <-  ____ * Ih  - ____ * Rh
-         
+
          # Mosquitos
-         dSv  <-  alphav * Nv - ____ * (Ih/Nh) * Sv - ____ * Sv 
+         dSv  <-  alphav * Nv - ____ * (Ih/Nh) * Sv - ____ * Sv
          dEv  <-  ____ * (Ih/Nh) * Sv - (____ + ____)* Ev
          dIv  <-  ____ * Ev - ____ * Iv
-         
+
          list(c(dSh, dIh, dRh, dSv, dEv, dIv))
        }
   )
 }
 
 ```
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor 
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
+
 ### Solución 3
 
-```{r, include = full_version}
+```{r, include=full_version}
 
 # Modelo determinístico simple (fun)
 modelo_zika <- function(tiempo, variable_estado, parametros) {
-  
+
   with(as.list(c(variable_estado, parametros))
 , # entorno local para evaluar derivados
        {
@@ -364,80 +349,82 @@ modelo_zika <- function(tiempo, variable_estado, parametros) {
          dSh   <-  alphah * Nh - betah * (Iv/Nh) * Sh - muh * Sh
          dIh   <-  betah * (Iv/Nh) * Sh  - (gamma + muh) * Ih
          dRh   <-  gamma * Ih  - muh * Rh
-         
+
          # Vectores
-         dSv   <-  alphav * Nv - betav * (Ih/Nh) * Sv - muv * Sv 
+         dSv   <-  alphav * Nv - betav * (Ih/Nh) * Sv - muv * Sv
          dEv   <-  betav * (Ih/Nh) * Sv - (delta + muv)* Ev
          dIv   <-  delta * Ev - muv * Iv
-         
+
          dx    <- c(dSh, dIh, dRh, dSv, dEv, dIv)
         list(c(dSh, dIh, dRh, dSv, dEv, dIv))
        }
   )
 }
 ```
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
- 
-<center>  
-   
-[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
-  
-</center> 
- 
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+<center>
+
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)
+
+</center>
+
 ## 6.4 Resolviendo el Sistema
 
-Para resolver el sistema es necesario crear los tres argumentos
-faltantes (**times**, **parms** y **y**) para usar la función `ode`.
+Para resolver el sistema es necesario crear los tres argumentos faltantes (**times**, **parms** y **y**) para usar la función `ode`.
 
-::::::::::::::::::::::::::::::::::::: challenge 
+::::::::::::::::::::::::::::::::::::: challenge
+
 ### Desafío 4
 
-**Instrucción:** Para `times` y `parms`, copie el código que se
-encuentra a continuación y ejecútelo.
+**Instrucción:**
+Para `times` y `parms`, copie el código que se encuentra a continuación y ejecútelo.
 
 ```{r}
 # Secuencia temporal (times)
 tiempo <- seq(1, 365 * TIME , by = 1)
 # Los parámetros (parms)
 params <- c(
-  muv      = muv,     
-  muh      = muh, 
+  muv      = muv,
+  muh      = muh,
   alphav   = alphav,
   alphah   = alphah,
-  gamma    = gamma,   
-  delta    = delta,   
-  betav    = betav,       
-  betah    = betah,   
-  Nh       = Nh,      
+  gamma    = gamma,
+  delta    = delta,
+  betav    = betav,
+  betah    = betah,
+  Nh       = Nh,
   Nv       = Nv
 )
 ```
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-En el código que ejecutó se creó tiempo (**times)** y parametros
-(**params)**. Aún nos falta crear el argumento **y**, el cual
-desarrollaremos en la siguiente sección.
+En el código que ejecutó se creó tiempo (**times)** y parametros (**params)**.
+Aún nos falta crear el argumento **y**, el cual desarrollaremos en la siguiente sección.
 
 ### 6.4.1. **Condiciones iniciales del sistema (y)**
 
-Para definir las condiciones iniciales, recuerde que el escenario a
-modelar en este ejercicio es para una fecha **antes del reporte del
-primer caso**.  Por lo tanto estos valores deben reflejar ese
-contexto.  
+Para definir las condiciones iniciales, recuerde que el escenario a modelar en este ejercicio es para una fecha **antes del reporte del
+primer caso**.
+Por lo tanto estos valores deben reflejar ese contexto.  
 
 ::::::::::::::::::::::::: discussion
-**Reflexión:** ¿Qué condiciones iniciales tendrían cada uno de los
-compartimientos?
+
+**Reflexión:**
+¿Qué condiciones iniciales tendrían cada uno de los compartimientos?
+
 :::::::::::::::::::::::::
 
+::::::::::::::::::::::::::::::::::::: challenge
 
-::::::::::::::::::::::::::::::::::::: challenge 
 ### Desafío 5
 
-**Instrucción:** Complete los espacios según lo aprendido en el
-tutorial.
+**Instrucción:**
+Complete los espacios según lo aprendido en el tutorial.
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 # Condiciones iniciales del sistema (y)
 inicio <- c(Sh = _______ ,        # COMPLETE Y COMENTE
             Ih = _______ ,        # COMPLETE Y COMENTE
@@ -446,13 +433,14 @@ inicio <- c(Sh = _______ ,        # COMPLETE Y COMENTE
             Ev = _______ ,        # COMPLETE Y COMENTE
             Iv = _______ )        # COMPLETE Y COMENTE
 ```
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor 
 ### Solución 5
 
-```{r, include = full_version}
+```{r, include=full_version}
 # Condiciones iniciales del sistema (y)
 inicio <- c(Sh = Nh ,      # Número inicial de Sh en el tiempo 0
            Ih = 0,        # Número inicial de Ih en el tiempo 0
@@ -462,37 +450,38 @@ inicio <- c(Sh = Nh ,      # Número inicial de Sh en el tiempo 0
            Iv = 0)        # Número inicial de Iv en el tiempo 0
 
 ```
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
- <center>  
-   
-[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
-  
-</center> 
 
- 
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+<center>
+
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)
+
+</center>
+
 ### 6.4.2 Función ode
 
-Una vez creados todos los argumentos necesarios, es hora de ingresarlos
-a ode.  Recordemos los cuatro argumentos de ode y a que corresponden a:
+Una vez creados todos los argumentos necesarios, es hora de ingresarlos a ode.
+Recordemos los cuatro argumentos de ode y a que corresponden a:
 
--   **y**:**inicio**. Vector creado con las condiciones iniciales de los
-    seis compartimentos.
+- **y**:**inicio**. Vector creado con las condiciones iniciales de los
+  seis compartimentos.
 
--   **times**:**tiempo**. Vector con la secuencia temporal
+- **times**:**tiempo**. Vector con la secuencia temporal
 
--   **fun:modelo_zika**. Función que contiene las ecuaciones necesarias
-    para simular el modelo.
+- **fun:modelo_zika**. Función que contiene las ecuaciones necesarias
+  para simular el modelo.
 
--   **parms:parametros.** Vector en el cual se recopilaron los
-    parámetros necesarios para simular el modelo.
+- **parms:parametros.** Vector en el cual se recopilaron los
+  parámetros necesarios para simular el modelo.
 
-::::::::::::::::::::::::::::::::::::: challenge 
+::::::::::::::::::::::::::::::::::::: challenge
+
 ### Desafío 6
 
-**Instrucción**: Complete los espacios en blanco según lo trabajado
-hasta el momento.
+**Instrucción**: Complete los espacios en blanco según lo trabajado hasta el momento.
 
-```{r eval = FALSE}
+```{r, eval=FALSE}
 
 # Resuelva las ecuaciones
 salida <- ode(y      =   _______ , # COMPLETE Y COMENTE
@@ -502,12 +491,14 @@ salida <- ode(y      =   _______ , # COMPLETE Y COMENTE
 ) %>%
   as.data.frame() # Convertir a data frame
 ```
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor 
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
+
 ### Solución 6
 
-```{r, include = full_version}
+```{r, include=full_version}
 # Resuelva las ecuaciones
 salida <- ode(y      = inicio,     # Condiciones iniciales
              times  = tiempo,      # Tiempo
@@ -516,55 +507,52 @@ salida <- ode(y      = inicio,     # Condiciones iniciales
 ) %>%
   as.data.frame() # Convertir a data frame
 ```
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
- 
- <center>  
-   
-[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
-  
-</center> 
- 
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+<center>
+
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)
+
+</center>
+
 ### 6.4.3 **Introduciendo el primer caso**
 
-Ahora que tenemos todos los compartimentos definidos, es hora de
-ingresar al modelo un individuo infeccioso para iniciar la epidemia. 
+Ahora que tenemos todos los compartimentos definidos, es hora de ingresar al modelo un individuo infeccioso para iniciar la epidemia. 
 
 ::::::::::::::::::::::::: discussion
-**Reflexión:** ¿Qué cree que es más probable, que a una población (en
-otro país) ingrese un humano infeccioso o un mosquito infeccioso?
+
+**Reflexión:**
+¿Qué cree que es más probable, que a una población (en otro país) ingrese un humano infeccioso o un mosquito infeccioso?
+
 :::::::::::::::::::::::::
 
-Para nuestro caso hipotético, vamos a suponer que una persona se infectó
-en Brasil mientras estaba de turismo y regresó posteriormente a la
-ciudad \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (la ciudad que usted definió al
-comienzo del ejercicio) siendo el primer sujeto infeccioso en esta
-población. En este contexto, el compartimento de humanos infecciosos
-tendrá entonces un individuo, **Ih** = 1 y el compartimento de humanos
-susceptibles tendrá  un individuo menos, **Sh** = **Nh** - 1.
+Para nuestro caso hipotético, vamos a suponer que una persona se infectó en Brasil mientras estaba de turismo y regresó posteriormente a la ciudad \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (la ciudad que usted definió al comienzo del ejercicio) siendo el primer sujeto infeccioso en esta población.
+En este contexto, el compartimento de humanos infecciosos tendrá entonces un individuo, **Ih** = 1 y el compartimento de humanos susceptibles tendrá  un individuo menos, **Sh** = **Nh** - 1.
 
-::::::::::::::::::::::::::::::::::::: challenge 
+::::::::::::::::::::::::::::::::::::: challenge
 
-**Pista:** Cambie en R las condiciones iniciales (inicio) de forma que
-Ih = 1 y Sh = Nh - 1.
+**Pista:**
+Cambie en R las condiciones iniciales (inicio) de forma que Ih = 1 y Sh = Nh - 1.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor 
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
 ### Solución
 
-```{r, include = full_version}
+```{r, include=full_version}
 # Condiciones iniciales del sistema (y)
 
-inicio <- c(Sh = Nh ,      # Número inicial de Sh en el tiempo 0            
-            Ih = 0,        # Número inicial de Ih en el tiempo 0            
-            Rh = 0,        # Número inicial de Rh en el tiempo 0            
-            Sv = Nv-1,     # Número inicial de Sv en el tiempo 0            
-            Ev = 0,        # Número inicial de Ev en el tiempo 0            
-            Iv = 1)        # Número inicial de Iv en el tiempo 0 
+inicio <- c(Sh = Nh ,      # Número inicial de Sh en el tiempo 0
+            Ih = 0,        # Número inicial de Ih en el tiempo 0
+            Rh = 0,        # Número inicial de Rh en el tiempo 0
+            Sv = Nv-1,     # Número inicial de Sv en el tiempo 0
+            Ev = 0,        # Número inicial de Ev en el tiempo 0
+            Iv = 1)        # Número inicial de Iv en el tiempo 0
 ```
 
-```{r, include = full_version}
+```{r, include=full_version}
 # Resuelva las ecuaciones
 salida <- ode(y      = inicio,     # Condiciones iniciales
              times  = tiempo,      # Tiempo
@@ -574,68 +562,62 @@ salida <- ode(y      = inicio,     # Condiciones iniciales
   as.data.frame() # Convertir a data frame
 ```
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
- 
- <center>  
-   
-[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
-  
-</center> 
-  
-## 6.5 **¡Ahora ejecutaremos el modelo!**
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+<center>
+
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)
+
+</center>
+
+## 6\.5 **¡Ahora ejecutaremos el modelo!**
 
 **Hasta este punto, usted ha completado toda la información faltante en
 el script  para poder ejecutar el modelo.**
 
 :::::::::::::::::::::::::::::::::::: callout
-**Instrucción:** Ejecute cada conjunto de las líneas del script vistas
-anteriormente, es decir, ejecute las secciones: Lista de parámetros, la
-sección Modelo determinístico simple (donde construyó el modelo), las
-secciones Secuencia temporal (tiempo (times)),  Los parámetros
-(parametros (parms)), la sección Condiciones iniciales del sistema
-(inicio (y)) y la sección final Resuelva las ecuaciones.
 
-**Instrucción:** Verifique que no aparezca ningún error. En caso de
-error por favor verifique la escritura del código y que no haya quedado
-en el código otros caracteres que no corresponden como por ejemplo
-"\_\_\_\_\_" los guiones de los espacios para completar.
+**Instrucción:**
+Ejecute cada conjunto de las líneas del script vistas anteriormente, es decir, ejecute las secciones: Lista de parámetros, la sección Modelo determinístico simple (donde construyó el modelo), las secciones Secuencia temporal (tiempo (times)),  Los parámetros (parametros (parms)), la sección Condiciones iniciales del sistema (inicio (y)) y la sección final Resuelva las ecuaciones.
+
+**Instrucción:**
+Verifique que no aparezca ningún error.
+En caso de error por favor verifique la escritura del código y que no haya quedado en el código otros caracteres que no corresponden como por ejemplo "\_\_\_\_\_" los guiones de los espacios para completar.
+
 :::::::::::::::::::::::::::::::::::::::::::
-
 
 ## 6.6 **Visualizando los resultados**
 
 **En nuestro curso usaremos ggplot para la visualización de datos. Es
 importante que repase la Unidad 4. Visualización de datos en ggplot**
 
-Hay que recordar que la unidad de tiempo del modelo de Zika está ya
-definida desde los parámetros como  **días**.  
+Hay que recordar que la unidad de tiempo del modelo de Zika está ya definida desde los parámetros como  **días**.  
 
-Sin embargo, si usted quisiera visualizar los resultados en semanas,
-meses o años puede hacerlo a partir de los resultados del modelo
-(`salida$time`). Para hacerlo, puede usar el siguiente código.
+Sin embargo, si usted quisiera visualizar los resultados en semanas, meses o años puede hacerlo a partir de los resultados del modelo (`salida$time`).
+Para hacerlo, puede usar el siguiente código.
 
-::::::::::::::::::::::::::::::::::::: challenge 
+::::::::::::::::::::::::::::::::::::: challenge
+
 ### Desafío 7
 
-Para tener una visualización más significativa de los resultados,
-convierta las unidades de tiempo de *días* a *años* y a *semanas*.
+Para tener una visualización más significativa de los resultados, convierta las unidades de tiempo de *días* a *años* y a *semanas*.
 
-```{r eval = TRUE}
-# Cree las opciones de tiempo para años y semanas 
+```{r, eval=TRUE}
+# Cree las opciones de tiempo para años y semanas
 salida$años <- salida$time/365
 salida$semanas <- salida$time/7
 ```
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## 6.7 **Visualice y analice la primer epidemia**
 
-Empecemos realizando una visualización de la primera epidemia. Dado que
-es un periodo de un año visualicemos las gráficas en semanas. 
+Empecemos realizando una visualización de la primera epidemia.
+Dado que es un periodo de un año visualicemos las gráficas en semanas. 
 
-Instrucción: Ejecute el código a continuación y analice las gráficas
-resultantes. 
+Instrucción: Ejecute el código a continuación y analice las gráficas resultantes. 
 
-```{r p1, include = TRUE, warning=FALSE}
+```{r p1, include=TRUE, warning=FALSE}
 # Revise la primera epidemia
 p1e <- ggplot(data = salida, aes(y = Ih, x = semanas)) +
   geom_line(color = 'firebrick', linewidth = 1) +
@@ -653,14 +635,17 @@ plot_grid(p1e, p2e) #creamos gráfico comparativo de la gráfica de población h
 ```
 
 ::::::::::::::::::::::::: discussion
-**Reflexión:** ¿Qué puede observar en la gráfica? Observe bien el eje Y.
-¿Qué proporción de humanos son infecciosos al mismo tiempo? 
+
+**Reflexión:**
+¿Qué puede observar en la gráfica?
+Observe bien el eje Y.
+¿Qué proporción de humanos son infecciosos al mismo tiempo?
+
 :::::::::::::::::::::::::
 
-Para tener mayor claridad de esto podemos crear gráficas de las
-proporciones:
+Para tener mayor claridad de esto podemos crear gráficas de las proporciones:
 
-```{r p3, include = TRUE}
+```{r p3, include=TRUE}
 # Revise la primera epidemia con proporciones
 p1p <- ggplot(data = salida, aes(y = Ih/(Sh+Ih+Rh), x = semanas)) +
   geom_line(color = 'firebrick', linewidth = 1) +
@@ -679,14 +664,13 @@ plot_grid(p1p, p2p) #creamos gráfico comparativo de la gráfica de población h
 
 **Comportamiento general (Población humana)**
 
-Ya observamos la primera epidemia es momento de proyectar la epidemia a
-un tiempo superior. 
+Ya observamos la primera epidemia es momento de proyectar la epidemia a un tiempo superior. 
 
-**Instrucción:** Regrese a los parámetros y modifique el parámetro TIME
-a 100 años. Ejecute el siguiente bloque de código y observe cuántos
-brotes se producen en la población humana y el tamaño de cada brote.
+**Instrucción:**
+Regrese a los parámetros y modifique el parámetro TIME a 100 años.
+Ejecute el siguiente bloque de código y observe cuántos brotes se producen en la población humana y el tamaño de cada brote.
 
-```{r p4, include = TRUE}
+```{r p4, include=TRUE}
 # # Revise el comportamiento general del modelo para 100 años
 p1h <- ggplot(data = salida, aes(y = (Rh + Ih + Sh), x = años)) +
   geom_line(color = 'grey68', linewidth = 1) +
@@ -709,9 +693,9 @@ plot_grid(p1h, p2h, p3h, p4h, ncol = 2)
 
 **Comportamiento General (Población de mosquitos)**
 
-**Instrucción:** Ejecute el siguiente bloque de código y observe cuántos
-brotes se producen en la población de mosquitos y el tamaño de cada
-brote. Compare las gráficas con las gráficas de la población humana.
+**Instrucción:**
+Ejecute el siguiente bloque de código y observe cuántos brotes se producen en la población de mosquitos y el tamaño de cada brote.
+Compare las gráficas con las gráficas de la población humana.
 
 ```{r}
 # Revise el comportamiento general del modelo
@@ -737,8 +721,8 @@ plot_grid(p1v, p2v, p3v, p4v, ncol = 2)
 
 **Proporción**
 
-**Instrucción:** Ejecute el siguiente bloque de código y compárelo con
-las gráficas generadas para la población humana. 
+**Instrucción:**
+Ejecute el siguiente bloque de código y compárelo con las gráficas generadas para la población humana. 
 
 ```{r}
 p1 <- ggplot(data = salida, aes(y = Sh/(Sh+Ih+Rh), x = años)) +
@@ -756,39 +740,40 @@ p3 <- ggplot(data = salida, aes(y = Rh/(Sh+Ih+Rh), x = años)) +
   ggtitle('Población humana recuperada') +
   theme_bw() + ylab('Proporción') + xlab('Años') +
   coord_cartesian(ylim = c(0,1))
-plot_grid(p1, p2, p3, ncol = 2)  
+plot_grid(p1, p2, p3, ncol = 2)
 ```
- 
- <center>  
-   
-[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
-  
-</center> 
-   
-::::::::::::::::::::::::::::::::::::: keypoints 
+
+<center>
+
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)
+
+</center>
+
+::::::::::::::::::::::::::::::::::::: keypoints
 
 Revise si al final de esta lección adquirió estas competencias:
 
--   Aplicar conceptos como parámetros, $R_0$ e inmunidad de rebaño,
-    aprendidos en la sesión A del taller
--   Traducir fórmulas matemáticas de las interacciones entre los
-    parámetros del modelo a código de R
--   Realizar un modelo simple en R para una enfermedad transmitida por
-    vector
--   Discutir cambios en las proyecciones del modelo cuando se instauran
-    diferentes estrategias de control de la infección
+- Aplicar conceptos como parámetros, $R\_0$ e inmunidad de rebaño,
+  aprendidos en la sesión A del taller
+- Traducir fórmulas matemáticas de las interacciones entre los
+  parámetros del modelo a código de R
+- Realizar un modelo simple en R para una enfermedad transmitida por
+  vector
+- Discutir cambios en las proyecciones del modelo cuando se instauran
+  diferentes estrategias de control de la infección
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Contribuciones
 
--   Zulma Cucunuba & Pierre Nouvellet: Versión inicial
--   Kelly Charinga & Zhian N. Kamvar: Edición
--   José M. Velasco-España: Traducción de Inglés a Español y Edición
--   Andree Valle-Campos: Ediciones menores
+- Zulma Cucunuba & Pierre Nouvellet: Versión inicial
+- Kelly Charinga & Zhian N. Kamvar: Edición
+- José M. Velasco-España: Traducción de Inglés a Español y Edición
+- Andree Valle-Campos: Ediciones menores
 
 ### Asuntos legales
 
-**Copyright**: Zulma Cucunuba & Pierre Nouvellet, 2017
+**Copyright**: Zulma Cucunuba \& Pierre Nouvellet, 2017
 
 ### Referencias
 
