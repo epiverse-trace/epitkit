@@ -1,0 +1,825 @@
+---
+title: Building a simple deterministic model
+date: '2024-08-09'
+output:
+  html_document: ~
+  pdf_document: default
+bibliography: bib_zika.bib
+csl: apa.csl
+image: ~
+topics:
+- zika
+- compartmental models
+- Spanish
+categories: practicals
+licenses: CC-BY
+always_allow_html: true
+authors:
+- Zulma Cucunuba
+- Pierre Nouvellet
+- José M. Velasco-España
+teaching: 120
+exercises: 8
+editor_options:
+  markdown:
+    wrap: 72
+---
+
+:::::::::::::::::::::::::::::::::::::: questions
+
+- How to build a simplified model of Zika?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: objectives
+
+At the end of this workshop you will be able to:
+
+- Recognise how a simple deterministic model is constructed by.
+  ordinary differential equations.
+- Identify relevant parameters for modelling VTE epidemics.
+- Diagramming the interaction between the different compartments of the
+  system using the parameters.
+- Translate mathematical equations of the deterministic model into code.
+  R language code.
+- Explore the use of the model's simulations to project
+  transmission scenarios and potential impact of interventions
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::: prereq
+
+This unit has the following prerequisites:
+
+- Introduction to R and RStudio
+- Introduction to epidemic theory
+- History of epidemics and pandemics
+- Data visualisation in R with ggplot
+
+:::::::::::::::::::::
+
+```{r options, include=FALSE, message=FALSE, warning=FALSE, error=FALSE}
+#Versión última modificación 21/10/2022
+full_version <- TRUE
+```
+
+::::::::::::::::::: checklist
+
+## **Table of contents**
+
+\+--------------------------------------------------------------------+
+| Topic 1: Vector-borne diseases: Biology of the vector-borne disease.
+| vector biology, Zika virus, diagnostics and interventions |
+| |
+| 2. Topic 2: Review What is a simple deterministic model?
+| |
+| 3. Topic 3: Simple SIR Model Zika ?
+| |
+| Topic 4: Developing diagrams and equations of the Zika model | 4.
+| |
+ 5. Topic 5: Elaborating the parameter table of the simple Zika | | model.
+| Zika.                                                          |
+| |
+ Topic 6: The Zika model in R | |
+| |
+| 7. Topic 7: Parameterisation of control interventions for Zika | 8.
+\+--------------------------------------------------------------------+
+
+:::::::::::::::::::
+
+## Introduction
+
+In this unit we will address the construction of a simple deterministic model, specifically for the Zika virus, a disease that triggered a major epidemic in Latin America and the Caribbean, and which was declared a public health emergency of international concern.
+Using previous knowledge of epidemic theory, we will build a deterministic SIR-type model that incorporates demographic aspects.
+
+To build this model, we will learn about the dynamics of interaction between humans and vectors, as well as the fundamental parameters that govern these biological processes.
+By constructing a diagram, we will examine these relationships and formulate equations that describe the behaviour of the system.
+These equations will be the basis for simulating the model in the R programming language.
+In turn, we will propose and model intervention strategies.
+
+Through the analysis of the model, we will evaluate the potential impact of this epidemic on society, contextualising some of these interventions in Latin America.
+In addition, we will reinforce and apply key themes such as: SIR model, Herd immunity, Parameters and control interventions (spraying, bed nets and vaccination) for a Vector Borne Disease (VBD).
+
+## **Topic 6: Zika model in R**
+
+In this section we will put to use the knowledge acquired about Zika, the mechanisms involved in transmission and the model equations.
+The aim is to build it in R.
+
+The only package required for the modelling is deSolve, which allows us to solve the differential equations.
+Additionally for data handling and plotting the results we recommend using tidyverse and cowplot.
+
+## 6\.1 Practical start in R
+
+To start our practice in **R** please open a **project of
+R**project and create a new document.
+In this document we must load the functions we have just explained.
+If you have difficulties with this process, please review the **unit Introduction to R**.
+
+install.packages(deSolve) # deSolve package for solving differential equations
+
+Once you have installed the deSolve package please load the packages with the following lines of code, copy them into your R script and run them.
+
+```{r, message=FALSE, warning=FALSE}
+library(deSolve)
+
+library(tidyverse)
+
+library(cowplot)
+```
+
+<center>
+
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)
+
+</center>
+
+Recall that to create a model we need compartments, initial conditions, parameters and equations.
+
+For this model in R we will start by defining the parameters, i.e. all those values that have been collected through research and are part of the behaviour of the disease.
+In the previous section we talked about them and completed them in a table.
+Now it is time to enter them into R.
+
+**Instruction** Please take the table you worked on earlier and enter the value of each of these parameters.
+
+:::::::::::::::::::::::::::::::::::: callout
+
+### NOTE:
+
+It is important to remember that in R, you can use previously created objects to perform calculations.
+For example, the parameter muv is the inverse of the parameter Lv, i.e. muv = 1/Lv.
+Therefore, in R you can assign this value directly with muv \<- 1/Lv.
+It is not necessary to perform the division and assign the result manually.
+:::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Challenge 1
+
+Instruction: Please take the table you worked on earlier and enter the value of each of these parameters.
+
+```{r, eval=FALSE}
+Lv       <-        # Esperanza de vida de los mosquitos (en días)
+Lh       <-        # Esperanza de vida de los humanos (en días)
+PIh      <-        # Periodo infeccioso en humanos (en días)
+PIv      <-        # Periodo infeccioso en vectores (en días)
+PEI      <-        # Período extrínseco de incubación en mosquitos adultos (en días)
+muv      <-        # Tasa per cápita de mortalidad de la población de mosquitos (1/Lv)
+muh      <-        # Tasa per cápita de mortalidad de la población de humanos (1/Lh)
+alphav   <-        # Tasa per cápita de natalidad de la población de mosquitos. Por ahora asumiremos que es la misma de tasa de mortalidad.
+alphah   <-        # Tasa per cápita de natalidad de la población de humanos.  Por ahora asumiremos que es la misma de tasa de mortalidad
+gamma    <-        # Tasa de recuperación en humanos (1/PIh)
+delta    <-        # Tasa extrínseca de incubación (1/PEI)
+Nh       <-        # Número de humanos. Para este ejercicio proponemos 100.000 humanos. Puede cambiarlos si desea de acuerdo a su contexto.
+m        <-        # Densidad de mosquitos hembra por humano
+Nv       <-        # Número de mosquitos (m * Nh)
+R0       <-        # Número reproductivo básico
+ph       <-        # Probabilidad de transmisión de un mosquito infeccioso a un humano susceptible después de una picadura.
+pv       <-        # Probabilidad de transmisión de un humano infeccioso a un mosquito susceptible después de una picadura.
+b        <-        sqrt((R0 * muv*(muv+delta) * (muh+gamma)) /
+                   (m * ph * pv * delta)) # Tasa de picadura
+betah    <-        # Coeficiente de transmisión de un mosquito infeccioso a un humano susceptible después de una picadura (ph*b)
+betav    <-        # Coeficiente de transmisión de un humano infeccioso a un mosquito susceptible después de una picadura (pv*b)
+TIME     <-  1      # Número de años que se va a simular. Para este ejercicio iniciaremos con el primer año de la epidemia.
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
+
+### Solution 1
+
+```{r, include=full_version}
+
+Lv       <-   10     # Esperanza de vida de los mosquitos (en días)
+Lh       <-   50*365 # Esperanza de vida de los humanos (en días)
+PIh      <-   7      # Periodo infeccioso en humanos (en días)
+PIv      <-   6      # Periodo infeccioso en vectores (en días)
+PEI      <-   8.4    # Período extrínseco de incubación en mosquitos adultos (en días)
+muv      <-   1/Lv   # Tasa per cápita de mortalidad de la población de mosquitos (1/Lv)
+muh      <-   1/Lh   # Tasa per cápita de mortalidad de la población de humanos (1/Lh)
+alphav   <-   muv    # Tasa per cápita de natalidad de la población de mosquitos. Por ahora asumiremos que es la misma de tasa de mortalidad.
+alphah   <-   muh    # Tasa per cápita de natalidad de la población de humanos.  Por ahora asumiremos que es la misma de tasa de mortalidad
+gamma    <-   1/PIh  # Tasa de recuperación en humanos (1/PIh)
+delta    <-   1/PEI  # Tasa extrínseca de incubación (1/PEI)
+Nh       <-   100000 # Número de humanos. Para este ejercicio proponemos 100.000 humanos. Puede cambiarlos si desea de acuerdo a su contexto.
+m        <-   2      # Densidad de mosquitos hembra por humano
+Nv       <-   m*Nh   # Número de mosquitos (m * Nh)
+R0       <-   3      # Número reproductivo básico
+ph       <-   0.7    # Probabilidad de transmisión de un mosquito infeccioso a un humano susceptible después de una picadura.
+pv       <-   0.7    # Probabilidad de transmisión de un humano infeccioso a un mosquito susceptible después de una picadura.
+b        <-        sqrt((R0 * muv*(muv+delta) * (muh+gamma)) /
+                   (m * ph * pv * delta)) # Tasa de picadura
+betah    <-  ph*b    # Coeficiente de transmisión de un mosquito infeccioso a un humano susceptible después de una picadura (ph*b)
+betav    <-  pv*b    # Coeficiente de transmisión de un humano infeccioso a un mosquito susceptible después de una picadura (pv*b)
+TIME     <-  1       # Número de años que se va a simular. Para este ejercicio iniciaremos con el primer año de la epidemia.
+
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+<center>
+
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)
+
+</center>
+
+## 6\.2 Model equations
+
+Now that we have entered the parameters into the script, it is time to use the equations that were written earlier, which allow us to know the number of individuals in each of the six compartments as a function of time.
+Three compartments for the humans and three compartments for the mosquitoes, which are identified by a **h** (for humans) and a **v**(for mosquitoes).
+For humans we have the compartments; susceptible, infected, and recovered (hence the word **SIR**) and for mosquitoes the compartments are:
+susceptible, exposed and infectious (**SEI**).
+
+::::::::::::::::::: checklist
+
+### Compartments
+
+- $S_h$ Human susceptible
+
+- $I_h$ Infectious humans
+
+- $R_h$ Infectious humans : Humans recovered from infection (immunised against
+  new infection)
+
+- $S_v$ Susceptible vectors
+
+- $E_v$ Vectors at risk : Exposed vectors
+
+- $I_v$ Infectious vectors
+
+:::::::::::::::::::
+
+For this model we will use the following differential equations:
+
+### 6\.2.1 Human
+
+$$\ \frac{dSh}{dt}  = \alpha_h N_h - \beta_h \frac {I_v}{N_h}S_h - \mu_h  S_h $$
+
+$$\ \frac{dIh}{dt}  = \beta_h \frac {I_v}{N_h}S_h - (\gamma + \mu_h) I_h $$\
+
+$$\ \frac{dRh}{dt}  = \gamma I_h  - \mu_h R_h$$
+
+### 6\.2.2 Vectors
+
+$$\ \frac{dSv}{dt}  = \alpha_v N_v  - \beta_v \frac{ I_h} {N_h}S_v  - \mu_v Sv$$
+
+$$\ \frac{dE_v}{dt}  = \beta_v \frac{I_h} {N_h}S_v- (\delta + \mu_v) Ev$$\
+
+$$\ \frac{dI_v}{dt}  = \delta Ev - \mu_v I_v$$
+
+## 6\.3 Formula for calculating $R_0$ (Basic reproductive number)
+
+Formula needed to estimate $R_0$:
+
+$$ R_0 = \frac{mb^2 p_h p_v \delta}{\mu_v (\mu_v+\delta)(\mu_h+\gamma)} $$
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+**Instruction**: Translate the equations into R
+
+```{r, eval=FALSE}
+
+# Humanos
+         dSh   <-  alphah * Nh - betah * (Iv/Nh) * Sh - muh * Sh
+         dIh   <-______ * (Iv/Nh) * Sh - (____ + _____) * Ih
+         dRh   <-  ______ * Ih  - ______ * Rh
+
+ # Mosquitos
+         dSv  <-  alphav * Nv - _____ * (Ih/Nh) * Sv - _____ * Sv
+         dEv  <-  _____ * (Ih/Nh) * Sv - (____ + _____)* Ev
+         dIv  <-  _____ * Ev - _____ * Iv
+
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+Once we know how to translate the equations into code, we will proceed to run the model.
+For this, the ode function of the deSolve package will be used.
+
+You start by creating the function (which will then be used in the argument **fun**).
+This requires translating the equations of the Zika model to **R**.
+Below you will find the function already built `modelo_zika` for you to replace the equations you have already filled in above.
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Challenge 3
+
+**Instruction**: Replace the incomplete equations in the following code with the complete equations of the Zika model you worked on in the previous instruction.
+
+```{r, eval=FALSE}
+
+# Modelo determinístico simple (fun)
+modelo_zika <- function(tiempo, variable_estado, parametros) {
+
+  with(as.list(c(variable_estado, parametros))
+, # entorno local para evaluar derivados
+       {
+         # Humanos
+         dSh   <-  ____ * Nh - ____ * (Iv/Nh) * Sh - ____ * Sh
+         dIh   <-  ____ * (Iv/Nh) * Sh - (____ + ____) * Ih
+         dRh   <-  ____ * Ih  - ____ * Rh
+
+         # Mosquitos
+         dSv  <-  alphav * Nv - ____ * (Ih/Nh) * Sv - ____ * Sv
+         dEv  <-  ____ * (Ih/Nh) * Sv - (____ + ____)* Ev
+         dIv  <-  ____ * Ev - ____ * Iv
+
+         list(c(dSh, dIh, dRh, dSv, dEv, dIv))
+       }
+  )
+}
+
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
+
+### Solution 3
+
+```{r, include=full_version}
+
+# Modelo determinístico simple (fun)
+modelo_zika <- function(tiempo, variable_estado, parametros) {
+
+  with(as.list(c(variable_estado, parametros))
+, # entorno local para evaluar derivados
+       {
+         # Humanos
+         dSh   <-  alphah * Nh - betah * (Iv/Nh) * Sh - muh * Sh
+         dIh   <-  betah * (Iv/Nh) * Sh  - (gamma + muh) * Ih
+         dRh   <-  gamma * Ih  - muh * Rh
+
+         # Vectores
+         dSv   <-  alphav * Nv - betav * (Ih/Nh) * Sv - muv * Sv
+         dEv   <-  betav * (Ih/Nh) * Sv - (delta + muv)* Ev
+         dIv   <-  delta * Ev - muv * Iv
+
+         dx    <- c(dSh, dIh, dRh, dSv, dEv, dIv)
+        list(c(dSh, dIh, dRh, dSv, dEv, dIv))
+       }
+  )
+}
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+<center>
+
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)
+
+</center>
+
+## 6\.4 Solving the System
+
+To solve the system it is necessary to create the three missing arguments (**times**, **parms** y **y**) to use the function `ode`.
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Challenge 4
+
+**Instruction:**
+For `times` y `parms` copy the code below and execute it.
+
+```{r}
+# Secuencia temporal (times)
+tiempo <- seq(1, 365 * TIME , by = 1)
+# Los parámetros (parms)
+params <- c(
+  muv      = muv,
+  muh      = muh,
+  alphav   = alphav,
+  alphah   = alphah,
+  gamma    = gamma,
+  delta    = delta,
+  betav    = betav,
+  betah    = betah,
+  Nh       = Nh,
+  Nv       = Nv
+)
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+In the code that ran, time was created (**times)** and parameters (**params)**.
+We still need to create the argument **y** argument, which we will develop in the next section.
+
+### 6\.4.1. **Initial conditions of the system (y)**
+
+In order to define the initial conditions, recall that the scenario to be modelled in this exercise is for a date **before the report of the
+first case**.
+Therefore these values should reflect that context. 
+
+::::::::::::::::::::::::: discussion
+
+**Reflection:**
+What would be the initial conditions of each of the compartments?
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Challenge 5
+
+**Instruction:**
+Fill in the blanks as learned in the tutorial.
+
+```{r, eval=FALSE}
+# Condiciones iniciales del sistema (y)
+inicio <- c(Sh = _______ ,        # COMPLETE Y COMENTE
+            Ih = _______ ,        # COMPLETE Y COMENTE
+            Rh = _______ ,        # COMPLETE Y COMENTE
+            Sv = _______ ,        # COMPLETE Y COMENTE
+            Ev = _______ ,        # COMPLETE Y COMENTE
+            Iv = _______ )        # COMPLETE Y COMENTE
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
+
+### Solution 5
+
+```{r, include=full_version}
+# Condiciones iniciales del sistema (y)
+inicio <- c(Sh = Nh ,      # Número inicial de Sh en el tiempo 0
+           Ih = 0,        # Número inicial de Ih en el tiempo 0
+           Rh = 0,        # Número inicial de Rh en el tiempo 0
+           Sv = Nv,     # Número inicial de Sv en el tiempo 0
+           Ev = 0,        # Número inicial de Ev en el tiempo 0
+           Iv = 0)        # Número inicial de Iv en el tiempo 0
+
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+<center>
+
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)
+
+</center>
+
+### 6\.4.2 Function ode
+
+Once all the necessary arguments have been created, it is time to enter them into ode.
+Let's remember the four arguments of ode and a which correspond to:
+
+- **y**:**home**. Vector created with the initial conditions of the
+  six compartments.
+
+- **times**:**time**. Vector with time sequence
+
+- **fun:zika\_model**. Function containing the necessary equations
+  to simulate the model.
+
+- **parms:parameters.** Vector in which the
+  parameters needed to simulate the model were collected.
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Challenge 6
+
+**Instruction** Fill in the blanks according to what you have worked on so far.
+
+```{r, eval=FALSE}
+
+# Resuelva las ecuaciones
+salida <- ode(y      =   _______ , # COMPLETE Y COMENTE
+              times  = _______ ,   # COMPLETE Y COMENTE
+              fun    = _______ ,   # COMPLETE Y COMENTE
+              parms  = _______  # COMPLETE Y COMENTE
+) %>%
+  as.data.frame() # Convertir a data frame
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
+
+### Solution 6
+
+```{r, include=full_version}
+# Resuelva las ecuaciones
+salida <- ode(y      = inicio,     # Condiciones iniciales
+             times  = tiempo,      # Tiempo
+             fun    = modelo_zika, # Modelo
+             parms  = params    # Parámetros
+) %>%
+  as.data.frame() # Convertir a data frame
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+<center>
+
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)
+
+</center>
+
+### 6\.4.3 **Introducing the first case**
+
+Now that we have all the compartments defined, it is time to enter an infectious individual into the model to start the epidemic. 
+
+::::::::::::::::::::::::: discussion
+
+**Reflection:**
+Which do you think is more likely, an infectious human or an infectious mosquito entering a population (in another country)?
+
+:::::::::::::::::::::::::
+
+For our hypothetical case, let's assume that a person became infected in Brazil while on tourism and subsequently returned to the city \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (the city you defined at the beginning of the exercise) and was the first infectious subject in this population.
+In this context, the compartment of infectious humans will then have one individual, **Ih** = 1 and the susceptible human compartment will have one less individual, **Sh** = **Nh** - 1.
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+**Track:**
+Change in R the initial (start) conditions so that Ih = 1 and Sh = Nh - 1.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
+
+### Solution
+
+```{r, include=full_version}
+# Condiciones iniciales del sistema (y)
+
+inicio <- c(Sh = Nh ,      # Número inicial de Sh en el tiempo 0
+            Ih = 0,        # Número inicial de Ih en el tiempo 0
+            Rh = 0,        # Número inicial de Rh en el tiempo 0
+            Sv = Nv-1,     # Número inicial de Sv en el tiempo 0
+            Ev = 0,        # Número inicial de Ev en el tiempo 0
+            Iv = 1)        # Número inicial de Iv en el tiempo 0
+```
+
+```{r, include=full_version}
+# Resuelva las ecuaciones
+salida <- ode(y      = inicio,     # Condiciones iniciales
+             times  = tiempo,      # Tiempo
+             fun    = modelo_zika, # Modelo
+             parms  = params    # Parámetros
+) %>%
+  as.data.frame() # Convertir a data frame
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+<center>
+
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)
+
+</center>
+
+## 6\.5 **Now let's run the model!**
+
+**At this point, you have filled in all the missing information in
+the script in order to be able to run the model.**
+
+:::::::::::::::::::::::::::::::::::: callout
+
+**Instruction:**
+Run each set of the script lines seen above, i.e. run the sections: Parameter list, the section Simple deterministic model (where you built the model), the sections Time sequence (time (times)), The parameters (parameters (parms)), the section Initial conditions of the system (start (y)) and the final section Solve the equations.
+
+**Instruction:**
+Check that no errors are displayed.
+In case of error, please check the spelling of the code and that there are no other characters left in the code that do not correspond, for example "\_\_\_\_\_", the hyphens in the spaces to be filled in.
+
+:::::::::::::::::::::::::::::::::::::::::::
+
+## 6\.6 **Viewing the results**
+
+**In our course we will use ggplot for data visualisation. It is
+important that you review Unit 4. Data visualisation in ggplot**
+
+It should be recalled that the time unit of the Zika model is already defined from the parameters as **days**. 
+
+However, if you would like to visualise the results in weeks, months or years, you can do so from the model results (`salida$time`).
+To do so, you can use the following code.
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Challenge 7
+
+For a more meaningful visualisation of the results, convert the units of time from *days* a *years* and a *weeks*.
+
+```{r, eval=TRUE}
+# Cree las opciones de tiempo para años y semanas
+salida$años <- salida$time/365
+salida$semanas <- salida$time/7
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## 6\.7 **Visualise and analyse the first epidemic**
+
+Let's start with a visualisation of the first epidemic.
+Since it is a period of one year, let's visualise the graphs in weeks. 
+
+Instruction: Run the code below and analyse the resulting graphs. 
+
+```{r p1, include=TRUE, warning=FALSE}
+# Revise la primera epidemia
+p1e <- ggplot(data = salida, aes(y = Ih, x = semanas)) +
+  geom_line(color = 'firebrick', linewidth = 1) +
+  ggtitle('Población de humanos infecciosos') +
+  theme_bw() + ylab('Número') + xlab('Semanas') +
+ coord_cartesian(ylim = c(0,10000)) #creamos gráfico de población humana infecciosa
+p2e <- ggplot(data = salida, aes(y = Rh, x = semanas)) +
+  geom_line(color = 'olivedrab', linewidth = 1) +
+  ggtitle('Población humana recuperada') +
+  theme_bw() + ylab('Número') + xlab('Semanas') +
+ coord_cartesian(ylim = c(0,100000))  #creamos gráfico de población humana recuperada
+
+
+plot_grid(p1e, p2e) #creamos gráfico comparativo de la gráfica de población humana infecciosa y población humana recuperada
+```
+
+::::::::::::::::::::::::: discussion
+
+**Reflection:**
+What can you see in the graph?
+Look closely at the Y-axis.
+What proportion of humans are infectious at the same time?
+
+:::::::::::::::::::::::::
+
+To make this clearer we can create graphs of the proportions:
+
+```{r p3, include=TRUE}
+# Revise la primera epidemia con proporciones
+p1p <- ggplot(data = salida, aes(y = Ih/(Sh+Ih+Rh), x = semanas)) +
+  geom_line(color = 'firebrick', linewidth = 1) +
+  ggtitle('Población de humanos infecciosos') +
+  theme_bw() + ylab('Proporción') + xlab('Semanas') +
+ coord_cartesian(ylim = c(0,1)) #creamos gráfico de población humana infecciosa
+p2p <- ggplot(data = salida, aes(y = Rh/(Sh+Ih+Rh), x = semanas)) +
+  geom_line(color = 'olivedrab', linewidth = 1) +
+  ggtitle('Población humana recuperada') +
+  theme_bw() + ylab('Proporción') + xlab('Semanas') +
+ coord_cartesian(ylim = c(0,1))  #creamos gráfico de población humana recuperada
+
+
+plot_grid(p1p, p2p) #creamos gráfico comparativo de la gráfica de población humana infecciosa y población humana recuperada
+```
+
+**General behaviour (Human population)**
+
+Having observed the first epidemic, it is now time to project the epidemic to a longer time frame. 
+
+**Instruction:**
+Go back to the parameters and change the TIME parameter to 100 years.
+Run the following code block and observe how many outbreaks occur in the human population and the size of each outbreak.
+
+```{r p4, include=TRUE}
+# # Revise el comportamiento general del modelo para 100 años
+p1h <- ggplot(data = salida, aes(y = (Rh + Ih + Sh), x = años)) +
+  geom_line(color = 'grey68', linewidth = 1) +
+  ggtitle('Población humana total') +
+  theme_bw() + ylab('Número') + xlab('Años')
+p2h <- ggplot(data = salida, aes(y = Sh, x = años)) +
+  geom_line(color = 'royalblue', linewidth = 1) +
+  ggtitle('Población humana susceptible') +
+  theme_bw() + ylab('Número') + xlab('Años')
+p3h <- ggplot(data = salida, aes(y = Ih, x = años)) +
+  geom_line(color = 'firebrick', linewidth = 1) +
+  ggtitle('Población humana infecciosa') +
+  theme_bw() + ylab('Número') + xlab('Años')
+p4h <- ggplot(data = salida, aes(y = Rh, x = años)) +
+  geom_line(color = 'olivedrab', linewidth = 1) +
+  ggtitle('Población humana recuperada') +
+  theme_bw() + ylab('Número') + xlab('Años')
+plot_grid(p1h, p2h, p3h, p4h, ncol = 2)
+```
+
+**General Behaviour (Mosquito Population)**
+
+**Instruction:**
+Run the following code block and observe how many outbreaks occur in the mosquito population and the size of each outbreak.
+Compare the graphs with the human population graphs.
+
+```{r}
+# Revise el comportamiento general del modelo
+p1v <- ggplot(data = salida, aes(y = (Sv + Ev + Iv), x = años)) +
+  geom_line(color = 'grey68', linewidth = 1) +
+  ggtitle('Población total de mosquitos') +
+  theme_bw() + ylab('Número') + xlab('Años')
+p2v <- ggplot(data = salida, aes(y = Sv, x = años)) +
+  geom_line(color = 'royalblue', linewidth = 1) +
+  ggtitle('Población susceptible de mosquitos') +
+  theme_bw() + ylab('Número') + xlab('Años')
+p3v <- ggplot(data = salida, aes(y = Ev, x = años)) +
+  geom_line(color = 'orchid', linewidth = 1) +
+  ggtitle('Población expuesta de mosquitos') +
+  theme_bw() + ylab('Número') + xlab('Años')
+p4v <- ggplot(data = salida, aes(y = Iv, x = años)) +
+  geom_line(color = 'firebrick', linewidth = 1) +
+  ggtitle('Población infecciosa de mosquitos') +
+  theme_bw() + ylab('Número') + xlab('Años')
+plot_grid(p1v, p2v, p3v, p4v, ncol = 2)
+
+```
+
+**Proportion**
+
+**Instruction:**
+Run the following code block and compare it to the graphs generated for the human population. 
+
+```{r}
+p1 <- ggplot(data = salida, aes(y = Sh/(Sh+Ih+Rh), x = años)) +
+  geom_line(color = 'royalblue', linewidth = 1) +
+  ggtitle('Población humana susceptible') +
+  theme_bw() + ylab('Proporción') + xlab('Años') +
+  coord_cartesian(ylim = c(0,1))
+p2 <- ggplot(data = salida, aes(y = Ih/(Sh+Ih+Rh), x = años)) +
+  geom_line(color = 'firebrick', linewidth = 1) +
+  ggtitle('Población humana infecciosa') +
+  theme_bw() + ylab('Proporción') + xlab('Años') +
+  coord_cartesian(ylim = c(0,1))
+p3 <- ggplot(data = salida, aes(y = Rh/(Sh+Ih+Rh), x = años)) +
+  geom_line(color = 'olivedrab', linewidth = 1) +
+  ggtitle('Población humana recuperada') +
+  theme_bw() + ylab('Proporción') + xlab('Años') +
+  coord_cartesian(ylim = c(0,1))
+plot_grid(p1, p2, p3, ncol = 2)
+```
+
+<center>
+
+[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)
+
+</center>
+
+::::::::::::::::::::::::::::::::::::: keypoints
+
+Check if you have acquired these competences by the end of this lesson:
+
+- Apply concepts such as parameters, $R_0$ and herd immunity,
+  learned in session A of the workshop
+- Translating mathematical formulae of the interactions between the
+  model parameters into R code
+- Realise a simple model in R for a disease transmitted by
+  vector-borne disease
+- Discuss changes to the model projections when they are implemented
+  different infection control strategies
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+### Contributions
+
+- Zulma Cucunuba \& Pierre Nouvellet: Initial version
+- Kelly Charinga \& Zhian N. Kamvar: Editing
+- José M. Velasco-Spain: Translation from English to Spanish and Editing
+- Andree Valle-Campos: Minor Editions
+
+### Legal affairs
+
+**Copyright**: Zulma Cucunuba \& Pierre Nouvellet, 2017
+
+### References
+
+de Carvalho, S. S., Rodovalho, C. M., Gaviraghi, A., Mota, M. B. S.,
+Jablonka, W., Rocha-Santos, C., Nunes, R. D., Sá-Guimarães, T. da E.,
+Oliveira, D. S., Melo, A. C. A., Moreira, M. F., Fampa, P., Oliveira, M.
+F., da Silva-Neto, M. A. C., Mesquita, R. D., \& Atella, G. C. (2021).
+Aedes aegypti post-emergence transcriptome: Unveiling the molecular
+basis for the hematophagic and gonotrophic capacitation. PLoS Neglected
+Tropical Diseases, 15(1), 1--32.
+<https://doi.org/10.1371/journal.pntd.0008915>
+
+Chang, C., Ortiz, K., Ansari, A., \& Gershwin, M. E. (2016). The Zika
+outbreak of the 21st century. Journal of Autoimmunity, 68, 1--13.
+<https://doi.org/10.1016/j.jaut.2016.02.006>
+
+Cori, A., Ferguson, N. M., Fraser, C., \& Cauchemez, S. (2013). A new
+framework and software to estimate time-varying reproduction numbers.
+during epidemics. American Journal of Epidemiology, 178(9), 1505--1512.
+<https://doi.org/10.1093/aje/kwt133>
+
+Duffy, M. R., Chen, T.-H., Hancock, W. T., Powers, A. M., Kool, J. L.,
+Lanciotti, R. S., Pretrick, M., Marfel, M., Holzbauer, S., Dubray, C.,
+Guillaumot, L., Griggs, A., Bel, M., Lambert, A. J., Laven, J., Kosoy,
+O., Panella, A., Biggerstaff, B. J., Fischer, M., \& Hayes, E. B. (2009).
+Zika Virus Outbreak on Yap Island, Federated States of Micronesia. New
+New England Journal of Medicine, 360(24), 2536--2543.
+<https://doi.org/10.1056/nejmoa0805715>
+
+Ferguson, N. M., Cucunubá, Z. M., Dorigatti, I., Nedjati-Gilani, G. L.,
+Donnelly, C. A., Basáñez, M. G., Nouvellet, P., \& Lessler, J. (2016).
+Countering the Zika epidemic in Latin America. Science, 353(6297).
+<https://doi.org/10.1126/science.aag0219>
+
+Heesterbeek, J. A. P. (2002). A brief history of R0 and a recipe for its
+calculation. Acta Biotheoretica, 50(3).
+<https://doi.org/10.1023/A:1016599411804>
+
+Lee, E. K., Liu, Y., \& Pietz, F. H. (2016). A Compartmental Model for
+Zika Virus with Dynamic Human and Vector Populations. AMIA ... Annual
+Symposium Proceedings. AMIA Symposium, 2016, 743--752.
+
+Pettersson, J. H. O., Eldholm, V., Seligman, S. J., Lundkvist, Å.,
+Falconar, A. K., Gaunt, M. W., Musso, D., Nougairède, A., Charrel, R.,
+Gould, E. A., \& de Lamballerie, X. (2016). How did zika virus emerge in
+the Pacific Islands and Latin America? MBio, 7(5).
+<https://doi.org/10.1128/mBio.01239-16>
+
+
