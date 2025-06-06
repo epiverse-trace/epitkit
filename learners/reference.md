@@ -1,1214 +1,577 @@
 ---
-title: Glosario de términos
+title: Glossary
 editor_options: 
   markdown: 
     wrap: 72
 ---
 
-# Teoría epidémica y modelos
+# Epidemic Theory and Models
 
-[Modelo Matemático de Enfermedades Infecciosas]{#modelo}
+## Mathematical Model of Infectious Diseases
 
-:   Un modelo matemático en la teoría epidémica de enfermedades
-    infecciosas es una representación abstracta que utiliza ecuaciones
-    matemáticas y algoritmos para describir la dinámica de la
-    propagación de infecciones dentro de una población. Estos modelos
-    permiten comprender, predecir o proyectar cómo una enfermedad
-    infecciosa puede propagarse y afectar a una comunidad, considerando
-    diversos factores como la tasa de transmisión, el período
-    infeccioso, la recuperación y la inmunidad.
+A mathematical model in the epidemic theory of infectious diseases is an abstract representation that uses mathematical equations and algorithms to describe the dynamics of infection spread within a population. These models allow for understanding, predicting, or projecting how an infectious disease can spread and affect a community, considering various factors such as the transmission rate, infectious period, recovery, and immunity.
 
-    El clásico modelo matemático es el modelo SIR: Susceptible,
-    Infeccioso y Recuperado. Este tradicionalmente hace uso de
-    ecuaciones diferenciales ordinarias (ODEs)-
+The classic mathematical model is the SIR model: Susceptible, Infectious, and Recovered. This traditionally uses ordinary differential equations (ODEs).
 
-    Hay varios tipos de modelos matemáticos, los más comunes son:
-    [deterministas](determinista) y [estocásticos](estocastico)
+There are several types of mathematical models, the most common being: [deterministic](#deterministic-model) and [stochastic](#stochastic-model).
 
-[Ecuaciones Diferenciales Ordinarias]{#ODE}
+## Ordinary Differential Equations (ODEs)
 
-:   Las ecuaciones diferenciales ordinarias (ODEs) se pueden usar para
-    representar la tasa de cambio de una variable (por ejemplo, el
-    número de individuos infectados) con respecto a otra (por ejemplo,
-    el tiempo). Las ODEs se utilizan ampliamente en la modelización de
-    enfermedades infecciosas para modelar el flujo de individuos entre
-    diferentes estados de la enfermedad. 
+Ordinary differential equations (ODEs) can be used to represent the rate of change of one variable (e.g., the number of infected individuals) with respect to another (e.g., time). ODEs are widely used in infectious disease modeling to model the flow of individuals between different disease states.
 
-    Para profundizar en el tema consulte esta introducción a las
-    [ODEs](https://mathinsight.org/ordinary_differential_equation_introduction).
+For more information, consult this introduction to [ODEs](https://mathinsight.org/ordinary_differential_equation_introduction).
 
-[Modelo Determinista]{#determinista}
+## Deterministic Model
 
-:   Un modelo determinista es un tipo de modelo matemático en el cual el
-    comportamiento del sistema está completamente determinado por sus
-    condiciones iniciales y los parámetros del modelo, sin involucrar
-    elementos de aleatoriedad o incertidumbre. En otras palabras, dado
-    un conjunto de condiciones iniciales y parámetros, el modelo siempre
-    producirá el mismo resultados.
+A deterministic model is a type of mathematical model in which the behavior of the system is completely determined by its initial conditions and model parameters, without involving elements of randomness or uncertainty. In other words, given a set of initial conditions and parameters, the model will always produce the same results.
 
-[Modelo Estocástico]{#estocastico}
+## Stochastic Model
 
-:   Un modelo estocástico aborda la variación aleatoria de los
-    parámetros en las simulaciones del modelo para las mismas
-    condiciones iniciales. Esto significa que no siempre se van a
-    obtener exactamente los mismos resultados en todas las simulaciones.
-    Ejemplos incluyen ecuaciones diferenciales estocásticas y modelos de
-    procesos de ramificación. Para más detalles, consulta [Allen
-    (2017).](https://www.sciencedirect.com/science/article/pii/S2468042716300495?via%3Dihub)
+A stochastic model addresses the random variation of parameters in model simulations for the same initial conditions. This means that the exact same results will not always be obtained in all simulations. Examples include stochastic differential equations and branching process models. For more details, consult [Allen (2017)](https://www.sciencedirect.com/science/article/pii/S2468042716300495?via%3Dihub).
 
-[Condiciones iniciales]{#iniciales}
+## Initial Conditions
 
-:   En las Ecuaciones Diferenciales Ordinarias (ODEs por sus siglas en
-    inglés de Ordinary differential equations), las condiciones
-    iniciales son los valores de cada compartimento en el tiempo inicial
-    del modelo (tiempo cero). Estas condiciones son necesarias para
-    iniciar la simulación de la epidemia en el modelo y pueden afectar
-    significativamente los resultados posteriores.
+In Ordinary Differential Equations (ODEs), initial conditions are the values of each compartment at the initial time of the model (time zero). These conditions are necessary to start the simulation of the epidemic in the model and can significantly affect subsequent results.
 
-Ejemplo: Si hay un individuo infeccioso en una población de 1000 en un
-modelo Susceptible-Infeccioso-Recuperado, las condiciones iniciales
-serían 
+Example: If there is one infectious individual in a population of 1000 in a Susceptible-Infectious-Recovered model, the initial conditions would be:
+* $S_0=999$
+* $I_0=1$
+* $R_0=0$
 
--   $S_0=999$
+## Transmission Model Parameters
 
--   $I_0=1$
+Model parameters are values that allow the movement of individuals between different compartments; they describe the flow between disease states. These include, for example: the recovery rate which is a model parameter that can be used to describe the flow between infectious and recovered states.
 
--   $R_0=0$
+## State Variables
 
-[Parámetros de los modelos de transmisión]{#params}
+State variables in a model represented by ordinary differential equations are the disease states in which individuals can be. For example, if individuals can be susceptible, infectious, or recovered, the state variables are S, I, and R. There is an ordinary differential equation for each state variable.
 
-:   Los parámetros del modelo son valores que permiten el movimiento de
-    los individuos entre los diferentes compartimentos; describen el
-    flujo entre estados de enfermedad. Estos incluyen, por ejemplo: la
-    tasa de recuperación la cual es un parámetro del modelo que se puede
-    usar para describir el flujo entre estados infecciosos y
-    recuperados. 
+## Susceptible
 
-[Variables de estado]{#compartimento}
+Population with no prior or current exposure to the pathogen, or without vaccination, and therefore having neither infection nor humoral immune protection (neutralizing antibodies) against the pathogen. (Related to state variables)
 
-:   Las variables de estado en un modelo representado por ecuaciones
-    diferenciales ordinarias son los estados de la enfermedad en los que
-    los individuos pueden estar. Por ejemplo, si los individuos pueden
-    ser susceptibles, infecciosos o recuperados, las variables de estado
-    son S, I y R. Hay una ecuación diferencial ordinaria para cada
-    variable de estado.
+Examples:
+* In 2020, at the beginning of the COVID-19 pandemic, the entire world population was considered susceptible.
+* Children not vaccinated against measles and who have not been infected or have not developed post-infection antibodies.
 
-[Susceptible]{#susceptible}
+## Infectious
 
-:   Población sin exposición previa ni actual al patógeno, o sin
-    vacunación y que por lo tanto no tiene infección ni tampoco
-    protección inmunológica humoral (anticuerpos neutralizantes) contra
-    el patógeno. (Relacionado a variables de estado)
+Population with active presence of the pathogen capable of transmitting it to susceptible individuals in the population. This state has a duration equivalent to the infectious period.
 
-**Ejemplos**
+Example:
+* Patient living with HIV not receiving antiretroviral treatment with a high viral load who has unprotected sex.
 
--   En 2020, al inicio de la pandemia por COVID-19, toda la población
-    mundial se consideraba susceptible.
+## Recovered
 
--   Niños no vacunados contra sarampión y que tampoco han estado
-    infectados o no han desarrollado anticuerpos post-infección.
+Population with neutralizing antibodies against the pathogen. This immunity could have been acquired via natural infection or vaccination. This state has a duration equivalent to the period of neutralizing immunity duration. (Related to state variables)
 
-[Infeccioso]{#infeccioso}
+Example:
+* Person vaccinated against yellow fever. This vaccine provides high, long-lasting protection against the infection.
 
-:   Población que tiene presencia activa del patógeno con capacidad de
-    transmitirlo a los individuos susceptibles de la población. Este
-    estado tiene una duración equivalente al periodo infeccioso. 
+## Exposed
 
-**Ejemplo**
+Population that has been infected with a pathogen but is not yet capable of transmitting the infection (infected, but not infectious). This state has a duration equivalent to the latency period.
 
--   Paciente que convive con VIH sin recibir tratamiento antirretroviral
-    con alta carga viral que sostiene relaciones sexuales sin
-    preservativo.
+Example:
+* The transmission of the tuberculosis bacillus occurs from positive bacilliferous subjects who release bacilli into the environment, and exposed individuals are easily infected. However, for many years individuals can remain infected but controlling the disease, without transmitting it; these individuals are considered exposed in dynamic transmission models.
 
-[Recuperado]{#recuperado}
+## Spillover
 
-:   Población con anticuerpos neutralizantes frente al patógeno. Esta
-    inmunidad pudo haber sido adquirida vía infección natural o vía
-    vacunación. Este estado tiene una duración equivalente al periodo de
-    duración de la inmunidad neutralizante. (Relacionado a variables de
-    estado)
+In epidemiology, the term spillover refers to the process by which a pathogen (microorganism, whether virus, bacterium, parasite, or other), which normally affects a specific animal species, is transmitted to another reservoir. In other words, it is the evolutionary leap of a pathogen between species, which includes transmission from an animal to a human.
 
-**Ejemplo**
+## Zoonosis
 
--   Persona vacunada frente a fiebre amarilla. Esta vacuna tiene una
-    alta protección de larga duración frente a la infección.
+PAHO defines zoonosis as "infectious diseases naturally transmissible from vertebrate animals to humans".
 
-[Expuesto]{#expuesto}
+## Transmission Parameters
 
-:   Población que ha sido contagiada con un patógeno pero que aún no es
-    capaz de transmitir la infección (infectado, pero no infeccioso).
-    Este estado tiene una duración equivalente al periodo de latencia. 
+## Basic Reproduction Number, $R_0$
 
-**Ejemplo**
+It is defined as the average number of secondary cases produced from a primary case in a totally susceptible population, i.e., at time 0. This number is specific to each infectious agent, although it can also be affected by climatic and social variables, and represents the transmission potential of the pathogen. This value is theoretical and also determines the herd immunity threshold. It is a measure of the transmissibility of an infection. It is calculated as:
 
--   La transmisión del bacilo de la tuberculosis se da a partir de
-    sujetos bacilíferos positivos que emiten bacilos al medio y los
-    individuos expuestos suelen contagiarse con facilidad. Sin embargo,
-    durante muchos años los individuos pueden permanecer infectados,
-    pero controlando la enfermedad, sin transmitirla, estos individuos
-    son considerados expuestos en los modelos dinámicos de transmisión.
-    
-[Spillover]{#spillover} 
- 
-: En epidemiología, el término spillover se refiere al proceso por el cual un patógeno (microorganismo, ya sea virus, bacteria, parásito u otro), que normalmente afecta a una especie animal específica, se transmite a otro reservorio. En otras palabras, es el salto evolutivo de un patógeno entre especies, lo cual incluye la transmisión de un animal a un humano. 
+$R_0 = p * c * D$
 
-[Zoonosis]{#zoonosis}  
- 
-: La OPS define zoonosis como "enfermedades infecciosas transmisibles naturalmente desde animales vertebrados al ser humano".  
-   
-# Parámetros de Transmisión
+Where,
+$p$ = probability of infection after contact
+$c$ = contact rate
+$D$ = duration of the infectious period
 
-[Número de reproducción básico, R0]{#R0}
+Example:
+* The following diagram compares the $R_0$ of seasonal influenza, Ebola, Diphtheria, Smallpox, and Measles respiratory syndrome.
 
-:   Se define como el número promedio de casos secundarios que se
-    producen a partir de un caso primario en una población totalmente
-    susceptible, es decir, en el tiempo 0. Este número es propio de cada
-    agente infeccioso, aunque también se puede ver afectado por
-    variables climáticas y sociales, y representa el potencial de
-    transmisión que tiene el patógeno. Este valor es teórico y también
-    determina el umbral de la inmunidad de rebaño. Es una medida de la
-    transmisibilidad de una infección. Se calcula como:
+## Effective Reproduction Number, $R_t$
 
- $R0 = p * c *  D$
-
-Donde,
-
-$p$ = probabilidad de infección posterior al contacto 
-
-$c$= tasa de contactos
-
-$D$ = duración del periodo infeccioso
-
-**Ejemplo**
-
--   En el siguiente diagrama se compara el $R_0$ del síndrome
-    respiratorio de la Influenza estacional, Ébola, Difteria, Viruela y
-    Sarampión.
-
-    ![](fig/R0s_plot.jpeg)
-
-[Número de reproducción efectivo,]{#rt}$R_t$
-
-:   Se define como el número promedio de casos secundarios a partir de
-    un caso infeccioso en la población compuesta por huéspedes
-    susceptibles y no susceptibles por unidad de tiempo (t). Se calcula
-    así:
+It is defined as the average number of secondary cases from an infectious case in the population composed of susceptible and non-susceptible hosts per unit of time (t). It is calculated as:
 
 $R_t = R_0 * S$
 
-Donde: 
+Where:
+$R_0$ = Basic reproduction number
+$S$ = proportion of susceptibles in the population
 
-$R_0$ = Número básico de reproducción
+Characteristics of the Effective Reproduction Number, $R_t$:
+* **Temporal:** $R_t$ reflects the current situation of disease transmission and changes over time.
+* **Contextual:** Unlike $R_0$, which assumes a completely susceptible population, $R_t$ considers the impact of acquired immunity (by infection or vaccination) and public health interventions (such as social distancing, quarantines, and mask use).
 
-$S$ = proporción de susceptibles en la población
+Interpretation:
+* $R_t > 1$: The infection is spreading in the population.
+* $R_t = 1$: The infection remains stable in the population.
+* $R_t < 1$: The infection is decreasing and may eventually disappear.
 
-**Características del Número de Reproducción Efectivo,** $R_t$**:**
+$R_t$ can be influenced by two large groups of factors:
+* Control measures: antimicrobial drugs, barrier measures (condoms, masks), and contact reduction measures (isolation, distancing, use of mosquito nets, fumigation, etc.)
+* Acquisition of immunity through neutralizing antibodies (reduction of susceptibles as an epidemic progresses or vaccination).
 
--   **Temporal:** $R_t$ refleja la situación actual de la transmisión de
-    la enfermedad y cambia con el tiempo.
+## Contact Rate
 
--   **Contextual:** A diferencia de $R_0$, que asume una población
-    completamente susceptible, R(t) considera el impacto de la inmunidad
-    adquirida (por infección o vacunación) y las intervenciones de salud
-    pública (como el distanciamiento social, cuarentenas y uso de
-    mascarillas).
+The **contact rate** is an epidemiological measure that describes the frequency with which individuals in a population come into contact with each other, within a specific time period, in a way that allows for the possibility of infectious disease transmission. This rate is fundamental to understanding and modeling the dynamics of disease spread within a community.
 
-**Interpretación:**
+Characteristics of the Contact Rate:
+* **Frequency:** Reflects the number of potentially infectious contacts per individual in a given time period.
+* **Homogeneous vs. Heterogeneous:** The contact rate can be homogeneous, if contacts are distributed uniformly among all individuals, or heterogeneous, if some individuals have more contacts than others, which is common in reality.
+* **Influence of Factors:** The rate can vary depending on factors such as age, behavior, environment, and control measures (e.g., social distancing).
 
--   $R_t >1$: La infección se está propagando en la población.
+Calculation of the Contact Rate: The contact rate can be estimated from empirical data collected through surveys, observational studies, or inferences from mathematical models.
 
--   $R_t =1$ : La infección se mantiene estable en la población.
+## Contact Matrix
 
--   $R_t < 1$ : La infección está disminuyendo y eventualmente puede
-    desaparecer.
+A **contact matrix** is an epidemiological tool that represents the contact rates between different groups in a population, normally organized by categories such as age, gender, or geographical location. Each element in the matrix indicates the frequency with which individuals from a specific group have contact with individuals from another group.
 
-El $R_t$ puede estar influenciado por dos grandes grupos de factores: 
+Characteristics of the Contact Matrix:
+* **Structure:** It is a square matrix, where rows and columns represent the different population groups.
+* **Elements:** Each cell of the matrix shows the average number of contacts between individuals of the corresponding groups.
+* **Data:** Data can be collected through surveys, observational studies, or inferred from mathematical models.
 
--   Medidas de control: medicamentos antimicrobianos, medidas de barrera
-    (preservativo, tapabocas), y medidas de reducción de contacto
-    (aislamiento, distanciamiento, uso de mosquiteros, fumigación, etc)
+## Latency Period
 
--   Adquisición de inmunidad mediante anticuerpos neutralizantes
-    (reducción de susceptibles a medida que avanza una epidemia o
-    vacunación).
+Time interval between exposure to an infectious agent with successful transmission and the onset of the infectious period. During the latency period, infected individuals do not transmit the infection.
 
-[Tasa de contacto]{#tcontacto}
+Examples:
+* For tuberculosis, the latency period is usually prolonged, and after contagion, individuals remain without transmitting the disease for many years.
+* For SARS-CoV-2 infection, the latency period was short (2-4 days) and also shorter than the incubation period, so individuals could transmit the infection before the onset of symptoms.
 
-:   La **tasa de contacto** es una medida epidemiológica que describe la
-    frecuencia con la que los individuos de una población entran en
-    contacto unos con otros, en un periodo de tiempo específico, de
-    manera que existe la posibilidad de transmisión de una enfermedad
-    infecciosa. Esta tasa es fundamental para entender y modelar la
-    dinámica de la propagación de enfermedades dentro de una comunidad.
+## Incubation Period
 
-**Características de la Tasa de Contacto:**
+Time interval between exposure to an infectious agent with successful transmission and the onset of clinical disease (signs and symptoms). For diseases where the onset of the infectious period coincides with the appearance of signs and symptoms, the latency and incubation periods are the same.
 
--   **Frecuencia:** Refleja el número de contactos potencialmente
-    infecciosos por individuo en un periodo de tiempo determinado.
+Example:
+* In the study by Wu et al. 2022, a systematic review of the incubation periods of SARS-CoV2 was conducted. It was found that: the average incubation period of COVID-19 was 5.00 days (95% CI, 4.94-5.06 days) for cases caused by the Alpha variant, 4.50 days (95% CI, 1.83-7.17 days) for the Beta variant, 4.41 days (95% CI, 3.76-5.05 days) for the Delta variant, and 3.42 days (95% CI, 2.88-3.96 days) for the Omicron variant. The findings of this study suggest that SARS-CoV-2 has continuously evolved and mutated throughout the COVID-19 pandemic, producing variants with different levels of transmission and virulence. Identifying the incubation period of the different variants is a key factor in determining the isolation period.
 
--   **Homogénea vs Heterogénea:** La tasa de contacto puede ser
-    homogénea, si los contactos se distribuyen uniformemente entre todos
-    los individuos, o heterogénea, si algunos individuos tienen más
-    contactos que otros, lo cual es común en la realidad.
+## Infectious Period
 
--   **Influencia de Factores:** La tasa puede variar dependiendo de
-    factores como edad, comportamiento, entorno y medidas de control
-    (por ejemplo, distanciamiento social).
+Time interval during which the infected individual has active pathogen replication and can transmit it to other individuals. Since this period can overlap with the incubation period, it can be difficult to obtain accurate estimates of the infectious period. Viral load and detection of infectious virus are the two key parameters for estimating infectivity ([Puhach et al., 2022](https://www.nature.com/articles/s41579-022-00822-w) and [Hakki et al, 2022](https://www.thelancet.com/journals/lanres/article/PIIS2213-2600(22)00226-0/fulltext)).
 
-**Cálculo de la Tasa de Contacto:** La tasa de contacto se puede estimar
-a partir de datos empíricos recolectados mediante encuestas, estudios
-observacionales o inferencias a partir de modelos matemáticos.
+Example:
+* In cases of respiratory viruses (e.g., influenza, SARS-CoV-2) this period can last days, while for diseases like HIV or tuberculosis it can last years.
 
-[Matriz de contacto]{#mcontacto}
+## Recovery Time
 
-:   Una **matriz de contacto** es una herramienta epidemiológica que
-    representa las tasas de contacto entre diferentes grupos de una
-    población, normalmente organizados por categorías como edad, género
-    o ubicación geográfica. Cada elemento en la matriz indica la
-    frecuencia con la que individuos de un grupo específico tienen
-    contacto con individuos de otro grupo.
+Time interval between the onset of the infectious period and the moment an individual stops transmitting the pathogen.
 
-**Características de la Matriz de Contacto:**
+Example:
+* In cases of chickenpox, subjects stop transmitting the pathogen when all lesions have crusted over. Therefore, the recovery period appears before the disappearance of the lesions. After this period, subjects are considered recovered.
 
--   **Estructura:** Es una matriz cuadrada, donde las filas y columnas
-    representan los diferentes grupos de la población.
+## Generation Time
 
--   **Elementos:** Cada celda de la matriz muestra el número de
-    contactos promedio entre los individuos de los grupos
-    correspondientes.
+Time interval between the onset of the infectious period of a primary case and the onset of the infectious period in a secondary case, infected by the primary case. It is normally unknown and is approximated by the serial interval. It cannot be measured, only estimated.
 
--   **Datos:** Los datos pueden ser recolectados mediante encuestas,
-    estudios observacionales o inferidos a partir de modelos
-    matemáticos.
+Example:
+* The study by Hart et al. 2022 in the United Kingdom between February and August 2021 recruited 227 households with 559 participants. It was found that the Delta variant transmitted faster than the Alpha variant in households, with a shorter mean generation time: 4.7 days for Delta versus 5.5 days for Alpha. This suggests that Delta spreads more rapidly in households due to a rapid decrease in susceptible individuals, which could make interventions such as contact tracing and isolation less effective.
 
-[Periodo de latencia]{#platencia}
+## Serial Interval
 
-:   Intervalo de tiempo entre la exposición a un agente infeccioso con
-    una transmisión exitosa y el inicio del periodo infeccioso. Durante
-    el período de latencia, las personas infectadas no transmiten la
-    infección. 
+Time period between the **onset of symptoms** of a primary case and the onset of symptoms in a secondary case infected by the primary case. It is measurable given that data such as dates of symptom onset can be obtained. This value can be negative when presymptomatic infection occurs. The distribution of the serial interval of an infection is commonly used to estimate the distribution of the generation time ([Cori et al., 2017](https://royalsocietypublishing.org/doi/10.1098/rstb.2016.0371)). The relationship between the serial interval and the incubation period helps define the type of infection transmission (symptomatic or presymptomatic) ([Nishiura et al., 2020](https://www.ijidonline.com/article/S1201-9712(20)30119-3/fulltext#gr2)).
 
-**Ejemplos**
-
--   Para la tuberculosis el periodo de latencia suele ser prolongado, y
-    luego del contagio los individuos permanecen sin transmitir la
-    enfermedad por muchos años.
-
--   Para la infección por SARS-CoV-2 el periodo de latencia era corto
-    (2-4 días) y además era más corto que el periodo de incubación, por
-    lo que los individuos podían contagiar la infección antes de la
-    aparición de los síntomas.
-
-[Periodo de incubación]{#pincubacion}
-
-:   Intervalo de tiempo entre la exposición a un agente infeccioso con
-    una transmisión exitosa y el inicio de la enfermedad clínica (signos
-    y síntomas). Para enfermedades en las que el inicio del periodo
-    infeccioso coincide con la aparición de los signos y síntomas, los
-    períodos de latencia y de incubación son los mismos.
-
-**Ejemplo**
-
--   En el estudio de Wu et al 2022.  se realiza una revisión sistemática
-    de los periodos de incubación de SARS-CoV2. Se encuentra que: el
-    período de incubación promedio de COVID-19 fue de 5,00 días (IC del
-    95%, 4,94-5,06 días) para los casos causados por la variante Alfa,
-    4,50 días (IC del 95%, 1,83-7,17 días) para la variante Beta, 4,41
-    días (IC del 95%, 3,76-5,05 días) para la variante Delta y 3,42 días
-    (IC del 95%, 2,88-3,96 días) para la variante Ómicron. Los hallazgos
-    de este estudio sugieren que el SARS-CoV-2 ha evolucionado y mutado
-    continuamente a lo largo de la pandemia de COVID-19, produciendo
-    variantes con diferentes niveles de transmisión y virulencia.
-    Identificar el período de incubación de las diferentes variantes es
-    un factor clave para determinar el período de aislamiento.  [(Wu et
-    al. 2022)](https://paperpile.com/c/uKZiEn/yGCE)
-
-[Periodo infeccioso]{#pinfeccioso}
-
-:   Intervalo de tiempo en el que el individuo infectado tiene
-    replicación activa del patógeno y puede transmitirlo a otros
-    individuos. Dado que este período puede superponerse con el período
-    de incubación, puede ser difícil obtener estimaciones precisas del
-    período infeccioso. La carga viral y la detección del virus
-    infeccioso son los dos parámetros clave para estimar la
-    infecciosidad ([Puhach et al.,
-    2022](https://www.nature.com/articles/s41579-022-00822-w) y [Hakki
-    et al,
-    2022](https://www.thelancet.com/journals/lanres/article/PIIS2213-2600(22)00226-0/fulltext)).
-
-**Ejemplo**
-
--   En los casos de virus respiratorios (e.g. influenza, SARS-CoV-2)
-    este periodo puede durar días, mientras que enfermedades como VIH o
-    tuberculosis puede durar años.
-
-[Tiempo de recuperación]{#trecuperacion}
-
-:   Intervalo de tiempo que transcurre entre el inicio del periodo
-    infeccioso y el momento en que un individuo deja de transmitir el
-    patógeno.
-
-**Ejemplo**
-
--   En los casos de varicela, los sujetos dejan de transmitir el
-    patógeno en el momento en que todas las lesiones han formado
-    costras. Por lo tanto, el periodo de recuperación aparece antes de
-    la desaparición de las lesiones. Luego de este periodo los sujetos
-    se consideran recuperados.
-
-[Tiempo generacional]{#tgeneracional}
-
-:   Intervalo de tiempo entre el inicio del periodo infeccioso de un
-    caso primario y el inicio del periodo infeccioso en un caso
-    secundario, infectado por el caso primario. Normalmente es desconocido 
-    y se hace una aproximación con el intervalo serial. No se puede medir, sólo
-    estimar. 
-
-**Ejemplo**
-
--   El estudio de Hart et al. 2022 en el Reino Unido entre febrero y
-    agosto de 2021, se reclutó 227 hogares con 559 participantes. Se
-    encontró que la variante delta se transmitía más rápido que la
-    variante alfa en los hogares, con un tiempo medio de generación más
-    corto: 4,7 días para la delta frente a 5,5 días para la alfa. Esto
-    sugiere que la delta se propaga más rápidamente en los hogares
-    debido a una rápida disminución de individuos susceptibles, lo que
-    podría hacer que las intervenciones como el rastreo de contactos y
-    el aislamiento sean menos efectivas.  [(Hart et al.
-    2022)](https://paperpile.com/c/uKZiEn/PspE)
-
-[Intervalo Serial]{#iserial}
-
-:   Período de tiempo entre el **inicio de los síntomas** de un caso
-    primario y el inicio de los síntomas en un caso secundario infectado
-    por el caso primario. Es medible dado que se pueden obtener los
-    datos como fechas de la aparición de síntomas. Este valor puede ser
-    negativo cuando ocurre una infección presintomática. La distribución
-    del intervalo serial de una infección se utiliza comúnmente para
-    estimar la distribución del tiempo de generación ([Cori et al.,
-    2017](https://royalsocietypublishing.org/doi/10.1098/rstb.2016.0371)).
-    La relación entre el intervalo serial y el período de incubación
-    ayuda a definir el tipo de transmisión de la infección (sintomática
-    o presintomática) ([Nishiura et al.,
-    2020](https://www.ijidonline.com/article/S1201-9712(20)30119-3/fulltext#gr2))
-
-**Ejemplo**: en el estudio de Nishuura et al. 2020 se estimó el
-intervalo serial del COVID-19 a partir de 28 pares de infectores e
-infectados. Se analizaron las fechas de inicio de la enfermedad de los
-casos primarios y secundarios, ajustando por truncamiento a la derecha
-debido a que la epidemia aún estaba en crecimiento. Los resultados
-mostraron que el intervalo serial mediano fue de 4,0 días en el conjunto
-completo de datos y de 4,6 días en el subconjunto de pares con mayor
-certeza. Se concluye que el intervalo serial de COVID-19 es cercano o
-más corto que su período de incubación, lo que sugiere una transmisión
-significativa antes del inicio de síntomas, y es más corto que el
-intervalo serial del SARS, lo que podría introducir sesgos en los
-cálculos basados en SARS.
-
-[Tasa de Ataque]{#tataque}
-
-:   La **tasa de ataque** es una medida epidemiológica que describe la
-    proporción de personas en una población específica que desarrollan
-    una enfermedad o infección durante un periodo de tiempo definido,
-    generalmente en el contexto de un brote o epidemia. Esta tasa
-    incluye tanto los casos de enfermedad como las infecciones
-    asintomáticas, y puede requerir estudios de seroprevalencia o
-    modelos matemáticos para su cálculo preciso.
-
-**Características:**
-
--   **Propósito:** Evalúa la proporción de personas que se enferman o se
-    infectan entre los inicialmente expuestos.
-
--   **Contexto:** Utilizada para medir el impacto inmediato de la
-    exposición a un agente infeccioso.
-
-[Tasa Secundaria de Ataque Sintómática]{#tsataquesint}
-
-:   La **tasa de ataque sintomática** mide la proporción de personas
-    expuestas que desarrollan síntomas clínicos de la enfermedad. Se
-    enfoca exclusivamente en aquellos individuos que presentan síntomas,
-    diferenciándose así de la tasa de ataque general que puede incluir
-    casos asintomáticos.
-
-**Características:**
-
--   **Propósito:** Evalúa la proporción de personas expuestas que
-    desarrollan síntomas clínicos, proporcionando una medida de la
-    manifestación clínica de la enfermedad.
-
--   **Contexto:** Utilizada para entender la gravedad y el impacto
-    clínico de la enfermedad en una población específica.
-
-[Tasa Secundaria de Ataque (Secondary Attack Rate, SAR)]{#tsataque}
-
-:   La **tasa de ataque secundaria** mide la proporción de casos que
-    ocurren entre los contactos cercanos de los casos primarios. Se
-    enfoca en la transmisión secundaria de la enfermedad, es decir, la
-    propagación de la enfermedad de los casos iniciales a otros
-    individuos en contacto cercano.
-
-**Características:**
-
--   **Propósito:** Mide la transmisión de la enfermedad entre contactos
-    cercanos de los casos primarios.
-
--   **Contexto:** Utilizada para evaluar la efectividad de las medidas
-    de control y para entender mejor la dinámica de transmisión de la
-    enfermedad.
-
-[Umbral de Inmunidad de Rebaño]{#uir}
-
-:   El **umbral de inmunidad de rebaño** es la proporción de la
-    población que debe ser inmune a una enfermedad infecciosa, ya sea a
-    través de vacunación o infección previa, para que la propagación de
-    la enfermedad disminuya y eventualmente se detenga. Cuando se
-    alcanza este umbral, incluso los individuos no inmunes están
-    protegidos indirectamente debido a la reducción de la probabilidad
-    de transmisión del patógeno.
-
-**Características del Umbral de Inmunidad de Rebaño:**
-
--   **Proporción Crítica:** Representa la fracción de la población que
-    necesita ser inmune para interrumpir la transmisión sostenida de la
-    infección..
-
--   **Dependencia de R₀:** El umbral está directamente relacionado con
-    el número de reproducción básico (R₀) de la infección, que es el
-    número promedio de casos secundarios producidos por un caso primario
-    en una población completamente susceptible.
-
-**Cálculo:** El umbral de inmunidad de rebaño depende del número de
-reproducción básica $R_0$ y se define como $1 – \frac{1}{R0}$. Mientras
-más contagioso sea un patógeno, mayor será su $R_0$ y mayor la
-proporción de la población que deberá ser inmune para poder bloquear la
-transmisión en forma sostenida.
-
-**Ejemplo**
-
--   En el caso de sarampión, para un $R_0$ de 18, la inmunidad de rebaño
-    es aproximadamente 95%.
-
-["Overshoot"]{#overshoot}
-
-:   El término **overshoot** se refiere al fenómeno en el cual el número
-    de casos de una enfermedad infecciosa supera el umbral de inmunidad
-    de rebaño durante un brote o epidemia, antes de que la transmisión
-    de la enfermedad disminuya y se estabilice. Este exceso de casos
-    ocurre a pesar de que una proporción suficiente de la población ha
-    alcanzado la inmunidad necesaria para frenar la propagación de la
-    enfermedad.
-
-**Características del Overshoot:**
-
--   **Exceso de Casos:** Ocurre cuando hay más casos de lo esperado
-    incluso después de alcanzar el umbral de inmunidad de rebaño.
-
--   **Temporal:** Es un fenómeno transitorio que se observa antes de que
-    la enfermedad se estabilice o desaparezca.
-
--   **Inmunidad de Rebaño:** Indica que el umbral de inmunidad de rebaño
-    se ha alcanzado pero la transmisión continua inicialmente debido a
-    la dinámica de la epidemia.
-
-**Causas del Overshoot:**
-
--   **Inercia Epidémica:** La enfermedad sigue propagándose debido a la
-    cantidad de individuos susceptibles que todavía están expuestos al
-    agente infeccioso antes de que la transmisión se reduzca.
-
--   **Distribución Heterogénea de la Inmunidad:** La inmunidad no está
-    uniformemente distribuida en la población, lo que permite que
-    ocurran brotes localizados.
-
-[Tamaño crítico poblacional (Critical Community Size, CCS)]{#ccs}
-
-:   Es el tamaño mínimo de una población cerrada que se requiere para
-    que un agente infeccioso persista en esa población. Si el número de
-    la población es muy bajo, luego de un brote el patógeno no puede
-    persistir y desaparece. Esta masa crítica de susceptibles está
-    determinada por las características del agente, por la estructura
-    demográfica y por las condiciones higiénicas de la población de
-    hospederos. 
-
-**Ejemplo:** Para el sarampión, que tiene un R₀ alto, el CCS es
-relativamente grande. Estudios han mostrado que el sarampión necesita
-una población de al menos 250,000 a 500,000 individuos para mantenerse
-endémico. En contraste, enfermedades con un R₀ más bajo pueden tener un
-CCS mucho menor.
-
-[Superdispersión]{#superd}
-
-:   La **superdispersión** es un fenómeno en la epidemiología de
-    enfermedades infecciosas donde un pequeño número de individuos
-    infectados es responsable de una gran proporción de las nuevas
-    infecciones. Estos individuos, conocidos como "superpropagadores",
-    infectan a un número de personas mucho mayor que el promedio
-    esperado, acelerando así la propagación de la enfermedad.
-
-**Características de la Superdispersión:**
-
--   **Variabilidad en la Transmisión:** Existe una gran heterogeneidad
-    en la capacidad de los individuos para transmitir la enfermedad, con
-    unos pocos individuos causando muchas infecciones mientras que la
-    mayoría causa pocas o ninguna.
-
--   **Factor de Dispersión (k):** El grado de superdispersión se puede
-    cuantificar mediante el parámetro k. Valores bajos de k indican alta
-    superdispersión, mientras que valores cercanos a 1 indican que la
-    dispersión es más uniforme.
-
--   **Contexto Específico:** Los eventos de superdispersión suelen
-    ocurrir en contextos específicos como reuniones masivas, espacios
-    cerrados y actividades donde hay un contacto cercano prolongado.
-
-**Ejemplo:** Durante la pandemia de COVID-19, se observaron varios
-eventos de superdispersión, como una sola persona infectada que contagió
-a decenas de personas en una reunión religiosa en Corea del Sur. En otro
-caso, un evento de coro en los Estados Unidos resultó en muchas
-infecciones a partir de un solo individuo infectado.
-
-**Ejemplo**
-
--   En Corea del Sur durante la pandemia por COVID-19 se produjeron
-    eventos de sobredispersión en el contexto de coros religiosos, con
-    11 clusters de transmisión asociados a 641 casos de enfermedad por
-    COVID-19. 
-
-[Tasa de crecimiento exponencial]{#tce}
-
-:   La **tasa de crecimiento exponencial** es una medida epidemiológica
-    que describe la velocidad a la cual el número de casos de una
-    enfermedad infecciosa aumenta en una población en el tiempo inicial
-    de una epidemia, cuando las medidas de control no han sido
-    implementadas o son mínimas. Esta tasa es fundamental para entender
-    la dinámica de la propagación de una enfermedad en sus primeras
-    etapas y para planificar intervenciones de salud pública.
-
-**Cálculo de la Tasa de Crecimiento Exponencial:** La tasa de
-crecimiento exponencial se puede calcular utilizando la fórmula: 
+Example: In the study by Nishiura et al. 2020, the serial interval of COVID-19 was estimated from 28 infector-infected pairs. The onset dates of disease for primary and secondary cases were analyzed, adjusting for right truncation because the epidemic was still growing. The results showed that the median serial interval was 4.0 days in the full dataset and 4.6 days in the subset of pairs with greater certainty. It is concluded that the serial interval of COVID-19 is close to or shorter than its incubation period, suggesting significant transmission before symptom onset, and is shorter than the serial interval of SARS, which could introduce bias in calculations based on SARS.
+
+## Attack Rate
+
+The **attack rate** is an epidemiological measure that describes the proportion of people in a specific population who develop a disease or infection during a defined period, generally in the context of an outbreak or epidemic. This rate includes both disease cases and asymptomatic infections, and may require seroprevalence studies or mathematical models for accurate calculation.
+
+Characteristics:
+* **Purpose:** Evaluates the proportion of people who become ill or infected among those initially exposed.
+* **Context:** Used to measure the immediate impact of exposure to an infectious agent.
+
+## Symptomatic Secondary Attack Rate
+
+The **symptomatic attack rate** measures the proportion of exposed people who develop clinical symptoms of the disease. It focuses exclusively on those individuals who present symptoms, thus differentiating itself from the general attack rate which may include asymptomatic cases.
+
+Characteristics:
+* **Purpose:** Evaluates the proportion of exposed people who develop clinical symptoms, providing a measure of the clinical manifestation of the disease.
+* **Context:** Used to understand the severity and clinical impact of the disease in a specific population.
+
+## Secondary Attack Rate (SAR)
+
+The **secondary attack rate** measures the proportion of cases that occur among close contacts of primary cases. It focuses on the secondary transmission of the disease, that is, the spread of the disease from initial cases to other individuals in close contact.
+
+Characteristics:
+* **Purpose:** Measures the transmission of the disease among close contacts of primary cases.
+* **Context:** Used to evaluate the effectiveness of control measures and to better understand the dynamics of disease transmission.
+
+## Herd Immunity Threshold
+
+The **herd immunity threshold** is the proportion of the population that must be immune to an infectious disease, either through vaccination or previous infection, for the spread of the disease to decrease and eventually stop. When this threshold is reached, even non-immune individuals are indirectly protected due to the reduced probability of pathogen transmission.
+
+Characteristics of the Herd Immunity Threshold:
+* **Critical Proportion:** Represents the fraction of the population that needs to be immune to interrupt sustained transmission of the infection.
+* **Dependence on R₀:** The threshold is directly related to the basic reproduction number ($R_0$) of the infection, which is the average number of secondary cases produced by a primary case in a completely susceptible population.
+
+Calculation: The herd immunity threshold depends on the basic reproduction number $R_0$ and is defined as $1 - \frac{1}{R_0}$. The more contagious a pathogen is, the higher its $R_0$ and the greater the proportion of the population that must be immune to block sustained transmission.
+
+Example:
+* In the case of measles, for an $R_0$ of 18, herd immunity is approximately 95%.
+
+## "Overshoot"
+
+The term **overshoot** refers to the phenomenon in which the number of cases of an infectious disease exceeds the herd immunity threshold during an outbreak or epidemic, before disease transmission decreases and stabilizes. This excess of cases occurs despite a sufficient proportion of the population having achieved the necessary immunity to slow the spread of the disease.
+
+Characteristics of Overshoot:
+* **Excess Cases:** Occurs when there are more cases than expected even after reaching the herd immunity threshold.
+* **Temporal:** It is a transient phenomenon observed before the disease stabilizes or disappears.
+* **Herd Immunity:** Indicates that the herd immunity threshold has been reached but transmission initially continues due to epidemic dynamics.
+
+Causes of Overshoot:
+* **Epidemic Inertia:** The disease continues to spread due to the number of susceptible individuals still exposed to the infectious agent before transmission is reduced.
+* **Heterogeneous Immunity Distribution:** Immunity is not uniformly distributed in the population, allowing localized outbreaks to occur.
+
+## Critical Community Size (CCS)
+
+It is the minimum size of a closed population required for an infectious agent to persist in that population. If the population number is too low, after an outbreak the pathogen cannot persist and disappears. This critical mass of susceptibles is determined by the characteristics of the agent, the demographic structure, and the hygienic conditions of the host population.
+
+Example: For measles, which has a high $R_0$, the CCS is relatively large. Studies have shown that measles needs a population of at least 250,000 to 500,000 individuals to remain endemic. In contrast, diseases with a lower $R_0$ may have a much smaller CCS.
+
+## Superspreading
+
+**Superspreading** is a phenomenon in the epidemiology of infectious diseases where a small number of infected individuals are responsible for a large proportion of new infections. These individuals, known as "superspreaders," infect a much larger number of people than the expected average, thus accelerating the spread of the disease.
+
+Characteristics of Superspreading:
+* **Variability in Transmission:** There is great heterogeneity in the ability of individuals to transmit the disease, with a few individuals causing many infections while most cause few or none.
+* **Dispersion Factor (k):** The degree of superspreading can be quantified using the parameter k. Low k values indicate high superspreading, while values close to 1 indicate that the dispersion is more uniform.
+* **Specific Context:** Superspreading events usually occur in specific contexts such as mass gatherings, confined spaces, and activities where there is prolonged close contact.
+
+Example: During the COVID-19 pandemic, several superspreading events were observed, such as a single infected person infecting dozens of people at a religious gathering in South Korea. In another case, a choir event in the United States resulted in many infections from a single infected individual.
+
+Example:
+* In South Korea during the COVID-19 pandemic, superspreading events occurred in the context of religious choirs, with 11 transmission clusters associated with 641 COVID-19 disease cases.
+
+## Exponential Growth Rate
+
+The **exponential growth rate** is an epidemiological measure that describes the speed at which the number of cases of an infectious disease increases in a population at the initial time of an epidemic, when control measures have not been implemented or are minimal. This rate is fundamental for understanding the dynamics of disease spread in its early stages and for planning public health interventions.
+
+Calculation of the Exponential Growth Rate: The exponential growth rate can be calculated using the formula:
 
 $$r = \frac{\ln(C_t) - \ln(C_0)}{t}$$
 
-Donde:
+Where:
+* $r$ is the exponential growth rate.
+* $C_t$ is the number of cases at time t.
+* $C_0$ is the initial number of cases.
+* $t$ is the elapsed time.
 
--   $r$ es la tasa de crecimiento exponencial.
+## Severity Parameters
 
--   $C_t$​ es el número de casos en el tiempo t.
+## Lethality
 
--   $C_0$​ es el número de casos inicial.
+Refers to the severity of the disease with respect to death. This can be classified as IFR or CFR.
 
--   $t$ es el tiempo transcurrido.
+## Infection Fatality Ratio (IFR)
 
-# Parámetros de Severidad
+Probability of death after infection (symptomatic or asymptomatic).
 
-[Letalidad]{#letalidad}
+Example:
+* For SARS-CoV-2, age is by far the main risk factor for death. Therefore, the average IFR of a population depends on its demographic structure.
 
-:   Hace referencia a la severidad de la enfermedad con respecto a la
-    muerte. Esta puede ser clasificada con IFR o como CFR.
+## Case Fatality Ratio (CFR)
 
-[Infection Fatality Ratio (IFR)]{#ifr}
+Probability of death among reported cases. It generally only includes symptomatic cases confirmed by laboratory or by clinic. Therefore, the CFR will always be higher than the IFR.
 
-:   Probabilidad de muerte tras la infección (sintomática o
-    asintomática).
+Example:
+* The reported CFR for Ebola has been estimated in different outbreaks between 30-70%.
 
-**Ejemplo**
+## Hospitalization Fatality Ratio (HFR)
 
--   Para el SARS-CoV-2, la edad es, con diferencia, el principal factor
-    de riesgo de muerte. Por ello, el IFR promedio de una población,
-    depende de su estructura demográfica.
+The **Hospitalization Fatality Ratio (HFR)** is an epidemiological parameter that measures the proportion of hospitalized individuals with a specific disease who die from that disease. This ratio is a measure of the severity of the disease among those requiring hospitalization and provides crucial information about the effectiveness of hospital treatment and the severity of the disease in the most severe cases.
 
-[Case Fatality Ratio (CFR)]{#CFR}
+## Biases in Parameter Reporting
 
-:   Probabilidad de muerte entre los casos reportados. Por lo general
-    sólo incluye casos sintomáticos confirmados por laboratorio o por
-    clínica. Por ello, el CFR siempre será superior que el IFR.
+## Phase Bias (Dynamic or Epidemic)
 
-**Ejemplo**
+Considers the susceptibility of the population at the times when transmission pairs (cases and contacts) are observed. It is a type of sampling bias. It affects retrospective data and is related to the phase of the epidemic: during the exponential growth phase, recently symptomatic cases are overrepresented in the observed data, while during the decline phase, these cases are underrepresented, leading to the estimation of shorter and longer delay intervals, respectively ([Park et al., in progress](https://github.com/parksw3/epidist-paper)).
 
--   El CFR reportado para Ébola se ha estimado en los diferentes brotes
-    entre 30-70%. 
+## Reporting Delay
 
-[Hospitalisation Fatality Ratio (HFR)]{#hfr}
+Delay or lag between the time an event occurs (e.g., symptom onset) and the time it is reported ([Lawless, 1994](https://www.jstor.org/stable/3315820)). We can quantify it by comparing the case list with successive versions of the same or with updated aggregated reported case counts ([Cori et al., 2017](https://royalsocietypublishing.org/doi/10.1098/rstb.2016.0371)).
 
-:   El **Hospitalisation Fatality Ratio (HFR)** es un parámetro
-    epidemiológico que mide la proporción de individuos hospitalizados
-    con una enfermedad específica que fallecen a causa de esa
-    enfermedad. Este ratio es una medida de la gravedad de la enfermedad
-    entre aquellos que requieren hospitalización y proporciona
-    información crucial sobre la eficacia del tratamiento hospitalario y
-    la severidad de la enfermedad en los casos más graves
+## Right Truncation Bias
 
-# Sesgos en el reporte de Parámetros
+A type of sampling bias related to the data collection process. It arises because only cases that have been reported can be observed. Failure to account for right truncation during the growth phase of an epidemic can lead to an underestimation of the average delay ([Park et al., in progress](https://github.com/parksw3/epidist-paper)).
 
-[Sesgo de fase (dinámica o epidémica)]{#sesgofase}
+## Censoring
 
-:   Considera la susceptibilidad de la población en los momentos en que
-    se observan los pares de transmisión (casos y contactos). Es un tipo
-    de sesgo de muestreo. Afecta los datos retrospectivos y está
-    relacionado con la fase de la epidemia: durante la fase de
-    crecimiento exponencial, los casos que desarrollaron síntomas
-    recientemente están sobrerrepresentados en los datos observados,
-    mientras que, durante la fase de declive, estos casos están
-    subrepresentados, lo que lleva a la estimación de intervalos de
-    demora más cortos y más largos, respectivamente. ([Park et al., en
-    progreso](https://github.com/parksw3/epidist-paper))
+Means that we know an event occurred, but we don't know exactly when it occurred. Most epidemiological data are "doubly censored" because there is uncertainty in both primary and secondary event times. Failure to account for censoring can lead to biased estimates of the standard deviation of the delay ([Park et al., in progress](https://github.com/parksw3/epidist-paper)). Different sampling approaches can generate biases due to left and right censoring in serial interval estimation, which can propagate bias to the estimation of the incubation period and generation time ([Chen et al., 2022](https://www.nature.com/articles/s41467-022-35496-8/figures/2)).
 
-[Retraso en el reporte]{#retrasoreporte}
+## Relative Risks
 
-:   Demora o retraso entre el momento en que ocurre un evento (por
-    ejemplo, la aparición de síntomas) y el momento en que se reporta
-    ([Lawless, 1994](https://www.jstor.org/stable/3315820)). Podemos
-    cuantificar comparando la lista de casos con versiones sucesivas de
-    la misma o con los recuentos agregados de casos reportados
-    actualizados ([Cori et al.,
-    2017](https://royalsocietypublishing.org/doi/10.1098/rstb.2016.0371)).
+## Risk Ratio (RR)
 
-[Sesgo de truncamiento derecho]{#sesgotderecho}
+The Risk Ratio (RR), also called Relative Risk, compares the risk of developing a health event (disease, death) between two groups. It does so by dividing the risk (incidence proportion, attack rate) in group 1 by the risk (incidence proportion, attack rate) in group 2. The two groups are generally differentiated by demographic factors such as sex or by exposure to a suspected risk factor, for example, food consumption or contact with suspected cases.
 
-:   Tipo de sesgo de muestreo relacionado con el proceso de recolección
-    de datos. Surge porque solo se pueden observar los casos que han
-    sido reportados. No tener en cuenta el truncamiento derecho durante
-    la fase de crecimiento de una epidemia puede llevar a una
-    subestimación del promedio del retraso ([Park et al., en
-    progreso](https://github.com/parksw3/epidist-paper)).
+The formula for the Risk Ratio (RR) is:
 
-[Censura]{#censura}
+Risk of disease (incidence proportion, attack rate) in the primary group of interest / Risk of disease (incidence proportion, attack rate) in the comparison group
 
-:   Significa que sabemos que un evento ocurrió, pero no sabemos
-    exactamente cuándo ocurrió. La mayoría de los datos epidemiológicos
-    están "doblemente censurados" porque hay incertidumbre tanto en los
-    tiempos de eventos primarios como secundarios. No tener en cuenta la
-    censura puede llevar a estimaciones sesgadas de la desviación
-    estándar del retraso ([Park et al., en
-    progreso](https://github.com/parksw3/epidist-paper)). Diferentes
-    enfoques de muestreo pueden generar sesgos debido a la censura a la
-    izquierda y a la derecha en la estimación del intervalo serial, lo
-    que puede propagar el sesgo a la estimación del período de
-    incubación y el tiempo de generación ([Chen et al.,
-    2022](https://www.nature.com/articles/s41467-022-35496-8/figures/2)).
+From this, it can be concluded that:
+* If RR is equal to 1, it indicates an identical risk between the two groups.
+* If RR is greater than 1, it indicates a higher risk for the numerator group, generally the exposed group.
+* If RR is less than 1, it indicates a decreased risk for the exposed group, which suggests that the exposure may actually protect against the onset of disease.
 
-# Riesgos Relativos
+Example:
+* In an outbreak of a respiratory virus among school students, 28 out of 157 elementary school students developed tuberculosis, compared to 4 out of 137 high school students. Defining exposure as being an elementary school student, and non-exposure as being a high school student, we have:
 
-[Risk Ratio (RR)]{#rr}
-
-:   La medida Risk Ratio (RR) también llamada Razón de riesgo o riesgo
-    relativo, compara el riesgo de desarrollar un evento de salud
-    (enfermedad, muerte) entre dos grupos Lo hace dividiendo el riesgo
-    (proporción de incidencia, tasa de ataque) en el grupo 1 por el
-    riesgo (proporción de incidencia, tasa de ataque) en el grupo 2. Los
-    dos grupos generalmente se diferencian por factores demográficos
-    como el sexo o por exposición a un factor de riesgo sospechoso, por
-    ejemplo, consumo de alimento o contacto con casos sospechosos. 
-
-La fórmula para la razón de riesgo (RR) es:
-
-Riesgo de enfermedad (proporción de incidencia, tasa de ataque) en el
-grupo de interés primarioRiesgo de enfermedad (proporción de incidencia,
-tasa de ataque) en el grupo de comparación
-
-De ahí se puede tener que: 
-
--   Si RR es igual a 1 indica un riesgo idéntico entre los dos grupos. 
-
--   Si RR es mayor a 1 indica un mayor riesgo para el grupo del
-    numerador, generalmente el grupo expuesto.
-
--   Si RR es menor a 1 indica una disminución del riesgo para el grupo
-    expuesto, lo que indica que tal vez la exposición en realidad
-    protege contra la aparición de enfermedades.
-
-**Ejemplo**
-
--   En un brote de un virus respiratorio entre estudiantes de una
-    escuela, 28 de 157 estudiantes de primaria desarrollaron
-    tuberculosis, en comparación con 4 de 137 estudiantes de secundaria.
-    Definiendo la exposición cómo ser estudiante de la sede primaria, y
-    la no exposición ser estudiante de la sede secundaria, se tiene
-    que: 
-
-|  | Enfermos | Sanos | Total |
+| | Sick | Healthy | Total |
 |---|---|---|---|
-| **Estudiantes primaria** | 30 | 120 | 150 |
-| **Estudiantes secondaria** | 5 | 135 | 140 |
+| **Elementary students** | 30 | 120 | 150 |
+| **High school students** | 5 | 135 | 140 |
 | Total | 35 | 265 | 290 |
 
-Para calcular RR, primero se debe calcular la tasa de ataque para cada
-grupo. 
+To calculate RR, first calculate the attack rate for each group:
+Attack rate for exposed (Tuberculosis Primary School) = $\frac{30}{150} = 0.2 = 20\%$
+Attack rate for non-exposed (Tuberculosis Secondary School) = $\frac{5}{140} = 0.036 = 3.6\%$
 
-Tasa de ataque para expuestos (Tuberculosis Sede primaria) =
-$\frac{30}{150}=0,2=20\%$
+Thus, the RR is simply the ratio of these two risks:
+$RR = \frac{20}{3.6} = 5.5$
 
-Tasa de ataque para no expuestos (Tuberculosis Sede secundaria) =
-$\frac{51}{40}=0,036 = 3,6\%$
+Therefore, elementary school students were 5.5 times more likely to develop tuberculosis compared to high school students.
 
-Así, la RR es simplemente la razón de estos dos riesgos:
+## Odds Ratio (OR)
 
-$RR = \frac{20}{3,6}= 5,5$
+In case-control studies, the **Odds Ratio (OR)** is used to compare the odds of exposure to a risk factor between cases (individuals with the disease) and controls (individuals without the disease). This measure helps evaluate the association between exposure and disease.
 
-Por lo tanto, quienes eran estudiantes de la sede primaria tenían 5,5
-veces la posibilidad de desarrollar tuberculosis comparado con los
-estudiantes de la sede secundaria.
+Odds of exposure among cases / Odds of exposure among controls
 
-[Odd Ratio (OR)]{#or}
+It is important to note that the result is not a probability.
 
-:   En los estudios de casos y controles, el **Odds Ratio (OR)** se
-    utiliza para comparar las probabilidades de exposición a un factor
-    de riesgo entre los casos (individuos con la enfermedad) y los
-    controles (individuos sin la enfermedad). Esta medida ayuda a
-    evaluar la asociación entre la exposición y la enfermedad.
+Furthermore, if this number is:
+* Equal to 1, it means that the frequency of the event is equal in exposed and non-exposed, meaning there is no association between exposure and the event.
+* Greater than 1, it means that the frequency of the event is higher in exposed than in non-exposed, which means that exposure is a risk factor.
+* Less than 1, it means that the frequency of the event is lower in exposed than in non-exposed, and in this case, it is interpreted as the exposure being a protective factor.
 
- Odds Odds de exposición entre casosOdds de exposición entre controles
+Example:
+After an Academic Conference, an outbreak of vomiting and diarrhea was reported after lunch. Lunch included sandwiches. The total attendance was 100 people; of whom 50 attendees became ill. During the initial investigation, it was found that a total of 60 people reported having eaten the lunch sandwich. Of these 60, 35 became ill, and of the 40 who did not eat the sandwich, 15 reported symptoms of illness. Summarizing:
 
-Es importante tener en cuenta que el resultado no es una probabilidad.
-
-Además, si este número es: 
-
--   Igual a 1, significa que la frecuencia del evento es igual en
-    expuestos y no expuestos, es decir no existe una asociación entre la
-    exposición y el evento.
-
--   Mayor a 1, se tiene que la frecuencia del evento es mayor en
-    expuesto que en no expuestos, lo que significa que la exposición es
-    un factor de riesgo.
-
--   Menor a 1, significa que la frecuencia del evento es menor en
-    expuestos que en no expuestos y en este caso se interpreta como que
-    la exposición es un factor protector.
-
-**Ejemplo**
-
-Luego de una Conferencia Académica se notificó un brote de vómito y
-diarrea después del almuerzo. El almuerzo incluyó sándwiches. El total
-de asistentes fue de 100 personas; de las cuales 50 asistentes se
-enfermaron. Al realizar la investigación inicial, se encontró que en
-total 60 personas reportaron haber comido el sándwich del almuerzo. De
-estas 60, 35 se enfermaron y de las 40 que no comieron sándwich 15
-reportaron síntomas de enfermedad. Resumiendo:
-
-|  | Enfermos (Casos) | Sanos (Controles) | Total |
+| | Sick (Cases) | Healthy (Controls) | Total |
 |---|---|---|---|
-| **Expuestos (Consumió Sandwish)** | 35 | 25 | 60 |
-| **No expuestos (No consumió Sandwish)** | 15 | 25 | 40 |
+| **Exposed (Ate Sandwich)** | 35 | 25 | 60 |
+| **Non-exposed (Did Not Eat Sandwich)** | 15 | 25 | 40 |
 | Total | 50 | 50 | 100 |
 
-Calculando se tiene que; 
+Calculating, we have that:
+Odds of exposure in cases: $\frac{35}{15} = 2.33$
+Odds of exposure in controls: $\frac{25}{25} = 1$
+Odds Ratio of exposure (OR) $= \frac{2.33}{1} = 2.33$
 
-Odds de la exposición en los casos: $\frac{35}{15} = 2.3$
+This means that the odds of presenting the reported symptoms of illness due to exposure to sandwich consumption are 2.33 times the odds of developing these symptoms without having consumed the sandwich. This can be interpreted as having eaten the sandwich being a risk factor.
 
-Odds de la exposición en los controles: $\frac{25}{25}=1$
+## Outbreak Investigation
 
-Razón de chances de la exposición (OR) $= \frac{2.3}{1} = 2.3$
+## Epidemic Curve
 
-Esto quiere decir que la posibilidad de presentar los síntomas
-reportados de enfermedad por la exposición al consumo del sandwich es
-2.33 veces la posibilidad de desarrollar estos síntomas sin haber
-consumido el sándwich. Lo cual puede interpretarse como que el haber
-comido el sandwich significó un factor de riesgo.
+The **epidemic curve** is a graphical representation that shows the distribution of disease cases over time during an outbreak or epidemic. It is a fundamental tool in epidemiology to understand the dynamics of an epidemic, identify its origin, evaluate the effectiveness of interventions, and predict its evolution.
 
-# [Investigación de Brotes]{.smallcaps}
+Characteristics of the Epidemic Curve:
+* **X-axis (Horizontal):** Represents time (days, weeks, months, etc.).
+* **Y-axis (Vertical):** Represents the number of new disease cases in each unit of time.
+* **Patterns:** The shape of the curve can vary depending on how the disease is transmitted and the characteristics of the outbreak.
 
-[Curva epidémica]{#cepidemica}
+Types of Epidemic Curves:
+1.  **Point Source Curve (or Common Source Exposure):**
+    * **Characteristics:** Has a sharp peak followed by a rapid decline. It usually occurs when all cases are exposed to a common source of infection at a single moment or within a short period of time.
+    * **Example:** A food poisoning outbreak at a social event where all cases are exposed to contaminated food at the same time.
+2.  **Persistent Common Source Curve:**
+    * **Characteristics:** The curve shows a prolonged plateau followed by a drop, indicating continuous or intermittent exposure to a common source of infection.
+    * **Example:** A cholera outbreak in a community due to contaminated water supply that is not immediately corrected.
+3.  **Person-to-Person Transmission Curve:**
+    * **Characteristics:** Shows multiple successive peaks, reflecting the transmission of the disease from one person to another. Each peak represents a new generation of cases.
+    * **Example:** A seasonal flu outbreak, where the first case infects others, who in turn infect more people, creating several peaks over time.
 
-:   La **curva epidémica** es una representación gráfica que muestra la
-    distribución de los casos de una enfermedad en función del tiempo
-    durante un brote o epidemia. Es una herramienta fundamental en
-    epidemiología para comprender la dinámica de una epidemia,
-    identificar su origen, evaluar la efectividad de las intervenciones
-    y predecir su evolución.
+## Endemicity
 
-**Características de la Curva Epidémica:**
+Implies relatively stable levels of transmission reflected in a more or less constant incidence of cases. This does not mean that there are no sudden changes in incidence, with periods of high transmission, due, for example, to seasonal phenomena or sudden changes in the number of susceptibles (immigrants, for example). The boundary between endemicity and epidemicity is very difficult to establish, with the exception of imported diseases, where the previous endemic level was zero. Endemics can experience temporary changes in their manifestation, which can be described as cycles.
 
--   **Eje X (Horizontal):** Representa el tiempo (días, semanas, meses,
-    etc.).
+## Epidemicity
 
--   **Eje Y (Vertical):** Representa el número de casos nuevos de la
-    enfermedad en cada unidad de tiempo.
+Implies instability in transmission, changing levels that can range from zero to millions of cases.
 
--   **Patrones:** La forma de la curva puede variar dependiendo de cómo
-    se transmite la enfermedad y de las características del brote.
+## Outbreak
 
-**Tipos de Curvas Epidémicas:**
+A term commonly used to describe the sudden and unexpected appearance of cases of a disease.
 
-1.  **Curva de Punto (o de Fuente Común de Exposición):**
+## Seasonal Cycles
 
-    -   **Características:** Tiene un pico agudo seguido de un descenso
-        rápido. Suele ocurrir cuando todos los casos están expuestos a
-        una fuente común de infección en un solo momento o en un periodo
-        breve de tiempo.
+Occur linked to seasons (winter and respiratory viruses in temperate countries), or to climatic cycles (rainy season and malaria in the tropics).
 
-    -   **Ejemplo:** Un brote de intoxicación alimentaria en un evento
-        social donde todos los casos están expuestos a un alimento
-        contaminado al mismo tiempo.
+## Pandemic
 
-2.  **Curva de Fuente Común Persistente:**
+Refers to epidemics of great magnitude in terms of geographical extent and prolonged duration, such as influenza, cholera, or AIDS in our time.
 
-    -   **Características:** La curva muestra una meseta prolongada
-        seguida de una caída, lo que indica una exposición continua o
-        intermitente a una fuente común de infección.
+## Basic Concepts
 
-    -   **Ejemplo:** Un brote de cólera en una comunidad debido al
-        suministro de agua contaminada que no se corrige de inmediato.
+## Infection vs. Disease
 
-3.  **Curva de Transmisión Persona a Persona:**
+Infection is the process in which an infectious agent enters, develops, and multiplies in the organism of a person or animal. During infection, an individual can be infectious, meaning capable of transmitting the agent to others, even if they do not present symptoms.
 
-    -   **Características:** Muestra múltiples picos sucesivos, que
-        reflejan la transmisión de la enfermedad de una persona a otra.
-        Cada pico representa una nueva generación de casos.
+Disease, on the other hand, is the state in which an infection results in the development of clinical symptoms. An individual with disease is generally infectious, but there may be periods when they are infectious before showing symptoms.
 
-    -   **Ejemplo:** Un brote de gripe estacional, donde el primer caso
-        infecta a otros, quienes a su vez infectan a más personas,
-        creando varios picos a lo largo del tiempo.
+Example: A person can be infected with the HIV virus and be infectious without showing symptoms for years. However, when they develop AIDS, they present severe symptoms. It is crucial to understand that the infectious agent (like HIV) is transmitted, not the symptoms of the disease (like AIDS).
 
-[Endemicidad]{#endemicidad}
+This distinction is very important in the epidemiology of infectious diseases.
 
-:   Implica niveles relativamente estables de transmisión que se
-    reflejan en una incidencia más o menos constante de casos. No quiere
-    decir que no se presenten cambios bruscos en la incidencia, con
-    períodos de transmisión alta, debidos por ejemplo a fenómenos
-    estacionales o cambios bruscos en el número de susceptibles
-    (inmigrantes, por ejemplo). El límite entre endemicidad y
-    endemicidad es muy difícil de establecer, con excepción de aquellas
-    enfermedades importadas, en que el nivel endémico previo era cero.
-    Las endemias pueden experimentar cambios temporales en su
-    manifestación, los cuales se pueden describir como ciclos.
+## Pathogen
 
-[Epidemicidad]{#epidemicidad}
+A **pathogen** is a microorganism that can cause disease in a host organism. These can be subdivided into living and non-living. Living ones include bacteria, such as *Mycobacterium tuberculosis* which causes tuberculosis; parasites, such as *Plasmodium falciparum* which causes malaria; and fungi, such as *Candida albicans* which causes candidiasis. Although viruses, such as SARS-CoV-2 which causes COVID-19, are also pathogens, they are not considered living because they cannot carry out metabolic processes by themselves and require a host cell to replicate. All these pathogens invade, replicate, and damage host tissues, causing diseases. Their study is fundamental in epidemiology to develop effective strategies for the prevention, control, and treatment of infectious diseases.
 
-:   Implica inestabilidad en la transmisión, niveles cambiantes que
-    pueden ir desde cero hasta millones de casos. 
+## Case
 
-[Brote]{#brote}
+A **case** is a person identified as suffering from a disease or event of epidemiological interest, either through clinical diagnosis, laboratory tests, or epidemiological criteria. Cases can be classified as follows:
+* **Suspected case:** Individual who presents symptoms compatible with a disease but has not yet been confirmed by laboratory tests.
+* **Probable case:** Individual who shows signs and symptoms of a disease and meets specific epidemiological criteria, but lacks laboratory confirmation.
+* **Confirmed case:** Individual diagnosed with a disease through specific laboratory tests.
+* **Index case (primary case):** The first case detected or reported in an epidemic outbreak.
+* **Secondary case:** A case that occurs as a result of transmission from the index or primary case.
 
-:   Es un término empleado comúnmente para describir la aparición brusca
-    e inesperada de casos de una enfermedad.
+## Host
 
-[Ciclos estacionales]{#ciclos}
+A living person or animal (mammal, reptile, bird, etc.), which under natural circumstances allows the subsistence or lodging of an infectious agent. Arthropod insects are not considered hosts.
 
-:   Se presentan ligados a las estaciones (invierno y virus
-    respiratorios en países templados), o a los ciclos climáticos
-    (temporada de lluvias y malaria en el trópico).
+## Vector
 
-[Pandemia]{#pandemia}
+A vector can be defined as a living organism capable of transmitting an infectious agent between other living organisms ([WHO, 2020](https://www.who.int/news-room/fact-sheets/detail/vector-borne-diseases)). However, this definition may vary according to the criteria used. Some of the criteria used include the anthropocentric approach (diseases transmitted to humans), the micropredator approach (which emphasizes the ingestion of host fluids through direct contact), the hematophagous arthropod approach (arthropods that feed on blood), the morbidity-based approach (transmission of diseases to the host), the mobility-based approach (vector with high mobility), and the sequential infection transmission approach (mutual transmission of infection between vector and host) ([Wilson et al., 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5352812/#RSTB20160085C19)). Depending on the selected points, the definition can vary and encompass diverse living beings. In addition, transmission can be a simple mechanical carrying function (Mechanical Transmission), or the infectious agent can multiply or develop within the vector (Biological Transmission).
 
-:   Se refiere a epidemias de gran magnitud en cuanto a extensión
-    geográfica, y prolongada duración, del tipo de la influenza, el
-    cólera o el SIDA en nuestra época.
-
-# Conceptos Básicos
-
-[Infección vs. enfermedad]{#infvsenf}
-
-:   La infección es el proceso en el cual un agente infeccioso entra, se
-    desarrolla y se multiplica en el organismo de una persona o animal.
-    Durante la infección, un individuo puede ser infeccioso, es decir,
-    capaz de transmitir el agente a otros, incluso si no presenta
-    síntomas.
-
-La enfermedad, por otro lado, es el estado en el cual una infección
-resulta en el desarrollo de síntomas clínicos. Un individuo con
-enfermedad generalmente es infeccioso, pero puede haber periodos en los
-que sea infeccioso antes de mostrar síntomas.
-
-**Ejemplo:** Una persona puede estar infectada con el virus del VIH y
-ser infecciosa sin mostrar síntomas durante años. Sin embargo, cuando
-desarrolla SIDA, presenta síntomas graves. Es crucial entender que se
-transmite el agente infeccioso (como el VIH), no los síntomas de la
-enfermedad (como el SIDA).
-
-Esta distinción es muy importante en epidemiología de enfermedades
-infecciosas.
-
-[Agente Patógeno]{#patogeno}
-
-:   Un **agente patógeno** es un microorganismo que puede causar
-    enfermedades en un organismo hospedero. Estos pueden subdividirse en
-    vivos y no vivos. Los vivos incluyen bacterias, como el
-    Mycobacterium tuberculosis que causa tuberculosis; parásitos, como
-    el Plasmodium falciparum que causa malaria; y hongos, como el
-    Candida albicans que causa candidiasis. Aunque los virus, como el
-    SARS-CoV-2 que causa COVID-19, también son agentes patógenos, no se
-    consideran vivos porque no pueden llevar a cabo procesos metabólicos
-    por sí mismos y requieren una célula huésped para replicarse. Todos
-    estos patógenos invaden, se replican y dañan los tejidos del
-    huésped, provocando enfermedades. Su estudio es fundamental en
-    epidemiología para desarrollar estrategias efectivas de prevención,
-    control y tratamiento de enfermedades infecciosas.
-
-[Caso]{#caso}
-
-:   Un **caso** es una persona identificada como padeciente de una
-    enfermedad o evento de interés epidemiológico, ya sea mediante
-    diagnóstico clínico, pruebas de laboratorio o criterios
-    epidemiológicos. Los casos se pueden clasificar de la siguiente
-    manera:
-
--   **Caso sospechoso:** Individuo que presenta síntomas compatibles con
-    una enfermedad pero aún no ha sido confirmado por pruebas de
-    laboratorio.
-
--   **Caso probable:** Individuo que muestra signos y síntomas de una
-    enfermedad y cumple con criterios epidemiológicos específicos, pero
-    no tiene confirmación de laboratorio.
-
--   **Caso confirmado:** Individuo diagnosticado con una enfermedad
-    mediante pruebas de laboratorio específicas.
-
--   **Caso índice (caso primario):** El primer caso detectado o
-    notificado en un brote epidémico.
-
--   **Caso secundario:** Un caso que ocurre como resultado de la
-    transmisión desde el caso índice o primario.
-
-[Hospedero]{#hospedero}
-
-:   Persona o animal vivo (mamífero, reptil, ave, etc), que en
-    circunstancias naturales permite la subsistencia o el alojamiento de
-    un agente infeccioso. No se consideran hospederos a los insectos
-    artrópodos.
-
-[Vector]{#vector}
-
-:   Un vector puede definirse como un organismo vivo capaz de transmitir
-    un agente infeccioso entre otros organismos vivos [(OMS,
-    2020).](https://www.who.int/news-room/fact-sheets/detail/vector-borne-diseases)
-    Sin embargo, esta definición puede variar de acuerdo con los
-    criterios que se empleen. Algunos de los criterios empleados
-    incluyen el enfoque antropocéntrico (enfermedades transmitidas hacia
-    humanos), el de microdepredador (que enfatiza la ingesta de fluidos
-    del huésped mediante contacto directo), el de artrópodos hematófagos
-    (artrópodos que se alimentan de sangre), el basado en morbilidad
-    (transmisión de enfermedades al huésped), el basado en movilidad
-    (vector con alta movilidad) y el de transmisión secuencial de la
-    infección (transmisión mutua de la infección entre el vector y el
-    huésped) [(Wilson et al.,
-    2017).](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5352812/#RSTB20160085C19)
-    Dependiendo de los puntos seleccionados, la definición puede variar
-    y abarcar diversos seres vivos. Además, la transmisión puede
-    tratarse de una función de simple acarreo mecánico (Transmisión
-    Mecánica), o el agente infeccioso puede multiplicarse o
-    desarrollarse dentro del vector (Transmisión Biológica).
-
-Ejemplo: El mosquito Aedes aegypti es vector del virus del Dengue.
-
-[Portador]{#portador}
-
-:   Persona (o animal) que alberga un agente infeccioso específico sin
-    presentar síntomas o signos clínicos de esta, y que constituye una
-    fuente potencial de infección para el ser humano. 
-
-[Reservorio]{#reservorio}
-
-:   Cualquier ser humano, animal, artrópodo, planta, suelo o materia
-    inanimada, o combinación de estos, donde normalmente vive y se
-    multiplica un agente infeccioso y del cual depende para su
-    supervivencia, reproduciéndose de manera que pueda ser transmitido a
-    un huésped susceptible.
-
-[Mínimo tamaño poblacional (Minimum Community Size)]{#mcz}
-
-:   Se define como el tamaño mínimo de una población cerrada dentro del
-    cual un patógeno no zoonótico de persona a persona puede persistir
-    indefinidamente. En otras palabras, es el tamaño total de la
-    población (de individuos susceptibles e infectados, u otros)
-    necesario para sostener un brote una vez que ha aparecido. 
-
-[Superdispersión]{#superdispersion}
-
-:   Evento en el que una enfermedad infecciosa se propaga mucho más de
-    lo habitual. Asimismo, un individuo que infecta de manera
-    desproporcionada a un gran número de individuos y probablemente
-    impulsa la velocidad y la gravedad de un brote se conoce como
-    superpropagador. 
-
-[Transmisión vectorial]{#tvectorial}
-
-:   La transmisión vectorial significa que una infección puede ser
-    transmitida de un vector (por ejemplo, mosquitos) a los humanos.
-    Ejemplos de enfermedades transmitidas por vectores incluyen la
-    malaria y el dengue. La Organización Mundial de la Salud tiene una
-    [hoja
-    informativa](https://www.who.int/news-room/fact-sheets/detail/vector-borne-diseases)
-    sobre las enfermedades transmitidas por vectores con información
-    clave y una lista de ellas según su vector.
-
-[Excreción viral (Viral Shedding)]{#shedding}
-
-:   La **excreción viral** es el proceso mediante el cual un virus se
-    libera del organismo infectado al medio ambiente, donde puede
-    potencialmente infectar a otros individuos. Este fenómeno es
-    fundamental en la transmisión de enfermedades virales, ya que
-    determina cuándo y cómo una persona infectada puede ser contagiosa.
-
-[Patogenicidad]{#patogenicidad}
-
-:   La **patogenicidad** es la capacidad de un agente infeccioso, como
-    un virus, bacteria, hongo o parásito, para causar enfermedad en un
-    huésped. Esta capacidad depende de varios factores inherentes al
-    agente infeccioso y su interacción con el huésped. La patogenicidad
-    se evalúa en términos cualitativos, es decir, si un microorganismo
-    es capaz de causar enfermedad o no.
-
-**Características de la Patogenicidad:**
-
--   **Capacidad para Causar Enfermedad:** No todos los microorganismos
-    son patógenos; la patogenicidad indica si un organismo puede causar
-    enfermedad en condiciones normales.
+Example: The *Aedes aegypti* mosquito is a vector of the Dengue virus.
 
--   **Mecanismos de Patogenicidad:** Incluye varios procesos biológicos
-    que permiten al agente infeccioso invadir y dañar al huésped, como
-    la adhesión a células huésped, la invasión de tejidos, la evasión
-    del sistema inmunitario y la producción de toxinas.
+## Carrier
 
-[Virulencia]{#virulencia}
+A person (or animal) that harbors a specific infectious agent without presenting clinical symptoms or signs of it, and that constitutes a potential source of infection for humans.
 
-:   La **virulencia** es una medida cuantitativa de la gravedad de la
-    enfermedad causada por un agente infeccioso. Representa la
-    intensidad de la patogenicidad de un microorganismo, es decir, su
-    capacidad no solo para infectar, sino también para causar daño
-    significativo al huésped. A menudo, la virulencia se evalúa en
-    términos de la tasa de mortalidad, la gravedad de los síntomas y el
-    impacto en la salud del huésped.
+## Reservoir
 
-**Características de la Virulencia:**
+Any human, animal, arthropod, plant, soil, or inanimate matter, or combination thereof, where an infectious agent normally lives and multiplies and from which it depends for its survival, reproducing in such a way that it can be transmitted to a susceptible host.
 
--   **Gravedad de la Enfermedad:** Cuantifica el daño que un patógeno
-    puede causar en el huésped, incluyendo la severidad de los síntomas
-    y la tasa de mortalidad.
+## Minimum Community Size (MCS)
 
--   **Factores de Virulencia:** Moléculas y mecanismos que permiten al
-    patógeno invadir al huésped, evadir su sistema inmunitario, y causar
-    daño. Estos incluyen toxinas, enzimas, proteínas de adhesión y
-    mecanismos de evasión inmunitaria.
+It is defined as the minimum size of a closed population within which a non-zoonotic person-to-person pathogen can persist indefinitely. In other words, it is the total size of the population (of susceptible and infected individuals, or others) necessary to sustain an outbreak once it has appeared.
 
-[Resistencia natural]{#rnatural}
+## Superspreading
 
-:   La **resistencia natural** a un patógeno se refiere a la capacidad
-    inherente de un organismo para evitar la infección o combatir un
-    agente infeccioso sin la necesidad de una exposición previa,
-    vacunación o tratamiento. Esta resistencia puede ser el resultado de
-    varias características biológicas y genéticas del huésped que
-    impiden la entrada, replicación o propagación del patógeno.
+An event in which an infectious disease spreads much more than usual. Likewise, an individual who disproportionately infects a large number of individuals and likely drives the speed and severity of an outbreak is known as a superspreader.
 
-**Características de la Resistencia Natural:**
+## Vectorial Transmission
 
--   **Inherente:** Es una característica innata del organismo, presente
-    sin necesidad de una exposición previa al patógeno.
+Vectorial transmission means that an infection can be transmitted from a vector (e.g., mosquitoes) to humans. Examples of vector-borne diseases include malaria and dengue. The World Health Organization has a [fact sheet](https://www.who.int/news-room/fact-sheets/detail/vector-borne-diseases) on vector-borne diseases with key information and a list of them according to their vector.
 
--   **Genética:** A menudo, la resistencia natural está determinada por
-    factores genéticos que pueden variar entre individuos y poblaciones.
+## Viral Shedding
 
--   **Específica del Patógeno:** La resistencia natural puede ser
-    específica para ciertos patógenos mientras que otros pueden no verse
-    afectados.
+**Viral shedding** is the process by which a virus is released from the infected organism into the environment, where it can potentially infect other individuals. This phenomenon is fundamental in the transmission of viral diseases, as it determines when and how an infected person can be contagious.
 
-**Ejemplo:** En estudios realizados en África Subsahariana, se ha
-observado que las poblaciones con un alto porcentaje de individuos
-Duffy-negativos presentan una muy baja incidencia de infecciones por
-Plasmodium vivax. En contraste, en regiones de Asia y América del Sur,
-donde la mayoría de las personas son Duffy-positivas, la malaria por
-Plasmodium vivax es más común.
+## Pathogenicity
 
-[Infestación]{#infestacion}
+**Pathogenicity** is the ability of an infectious agent, such as a virus, bacterium, fungus, or parasite, to cause disease in a host. This ability depends on several factors inherent to the infectious agent and its interaction with the host. Pathogenicity is evaluated qualitatively, meaning whether a microorganism is capable of causing disease or not.
 
-:   Es un término empleado para un hospedero afectado por ectoparásitos,
-    pulgas por ejemplo. También para referirse a la infestación por
-    insectos o reservorios en casas o lugares (la casa está infestada de
-    tratominos, la ciudad está infestada por ratas, la tasa de
-    infestación es del 10%). 
+Characteristics of Pathogenicity:
+* **Ability to Cause Disease:** Not all microorganisms are pathogenic; pathogenicity indicates whether an organism can cause disease under normal conditions.
+* **Mechanisms of Pathogenicity:** Includes various biological processes that allow the infectious agent to invade and harm the host, such as adhesion to host cells, tissue invasion, immune system evasion, and toxin production.
 
-[Infección patente]{#ipatente}
+## Virulence
 
-:   Es el período durante el cual el agente infeccioso todavía no ha
-    producido ningún signo ni síntoma, pero ya es detectable por algún
-    medio en el hospedero.
+**Virulence** is a quantitative measure of the severity of the disease caused by an infectious agent. It represents the intensity of the pathogenicity of a microorganism, that is, its ability not only to infect but also to cause significant harm to the host. Often, virulence is evaluated in terms of mortality rate, symptom severity, and impact on host health.
 
-[Infección latente o subclínica]{#ilatente}
+Characteristics of Virulence:
+* **Severity of Disease:** Quantifies the harm a pathogen can cause to the host, including symptom severity and mortality rate.
+* **Virulence Factors:** Molecules and mechanisms that allow the pathogen to invade the host, evade its immune system, and cause harm. These include toxins, enzymes, adhesion proteins, and immune evasion mechanisms.
 
-:   El agente infeccioso está presente en el hospedero, pero no hay
-    indicios de su presencia. Este estado es muy difícil de diferenciar
-    de la incubación en el hospedero.
+## Natural Resistance
 
-[Enfermo]{#enfermo}
+**Natural resistance** to a pathogen refers to the inherent ability of an organism to avoid infection or combat an infectious agent without the need for prior exposure, vaccination, or treatment. This resistance can be the result of various biological and genetic characteristics of the host that prevent the entry, replication, or spread of the pathogen.
 
-:   El hospedero presenta signos o síntomas patológicos.
+Characteristics of Natural Resistance:
+* **Inherent:** It is an innate characteristic of the organism, present without the need for prior exposure to the pathogen.
+* **Genetic:** Often, natural resistance is determined by genetic factors that can vary among individuals and populations.
+* **Pathogen-Specific:** Natural resistance can be specific to certain pathogens while others may not be affected.
 
-Portador
+Example: In studies conducted in Sub-Saharan Africa, it has been observed that populations with a high percentage of Duffy-negative individuals have a very low incidence of *Plasmodium vivax* infections. In contrast, in regions of Asia and South America, where most people are Duffy-positive, *Plasmodium vivax* malaria is more common.
 
-:   Es un estado infectivo prolongado, con eliminación persistente del
-    agente infeccioso. Puede ser portador enfermo, portador
-    convaleciente o portador sano.
+## Infestation
 
-[Inmune]{#inmune}
+Is a term used for a host affected by ectoparasites, fleas for example. Also to refer to infestation by insects or reservoirs in houses or places (the house is infested with bed bugs, the city is infested with rats, the infestation rate is 10%).
 
-:   Posee protección activa o pasiva, celular y/o humoralmente mediada
-    contra la infección.
+## Patent Infection
 
-[Inmunidad Activa]{#inmuneactiva}
+Is the period during which the infectious agent has not yet produced any signs or symptoms, but is already detectable by some means in the host.
 
-:   Inmunidad debida a una exposición previa a antígenos del agente o
-    similares a él.
+## Latent or Subclinical Infection
 
-[Inmunidad Pasiva]{#inmunepasiva}
+The infectious agent is present in the host, but there is no indication of its presence. This state is very difficult to differentiate from incubation in the host.
 
-:   Inmunidad debida a la transferencia de anticuerpos, maternos o de
-    otro origen.
+## Sick
 
-[Rango de hospederos]{#rhospederos}
+The host presents pathological signs or symptoms.
 
-:   Aquellas especies de organismos que son naturalmente susceptibles a
-    cierto agente infeccioso.
+## Carrier
 
-Reservorio
+Is a prolonged infective state, with persistent elimination of the infectious agent. It can be a sick carrier, convalescent carrier, or healthy carrier.
 
-:   Especies o poblaciones que son capaces de mantener en la naturaleza
-    un determinado agente infeccioso.
+## Immune
 
-[Hospedero definitivo]{#hostdefinitivo}
+Possesses active or passive protection, cell and/or humorally mediated against infection.
 
-:   Aquel en el cual se realiza la reproducción sexual del agente,
-    cuando este tiene una fase sexual obligatoria en su ciclo de vida.
-    Esto sucede en muchos helmintos y protozoarios.
+## Active Immunity
 
-[Hospedero intermediario]{#hostintermed}
+Immunity due to previous exposure to antigens of the agent or similar to it.
 
-:   Cuando el ciclo vital involucra dos especies diferentes de
-    hospederos, este término describe al hospedero en el cual se realiza
-    la fase asexual de la reproducción.
+## Passive Immunity
 
-[Hospedero amplificador]{#hostamplif}
+Immunity due to the transfer of antibodies, maternal or of other origin.
 
-:   Una especie de hospedero que desarrolla epidemias periódicas por un
-    determinado agente, y que genera un aumento en el tamaño de la
-    población de agentes lo suficientemente grande, como para propagarse
-    a otras especies usualmente no expuestas a ese agente.
+## Host Range
 
-[Hospedero final]{#hotfinal}
+Those species of organisms that are naturally susceptible to a certain infectious agent.
 
-:   Aquella especie o especies, cuyos individuos son infectados pero no
-    son funcionalmente infectivos, y por consiguiente no transmiten la
-    infección.
+## Reservoir
 
-[Duración de la infectividad]{#tinfect}
+Species or populations that are capable of maintaining a certain infectious agent in nature.
 
-:   Guarda relación directa con el tiempo durante el cual el hospedero
-    infectado excreta cantidades considerables del agente infeccioso.
+## Definitive Host
 
-[Recaída o recrudescencia]{#recaida}
+The one in which the sexual reproduction of the agent takes place, when it has an obligatory sexual phase in its life cycle. This occurs in many helminths and protozoa.
 
-:   Implica la recurrencia de los signos clínicos después de un período
-    de enfermedad inaparente o subclínica.
+## Intermediate Host
 
-[Transmisión vertical]{#tvertical}
+When the life cycle involves two different host species, this term describes the host in which the asexual phase of reproduction takes place.
 
-:   Implica la transferencia directa de un agente infeccioso desde un
-    progenitor hacia la prole, bien sea por la vía transplacentaria o
-    transovárica.
+## Amplifying Host
 
-[Transmisión horizontal]{#thorizontal}
+A host species that develops periodic epidemics by a certain agent, and that generates an increase in the size of the agent population large enough to spread to other species not usually exposed to that agent.
 
-:   Se refiere a la transferencia directa del patógeno desde alguien
-    diferente a los progenitores.
+## Dead-end Host
+
+Those species or species whose individuals are infected but are not functionally infective, and therefore do not transmit the infection.
+
+## Duration of Infectivity
+
+Is directly related to the time during which the infected host excretes considerable amounts of the infectious agent.
+
+## Relapse or Recrudescence
+
+Implies the recurrence of clinical signs after a period of inapparent or subclinical illness.
+
+## Vertical Transmission
+
+Implies the direct transfer of an infectious agent from a parent to offspring, either transplacentally or transovarially.
+
+## Horizontal Transmission
+
+Refers to the direct transfer of the pathogen from someone other than the parents.
+
 
 # REFERENCIAS
 

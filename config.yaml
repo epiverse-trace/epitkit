@@ -11,10 +11,10 @@
 carpentry: 'epitkit'
 
 # Overall title for pages.
-title: 'Curso en ciencia de datos en salud pública y modelamiento de enfermedades infecciosas'
+title: 'Epi Training Kit materials for Introduction to Infectious Disease Modelling for Public Health Course'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: '2024-09-09'
+created: '2024-06-04'
 
 # Comma-separated list of keywords for the lesson
 keywords: 'software, data, lesson, The Carpentries'
@@ -27,7 +27,7 @@ life_cycle: 'pre-alpha'
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/epiverse-trace/epitkit'
+source: 'https://github.com/joskerus/EpiTKit-EN'
 
 # Default branch of your lesson
 branch: 'main'
@@ -59,13 +59,9 @@ contact: 'gomezblaura@javeriana.edu.co'
 
 # Order of episodes in your lesson
 episodes:
-- Taller-R-RStudio.Rmd
-- Visualizacion.Rmd
-- Reporte.Rmd
-- limpieza.Rmd
-- zika.Rmd
-- estadistica.Rmd
-- Banco_errores.Rmd
+- Statistics.Rmd
+- Deterministic_model.Rmd
+- Error_bank.Rmd
 
 
 # Information for Learners
@@ -84,5 +80,5 @@ profiles:
 varnish: epiverse-trace/varnish@epiversetheme
 # this is carpentries/sandpaper#533 in our fork so we can keep it up to date with main
 sandpaper: epiverse-trace/sandpaper@patch-renv-github-bug
-lang: es
+lang: en
 
