@@ -3,7 +3,8 @@ title: Setup
 ---
 
 The Introduction to Infectious Disease Modelling for Public Health course was developed by Pontificia Universidad Javeriana for African audiences, as part of the EpiTKit training strategy under the Epiverse Initiative. The course aims to strengthen knowledge and skills in infectious disease modelling and data analysis within the public health context.
- 
+
+
 ## **BACKGROUND**
 
 Enhancing Tools for Response, Analytics and Control of Epidemics in Latin America and the Caribbean (**TRACE-LAC**) is a project funded by the **International Development Research Centre (IDRC)** with the objective of building a **high-quality, open-source, and interoperable data toolkit** for epidemic analytics --- and fostering an engaged user community --- to support decision-makers in responding to epidemics in Latin America.
@@ -12,7 +13,7 @@ The **Pontificia Universidad Javeriana (Javeriana)** has been supported by **IDR
 
 The **EpiTKit** consists of a series of modules and units for virtual training in **public health data science** and **infectious disease modeling**, aligned with the **Epiverse initiative** led by **data.org**. To date, **10 units** have been developed in **Spanish**, tailored for audiences in **Latin America and the Caribbean**.
 
-This new phase, developed in **partnership between Pontificia Universidad Javeriana and data.org**, expands the reach of the **EpiTKit** to **Africa** through a **South-South collaboration**, emphasizing **multilingualism** and **localism** in the **translation** and **cultural adaptation** of training materials.  The initiative aims to strengthen local capacities in data science for public health while fostering knowledge exchange between regions facing similar gaps and epidemiological challenges.
+This new phase, developed through a partnership between Pontificia Universidad Javeriana and data.org, with the collaboration of the Medical Research Council Unit The Gambia at the London School of Hygiene & Tropical Medicine, expands the reach of the EpiTKit to Africa through a South-South collaboration. It emphasizes multilingualism and localism in the translation and cultural adaptation of training materials. The initiative aims to strengthen local capacities in data science for public health, while promoting knowledge exchange between regions facing similar gaps and epidemiological challenges.
 
 ## **GENERAL OBJECTIVE**
 
@@ -40,7 +41,9 @@ The five units to be translated and adapted are:
 
 ## **INSTITUTIONS**
 
-Pontificia Universidad Javeriana, el Medical Research Council Unit en Gambia y data.org.
+Pontificia Universidad Javeriana
+data.org
+The Medical Research Council Unit The Gambia at the London School of Hygiene & Tropical Medicine
   
 For more information about the project, visit our page:
 [Project page on GitHub](https://epiverse-trace.github.io/translation-epitkit/)
