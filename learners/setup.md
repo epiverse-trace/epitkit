@@ -2,11 +2,8 @@
 title: Setup
 ---
 
-The Introduction to Infectious Disease Modelling for Public Health Course has been developed by Pontificia Universidad Javeriana for the African continent as part of the EpiTKit training strategy under the Epiverse project.
-This course is designed to enhance knowledge and skills in disease modeling and data analysis within the public health context.
-
-### Expanding the Epi Training Kit: A South-South Collaboration for Multilingual and Localized Public Health Data Science Training Materials in Africa
-
+The Introduction to Infectious Disease Modelling for Public Health course was developed by Pontificia Universidad Javeriana for African audiences, as part of the EpiTKit training strategy under the Epiverse Initiative. The course aims to strengthen knowledge and skills in infectious disease modelling and data analysis within the public health context.
+ 
 ## **BACKGROUND**
 
 Enhancing Tools for Response, Analytics and Control of Epidemics in Latin America and the Caribbean (**TRACE-LAC**) is a project funded by the **International Development Research Centre (IDRC)** with the objective of building a **high-quality, open-source, and interoperable data toolkit** for epidemic analytics --- and fostering an engaged user community --- to support decision-makers in responding to epidemics in Latin America.
