@@ -96,7 +96,8 @@ if(!require("infer")) install.packages("infer")
 if (!require("cfr")) install.packages("cfr")
 
 
-
+```
+```{r}
 #Before start and eveytime that you start a session in R charge this libraries 
 library(ggplot2)
 library(dplyr)
@@ -109,7 +110,7 @@ library(cfr)
 
 <center>
 
-[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epiverse-trace/Error_bank.html)
+[![](fig/dudas.png){width="100"}](https://joskerus.github.io/EpiTKit-EN/Error_bank.html)
 
 </center>
 
@@ -241,7 +242,7 @@ It is important to note that, due to the skewness of the distribution, the mean 
 
 <center>
 
-[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epiverse-trace/Error_bank.html)
+[![](fig/dudas.png){width="100"}](https://joskerus.github.io/EpiTKit-EN/Error_bank.html)
 
 </center>
 
@@ -277,7 +278,7 @@ ggplot(data = table, aes(x = type_of_contagion, y = perc)) +
 
 <center>
 
-[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epiverse-trace/Error_bank.html)
+[![](fig/dudas.png){width="100"}](https://joskerus.github.io/EpiTKit-EN/Error_bank.html)
 
 </center>
 
@@ -308,7 +309,7 @@ An introduction to statistical inference and confidence intervals can be found i
 
 <center>
 
-[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epiverse-trace/Error_bank.html)
+[![](fig/dudas.png){width="100"}](https://joskerus.github.io/EpiTKit-EN/Error_bank.html)
 
 </center>
 
@@ -845,7 +846,7 @@ plot(influenza_incubacion)
 
 <center>
 
-[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epiverse-trace/Error_bank.html)
+[![](fig/dudas.png){width="100"}](https://joskerus.github.io/EpiTKit-EN/Error_bank.html)
 
 </center>
 
@@ -999,7 +1000,7 @@ This is because the CFR package performs the construction of the CI by the metho
 
 <center>
 
-[![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epiverse-trace/Error_bank.html)
+[![](fig/dudas.png){width="100"}](https://joskerus.github.io/EpiTKit-EN/Error_bank.html)
 
 </center>
 
