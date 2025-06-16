@@ -1,6 +1,6 @@
 ---
 title: Bank of frequently asked questions and errors
-date: '2024-11-22'
+date: '2025-06-16'
 output:
   html_document:
     self_contained: true
@@ -11,7 +11,7 @@ licenses: CC-BY
 topics:
 - R
 - Rstudio
-- Spanish
+- English
 categories: practicals
 always_allow_html: true
 teaching: 80
@@ -446,7 +446,7 @@ data %>%  group_by(country) %>%
 - A very frequent error is that the grouped object is stored (`group_by`), since the ungrouping action was not performed at the end. This can lead to errors such as incorrect calculations, summaries per group instead of over the whole data, and problems when performing subsequent operations on the dataset. Therefore, we recommend always using (`ungroup`) before storing. To use `ungroup()` just put it at the end.
 
 ```{r, eval=FALSE}
-datos <- data %>%
+data <- data %>%
   group_by(category) %>%
   data_processing(...) %>%
   ungroup()
@@ -491,11 +491,12 @@ Let's see how it would not be solved first.
 A common mistake when trying to solve this problem is to apply the ungroup function without storing the result.
 
 ```{r}
-# aplicación equivocada de ungroup
+# incorrect use of ungroup
 by_day %>% ungroup()
 
-# si bien desagrupa el objeto para imprimirlo,
-# mientras no se almacene  el objeto serguirá agrupado
+# although it ungroups the object for printing,
+# as long as the object is not stored, it will remain grouped
+
 by_day %>% mutate(id = row_number())
 ```
 
