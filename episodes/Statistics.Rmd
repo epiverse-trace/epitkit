@@ -839,7 +839,7 @@ influenza_incubation
 
 ```{r}
 # Plot the retrieved incubation period data
-plot(influenza_incubacion)
+plot(influenza_incubation)
 ```
 
 :::
@@ -933,7 +933,7 @@ The symbol α is known as the significance level.
 
 In general, a confidence interval is constructed with the following ingredients:
 
-$\text{Estimador} ±(\text{coeficiente de confiabilidad})*(\text{error estándar})$
+$\text{Estimator} ±(\text{reliability coefficient})*(\text{standard error})$
 
 :::: challenge
 
