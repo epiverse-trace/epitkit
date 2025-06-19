@@ -2,178 +2,104 @@
 title: Setup
 ---
 
-El curso Ciencia de Datos en Salud Pública y 
-Modelamiento de Enfermedades Infecciosas, 
-ha sido desarrollado por la Pontificia Universidad Javeriana 
-como parte de la estrategia de entrenamiento EpiTKit 
-del proyecto Epiverse TRACE-LAC. 
-Este curso está diseñado para impulsar el conocimiento y 
-las habilidades en modelamiento de enfermedades y 
-análisis de datos en el contexto de la salud pública.  
+The Introduction to Infectious Disease Modelling for Public Health course was developed by Pontificia Universidad Javeriana for African audiences, as part of the EpiTKit training strategy under the Epiverse Initiative. The course aims to strengthen knowledge and skills in infectious disease modelling and data analysis within the public health context.
+
+
+## **BACKGROUND**
+
+Enhancing Tools for Response, Analytics and Control of Epidemics in Latin America and the Caribbean (**TRACE-LAC**) is a project funded by the **International Development Research Centre (IDRC)** with the objective of building a **high-quality, open-source, and interoperable data toolkit** for epidemic analytics --- and fostering an engaged user community --- to support decision-makers in responding to epidemics in Latin America.
+
+The **Pontificia Universidad Javeriana (Javeriana)** has been supported by **IDRC** to develop various activities and research products within the **TRACE-LAC** project. As part of this effort, Javeriana created the **Epi Training Kit (EpiTKit)**, an **open-access** online training strategy.
+
+The **EpiTKit** consists of a series of modules and units for virtual training in **public health data science** and **infectious disease modeling**, aligned with the **Epiverse initiative** led by **data.org**. To date, **10 units** have been developed in **Spanish**, tailored for audiences in **Latin America and the Caribbean**.
+
+This new phase, developed through a partnership between Pontificia Universidad Javeriana and data.org, with the collaboration of the Medical Research Council Unit The Gambia at the London School of Hygiene & Tropical Medicine, expands the reach of the EpiTKit to Africa through a South-South collaboration. It emphasizes multilingualism and localism in the translation and cultural adaptation of training materials. The initiative aims to strengthen local capacities in data science for public health, while promoting knowledge exchange between regions facing similar gaps and epidemiological challenges.
+
+## **GENERAL OBJECTIVE**
+
+To **translate** and **culturally adapt** the materials of the **Epi Training Kit (EpiTKit)** for the target audience in  Côte d\'Ivoire, The Gambia, Ghana, Kenya, Nigeria, Rwanda, Senegal, Sierra Leone, Tanzania, and Togo, ensuring **linguistic clarity**, **technical accuracy**, and **cultural relevance**. This initiative embraces a **multilingual** and **localism** approach to create **context-sensitive learning experiences** that reflect **local public health realities** and strengthen regional capacities in data science for epidemic response.
+
+This objective includes:
+
+-   **Translating** and **adapting** the training materials from an initial set of **five units** developed by **Epiverse TRACE-LAC** into **English** and **French**, while integrating **local contexts** and region-specific examples.
+
+-   **Reviewing** technical terminology to ensure consistency, accuracy, and **relevance to local epidemiological landscapes**.
+
+-   **Adapting** and **producing multilingual multimedia resources** that are culturally appropriate and reflective of the diverse realities across African regions.
+
+The five units to be translated and adapted are:
+
+1.  **Introduction to Epidemic Theory**
+
+2.  **General Epidemiology**
+
+3.  **Introduction to Statistics and Probability**
+
+4.  **Parameters**
+
+5.  **Building a Deterministic Model**
+
+## **INSTITUTIONS**
+
+Pontificia Universidad Javeriana
+data.org
+The Medical Research Council Unit The Gambia at the London School of Hygiene & Tropical Medicine
   
-## ¿Qué es el EpiTKit?  
-  
-El EpiTKit es un kit de entrenamiento en modelamiento matemático de 
-enfermedades infecciosas y ciencia de datos en salud pública. 
-Su objetivo principal es proporcionar material educativo de 
-acceso abierto en español, adaptado al contexto de América Latina y 
-el Caribe para fortalecer las capacidades en ciencia de datos y 
-modelamiento matemático de enfermedades infecciosas en la región. 
-Además, promueve la equidad de género en estos campos, 
-con el fin de garantizar un desarrollo más inclusivo y 
-efectivo en la respuesta a emergencias de salud pública.
-
-## Epiverse TRACE: una colaboración global   
-  
-Este curso forma parte de una colaboración internacional que incluye 
-instituciones como la Pontificia Universidad Javeriana y 
-la Universidad de los Andes en Colombia, 
-el London School of Hygiene and Tropical Medicine en el Reino Unido, 
-el Medical Research Council Unit en Gambia y data.org, 
-con el respaldo financiero del 
-International Development Research Center (IDRC) de Canadá.  
-  
-## ¿Cuál es el objetivo de este curso?   
-    
-Brindar herramientas clave para el modelamiento matemático de 
-enfermedades infecciosas y el uso de R para el análisis de datos epidemiológicos. 
-Con un enfoque práctico y teórico, 
-adaptado a las necesidades de la región, 
-este curso busca desarrollar competencias que  permitan analizar y 
-responder ante brotes y epidemias.  
-  
-Para más información sobre el proyecto consulte nuestra página: 
-[Página del proyecto en github](https://epiverse-trace.github.io/epi-training-kit/)
+For more information about the project, visit our page:
+[Project page on GitHub](https://epiverse-trace.github.io/translation-epitkit/)
 
 
-## Normas del curso
+## Course Rules
+Learn about our [TRACE-LAC Code of Conduct](https://drive.google.com/drive/u/0/folders/1_rvQDFcniVR3nKVWGDIhzR6Bk-5lgN8J).
 
-Conozca nuestro 
-[código de conducta TRACE-LAC](https://drive.google.com/file/d/1z9EecMJR0CIyrUI6hzUugS4i9aAgSD-5/view?usp=sharing).
+## Software Configuration
+ 
+Follow these two steps: 
+ 
+### 1. Install or Update R and RStudio 
+ 
+R and RStudio are two separate pieces of software: 
+ 
+* **R**  is a programming language and software used to execute code written in R.
+* **RStudio**  is an integrated development environment (IDE) that makes working with R easier. We recommend using RStudio to interact with R.
 
-## Configuración del software
-
-Siga estos dos pasos:
-
-### 1. Instale o actualice R y RStudio
-
-R y RStudio son dos piezas separadas de software: 
-
-* **R** es un lenguaje de programación y software utilizado para ejecutar código escrito en R.
-* **RStudio** es un entorno de desarrollo integrado (IDE) que facilita el uso de R. Recomendamos utilizar RStudio para interactuar con R. 
-
-Para instalar R y RStudio, siga estas instrucciones <https://posit.co/download/rstudio-desktop/>.
+To install R and RStudio, follow these instructions <https://posit.co/download/rstudio-desktop/>.
 
 ::::::::::::::::::::::::::::: callout
 
-### ¿Ya está instalado? 
-
-Espere: Este es un buen momento para asegurarse de que su instalación de R está actualizada.
-
-Este tutorial requiere **R versión 4.0.0 o posterior**.
-
+### Already Installed? 
+ 
+Wait! This is a great time to ensure your R installation is up to date.
+This tutorial requires **R versión 4.0.0 or later**. 
+ 
 :::::::::::::::::::::::::::::
 
-Para comprobar si tu versión de R está actualizada:
+To check if your R version is up to date: 
+ 
+- In RStudio, your R version will be displayed in the
+ [la ventana de la consola](https://docs.posit.co/ide/user/ide/guide/code/console.html). Or you can run  `sessionInfo()`.
 
-- En RStudio tu versión de R se imprimirá en [la ventana de la consola](https://docs.posit.co/ide/user/ide/guide/code/console.html). O ejecute `sessionInfo()` allí.
+- **- To update R**, download and install the latest version from the [R proiect website](https://cran.rstudio.com/) for your operating system. 
+ 
+  - After installing a new version, you’ll need to reinstall all packages. 
+  
+  - For Windows, the `{installr}` package can update R and migrate your package library. 
 
-- **Para actualizar R**, descargue e instale la última versión desde el [sitio web del proyecto R](https://cran.rstudio.com/) para su sistema operativo.
+- **To update RStudio**, open RStudio and `click Help > Check for Updates`. If a new version is available, follow the on-screen instructions.
 
-  - Después de instalar una nueva versión, tendrás que reinstalar todos tus paquetes con la nueva versión. 
-
-  - Para Windows, el paquete `{installr}` puede actualizar su versión de R y migrar su biblioteca de paquetes.
-
-- **Para actualizar RStudio**, abra RStudio y haga clic en 
-Ayuda > Buscar actualizaciones`. Si hay una nueva versión disponible siga las 
-instrucciones en pantalla.
 
 ::::::::::::::::::::::::::::: callout
 
-### Buscar actualizaciones regularmente
-
-Aunque esto puede sonar aterrador, es **mucho más común** encontrarse con problemas debido al uso de versiones desactualizadas de R o de paquetes de R. Mantenerse al día con las últimas versiones de R, RStudio, y cualquier paquete que utilice regularmente es una buena práctica.
-
+### Check for Updates Regularly 
+ 
+While this might sound intimidating, it's **far more common** to encounter issues due to outdated versions of R or R packages. Keeping up with the latest versions of R, RStudio, and any frequently used packages is a best practice.
+ 
 :::::::::::::::::::::::::::::
 
-### 2. Instale los paquetes R necesarios
 
-<!--
-During the tutorial, we will need a number of R packages. Packages contain useful R code written by other people. We will use packages from the [Epiverse-TRACE](https://epiverse-trace.github.io/). 
--->
-
-Abra RStudio y **copie y pegue** el siguiente fragmento de código en la [ventana de la consola](https://docs.posit.co/ide/user/ide/guide/code/console.html), luego presione < kbd>Enter</kbd> (Windows y Linux) o <kbd>Return</kbd> (MacOS) para ejecutar el comando:
-
-```r
-# para episodios los primeros 4 episodios
-
-if(!require("pak")) install.packages("pak")
-
-new_packages <- c(
-  "cleanepi",
-  "rio",
-  "tidyverse",
-  "knitr"
-)
-
-pak::pkg_install(new_packages)
-```
-
-```r
-# para episodio Construyendo un modelo deterministico simple
-
-if(!require("pak")) install.packages("pak")
-
-new_packages <- c(
-  "deSolve",
-  "cowplot",
-  "tidyverse"
-)
-
-pak::pkg_install(new_packages)
-```
-
-Debería actualizar **todos los paquetes** necesarios para el tutorial, aunque los haya instalado hace relativamente poco. Las nuevas versiones traen mejoras y correcciones de errores importantes.
-
-Cuando la instalación haya terminado, puedes intentar cargar los paquetes pegando el siguiente código en la consola:
-
-```r
-# para los primeros 4 episodios
-
-library(tidyverse) # contiene ggplot2, dplyr, tidyr, readr, purrr, tibble
-library(readxl) # para leer archivos Excel
-library(knitr) # para crear tablas bonitas con kable()
-library(cleanepi) # para limpieza de datos
-library(rio) # para importar y exportar tablas de datos
-```
-
-```r
-# para episodio sobre modelo matemático
-
-library(deSolve)   # Paquete deSolve para resolver las ecuaciones diferenciales
-library(tidyverse) # Paquetes ggplot2 y dplyr de tidyverse
-library(cowplot) # Paquete gridExtra para unir gráficos.
-```
 
 ## Dataset
-
-Recuerde almacenarlos en la carpeta **data** en la ubicación de su proyecto.
-
-Episodio Introducción a R y Rstudio:  
-
-- Datos para [la práctica](https://raw.githubusercontent.com/TRACE-LAC/TRACE-LAC-data/main/datos_covid.xlsx)   
-
-- Datos para [Actividad de afianzamiento](https://github.com/TRACE-LAC/TRACE-LAC-data/raw/refs/heads/main/otros/datos_limpios_covid.RDS) 
-
-Episodio Reporte e informes técnicos en R Markdown:  
  
-- Datos para [la práctica](https://github.com/TRACE-LAC/TRACE-LAC-data/blob/main/otros/muestra_covid.RDS?raw=true)    
+Remember to store them in the **data** folder within your project location 
  
-Episodio Introducción a la visualización de datos en R con ggplot2:
-
-- Datos para [la práctica](https://github.com/TRACE-LAC/TRACE-LAC-data/blob/main/otros/muestra_covid.RDS?raw=true)   
-(Son los mismos datos de la práctica de R Markdown)
-
-Episodio Limpieza de datos epidemiológicos usando R:
-
-- Datos para [la práctica](https://github.com/TRACE-LAC/TRACE-LAC-data/raw/main/data_limpieza.zip) Descomprima los archivos y ponga el contenido en su carpeta **data**
+- [Data](https://raw.githubusercontent.com/epiverse-trace/translation-epitkit/refs/heads/main/data/sample_data.RDS) 
