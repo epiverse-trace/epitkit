@@ -543,7 +543,7 @@ Make sure that the "Typeset PDF" option is set to use TinyTeX.
 
 ::: keypoints
 
-If you did not find an answer to your question after searching this guide, please fill in the following form. [Unanswered questions](https://forms.office.com/pages/responsepage.aspx?id=Dpn32j-KnECbdipUdQmAAMjWJqHZ8P1DkQQdb07M30RUOEY5N1U1UDFYMExGMzFHRkRKT1BTRTFRWS4u&route=shorturl&sid=6a94f23c-049c-4f54-9732-fc25789059b3){.uri}
+In this document you will find some of the frequently asked questions and errors in R code execution.
 
 :::
 
