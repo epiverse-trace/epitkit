@@ -2,6 +2,7 @@
 site: sandpaper::sandpaper_site
 ---
 
-On this page, you will find the instructions and code for the R exercises of the **Introduction to Infectious Disease Modelling for Public Health Course**.
+En esta página encontrará las instrucciones y el código para las prácticas de R 
+del **Curso en ciencia de datos en salud pública y modelamiento de enfermedades infecciosas**.
 
 
