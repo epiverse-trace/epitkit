@@ -144,7 +144,7 @@ se obtiene el siguiente resultado:
 ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ ggplot2   3.5.2     ✔ tibble    3.2.1
 ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
 ✔ purrr     1.0.4     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
@@ -1029,10 +1029,10 @@ covid %>%
 ``` output
    fecha_reporte_web
 1         2021-03-15
-2         2023-03-21
+2         2021-03-23
 3         2021-03-15
-4         2021-03-01
-5               <NA>
+4         2021-01-20
+5         2021-01-15
 6               <NA>
 7         2022-01-28
 8         2022-07-07
@@ -1388,7 +1388,9 @@ covid <- covid %>%
 ```
 
 ``` output
-Found 2391 duplicated rows. Please consult the report for more details.
+! Found 2391 duplicated rows in the dataset.
+ℹ Use `attr(dat, "report")[["duplicated_rows"]]` to access them, where "dat" is
+  the object used to store the output from this operation.
 ```
 
 Como puede ver en la salida la función detectó 2391 filas replicadas en
@@ -1433,7 +1435,9 @@ covid <- covid %>%
 ```
 
 ``` output
-Found 2010 duplicated rows. Please consult the report for more details.
+! Found 2010 duplicated rows in the dataset.
+ℹ Use `attr(dat, "report")[["duplicated_rows"]]` to access them, where "dat" is
+  the object used to store the output from this operation.
 ```
 
 Como puede observar se encontraron 2010 `id_de_caso` replicados. Por lo
@@ -1786,7 +1790,7 @@ covid %>%
 ``` output
 .
         Casa    Fallecido     Hospital Hospital UCI         <NA> 
-       74850         1726           12            1          407 
+       74851         1726           12            1          407 
 ```
 
 **Instrucción**: Filtre la variable `ubicacion_del_caso` para excluir
@@ -1811,7 +1815,7 @@ covid %>%
 ``` output
 .
         Casa    Fallecido     Hospital Hospital UCI         <NA> 
-       74850         1726           12            1            0 
+       74851         1726           12            1            0 
 ```
 
 Como puede observar ahora los NA son 0.
@@ -1851,7 +1855,7 @@ covid %>%
 ``` output
 .
     F     M  <NA> 
-40962 35627     0 
+40962 35628     0 
 ```
 
 ::: callout
@@ -1888,7 +1892,7 @@ covid %>%
 ``` output
 .
 masculino  femenino      <NA> 
-    35627     40962         0 
+    35628     40962         0 
 ```
 
 
