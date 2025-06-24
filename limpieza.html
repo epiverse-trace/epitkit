@@ -346,7 +346,7 @@ Errores frecuentes y sus soluciones</strong></a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Limpieza de datos epidemiológicos</h1>
-        <p>Última actualización: 2025-06-19 |
+        <p>Última actualización: 2025-06-24 |
 
         <a href="https://github.com/epiverse-trace/epitkit/edit/main/episodes/limpieza.Rmd" class="external-link">Mejora esta página <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -509,7 +509,7 @@ el mismo dataset se obtiene el siguiente resultado:</p>
 <pre class="output" tabindex="0"><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ ggplot2   3.5.2     ✔ tibble    3.2.1
 ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
 ✔ purrr     1.0.4
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
@@ -1426,10 +1426,10 @@ a la variable emplearemos la función <code>standarize_dates</code>. </p>
 </h3>
 <pre class="output" tabindex="0"><code>   fecha_reporte_web
 1         2021-03-15
-2         2023-03-21
+2         2021-03-23
 3         2021-03-15
-4         2021-03-01
-5               &lt;NA&gt;
+4         2021-01-20
+5         2021-01-15
 6               &lt;NA&gt;
 7         2022-01-28
 8         2022-07-07
@@ -1827,7 +1827,9 @@ repetidas.</p>
 <div class="codewrapper">
 <h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Found 2391 duplicated rows. Please consult the report for more details.</code></pre>
+<pre class="output" tabindex="0"><code>! Found 2391 duplicated rows in the dataset.
+ℹ Use `attr(dat, "report")[["duplicated_rows"]]` to access them, where "dat" is
+  the object used to store the output from this operation.</code></pre>
 </div>
 <p>Como puede ver en la salida la función detectó 2391 filas replicadas
 en su totalidad (pueden estar presentes dos veces o más). Si explora
@@ -1873,7 +1875,9 @@ correspondiente a “<code>id_de_caso</code>” repetidos.</p>
 <div class="codewrapper">
 <h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Found 2010 duplicated rows. Please consult the report for more details.</code></pre>
+<pre class="output" tabindex="0"><code>! Found 2010 duplicated rows in the dataset.
+ℹ Use `attr(dat, "report")[["duplicated_rows"]]` to access them, where "dat" is
+  the object used to store the output from this operation.</code></pre>
 </div>
 <p>Como puede observar se encontraron 2010 <code>id_de_caso</code>
 replicados. Por lo que si se explora el dataset covid podrá observar que
@@ -2237,7 +2241,7 @@ completos.</p>
 </h3>
 <pre class="output" tabindex="0"><code>.
         Casa    Fallecido     Hospital Hospital UCI         &lt;NA&gt;
-       74850         1726           12            1          407 </code></pre>
+       74851         1726           12            1          407 </code></pre>
 </div>
 <p><strong>Instrucción</strong>: Filtre la variable
 <code>ubicacion_del_caso</code> para excluir los registros con
@@ -2264,7 +2268,7 @@ ubicacion_del_caso para ver los cambios:</p>
 </h3>
 <pre class="output" tabindex="0"><code>.
         Casa    Fallecido     Hospital Hospital UCI         &lt;NA&gt;
-       74850         1726           12            1            0 </code></pre>
+       74851         1726           12            1            0 </code></pre>
 </div>
 <p>Como puede observar ahora los NA son 0.</p>
 </div>
@@ -2306,7 +2310,7 @@ para la conversión de estos valores, es posible utilizar la función
 </h3>
 <pre class="output" tabindex="0"><code>.
     F     M  &lt;NA&gt;
-40962 35627     0 </code></pre>
+40962 35628     0 </code></pre>
 </div>
 <div id="callout16" class="callout">
 <div class="callout-square">
@@ -2351,7 +2355,7 @@ sexo para ver los cambios:</p>
 </h3>
 <pre class="output" tabindex="0"><code>.
 masculino  femenino      &lt;NA&gt;
-    35627     40962         0 </code></pre>
+    35628     40962         0 </code></pre>
 </div>
 <center>
 <p><a href="https://epiverse-trace.github.io/epitkit/Banco_errores.html" class="external-link"><img src="fig/dudas.png" width="100" class="figure"></a></p>
@@ -2531,7 +2535,7 @@ any links that you are not going to use.
   "url": "https://epiverse-trace.github.io/epitkit/limpieza.html",
   "identifier": "https://epiverse-trace.github.io/epitkit/limpieza.html",
   "dateCreated": "2024-09-09",
-  "dateModified": "2025-06-19",
+  "dateModified": "2025-06-24",
   "datePublished": "2025-06-24"
 }
 

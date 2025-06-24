@@ -388,7 +388,7 @@
         
 <section id="aio-Taller-R-RStudio"><p>Content from <a href="Taller-R-RStudio.html">Introducción a R y Rstudio</a></p>
 <hr>
-<p>Última actualización: 2025-06-19 |
+<p>Última actualización: 2025-06-24 |
 
         <a href="https://github.com/epiverse-trace/epitkit/edit/main/episodes/Taller-R-RStudio.Rmd" class="external-link">Mejora esta página <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Tiempo estimado: <i aria-hidden="true" data-feather="clock"></i> 88 minutos</p>
@@ -1128,7 +1128,7 @@ re-iniciamos R o abrimos RStudio.</p>
 <pre class="output" tabindex="0"><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ ggplot2   3.5.2     ✔ tibble    3.2.1
 ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
 ✔ purrr     1.0.4
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
@@ -1753,7 +1753,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-Visualizacion"><p>Content from <a href="Visualizacion.html">Introduccion a la visualizacion de datos en R con ggplot2.</a></p>
 <hr>
-<p>Última actualización: 2025-06-19 |
+<p>Última actualización: 2025-06-24 |
 
         <a href="https://github.com/epiverse-trace/epitkit/edit/main/episodes/Visualizacion.Rmd" class="external-link">Mejora esta página <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Tiempo estimado: <i aria-hidden="true" data-feather="clock"></i> 84 minutos</p>
@@ -2424,7 +2424,7 @@ la variable <code>sexo</code> ¿cómo cambiaría el código?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Mostrar la solución </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2582,7 +2582,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-Reporte"><p>Content from <a href="Reporte.html">Reporte e informes tecnicos en R Markdown</a></p>
 <hr>
-<p>Última actualización: 2025-06-19 |
+<p>Última actualización: 2025-06-24 |
 
         <a href="https://github.com/epiverse-trace/epitkit/edit/main/episodes/Reporte.Rmd" class="external-link">Mejora esta página <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Tiempo estimado: <i aria-hidden="true" data-feather="clock"></i> 44 minutos</p>
@@ -3050,7 +3050,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-limpieza"><p>Content from <a href="limpieza.html">Limpieza de datos epidemiológicos</a></p>
 <hr>
-<p>Última actualización: 2025-06-19 |
+<p>Última actualización: 2025-06-24 |
 
         <a href="https://github.com/epiverse-trace/epitkit/edit/main/episodes/limpieza.Rmd" class="external-link">Mejora esta página <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Tiempo estimado: <i aria-hidden="true" data-feather="clock"></i> 44 minutos</p>
@@ -3233,7 +3233,7 @@ el mismo dataset se obtiene el siguiente resultado:</p>
 <pre class="output" tabindex="0"><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ ggplot2   3.5.2     ✔ tibble    3.2.1
 ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
 ✔ purrr     1.0.4
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
@@ -4193,10 +4193,10 @@ a la variable emplearemos la función <code>standarize_dates</code>. </p>
 </h3>
 <pre class="output" tabindex="0"><code>   fecha_reporte_web
 1         2021-03-15
-2         2023-03-21
+2         2021-03-23
 3         2021-03-15
-4         2021-03-01
-5               &lt;NA&gt;
+4         2021-01-20
+5         2021-01-15
 6               &lt;NA&gt;
 7         2022-01-28
 8         2022-07-07
@@ -4612,7 +4612,9 @@ repetidas.</p>
 <div class="codewrapper">
 <h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Found 2391 duplicated rows. Please consult the report for more details.</code></pre>
+<pre class="output" tabindex="0"><code>! Found 2391 duplicated rows in the dataset.
+ℹ Use `attr(dat, "report")[["duplicated_rows"]]` to access them, where "dat" is
+  the object used to store the output from this operation.</code></pre>
 </div>
 <p>Como puede ver en la salida la función detectó 2391 filas replicadas
 en su totalidad (pueden estar presentes dos veces o más). Si explora
@@ -4658,7 +4660,9 @@ correspondiente a “<code>id_de_caso</code>” repetidos.</p>
 <div class="codewrapper">
 <h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Found 2010 duplicated rows. Please consult the report for more details.</code></pre>
+<pre class="output" tabindex="0"><code>! Found 2010 duplicated rows in the dataset.
+ℹ Use `attr(dat, "report")[["duplicated_rows"]]` to access them, where "dat" is
+  the object used to store the output from this operation.</code></pre>
 </div>
 <p>Como puede observar se encontraron 2010 <code>id_de_caso</code>
 replicados. Por lo que si se explora el dataset covid podrá observar que
@@ -5038,7 +5042,7 @@ completos.</p>
 </h3>
 <pre class="output" tabindex="0"><code>.
         Casa    Fallecido     Hospital Hospital UCI         &lt;NA&gt;
-       74850         1726           12            1          407 </code></pre>
+       74851         1726           12            1          407 </code></pre>
 </div>
 <p><strong>Instrucción</strong>: Filtre la variable
 <code>ubicacion_del_caso</code> para excluir los registros con
@@ -5065,7 +5069,7 @@ ubicacion_del_caso para ver los cambios:</p>
 </h3>
 <pre class="output" tabindex="0"><code>.
         Casa    Fallecido     Hospital Hospital UCI         &lt;NA&gt;
-       74850         1726           12            1            0 </code></pre>
+       74851         1726           12            1            0 </code></pre>
 </div>
 <p>Como puede observar ahora los NA son 0.</p>
 </div>
@@ -5109,7 +5113,7 @@ para la conversión de estos valores, es posible utilizar la función
 </h3>
 <pre class="output" tabindex="0"><code>.
     F     M  &lt;NA&gt;
-40962 35627     0 </code></pre>
+40962 35628     0 </code></pre>
 </div>
 <div id="callout16" class="callout">
 <div class="callout-square">
@@ -5156,7 +5160,7 @@ sexo para ver los cambios:</p>
 </h3>
 <pre class="output" tabindex="0"><code>.
 masculino  femenino      &lt;NA&gt;
-    35627     40962         0 </code></pre>
+    35628     40962         0 </code></pre>
 </div>
 <center>
 <p><a href="https://epiverse-trace.github.io/epitkit/Banco_errores.html" class="external-link"><img src="../fig/dudas.png" width="100" class="figure"></a></p>
@@ -5294,7 +5298,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-zika"><p>Content from <a href="zika.html">Construyendo un modelo deterministico simple</a></p>
 <hr>
-<p>Última actualización: 2025-06-19 |
+<p>Última actualización: 2025-06-24 |
 
         <a href="https://github.com/epiverse-trace/epitkit/edit/main/episodes/zika.Rmd" class="external-link">Mejora esta página <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Tiempo estimado: <i aria-hidden="true" data-feather="clock"></i> 128 minutos</p>
@@ -5513,7 +5517,7 @@ ingrese el valor de cada uno de estos parámetros.</p>
   Solución 1
   </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5692,7 +5696,7 @@ trabajó  en la instrucción anterior.</p>
   Solución 3
   </h3>
 </button>
-<div id="collapseInstructor2" class="accordion-collapse collapse" aria-labelledby="headingInstructor2" data-bs-parent="#accordionInstructor2">
+<div id="collapseInstructor2" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor2" aria-labelledby="headingInstructor2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5820,7 +5824,7 @@ aprendido en el tutorial.</p>
   Solución 5
   </h3>
 </button>
-<div id="collapseInstructor3" class="accordion-collapse collapse" aria-labelledby="headingInstructor3" data-bs-parent="#accordionInstructor3">
+<div id="collapseInstructor3" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor3" aria-labelledby="headingInstructor3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5889,7 +5893,7 @@ lo trabajado hasta el momento.</p>
   Solución 6
   </h3>
 </button>
-<div id="collapseInstructor4" class="accordion-collapse collapse" aria-labelledby="headingInstructor4" data-bs-parent="#accordionInstructor4">
+<div id="collapseInstructor4" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor4" aria-labelledby="headingInstructor4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5959,7 +5963,7 @@ susceptibles tendrá  un individuo menos, <strong>Sh</strong> =
   Solución
   </h3>
 </button>
-<div id="collapseInstructor5" class="accordion-collapse collapse" aria-labelledby="headingInstructor5" data-bs-parent="#accordionInstructor5">
+<div id="collapseInstructor5" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor5" aria-labelledby="headingInstructor5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6280,7 +6284,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-estadistica"><p>Content from <a href="estadistica.html">Unidad de Estadística y probabilidad</a></p>
 <hr>
-<p>Última actualización: 2025-06-19 |
+<p>Última actualización: 2025-06-24 |
 
         <a href="https://github.com/epiverse-trace/epitkit/edit/main/episodes/estadistica.Rmd" class="external-link">Mejora esta página <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Tiempo estimado: <i aria-hidden="true" data-feather="clock"></i> 44 minutos</p>
@@ -7112,7 +7116,7 @@ en <code>R</code> se resuelve utilizando el siguiente código:</p>
 <div class="codewrapper">
 <h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[1] 4.902124 3.846991 3.622273 2.065716 2.906552</code></pre>
+<pre class="output" tabindex="0"><code>[1] 4.474906 3.966512 2.858600 4.884210 4.387621</code></pre>
 </div>
 </div>
 </div>
@@ -7749,7 +7753,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-Banco_errores"><p>Content from <a href="Banco_errores.html">Banco de preguntas y errores frecuentes</a></p>
 <hr>
-<p>Última actualización: 2025-06-19 |
+<p>Última actualización: 2025-06-24 |
 
         <a href="https://github.com/epiverse-trace/epitkit/edit/main/episodes/Banco_errores.Rmd" class="external-link">Mejora esta página <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Tiempo estimado: <i aria-hidden="true" data-feather="clock"></i> 88 minutos</p>
@@ -7850,7 +7854,7 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base
 
 loaded via a namespace (and not attached):
-[1] compiler_4.5.0 tools_4.5.0    yaml_2.3.10    knitr_1.49     xfun_0.51
+[1] compiler_4.5.0 tools_4.5.0    yaml_2.3.10    knitr_1.50     xfun_0.52
 [6] renv_1.1.4     evaluate_1.0.3</code></pre>
 </div>
 <p><strong>Obtendrá una información similar a esta. En este caso la
