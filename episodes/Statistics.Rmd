@@ -161,56 +161,6 @@ ggplot(sample_data, aes(x = age)) +
 
 ```
 
-The **Boxplot** are constructed by displaying the following statistics horizontally or vertically:
-
-- First quartile Q1 (25th percentile): Value below the 25th percentile
-  of the data. "First Line".
-
-- Second quartile Q2 (50th percentile or median): Value that leaves by
-  below 50% of the data. "middle line".
-
-- Third quartile Q3 (50th percentile or median): Value that leaves by
-  below 75% of the data. "Third Line".
-  
-  ![](fig/boxplot.png)
-
-Additionally, these graphs are useful for detecting outliers by setting a lower bound (Q1-1.5×RIQ) and an upper bound (Q3+1.5×RIQ) based on RIQ=Q3-Q1.
-Data outside these limits are categorised as unusual and should be reviewed.
-In the presence of outliers, the lines or whiskers go to the lower or upper bounds, otherwise they go to the minimum and maximum value, respectively.
-
-Another usefulness of the **boxplot** and **histograms** is that they help to know the shape of the distribution in order to decide on the best indicator of central tendency.
-In this way, a distribution can be symmetric or asymmetric positive/negative.
-When symmetry exists, it is recommended to use the mean accompanied by the standard deviation and otherwise the median and the interquartile range because the mean can be influenced by the extreme data of the distribution.
-Remember that an indicator of central tendency must always be accompanied by a judge, i.e. its respective indicator of variability.
-
-![](fig/distribucion.png)
-
-- **Explanatory legend A:** In a symmetric distribution, the mean,
-  the mean, mode and median take the same value and the data are found to be
-  evenly distributed around the central value. For this
-  type of distributions, it is recommended to describe the data series with
-  mean and standard deviation.
-
-- **Explanatory legend B:** Positive asymmetric distribution or
-  skewed to the right. This type of distribution is
-  characterised by a higher concentration of data towards the right.
-  minimum of the distribution, but some values are concentrated towards the right.
-  the maximum value of the distribution. The expected behaviour is that the
-  mean>median>moda, since the mean is influenced by the
-  positive extreme values of the distribution. It is recommended that
-  to describe the data by means of median and range.
-  interquartile range.
-
-- **Explanatory legend C:** Negative skewed distribution or
-  skewed to the left. This type of distribution is
-  characterised by a higher concentration of data towards the left.
-  maximum of the distribution, but some values are concentrated towards
-  the minimum value of the distribution (values towards the left). The
-  expected behaviour is that the mode>mean>median>median given that this
-  latter is influenced by the extreme values of the side
-  left-hand side. It is recommended to describe the data by
-  median and interquartile range.
-
 Next, we will visualise the age of the COVID-19 cases using a boxplot.
 
 ```{r}
