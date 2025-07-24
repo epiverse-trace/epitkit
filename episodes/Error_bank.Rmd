@@ -539,7 +539,8 @@ Make sure that the "Typeset PDF" option is set to use TinyTeX.
 
 **Data handling with Tidyverse and R:**
 
-<https://www.youtube.com/watch?v=6STcQVX8Hk0>
+<https://www.youtube.com/playlist?list=PLtL57Fdbwb_D-iZXfWd2myjpYXSg_yi9G>
+<https://www.youtube.com/playlist?list=PLtL57Fdbwb_AWmWWrFV_pLqq2uicpUIO9>
 
 ::: keypoints
 
