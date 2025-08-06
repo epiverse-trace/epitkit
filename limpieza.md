@@ -144,9 +144,9 @@ se obtiene el siguiente resultado:
 ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.2     ✔ tibble    3.2.1
+✔ ggplot2   3.5.2     ✔ tibble    3.3.0
 ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-✔ purrr     1.0.4     
+✔ purrr     1.1.0     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
@@ -1027,12 +1027,19 @@ covid %>%
 ```
 
 ``` output
+! Detected 1 value that complies with multiple formats and no values that are
+  outside of the specified time frame.
+ℹ Enter `print_report(data = dat, "date_standardization")` to access it, where
+  "dat" is the object used to store the output from this operation.
+```
+
+``` output
    fecha_reporte_web
 1         2021-03-15
-2         2021-03-23
+2         2023-03-21
 3         2021-03-15
-4         2021-01-20
-5         2021-01-15
+4         2021-03-01
+5               <NA>
 6               <NA>
 7         2022-01-28
 8         2022-07-07
@@ -1053,6 +1060,13 @@ está en formato fecha (`date`).
 covid <- covid %>%
   cleanepi::standardize_dates(
     target_columns = "fecha_reporte_web")
+```
+
+``` output
+! Detected 28365 values that comply with multiple formats and no values that
+  are outside of the specified time frame.
+ℹ Enter `print_report(data = dat, "date_standardization")` to access them,
+  where "dat" is the object used to store the output from this operation.
 ```
 
 ##### **NAs relacionados con errores en la escritura de números**
@@ -1389,7 +1403,7 @@ covid <- covid %>%
 
 ``` output
 ! Found 2391 duplicated rows in the dataset.
-ℹ Use `attr(dat, "report")[["duplicated_rows"]]` to access them, where "dat" is
+ℹ Use `print_report(dat, "found_duplicates")` to access them, where "dat" is
   the object used to store the output from this operation.
 ```
 
@@ -1436,7 +1450,7 @@ covid <- covid %>%
 
 ``` output
 ! Found 2010 duplicated rows in the dataset.
-ℹ Use `attr(dat, "report")[["duplicated_rows"]]` to access them, where "dat" is
+ℹ Use `print_report(dat, "found_duplicates")` to access them, where "dat" is
   the object used to store the output from this operation.
 ```
 
@@ -1598,7 +1612,7 @@ covid %>%
 ```
 
 ``` output
-[1] 25
+[1] 24
 ```
 
 #### **3.2.8. Verificación de valores atípicos**
@@ -1726,17 +1740,17 @@ se obtiene el siguiente resultado:
 
 
 ``` output
-# A tibble: 1 × 25
+# A tibble: 1 × 24
   fecha_reporte_web id_de_caso fecha_de_notificacion  edad sexo 
   <date>                 <int> <chr>                 <int> <fct>
 1 1970-01-01           1631715 21/12/2020               24 F    
-# ℹ 20 more variables: ubicacion_del_caso <chr>, estado <chr>,
+# ℹ 19 more variables: ubicacion_del_caso <chr>, estado <chr>,
 #   recuperado <chr>, fecha_de_inicio_de_sintomas <chr>, fecha_de_muerte <chr>,
 #   fecha_de_diagnostico <chr>, fecha_de_recuperacion <chr>,
 #   tipo_de_recuperacion <chr>, fecha_de_nacimiento <dbl>,
 #   nombre_del_pais <fct>, sintomas <fct>, edad_repetida <int>,
 #   num_hos_rec <dbl>, tension_sistolica <chr>, tension_diastolica <chr>,
-#   vacunado <lgl>, talla <dbl>, peso <dbl>, edad_en_dias <dbl>, row_id <int>
+#   vacunado <lgl>, talla <dbl>, peso <dbl>, edad_en_dias <dbl>
 ```
 
 Una vez identificados los datos, podemos corregirlos reemplazándolos por
@@ -1790,7 +1804,7 @@ covid %>%
 ``` output
 .
         Casa    Fallecido     Hospital Hospital UCI         <NA> 
-       74851         1726           12            1          407 
+       74850         1726           12            1          407 
 ```
 
 **Instrucción**: Filtre la variable `ubicacion_del_caso` para excluir
@@ -1815,7 +1829,7 @@ covid %>%
 ``` output
 .
         Casa    Fallecido     Hospital Hospital UCI         <NA> 
-       74851         1726           12            1            0 
+       74850         1726           12            1            0 
 ```
 
 Como puede observar ahora los NA son 0.
@@ -1855,7 +1869,7 @@ covid %>%
 ``` output
 .
     F     M  <NA> 
-40962 35628     0 
+40962 35627     0 
 ```
 
 ::: callout
@@ -1892,7 +1906,7 @@ covid %>%
 ``` output
 .
 masculino  femenino      <NA> 
-    35628     40962         0 
+    35627     40962         0 
 ```
 
 
