@@ -274,6 +274,81 @@ covid19_resumen <- covid19 %>%
 the `.groups` argument.
 ```
 
+Notemos que el mensaje de salida nos notifica que
+luego de usar `summarise()` se ha removido
+una variable del agrupamiento previamente configudado por `group_by()`.
+Esto es porque la segunda variable ("sexo") es ahora una sola fila
+dentro de la variable de agrupamiento ("fecha_reporte_web").
+Veamos el resultado de la operación anterior:
+
+
+``` r
+covid19_resumen
+```
+
+``` output
+# A tibble: 1,539 × 3
+# Groups:   fecha_reporte_web [782]
+   fecha_reporte_web sexo      casos
+   <date>            <fct>     <int>
+ 1 2020-03-14        masculino     1
+ 2 2020-03-17        masculino     1
+ 3 2020-03-19        masculino     1
+ 4 2020-03-20        masculino     1
+ 5 2020-03-23        femenino      1
+ 6 2020-03-24        masculino     2
+ 7 2020-03-26        masculino     1
+ 8 2020-03-28        masculino     1
+ 9 2020-03-29        femenino      4
+10 2020-03-30        masculino     1
+# ℹ 1,529 more rows
+```
+
+También podemos verificar el motivo del mensaje usando la función `dplyr::group_vars()`.
+
+::::::::: spoiler
+
+Exploremos el paso a paso usando la función `dplyr::group_vars()`:
+
+
+``` r
+# Agrupar por "fecha" y "sexo"
+# Con dplyr::group_vars() confirmamos agrupamiento
+covid19 %>%
+  dplyr::group_by(fecha_reporte_web, sexo) %>%
+  dplyr::group_vars()
+```
+
+``` output
+[1] "fecha_reporte_web" "sexo"             
+```
+
+``` r
+# Resuminos por "fecha" y "sexo"
+# Con dplyr::group_vars() confirmamos que
+# luego de usar dplyr::summarise()
+# removemos la última variable de agrupamiento ("sexo")
+# debido a que ese grupo es ahora una sola fila por cada "fecha".
+covid19 %>%
+  dplyr::group_by(fecha_reporte_web, sexo) %>% 
+  dplyr::summarise(casos = n()) %>% 
+  dplyr::group_vars()
+```
+
+``` output
+`summarise()` has grouped output by 'fecha_reporte_web'. You can override using
+the `.groups` argument.
+```
+
+``` output
+[1] "fecha_reporte_web"
+```
+
+Este es el resultado por defecto.
+Puedes ver las opciones disponibles usando el [argumento `.groups` dentro de la función `summarise()`](https://dplyr.tidyverse.org/reference/summarise.html#arg--groups).
+
+:::::::::
+
 Luego, podemos usar la estética de los gráficos de `ggplot2` indicando
 las variables a usar en cada dimensión, en este caso en el eje X
 tendremos la variable de tiempo (fecha_reporte_web) y en el eje Y el
@@ -290,7 +365,7 @@ ggplot(data = covid19_resumen,
 
 La visualización que generamos es la siguiente:
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-7-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-9-1.png" style="display: block; margin: auto;" />
 
 ### Geometría (Geometry)
 
@@ -334,7 +409,7 @@ ggplot(data = covid19_fecha,
 
 Y obtenemos el siguiente gráfico:
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
 
 #### Ejemplo 3: Gráfico de barras
 
@@ -348,7 +423,7 @@ ggplot(data = covid19) +
   geom_bar(aes(x = sexo))
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" />
 
 En este ejemplo podemos observar que `ggplot2` automáticamente calcula
 el eje Y.
@@ -377,7 +452,7 @@ ggplot(data = covid19_ubicacion, aes(x = ubicacion_del_caso, y = casos)) +
 
 Se obtendrá la siguiente gráfica:
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
 
 En este caso tenemos las barras en orientación vertical. Si desearamos
 poner las barras en orientación horizontal podemos lograrlo, usando al
@@ -392,7 +467,7 @@ ggplot(data = covid19_ubicacion, aes(x = ubicacion_del_caso, y = casos)) +
 
 Obteniendo como resultado:
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
 
 Si queremos ordenar la ubicación del caso por el número de casos,
 podemos utilizar el comando `reorder` en el eje donde está la ubicación
@@ -412,7 +487,7 @@ ggplot(covid19_ubicacion,
 
 Y la gráfica queda así:
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
 
 ::: challenge
 Pregunta ¿cómo produciría esta misma gráfica, pero en orden ascendente?
@@ -510,7 +585,7 @@ ggplot(covid19_ubicacion,
 
 De esta manera, el nuevo gráfico se vería así:
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
 
 ::: discussion
 ¿Qué diferencias ve con la última gráfica del Ejemplo 4.?
@@ -543,6 +618,36 @@ covid19_sexo <- covid19 %>%
 `.groups` argument.
 ```
 
+Notemos nuevamente que el mensaje de salida nos notifica que
+luego de usar `summarise()` se ha removido la última
+variable del agrupamiento previamente configudado por `group_by()`.
+Esto es porque la segunda variable ("sexo") es ahora una sola fila
+dentro de la variable de agrupamiento ("edad").
+Veamos el resultado de la operación anterior:
+
+
+``` r
+covid19_sexo
+```
+
+``` output
+# A tibble: 209 × 3
+# Groups:   edad [106]
+    edad sexo      casos
+   <dbl> <fct>     <int>
+ 1     1 masculino   245
+ 2     1 femenino    218
+ 3     2 masculino   199
+ 4     2 femenino    165
+ 5     3 masculino   185
+ 6     3 femenino    168
+ 7     4 masculino   175
+ 8     4 femenino    136
+ 9     5 masculino   203
+10     5 femenino    144
+# ℹ 199 more rows
+```
+
 Usando los datos de `covid-19`, vamos a representar la variable `casos`
 por `edad` en dos paneles por `sexo` usando `facet_wrap` así:
 
@@ -553,7 +658,7 @@ ggplot(data = covid19_sexo, aes(x = edad, y = casos)) +
   facet_wrap(~sexo)
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-25-1.png" style="display: block; margin: auto;" />
 
 ::: challenge
 De acuerdo con lo aprendido anteriormente, piense cómo podría hacer que
@@ -562,7 +667,7 @@ variable `sexo` ¿cómo cambiaría el código?
 
 El gráfico que debe producir es el siguiente:
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-23-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-26-1.png" style="display: block; margin: auto;" />
 
 ::: solution
 
@@ -584,7 +689,7 @@ ggplot(covid19_sexo, aes(edad, casos)) +
   facet_wrap(~sexo)
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-25-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-28-1.png" style="display: block; margin: auto;" />
 
 ### Tema
 
@@ -618,7 +723,7 @@ ggplot(data = covid19_sexo, aes(x = edad, y = casos)) +
   theme_classic()
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-26-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-29-1.png" style="display: block; margin: auto;" />
 
 #### Ejemplo 7. Usando theme classic
 
@@ -632,7 +737,7 @@ ggplot(data = covid19_sexo, aes(x = edad, y = casos)) +
   theme_dark()
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-27-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-30-1.png" style="display: block; margin: auto;" />
 
 ::: callout
 Para revisar la lista de `theme()` que tiene disponible `ggplot2`, puede
@@ -661,7 +766,7 @@ ggplot(data = covid19_sexo,
   )
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-28-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-31-1.png" style="display: block; margin: auto;" />
 
 ::: keypoints
 
