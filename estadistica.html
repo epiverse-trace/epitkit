@@ -347,7 +347,7 @@ estadística</strong></a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Unidad de Estadística y probabilidad</h1>
-        <p>Última actualización: 2025-11-11 |
+        <p>Última actualización: 2026-01-08 |
 
         <a href="https://github.com/epiverse-trace/epitkit/edit/main/episodes/estadistica.Rmd" class="external-link">Mejora esta página <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -533,9 +533,9 @@ Attaching package: 'dplyr'</code></pre>
 <div class="codewrapper">
 <h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre class="output" tabindex="0"><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
 </div>
-<figure><img src="fig/estadistica-rendered-unnamed-chunk-3-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div class="codewrapper sourceCode" id="cb9">
+<figure><img src="fig/estadistica-rendered-unnamed-chunk-3-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -551,9 +551,9 @@ Attaching package: 'dplyr'</code></pre>
 <div class="codewrapper">
 <h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre class="output" tabindex="0"><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
 </div>
-<figure><img src="fig/estadistica-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Los <strong>Boxplot</strong> se construyen a partir de la
+<figure><img src="fig/estadistica-rendered-unnamed-chunk-4-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Los <strong>Boxplot</strong> se construyen a partir de la
 visualización en sentido horizontal o vertical de los siguientes
 estadísticos:</p>
 <ul><li><p>Primer cuartil Q1 (percentil 25): Valor que deja por debajo el
@@ -616,7 +616,7 @@ de COVID-19 a través de un boxplot.</p>
 <span><span class="fu">ggplot</span><span class="op">(</span><span class="va">muestra_covid</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="va">edad</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_boxplot</span><span class="op">(</span>outlier.shape <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/estadistica-rendered-unnamed-chunk-5-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>De acuerdo con el boxplot de la edad de la muestra de los casos de
+<figure><img src="fig/estadistica-rendered-unnamed-chunk-5-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>De acuerdo con el boxplot de la edad de la muestra de los casos de
 COVID-19 es posible concluir que la distribución de los datos es
 asimétrica positiva, dado que existe una mayor cercanía entre los
 valores del Q1 y la mediana, por lo que es recomendar describir el
@@ -693,7 +693,7 @@ barras:</p>
 <span>  <span class="fu">geom_bar</span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"identity"</span>, color <span class="op">=</span> <span class="st">"darkblue"</span>, fill <span class="op">=</span> <span class="st">"lightblue"</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span>y <span class="op">=</span> <span class="st">"%"</span>, x <span class="op">=</span> <span class="st">" "</span>,title <span class="op">=</span> <span class="st">"Tipo de Contagio"</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/estadistica-rendered-unnamed-chunk-8-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><center>
+<figure><img src="fig/estadistica-rendered-unnamed-chunk-8-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><center>
 <p><a href="https://epiverse-trace.github.io/epitkit/Banco_errores.html" class="external-link"><img src="fig/dudas.png" width="100" class="figure"></a></p>
 </center>
 </section><section><h2 class="section-heading" id="tema-3-probabilidad"><strong>Tema 3: Probabilidad</strong><a class="anchor" aria-label="anchor" href="#tema-3-probabilidad"></a></h2>
@@ -932,7 +932,7 @@ generated.</code></pre>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p</span><span class="op">+</span><span class="fu">labs</span><span class="op">(</span>y <span class="op">=</span> <span class="st">"Probabilidad"</span>, x <span class="op">=</span> <span class="st">"Número Reproductivo (R) "</span>,title <span class="op">=</span> <span class="st">"Modelo de Poisson"</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/estadistica-rendered-unnamed-chunk-12-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Por lo tanto, si el número de casos secundarios se comporta de
+<figure><img src="fig/estadistica-rendered-unnamed-chunk-12-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Por lo tanto, si el número de casos secundarios se comporta de
 acuerdo a una distribución de Poisson, existe una alta probabilidad de
 que el número de casos nuevos observados en el día 2 hayan sido
 generados con un número de reproducción de R=2.  Lo que implica que el
@@ -1047,7 +1047,7 @@ control. Esto también está disponible en el paquete
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">plot</span><span class="op">(</span><span class="va">SARS_R</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/estadistica-rendered-unnamed-chunk-14-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Finalmente, es posible concluir que la mayoría de casos infectados
+<figure><img src="fig/estadistica-rendered-unnamed-chunk-14-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Finalmente, es posible concluir que la mayoría de casos infectados
 con SARS no propagan la enfermedad dado que la moda de la distribución
 es <span class="math inline">\(0\)</span>. Este resultado es esperado
 dado que <span class="math inline">\(k&lt;1\)</span>, lo que indica que
@@ -1102,7 +1102,7 @@ secundarios con el siguiente código:</p>
 <span>  <span class="fu">labs</span><span class="op">(</span>y <span class="op">=</span> <span class="st">"Probabilidad"</span>, x <span class="op">=</span> <span class="st">"Casos secundarios"</span>,</span>
 <span>       title <span class="op">=</span> <span class="st">"Distribución Geométrica"</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/estadistica-rendered-unnamed-chunk-15-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Bajo la distribución geométrica, entonces existe una mayor
+<figure><img src="fig/estadistica-rendered-unnamed-chunk-15-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Bajo la distribución geométrica, entonces existe una mayor
 probabilidad de que un caso primario pueda transmitir el virus dado que
 la probabilidad de que un caso primario genere 1,2, o más casos
 secundarios es mayor con este modelo en comparación de lo estimado con
@@ -1154,7 +1154,7 @@ en <code>R</code> se resuelve utilizando el siguiente código:</p>
 <div class="codewrapper">
 <h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[1] 3.148794 2.079496 3.612995 2.331496 4.145843</code></pre>
+<pre class="output" tabindex="0"><code>[1] 3.925774 2.201750 2.129747 2.245555 4.803642</code></pre>
 </div>
 </div>
 </div>
@@ -1317,7 +1317,7 @@ graficarse por medio de:</p>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">plot</span><span class="op">(</span><span class="va">SARS_incubacion</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/estadistica-rendered-unnamed-chunk-19-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Lo anterior es útil para responder preguntas tipo: ¿Cuál es la
+<figure><img src="fig/estadistica-rendered-unnamed-chunk-19-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Lo anterior es útil para responder preguntas tipo: ¿Cuál es la
 probabilidad de que un caso de SARS desarrolle síntomas dos días después
 de la infección?</p>
 <div class="codewrapper sourceCode" id="cb40">
@@ -1424,7 +1424,7 @@ Parameters:
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">graphics</span><span class="fu">::</span><span class="fu">plot</span><span class="op">(</span><span class="va">influenza_s</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/estadistica-rendered-unnamed-chunk-22-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Con esta información se podría encontrar la media y desviación
+<figure><img src="fig/estadistica-rendered-unnamed-chunk-22-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Con esta información se podría encontrar la media y desviación
 estándar de la distribución con base en la aplicación de la distribución
 gamma:</p>
 <div class="codewrapper sourceCode" id="cb47">
@@ -1525,7 +1525,7 @@ Parameters:
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">plot</span><span class="op">(</span><span class="va">influenza_incubacion</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/estadistica-rendered-unnamed-chunk-25-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
+<figure><img src="fig/estadistica-rendered-unnamed-chunk-25-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
 </div>
 </div>
 <center>
@@ -1604,7 +1604,7 @@ Attaching package: 'infer'</code></pre>
 <span>  <span class="fu">labs</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Tamaño muestral"</span>, y <span class="op">=</span> <span class="st">"CFR estimación"</span>,</span>
 <span>       title <span class="op">=</span> <span class="st">" "</span><span class="op">)</span> <span class="op">+</span> <span class="fu">scale_fill_brewer</span><span class="op">(</span>palette<span class="op">=</span><span class="st">"Blues"</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="fig/estadistica-rendered-unnamed-chunk-26-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Si calculamos la media y desviación estándar de los valores estimados
+<figure><img src="fig/estadistica-rendered-unnamed-chunk-26-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Si calculamos la media y desviación estándar de los valores estimados
 de la CRF con las muestras de tamaño 5 y tamaño 10, vemos que
 efectivamente la desviación estándar de las estimaciones es menor al
 incrementar el tamaño de la muestra, pero en ambos casos en promedio las
@@ -1837,8 +1837,8 @@ any links that you are not going to use.
   "url": "https://epiverse-trace.github.io/epitkit/estadistica.html",
   "identifier": "https://epiverse-trace.github.io/epitkit/estadistica.html",
   "dateCreated": "2024-09-09",
-  "dateModified": "2025-11-11",
-  "datePublished": "2026-01-06"
+  "dateModified": "2026-01-08",
+  "datePublished": "2026-01-08"
 }
 
   </script><script>

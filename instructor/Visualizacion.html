@@ -344,7 +344,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduccion a la visualizacion de datos en R con ggplot2.</h1>
-        <p>Última actualización: 2025-11-11 |
+        <p>Última actualización: 2026-01-08 |
 
         <a href="https://github.com/epiverse-trace/epitkit/edit/main/episodes/Visualizacion.Rmd" class="external-link">Mejora esta página <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -531,10 +531,10 @@ siguientes librerías:</p>
 <h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ dplyr     1.1.4     ✔ readr     2.1.6
+✔ forcats   1.0.1     ✔ stringr   1.6.0
 ✔ lubridate 1.9.4     ✔ tibble    3.3.0
-✔ purrr     1.1.0     ✔ tidyr     1.3.1
+✔ purrr     1.2.0     ✔ tidyr     1.3.2
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
@@ -661,7 +661,7 @@ código:</p>
 <span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <p>La visualización que generamos es la siguiente:</p>
-<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-7-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
+<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-7-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
 </div>
 <div class="section level3">
 <h3 id="geometría-geometry">Geometría (Geometry)<a class="anchor" aria-label="anchor" href="#geometr%C3%ADa-geometry"></a></h3>
@@ -707,7 +707,7 @@ geometría de <code>ggplot2</code>:</p>
 <span>  <span class="fu">geom_line</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <p>Y obtenemos el siguiente gráfico:</p>
-<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-10-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
+<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-10-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
 <div class="section level4">
 <h4 id="ejemplo-3-gráfico-de-barras">Ejemplo 3: Gráfico de barras<a class="anchor" aria-label="anchor" href="#ejemplo-3-gr%C3%A1fico-de-barras"></a></h4>
 <p>Ahora, hagamos una visualización en forma de gráfico de barras del
@@ -720,7 +720,7 @@ total de casos positivos por sexo, para esto utilizamos el comando
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">covid19</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_bar</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">sexo</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-11-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>En este ejemplo podemos observar que <code>ggplot2</code>
+<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-11-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>En este ejemplo podemos observar que <code>ggplot2</code>
 automáticamente calcula el eje Y.</p>
 </div>
 <div class="section level4">
@@ -747,7 +747,7 @@ variable <code>x = ubicacion_del_caso</code>:</p>
 <span>  <span class="fu">geom_bar</span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span></span></code></pre>
 </div>
 <p>Se obtendrá la siguiente gráfica:</p>
-<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-14-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>En este caso tenemos las barras en orientación vertical. Si
+<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-14-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>En este caso tenemos las barras en orientación vertical. Si
 desearamos poner las barras en orientación horizontal podemos lograrlo,
 usando al final el comando <code>coord_flip</code> de la siguiente
 manera:</p>
@@ -760,7 +760,7 @@ manera:</p>
 <span>  <span class="fu">coord_flip</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <p>Obteniendo como resultado:</p>
-<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Si queremos ordenar la ubicación del caso por el número de casos,
+<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-16-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Si queremos ordenar la ubicación del caso por el número de casos,
 podemos utilizar el comando <code>reorder</code> en el eje donde está la
 ubicación del caso. La función <code>reorder</code> tiene dos
 argumentos: el primero es la variable a ordenar y el segundo es la
@@ -777,7 +777,7 @@ mayor a menor cantidad de casos. El código sería el siguiente:</p>
 <span>  <span class="fu">coord_flip</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <p>Y la gráfica queda así:</p>
-<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-18-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="discussion1" class="callout discussion">
+<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-18-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="discussion1" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
@@ -908,7 +908,7 @@ así:</p>
 <span>  <span class="fu">scale_y_log10</span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Casos Confirmados (escala log)"</span><span class="op">)</span></span></code></pre>
 </div>
 <p>De esta manera, el nuevo gráfico se vería así:</p>
-<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-20-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="discussion2" class="callout discussion">
+<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-20-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="discussion2" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
@@ -959,7 +959,7 @@ variable <code>casos</code> por <code>edad</code> en dos paneles por
 <span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span><span class="va">sexo</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-22-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="challenge1" class="callout challenge">
+<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-22-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="challenge1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -970,7 +970,7 @@ variable <code>casos</code> por <code>edad</code> en dos paneles por
 que cada faceta quede de un color diferente, es decir, asignando color a
 la variable <code>sexo</code> ¿cómo cambiaría el código?</p>
 <p>El gráfico que debe producir es el siguiente:</p>
-<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-23-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
+<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-23-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
 </div>
 </div>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
@@ -978,7 +978,7 @@ la variable <code>sexo</code> ¿cómo cambiaría el código?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Mostrar la solución </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1002,7 +1002,7 @@ la variable <code>sexo</code> ¿cómo cambiaría el código?</p>
 <span>  <span class="fu">scale_colour_gradient2</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span><span class="va">sexo</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-25-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
+<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-25-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
 </div>
 <div class="section level3">
 <h3 id="tema">Tema<a class="anchor" aria-label="anchor" href="#tema"></a></h3>
@@ -1041,7 +1041,7 @@ proporcionamos algunos ejemplos de cómo utilizar los temas en
 <span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span><span class="va">sexo</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_classic</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-26-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
+<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-26-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></div>
 <div class="section level4">
 <h4 id="ejemplo-7--usando-theme-classic">Ejemplo 7. Usando theme classic<a class="anchor" aria-label="anchor" href="#ejemplo-7--usando-theme-classic"></a></h4>
 <p>Para este tema tendríamos lo siguiente:</p>
@@ -1054,7 +1054,7 @@ proporcionamos algunos ejemplos de cómo utilizar los temas en
 <span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span><span class="va">sexo</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_dark</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-27-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="callout3" class="callout">
+<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-27-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -1088,7 +1088,7 @@ subtitle de la siguiente forma:</p>
 <span>    title <span class="op">=</span> <span class="st">"Distribución de casos de COVID-19 por edad y sexo en Latinoamerica"</span></span>
 <span>  <span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-28-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="keypoints1" class="callout keypoints">
+<figure><img src="../fig/Visualizacion-rendered-unnamed-chunk-28-1.png" alt="" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -1180,8 +1180,8 @@ any links that you are not going to use.
   "url": "https://epiverse-trace.github.io/epitkit/instructor/Visualizacion.html",
   "identifier": "https://epiverse-trace.github.io/epitkit/instructor/Visualizacion.html",
   "dateCreated": "2024-09-09",
-  "dateModified": "2025-11-11",
-  "datePublished": "2026-01-06"
+  "dateModified": "2026-01-08",
+  "datePublished": "2026-01-08"
 }
 
   </script><script>
