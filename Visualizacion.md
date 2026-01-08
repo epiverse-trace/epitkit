@@ -164,10 +164,10 @@ library(tidyverse)
 
 ``` output
 ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ dplyr     1.1.4     ✔ readr     2.1.6
+✔ forcats   1.0.1     ✔ stringr   1.6.0
 ✔ lubridate 1.9.4     ✔ tibble    3.3.0
-✔ purrr     1.1.0     ✔ tidyr     1.3.1
+✔ purrr     1.2.0     ✔ tidyr     1.3.2
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
@@ -290,7 +290,7 @@ ggplot(data = covid19_resumen,
 
 La visualización que generamos es la siguiente:
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-7-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-7-1.png" alt="" style="display: block; margin: auto;" />
 
 ### Geometría (Geometry)
 
@@ -334,7 +334,7 @@ ggplot(data = covid19_fecha,
 
 Y obtenemos el siguiente gráfico:
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-10-1.png" alt="" style="display: block; margin: auto;" />
 
 #### Ejemplo 3: Gráfico de barras
 
@@ -348,7 +348,7 @@ ggplot(data = covid19) +
   geom_bar(aes(x = sexo))
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-11-1.png" alt="" style="display: block; margin: auto;" />
 
 En este ejemplo podemos observar que `ggplot2` automáticamente calcula
 el eje Y.
@@ -377,7 +377,7 @@ ggplot(data = covid19_ubicacion, aes(x = ubicacion_del_caso, y = casos)) +
 
 Se obtendrá la siguiente gráfica:
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-14-1.png" alt="" style="display: block; margin: auto;" />
 
 En este caso tenemos las barras en orientación vertical. Si desearamos
 poner las barras en orientación horizontal podemos lograrlo, usando al
@@ -392,7 +392,7 @@ ggplot(data = covid19_ubicacion, aes(x = ubicacion_del_caso, y = casos)) +
 
 Obteniendo como resultado:
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-16-1.png" alt="" style="display: block; margin: auto;" />
 
 Si queremos ordenar la ubicación del caso por el número de casos,
 podemos utilizar el comando `reorder` en el eje donde está la ubicación
@@ -412,7 +412,7 @@ ggplot(covid19_ubicacion,
 
 Y la gráfica queda así:
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-18-1.png" alt="" style="display: block; margin: auto;" />
 
 ::: challenge
 Pregunta ¿cómo produciría esta misma gráfica, pero en orden ascendente?
@@ -510,7 +510,7 @@ ggplot(covid19_ubicacion,
 
 De esta manera, el nuevo gráfico se vería así:
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-20-1.png" alt="" style="display: block; margin: auto;" />
 
 ::: discussion
 ¿Qué diferencias ve con la última gráfica del Ejemplo 4.?
@@ -553,7 +553,7 @@ ggplot(data = covid19_sexo, aes(x = edad, y = casos)) +
   facet_wrap(~sexo)
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-22-1.png" alt="" style="display: block; margin: auto;" />
 
 ::: challenge
 De acuerdo con lo aprendido anteriormente, piense cómo podría hacer que
@@ -562,7 +562,7 @@ variable `sexo` ¿cómo cambiaría el código?
 
 El gráfico que debe producir es el siguiente:
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-23-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-23-1.png" alt="" style="display: block; margin: auto;" />
 
 ::: solution
 
@@ -584,7 +584,7 @@ ggplot(covid19_sexo, aes(edad, casos)) +
   facet_wrap(~sexo)
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-25-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-25-1.png" alt="" style="display: block; margin: auto;" />
 
 ### Tema
 
@@ -618,7 +618,7 @@ ggplot(data = covid19_sexo, aes(x = edad, y = casos)) +
   theme_classic()
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-26-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-26-1.png" alt="" style="display: block; margin: auto;" />
 
 #### Ejemplo 7. Usando theme classic
 
@@ -632,7 +632,7 @@ ggplot(data = covid19_sexo, aes(x = edad, y = casos)) +
   theme_dark()
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-27-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-27-1.png" alt="" style="display: block; margin: auto;" />
 
 ::: callout
 Para revisar la lista de `theme()` que tiene disponible `ggplot2`, puede
@@ -661,7 +661,7 @@ ggplot(data = covid19_sexo,
   )
 ```
 
-<img src="fig/Visualizacion-rendered-unnamed-chunk-28-1.png" style="display: block; margin: auto;" />
+<img src="fig/Visualizacion-rendered-unnamed-chunk-28-1.png" alt="" style="display: block; margin: auto;" />
 
 ::: keypoints
 

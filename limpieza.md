@@ -142,11 +142,11 @@ se obtiene el siguiente resultado:
 
 ``` output
 ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.2     ✔ tibble    3.3.0
-✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-✔ purrr     1.1.0     
+✔ dplyr     1.1.4     ✔ readr     2.1.6
+✔ forcats   1.0.1     ✔ stringr   1.6.0
+✔ ggplot2   4.0.1     ✔ tibble    3.3.0
+✔ lubridate 1.9.4     ✔ tidyr     1.3.2
+✔ purrr     1.2.0     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
@@ -442,7 +442,7 @@ covid %>%
 **Resultado esperado:** Al usar el anterior código con el mismo dataset
 se obtiene el siguiente resultado:
 
-<img src="fig/limpieza-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
+<img src="fig/limpieza-rendered-unnamed-chunk-16-1.png" alt="" style="display: block; margin: auto;" />
 
 ⚠️ **Instrucción:** Emplee la función boxplot para generar un boxplot de
 la variable `edad`:
@@ -457,7 +457,7 @@ covid %>%
 **Resultado esperado:** Al usar el anterior código con el mismo dataset
 se obtiene el siguiente resultado:
 
-<img src="fig/limpieza-rendered-unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
+<img src="fig/limpieza-rendered-unnamed-chunk-18-1.png" alt="" style="display: block; margin: auto;" />
 
 Estos gráficos pueden resultar útiles para examinar la tendencia y
 distribución de los datos, así como observar datos atípicos.
@@ -594,7 +594,7 @@ covid %>%
 **Resultado esperado:** Al usar el anterior código con el mismo dataset
 se obtiene el siguiente resultado:
 
-<img src="fig/limpieza-rendered-unnamed-chunk-28-1.png" style="display: block; margin: auto;" />
+<img src="fig/limpieza-rendered-unnamed-chunk-28-1.png" alt="" style="display: block; margin: auto;" />
  <center>  
    
 [![](fig/dudas.png){width="100"}](https://epiverse-trace.github.io/epitkit/Banco_errores.html)  
@@ -1562,6 +1562,12 @@ covid <- covid %>%
   cleanepi::replace_missing_values( na_strings = "N/A")
 ```
 
+``` output
+! Could not detect the provided missing value character.
+ℹ Does your data contain missing value characters other than the specified
+  ones?
+```
+
 **Instrucción:** Revise el contenido de la variable `ubicacion_del_caso`
 para ver los cambios:
 
@@ -1574,8 +1580,8 @@ covid %>%
 
 ``` output
 .
-        Casa    Fallecido     Hospital Hospital UCI         <NA> 
-       74852         1727           12            1          407 
+        Casa    Fallecido     Hospital Hospital UCI          N/A         <NA> 
+       74852         1727           12            1          407            0 
 ```
 
 #### **3.2.7. Columnas con valores constantes**
@@ -1662,7 +1668,7 @@ covid %>%
 **Resultado esperado:** Al usar el anterior código con el mismo dataset
 se obtiene el siguiente resultado:
 
-<img src="fig/limpieza-rendered-unnamed-chunk-78-1.png" style="display: block; margin: auto;" />
+<img src="fig/limpieza-rendered-unnamed-chunk-78-1.png" alt="" style="display: block; margin: auto;" />
 
 Como podemos observar la gráfica empieza desde 1969. Por razones
 epidemiológicas rápidamente analizamos que al tratarse de casos COVID
@@ -1780,7 +1786,7 @@ covid %>%
   graphics::hist(breaks = "weeks")
 ```
 
-<img src="fig/limpieza-rendered-unnamed-chunk-84-1.png" style="display: block; margin: auto;" />
+<img src="fig/limpieza-rendered-unnamed-chunk-84-1.png" alt="" style="display: block; margin: auto;" />
 
 **Resultado esperado:** Al usar el anterior código con el mismo dataset
 se obtiene el siguiente resultado:
@@ -1803,8 +1809,8 @@ covid %>%
 
 ``` output
 .
-        Casa    Fallecido     Hospital Hospital UCI         <NA> 
-       74850         1726           12            1          407 
+        Casa    Fallecido     Hospital Hospital UCI          N/A         <NA> 
+       74850         1726           12            1          407            0 
 ```
 
 **Instrucción**: Filtre la variable `ubicacion_del_caso` para excluir
@@ -1828,8 +1834,8 @@ covid %>%
 
 ``` output
 .
-        Casa    Fallecido     Hospital Hospital UCI         <NA> 
-       74850         1726           12            1            0 
+        Casa    Fallecido     Hospital Hospital UCI          N/A         <NA> 
+       74850         1726           12            1          407            0 
 ```
 
 Como puede observar ahora los NA son 0.
@@ -1869,7 +1875,7 @@ covid %>%
 ``` output
 .
     F     M  <NA> 
-40962 35627     0 
+41153 35843     0 
 ```
 
 ::: callout
@@ -1906,7 +1912,7 @@ covid %>%
 ``` output
 .
 masculino  femenino      <NA> 
-    35627     40962         0 
+    35843     41153         0 
 ```
 
 

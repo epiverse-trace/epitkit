@@ -182,10 +182,10 @@ ggplot(muestra_covid, aes(x = edad)) +
 ```
 
 ``` output
-`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value `binwidth`.
 ```
 
-<img src="fig/estadistica-rendered-unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
+<img src="fig/estadistica-rendered-unnamed-chunk-3-1.png" alt="" style="display: block; margin: auto;" />
 
 
 ``` r
@@ -200,10 +200,10 @@ ggplot(muestra_covid, aes(x = edad)) +
 ```
 
 ``` output
-`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value `binwidth`.
 ```
 
-<img src="fig/estadistica-rendered-unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
+<img src="fig/estadistica-rendered-unnamed-chunk-4-1.png" alt="" style="display: block; margin: auto;" />
 
 Los **Boxplot** se construyen a partir de la visualización en sentido
 horizontal o vertical de los siguientes estadísticos:
@@ -277,7 +277,7 @@ ggplot(muestra_covid, aes(x = "", y = edad)) +
   geom_boxplot(outlier.shape = NA)
 ```
 
-<img src="fig/estadistica-rendered-unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
+<img src="fig/estadistica-rendered-unnamed-chunk-5-1.png" alt="" style="display: block; margin: auto;" />
 
 De acuerdo con el boxplot de la edad de la muestra de los casos de
 COVID-19 es posible concluir que la distribución de los datos es
@@ -359,7 +359,7 @@ ggplot(data = tabla, aes(x = tipo_de_contagio, y = perc)) +
   labs(y = "%", x = " ",title = "Tipo de Contagio")
 ```
 
-<img src="fig/estadistica-rendered-unnamed-chunk-8-1.png" style="display: block; margin: auto;" />
+<img src="fig/estadistica-rendered-unnamed-chunk-8-1.png" alt="" style="display: block; margin: auto;" />
    
 <center>  
    
@@ -631,7 +631,7 @@ generated.
 p+labs(y = "Probabilidad", x = "Número Reproductivo (R) ",title = "Modelo de Poisson")
 ```
 
-<img src="fig/estadistica-rendered-unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
+<img src="fig/estadistica-rendered-unnamed-chunk-12-1.png" alt="" style="display: block; margin: auto;" />
 
 Por lo tanto, si el número de casos secundarios se comporta de acuerdo a
 una distribución de Poisson, existe una alta probabilidad de que el
@@ -746,7 +746,7 @@ Esto también está disponible en el paquete `epiparameter` con la función
 plot(SARS_R)
 ```
 
-<img src="fig/estadistica-rendered-unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
+<img src="fig/estadistica-rendered-unnamed-chunk-14-1.png" alt="" style="display: block; margin: auto;" />
 
 Finalmente, es posible concluir que la mayoría de casos infectados con
 SARS no propagan la enfermedad dado que la moda de la distribución es
@@ -803,7 +803,7 @@ ggplot(data = datos_geome, aes(x = x, y = probg)) +
        title = "Distribución Geométrica")
 ```
 
-<img src="fig/estadistica-rendered-unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
+<img src="fig/estadistica-rendered-unnamed-chunk-15-1.png" alt="" style="display: block; margin: auto;" />
 
 Bajo la distribución geométrica, entonces existe una mayor probabilidad
 de que un caso primario pueda transmitir el virus dado que la
@@ -858,7 +858,7 @@ stats::runif(n, a, b)
 ```
 
 ``` output
-[1] 3.148794 2.079496 3.612995 2.331496 4.145843
+[1] 3.925774 2.201750 2.129747 2.245555 4.803642
 ```
 :::
 
@@ -1016,7 +1016,7 @@ graficarse por medio de:
 plot(SARS_incubacion)
 ```
 
-<img src="fig/estadistica-rendered-unnamed-chunk-19-1.png" style="display: block; margin: auto;" />
+<img src="fig/estadistica-rendered-unnamed-chunk-19-1.png" alt="" style="display: block; margin: auto;" />
 
 Lo anterior es útil para responder preguntas tipo: ¿Cuál es la
 probabilidad de que un caso de SARS desarrolle síntomas dos días después
@@ -1124,7 +1124,7 @@ Parameters:
 graphics::plot(influenza_s)
 ```
 
-<img src="fig/estadistica-rendered-unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
+<img src="fig/estadistica-rendered-unnamed-chunk-22-1.png" alt="" style="display: block; margin: auto;" />
 
 Con esta información se podría encontrar la media y desviación estándar
 de la distribución con base en la aplicación de la distribución gamma:
@@ -1217,7 +1217,7 @@ Parameters:
 plot(influenza_incubacion)
 ```
 
-<img src="fig/estadistica-rendered-unnamed-chunk-25-1.png" style="display: block; margin: auto;" />
+<img src="fig/estadistica-rendered-unnamed-chunk-25-1.png" alt="" style="display: block; margin: auto;" />
 :::
    
 <center>  
@@ -1297,7 +1297,7 @@ ggplot(cfr, aes(x =size, y=cfr, fill=size)) +
        title = " ") + scale_fill_brewer(palette="Blues")
 ```
 
-<img src="fig/estadistica-rendered-unnamed-chunk-26-1.png" style="display: block; margin: auto;" />
+<img src="fig/estadistica-rendered-unnamed-chunk-26-1.png" alt="" style="display: block; margin: auto;" />
 
 Si calculamos la media y desviación estándar de los valores estimados de
 la CRF con las muestras de tamaño 5 y tamaño 10, vemos que efectivamente

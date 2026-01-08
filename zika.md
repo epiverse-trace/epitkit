@@ -655,7 +655,7 @@ p2e <- ggplot(data = salida, aes(y = Rh, x = semanas)) +
 plot_grid(p1e, p2e) #creamos gráfico comparativo de la gráfica de población humana infecciosa y población humana recuperada
 ```
 
-<img src="fig/zika-rendered-p1-1.png" style="display: block; margin: auto;" />
+<img src="fig/zika-rendered-p1-1.png" alt="" style="display: block; margin: auto;" />
 
 ::::::::::::::::::::::::: discussion
 **Reflexión:** ¿Qué puede observar en la gráfica? Observe bien el eje Y.
@@ -683,7 +683,7 @@ p2p <- ggplot(data = salida, aes(y = Rh/(Sh+Ih+Rh), x = semanas)) +
 plot_grid(p1p, p2p) #creamos gráfico comparativo de la gráfica de población humana infecciosa y población humana recuperada
 ```
 
-<img src="fig/zika-rendered-p3-1.png" style="display: block; margin: auto;" />
+<img src="fig/zika-rendered-p3-1.png" alt="" style="display: block; margin: auto;" />
 
 **Comportamiento general (Población humana)**
 
@@ -716,7 +716,7 @@ p4h <- ggplot(data = salida, aes(y = Rh, x = años)) +
 plot_grid(p1h, p2h, p3h, p4h, ncol = 2)
 ```
 
-<img src="fig/zika-rendered-p4-1.png" style="display: block; margin: auto;" />
+<img src="fig/zika-rendered-p4-1.png" alt="" style="display: block; margin: auto;" />
 
 **Comportamiento General (Población de mosquitos)**
 
@@ -746,7 +746,7 @@ p4v <- ggplot(data = salida, aes(y = Iv, x = años)) +
 plot_grid(p1v, p2v, p3v, p4v, ncol = 2)
 ```
 
-<img src="fig/zika-rendered-unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
+<img src="fig/zika-rendered-unnamed-chunk-15-1.png" alt="" style="display: block; margin: auto;" />
 
 **Proporción**
 
@@ -773,7 +773,7 @@ p3 <- ggplot(data = salida, aes(y = Rh/(Sh+Ih+Rh), x = años)) +
 plot_grid(p1, p2, p3, ncol = 2)  
 ```
 
-<img src="fig/zika-rendered-unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
+<img src="fig/zika-rendered-unnamed-chunk-16-1.png" alt="" style="display: block; margin: auto;" />
  
  <center>  
    
