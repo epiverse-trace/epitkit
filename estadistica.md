@@ -622,7 +622,7 @@ p <- ggplot(data = datos_resultados, aes(x = numeros_reproduccion, y = resultado
 ``` warning
 Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
 ℹ Please use `linewidth` instead.
-This warning is displayed once every 8 hours.
+This warning is displayed once per session.
 Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
 generated.
 ```
@@ -858,7 +858,7 @@ stats::runif(n, a, b)
 ```
 
 ``` output
-[1] 3.925774 2.201750 2.129747 2.245555 4.803642
+[1] 4.408872 3.035580 2.841274 4.994015 3.316174
 ```
 :::
 
