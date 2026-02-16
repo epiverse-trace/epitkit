@@ -228,6 +228,46 @@ covid19_resumen <- covid19 %>%
   summarise(casos = n())
 ```
 
+Notemos que el mensaje de salida nos notifica que
+luego de usar `summarise()` se ha removido
+una variable del agrupamiento previamente configudado por `group_by()`.
+Esto es porque la segunda variable ("sexo") es ahora una sola fila
+dentro de la variable de agrupamiento ("fecha_reporte_web").
+Veamos el resultado de la operación anterior:
+
+```{r}
+covid19_resumen
+```
+
+También podemos verificar el motivo del mensaje usando la función `dplyr::group_vars()`.
+
+::::::::: spoiler
+
+Exploremos el paso a paso usando la función `dplyr::group_vars()`:
+
+```{r}
+# Agrupar por "fecha" y "sexo"
+# Con dplyr::group_vars() confirmamos agrupamiento
+covid19 %>%
+  dplyr::group_by(fecha_reporte_web, sexo) %>%
+  dplyr::group_vars()
+
+# Resuminos por "fecha" y "sexo"
+# Con dplyr::group_vars() confirmamos que
+# luego de usar dplyr::summarise()
+# removemos la última variable de agrupamiento ("sexo")
+# debido a que ese grupo es ahora una sola fila por cada "fecha".
+covid19 %>%
+  dplyr::group_by(fecha_reporte_web, sexo) %>% 
+  dplyr::summarise(casos = n()) %>% 
+  dplyr::group_vars()
+```
+
+Este es el resultado por defecto.
+Puedes ver las opciones disponibles usando el [argumento `.groups` dentro de la función `summarise()`](https://dplyr.tidyverse.org/reference/summarise.html#arg--groups).
+
+:::::::::
+
 Luego, podemos usar la estética de los gráficos de `ggplot2` indicando
 las variables a usar en cada dimensión, en este caso en el eje X
 tendremos la variable de tiempo (fecha_reporte_web) y en el eje Y el
@@ -504,6 +544,17 @@ contar el número de casos por `edad` y `sexo`:
 covid19_sexo <- covid19 %>%
   group_by(edad, sexo) %>%
   summarise(casos = n())
+```
+
+Notemos nuevamente que el mensaje de salida nos notifica que
+luego de usar `summarise()` se ha removido la última
+variable del agrupamiento previamente configudado por `group_by()`.
+Esto es porque la segunda variable ("sexo") es ahora una sola fila
+dentro de la variable de agrupamiento ("edad").
+Veamos el resultado de la operación anterior:
+
+```{r}
+covid19_sexo
 ```
 
 Usando los datos de `covid-19`, vamos a representar la variable `casos`
