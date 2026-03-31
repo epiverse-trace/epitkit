@@ -62,7 +62,7 @@ sessionInfo()
 ```
 
 ``` output
-R version 4.5.2 (2025-10-31)
+R version 4.5.3 (2026-03-11)
 Platform: x86_64-pc-linux-gnu
 Running under: Ubuntu 22.04.5 LTS
 
@@ -83,8 +83,8 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 loaded via a namespace (and not attached):
-[1] compiler_4.5.2 cli_3.6.5      tools_4.5.2    yaml_2.3.12    knitr_1.51    
-[6] xfun_0.56      rlang_1.1.7    renv_1.1.7     evaluate_1.0.5
+[1] compiler_4.5.3 cli_3.6.5      tools_4.5.3    yaml_2.3.12    knitr_1.51    
+[6] xfun_0.56      rlang_1.1.7    renv_1.2.0     evaluate_1.0.5
 ```
 
 **Obtendrá una información similar a esta. En este caso la versión es 4.4.1**
