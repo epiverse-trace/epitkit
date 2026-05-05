@@ -164,10 +164,10 @@ library(tidyverse)
 
 ``` output
 ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.6
+✔ dplyr     1.2.1     ✔ readr     2.2.0
 ✔ forcats   1.0.1     ✔ stringr   1.6.0
-✔ lubridate 1.9.4     ✔ tibble    3.3.1
-✔ purrr     1.2.1     ✔ tidyr     1.3.2
+✔ lubridate 1.9.5     ✔ tibble    3.3.1
+✔ purrr     1.2.2     ✔ tidyr     1.3.2
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
@@ -270,8 +270,12 @@ covid19_resumen <- covid19 %>%
 ```
 
 ``` output
-`summarise()` has grouped output by 'fecha_reporte_web'. You can override using
-the `.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by fecha_reporte_web and sexo.
+ℹ Output is grouped by fecha_reporte_web.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(fecha_reporte_web, sexo))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 Luego, podemos usar la estética de los gráficos de `ggplot2` indicando
@@ -539,8 +543,12 @@ covid19_sexo <- covid19 %>%
 ```
 
 ``` output
-`summarise()` has grouped output by 'edad'. You can override using the
-`.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by edad and sexo.
+ℹ Output is grouped by edad.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(edad, sexo))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 Usando los datos de `covid-19`, vamos a representar la variable `casos`
